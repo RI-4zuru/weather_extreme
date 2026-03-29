@@ -1,1 +1,121 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f7f8fb;
+  color: #222;
+}
+
+.topbar {
+  padding: 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar h1 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+select, button {
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.main {
+  padding: 16px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1200px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  background: #f0f3f8;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.station-col {
+  min-width: 180px;
+  text-align: left;
+}
+
+.station-name {
+  font-weight: 700;
+}
+
+.station-start {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.rank-cell {
+  min-width: 90px;
+}
+
+.rank-cell .value {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.rank-cell .date {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.live-in-rank {
+  background: #ffd9d9;
+}
+
+.within-year {
+  background: #fff4bf;
+}
+
+.live-in-rank.within-year {
+  background: #ffdca8;
+}
