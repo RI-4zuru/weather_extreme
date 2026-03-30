@@ -1,164 +1,106 @@
-* {
-  box-sizing: border-box;
+const prefSelect = document.getElementById("prefSelect");
+const monthSelect = document.getElementById("monthSelect");
+const loadBtn = document.getElementById("loadBtn");
+const statusEl = document.getElementById("status");
+const tableHead = document.getElementById("tableHead");
+const tableBody = document.getElementById("tableBody");
+
+function getSelectedElement() {
+  const checked = document.querySelector('input[name="element"]:checked');
+  return checked ? checked.value : "dailyMaxTemp";
 }
 
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f7f8fb;
-  color: #222;
+function makeHeader() {
+  const cols = ["地点名 / 観測開始"];
+  for (let i = 1; i <= 10; i++) cols.push(`${i}位`);
+  tableHead.innerHTML = `
+    <tr>
+      ${cols.map((c, i) => `<th class="${i === 0 ? "station-col" : ""}">${c}</th>`).join("")}
+    </tr>
+  `;
 }
 
-.topbar {
-  padding: 10px 14px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
-.topbar h1 {
-  margin: 0 0 8px;
-  font-size: 20px;
+function renderTable(rows) {
+  tableBody.innerHTML = "";
+
+  for (const row of rows) {
+    const tr = document.createElement("tr");
+
+    const stationTd = document.createElement("td");
+    stationTd.className = "station-col";
+    stationTd.innerHTML = `
+      <div class="station-name">${escapeHtml(row.stationName)}</div>
+      <div class="station-start">観測開始: ${escapeHtml(row.startDate || "-")}</div>
+    `;
+    tr.appendChild(stationTd);
+
+    for (let i = 0; i < 10; i++) {
+      const r = row.ranks?.[i];
+      const td = document.createElement("td");
+
+      if (r) {
+        const classes = ["rank-cell"];
+        if (r.highlightLive) classes.push("live-in-rank");
+        if (r.highlightWithinYear) classes.push("within-year");
+        td.className = classes.join(" ");
+
+        td.innerHTML = `
+          <div class="value">${escapeHtml(r.value)}</div>
+          <div class="date">${escapeHtml(r.date)}</div>
+        `;
+      } else {
+        td.className = "rank-cell";
+        td.innerHTML = `
+          <div class="value">-</div>
+          <div class="date">-</div>
+        `;
+      }
+
+      tr.appendChild(td);
+    }
+
+    tableBody.appendChild(tr);
+  }
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: end;
+async function loadTable() {
+  const pref = prefSelect.value;
+  const element = getSelectedElement();
+  const month = monthSelect.value;
+
+  const file = `./data/${pref}-${element}-${month}.json?t=${Date.now()}`;
+  statusEl.textContent = "読み込み中...";
+
+  try {
+    const res = await fetch(file, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const data = await res.json();
+    makeHeader();
+    renderTable(data.rows || []);
+    statusEl.textContent = `更新: ${data.updatedAt || "-"} / 地点数: ${data.rows?.length ?? 0}`;
+  } catch (e) {
+    console.error(e);
+    statusEl.textContent = "JSONの読み込みに失敗しました";
+    tableBody.innerHTML = "";
+  }
 }
 
-.controls label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 13px;
-}
+makeHeader();
+loadBtn.addEventListener("click", loadTable);
 
-select, button {
-  padding: 6px 8px;
-  font-size: 13px;
-}
+document.querySelectorAll('input[name="element"]').forEach(el => {
+  el.addEventListener("change", loadTable);
+});
 
-button {
-  cursor: pointer;
-}
-
-.element-panel {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.element-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 6px 8px;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-
-.element-label {
-  min-width: 40px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.element-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.element-options label {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.note,
-.status {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #555;
-}
-
-.main {
-  padding: 12px;
-}
-
-.table-wrap {
-  overflow-x: auto;
-  background: #fff;
-  border: 1px solid #ddd;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 980px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 5px 6px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-th {
-  background: #f0f3f8;
-  font-size: 12px;
-}
-
-.station-col {
-  min-width: 160px;
-  text-align: left;
-}
-
-.station-name {
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.station-start {
-  margin-top: 3px;
-  font-size: 11px;
-  color: #666;
-}
-
-.rank-cell {
-  min-width: 78px;
-}
-
-.rank-cell .value {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.rank-cell .date {
-  margin-top: 3px;
-  font-size: 10px;
-  line-height: 1.25;
-  color: #666;
-}
-
-.live-in-rank {
-  background: #ffd9d9;
-}
-
-.within-year {
-  background: #fff4bf;
-}
-
-.live-in-rank.within-year {
-  background: #ffdca8;
-}
+loadTable();
+setInterval(loadTable, 60 * 1000);
