@@ -22,6 +22,7 @@
         要素
         <select id="elementSelect">
           <option value="dailyMaxTemp">日最高気温</option>
+          <option value="dailyMinTemp">日最低気温</option>
         </select>
       </label>
 
@@ -29,6 +30,18 @@
         月
         <select id="monthSelect">
           <option value="all">通年</option>
+          <option value="1">1月</option>
+          <option value="2">2月</option>
+          <option value="3">3月</option>
+          <option value="4">4月</option>
+          <option value="5">5月</option>
+          <option value="6">6月</option>
+          <option value="7">7月</option>
+          <option value="8">8月</option>
+          <option value="9">9月</option>
+          <option value="10">10月</option>
+          <option value="11">11月</option>
+          <option value="12">12月</option>
         </select>
       </label>
 
@@ -36,7 +49,7 @@
     </div>
 
     <div class="note">
-      赤系: 最新実況で極値10位以内に入る見込み / 黄系: 1年以内の記録
+      赤系: 最新10分値が暫定的に10位以内 / 黄系: 1年以内の記録
     </div>
     <div id="status" class="status">読み込み待ち</div>
   </header>
