@@ -1,9 +1,85 @@
 {
-  "updatedAt": "2026-03-30T18:20:00+09:00",
+  "updatedAt": "2026-03-30T18:30:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTemp",
   "month": "all",
   "rows": [
+    {
+      "stationName": "奈良",
+      "startDate": "1953年5月（昭和28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 39.3,
+          "date": "1994年8月8日（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 39.2,
+          "date": "1994年8月7日（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 39.2,
+          "date": "1994年8月6日（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 38.4,
+          "date": "2024年8月3日（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 38.4,
+          "date": "1994年8月5日（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 38.3,
+          "date": "2025年8月31日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
+          "value": 38.2,
+          "date": "2025年7月30日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 38.1,
+          "date": "2018年7月19日（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 38.1,
+          "date": "2001年8月1日（平成13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 38,
+          "date": "2020年8月16日（令和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
     {
       "stationName": "針",
       "startDate": "1978年12月（昭和53年）",

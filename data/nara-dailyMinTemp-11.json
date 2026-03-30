@@ -1,80 +1,80 @@
 {
-  "updatedAt": "2026-03-30T18:20:00+09:00",
+  "updatedAt": "2026-03-30T18:30:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMinTemp",
   "month": "11",
   "rows": [
     {
       "stationName": "奈良",
-      "startDate": "1966年1月（昭和41年）",
+      "startDate": "1953年11月（昭和28年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -2.6,
-          "date": "1966年11月23日（昭和41年）",
+          "value": 16,
+          "date": "2021年11月8日（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -1.9,
-          "date": "1969年11月29日（昭和44年）",
+          "value": 16.1,
+          "date": "1989年11月7日（平成元年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -1.9,
-          "date": "1969年11月26日（昭和44年）",
+          "value": 16.2,
+          "date": "1993年11月13日（平成5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -1.6,
-          "date": "1966年11月27日（昭和41年）",
+          "value": 16.5,
+          "date": "2003年11月3日（平成15年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -1.6,
-          "date": "1953年11月29日（昭和28年）",
+          "value": 16.7,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -1.5,
-          "date": "1984年11月29日（昭和59年）",
+          "value": 17,
+          "date": "1979年11月5日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -1.5,
-          "date": "1981年11月30日（昭和56年）",
+          "value": 17.1,
+          "date": "1959年11月3日（昭和34年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -1.5,
-          "date": "1973年11月23日（昭和48年）",
+          "value": 17.3,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -1.3,
-          "date": "2008年11月20日（平成20年）",
+          "value": 18,
+          "date": "1959年11月2日（昭和34年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -1.3,
-          "date": "1983年11月29日（昭和58年）",
+          "value": 19.2,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -82,75 +82,75 @@
     },
     {
       "stationName": "針",
-      "startDate": "1981年1月（昭和56年）",
+      "startDate": "1979年11月（昭和54年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -5.9,
-          "date": "1981年11月19日（昭和56年）",
+          "value": 13.5,
+          "date": "2015年11月14日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -5.3,
-          "date": "1984年11月29日（昭和59年）",
+          "value": 13.7,
+          "date": "2018年11月9日（平成30年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -5.1,
-          "date": "1981年11月30日（昭和56年）",
+          "value": 13.7,
+          "date": "1989年11月7日（平成元年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -4.4,
-          "date": "1983年11月29日（昭和58年）",
+          "value": 14.2,
+          "date": "2014年11月1日（平成26年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -4.3,
-          "date": "1979年11月20日（昭和54年）",
+          "value": 14.7,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -4.2,
-          "date": "1981年11月23日（昭和56年）",
+          "value": 14.7,
+          "date": "2003年11月3日（平成15年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -4.1,
-          "date": "1979年11月15日（昭和54年）",
+          "value": 14.7,
+          "date": "2000年11月2日（平成12年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -4,
-          "date": "1984年11月26日（昭和59年）",
+          "value": 15.4,
+          "date": "1979年11月5日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -4,
-          "date": "1981年11月18日（昭和56年）",
+          "value": 15.5,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -3.8,
-          "date": "1981年11月29日（昭和56年）",
+          "value": 16.6,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -158,75 +158,75 @@
     },
     {
       "stationName": "大宇陀",
-      "startDate": "1984年1月（昭和59年）",
+      "startDate": "1979年11月（昭和54年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -4.3,
-          "date": "1984年11月29日（昭和59年）",
+          "value": 14.3,
+          "date": "2015年11月14日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -4.2,
-          "date": "1981年11月19日（昭和56年）",
+          "value": 14.4,
+          "date": "1982年11月10日（昭和57年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -4,
-          "date": "1981年11月30日（昭和56年）",
+          "value": 14.8,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -3.7,
-          "date": "1983年11月29日（昭和58年）",
+          "value": 14.8,
+          "date": "2003年11月3日（平成15年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -3.4,
-          "date": "1986年11月28日（昭和61年）",
+          "value": 14.8,
+          "date": "1979年11月10日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -3.3,
-          "date": "1987年11月30日（昭和62年）",
+          "value": 15.1,
+          "date": "1993年11月13日（平成5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -3.1,
-          "date": "2021年11月29日（令和3年）",
+          "value": 15.3,
+          "date": "2000年11月2日（平成12年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -3.1,
-          "date": "1979年11月20日（昭和54年）",
+          "value": 15.7,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -3,
-          "date": "1984年11月30日（昭和59年）",
+          "value": 16,
+          "date": "1979年11月5日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -3,
-          "date": "1984年11月26日（昭和59年）",
+          "value": 16.6,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -234,75 +234,75 @@
     },
     {
       "stationName": "五條",
-      "startDate": "2012年1月（平成24年）",
+      "startDate": "2006年11月（平成18年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -1.8,
-          "date": "2012年11月28日（平成24年）",
+          "value": 14.1,
+          "date": "2024年11月16日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -1.5,
-          "date": "2021年11月29日（令和3年）",
+          "value": 14.3,
+          "date": "2015年11月8日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -1.4,
-          "date": "2013年11月29日（平成25年）",
+          "value": 14.5,
+          "date": "2015年11月18日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -1.1,
-          "date": "2007年11月24日（平成19年）",
+          "value": 14.8,
+          "date": "2014年11月1日（平成26年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -1,
-          "date": "2023年11月26日（令和5年）",
+          "value": 14.9,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -0.9,
-          "date": "2017年11月22日（平成29年）",
+          "value": 15.2,
+          "date": "2015年11月14日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -0.9,
-          "date": "2010年11月29日（平成22年）",
+          "value": 15.5,
+          "date": "2020年11月20日（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -0.7,
-          "date": "2012年11月25日（平成24年）",
+          "value": 15.5,
+          "date": "2015年11月9日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -0.6,
-          "date": "2008年11月21日（平成20年）",
+          "value": 16.7,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -0.5,
-          "date": "2017年11月17日（平成29年）",
+          "value": 16.9,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -310,75 +310,75 @@
     },
     {
       "stationName": "上北山",
-      "startDate": "1981年1月（昭和56年）",
+      "startDate": "1979年11月（昭和54年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -2.9,
-          "date": "1981年11月19日（昭和56年）",
+          "value": 14.9,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -2.8,
-          "date": "1984年11月29日（昭和59年）",
+          "value": 14.9,
+          "date": "2011年11月5日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -2.3,
-          "date": "1986年11月30日（昭和61年）",
+          "value": 15,
+          "date": "1993年11月13日（平成5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -2.2,
-          "date": "1986年11月28日（昭和61年）",
+          "value": 15.2,
+          "date": "2015年11月9日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -2.2,
-          "date": "1984年11月30日（昭和59年）",
+          "value": 15.4,
+          "date": "2003年11月3日（平成15年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -2.1,
-          "date": "1985年11月30日（昭和60年）",
+          "value": 15.5,
+          "date": "1979年11月5日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -2,
-          "date": "1986年11月23日（昭和61年）",
+          "value": 15.7,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -2,
-          "date": "1981年11月30日（昭和56年）",
+          "value": 16,
+          "date": "1987年11月3日（昭和62年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -1.8,
-          "date": "1993年11月25日（平成5年）",
+          "value": 16.1,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -1.8,
-          "date": "1986年11月22日（昭和61年）",
+          "value": 17,
+          "date": "2000年11月2日（平成12年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -386,75 +386,75 @@
     },
     {
       "stationName": "風屋",
-      "startDate": "1981年1月（昭和56年）",
+      "startDate": "1978年11月（昭和53年）",
       "ranks": [
         {
           "rank": 1,
-          "value": -1.6,
-          "date": "1981年11月19日（昭和56年）",
+          "value": 15.2,
+          "date": "1997年11月26日（平成9年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": -1.5,
-          "date": "2008年11月21日（平成20年）",
+          "value": 15.3,
+          "date": "2003年11月3日（平成15年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": -1.2,
-          "date": "2013年11月29日（平成25年）",
+          "value": 15.4,
+          "date": "1993年11月13日（平成5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": -1,
-          "date": "1984年11月29日（昭和59年）",
+          "value": 15.9,
+          "date": "2015年11月9日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": -0.9,
-          "date": "2021年11月29日（令和3年）",
+          "value": 16,
+          "date": "2023年11月6日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": -0.8,
-          "date": "1995年11月26日（平成7年）",
+          "value": 16.3,
+          "date": "2011年11月6日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": -0.7,
-          "date": "2007年11月24日（平成19年）",
+          "value": 16.4,
+          "date": "2000年11月2日（平成12年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": -0.7,
-          "date": "1984年11月30日（昭和59年）",
+          "value": 16.5,
+          "date": "1979年11月5日（昭和54年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": -0.7,
-          "date": "1981年11月30日（昭和56年）",
+          "value": 16.6,
+          "date": "1987年11月3日（昭和62年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": -0.6,
-          "date": "1986年11月28日（昭和61年）",
+          "value": 16.8,
+          "date": "2024年11月2日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
