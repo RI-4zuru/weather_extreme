@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>県内極値一覧</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header class="topbar">
@@ -13,9 +13,7 @@
     <div class="controls">
       <label>
         都道府県
-        <select id="prefSelect">
-          <option value="奈良県">奈良県</option>
-        </select>
+        <select id="prefSelect"></select>
       </label>
 
       <label>
@@ -48,6 +46,9 @@
       <button id="loadBtn">表示</button>
     </div>
 
+    <div class="note">
+      赤系: 実況が10位以内に入る見込み / 黄系: 1年以内の記録
+    </div>
     <div id="status" class="status">読み込み待ち</div>
   </header>
 
@@ -60,6 +61,6 @@
     </div>
   </main>
 
-  <script src="/app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
