@@ -1,80 +1,80 @@
 {
   "updatedAt": "2026-03-30T17:30:00+09:00",
   "prefecture": "奈良県",
-  "element": "dailyMaxTemp",
-  "month": "all",
+  "element": "dailyMinTemp",
+  "month": "3",
   "rows": [
     {
       "stationName": "奈良",
-      "startDate": "1953/52",
+      "startDate": "1954/32",
       "ranks": [
         {
           "rank": 1,
-          "value": 39.3,
-          "date": "1994/08/08",
+          "value": -5,
+          "date": "1977/03/06",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": 39.2,
-          "date": "1994/08/07",
+          "value": -4.8,
+          "date": "1967/03/01",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": 39.2,
-          "date": "1994/08/06",
+          "value": -4.8,
+          "date": "1963/03/07",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
-          "value": 38.4,
-          "date": "2024/08/03",
+          "value": -4.7,
+          "date": "1965/03/07",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": 38.4,
-          "date": "1994/08/05",
+          "value": -4.6,
+          "date": "1965/03/02",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": 38.3,
-          "date": "2025/08/31",
+          "value": -4.6,
+          "date": "1957/03/03",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
-          "value": 38.2,
-          "date": "2025/07/30",
+          "value": -4.5,
+          "date": "1963/03/06",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
-          "value": 38.1,
-          "date": "2018/07/19",
+          "value": -4.4,
+          "date": "1963/03/08",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
-          "value": 38.1,
-          "date": "2001/08/01",
+          "value": -4.3,
+          "date": "1984/03/01",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": 38,
-          "date": "2020/08/16",
+          "value": -4.2,
+          "date": "1977/03/05",
           "highlightLive": false,
           "highlightWithinYear": false
         }

@@ -2,79 +2,79 @@
   "updatedAt": "2026-03-30T17:30:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTemp",
-  "month": "all",
+  "month": "7",
   "rows": [
     {
       "stationName": "奈良",
-      "startDate": "1953/52",
+      "startDate": "1953/72",
       "ranks": [
         {
           "rank": 1,
-          "value": 39.3,
-          "date": "1994/08/08",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 2,
-          "value": 39.2,
-          "date": "1994/08/07",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 3,
-          "value": 39.2,
-          "date": "1994/08/06",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 4,
-          "value": 38.4,
-          "date": "2024/08/03",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 5,
-          "value": 38.4,
-          "date": "1994/08/05",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 6,
-          "value": 38.3,
-          "date": "2025/08/31",
-          "highlightLive": false,
-          "highlightWithinYear": true
-        },
-        {
-          "rank": 7,
           "value": 38.2,
           "date": "2025/07/30",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
-          "rank": 8,
+          "rank": 2,
           "value": 38.1,
           "date": "2018/07/19",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
+          "rank": 3,
+          "value": 38,
+          "date": "2018/07/18",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 37.9,
+          "date": "2018/07/23",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 37.8,
+          "date": "2025/07/29",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 6,
+          "value": 37.6,
+          "date": "2022/07/01",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 37.5,
+          "date": "2023/07/27",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 37.5,
+          "date": "2018/07/16",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
           "rank": 9,
-          "value": 38.1,
-          "date": "2001/08/01",
+          "value": 37.4,
+          "date": "2023/07/28",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": 38,
-          "date": "2020/08/16",
+          "value": 37.3,
+          "date": "2018/07/24",
           "highlightLive": false,
           "highlightWithinYear": false
         }

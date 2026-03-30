@@ -2,81 +2,81 @@
   "updatedAt": "2026-03-30T17:30:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTemp",
-  "month": "all",
+  "month": "2",
   "rows": [
     {
       "stationName": "奈良",
-      "startDate": "1953/52",
+      "startDate": "1954/22",
       "ranks": [
         {
           "rank": 1,
-          "value": 39.3,
-          "date": "1994/08/08",
+          "value": 23.9,
+          "date": "2010/02/25",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
-          "value": 39.2,
-          "date": "1994/08/07",
+          "value": 22.9,
+          "date": "1987/02/11",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
-          "value": 39.2,
-          "date": "1994/08/06",
+          "value": 22.6,
+          "date": "2026/02/22",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 4,
-          "value": 38.4,
-          "date": "2024/08/03",
+          "value": 22.6,
+          "date": "2010/02/24",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
-          "value": 38.4,
-          "date": "1994/08/05",
+          "value": 21.7,
+          "date": "2004/02/22",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
-          "value": 38.3,
-          "date": "2025/08/31",
-          "highlightLive": false,
-          "highlightWithinYear": true
-        },
-        {
-          "rank": 7,
-          "value": 38.2,
-          "date": "2025/07/30",
-          "highlightLive": false,
-          "highlightWithinYear": true
-        },
-        {
-          "rank": 8,
-          "value": 38.1,
-          "date": "2018/07/19",
+          "value": 21.6,
+          "date": "1993/02/07",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
+          "rank": 7,
+          "value": 21.6,
+          "date": "1954/02/27",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 21.5,
+          "date": "2026/02/24",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
           "rank": 9,
-          "value": 38.1,
-          "date": "2001/08/01",
+          "value": 21.3,
+          "date": "1996/02/14",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": 38,
-          "date": "2020/08/16",
-          "highlightLive": false,
-          "highlightWithinYear": false
+          "value": 21.1,
+          "date": "2026/03/30",
+          "highlightLive": true,
+          "highlightWithinYear": true
         }
       ]
     }
