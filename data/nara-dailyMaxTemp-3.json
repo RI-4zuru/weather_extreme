@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-30T20:30:00+09:00",
+  "updatedAt": "2026-03-31T00:40:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTemp",
   "month": "3",
@@ -280,29 +280,29 @@
         },
         {
           "rank": 7,
-          "value": 24.4,
-          "date": "2026年3月30日（令和8年）",
-          "highlightLive": true,
-          "highlightWithinYear": true
-        },
-        {
-          "rank": 8,
           "value": 24,
           "date": "2009年3月19日（平成21年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 8,
           "value": 23.9,
           "date": "2025年3月24日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 10,
+          "rank": 9,
           "value": 23.8,
           "date": "2018年3月29日（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 23.7,
+          "date": "2013年3月9日（平成25年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
