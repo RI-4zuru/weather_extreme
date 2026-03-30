@@ -8,7 +8,6 @@ from datetime import datetime, timedelta, timezone
 
 JST = timezone(timedelta(hours=9))
 
-# 日最高・日最低気温を持つ奈良県内6地点
 STATIONS = [
     {
         "pref_key": "nara",
@@ -17,8 +16,10 @@ STATIONS = [
         "precNo": "64",
         "blockNo": "47780",
         "amedasCode": "64036",
-        "rank_type": "s",   # rank_s.php
+        "rank_type": "s",
         "rank_view": "h0",
+        "temp": True,
+        "precip": True,
     },
     {
         "pref_key": "nara",
@@ -27,8 +28,10 @@ STATIONS = [
         "precNo": "64",
         "blockNo": "0630",
         "amedasCode": "64041",
-        "rank_type": "a",   # rank_a.php
+        "rank_type": "a",
         "rank_view": "a2",
+        "temp": True,
+        "precip": True,
     },
     {
         "pref_key": "nara",
@@ -39,6 +42,8 @@ STATIONS = [
         "amedasCode": "64101",
         "rank_type": "a",
         "rank_view": "h0",
+        "temp": True,
+        "precip": True,
     },
     {
         "pref_key": "nara",
@@ -49,6 +54,8 @@ STATIONS = [
         "amedasCode": "64127",
         "rank_type": "a",
         "rank_view": "",
+        "temp": True,
+        "precip": True,
     },
     {
         "pref_key": "nara",
@@ -59,6 +66,8 @@ STATIONS = [
         "amedasCode": "64206",
         "rank_type": "a",
         "rank_view": "",
+        "temp": True,
+        "precip": True,
     },
     {
         "pref_key": "nara",
@@ -69,6 +78,8 @@ STATIONS = [
         "amedasCode": "64227",
         "rank_type": "a",
         "rank_view": "",
+        "temp": True,
+        "precip": True,
     },
 ]
 
@@ -76,10 +87,32 @@ ELEMENTS = {
     "dailyMaxTemp": {
         "label": "日最高気温の高い方から",
         "direction": "desc",
+        "category": "temp",
+        "live_mode": "temp_max_day",
     },
     "dailyMinTemp": {
         "label": "日最低気温の低い方から",
         "direction": "asc",
+        "category": "temp",
+        "live_mode": "temp_min_day",
+    },
+    "dailyPrecip": {
+        "label": "日降水量の多い方から",
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": "precip_day_sum",
+    },
+    "max10mPrecip": {
+        "label": "日最大10分間降水量の多い方から",
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": "precip_10m_max",
+    },
+    "max1hPrecip": {
+        "label": "日最大1時間降水量の多い方から",
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": "precip_1h_max",
     },
 }
 
@@ -116,14 +149,10 @@ def normalize_spaces(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def pad2(v) -> str:
-    return f"{int(v):02d}"
-
-
 def trim_number(v):
     v = float(v)
     if v.is_integer():
-        return int(v)
+      return int(v)
     return round(v, 1)
 
 
@@ -139,11 +168,7 @@ def parse_date_ymd(s: str) -> datetime:
     return datetime.strptime(s, "%Y/%m/%d").replace(tzinfo=JST)
 
 
-def parse_date_ym(s: str) -> datetime:
-    return datetime.strptime(s, "%Y/%m").replace(tzinfo=JST)
-
-
-def era_name(year: int, month: int, day: int) -> tuple[str, int]:
+def era_name(year: int, month: int, day: int):
     dt = datetime(year, month, day)
     if dt >= datetime(2019, 5, 1):
         return ("令和", year - 2018)
@@ -156,44 +181,50 @@ def era_name(year: int, month: int, day: int) -> tuple[str, int]:
     return ("明治", year - 1867)
 
 
-def to_wareki_ymd(s: str) -> str:
-    # 例: 2025/08/31 -> 令和7年8月31日
-    if not s:
+def wareki_year_only(s: str) -> str:
+    m = re.match(r"(\d{4})/(\d{1,2})/(\d{1,2})$", s)
+    if not m:
         return ""
+    y, mo, d = map(int, m.groups())
+    era, era_year = era_name(y, mo, d)
+    era_year_str = "元" if era_year == 1 else str(era_year)
+    return f"{era}{era_year_str}年"
+
+
+def wareki_year_only_from_ym(s: str) -> str:
+    m = re.match(r"(\d{4})/(\d{1,2})$", s)
+    if not m:
+        return ""
+    y, mo = map(int, m.groups())
+    era, era_year = era_name(y, mo, 1)
+    era_year_str = "元" if era_year == 1 else str(era_year)
+    return f"{era}{era_year_str}年"
+
+
+def format_dual_ymd(s: str) -> str:
     m = re.match(r"(\d{4})/(\d{1,2})/(\d{1,2})$", s)
     if not m:
         return s
     y, mo, d = map(int, m.groups())
-    era, era_year = era_name(y, mo, d)
-    era_year_str = "元" if era_year == 1 else str(era_year)
-    return f"{era}{era_year_str}年{mo}月{d}日"
+    return f"{y}年{mo}月{d}日（{wareki_year_only(s)}）"
 
 
-def to_wareki_ym(s: str) -> str:
-    # 例: 1953/5 -> 昭和28年5月
-    if not s:
-        return ""
+def format_dual_ym(s: str) -> str:
     m = re.match(r"(\d{4})/(\d{1,2})$", s)
     if not m:
         return s
     y, mo = map(int, m.groups())
-    era, era_year = era_name(y, mo, 1)
-    era_year_str = "元" if era_year == 1 else str(era_year)
-    return f"{era}{era_year_str}年{mo}月"
+    return f"{y}年{mo}月（{wareki_year_only_from_ym(s)}）"
 
 
 def build_rank_url(station: dict, month: str) -> str:
     month_value = "" if month == "all" else month
     rank_page = "rank_s.php" if station["rank_type"] == "s" else "rank_a.php"
-    view_part = f"&view={station['rank_view']}" if station["rank_view"] != "" else "&view="
     return (
         f"https://www.data.jma.go.jp/stats/etrn/view/{rank_page}"
         f"?prec_no={station['precNo']}"
         f"&block_no={station['blockNo']}"
-        f"&year="
-        f"&month={month_value}"
-        f"&day="
-        f"{view_part}"
+        f"&year=&month={month_value}&day=&view={station['rank_view']}"
     )
 
 
@@ -214,13 +245,10 @@ def is_new_element_line(line: str) -> bool:
         "月平均気温", "年平均気温", "日最小相対湿度",
         "日最大風速", "日最大瞬間風速", "月間日照時間"
     ]
-    if any(k in line for k in keywords):
-        return True
-    return False
+    return any(k in line for k in keywords)
 
 
 def sort_records(records, direction: str):
-    # 同値は新しい日付を上位
     if direction == "desc":
         return sorted(
             records,
@@ -253,16 +281,9 @@ def parse_rank_section(lines, target_label: str, direction: str):
 
     value_matches = re.findall(r"\)(-?\d+(?:\.\d+)?)", section_text)
     date_matches = re.findall(r"\((\d{4}/\d{1,2}/\d{1,2})\)", section_text)
+    period_matches = re.findall(r"(?<!\d)(\d{4}/\d{1,2})(?!/\d)", section_text)
 
-    # 統計期間の開始
-    period_matches = re.findall(r"(?<!\d)(\d{4}/\d{1,2}|\d{4}年)(?!/\d)", section_text)
-    start_date = ""
-    if period_matches:
-        if "年" in period_matches[0]:
-            # 年表示の場合はそのまま扱う
-            start_date = period_matches[0]
-        else:
-            start_date = normalize_spaces(period_matches[0])
+    start_date = period_matches[0] if period_matches else ""
 
     n = min(10, len(value_matches), len(date_matches))
     if n == 0:
@@ -274,7 +295,7 @@ def parse_rank_section(lines, target_label: str, direction: str):
         records.append({
             "rank": i + 1,
             "value": trim_number(value_matches[i]),
-            "date": to_wareki_ymd(raw_date),
+            "date": format_dual_ymd(raw_date),
             "_date_raw": raw_date,
         })
 
@@ -282,25 +303,9 @@ def parse_rank_section(lines, target_label: str, direction: str):
     for idx, rec in enumerate(records, start=1):
         rec["rank"] = idx
 
-    # 画面表示用には内部キーを消す
-    output_records = []
-    for r in records:
-        output_records.append({
-            "rank": r["rank"],
-            "value": r["value"],
-            "date": r["date"],
-            "_date_raw": r["_date_raw"],
-        })
-
-    # 観測開始も和暦
-    if re.match(r"^\d{4}/\d{1,2}$", start_date):
-        start_date_label = to_wareki_ym(start_date)
-    else:
-        start_date_label = start_date
-
     return {
-        "startDate": start_date_label,
-        "records": output_records,
+        "startDate": format_dual_ym(start_date) if start_date else "",
+        "records": records,
     }
 
 
@@ -308,13 +313,7 @@ def fetch_latest_time() -> str:
     return fetch_text("https://www.jma.go.jp/bosai/amedas/data/latest_time.txt").strip()
 
 
-def latest_map_key(latest_iso: str) -> str:
-    dt = datetime.fromisoformat(latest_iso.replace("Z", "+00:00")).astimezone(JST)
-    return dt.strftime("%Y%m%d%H%M%S")
-
-
 def point_chunk_key(dt: datetime) -> str:
-    # point/{amedas}/{YYYYMMDD_HH}.json は3時間単位
     base_hour = (dt.hour // 3) * 3
     return dt.strftime("%Y%m%d") + f"_{base_hour:02d}"
 
@@ -324,64 +323,106 @@ def fetch_point_chunk(amedas_code: str, chunk_key: str):
     return fetch_json(url)
 
 
-def extract_today_temp_series(point_json: dict, latest_dt: datetime):
-    # 形式: { "20260330000000": {"temp":[値,品質]}, ... } を想定
+def get_today_chunk_keys(latest_dt: datetime):
+    out = []
+    cur = latest_dt.replace(hour=0, minute=0, second=0, microsecond=0)
+    end = latest_dt.replace(hour=(latest_dt.hour // 3) * 3, minute=0, second=0, microsecond=0)
+
+    while cur <= end:
+        out.append(point_chunk_key(cur))
+        cur += timedelta(hours=3)
+    return out
+
+
+def extract_today_series(point_json: dict, latest_dt: datetime, field_name: str):
     out = []
     today = latest_dt.strftime("%Y%m%d")
+
     for ts, item in point_json.items():
-      # ts が "20260330001000" のような形式
         if not str(ts).startswith(today):
             continue
-        temp = item.get("temp")
-        if isinstance(temp, list) and len(temp) >= 1 and temp[0] is not None:
+
+        val = item.get(field_name)
+        if isinstance(val, list) and len(val) >= 1 and val[0] is not None:
             try:
-                t = float(temp[0])
                 obs_dt = datetime.strptime(str(ts), "%Y%m%d%H%M%S").replace(tzinfo=JST)
-                out.append((obs_dt, t))
+                out.append((obs_dt, float(val[0])))
             except Exception:
                 pass
+
     out.sort(key=lambda x: x[0])
     return out
 
 
-def fetch_today_temp_extreme(amedas_code: str, latest_dt: datetime, mode: str):
-    # 当日00:00から最新時刻が属する3時間区切りまでの point JSON を取得
-    chunks = []
-    cur = latest_dt.replace(hour=0, minute=0, second=0, microsecond=0)
-    end_chunk_dt = latest_dt.replace(hour=(latest_dt.hour // 3) * 3, minute=0, second=0, microsecond=0)
-
-    while cur <= end_chunk_dt:
-        chunks.append(point_chunk_key(cur))
-        cur += timedelta(hours=3)
-
-    temps = []
+def fetch_today_all_series(amedas_code: str, latest_dt: datetime, field_name: str):
+    all_values = []
     seen = set()
-    for ck in chunks:
+
+    for ck in get_today_chunk_keys(latest_dt):
         try:
-            data = fetch_point_chunk(amedas_code, ck)
-            series = extract_today_temp_series(data, latest_dt)
-            for obs_dt, t in series:
+            point_json = fetch_point_chunk(amedas_code, ck)
+            series = extract_today_series(point_json, latest_dt, field_name)
+            for obs_dt, val in series:
                 key = obs_dt.strftime("%Y%m%d%H%M%S")
                 if key not in seen:
                     seen.add(key)
-                    temps.append((obs_dt, t))
+                    all_values.append((obs_dt, val))
         except Exception:
-            # まだ最新chunk未生成などは握りつぶす
             pass
 
-    if not temps:
+    all_values.sort(key=lambda x: x[0])
+    return all_values
+
+
+def fetch_today_live_extreme(amedas_code: str, latest_dt: datetime, mode: str):
+    if mode == "temp_max_day":
+        series = fetch_today_all_series(amedas_code, latest_dt, "temp")
+        if not series:
+            return None
+        best = max(series, key=lambda x: (x[1], x[0]))
+
+    elif mode == "temp_min_day":
+        series = fetch_today_all_series(amedas_code, latest_dt, "temp")
+        if not series:
+            return None
+        best = min(series, key=lambda x: (x[1], -x[0].timestamp()))
+
+    elif mode == "precip_day_sum":
+        series = fetch_today_all_series(amedas_code, latest_dt, "precipitation10m")
+        if not series:
+            return None
+        total = sum(v for _, v in series)
+        best = (latest_dt, total)
+
+    elif mode == "precip_10m_max":
+        series = fetch_today_all_series(amedas_code, latest_dt, "precipitation10m")
+        if not series:
+            return None
+        best = max(series, key=lambda x: (x[1], x[0]))
+
+    elif mode == "precip_1h_max":
+        series = fetch_today_all_series(amedas_code, latest_dt, "precipitation10m")
+        if not series:
+            return None
+        best_val = None
+        best_dt = None
+        for i in range(len(series)):
+            window = series[max(0, i - 5):i + 1]
+            s = sum(v for _, v in window)
+            dt = series[i][0]
+            if best_val is None or s > best_val or (s == best_val and dt > best_dt):
+                best_val = s
+                best_dt = dt
+        best = (best_dt, best_val)
+
+    else:
         return None
 
-    if mode == "max":
-        best = max(temps, key=lambda x: (x[1], x[0]))
-    else:
-        # 最小値、同値ならより新しい時刻
-        best = min(temps, key=lambda x: (x[1], -x[0].timestamp()))
-
+    raw_date = best[0].strftime("%Y/%m/%d")
     return {
         "value": trim_number(best[1]),
-        "date_raw": best[0].strftime("%Y/%m/%d"),
-        "date_label": to_wareki_ymd(best[0].strftime("%Y/%m/%d")),
+        "date": format_dual_ymd(raw_date),
+        "_date_raw": raw_date,
     }
 
 
@@ -398,27 +439,27 @@ def merge_live(records, live_info, direction, latest_dt: datetime):
     for r in records:
         merged.append({
             "value": float(r["value"]),
-            "date_raw": r["_date_raw"],
-            "date_label": r["date"],
+            "date": r["date"],
+            "_date_raw": r["_date_raw"],
             "isLive": False,
         })
 
     if live_info is not None:
         merged.append({
             "value": float(live_info["value"]),
-            "date_raw": live_info["date_raw"],
-            "date_label": live_info["date_label"],
+            "date": live_info["date"],
+            "_date_raw": live_info["_date_raw"],
             "isLive": True,
         })
 
     if direction == "desc":
         merged.sort(
-            key=lambda x: (float(x["value"]), parse_date_ymd(x["date_raw"])),
+            key=lambda x: (float(x["value"]), parse_date_ymd(x["_date_raw"])),
             reverse=True
         )
     else:
         merged.sort(
-            key=lambda x: (float(x["value"]), -parse_date_ymd(x["date_raw"]).timestamp())
+            key=lambda x: (float(x["value"]), -parse_date_ymd(x["_date_raw"]).timestamp())
         )
 
     merged = merged[:10]
@@ -428,9 +469,9 @@ def merge_live(records, live_info, direction, latest_dt: datetime):
         out.append({
             "rank": i,
             "value": trim_number(r["value"]),
-            "date": r["date_label"],
+            "date": r["date"],
             "highlightLive": bool(r["isLive"]),
-            "highlightWithinYear": within_one_year(r["date_raw"], latest_dt),
+            "highlightWithinYear": within_one_year(r["_date_raw"], latest_dt),
         })
     return out
 
@@ -446,6 +487,9 @@ def main():
             rows = []
 
             for station in STATIONS:
+                if not station.get(element_def["category"], False):
+                    continue
+
                 try:
                     url = build_rank_url(station, month)
                     html = fetch_text(url)
@@ -459,14 +503,11 @@ def main():
                     if not parsed:
                         continue
 
-                    if element_key == "dailyMaxTemp":
-                        live_info = fetch_today_temp_extreme(
-                            station["amedasCode"], latest_dt, "max"
-                        )
-                    else:
-                        live_info = fetch_today_temp_extreme(
-                            station["amedasCode"], latest_dt, "min"
-                        )
+                    live_info = fetch_today_live_extreme(
+                        station["amedasCode"],
+                        latest_dt,
+                        element_def["live_mode"]
+                    )
 
                     ranks = merge_live(
                         parsed["records"],
