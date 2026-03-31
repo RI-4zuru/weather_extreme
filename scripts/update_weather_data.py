@@ -385,6 +385,7 @@ def find_target_row(html, label):
     for row_html in rows:
         cells = get_cells_from_row(row_html)
         if not cells:
+            print(f"row not found: {station['stationName']} / {element_key} / {month}", file=sys.stderr)
             continue
 
         first = re.sub(r"\s+", "", cells[0])
