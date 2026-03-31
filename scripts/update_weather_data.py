@@ -759,6 +759,9 @@ def main():
         pref_name = pref["name"]
         stations = pref["stations"]
 
+        pref_dir = os.path.join("data", pref_key)
+        ensure_dir(pref_dir)
+
         live_summary_items = []
 
         for element_key, element_def in ELEMENTS.items():
@@ -819,22 +822,29 @@ def main():
                     "rows": rows,
                 }
 
-                file_name = f"{pref_key}-{element_key}-{month}.json"
-                write_json(os.path.join("data", file_name), output)
-                print(f"wrote: data/{file_name}")
+                file_name = f"{element_key}-{month}.json"
+                write_json(os.path.join(pref_dir, file_name), output)
+                print(f"wrote: data/{pref_key}/{file_name}")
 
         live_summary_output = {
             "updatedAt": latest_iso,
             "prefecture": pref_name,
             "items": dedupe_live_summary(live_summary_items)
         }
-        write_json(os.path.join("data", f"{pref_key}-live-summary.json"), live_summary_output)
-        print(f"wrote: data/{pref_key}-live-summary.json")
+        write_json(os.path.join(pref_dir, "live-summary.json"), live_summary_output)
+        print(f"wrote: data/{pref_key}/live-summary.json")
 
     manifest = {
         "updatedAt": latest_iso,
-        "files": sorted(os.listdir("data"))
+        "prefectures": {}
     }
+
+    for pref in prefectures:
+        pref_key = pref["key"]
+        pref_dir = os.path.join("data", pref_key)
+        if os.path.isdir(pref_dir):
+            manifest["prefectures"][pref_key] = sorted(os.listdir(pref_dir))
+
     write_json(os.path.join("data", "manifest.json"), manifest)
     print("done")
 
