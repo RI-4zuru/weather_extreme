@@ -28,14 +28,14 @@ function escapeHtml(str) {
     .replaceAll("'", "&#39;");
 }
 
-function renderStartDate(startDate) {
-  if (!startDate) return "-";
-  const parts = String(startDate).split("（");
-  const seireki = parts[0] || "-";
-  const wareki = parts[1] ? "（" + parts[1] : "";
+function renderDualLine(text) {
+  if (!text) return "-";
+  const parts = String(text).split("（");
+  const first = parts[0] || "-";
+  const second = parts[1] ? "（" + parts[1] : "";
   return `
-    <span>${escapeHtml(seireki)}</span>
-    <span class="sub">${escapeHtml(wareki)}</span>
+    <span>${escapeHtml(first)}</span>
+    <span class="sub">${escapeHtml(second)}</span>
   `;
 }
 
@@ -63,7 +63,7 @@ function renderTable(rows) {
     stationTd.className = "station-col";
     stationTd.innerHTML = `
       <div class="station-name">${escapeHtml(row.stationName)}</div>
-      <div class="station-start">${renderStartDate(row.startDate || "-")}</div>
+      <div class="station-start">${renderDualLine(row.startDate || "-")}</div>
     `;
     tr.appendChild(stationTd);
 
@@ -79,7 +79,7 @@ function renderTable(rows) {
 
         td.innerHTML = `
           <div class="value">${escapeHtml(r.value)}</div>
-          <div class="date">${escapeHtml(r.date)}</div>
+          <div class="date">${renderDualLine(r.date)}</div>
         `;
       } else {
         td.className = "rank-cell";
