@@ -380,15 +380,20 @@ def get_cells_from_row(row_html: str):
     return [strip_tags(c) for c in cells]
 
 
-def find_target_row(html: str, label):
+def find_target_row(html, label):
     rows = get_row_blocks(html)
     for row_html in rows:
         cells = get_cells_from_row(row_html)
         if not cells:
             continue
-        first = cells[0]
-        if label == first:
+
+        first = re.sub(r"\s+", "", cells[0])
+
+        target = re.sub(r"\s+", "", label)
+
+        if target in first:
             return cells
+
     return None
 
 
