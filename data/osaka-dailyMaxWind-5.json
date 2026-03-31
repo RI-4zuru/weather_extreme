@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "dailyMaxWind",
+  "month": "5",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年5月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 20.4,
+          "date": "1896年5月20日（明治29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 17.3,
+          "date": "1916年5月7日（大正5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 15.6,
+          "date": "1896年5月21日（明治29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 15.5,
+          "date": "1933年5月3日（昭和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 15.3,
+          "date": "1994年5月4日（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 15.2,
+          "date": "1912年5月4日（明治45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 15,
+          "date": "1997年5月20日（平成9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 14.8,
+          "date": "1913年5月1日（大正2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 14.7,
+          "date": "1974年5月31日（昭和49年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 14.6,
+          "date": "1997年5月8日（平成9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

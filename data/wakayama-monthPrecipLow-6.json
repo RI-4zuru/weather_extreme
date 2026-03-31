@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "monthPrecipLow",
+  "month": "6",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1880年6月（明治13年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 43.5,
+          "date": "1936年6月（昭和11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 44.6,
+          "date": "1967年6月（昭和42年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 46,
+          "date": "1959年6月（昭和34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 54.4,
+          "date": "1944年6月（昭和19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 55.5,
+          "date": "2022年6月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 61,
+          "date": "1973年6月（昭和48年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 64.1,
+          "date": "1903年6月（明治36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 65.7,
+          "date": "1880年6月（明治13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 69,
+          "date": "1931年6月（昭和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 70,
+          "date": "2005年6月（平成17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

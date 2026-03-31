@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "max1hPrecip",
+  "month": "5",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1894年5月（明治27年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 34,
+          "date": "1907年5月6日（明治40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 32.5,
+          "date": "1997年5月8日（平成9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 31,
+          "date": "1972年5月9日（昭和47年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 30.5,
+          "date": "1955年5月24日（昭和30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 28.1,
+          "date": "1938年5月3日（昭和13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 27.5,
+          "date": "2000年5月7日（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 26,
+          "date": "2004年5月4日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 22.8,
+          "date": "1916年5月25日（大正5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 22.2,
+          "date": "1965年5月27日（昭和40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 20.1,
+          "date": "1937年5月20日（昭和12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "dailyMinTempLow",
+  "month": "10",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1881年10月（明治14年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0.2,
+          "date": "1899年10月24日（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 0.6,
+          "date": "1889年10月30日（明治22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 0.7,
+          "date": "1899年10月25日（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 0.8,
+          "date": "1903年10月30日（明治36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 0.9,
+          "date": "1907年10月28日（明治40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1909年10月31日（明治42年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 1,
+          "date": "1893年10月31日（明治26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 1.1,
+          "date": "1884年10月26日（明治17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 1.2,
+          "date": "1888年10月24日（明治21年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 1.3,
+          "date": "1899年10月26日（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

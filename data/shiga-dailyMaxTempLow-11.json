@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailyMaxTempLow",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1893年11月（明治26年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 5.1,
+          "date": "1970年11月30日（昭和45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 5.8,
+          "date": "1947年11月27日（昭和22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 6.3,
+          "date": "1950年11月15日（昭和25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 6.3,
+          "date": "1948年11月29日（昭和23年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 6.4,
+          "date": "1951年11月28日（昭和26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 6.4,
+          "date": "1912年11月29日（大正元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 6.4,
+          "date": "1906年11月27日（明治39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 6.6,
+          "date": "1976年11月29日（昭和51年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 6.6,
+          "date": "1969年11月25日（昭和44年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 6.6,
+          "date": "1953年11月28日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "兵庫県",
+  "element": "monthAvgTempLow",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1897年11月（明治30年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 9.2,
+          "date": "1917年11月（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 10,
+          "date": "1921年11月（大正10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 10.1,
+          "date": "1904年11月（明治37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 10.3,
+          "date": "1924年11月（大正13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 10.4,
+          "date": "1981年11月（昭和56年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 10.4,
+          "date": "1908年11月（明治41年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 10.4,
+          "date": "1899年11月（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 10.6,
+          "date": "1912年11月（大正元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 10.7,
+          "date": "1926年11月（大正15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 10.7,
+          "date": "1906年11月（明治39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

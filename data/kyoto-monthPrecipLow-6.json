@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "monthPrecipLow",
+  "month": "6",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1881年6月（明治14年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 61,
+          "date": "2014年6月（平成26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 71.6,
+          "date": "1929年6月（昭和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 73,
+          "date": "2005年6月（平成17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 78.8,
+          "date": "1944年6月（昭和19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 84.3,
+          "date": "1924年6月（大正13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 86.5,
+          "date": "2002年6月（平成14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 88.1,
+          "date": "1926年6月（大正15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 88.4,
+          "date": "1959年6月（昭和34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 91.5,
+          "date": "1933年6月（昭和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 102.8,
+          "date": "1936年6月（昭和11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

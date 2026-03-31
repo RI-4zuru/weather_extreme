@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthAvgTempHigh",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年4月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 18,
+          "date": "1964年4月（昭和39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 17.8,
+          "date": "2024年4月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 17.7,
+          "date": "1998年4月（平成10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 16.9,
+          "date": "2018年4月（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 16.8,
+          "date": "2022年4月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 16.6,
+          "date": "2016年4月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 16.6,
+          "date": "2002年4月（平成14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 16.5,
+          "date": "1994年4月（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 16.5,
+          "date": "1983年4月（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 16.4,
+          "date": "2004年4月（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

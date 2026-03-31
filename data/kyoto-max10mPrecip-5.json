@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "max10mPrecip",
+  "month": "5",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1937年5月（昭和12年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 17,
+          "date": "1961年5月31日（昭和36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 15,
+          "date": "1990年5月8日（平成2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 14,
+          "date": "2000年5月13日（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 11.5,
+          "date": "1999年5月27日（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 11.5,
+          "date": "1954年5月30日（昭和29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 11.5,
+          "date": "1953年5月8日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 11,
+          "date": "2004年5月13日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 10.6,
+          "date": "1963年5月21日（昭和38年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 10.3,
+          "date": "1937年5月20日（昭和12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 10.2,
+          "date": "1964年5月24日（昭和39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

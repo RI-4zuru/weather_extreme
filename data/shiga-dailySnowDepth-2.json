@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailySnowDepth",
+  "month": "2",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1953年2月（昭和28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 49,
+          "date": "1977年2月3日（昭和52年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 45,
+          "date": "2000年2月16日（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 43,
+          "date": "1984年2月7日（昭和59年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 41,
+          "date": "2012年2月2日（平成24年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 38,
+          "date": "1978年2月3日（昭和53年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 36,
+          "date": "1977年2月18日（昭和52年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 32,
+          "date": "1977年2月17日（昭和52年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 32,
+          "date": "1953年2月1日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 31,
+          "date": "1999年2月3日（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 31,
+          "date": "1953年2月8日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

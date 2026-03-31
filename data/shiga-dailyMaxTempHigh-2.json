@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailyMaxTempHigh",
+  "month": "2",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1894年2月（明治27年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 20.9,
+          "date": "2026年2月22日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
+          "value": 19.9,
+          "date": "1962年2月11日（昭和37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 19.6,
+          "date": "2010年2月25日（平成22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 19.5,
+          "date": "1922年2月24日（大正11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 19.4,
+          "date": "2016年2月14日（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 19.1,
+          "date": "1987年2月11日（昭和62年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 19,
+          "date": "2021年2月14日（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 19,
+          "date": "2010年2月24日（平成22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 19,
+          "date": "1954年2月27日（昭和29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 18.4,
+          "date": "1922年2月25日（大正11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

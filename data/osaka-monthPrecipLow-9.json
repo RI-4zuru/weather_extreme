@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthPrecipLow",
+  "month": "9",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年9月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 29.5,
+          "date": "1969年9月（昭和44年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 31.5,
+          "date": "1995年9月（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 41.3,
+          "date": "1940年9月（昭和15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 44,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 44.1,
+          "date": "1962年9月（昭和37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 45.8,
+          "date": "1922年9月（大正11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 51,
+          "date": "2009年9月（平成21年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 51.3,
+          "date": "1905年9月（明治38年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 54.7,
+          "date": "1913年9月（大正2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 56.5,
+          "date": "1930年9月（昭和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

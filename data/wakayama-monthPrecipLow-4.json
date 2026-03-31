@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "monthPrecipLow",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1880年4月（明治13年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 36,
+          "date": "2007年4月（平成19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 36.5,
+          "date": "2001年4月（平成13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 39.5,
+          "date": "1987年4月（昭和62年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 41.5,
+          "date": "1947年4月（昭和22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 47.4,
+          "date": "1895年4月（明治28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 49.5,
+          "date": "2004年4月（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 56.5,
+          "date": "2025年4月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 58.5,
+          "date": "1994年4月（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 59,
+          "date": "2005年4月（平成17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 59.8,
+          "date": "1917年4月（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

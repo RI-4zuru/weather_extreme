@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailySnowDepth",
+  "month": "8",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1953年8月（昭和28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2025,
+          "date": "2025年8月31日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
+          "value": 2025,
+          "date": "2025年8月30日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 3,
+          "value": 2025,
+          "date": "2025年8月29日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 2025,
+          "date": "2025年8月28日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
+          "value": 2025,
+          "date": "2025年8月27日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 6,
+          "value": 2025,
+          "date": "2025年8月26日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
+          "value": 2025,
+          "date": "2025年8月25日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 2025,
+          "date": "2025年8月24日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
+          "value": 2025,
+          "date": "2025年8月23日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 10,
+          "value": 2025,
+          "date": "2025年8月22日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        }
+      ]
+    }
+  ]
+}

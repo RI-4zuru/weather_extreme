@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthPrecipHigh",
+  "month": "9",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年9月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 485.5,
+          "date": "1989年9月（平成元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 454,
+          "date": "1990年9月（平成2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 436.6,
+          "date": "1897年9月（明治30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 395.3,
+          "date": "1935年9月（昭和10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 372,
+          "date": "2018年9月（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 371.4,
+          "date": "1965年9月（昭和40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 359.6,
+          "date": "1917年9月（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 357.2,
+          "date": "1899年9月（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 325.5,
+          "date": "1983年9月（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 320,
+          "date": "1925年9月（大正14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

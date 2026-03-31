@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "monthSunshineHigh",
+  "month": "8",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1889年8月（明治22年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 323,
+          "date": "2020年8月（令和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 313.2,
+          "date": "1947年8月（昭和22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 312.4,
+          "date": "1995年8月（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 305.2,
+          "date": "1923年8月（大正12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 300.7,
+          "date": "2016年8月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 295.7,
+          "date": "1937年8月（昭和12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 295.4,
+          "date": "1994年8月（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 293.5,
+          "date": "2018年8月（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 289.4,
+          "date": "1965年8月（昭和40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 289.3,
+          "date": "2024年8月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

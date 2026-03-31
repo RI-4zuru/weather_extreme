@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthAvgTempLow",
+  "month": "5",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年5月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 16.3,
+          "date": "1887年5月（明治20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 16.4,
+          "date": "1889年5月（明治22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 16.5,
+          "date": "1945年5月（昭和20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 16.5,
+          "date": "1917年5月（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 16.5,
+          "date": "1883年5月（明治16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 16.6,
+          "date": "1903年5月（明治36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 16.6,
+          "date": "1893年5月（明治26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 16.7,
+          "date": "1913年5月（大正2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 16.7,
+          "date": "1885年5月（明治18年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 16.8,
+          "date": "1884年5月（明治17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

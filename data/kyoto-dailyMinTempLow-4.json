@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "dailyMinTempLow",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1881年4月（明治14年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": -4.4,
+          "date": "1901年4月1日（明治34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": -3.8,
+          "date": "1912年4月2日（明治45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": -3.7,
+          "date": "1909年4月1日（明治42年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": -3.7,
+          "date": "1884年4月3日（明治17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": -3.5,
+          "date": "1905年4月9日（明治38年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": -3.5,
+          "date": "1902年4月11日（明治35年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": -3.3,
+          "date": "1911年4月2日（明治44年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": -3.1,
+          "date": "1893年4月8日（明治26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": -2.8,
+          "date": "1916年4月7日（大正5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": -2.8,
+          "date": "1906年4月5日（明治39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthPrecipLow",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年4月（明治16年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 24.5,
+          "date": "2001年4月（平成13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 28.5,
+          "date": "1996年4月（平成8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 41,
+          "date": "2007年4月（平成19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 43,
+          "date": "1987年4月（昭和62年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 47,
+          "date": "2005年4月（平成17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 48.6,
+          "date": "1906年4月（明治39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 51,
+          "date": "1953年4月（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 55.5,
+          "date": "1999年4月（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 59.3,
+          "date": "1945年4月（昭和20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 60.2,
+          "date": "1927年4月（昭和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

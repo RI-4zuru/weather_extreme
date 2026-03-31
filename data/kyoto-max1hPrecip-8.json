@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "max1hPrecip",
+  "month": "8",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1906年8月（明治39年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 102,
+          "date": "2025年8月25日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
+          "value": 88,
+          "date": "1980年8月26日（昭和55年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 87.5,
+          "date": "2014年8月16日（平成26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 83.4,
+          "date": "1918年8月15日（大正7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 78.5,
+          "date": "1980年8月27日（昭和55年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 76.5,
+          "date": "2010年8月12日（平成22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 64,
+          "date": "1968年8月18日（昭和43年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 61.5,
+          "date": "1939年8月1日（昭和14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 60.4,
+          "date": "1959年8月13日（昭和34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 54,
+          "date": "2024年8月4日（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

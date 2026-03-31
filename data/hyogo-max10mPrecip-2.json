@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "兵庫県",
+  "element": "max10mPrecip",
+  "month": "2",
+  "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1937年2月（昭和12年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 8.5,
+          "date": "1990年2月11日（平成2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 7.5,
+          "date": "2016年2月13日（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 7.5,
+          "date": "1985年2月9日（昭和60年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 6.5,
+          "date": "2006年2月26日（平成18年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 6.5,
+          "date": "1990年2月20日（平成2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 5.5,
+          "date": "1993年2月21日（平成5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 5,
+          "date": "2024年2月15日（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 5,
+          "date": "1979年2月23日（昭和54年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 4.7,
+          "date": "1958年2月2日（昭和33年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 4.5,
+          "date": "2021年2月15日（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailyMaxTempLow",
+  "month": "10",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1893年10月（明治26年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.2,
+          "date": "1942年10月24日（昭和17年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 12.1,
+          "date": "1949年10月31日（昭和24年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 12.1,
+          "date": "1899年10月23日（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 12.4,
+          "date": "1982年10月25日（昭和57年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 12.5,
+          "date": "1997年10月27日（平成9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 12.6,
+          "date": "1921年10月30日（大正10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 12.6,
+          "date": "1918年10月30日（大正7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 12.7,
+          "date": "1988年10月29日（昭和63年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 12.7,
+          "date": "1980年10月31日（昭和55年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 12.8,
+          "date": "1950年10月25日（昭和25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

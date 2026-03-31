@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "monthSunshineLow",
+  "month": "5",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1890年5月（明治23年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 72.1,
+          "date": "1963年5月（昭和38年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 92.7,
+          "date": "1890年5月（明治23年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 133.3,
+          "date": "1893年5月（明治26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 135.6,
+          "date": "1892年5月（明治25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 137.6,
+          "date": "1946年5月（昭和21年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 142.8,
+          "date": "1956年5月（昭和31年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 146.2,
+          "date": "1991年5月（平成3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 146.3,
+          "date": "1938年5月（昭和13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 152.5,
+          "date": "1995年5月（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 153.7,
+          "date": "1897年5月（明治30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

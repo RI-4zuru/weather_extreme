@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "monthSunshineHigh",
+  "month": "9",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1895年9月（明治28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 228.8,
+          "date": "1901年9月（明治34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 213.1,
+          "date": "2013年9月（平成25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 208.5,
+          "date": "1962年9月（昭和37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 206.5,
+          "date": "2024年9月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 205.8,
+          "date": "1940年9月（昭和15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 205.2,
+          "date": "1936年9月（昭和11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 204.9,
+          "date": "2003年9月（平成15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 202.8,
+          "date": "1933年9月（昭和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 202,
+          "date": "1944年9月（昭和19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 201.5,
+          "date": "1992年9月（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

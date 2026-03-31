@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "京都府",
+  "element": "monthPrecipLow",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "京都",
+      "startDate": "1880年11月（明治13年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 4,
+          "date": "1998年11月（平成10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 6.5,
+          "date": "1971年11月（昭和46年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 9.5,
+          "date": "1973年11月（昭和48年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 15,
+          "date": "2010年11月（平成22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 19,
+          "date": "1986年11月（昭和61年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 22.4,
+          "date": "1947年11月（昭和22年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 22.5,
+          "date": "2018年11月（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 23.5,
+          "date": "2007年11月（平成19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 25.5,
+          "date": "2019年11月（令和元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 25.8,
+          "date": "1905年11月（明治38年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

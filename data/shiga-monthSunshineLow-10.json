@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "monthSunshineLow",
+  "month": "10",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1895年10月（明治28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95.6,
+          "date": "1917年10月（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 98,
+          "date": "2017年10月（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 109.6,
+          "date": "1916年10月（大正5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 111.2,
+          "date": "1904年10月（明治37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 111.7,
+          "date": "1991年10月（平成3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 112,
+          "date": "1955年10月（昭和30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 115.1,
+          "date": "1961年10月（昭和36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 118.6,
+          "date": "1970年10月（昭和45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 119.1,
+          "date": "1938年10月（昭和13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 119.3,
+          "date": "1939年10月（昭和14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

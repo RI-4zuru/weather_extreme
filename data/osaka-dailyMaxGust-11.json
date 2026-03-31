@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "dailyMaxGust",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1934年11月（昭和9年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 26.1,
+          "date": "1979年11月6日（昭和54年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 26,
+          "date": "1995年11月8日（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 24.7,
+          "date": "1970年11月29日（昭和45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 24.6,
+          "date": "1953年11月27日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 23.6,
+          "date": "1983年11月18日（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 23.4,
+          "date": "2006年11月7日（平成18年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 23.3,
+          "date": "1973年11月17日（昭和48年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 22.8,
+          "date": "1983年11月17日（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 22.6,
+          "date": "1993年11月13日（平成5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 22.6,
+          "date": "1972年11月21日（昭和47年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

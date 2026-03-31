@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "兵庫県",
+  "element": "monthMax24hPrecip",
+  "month": "10",
+  "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1897年10月（明治30年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 140.5,
+          "date": "2004年10月20日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 106,
+          "date": "1998年10月17日（平成10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 101.5,
+          "date": "1908年10月7日（明治41年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 97.4,
+          "date": "1904年10月2日（明治37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 95.5,
+          "date": "2017年10月22日（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 91.5,
+          "date": "1961年10月27日（昭和36年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 87.7,
+          "date": "1967年10月27日（昭和42年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 87.3,
+          "date": "1917年10月10日（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 83.5,
+          "date": "1979年10月1日（昭和54年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 83.5,
+          "date": "1913年10月16日（大正2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

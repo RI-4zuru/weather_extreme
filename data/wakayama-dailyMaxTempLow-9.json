@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "dailyMaxTempLow",
+  "month": "9",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1879年9月（明治12年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 17,
+          "date": "1902年9月25日（明治35年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 17.4,
+          "date": "1910年9月22日（明治43年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 17.4,
+          "date": "1908年9月25日（明治41年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 17.4,
+          "date": "1882年9月30日（明治15年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 17.5,
+          "date": "1902年9月26日（明治35年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 18,
+          "date": "1954年9月28日（昭和29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 18.1,
+          "date": "1976年9月27日（昭和51年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 18.2,
+          "date": "1899年9月20日（明治32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 18.4,
+          "date": "1957年9月29日（昭和32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 18.5,
+          "date": "1927年9月28日（昭和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

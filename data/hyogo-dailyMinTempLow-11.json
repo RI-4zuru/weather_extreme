@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "兵庫県",
+  "element": "dailyMinTempLow",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1897年11月（明治30年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": -0.2,
+          "date": "1970年11月30日（昭和45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 0.5,
+          "date": "1966年11月22日（昭和41年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 0.5,
+          "date": "1908年11月28日（明治41年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 0.8,
+          "date": "1912年11月30日（大正元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 0.8,
+          "date": "1912年11月29日（大正元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1929年11月24日（昭和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 1,
+          "date": "1904年11月17日（明治37年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 1,
+          "date": "1901年11月28日（明治34年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 1.1,
+          "date": "1921年11月27日（大正10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 1.1,
+          "date": "1917年11月27日（大正6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

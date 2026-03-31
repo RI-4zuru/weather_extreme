@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "大阪府",
+  "element": "max10mPrecip",
+  "month": "12",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1937年12月（昭和12年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 13.5,
+          "date": "2004年12月5日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 10,
+          "date": "2018年12月4日（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 7.5,
+          "date": "1992年12月8日（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 7,
+          "date": "2015年12月11日（平成27年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 6.5,
+          "date": "2016年12月27日（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 5.8,
+          "date": "1953年12月2日（昭和28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 5.5,
+          "date": "2016年12月22日（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 5.3,
+          "date": "1941年12月9日（昭和16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 5,
+          "date": "1996年12月5日（平成8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 5,
+          "date": "1978年12月2日（昭和53年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

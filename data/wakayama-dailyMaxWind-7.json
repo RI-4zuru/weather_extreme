@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "dailyMaxWind",
+  "month": "7",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1879年7月（明治12年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 18.7,
+          "date": "1951年7月2日（昭和26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 18.5,
+          "date": "1951年7月12日（昭和26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 18.4,
+          "date": "2015年7月1日（平成27年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 18,
+          "date": "1957年7月4日（昭和32年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 17.8,
+          "date": "1918年7月12日（大正7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 17.3,
+          "date": "1995年7月3日（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 17.1,
+          "date": "1964年7月19日（昭和39年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 17,
+          "date": "2020年7月8日（令和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 17,
+          "date": "1948年7月1日（昭和23年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 16.8,
+          "date": "2007年7月4日（平成19年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

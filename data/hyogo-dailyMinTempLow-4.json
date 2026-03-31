@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "兵庫県",
+  "element": "dailyMinTempLow",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1897年4月（明治30年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": -0.6,
+          "date": "1902年4月11日（明治35年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": -0.5,
+          "date": "1972年4月2日（昭和47年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": -0.4,
+          "date": "1910年4月1日（明治43年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "1909年4月7日（明治42年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "1907年4月2日（明治40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 0.1,
+          "date": "1925年4月6日（大正14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 0.2,
+          "date": "1987年4月1日（昭和62年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 0.3,
+          "date": "1960年4月2日（昭和35年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 0.3,
+          "date": "1934年4月2日（昭和9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 0.3,
+          "date": "1916年4月6日（大正5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}

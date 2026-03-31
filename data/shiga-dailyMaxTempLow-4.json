@@ -1,0 +1,84 @@
+{
+  "updatedAt": "2026-03-31T21:10:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "dailyMaxTempLow",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1894年4月（明治27年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 4.8,
+          "date": "1972年4月1日（昭和47年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 5.2,
+          "date": "1931年4月8日（昭和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 5.4,
+          "date": "1965年4月2日（昭和40年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 5.9,
+          "date": "1956年4月1日（昭和31年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 6.3,
+          "date": "1937年4月4日（昭和12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 6.4,
+          "date": "1955年4月4日（昭和30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 6.5,
+          "date": "1923年4月13日（大正12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 6.9,
+          "date": "1941年4月7日（昭和16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 6.9,
+          "date": "1914年4月4日（大正3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 6.9,
+          "date": "1914年4月3日（大正3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    }
+  ]
+}
