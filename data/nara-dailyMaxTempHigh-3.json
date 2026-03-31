@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T15:20:00+09:00",
+  "updatedAt": "2026-03-31T15:50:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTempHigh",
   "month": "3",
@@ -32,49 +32,49 @@
         {
           "rank": 4,
           "value": 25,
-          "date": "1998年3月30日（平成10年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
+          "date": "2026年3月31日（令和8年）",
+          "highlightLive": true,
+          "highlightWithinYear": true
         },
         {
           "rank": 5,
-          "value": 24.8,
-          "date": "2023年3月11日（令和5年）",
+          "value": 25,
+          "date": "1998年3月30日（平成10年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 24.8,
-          "date": "1967年3月27日（昭和42年）",
+          "date": "2023年3月11日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 24.8,
-          "date": "1956年3月18日（昭和31年）",
+          "date": "1967年3月27日（昭和42年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
+          "value": 24.8,
+          "date": "1956年3月18日（昭和31年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
           "value": 24.7,
           "date": "1954年3月28日（昭和29年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
-          "value": 24.6,
-          "date": "2015年3月31日（平成27年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
           "rank": 10,
           "value": 24.6,
-          "date": "2009年3月19日（平成21年）",
+          "date": "2015年3月31日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

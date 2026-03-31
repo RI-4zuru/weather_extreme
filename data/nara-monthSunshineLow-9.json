@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T15:20:00+09:00",
+  "updatedAt": "2026-03-31T15:50:00+09:00",
   "prefecture": "奈良県",
   "element": "monthSunshineLow",
   "month": "9",
@@ -75,6 +75,211 @@
           "rank": 10,
           "value": 123.2,
           "date": "1970年9月（昭和45年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "針",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98.9,
+          "date": "2021年9月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 136.3,
+          "date": "2022年9月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 162.4,
+          "date": "2025年9月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 162.7,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 185.2,
+          "date": "2024年9月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "大宇陀",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 99.1,
+          "date": "2021年9月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 139.3,
+          "date": "2022年9月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 159.6,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 159.8,
+          "date": "2025年9月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
+          "value": 203.8,
+          "date": "2024年9月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "五條",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95.6,
+          "date": "2021年9月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 154.4,
+          "date": "2022年9月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 169.1,
+          "date": "2025年9月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 170.8,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 202.3,
+          "date": "2024年9月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "上北山",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 67.3,
+          "date": "2021年9月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 105.3,
+          "date": "2022年9月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 140.3,
+          "date": "2025年9月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 150.4,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 157.2,
+          "date": "2024年9月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "風屋",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 73.2,
+          "date": "2021年9月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 131.6,
+          "date": "2022年9月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 156.4,
+          "date": "2025年9月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 161.5,
+          "date": "2023年9月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 176.3,
+          "date": "2024年9月（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
