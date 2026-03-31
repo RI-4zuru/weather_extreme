@@ -3,6 +3,11 @@ const monthSelect = document.getElementById("monthSelect");
 const statusEl = document.getElementById("status");
 const tableHead = document.getElementById("tableHead");
 const tableBody = document.getElementById("tableBody");
+const autoRefreshToggle = document.getElementById("autoRefreshToggle");
+
+const AUTO_REFRESH_KEY = "weatherExtremeAutoRefresh";
+let refreshTimer = null;
+let autoRefreshEnabled = localStorage.getItem(AUTO_REFRESH_KEY) !== "off";
 
 function getSelectedElement() {
   const checked = document.querySelector('input[name="element"]:checked');
@@ -119,11 +124,46 @@ async function loadTable() {
   }
 }
 
+function startAutoRefresh() {
+  stopAutoRefresh();
+  refreshTimer = setInterval(loadTable, 60 * 1000);
+}
+
+function stopAutoRefresh() {
+  if (refreshTimer) {
+    clearInterval(refreshTimer);
+    refreshTimer = null;
+  }
+}
+
+function updateAutoRefreshUI() {
+  autoRefreshToggle.textContent = autoRefreshEnabled ? "ON" : "OFF";
+  autoRefreshToggle.classList.toggle("is-off", !autoRefreshEnabled);
+  autoRefreshToggle.setAttribute("aria-pressed", String(autoRefreshEnabled));
+}
+
+function applyAutoRefreshState() {
+  updateAutoRefreshUI();
+  if (autoRefreshEnabled) {
+    startAutoRefresh();
+  } else {
+    stopAutoRefresh();
+  }
+}
+
 makeHeader();
+
 prefSelect.addEventListener("change", loadTable);
 monthSelect.addEventListener("change", loadTable);
 document.querySelectorAll('input[name="element"]').forEach(el => {
   el.addEventListener("change", loadTable);
 });
+
+autoRefreshToggle.addEventListener("click", () => {
+  autoRefreshEnabled = !autoRefreshEnabled;
+  localStorage.setItem(AUTO_REFRESH_KEY, autoRefreshEnabled ? "on" : "off");
+  applyAutoRefreshState();
+});
+
 loadTable();
-setInterval(loadTable, 60 * 1000);
+applyAutoRefreshState();
