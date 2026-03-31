@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "dailyMinTempHigh",
   "month": "3",
@@ -10,7 +10,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 14,
+          "value": 13.8,
           "date": "2026年3月31日（令和8年）",
           "highlightLive": true,
           "highlightWithinYear": true

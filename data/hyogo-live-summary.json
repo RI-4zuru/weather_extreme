@@ -1,5 +1,15 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "兵庫県",
-  "items": []
+  "items": [
+    {
+      "stationName": "神戸",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 6,
+      "value": 15.2,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    }
+  ]
 }

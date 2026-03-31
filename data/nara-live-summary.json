@@ -1,5 +1,105 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "奈良県",
-  "items": []
+  "items": [
+    {
+      "stationName": "五條",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 1,
+      "value": 25.9,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "五條",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 2,
+      "value": 13.1,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "大宇陀",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 2,
+      "value": 12.7,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "針",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 2,
+      "value": 11.1,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "大宇陀",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 3,
+      "value": 23.9,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "奈良",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 3,
+      "value": 14.2,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "針",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 3,
+      "value": 23.2,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "上北山",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 4,
+      "value": 11.9,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "奈良",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 4,
+      "value": 25,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "風屋",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 4,
+      "value": 12.2,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "葛川",
+      "elementKey": "dailyPrecip",
+      "elementLabel": "日降水量",
+      "rank": 10,
+      "value": 39,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    }
+  ]
 }

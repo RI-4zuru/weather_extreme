@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthDeepSnowLow",
   "month": "1",
@@ -54,27 +54,6 @@
           "rank": 7,
           "value": 5,
           "date": "1979年1月19日（昭和54年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 8,
-          "value": 1932,
-          "date": "1932年1月（昭和7年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 9,
-          "value": 1972,
-          "date": "1972年1月（昭和47年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 2020,
-          "date": "2020年1月（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

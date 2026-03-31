@@ -1,5 +1,15 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "京都府",
-  "items": []
+  "items": [
+    {
+      "stationName": "京都",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 2,
+      "value": 15.4,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    }
+  ]
 }

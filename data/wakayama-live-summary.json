@@ -1,5 +1,24 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "和歌山県",
-  "items": []
+  "items": [
+    {
+      "stationName": "和歌山",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 1,
+      "value": 24.6,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "和歌山",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 6,
+      "value": 16.1,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    }
+  ]
 }

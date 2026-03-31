@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthPrecipHigh",
   "month": "all",
@@ -11,7 +11,7 @@
         {
           "rank": 1,
           "value": 1018.8,
-          "date": "1018年",
+          "date": "1896年9月（明治29年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },

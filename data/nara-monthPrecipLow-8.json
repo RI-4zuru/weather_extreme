@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "奈良県",
   "element": "monthPrecipLow",
   "month": "8",
@@ -944,7 +944,7 @@
         {
           "rank": 4,
           "value": 1238.5,
-          "date": "1238年",
+          "date": "2023年8月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

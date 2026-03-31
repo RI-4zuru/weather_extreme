@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "dailyMinTempHigh",
   "month": "3",
@@ -45,7 +45,7 @@
         },
         {
           "rank": 6,
-          "value": 16.6,
+          "value": 16.1,
           "date": "2026年3月31日（令和8年）",
           "highlightLive": true,
           "highlightWithinYear": true

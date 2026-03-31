@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "奈良県",
   "element": "monthPrecipHigh",
   "month": "all",
@@ -239,7 +239,7 @@
         {
           "rank": 1,
           "value": 1139,
-          "date": "1139年",
+          "date": "2011年9月（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
@@ -619,7 +619,7 @@
         {
           "rank": 1,
           "value": 1413,
-          "date": "1413年",
+          "date": "2011年9月（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
@@ -695,70 +695,70 @@
         {
           "rank": 1,
           "value": 2421,
-          "date": "2421年",
+          "date": "2011年9月（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 1208,
-          "date": "1208年",
+          "date": "2004年8月（平成16年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 1160,
-          "date": "1160年",
+          "date": "1999年8月（平成11年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 1158,
-          "date": "1158年",
+          "date": "1990年9月（平成2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 1133.5,
-          "date": "1133年",
+          "date": "2023年8月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 1085,
-          "date": "1085年",
+          "date": "1982年8月（昭和57年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 1084,
-          "date": "1084年",
+          "date": "2015年7月（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 1068,
-          "date": "1068年",
+          "date": "1997年7月（平成9年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 1038,
-          "date": "1038年",
+          "date": "1992年8月（平成4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 1036,
-          "date": "1036年",
+          "date": "1989年7月（平成元年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -771,7 +771,7 @@
         {
           "rank": 1,
           "value": 1795,
-          "date": "1795年",
+          "date": "2011年9月（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
@@ -847,7 +847,7 @@
         {
           "rank": 1,
           "value": 1190,
-          "date": "1190年",
+          "date": "2023年8月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
@@ -923,7 +923,7 @@
         {
           "rank": 1,
           "value": 1238.5,
-          "date": "1238年",
+          "date": "2023年8月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },

@@ -1,5 +1,24 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "大阪府",
-  "items": []
+  "items": [
+    {
+      "stationName": "大阪",
+      "elementKey": "dailyMaxTempHigh",
+      "elementLabel": "日最高気温の高い方から",
+      "rank": 3,
+      "value": 24.7,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    },
+    {
+      "stationName": "大阪",
+      "elementKey": "dailyMinTempHigh",
+      "elementLabel": "日最低気温の高い方から",
+      "rank": 8,
+      "value": 14.6,
+      "date": "2026年3月31日（令和8年）",
+      "monthLabel": "3月"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T21:30:00+09:00",
+  "updatedAt": "2026-03-31T21:50:00+09:00",
   "prefecture": "奈良県",
   "element": "monthPrecipHigh",
   "month": "7",
@@ -695,21 +695,21 @@
         {
           "rank": 1,
           "value": 1084,
-          "date": "1084年",
+          "date": "2015年7月（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 1068,
-          "date": "1068年",
+          "date": "1997年7月（平成9年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 1036,
-          "date": "1036年",
+          "date": "1989年7月（平成元年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
