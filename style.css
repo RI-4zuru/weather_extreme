@@ -117,8 +117,11 @@ th {
 }
 
 .station-col {
-  min-width: 170px;
+  width: 1%;
+  min-width: 110px;
+  max-width: 145px;
   text-align: left;
+  white-space: normal;
 }
 
 .station-name {
@@ -130,7 +133,8 @@ th {
   margin-top: 3px;
   font-size: 10px;
   color: #666;
-  line-height: 1.25;
+  line-height: 1.2;
+  word-break: keep-all;
 }
 
 .station-start .sub {
