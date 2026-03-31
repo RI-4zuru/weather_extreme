@@ -730,6 +730,11 @@ def try_fetch_station_rows(station, element_def, month):
             parsed = parse_rank_cells(cells, element_def["direction"])
             if parsed:
                 return parsed
+            else:
+                print(
+                    f"parse failed after row match: {station['stationName']} / {element_def['labels'][0]} / {month} / {url}",
+                    file=sys.stderr
+                )
 
         except Exception as e:
             last_error = e
