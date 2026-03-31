@@ -156,7 +156,9 @@ ELEMENTS = {
             "降雪の深さ日合計",
             "日降雪量",
             "降雪の深さ日合計の大きい方から",
-            "降雪の深さの日合計"
+            "降雪の深さの日合計",
+            "日合計降雪量",
+            "日降雪の深さ"
         ],
         "direction": "desc",
         "category": "snow",
@@ -167,38 +169,60 @@ ELEMENTS = {
             "降雪の深さ月合計",
             "月降雪量",
             "降雪の深さ月合計の大きい方から",
-            "降雪の深さの月合計"
+            "降雪の深さの月合計",
+            "月合計降雪量",
+            "月降雪の深さ"
         ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthMax3hSnow": {
-        "labels": ["月最大3時間降雪量の多い方から"],
+        "labels": [
+            "月最大3時間降雪量の多い方から",
+            "月最大3時間降雪量",
+            "3時間降雪量の多い方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthMax6hSnow": {
-        "labels": ["月最大6時間降雪量の多い方から"],
+        "labels": [
+            "月最大6時間降雪量の多い方から",
+            "月最大6時間降雪量",
+            "6時間降雪量の多い方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthMax12hSnow": {
-        "labels": ["月最大12時間降雪量の多い方から"],
+        "labels": [
+            "月最大12時間降雪量の多い方から",
+            "月最大12時間降雪量",
+            "12時間降雪量の多い方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthMax24hSnow": {
-        "labels": ["月最大24時間降雪量の多い方から"],
+        "labels": [
+            "月最大24時間降雪量の多い方から",
+            "月最大24時間降雪量",
+            "24時間降雪量の多い方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthMax48hSnow": {
-        "labels": ["月最大48時間降雪量の多い方から"],
+        "labels": [
+            "月最大48時間降雪量の多い方から",
+            "月最大48時間降雪量",
+            "48時間降雪量の多い方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
@@ -206,20 +230,29 @@ ELEMENTS = {
     "monthMax72hSnow": {
         "labels": [
             "月最大72時間降雪量の多い方から",
-            "月最大72時間降雪量>の多い方から"
+            "月最大72時間降雪量",
+            "月最大72時間降雪量>の多い方から",
+            "72時間降雪量の多い方から"
         ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthDeepSnowHigh": {
-        "labels": ["月最深積雪の大きい方から", "月最深積雪"],
+        "labels": [
+            "月最深積雪の大きい方から",
+            "月最深積雪",
+            "最深積雪の大きい方から"
+        ],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
     },
     "monthDeepSnowLow": {
-        "labels": ["月最深積雪の小さい方から"],
+        "labels": [
+            "月最深積雪の小さい方から",
+            "最深積雪の小さい方から"
+        ],
         "direction": "asc",
         "category": "snow",
         "live_mode": None,
@@ -391,6 +424,7 @@ def find_target_row(html, labels):
 
 
 def extract_value_and_date(cell: str):
+    cell = html_lib.unescape(cell)
     cell = cell.replace("]", " ").replace(">", " ").strip()
 
     full_date_match = re.search(r"(\d{4}/\d{1,2}/\d{1,2})", cell)
@@ -419,7 +453,12 @@ def extract_value_and_date(cell: str):
     if raw_date is None or date_label is None:
         return None
 
-    value_candidates = re.findall(r"-?\d+(?:\.\d+)?", cell_without_date)
+    cleaned = cell_without_date
+    cleaned = re.sub(r"\b(cm|mm|h)\b", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"[年月日時分]", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+
+    value_candidates = re.findall(r"-?\d+(?:\.\d+)?", cleaned)
     if not value_candidates:
         return None
 
