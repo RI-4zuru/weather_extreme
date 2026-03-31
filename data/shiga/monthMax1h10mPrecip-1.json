@@ -1,9 +1,85 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthMax1h10mPrecip",
   "month": "1",
   "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "2017年1月（平成29年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 13,
+          "date": "2002年1月21日（平成14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 13,
+          "date": "1996年1月15日（平成8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 9,
+          "date": "2024年1月21日（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 8,
+          "date": "2006年1月14日（平成18年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 8,
+          "date": "1996年1月8日（平成8年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 8,
+          "date": "1995年1月14日（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 8,
+          "date": "1995年1月4日（平成7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 8,
+          "date": "1989年1月20日（平成元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 8,
+          "date": "1988年1月21日（昭和63年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 7.5,
+          "date": "2017年1月24日（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
     {
       "stationName": "土山",
       "startDate": "2024年1月（令和6年）",

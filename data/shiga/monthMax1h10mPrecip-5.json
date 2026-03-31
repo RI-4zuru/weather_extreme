@@ -1,9 +1,85 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthMax1h10mPrecip",
   "month": "5",
   "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1980年5月（昭和55年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 26,
+          "date": "2004年5月4日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 22,
+          "date": "2000年5月7日（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 22,
+          "date": "1997年5月8日（平成9年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 20,
+          "date": "2011年5月11日（平成23年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 20,
+          "date": "2004年5月16日（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 18.5,
+          "date": "2008年5月29日（平成20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 18,
+          "date": "2018年5月31日（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 18,
+          "date": "2012年5月29日（平成24年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 17,
+          "date": "1999年5月16日（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 17,
+          "date": "1980年5月15日（昭和55年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
     {
       "stationName": "土山",
       "startDate": "2000年5月（平成12年）",

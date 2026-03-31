@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthMax3hSnow",
   "month": "4",
   "rows": [
     {
       "stationName": "今津",
-      "startDate": "2017年4月（平成29年）",
+      "startDate": "2018年4月（平成30年）",
       "ranks": [
         {
           "rank": 1,
@@ -68,13 +68,6 @@
           "rank": 9,
           "value": 0,
           "date": "2018年4月30日（平成30年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2017年4月30日（平成29年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

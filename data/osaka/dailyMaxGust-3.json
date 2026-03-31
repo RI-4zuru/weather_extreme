@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "大阪府",
   "element": "dailyMaxGust",
   "month": "3",
@@ -377,10 +377,10 @@
         },
         {
           "rank": 10,
-          "value": 20.7,
-          "date": "2015年3月19日（平成27年）",
+          "value": 22,
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         }
       ]
     },
@@ -487,50 +487,50 @@
         },
         {
           "rank": 4,
+          "value": 18.4,
+          "date": "2026年3月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
           "value": 17.1,
           "date": "2024年3月20日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 16.9,
           "date": "2012年3月24日（平成24年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 15.5,
           "date": "2023年3月13日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 15.3,
           "date": "2025年3月18日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 15.3,
           "date": "2015年3月10日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 15.1,
           "date": "2017年3月7日（平成29年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 14.7,
-          "date": "2020年3月5日（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -661,28 +661,28 @@
         {
           "rank": 7,
           "value": 22.6,
+          "date": "2026年3月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 22.6,
           "date": "2023年3月13日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 22.6,
           "date": "2020年3月20日（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
-          "value": 22.1,
-          "date": "2014年3月9日（平成26年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
           "rank": 10,
           "value": 22.1,
-          "date": "2009年3月22日（平成21年）",
+          "date": "2014年3月9日（平成26年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

@@ -1,9 +1,85 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "兵庫県",
   "element": "monthMax1h10mPrecip",
   "month": "4",
   "rows": [
+    {
+      "stationName": "神戸",
+      "startDate": "1980年4月（昭和55年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 21,
+          "date": "1979年4月8日（昭和54年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 16,
+          "date": "1985年4月4日（昭和60年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 15,
+          "date": "1992年4月10日（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 13,
+          "date": "1985年4月20日（昭和60年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 13,
+          "date": "1981年4月19日（昭和56年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 12,
+          "date": "1983年4月15日（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 12,
+          "date": "1977年4月28日（昭和52年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 11,
+          "date": "1990年4月8日（平成2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 11,
+          "date": "1988年4月13日（昭和63年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 11,
+          "date": "1980年4月6日（昭和55年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
     {
       "stationName": "西脇",
       "startDate": "2013年4月（平成25年）",

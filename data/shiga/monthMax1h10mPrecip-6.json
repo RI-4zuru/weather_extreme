@@ -1,9 +1,85 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthMax1h10mPrecip",
   "month": "6",
   "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "2016年6月（平成28年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 45,
+          "date": "1976年6月11日（昭和51年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 38.5,
+          "date": "2017年6月30日（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 35,
+          "date": "1976年6月9日（昭和51年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 33,
+          "date": "2018年6月29日（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 30,
+          "date": "1999年6月24日（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 30,
+          "date": "1984年6月26日（昭和59年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 28.5,
+          "date": "2020年6月13日（令和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 27.5,
+          "date": "2021年6月15日（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 27,
+          "date": "2025年6月26日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 10,
+          "value": 27,
+          "date": "2016年6月25日（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
     {
       "stationName": "土山",
       "startDate": "2023年6月（令和5年）",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "京都府",
   "element": "monthPrecipLow",
   "month": "3",
@@ -273,36 +273,36 @@
         },
         {
           "rank": 6,
+          "value": 89,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
           "value": 90,
           "date": "2017年3月（平成29年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 91,
           "date": "2020年3月（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 94,
           "date": "2007年3月（平成19年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 100,
           "date": "2023年3月（令和5年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 107,
-          "date": "2022年3月（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

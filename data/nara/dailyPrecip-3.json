@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyPrecip",
   "month": "3",
@@ -986,7 +986,7 @@
         {
           "rank": 10,
           "value": 39,
-          "date": "2026年3月25日（令和8年）",
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         }

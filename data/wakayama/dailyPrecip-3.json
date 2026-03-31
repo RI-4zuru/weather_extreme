@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "和歌山県",
   "element": "dailyPrecip",
   "month": "3",
@@ -218,15 +218,15 @@
         },
         {
           "rank": 9,
-          "value": 79.5,
-          "date": "2022年3月26日（令和4年）",
+          "value": 82.5,
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
-          "value": 79,
-          "date": "2018年3月5日（平成30年）",
+          "value": 79.5,
+          "date": "2022年3月26日（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

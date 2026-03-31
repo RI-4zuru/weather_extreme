@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthSunshineHigh",
   "month": "3",
@@ -86,34 +86,41 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 213,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
           "value": 201.3,
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 180.4,
           "date": "2022年3月（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 172,
           "date": "2021年3月（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 171.6,
           "date": "2024年3月（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 144,
           "date": "2025年3月（令和7年）",
           "highlightLive": false,
@@ -127,34 +134,41 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 218.2,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
           "value": 212.4,
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 186.7,
           "date": "2024年3月（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 182.6,
           "date": "2021年3月（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 180.4,
           "date": "2022年3月（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 156.1,
           "date": "2025年3月（令和7年）",
           "highlightLive": false,

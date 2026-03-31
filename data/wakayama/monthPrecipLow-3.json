@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthPrecipLow",
   "month": "3",
@@ -135,22 +135,22 @@
         },
         {
           "rank": 8,
+          "value": 67.5,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
           "value": 71,
           "date": "2025年3月（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 71,
           "date": "2004年3月（平成16年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 73.5,
-          "date": "2022年3月（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -349,36 +349,36 @@
         },
         {
           "rank": 6,
+          "value": 204,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
           "value": 206,
           "date": "2025年3月（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 228.5,
           "date": "2022年3月（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 250,
           "date": "2013年3月（平成25年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 269.5,
           "date": "2015年3月（平成27年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 274,
-          "date": "2020年3月（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

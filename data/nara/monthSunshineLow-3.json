@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "奈良県",
   "element": "monthSunshineLow",
   "month": "3",
@@ -107,6 +107,13 @@
         },
         {
           "rank": 4,
+          "value": 186.2,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
           "value": 207.6,
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
@@ -141,6 +148,13 @@
         },
         {
           "rank": 4,
+          "value": 182,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
           "value": 200.6,
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
@@ -175,6 +189,13 @@
         },
         {
           "rank": 4,
+          "value": 185.5,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 5,
           "value": 208,
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
@@ -213,6 +234,13 @@
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 193.6,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -247,6 +275,13 @@
           "date": "2023年3月（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 194.8,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     }

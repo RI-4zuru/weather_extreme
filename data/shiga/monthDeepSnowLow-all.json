@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthDeepSnowLow",
   "month": "all",
@@ -11,70 +11,70 @@
         {
           "rank": 1,
           "value": 0,
-          "date": "2025年11月30日（令和7年）",
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
-          "date": "2025年10月31日（令和7年）",
+          "date": "2025年11月30日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
-          "date": "2025年9月30日（令和7年）",
+          "date": "2025年10月31日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
-          "date": "2025年8月31日（令和7年）",
+          "date": "2025年9月30日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
-          "date": "2025年7月31日（令和7年）",
+          "date": "2025年8月31日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
-          "date": "2025年6月30日（令和7年）",
+          "date": "2025年7月31日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
-          "date": "2025年5月31日（令和7年）",
+          "date": "2025年6月30日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
-          "date": "2025年4月30日（令和7年）",
+          "date": "2025年5月31日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
-          "date": "2024年12月31日（令和6年）",
+          "date": "2025年4月30日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
           "value": 0,
-          "date": "2024年11月30日（令和6年）",
+          "date": "2024年12月31日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

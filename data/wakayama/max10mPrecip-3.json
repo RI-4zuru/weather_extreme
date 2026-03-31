@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "和歌山県",
   "element": "max10mPrecip",
   "month": "3",
@@ -204,29 +204,29 @@
         },
         {
           "rank": 7,
+          "value": 7,
+          "date": "2026年3月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
           "value": 6.5,
           "date": "2025年3月27日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 6.5,
           "date": "2010年3月4日（平成22年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
-          "value": 6,
-          "date": "2025年3月28日（令和7年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
           "rank": 10,
           "value": 6,
-          "date": "2024年3月26日（令和6年）",
+          "date": "2025年3月28日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -350,35 +350,35 @@
         {
           "rank": 6,
           "value": 7.5,
-          "date": "2018年3月5日（平成30年）",
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
-          "value": 7,
-          "date": "2025年3月28日（令和7年）",
+          "value": 7.5,
+          "date": "2018年3月5日（平成30年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 7,
-          "date": "2024年3月29日（令和6年）",
+          "date": "2025年3月28日（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 7,
-          "date": "2013年3月18日（平成25年）",
+          "date": "2024年3月29日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
-          "value": 6.5,
-          "date": "2021年3月2日（令和3年）",
+          "value": 7,
+          "date": "2013年3月18日（平成25年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

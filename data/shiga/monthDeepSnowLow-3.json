@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthDeepSnowLow",
   "month": "3",
@@ -11,70 +11,70 @@
         {
           "rank": 1,
           "value": 0,
-          "date": "2023年3月31日（令和5年）",
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
-          "date": "2021年3月31日（令和3年）",
+          "date": "2023年3月31日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 0,
-          "date": "2020年3月31日（令和2年）",
+          "date": "2021年3月31日（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 0,
-          "date": "2019年3月31日（平成31年）",
+          "date": "2020年3月31日（令和2年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 0,
-          "date": "2018年3月31日（平成30年）",
+          "date": "2019年3月31日（平成31年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
-          "date": "2017年3月31日（平成29年）",
+          "date": "2018年3月31日（平成30年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
-          "date": "2010年3月31日（平成22年）",
+          "date": "2017年3月31日（平成29年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
-          "date": "2009年3月31日（平成21年）",
+          "date": "2010年3月31日（平成22年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
-          "date": "1999年3月31日（平成11年）",
+          "date": "2009年3月31日（平成21年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
-          "date": "1998年3月31日（平成10年）",
+          "date": "1999年3月31日（平成11年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

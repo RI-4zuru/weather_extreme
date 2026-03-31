@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "奈良県",
   "element": "monthAvgTempHigh",
   "month": "3",
@@ -149,10 +149,10 @@
         },
         {
           "rank": 10,
-          "value": 5.7,
-          "date": "2019年3月（平成31年）",
+          "value": 5.8,
+          "date": "2026年3月（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         }
       ]
     },
@@ -225,10 +225,10 @@
         },
         {
           "rank": 10,
-          "value": 6.7,
-          "date": "1992年3月（平成4年）",
+          "value": 6.8,
+          "date": "2026年3月（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         }
       ]
     },
@@ -287,22 +287,22 @@
         },
         {
           "rank": 8,
+          "value": 8.3,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
           "value": 8.2,
           "date": "2016年3月（平成28年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 8.2,
           "date": "2008年3月（平成20年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 8,
-          "date": "2019年3月（平成31年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -433,28 +433,28 @@
         {
           "rank": 7,
           "value": 8.6,
+          "date": "2026年3月（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 8.6,
           "date": "2002年3月（平成14年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 8.5,
           "date": "2025年3月（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 8.4,
           "date": "1991年3月（平成3年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 10,
-          "value": 8.3,
-          "date": "2008年3月（平成20年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }

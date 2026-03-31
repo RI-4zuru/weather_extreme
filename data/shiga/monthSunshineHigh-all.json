@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-01T01:00:00+09:00",
+  "updatedAt": "2026-04-01T04:00:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthSunshineHigh",
   "month": "all",
@@ -301,10 +301,10 @@
         },
         {
           "rank": 10,
-          "value": 193.7,
-          "date": "2022年5月（令和4年）",
+          "value": 197.2,
+          "date": "2026年3月（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         }
       ]
     },
@@ -446,15 +446,15 @@
         },
         {
           "rank": 9,
-          "value": 216,
-          "date": "2025年4月（令和7年）",
+          "value": 216.7,
+          "date": "2026年3月（令和8年）",
           "highlightLive": false,
-          "highlightWithinYear": false
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
-          "value": 213.4,
-          "date": "2021年4月（令和3年）",
+          "value": 216,
+          "date": "2025年4月（令和7年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
