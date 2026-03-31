@@ -13,9 +13,87 @@
       "sunshine": true,
       "snow": true,
       "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47761", "view": "" },
         { "rank_type": "s", "blockNo": "47761", "view": "a2" },
-        { "rank_type": "s", "blockNo": "47761", "view": "np0" },
-        { "rank_type": "s", "blockNo": "47761", "view": "" }
+        { "rank_type": "s", "blockNo": "47761", "view": "np0" }
+      ]
+    },
+    {
+      "stationName": "大津",
+      "precNo": "60",
+      "amedasCode": "60216",
+      "temp": true,
+      "precip": true,
+      "humidity": false,
+      "wind": true,
+      "sunshine": true,
+      "snow": false,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0586", "view": "" },
+        { "rank_type": "a", "blockNo": "0586", "view": "h0" }
+      ]
+    },
+    {
+      "stationName": "今津",
+      "precNo": "60",
+      "amedasCode": "60051",
+      "temp": true,
+      "precip": true,
+      "humidity": false,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0580", "view": "" },
+        { "rank_type": "a", "blockNo": "0580", "view": "ns0" },
+        { "rank_type": "a", "blockNo": "0580", "view": "h0" }
+      ]
+    },
+    {
+      "stationName": "土山",
+      "precNo": "60",
+      "amedasCode": "60236",
+      "temp": true,
+      "precip": true,
+      "humidity": false,
+      "wind": true,
+      "sunshine": true,
+      "snow": false,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0587", "view": "" },
+        { "rank_type": "a", "blockNo": "0587", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0587", "view": "h0" }
+      ]
+    },
+    {
+      "stationName": "東近江",
+      "precNo": "60",
+      "amedasCode": "60316",
+      "temp": true,
+      "precip": true,
+      "humidity": false,
+      "wind": true,
+      "sunshine": true,
+      "snow": false,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0963", "view": "" },
+        { "rank_type": "a", "blockNo": "0963", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0963", "view": "h0" }
+      ]
+    },
+    {
+      "stationName": "長浜",
+      "precNo": "60",
+      "amedasCode": "60061",
+      "temp": true,
+      "precip": true,
+      "humidity": false,
+      "wind": true,
+      "sunshine": true,
+      "snow": false,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0976", "view": "" },
+        { "rank_type": "a", "blockNo": "0976", "view": "h0" }
       ]
     }
   ]
