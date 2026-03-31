@@ -1,3 +1,4 @@
+const regionSelect = document.getElementById("regionSelect");
 const prefSelect = document.getElementById("prefSelect");
 const monthSelect = document.getElementById("monthSelect");
 const statusEl = document.getElementById("status");
@@ -8,10 +9,40 @@ const autoRefreshToggle = document.getElementById("autoRefreshToggle");
 const AUTO_REFRESH_KEY = "weatherExtremeAutoRefresh";
 let refreshTimer = null;
 let autoRefreshEnabled = localStorage.getItem(AUTO_REFRESH_KEY) !== "off";
+let prefecturesData = [];
+
+const ELEMENT_LABELS = {
+  dailyPrecip: "日降水量",
+  max10mPrecip: "日最大10分間降水量",
+  max1hPrecip: "日最大1時間降水量",
+  monthMax24hPrecip: "月最大24時間降水量",
+  monthPrecipHigh: "月降水量の多い方から",
+  monthPrecipLow: "月降水量の少ない方から",
+  dailyMaxTempHigh: "日最高気温の高い方から",
+  dailyMaxTempLow: "日最高気温の低い方から",
+  dailyMinTempHigh: "日最低気温の高い方から",
+  dailyMinTempLow: "日最低気温の低い方から",
+  monthAvgTempHigh: "月平均気温の高い方から",
+  monthAvgTempLow: "月平均気温の低い方から",
+  dailyMinHumidity: "日最小相対湿度",
+  dailyMaxWind: "日最大風速",
+  dailyMaxGust: "日最大瞬間風速",
+  monthSunshineHigh: "月間日照時間の多い方から",
+  monthSunshineLow: "月間日照時間の少ない方から",
+  dailySnowDepth: "降雪の深さ日合計",
+  monthSnowDepth: "降雪の深さ月合計",
+  monthDeepSnowHigh: "月最深積雪の大きい方から",
+  monthDeepSnowLow: "月最深積雪の小さい方から"
+};
 
 function getSelectedElement() {
   const checked = document.querySelector('input[name="element"]:checked');
   return checked ? checked.value : "dailyPrecip";
+}
+
+function getSelectedElementLabel() {
+  const key = getSelectedElement();
+  return ELEMENT_LABELS[key] || key;
 }
 
 async function initPrefectures() {
@@ -19,11 +50,29 @@ async function initPrefectures() {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
   const data = await res.json();
-  const prefs = data.prefectures || [];
+  prefecturesData = data.prefectures || [];
 
-  prefSelect.innerHTML = prefs
+  const regions = [...new Set(prefecturesData.map(p => p.region))];
+
+  regionSelect.innerHTML = regions
+    .map(region => `<option value="${region}">${region}</option>`)
+    .join("");
+
+  populatePrefectures();
+}
+
+function populatePrefectures() {
+  const region = regionSelect.value;
+  const target = prefecturesData.filter(p => p.region === region);
+
+  prefSelect.innerHTML = target
     .map(pref => `<option value="${pref.key}">${pref.name}</option>`)
     .join("");
+}
+
+function getSelectedPrefMeta() {
+  const key = prefSelect.value;
+  return prefecturesData.find(p => p.key === key) || null;
 }
 
 function makeHeader() {
@@ -114,11 +163,25 @@ function renderTable(rows) {
 }
 
 async function loadTable() {
+  const prefMeta = getSelectedPrefMeta();
   const pref = prefSelect.value;
   const element = getSelectedElement();
   const month = monthSelect.value;
-  const file = `./data/${pref}-${element}-${month}.json?t=${Date.now()}`;
+  const elementLabel = getSelectedElementLabel();
 
+  if (!prefMeta) {
+    statusEl.textContent = "都道府県情報が見つかりません";
+    tableBody.innerHTML = "";
+    return;
+  }
+
+  if (!prefMeta.stationsFile) {
+    statusEl.textContent = `選択中要素: ${elementLabel} / ${prefMeta.name} はまだデータ未対応です`;
+    tableBody.innerHTML = "";
+    return;
+  }
+
+  const file = `./data/${pref}-${element}-${month}.json?t=${Date.now()}`;
   statusEl.textContent = "読み込み中...";
 
   try {
@@ -128,10 +191,10 @@ async function loadTable() {
     const data = await res.json();
     makeHeader();
     renderTable(data.rows || []);
-    statusEl.textContent = `${formatUpdatedAt(data.updatedAt)} / 地点数: ${data.rows?.length ?? 0}`;
+    statusEl.textContent = `${formatUpdatedAt(data.updatedAt)} / 地点数: ${data.rows?.length ?? 0} / 選択中要素: ${elementLabel}`;
   } catch (e) {
     console.error(e);
-    statusEl.textContent = "JSONの読み込みに失敗しました";
+    statusEl.textContent = `選択中要素: ${elementLabel} / JSONの読み込みに失敗しました`;
     tableBody.innerHTML = "";
   }
 }
@@ -166,6 +229,11 @@ function applyAutoRefreshState() {
 async function init() {
   makeHeader();
   await initPrefectures();
+
+  regionSelect.addEventListener("change", async () => {
+    populatePrefectures();
+    await loadTable();
+  });
 
   prefSelect.addEventListener("change", loadTable);
   monthSelect.addEventListener("change", loadTable);
