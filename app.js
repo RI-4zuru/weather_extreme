@@ -33,9 +33,14 @@ const ELEMENT_LABELS = {
   monthDeepSnowLow: "月最深積雪の小さい方から"
 };
 
+const DEFAULT_REGION = "近畿";
+const DEFAULT_PREF = "osaka";
+const DEFAULT_MONTH = "all";
+const DEFAULT_ELEMENT = "dailyPrecip";
+
 function getSelectedElement() {
   const checked = document.querySelector('input[name="element"]:checked');
-  return checked ? checked.value : "dailyPrecip";
+  return checked ? checked.value : DEFAULT_ELEMENT;
 }
 
 function getSelectedElementLabel() {
@@ -51,11 +56,27 @@ async function initPrefectures() {
   prefecturesData = data.prefectures || [];
 
   const regions = [...new Set(prefecturesData.map(p => p.region))];
+
   regionSelect.innerHTML = regions
     .map(region => `<option value="${region}">${region}</option>`)
     .join("");
 
+  if (regions.includes(DEFAULT_REGION)) {
+    regionSelect.value = DEFAULT_REGION;
+  }
+
   populatePrefectures();
+
+  if ([...prefSelect.options].some(opt => opt.value === DEFAULT_PREF)) {
+    prefSelect.value = DEFAULT_PREF;
+  }
+
+  monthSelect.value = DEFAULT_MONTH;
+
+  const defaultRadio = document.querySelector(`input[name="element"][value="${DEFAULT_ELEMENT}"]`);
+  if (defaultRadio) {
+    defaultRadio.checked = true;
+  }
 }
 
 function populatePrefectures() {
