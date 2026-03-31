@@ -307,42 +307,31 @@ def find_target_row(html, labels):
 
 
 def extract_value_and_date(cell: str):
-    full_date_match = re.search(r"(\d{4}/\d{1,2}/\d{1,2})", cell)
-    ym_match = re.search(r"(\d{4}/\d{1,2})(?!/\d)", cell)
-    y_match = re.search(r"(?<!\d)(\d{4})(?!\d)", cell)
+    cell = cell.replace("]", " ").replace(">", " ")
 
-    raw_date = None
-    date_label = None
-    cell_without_date = cell
-
-    if full_date_match:
-        raw_date = normalize_ymd(full_date_match.group(1))
-        date_label = format_dual_ymd(raw_date)
-        cell_without_date = cell.replace(full_date_match.group(1), " ")
-    elif ym_match:
-        y, m = ym_match.group(1).split("/")
-        raw_date = f"{int(y):04d}/{int(m):02d}/01"
-        date_label = format_dual_ym(f"{int(y):04d}/{int(m):02d}")
-        cell_without_date = cell.replace(ym_match.group(1), " ")
-    elif y_match:
-        y = y_match.group(1)
-        raw_date = f"{y}/01/01"
-        date_label = f"{y}年"
-        cell_without_date = re.sub(rf"(?<!\d){re.escape(y)}(?!\d)", " ", cell, count=1)
-
-    value_candidates = re.findall(r"-?\d+(?:\.\d+)?", cell_without_date)
-    if not value_candidates:
+    # 日付抽出
+    date_match = re.search(r"\d{4}/\d{1,2}/\d{1,2}", cell)
+    if not date_match:
         return None
 
-    value = trim_number(value_candidates[-1])
+    raw_date = normalize_ymd(date_match.group(0))
+    date_label = format_dual_ymd(raw_date)
 
-    if raw_date is None or date_label is None:
+    # 日付削除
+    text = cell.replace(date_match.group(0), " ")
+
+    # 数値抽出
+    nums = re.findall(r"-?\d+(?:\.\d+)?", text)
+
+    if not nums:
         return None
+
+    value = trim_number(nums[-1])  # ← 最後の数値だけ採用
 
     return {
         "value": value,
         "date": date_label,
-        "_date_raw": raw_date,
+        "_date_raw": raw_date
     }
 
 
