@@ -306,6 +306,46 @@ def find_target_row(html, labels):
     return None
 
 
+def extract_value_and_date(cell: str):
+    full_date_match = re.search(r"(\d{4}/\d{1,2}/\d{1,2})", cell)
+    ym_match = re.search(r"(\d{4}/\d{1,2})(?!/\d)", cell)
+    y_match = re.search(r"(?<!\d)(\d{4})(?!\d)", cell)
+
+    raw_date = None
+    date_label = None
+    cell_without_date = cell
+
+    if full_date_match:
+        raw_date = normalize_ymd(full_date_match.group(1))
+        date_label = format_dual_ymd(raw_date)
+        cell_without_date = cell.replace(full_date_match.group(1), " ")
+    elif ym_match:
+        y, m = ym_match.group(1).split("/")
+        raw_date = f"{int(y):04d}/{int(m):02d}/01"
+        date_label = format_dual_ym(f"{int(y):04d}/{int(m):02d}")
+        cell_without_date = cell.replace(ym_match.group(1), " ")
+    elif y_match:
+        y = y_match.group(1)
+        raw_date = f"{y}/01/01"
+        date_label = f"{y}年"
+        cell_without_date = re.sub(rf"(?<!\d){re.escape(y)}(?!\d)", " ", cell, count=1)
+
+    value_candidates = re.findall(r"-?\d+(?:\.\d+)?", cell_without_date)
+    if not value_candidates:
+        return None
+
+    value = trim_number(value_candidates[-1])
+
+    if raw_date is None or date_label is None:
+        return None
+
+    return {
+        "value": value,
+        "date": date_label,
+        "_date_raw": raw_date,
+    }
+
+
 def parse_rank_cells(cells, direction: str):
     if len(cells) < 3:
         return None
@@ -321,31 +361,15 @@ def parse_rank_cells(cells, direction: str):
 
     records = []
     for idx, cell in enumerate(rank_cells, start=1):
-        date_match = re.search(r"(\d{4}/\d{1,2}/\d{1,2}|\d{4}/\d{1,2}|\d{4})", cell)
-        value_match = re.search(r"(-?\d+(?:\.\d+)?)", cell)
-        if not date_match or not value_match:
+        extracted = extract_value_and_date(cell)
+        if not extracted:
             continue
-
-        raw_date = date_match.group(1)
-
-        if re.fullmatch(r"\d{4}", raw_date):
-            raw_date_sort = f"{raw_date}/01/01"
-            date_label = f"{raw_date}年"
-        elif re.fullmatch(r"\d{4}/\d{1,2}", raw_date):
-            y, m = raw_date.split("/")
-            raw_date_sort = f"{int(y):04d}/{int(m):02d}/01"
-            date_label = format_dual_ym(f"{int(y):04d}/{int(m):02d}")
-        else:
-            raw_date_sort = normalize_ymd(raw_date)
-            date_label = format_dual_ymd(raw_date_sort)
-
-        value = trim_number(value_match.group(1))
 
         records.append({
             "rank": idx,
-            "value": value,
-            "date": date_label,
-            "_date_raw": raw_date_sort,
+            "value": extracted["value"],
+            "date": extracted["date"],
+            "_date_raw": extracted["_date_raw"],
         })
 
     if not records:
@@ -497,7 +521,6 @@ def fetch_today_live_extreme(amedas_code: str, latest_dt: datetime, mode: str, m
         "value": trim_number(best[1]),
         "date": format_dual_ymd(raw_date),
         "_date_raw": raw_date,
-        "raw_value": float(best[1]),
     }
 
 
@@ -598,18 +621,52 @@ def load_prefecture_configs():
     loaded = []
 
     for pref in prefectures:
-      stations_file = pref.get("stationsFile")
-      if not stations_file:
-          continue
+        stations_file = pref.get("stationsFile")
+        if not stations_file:
+            continue
 
-      station_data = read_json_file(stations_file)
-      loaded.append({
-          "key": pref["key"],
-          "name": pref["name"],
-          "stations": station_data.get("stations", [])
-      })
+        station_data = read_json_file(stations_file)
+        loaded.append({
+            "key": pref["key"],
+            "name": pref["name"],
+            "stations": station_data.get("stations", [])
+        })
 
     return loaded
+
+
+def dedupe_live_summary(items):
+    best = {}
+
+    for item in items:
+        key = (item["stationName"], item["elementKey"])
+        old = best.get(key)
+
+        if old is None:
+            best[key] = item
+            continue
+
+        if item["rank"] < old["rank"]:
+            best[key] = item
+        elif item["rank"] == old["rank"]:
+            if item["monthSort"] < old["monthSort"]:
+                best[key] = item
+
+    result = list(best.values())
+    result.sort(key=lambda x: (x["rank"], x["stationName"], x["elementLabel"], x["monthSort"]))
+
+    for item in result:
+        item.pop("monthSort", None)
+
+    return result
+
+
+def month_label(month: str) -> str:
+    return "通年" if month == "all" else f"{month}月"
+
+
+def month_sort_key(month: str) -> int:
+    return 0 if month == "all" else int(month)
 
 
 def main():
@@ -662,14 +719,16 @@ def main():
                             "ranks": ranks,
                         })
 
-                        if month == "all" and live_summary_item:
+                        if live_summary_item:
                             live_summary_items.append({
                                 "stationName": station["stationName"],
                                 "elementKey": element_key,
                                 "elementLabel": element_def["labels"][0],
                                 "rank": live_summary_item["rank"],
                                 "value": live_summary_item["value"],
-                                "date": live_summary_item["date"]
+                                "date": live_summary_item["date"],
+                                "monthLabel": month_label(month),
+                                "monthSort": month_sort_key(month)
                             })
 
                     except Exception as e:
@@ -687,12 +746,10 @@ def main():
                 write_json(os.path.join("data", file_name), output)
                 print(f"wrote: data/{file_name}")
 
-        live_summary_items.sort(key=lambda x: (x["rank"], x["stationName"], x["elementLabel"]))
-
         live_summary_output = {
             "updatedAt": latest_iso,
             "prefecture": pref_name,
-            "items": live_summary_items
+            "items": dedupe_live_summary(live_summary_items)
         }
         write_json(os.path.join("data", f"{pref_key}-live-summary.json"), live_summary_output)
         print(f"wrote: data/{pref_key}-live-summary.json")
