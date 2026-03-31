@@ -1,1 +1,22 @@
-
+{
+  "prefKey": "hyogo",
+  "prefName": "兵庫県",
+  "stations": [
+    {
+      "stationName": "神戸",
+      "precNo": "63",
+      "amedasCode": "63518",
+      "temp": true,
+      "precip": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": false,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47770", "view": "p1" },
+        { "rank_type": "s", "blockNo": "47770", "view": "np1" },
+        { "rank_type": "s", "blockNo": "47770", "view": "" }
+      ]
+    }
+  ]
+}
