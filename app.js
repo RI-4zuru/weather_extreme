@@ -174,22 +174,83 @@ function renderLiveSummary(items) {
     return;
   }
 
+  const order = [
+    "dailyPrecip",
+    "max10mPrecip",
+    "max1hPrecip",
+    "monthMax1h10mPrecip",
+    "monthMax3hPrecip",
+    "monthMax6hPrecip",
+    "monthMax12hPrecip",
+    "monthMax24hPrecip",
+    "monthMax48hPrecip",
+    "monthMax72hPrecip",
+    "monthPrecipHigh",
+    "monthPrecipLow",
+    "dailyMaxTempHigh",
+    "dailyMaxTempLow",
+    "dailyMinTempHigh",
+    "dailyMinTempLow",
+    "monthAvgTempHigh",
+    "monthAvgTempLow",
+    "dailyMinHumidity",
+    "dailyMaxWind",
+    "dailyMaxGust",
+    "monthSunshineHigh",
+    "monthSunshineLow",
+    "dailySnowDepth",
+    "monthSnowDepth",
+    "monthMax3hSnow",
+    "monthMax6hSnow",
+    "monthMax12hSnow",
+    "monthMax24hSnow",
+    "monthMax48hSnow",
+    "monthMax72hSnow",
+    "monthDeepSnowHigh",
+    "monthDeepSnowLow"
+  ];
+
+  const sorted = [...items].sort((a, b) => {
+    const oa = order.indexOf(a.elementKey);
+    const ob = order.indexOf(b.elementKey);
+    if (oa !== ob) return oa - ob;
+    if (a.rank !== b.rank) return a.rank - b.rank;
+    return a.stationName.localeCompare(b.stationName, "ja");
+  });
+
+  const overall = sorted.filter(item => item.monthLabel === "通年");
+  const monthly = sorted.filter(item => item.monthLabel !== "通年");
+
+  const renderColumn = (title, data) => `
+    <div class="live-summary-column">
+      <div class="live-summary-column-title">${escapeHtml(title)}</div>
+      <div class="live-summary-scroll">
+        ${
+          data.length === 0
+            ? `<div class="live-summary-empty">該当なし</div>`
+            : data.map(item => `
+              <div class="live-summary-item ${item.rank === 1 ? "live-summary-item-top1" : "live-summary-item-rankin"}">
+                <div class="live-summary-main">
+                  <span class="live-summary-rank">${escapeHtml(String(item.rank))}位</span>
+                  <span>${escapeHtml(item.stationName)}</span>
+                  <span>${escapeHtml(item.elementLabel)}</span>
+                </div>
+                <div class="live-summary-sub">
+                  <span>${escapeHtml(String(item.value))}</span>
+                  <span>${escapeHtml(item.date)}</span>
+                  ${item.monthLabel ? `<span>${escapeHtml(item.monthLabel)}</span>` : ""}
+                </div>
+              </div>
+            `).join("")
+        }
+      </div>
+    </div>
+  `;
+
   liveSummaryEl.innerHTML = `
-    <div class="live-summary-list">
-      ${items.map(item => `
-        <div class="live-summary-item">
-          <span class="live-summary-rank">${escapeHtml(item.rank)}位</span>
-          /
-          <span>${escapeHtml(item.stationName)}</span>
-          /
-          <span>${escapeHtml(item.elementLabel)}</span>
-          /
-          <span>${escapeHtml(String(item.value))}</span>
-          /
-          <span>${escapeHtml(item.date)}</span>
-          ${item.monthLabel ? `/ <span>${escapeHtml(item.monthLabel)}</span>` : ""}
-        </div>
-      `).join("")}
+    <div class="live-summary-grid">
+      ${renderColumn("通年", overall)}
+      ${renderColumn("当月", monthly)}
     </div>
   `;
 }
