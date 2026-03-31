@@ -46,6 +46,36 @@ ELEMENTS = {
         "category": "precip",
         "live_mode": None,
     },
+    "monthMax3hPrecip": {
+        "labels": ["月最大3時間降水量"],
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": None
+    },
+    "monthMax6hPrecip": {
+        "labels": ["月最大6時間降水量"],
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": None
+    },
+    "monthMax12hPrecip": {
+        "labels": ["月最大12時間降水量"],
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": None
+    },
+    "monthMax48hPrecip": {
+        "labels": ["月最大48時間降水量"],
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": None
+    },
+    "monthMax72hPrecip": {
+        "labels": ["月最大72時間降水量"],
+        "direction": "desc",
+        "category": "precip",
+        "live_mode": None
+    },
     "dailyMaxTempHigh": {
         "labels": ["日最高気温の高い方から"],
         "direction": "desc",
@@ -149,6 +179,42 @@ ELEMENTS = {
         "category": "snow",
         "live_mode": None,
     },
+    "monthMax3hSnow": {
+        "labels": ["月最大3時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    },
+    "monthMax6hSnow": {
+        "labels": ["月最大6時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    },
+    "monthMax12hSnow": {
+        "labels": ["月最大12時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    },
+    "monthMax24hSnow": {
+        "labels": ["月最大24時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    },
+    "monthMax48hSnow": {
+        "labels": ["月最大48時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    },
+    "monthMax72hSnow": {
+        "labels": ["月最大72時間降雪量"],
+        "direction": "desc",
+        "category": "snow",
+        "live_mode": None
+    }
 }
 
 MONTHS = ["all"] + [str(i) for i in range(1, 13)]
