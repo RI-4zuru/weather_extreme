@@ -4,11 +4,9 @@ const monthSelect = document.getElementById("monthSelect");
 const statusEl = document.getElementById("status");
 const tableHead = document.getElementById("tableHead");
 const tableBody = document.getElementById("tableBody");
-const autoRefreshToggle = document.getElementById("autoRefreshToggle");
+const liveSummaryEl = document.getElementById("liveSummary");
 
-const AUTO_REFRESH_KEY = "weatherExtremeAutoRefresh";
 let refreshTimer = null;
-let autoRefreshEnabled = localStorage.getItem(AUTO_REFRESH_KEY) !== "off";
 let prefecturesData = [];
 
 const ELEMENT_LABELS = {
@@ -162,6 +160,45 @@ function renderTable(rows) {
   }
 }
 
+function renderLiveSummary(items) {
+  if (!items || items.length === 0) {
+    liveSummaryEl.innerHTML = `<div class="live-summary-empty">現在、実況で10位以内に入っている項目はありません。</div>`;
+    return;
+  }
+
+  liveSummaryEl.innerHTML = `
+    <div class="live-summary-list">
+      ${items.map(item => `
+        <div class="live-summary-item">
+          <span class="live-summary-rank">${escapeHtml(item.rank)}位</span>
+          /
+          <span>${escapeHtml(item.stationName)}</span>
+          /
+          <span>${escapeHtml(item.elementLabel)}</span>
+          /
+          <span>${escapeHtml(String(item.value))}</span>
+          /
+          <span>${escapeHtml(item.date)}</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+async function loadLiveSummary(prefKey) {
+  const file = `./data/${prefKey}-live-summary.json?t=${Date.now()}`;
+
+  try {
+    const res = await fetch(file, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderLiveSummary(data.items || []);
+  } catch (e) {
+    console.error(e);
+    liveSummaryEl.innerHTML = `<div class="live-summary-empty">実況一覧の読み込みに失敗しました。</div>`;
+  }
+}
+
 async function loadTable() {
   const prefMeta = getSelectedPrefMeta();
   const pref = prefSelect.value;
@@ -172,8 +209,11 @@ async function loadTable() {
   if (!prefMeta) {
     statusEl.textContent = "都道府県情報が見つかりません";
     tableBody.innerHTML = "";
+    liveSummaryEl.innerHTML = `<div class="live-summary-empty">実況一覧を表示できません。</div>`;
     return;
   }
+
+  await loadLiveSummary(pref);
 
   if (!prefMeta.stationsFile) {
     statusEl.textContent = `選択中要素: ${elementLabel} / ${prefMeta.name} はまだデータ未対応です`;
@@ -201,28 +241,13 @@ async function loadTable() {
 
 function startAutoRefresh() {
   stopAutoRefresh();
-  refreshTimer = setInterval(loadTable, 60 * 1000);
+  refreshTimer = setInterval(loadTable, 10 * 60 * 1000);
 }
 
 function stopAutoRefresh() {
   if (refreshTimer) {
     clearInterval(refreshTimer);
     refreshTimer = null;
-  }
-}
-
-function updateAutoRefreshUI() {
-  autoRefreshToggle.textContent = autoRefreshEnabled ? "ON" : "OFF";
-  autoRefreshToggle.classList.toggle("is-off", !autoRefreshEnabled);
-  autoRefreshToggle.setAttribute("aria-pressed", String(autoRefreshEnabled));
-}
-
-function applyAutoRefreshState() {
-  updateAutoRefreshUI();
-  if (autoRefreshEnabled) {
-    startAutoRefresh();
-  } else {
-    stopAutoRefresh();
   }
 }
 
@@ -241,14 +266,8 @@ async function init() {
     el.addEventListener("change", loadTable);
   });
 
-  autoRefreshToggle.addEventListener("click", () => {
-    autoRefreshEnabled = !autoRefreshEnabled;
-    localStorage.setItem(AUTO_REFRESH_KEY, autoRefreshEnabled ? "on" : "off");
-    applyAutoRefreshState();
-  });
-
   await loadTable();
-  applyAutoRefreshState();
+  startAutoRefresh();
 }
 
 init().catch(err => {
