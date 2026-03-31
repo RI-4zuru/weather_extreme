@@ -39,6 +39,20 @@ function renderStartDate(startDate) {
   `;
 }
 
+function formatUpdatedAt(isoText) {
+  if (!isoText) return "-";
+  const d = new Date(isoText);
+  if (Number.isNaN(d.getTime())) return isoText;
+
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+
+  return `${y}年${m}月${day}日 ${hh}:${mm} 更新`;
+}
+
 function renderTable(rows) {
   tableBody.innerHTML = "";
 
@@ -97,7 +111,7 @@ async function loadTable() {
     const data = await res.json();
     makeHeader();
     renderTable(data.rows || []);
-    statusEl.textContent = `更新: ${data.updatedAt || "-"} / 地点数: ${data.rows?.length ?? 0}`;
+    statusEl.textContent = `${formatUpdatedAt(data.updatedAt)} / 地点数: ${data.rows?.length ?? 0}`;
   } catch (e) {
     console.error(e);
     statusEl.textContent = "JSONの読み込みに失敗しました";
