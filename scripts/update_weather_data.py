@@ -573,7 +573,10 @@ def load_prefecture_configs():
     loaded = []
 
     for pref in prefectures:
-        stations_file = pref["stationsFile"]
+        stations_file = pref.get("stationsFile")
+        if not stations_file:
+            continue
+
         station_data = read_json_file(stations_file)
         loaded.append({
             "key": pref["key"],
