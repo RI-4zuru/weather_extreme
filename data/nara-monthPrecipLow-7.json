@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-31T15:50:00+09:00",
+  "updatedAt": "2026-03-31T17:20:00+09:00",
   "prefecture": "奈良県",
   "element": "monthPrecipLow",
   "month": "7",
@@ -151,6 +151,158 @@
           "rank": 10,
           "value": 114,
           "date": "1984年7月（昭和59年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "曽爾",
+      "startDate": "1976年7月（昭和51年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 53,
+          "date": "1977年7月（昭和52年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 55,
+          "date": "2013年7月（平成25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 59,
+          "date": "1978年7月（昭和53年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 82,
+          "date": "2000年7月（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 82,
+          "date": "1983年7月（昭和58年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 83,
+          "date": "1992年7月（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 91,
+          "date": "2008年7月（平成20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 96.5,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
+          "value": 100,
+          "date": "1994年7月（平成6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 105,
+          "date": "2023年7月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "葛城",
+      "startDate": "1982年7月（昭和57年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 40,
+          "date": "2013年7月（平成25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 52,
+          "date": "2004年7月（平成16年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 54,
+          "date": "2000年7月（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 73.5,
+          "date": "2023年7月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 76,
+          "date": "2008年7月（平成20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 81,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
+          "value": 91,
+          "date": "1992年7月（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 99,
+          "date": "2016年7月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 99,
+          "date": "2002年7月（平成14年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 100,
+          "date": "1999年7月（平成11年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
@@ -309,6 +461,158 @@
       ]
     },
     {
+      "stationName": "吉野",
+      "startDate": "1991年7月（平成3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 47,
+          "date": "2013年7月（平成25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 56,
+          "date": "1999年7月（平成11年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 67,
+          "date": "2001年7月（平成13年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 75,
+          "date": "2000年7月（平成12年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 76,
+          "date": "2008年7月（平成20年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 81,
+          "date": "1992年7月（平成4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 7,
+          "value": 91,
+          "date": "2016年7月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 101,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
+          "value": 132,
+          "date": "2017年7月（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 134.5,
+          "date": "2014年7月（平成26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "天川",
+      "startDate": "2010年7月（平成22年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 92,
+          "date": "2013年7月（平成25年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 105.5,
+          "date": "2016年7月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 135,
+          "date": "2023年7月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 177,
+          "date": "2017年7月（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 209,
+          "date": "2022年7月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 220.5,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
+          "value": 224.5,
+          "date": "2024年7月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 226.5,
+          "date": "2014年7月（平成26年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 248.5,
+          "date": "2012年7月（平成24年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 289.5,
+          "date": "2021年7月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
       "stationName": "上北山",
       "startDate": "1976年7月（昭和51年）",
       "ranks": [
@@ -455,6 +759,123 @@
           "rank": 10,
           "value": 195,
           "date": "1998年7月（平成10年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "下北山",
+      "startDate": "2014年7月（平成26年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 128.5,
+          "date": "2024年7月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 156,
+          "date": "2017年7月（平成29年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 161.5,
+          "date": "2023年7月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 4,
+          "value": 167,
+          "date": "2016年7月（平成28年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 335,
+          "date": "2022年7月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 6,
+          "value": 369,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
+          "value": 422,
+          "date": "2021年7月（令和3年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 8,
+          "value": 478,
+          "date": "2018年7月（平成30年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 9,
+          "value": 522.5,
+          "date": "2019年7月（令和元年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 818.5,
+          "date": "2020年7月（令和2年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        }
+      ]
+    },
+    {
+      "stationName": "葛川",
+      "startDate": "2021年7月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 183,
+          "date": "2024年7月（令和6年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 2,
+          "value": 235,
+          "date": "2023年7月（令和5年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 3,
+          "value": 378,
+          "date": "2025年7月（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 4,
+          "value": 390,
+          "date": "2022年7月（令和4年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
+        },
+        {
+          "rank": 5,
+          "value": 465,
+          "date": "2021年7月（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         }
