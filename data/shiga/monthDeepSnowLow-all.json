@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-04-01T23:40:00+09:00",
+  "updatedAt": "2026-04-02T02:30:00+09:00",
   "prefecture": "滋賀県",
   "element": "monthDeepSnowLow",
   "month": "all",
   "rows": [
     {
       "stationName": "彦根",
-      "startDate": "2026年3月（令和8年）",
+      "startDate": "2026年4月（令和8年）",
       "ranks": [
         {
           "rank": 1,
