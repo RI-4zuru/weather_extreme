@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-02T02:30:00+09:00",
+  "updatedAt": "2026-04-02T04:50:00+09:00",
   "prefecture": "大阪府",
   "element": "dailyMaxTempLow",
   "month": "4",
@@ -667,7 +667,7 @@
         },
         {
           "rank": 8,
-          "value": 11.2,
+          "value": 11.3,
           "date": "2026年4月2日（令和8年）",
           "highlightLive": true,
           "highlightWithinYear": true
