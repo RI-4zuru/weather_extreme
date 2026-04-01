@@ -802,8 +802,16 @@ def merge_live(records, live_info, direction, latest_dt: datetime):
 
 def try_fetch_station_rows(station, element_def, month):
     last_error = None
+    candidates = list(station["rank_candidates"])
 
-    for candidate in station["rank_candidates"]:
+    if element_def["category"] == "precip":
+        order = {"np0": 0, "": 1, "h0": 2, "a2": 3, "ns0": 4}
+        candidates.sort(key=lambda c: order.get(c.get("view", ""), 9))
+    elif element_def["category"] == "snow":
+        order = {"ns0": 0, "a2": 1, "np0": 2, "h0": 3, "": 4}
+        candidates.sort(key=lambda c: order.get(c.get("view", ""), 9))
+
+    for candidate in candidates:
         try:
             url = build_rank_url(
                 station["precNo"],
@@ -820,7 +828,6 @@ def try_fetch_station_rows(station, element_def, month):
                 if parsed:
                     return parsed
 
-            # 雪要素だけはテキスト復元のフォールバックをかける
             if element_def["category"] == "snow":
                 parsed_fallback = parse_snow_records_from_html_text(
                     html,
