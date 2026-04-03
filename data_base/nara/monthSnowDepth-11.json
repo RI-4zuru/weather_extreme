@@ -1,0 +1,44 @@
+{
+  "updatedAt": "2026-04-03T13:50:00+09:00",
+  "prefecture": "奈良県",
+  "element": "monthSnowDepth",
+  "month": "11",
+  "rows": [
+    {
+      "stationName": "奈良",
+      "startDate": "1953年11月（昭和28年）",
+      "records": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "1988年11月（昭和63年）",
+          "_date_raw": "1988/11/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "1983年11月（昭和58年）",
+          "_date_raw": "1983/11/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "1976年11月（昭和51年）",
+          "_date_raw": "1976/11/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "1970年11月（昭和45年）",
+          "_date_raw": "1970/11/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "1961年11月（昭和36年）",
+          "_date_raw": "1961/11/01"
+        }
+      ]
+    }
+  ]
+}

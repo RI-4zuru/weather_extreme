@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-04-03T13:50:00+09:00",
+  "prefecture": "和歌山県",
+  "element": "monthDeepSnowHigh",
+  "month": "4",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "2026年4月（令和8年）",
+      "records": [
+        {
+          "value": 1916,
+          "date": "2016年4月（平成28年）",
+          "_date_raw": "2016/04/01",
+          "rank": 1
+        },
+        {
+          "value": 1880,
+          "date": "2016年4月（平成28年）",
+          "_date_raw": "2016/04/01",
+          "rank": 2
+        }
+      ]
+    }
+  ]
+}
