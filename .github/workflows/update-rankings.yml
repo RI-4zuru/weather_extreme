@@ -45,5 +45,8 @@ jobs:
       
           git commit -m "Update rankings"
       
-          git pull --rebase origin main
-          git push origin main
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Retry $i failed, retrying..."
+            sleep 5
+          done
