@@ -4,10 +4,21 @@ import re
 import sys
 import time
 import html as html_lib
-import urllib.request
 from datetime import datetime, timedelta, timezone
 
+import requests
+
 JST = timezone(timedelta(hours=9))
+
+DEBUG_SUCCESS_LOG = False
+
+SESSION = requests.Session()
+SESSION.headers.update({
+    "User-Agent": "Mozilla/5.0",
+    "Accept-Language": "ja,en;q=0.8",
+})
+
+FETCH_CACHE = {}
 
 ELEMENTS = {
     "dailyPrecip": {
@@ -262,23 +273,26 @@ MONTHS = ["all"] + [str(i) for i in range(1, 13)]
 
 
 def fetch_text(url: str, retries: int = 3, wait_sec: float = 1.5) -> str:
+    if url in FETCH_CACHE:
+        return FETCH_CACHE[url]
+
     last_error = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(
-                url,
-                headers={
-                    "User-Agent": "Mozilla/5.0",
-                    "Accept-Language": "ja,en;q=0.8",
-                },
-            )
-            with urllib.request.urlopen(req, timeout=60) as res:
-                raw = res.read()
-            return raw.decode("utf-8", errors="ignore")
+            res = SESSION.get(url, timeout=60)
+            res.raise_for_status()
+
+            if not res.encoding or res.encoding.lower() == "iso-8859-1":
+                res.encoding = res.apparent_encoding
+
+            text = res.text
+            FETCH_CACHE[url] = text
+            return text
         except Exception as e:
             last_error = e
             if attempt < retries - 1:
                 time.sleep(wait_sec)
+
     raise last_error
 
 
@@ -299,16 +313,6 @@ def write_json(path: str, obj):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
         f.write("\n")
-
-def collect_generation_stats(prefectures):
-    stats = []
-    for pref in prefectures:
-        stats.append({
-            "prefKey": pref["key"],
-            "prefName": pref["name"],
-            "stationCount": len(pref["stations"])
-        })
-    return stats
 
 
 def trim_number(v):
@@ -480,6 +484,7 @@ def extract_value_and_date(cell: str):
         "_date_raw": raw_date,
     }
 
+
 def parse_snow_records_from_html_text(html: str, labels, direction: str):
     text = strip_tags(html)
     text = text.replace(">", " ").replace("]", " ")
@@ -501,18 +506,15 @@ def parse_snow_records_from_html_text(html: str, labels, direction: str):
     records = []
     start_date = ""
 
-    # ラベルの次から最大50行くらいを見る
     candidate_lines = lines[start_idx + 1:start_idx + 60]
 
     for line in candidate_lines:
-        # 統計期間っぽい行は観測開始日に使うだけ
         ym = re.fullmatch(r"(\d{4})/\s*(\d{1,2})", line)
         if ym:
             y, m = ym.groups()
             start_date = f"{int(y):04d}/{int(m):02d}"
             continue
 
-        # (2017/1/14)17 のような形を優先して読む
         m = re.search(r"\((\d{4}/\d{1,2}/\d{1,2})\)\s*(-?\d+(?:\.\d+)?)", line)
         if m:
             raw_date = normalize_ymd(m.group(1))
@@ -524,7 +526,6 @@ def parse_snow_records_from_html_text(html: str, labels, direction: str):
             })
             continue
 
-        # 月別・年だけのケースに備える
         m2 = re.search(r"\((\d{4}/\d{1,2})\)\s*(-?\d+(?:\.\d+)?)", line)
         if m2:
             y, mo = m2.group(1).split("/")
@@ -537,11 +538,9 @@ def parse_snow_records_from_html_text(html: str, labels, direction: str):
             })
             continue
 
-        # 単位行 (cm)21 のようなものは無視
         if re.match(r"^\((cm|mm)\)\s*-?\d+(?:\.\d+)?$", line, flags=re.IGNORECASE):
             continue
 
-        # 次の要素に入ったら打ち切る
         nline = normalize_label_text(line)
         if "順位" in nline or "要素名" in nline:
             continue
@@ -570,6 +569,7 @@ def parse_snow_records_from_html_text(html: str, labels, direction: str):
         "startDate": format_dual_ym(start_date) if start_date else "",
         "records": records,
     }
+
 
 def parse_rank_cells(cells, direction: str):
     if len(cells) < 3:
@@ -841,6 +841,14 @@ def try_fetch_station_rows(station, element_def, month):
             if cells:
                 parsed = parse_rank_cells(cells, element_def["direction"])
                 if parsed:
+                    if DEBUG_SUCCESS_LOG:
+                        print(
+                            f"[rank ok] station={station['stationName']} "
+                            f"category={element_def['category']} "
+                            f"label={element_def['labels'][0]} month={month} "
+                            f"view={view or '(blank)'} count={len(parsed['records'])} url={url}",
+                            file=sys.stderr
+                        )
                     return parsed
                 else:
                     print(
@@ -866,12 +874,13 @@ def try_fetch_station_rows(station, element_def, month):
                     element_def["direction"]
                 )
                 if parsed_fallback:
-                    print(
-                        f"[snow fallback ok] station={station['stationName']} "
-                        f"label={element_def['labels'][0]} month={month} "
-                        f"view={view or '(blank)'} count={len(parsed_fallback)} url={url}",
-                        file=sys.stderr
-                    )
+                    if DEBUG_SUCCESS_LOG:
+                        print(
+                            f"[snow fallback ok] station={station['stationName']} "
+                            f"label={element_def['labels'][0]} month={month} "
+                            f"view={view or '(blank)'} count={len(parsed_fallback['records'])} url={url}",
+                            file=sys.stderr
+                        )
                     return parsed_fallback
                 else:
                     print(
@@ -897,6 +906,7 @@ def try_fetch_station_rows(station, element_def, month):
 
     return None
 
+
 def load_prefecture_configs():
     pref_config = read_json_file("config/prefectures.json")
     prefectures = pref_config.get("prefectures", [])
@@ -911,7 +921,7 @@ def load_prefecture_configs():
         loaded.append({
             "key": pref["key"],
             "name": pref["name"],
-            "stations": station_data.get("stations", [])
+            "stations": station_data.get("stations", []),
         })
 
     return loaded
@@ -981,7 +991,10 @@ def main():
                         parsed = try_fetch_station_rows(station, element_def, month)
 
                         if not parsed:
-                            print(f"row not found: {pref_key} / {station['stationName']} / {element_key} / {month}", file=sys.stderr)
+                            print(
+                                f"row not found: {pref_key} / {station['stationName']} / {element_key} / {month}",
+                                file=sys.stderr
+                            )
                             continue
 
                         live_info = fetch_today_live_extreme(
@@ -1017,7 +1030,10 @@ def main():
                             })
 
                     except Exception as e:
-                        print(f"failed: {pref_key} / {station['stationName']} / {element_key} / {month}: {e}", file=sys.stderr)
+                        print(
+                            f"failed: {pref_key} / {station['stationName']} / {element_key} / {month}: {e}",
+                            file=sys.stderr
+                        )
 
                 output = {
                     "updatedAt": latest_iso,
@@ -1039,17 +1055,18 @@ def main():
         write_json(os.path.join(pref_dir, "live-summary.json"), live_summary_output)
         print(f"wrote: data/{pref_key}/live-summary.json")
 
-        manifest = {
-            "updatedAt": latest_iso,
-            "prefectures": collect_generation_stats(prefectures),
-        }
-        write_json(os.path.join("data", "manifest.json"), manifest)
+    manifest = {
+        "updatedAt": latest_iso,
+        "prefectures": {},
+    }
 
     for pref in prefectures:
         pref_key = pref["key"]
         pref_dir = os.path.join("data", pref_key)
         if os.path.isdir(pref_dir):
             manifest["prefectures"][pref_key] = sorted(os.listdir(pref_dir))
+        else:
+            manifest["prefectures"][pref_key] = []
 
     write_json(os.path.join("data", "manifest.json"), manifest)
     print("done")
