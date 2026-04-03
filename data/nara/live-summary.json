@@ -1,25 +1,6 @@
 {
-  "updatedAt": "2026-04-04T02:57:06.350360+09:00",
-  "observedLatestAt": "2026-04-04T02:50:00+09:00",
+  "updatedAt": "2026-04-04T04:56:25.592454+09:00",
+  "observedLatestAt": "2026-04-04T04:40:00+09:00",
   "prefecture": "奈良県",
-  "items": [
-    {
-      "stationName": "上北山",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 9,
-      "value": 8.5,
-      "date": "2026年4月4日（令和8年）",
-      "monthLabel": "4月"
-    },
-    {
-      "stationName": "五條",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 9,
-      "value": 10.4,
-      "date": "2026年4月4日（令和8年）",
-      "monthLabel": "4月"
-    }
-  ]
+  "items": []
 }
