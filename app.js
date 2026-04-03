@@ -151,11 +151,7 @@ function buildStatusText({ tableUpdatedAt, rowCount, elementLabel, prefName }) {
   const parts = [];
 
   if (manifestCache?.updatedAt) {
-    parts.push(`生成:${formatUpdatedAt(manifestCache.updatedAt)}`);
-  }
-
-  if (tableUpdatedAt) {
-    parts.push(`表示:${formatUpdatedAt(tableUpdatedAt)}`);
+    parts.push(`更新:${formatUpdatedAt(manifestCache.updatedAt)}`);
   }
 
   if (typeof rowCount === "number") {
