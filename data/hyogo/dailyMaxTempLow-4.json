@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-03T06:40:00+09:00",
+  "updatedAt": "2026-04-03T07:50:00+09:00",
   "prefecture": "兵庫県",
   "element": "dailyMaxTempLow",
   "month": "4",
@@ -86,7 +86,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 5.4,
+          "value": 6.9,
           "date": "2026年4月3日（令和8年）",
           "highlightLive": true,
           "highlightWithinYear": true

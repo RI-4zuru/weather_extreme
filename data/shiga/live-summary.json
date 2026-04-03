@@ -1,42 +1,5 @@
 {
-  "updatedAt": "2026-04-03T06:40:00+09:00",
+  "updatedAt": "2026-04-03T07:50:00+09:00",
   "prefecture": "滋賀県",
-  "items": [
-    {
-      "stationName": "長浜",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 1,
-      "value": 6.2,
-      "date": "2026年4月3日（令和8年）",
-      "monthLabel": "4月"
-    },
-    {
-      "stationName": "土山",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 2,
-      "value": 4.1,
-      "date": "2026年4月3日（令和8年）",
-      "monthLabel": "4月"
-    },
-    {
-      "stationName": "大津",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 2,
-      "value": 6.8,
-      "date": "2026年4月3日（令和8年）",
-      "monthLabel": "4月"
-    },
-    {
-      "stationName": "今津",
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "日最高気温の低い方から",
-      "rank": 7,
-      "value": 7.2,
-      "date": "2026年4月3日（令和8年）",
-      "monthLabel": "4月"
-    }
-  ]
+  "items": []
 }
