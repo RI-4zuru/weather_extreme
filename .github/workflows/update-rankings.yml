@@ -1,1 +1,41 @@
+name: Update rankings
 
+on:
+  workflow_dispatch:
+  schedule:
+    # 毎日 00:20 JST = 前日 15:20 UTC
+    - cron: "20 15 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-rankings
+  cancel-in-progress: false
+
+jobs:
+  build-rankings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Create rankings
+        run: python scripts/update_rankings.py
+
+      - name: Show manifest
+        run: cat data_base/manifest.json
+
+      - name: Commit data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data_base
+          git diff --cached --quiet || git commit -m "Update rankings"
+          git push
