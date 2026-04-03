@@ -231,7 +231,6 @@ ELEMENTS = {
         "labels": [
             "月最大72時間降雪量の多い方から",
             "月最大72時間降雪量",
-            "月最大72時間降雪量>の多い方から",
             "72時間降雪量の多い方から"
         ],
         "direction": "desc",
@@ -299,6 +298,17 @@ def ensure_dir(path: str):
 def write_json(path: str, obj):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+def collect_generation_stats(prefectures):
+    stats = []
+    for pref in prefectures:
+        stats.append({
+            "prefKey": pref["key"],
+            "prefName": pref["name"],
+            "stationCount": len(pref["stations"])
+        })
+    return stats
 
 
 def trim_number(v):
@@ -812,21 +822,49 @@ def try_fetch_station_rows(station, element_def, month):
         candidates.sort(key=lambda c: order.get(c.get("view", ""), 9))
 
     for candidate in candidates:
+        view = candidate.get("view", "")
+        rank_type = candidate.get("rank_type", "")
+        block_no = candidate.get("blockNo", "")
+
         try:
             url = build_rank_url(
                 station["precNo"],
-                candidate["rank_type"],
-                candidate["blockNo"],
+                rank_type,
+                block_no,
                 month,
-                candidate["view"],
+                view,
             )
-            html = fetch_text(url)
 
+            html = fetch_text(url)
             cells = find_target_row(html, element_def["labels"])
+
             if cells:
                 parsed = parse_rank_cells(cells, element_def["direction"])
                 if parsed:
+                    print(
+                        f"[rank ok] station={station['stationName']} "
+                        f"category={element_def['category']} "
+                        f"label={element_def['labels'][0]} month={month} "
+                        f"view={view or '(blank)'} count={len(parsed)} url={url}",
+                        file=sys.stderr
+                    )
                     return parsed
+                else:
+                    print(
+                        f"[rank cells found but parse empty] station={station['stationName']} "
+                        f"category={element_def['category']} "
+                        f"label={element_def['labels'][0]} month={month} "
+                        f"view={view or '(blank)'} url={url}",
+                        file=sys.stderr
+                    )
+            else:
+                print(
+                    f"[rank row not found] station={station['stationName']} "
+                    f"category={element_def['category']} "
+                    f"label={element_def['labels'][0]} month={month} "
+                    f"view={view or '(blank)'} url={url}",
+                    file=sys.stderr
+                )
 
             if element_def["category"] == "snow":
                 parsed_fallback = parse_snow_records_from_html_text(
@@ -835,15 +873,31 @@ def try_fetch_station_rows(station, element_def, month):
                     element_def["direction"]
                 )
                 if parsed_fallback:
+                    print(
+                        f"[snow fallback ok] station={station['stationName']} "
+                        f"label={element_def['labels'][0]} month={month} "
+                        f"view={view or '(blank)'} count={len(parsed_fallback)} url={url}",
+                        file=sys.stderr
+                    )
                     return parsed_fallback
                 else:
                     print(
-                        f"snow fallback failed: {station['stationName']} / {element_def['labels'][0]} / {month} / {url}",
+                        f"[snow fallback failed] station={station['stationName']} "
+                        f"label={element_def['labels'][0]} month={month} "
+                        f"view={view or '(blank)'} url={url}",
                         file=sys.stderr
                     )
 
         except Exception as e:
             last_error = e
+            print(
+                f"[rank fetch error] station={station['stationName']} "
+                f"category={element_def['category']} "
+                f"label={element_def['labels'][0]} month={month} "
+                f"view={view or '(blank)'} blockNo={block_no} "
+                f"rankType={rank_type} error={repr(e)}",
+                file=sys.stderr
+            )
 
     if last_error:
         raise last_error
@@ -992,9 +1046,12 @@ def main():
         write_json(os.path.join(pref_dir, "live-summary.json"), live_summary_output)
         print(f"wrote: data/{pref_key}/live-summary.json")
 
-    manifest = {
-        "updatedAt": latest_iso,
-        "prefectures": {}
+        manifest = {
+            "updatedAt": latest_iso,
+            "generatedAtJst": datetime.now(JST).isoformat(),
+            "prefectures": collect_generation_stats(prefectures),
+        }
+        write_json(os.path.join("data", "manifest.json"), manifest)
     }
 
     for pref in prefectures:
