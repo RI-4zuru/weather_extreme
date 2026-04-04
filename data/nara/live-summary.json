@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-04T19:56:22.881242+09:00",
-  "observedLatestAt": "2026-04-04T19:40:00+09:00",
+  "updatedAt": "2026-04-04T20:55:52.245688+09:00",
+  "observedLatestAt": "2026-04-04T20:40:00+09:00",
   "prefecture": "奈良県",
   "items": [
     {
@@ -8,7 +8,7 @@
       "elementKey": "dailyPrecip",
       "elementLabel": "日降水量",
       "rank": 2,
-      "value": 94,
+      "value": 96,
       "date": "2026年4月4日（令和8年）",
       "monthLabel": "4月"
     },
@@ -35,7 +35,7 @@
       "elementKey": "dailyPrecip",
       "elementLabel": "日降水量",
       "rank": 5,
-      "value": 74,
+      "value": 76,
       "date": "2026年4月4日（令和8年）",
       "monthLabel": "4月"
     },
