@@ -8,13 +8,14 @@ import {
 import { loadLiveSummaryData, loadManifest, loadPrefectures, loadTableData } from "./data-loader.js";
 import {
   buildStatusText,
+  getElementDescription,
   makeHeader,
   renderDebugPanel,
-  renderElementDescription,
   renderLiveSummary,
   renderLiveSummaryMessage,
   renderTable,
-  renderTableMessage
+  renderTableMessage,
+  renderTopRankAlert
 } from "./renderers.js";
 import { state } from "./state.js";
 import { escapeHtml } from "./utils.js";
@@ -26,9 +27,9 @@ const statusEl = document.getElementById("status");
 const tableHead = document.getElementById("tableHead");
 const tableBody = document.getElementById("tableBody");
 const liveSummaryEl = document.getElementById("liveSummary");
-const elementDescriptionEl = document.getElementById("elementDescription");
 const debugDetailsEl = document.getElementById("debugDetails");
 const debugBodyEl = document.getElementById("debugBody");
+const topRankAlertEl = document.getElementById("topRankAlert");
 
 function getSelectedElement() {
   const checked = document.querySelector('input[name="element"]:checked');
@@ -90,7 +91,7 @@ async function initPrefectures() {
 
   updateDebugSelections();
   renderDebugPanel(debugBodyEl, debugDetailsEl);
-  renderElementDescription(elementDescriptionEl, getSelectedElement());
+  renderTopRankAlert(topRankAlertEl, false);
 }
 
 async function refreshLiveSummary(prefKey) {
@@ -102,12 +103,16 @@ async function refreshLiveSummary(prefKey) {
 
     if (status === "error") {
       renderLiveSummaryMessage(liveSummaryEl, message || "実況一覧の取得に失敗しました。");
+      renderTopRankAlert(topRankAlertEl, false);
     } else {
       renderLiveSummary(liveSummaryEl, items);
+      const hasTopRank = items.some((item) => Number(item.rank) === 1);
+      renderTopRankAlert(topRankAlertEl, hasTopRank);
     }
   } catch (error) {
     console.error(error);
     renderLiveSummaryMessage(liveSummaryEl, "実況一覧の読み込みに失敗しました。");
+    renderTopRankAlert(topRankAlertEl, false);
   }
 
   renderDebugPanel(debugBodyEl, debugDetailsEl);
@@ -115,13 +120,13 @@ async function refreshLiveSummary(prefKey) {
 
 async function refreshTable() {
   updateDebugSelections();
-  renderElementDescription(elementDescriptionEl, getSelectedElement());
 
   const prefMeta = getSelectedPrefMeta();
   const prefKey = prefSelect.value;
   const elementKey = getSelectedElement();
   const month = monthSelect.value;
   const elementLabel = getSelectedElementLabel();
+  const elementDescription = getElementDescription(elementKey);
 
   try {
     await loadManifest();
@@ -135,6 +140,7 @@ async function refreshTable() {
     makeHeader(tableHead);
     renderTableMessage(tableBody, "都道府県情報が見つかりません。");
     renderLiveSummaryMessage(liveSummaryEl, "実況一覧を表示できません。");
+    renderTopRankAlert(topRankAlertEl, false);
     renderDebugPanel(debugBodyEl, debugDetailsEl);
     return;
   }
@@ -147,7 +153,7 @@ async function refreshTable() {
     statusEl.textContent = buildStatusText({
       rowCount: 0,
       elementLabel,
-      prefName: prefMeta.name,
+      elementDescription,
       extraMessage: "未対応"
     });
     renderDebugPanel(debugBodyEl, debugDetailsEl);
@@ -171,7 +177,7 @@ async function refreshTable() {
         observationTime,
         rowCount: 0,
         elementLabel,
-        prefName: prefMeta.name,
+        elementDescription,
         extraMessage: message || "データ取得失敗"
       });
     } else if (status === "no_observation") {
@@ -180,7 +186,7 @@ async function refreshTable() {
         observationTime,
         rowCount: 0,
         elementLabel,
-        prefName: prefMeta.name
+        elementDescription
       });
     } else {
       renderTable(tableBody, rows);
@@ -188,7 +194,7 @@ async function refreshTable() {
         observationTime,
         rowCount: rows.length,
         elementLabel,
-        prefName: prefMeta.name
+        elementDescription
       });
     }
   } catch (error) {
@@ -205,7 +211,7 @@ async function refreshTable() {
         "",
       rowCount: 0,
       elementLabel,
-      prefName: prefMeta.name,
+      elementDescription,
       extraMessage: "JSONの読み込みに失敗しました"
     });
   }
@@ -250,4 +256,5 @@ async function init() {
 init().catch((error) => {
   console.error(error);
   statusEl.textContent = "初期化に失敗しました";
+  renderTopRankAlert(topRankAlertEl, false);
 });
