@@ -9,6 +9,7 @@ import { loadLiveSummaryData, loadManifest, loadPrefectures, loadTableData } fro
 import {
   buildStatusText,
   getElementDescription,
+  isTopRankItem,
   makeHeader,
   renderDebugPanel,
   renderLiveSummary,
@@ -100,14 +101,14 @@ async function refreshLiveSummary(prefKey) {
     const data = await loadLiveSummaryData(prefKey);
     const status = data.status || "ok";
     const message = data.message || "";
-    const items = data.items || [];
+    const items = Array.isArray(data.items) ? data.items : [];
 
     if (status === "error") {
       renderLiveSummaryMessage(liveSummaryEl, message || "実況一覧の取得に失敗しました。");
       renderTopRankAlert(topRankAlertEl, false);
     } else {
       renderLiveSummary(liveSummaryEl, items);
-      const hasTopRank = items.some((item) => Number(item.rank) === 1);
+      const hasTopRank = items.some((item) => isTopRankItem(item));
       renderTopRankAlert(topRankAlertEl, hasTopRank);
     }
   } catch (error) {
