@@ -50,40 +50,32 @@ body {
   letter-spacing: 0.02em;
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: end;
-}
+@media (max-width: 640px) {
+  .controls {
+    gap: 8px;
+    align-items: end;
+  }
 
-.controls label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 13px;
-}
+  .controls label {
+    width: calc(33.333% - 6px);
+    min-width: 100px;
+  }
 
-.controls label span {
-  font-weight: 700;
-  color: var(--accent);
-}
+  .top-rank-alert {
+    width: auto;
+    min-width: 140px;
+    margin-left: 0;
+  }
 
-select,
-button {
-  font: inherit;
-}
+  select,
+  button,
+  summary {
+    min-height: 44px;
+  }
 
-select {
-  padding: 8px 10px;
-  font-size: 13px;
-  min-width: 118px;
-  min-height: 40px;
-  border: 2px solid var(--line-strong);
-  border-radius: 12px;
-  background: #fff;
-  color: var(--text);
-  box-shadow: 0 3px 8px rgba(0, 119, 182, 0.08);
+  select {
+    width: 100%;
+  }
 }
 
 .top-rank-alert,
