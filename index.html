@@ -23,12 +23,12 @@
         <span>地域</span>
         <select id="regionSelect"></select>
       </label>
-    
+
       <label>
         <span>都道府県</span>
         <select id="prefSelect"></select>
       </label>
-    
+
       <label>
         <span>月</span>
         <select id="monthSelect">
@@ -47,46 +47,56 @@
           <option value="12">12月</option>
         </select>
       </label>
-    
-      <button id="topRankAlert" class="top-rank-alert" hidden>極値1位更新有り</button>
-      <button id="installAppBtn" class="install-app-btn" hidden>アプリとして追加</button>
+
+      <button id="topRankAlert" class="top-rank-alert" hidden>
+        極値1位更新有り
+      </button>
+
+      <button id="installAppBtn" class="install-app-btn" hidden>
+        アプリとして追加
+      </button>
     </div>
-    
+
     <details id="liveSummarySection" class="live-summary-details" open>
       <summary class="summary-row">
         <span class="summary-title">実況で10位以内に入った項目</span>
         <span id="rankInBadge" class="rank-in-badge" hidden>ランクインあり</span>
       </summary>
       <div id="liveSummaryBody" class="live-summary-body">
-        読み込み待ち
+        <div class="live-summary-empty">読み込み待ち</div>
       </div>
     </details>
-    
+
     <details class="element-details">
       <summary>要素選択を開く / 閉じる</summary>
-      <div id="elementPanel" class="element-panel"></div>
+      <div id="elementPanel" class="element-panel">
+        <div class="live-summary-empty">読み込み待ち</div>
+      </div>
     </details>
-    
-    <div id="statusBox" class="status">読み込み待ち</div>
-    
-    <main class="main">
-      <div class="table-wrap">
-        <table id="rankTable">
-          <thead id="rankTableHead"></thead>
-          <tbody id="rankTableBody"></tbody>
-        </table>
-      </div>
-    
-      <div class="note-bottom">
-        赤系：実況での記録 / 黄系：1年以内の記録
-      </div>
-    
-      <details class="debug-details">
-        <summary>診断情報</summary>
-        <div id="debugGrid" class="debug-grid"></div>
-      </details>
-    </main>
+  </header>
 
-  <script src="./app.js"></script>
+  <main class="main">
+    <section class="status" id="statusBox">
+      読み込み待ち
+    </section>
+
+    <section class="table-wrap">
+      <table id="rankTable">
+        <thead id="rankTableHead"></thead>
+        <tbody id="rankTableBody"></tbody>
+      </table>
+    </section>
+
+    <div class="note-bottom">
+      赤系：実況での記録 / 黄系：1年以内の記録
+    </div>
+
+    <details class="debug-details">
+      <summary>診断情報</summary>
+      <div class="debug-grid" id="debugGrid"></div>
+    </details>
+  </main>
+
+  <script src="./js/app.js"></script>
 </body>
 </html>
