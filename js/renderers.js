@@ -20,6 +20,8 @@ export function getElementDescription(elementKey) {
 }
 
 export function renderDebugPanel(debugBodyEl, debugDetailsEl) {
+  if (!debugBodyEl || !debugDetailsEl) return;
+
   const debugState = state.debugState;
 
   const lines = [
@@ -120,6 +122,7 @@ export function renderTable(tableBody, rows) {
 
       if (rank) {
         const classes = ["rank-cell"];
+        if (i === 0) classes.push("top-rank");
         if (rank.highlightLive) classes.push("live-in-rank");
         if (rank.highlightWithinYear) classes.push("within-year");
         td.className = classes.join(" ");
@@ -129,7 +132,9 @@ export function renderTable(tableBody, rows) {
           <div class="date">${renderDualLine(rank.date || "-")}</div>
         `;
       } else {
-        td.className = "rank-cell";
+        const classes = ["rank-cell"];
+        if (i === 0) classes.push("top-rank");
+        td.className = classes.join(" ");
         td.innerHTML = `
           <div class="value">-</div>
           <div class="date">-</div>
