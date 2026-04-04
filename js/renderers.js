@@ -41,6 +41,11 @@ export function isTopRankItem(item) {
   return rankValue === 1;
 }
 
+export function hasAnyRankIn(items) {
+  if (!Array.isArray(items)) return false;
+  return items.length > 0;
+}
+
 export function renderDebugPanel(debugBodyEl, debugDetailsEl) {
   if (!debugBodyEl || !debugDetailsEl) return;
 
@@ -249,4 +254,9 @@ export function renderLiveSummaryMessage(liveSummaryEl, message) {
 export function renderTopRankAlert(topRankAlertEl, hasTopRank) {
   if (!topRankAlertEl) return;
   topRankAlertEl.hidden = !hasTopRank;
+}
+
+export function renderRankInBadge(rankInBadgeEl, hasRankIn) {
+  if (!rankInBadgeEl) return;
+  rankInBadgeEl.hidden = !hasRankIn;
 }
