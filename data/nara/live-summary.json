@@ -1,8 +1,26 @@
 {
-  "updatedAt": "2026-04-04T16:54:53.449995+09:00",
-  "observedLatestAt": "2026-04-04T16:40:00+09:00",
+  "updatedAt": "2026-04-04T19:56:22.881242+09:00",
+  "observedLatestAt": "2026-04-04T19:40:00+09:00",
   "prefecture": "奈良県",
   "items": [
+    {
+      "stationName": "下北山",
+      "elementKey": "dailyPrecip",
+      "elementLabel": "日降水量",
+      "rank": 2,
+      "value": 94,
+      "date": "2026年4月4日（令和8年）",
+      "monthLabel": "4月"
+    },
+    {
+      "stationName": "葛川",
+      "elementKey": "max1hPrecip",
+      "elementLabel": "日最大1時間降水量",
+      "rank": 3,
+      "value": 15.5,
+      "date": "2026年4月4日（令和8年）",
+      "monthLabel": "4月"
+    },
     {
       "stationName": "下北山",
       "elementKey": "max1hPrecip",
@@ -14,10 +32,10 @@
     },
     {
       "stationName": "葛川",
-      "elementKey": "max1hPrecip",
-      "elementLabel": "日最大1時間降水量",
-      "rank": 6,
-      "value": 13,
+      "elementKey": "dailyPrecip",
+      "elementLabel": "日降水量",
+      "rank": 5,
+      "value": 74,
       "date": "2026年4月4日（令和8年）",
       "monthLabel": "4月"
     },
@@ -27,6 +45,15 @@
       "elementLabel": "日最大10分間降水量",
       "rank": 9,
       "value": 4.5,
+      "date": "2026年4月4日（令和8年）",
+      "monthLabel": "4月"
+    },
+    {
+      "stationName": "葛川",
+      "elementKey": "max10mPrecip",
+      "elementLabel": "日最大10分間降水量",
+      "rank": 9,
+      "value": 3.5,
       "date": "2026年4月4日（令和8年）",
       "monthLabel": "4月"
     }
