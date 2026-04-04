@@ -29,11 +29,18 @@ export function normalizeRank(rank) {
   const text = String(rank).trim();
   if (!text) return null;
 
-  const matched = text.match(/\d+/);
+  const matched = text.match(/^\D*(\d{1,2})\D*$/);
   if (!matched) return null;
 
-  const value = Number(matched[0]);
-  return Number.isFinite(value) ? value : null;
+  const value = Number(matched[1]);
+  if (!Number.isFinite(value)) return null;
+
+  return value;
+}
+
+export function isValidRankItem(item) {
+  const rankValue = normalizeRank(item?.rank);
+  return rankValue !== null && rankValue >= 1 && rankValue <= 10;
 }
 
 export function isTopRankItem(item) {
@@ -41,8 +48,13 @@ export function isTopRankItem(item) {
   return rankValue === 1;
 }
 
+export function getValidRankItems(items) {
+  if (!Array.isArray(items)) return [];
+  return items.filter((item) => isValidRankItem(item));
+}
+
 export function hasAnyRankIn(items) {
-  return Array.isArray(items) && items.length > 0;
+  return getValidRankItems(items).length > 0;
 }
 
 export function renderDebugPanel(debugBodyEl, debugDetailsEl) {
@@ -180,16 +192,25 @@ export function renderTableMessage(tableBody, message) {
 }
 
 export function renderLiveSummary(liveSummaryEl, items) {
-  if (!items || items.length === 0) {
+  const validItems = getValidRankItems(items);
+
+  if (validItems.length === 0) {
     liveSummaryEl.innerHTML = `
-      <div class="live-summary-empty">
-        現在、実況で10位以内に入っている項目はありません。
+      <div class="live-summary-grid">
+        <div class="live-summary-column">
+          <div class="live-summary-column-title">通年</div>
+          <div class="live-summary-empty">該当なし</div>
+        </div>
+        <div class="live-summary-column">
+          <div class="live-summary-column-title">当月</div>
+          <div class="live-summary-empty">該当なし</div>
+        </div>
       </div>
     `;
     return;
   }
 
-  const sorted = [...items].sort((a, b) => {
+  const sorted = [...validItems].sort((a, b) => {
     const oa = LIVE_SUMMARY_ORDER.indexOf(a.elementKey);
     const ob = LIVE_SUMMARY_ORDER.indexOf(b.elementKey);
     if (oa !== ob) return oa - ob;
@@ -207,11 +228,12 @@ export function renderLiveSummary(liveSummaryEl, items) {
   const renderColumn = (title, data) => `
     <div class="live-summary-column">
       <div class="live-summary-column-title">${escapeHtml(title)}</div>
-      <div class="live-summary-scroll">
-        ${
-          data.length === 0
-            ? `<div class="live-summary-empty">該当なし</div>`
-            : data.map((item) => {
+      ${
+        data.length === 0
+          ? `<div class="live-summary-empty">該当なし</div>`
+          : `
+            <div class="live-summary-scroll">
+              ${data.map((item) => {
                 const itemClass = isTopRankItem(item)
                   ? "live-summary-item live-summary-item-top1"
                   : "live-summary-item live-summary-item-rankin";
@@ -219,7 +241,7 @@ export function renderLiveSummary(liveSummaryEl, items) {
                 return `
                   <div class="${itemClass}">
                     <div class="live-summary-line">
-                      <span class="live-summary-token live-summary-rank">${escapeHtml(String(item.rank ?? "-"))}位</span>
+                      <span class="live-summary-token live-summary-rank">${escapeHtml(String(normalizeRank(item.rank)))}位</span>
                       <span class="live-summary-token live-summary-station">${escapeHtml(item.stationName || "-")}</span>
                       <span class="live-summary-token live-summary-element">${escapeHtml(item.elementLabel || "-")}</span>
                       <span class="live-summary-token live-summary-value">${escapeHtml(String(item.value ?? "-"))}</span>
@@ -228,9 +250,10 @@ export function renderLiveSummary(liveSummaryEl, items) {
                     </div>
                   </div>
                 `;
-              }).join("")
-        }
-      </div>
+              }).join("")}
+            </div>
+          `
+      }
     </div>
   `;
 
