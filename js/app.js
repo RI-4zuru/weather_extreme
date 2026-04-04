@@ -53,6 +53,13 @@ function showStatusBox() {
   statusBox.style.display = "";
 }
 
+function setVisibility(el, show, displayValue = "inline-flex") {
+  if (!el) return;
+  el.hidden = !show;
+  el.setAttribute("aria-hidden", show ? "false" : "true");
+  el.style.display = show ? displayValue : "none";
+}
+
 function setDebug(entries) {
   if (!debugGrid) return;
   debugGrid.innerHTML = "";
@@ -343,27 +350,29 @@ function formatObservedLatestAt(value) {
 function normalizeSummaryItems(items) {
   if (!Array.isArray(items)) return [];
 
-  return items.map((item) => {
-    const rank =
-      Number(item.rank) ||
-      Number(item.currentRank) ||
-      Number(item.rankNo) ||
-      null;
+  return items
+    .map((item) => {
+      const rank =
+        Number(item.rank) ||
+        Number(item.currentRank) ||
+        Number(item.rankNo) ||
+        null;
 
-    return {
-      rank,
-      rankText: item.rankText || (rank ? `${rank}位` : ""),
-      station: item.stationName || item.station || item.point || "",
-      element:
-        item.elementLabel ||
-        getElementLabelFromAnyKey(item.elementKey) ||
-        getElementLabelFromAnyKey(item.elementName) ||
-        getElementLabelFromAnyKey(item.element) ||
-        "",
-      value: item.valueText || item.value || "",
-      monthLabel: item.monthLabel || ""
-    };
-  });
+      return {
+        rank,
+        rankText: item.rankText || (rank ? `${rank}位` : ""),
+        station: item.stationName || item.station || item.point || "",
+        element:
+          item.elementLabel ||
+          getElementLabelFromAnyKey(item.elementKey) ||
+          getElementLabelFromAnyKey(item.elementName) ||
+          getElementLabelFromAnyKey(item.element) ||
+          "",
+        value: item.valueText || item.value || "",
+        monthLabel: item.monthLabel || ""
+      };
+    })
+    .filter((item) => item.rank && item.station && item.element !== "");
 }
 
 function formatLiveSummaryItems(items) {
@@ -398,8 +407,8 @@ function renderLiveSummary(summaryData) {
   const hasTop1 = annualItems.some((item) => item.rank === 1) || monthlyItems.some((item) => item.rank === 1);
   const hasRankIn = annualItems.length > 0 || monthlyItems.length > 0;
 
-  rankInBadge.hidden = !hasRankIn;
-  topRankAlert.hidden = !hasTop1;
+  setVisibility(rankInBadge, hasRankIn, "inline-flex");
+  setVisibility(topRankAlert, hasTop1, "inline-flex");
 
   liveSummaryBody.innerHTML = `
     <div class="live-summary-grid">
@@ -559,8 +568,8 @@ async function loadLiveSummary() {
     return { ok: true, path: liveSummaryPath, data };
   } catch (err) {
     liveSummaryBody.innerHTML = `<div class="live-summary-empty">実況一覧の読み込みに失敗しました</div>`;
-    rankInBadge.hidden = true;
-    topRankAlert.hidden = true;
+    setVisibility(rankInBadge, false);
+    setVisibility(topRankAlert, false);
     hideStatusBox();
     return { ok: false, path: liveSummaryPath, error: err.message, data: null };
   }
@@ -634,13 +643,6 @@ function bindEvents() {
     appState.selectedMonth = monthSelect.value;
     saveValue(STORAGE_KEYS.month, appState.selectedMonth);
     await refreshAll();
-  });
-
-  topRankAlert.addEventListener("click", () => {
-    document.getElementById("liveSummarySection")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
   });
 }
 
