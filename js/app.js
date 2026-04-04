@@ -78,13 +78,13 @@ function saveValue(key, value) {
   try {
     localStorage.setItem(key, value);
   } catch {
-    // 保存失敗時は無視
+    // 何もしない
   }
 }
 
 function buildRegionMap(prefectureConfig) {
   const map = new Map();
-  const items = prefectureConfig.prefectures || [];
+  const items = prefectureConfig?.prefectures || [];
 
   for (const item of items) {
     const region = item.region || "未分類";
@@ -131,7 +131,6 @@ function fillPrefSelect(prefectureConfig) {
 
   const saved = getSavedValue(STORAGE_KEYS.pref);
   const found = list.find((x) => x.key === saved);
-
   if (found) {
     prefSelect.value = saved;
   }
@@ -142,8 +141,7 @@ function fillPrefSelect(prefectureConfig) {
 function fillElementPanel(elementsConfig) {
   elementPanel.innerHTML = "";
 
-  const groups = elementsConfig.groups || [];
-
+  const groups = elementsConfig?.groups || [];
   let firstElementKey = "";
 
   for (const group of groups) {
@@ -161,6 +159,7 @@ function fillElementPanel(elementsConfig) {
       if (!firstElementKey) firstElementKey = item.key;
 
       const wrap = document.createElement("label");
+
       const input = document.createElement("input");
       input.type = "radio";
       input.name = "element";
@@ -197,6 +196,99 @@ function fillElementPanel(elementsConfig) {
   }
 }
 
+function buildTableHead() {
+  rankTableHead.innerHTML = `
+    <tr>
+      <th>地点</th>
+      <th>1位</th>
+      <th>2位</th>
+      <th>3位</th>
+      <th>4位</th>
+      <th>5位</th>
+      <th>6位</th>
+      <th>7位</th>
+      <th>8位</th>
+      <th>9位</th>
+      <th>10位</th>
+    </tr>
+  `;
+}
+
+function normalizeSummaryItems(summaryData) {
+  if (!summaryData || typeof summaryData !== "object") {
+    return [];
+  }
+
+  if (Array.isArray(summaryData.items)) {
+    return summaryData.items.map((item) => {
+      const rank =
+        Number(item.rank) ||
+        Number(item.currentRank) ||
+        Number(item.rankNo) ||
+        null;
+
+      return {
+        rank,
+        rankText:
+          item.rankText ||
+          (rank ? `${rank}位` : ""),
+        station:
+          item.station ||
+          item.stationName ||
+          item.point ||
+          "",
+        element:
+          item.element ||
+          item.elementName ||
+          item.type ||
+          "",
+        value:
+          item.valueText ||
+          item.value ||
+          "",
+        date:
+          item.dateText ||
+          item.date ||
+          item.observedAt ||
+          "",
+        month:
+          item.monthText ||
+          item.month ||
+          "",
+        rankIn:
+          item.rankIn ??
+          (rank !== null && rank >= 1 && rank <= 10)
+      };
+    });
+  }
+
+  const top1 = Array.isArray(summaryData.top1) ? summaryData.top1 : [];
+  const rankIn = Array.isArray(summaryData.rankIn) ? summaryData.rankIn : [];
+
+  return [
+    ...top1.map((item) => ({
+      rank: Number(item.rank) || 1,
+      rankText: item.rankText || "1位",
+      station: item.station || item.stationName || "",
+      element: item.element || item.elementName || "",
+      value: item.valueText || item.value || "",
+      date: item.dateText || item.date || "",
+      month: item.monthText || item.month || "",
+      rankIn: true
+    })),
+    ...rankIn.map((item) => ({
+      rank: Number(item.rank) || null,
+      rankText: item.rankText || (item.rank ? `${item.rank}位` : ""),
+      station: item.station || item.stationName || "",
+      element: item.element || item.elementName || "",
+      value: item.valueText || item.value || "",
+      date: item.dateText || item.date || "",
+      month: item.monthText || item.month || "",
+      rankIn: true
+    }))
+  ];
+}
+
 function formatLiveSummaryItems(items) {
   if (!items || items.length === 0) {
     return `<div class="live-summary-empty">該当なし</div>`;
@@ -225,10 +317,11 @@ function formatLiveSummaryItems(items) {
 }
 
 function renderLiveSummary(summaryData) {
-  const top1Items = summaryData?.top1 || [];
-  const rankInItems = summaryData?.rankIn || [];
+  const allItems = normalizeSummaryItems(summaryData);
+  const top1Items = allItems.filter((item) => item.rank === 1);
+  const rankInItems = allItems.filter((item) => item.rank !== null && item.rank >= 1 && item.rank <= 10);
 
-  const hasRankIn = top1Items.length > 0 || rankInItems.length > 0;
+  const hasRankIn = rankInItems.length > 0;
 
   rankInBadge.hidden = !hasRankIn;
   topRankAlert.hidden = top1Items.length === 0;
@@ -251,29 +344,49 @@ function renderLiveSummary(summaryData) {
   `;
 }
 
-function buildTableHead() {
-  rankTableHead.innerHTML = `
-    <tr>
-      <th>地点</th>
-      <th>1位</th>
-      <th>2位</th>
-      <th>3位</th>
-      <th>4位</th>
-      <th>5位</th>
-      <th>6位</th>
-      <th>7位</th>
-      <th>8位</th>
-      <th>9位</th>
-      <th>10位</th>
-    </tr>
-  `;
+function normalizeStations(tableData) {
+  if (!tableData || typeof tableData !== "object") {
+    return [];
+  }
+
+  const sourceRows = Array.isArray(tableData.rows)
+    ? tableData.rows
+    : Array.isArray(tableData.stations)
+      ? tableData.stations
+      : [];
+
+  return sourceRows.map((station) => {
+    const ranks = Array.isArray(station.ranks) ? station.ranks : [];
+
+    return {
+      stationName:
+        station.stationName ||
+        station.name ||
+        station.station ||
+        "",
+      startDate:
+        station.startDate ||
+        station.start ||
+        "",
+      startSub:
+        station.startSub ||
+        "",
+      ranks: ranks.map((rank) => ({
+        value: rank?.value ?? rank?.valueText ?? "",
+        date: rank?.date ?? rank?.dateText ?? "",
+        dateSub: rank?.dateSub ?? "",
+        highlightLive: Boolean(rank?.highlightLive ?? rank?.liveInRank),
+        highlightWithinYear: Boolean(rank?.highlightWithinYear ?? rank?.withinYear)
+      }))
+    };
+  });
 }
 
 function formatStationCell(station) {
   return `
-    <div class="station-name">${escapeHtml(station.name || "")}</div>
+    <div class="station-name">${escapeHtml(station.stationName || "")}</div>
     <div class="station-start">
-      観測開始 ${escapeHtml(station.start || "")}
+      観測開始 ${escapeHtml(station.startDate || "")}
       ${station.startSub ? `<span class="sub">${escapeHtml(station.startSub)}</span>` : ""}
     </div>
   `;
@@ -285,8 +398,8 @@ function formatRankCell(rank) {
   }
 
   const classes = ["rank-cell"];
-  if (rank.liveInRank) classes.push("live-in-rank");
-  if (rank.withinYear) classes.push("within-year");
+  if (rank.highlightLive) classes.push("live-in-rank");
+  if (rank.highlightWithinYear) classes.push("within-year");
 
   return `
     <td class="${classes.join(" ")}">
@@ -302,7 +415,7 @@ function formatRankCell(rank) {
 function renderRankTable(tableData) {
   buildTableHead();
 
-  const stations = tableData?.stations || [];
+  const stations = normalizeStations(tableData);
 
   if (stations.length === 0) {
     rankTableBody.innerHTML = `
@@ -317,6 +430,7 @@ function renderRankTable(tableData) {
   rankTableBody.innerHTML = stations.map((station) => {
     const ranks = station.ranks || [];
     const rankCells = [];
+
     for (let i = 0; i < 10; i += 1) {
       rankCells.push(formatRankCell(ranks[i]));
     }
@@ -352,6 +466,7 @@ function getCurrentDataPaths() {
 
 async function loadLiveSummary() {
   const { liveSummaryPath } = getCurrentDataPaths();
+
   try {
     const data = await fetchJson(liveSummaryPath);
     renderLiveSummary(data);
@@ -366,12 +481,13 @@ async function loadLiveSummary() {
 
 async function loadRankingTable() {
   const { tablePath } = getCurrentDataPaths();
+
   try {
     const data = await fetchJson(tablePath);
     renderRankTable(data);
     return { ok: true, path: tablePath };
   } catch (err) {
-    renderRankTable({ stations: [] });
+    renderRankTable({ rows: [] });
     return { ok: false, path: tablePath, error: err.message };
   }
 }
@@ -382,6 +498,7 @@ async function refreshAll() {
   }
 
   setStatus("読み込み中...");
+
   const liveResult = await loadLiveSummary();
   const tableResult = await loadRankingTable();
 
@@ -444,7 +561,10 @@ function bindEvents() {
   });
 
   topRankAlert.addEventListener("click", () => {
-    document.getElementById("liveSummarySection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("liveSummarySection")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   });
 
   installAppBtn.addEventListener("click", async () => {
@@ -469,6 +589,7 @@ function bindEvents() {
 
 async function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
+
   try {
     await navigator.serviceWorker.register("./sw.js");
   } catch (err) {
