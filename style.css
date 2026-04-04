@@ -122,9 +122,10 @@ select:focus {
   font-weight: 800;
   letter-spacing: 0.02em;
   box-shadow: 0 6px 14px rgba(0, 119, 182, 0.18);
-  cursor: pointer;
   white-space: nowrap;
   background: linear-gradient(135deg, #ff4d6d, #ff8500);
+  user-select: none;
+  pointer-events: none;
 }
 
 .top-rank-alert:hover {
