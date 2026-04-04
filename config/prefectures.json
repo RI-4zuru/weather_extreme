@@ -1,62 +1,10 @@
 {
   "prefectures": [
-    { "key": "hokkaido", "name": "北海道", "region": "北海道", "stationsFile": null },
-
-    { "key": "aomori", "name": "青森県", "region": "東北", "stationsFile": null },
-    { "key": "iwate", "name": "岩手県", "region": "東北", "stationsFile": null },
-    { "key": "miyagi", "name": "宮城県", "region": "東北", "stationsFile": null },
-    { "key": "akita", "name": "秋田県", "region": "東北", "stationsFile": null },
-    { "key": "yamagata", "name": "山形県", "region": "東北", "stationsFile": null },
-    { "key": "fukushima", "name": "福島県", "region": "東北", "stationsFile": null },
-
-    { "key": "ibaraki", "name": "茨城県", "region": "関東甲信", "stationsFile": null },
-    { "key": "tochigi", "name": "栃木県", "region": "関東甲信", "stationsFile": null },
-    { "key": "gunma", "name": "群馬県", "region": "関東甲信", "stationsFile": null },
-    { "key": "saitama", "name": "埼玉県", "region": "関東甲信", "stationsFile": null },
-    { "key": "chiba", "name": "千葉県", "region": "関東甲信", "stationsFile": null },
-    { "key": "tokyo", "name": "東京都", "region": "関東甲信", "stationsFile": null },
-    { "key": "kanagawa", "name": "神奈川県", "region": "関東甲信", "stationsFile": null },
-
-    { "key": "yamanashi", "name": "山梨県", "region": "甲信", "stationsFile": null },
-    { "key": "nagano", "name": "長野県", "region": "甲信", "stationsFile": null },
-
-    { "key": "niigata", "name": "新潟県", "region": "北陸", "stationsFile": null },
-    { "key": "toyama", "name": "富山県", "region": "北陸", "stationsFile": null },
-    { "key": "ishikawa", "name": "石川県", "region": "北陸", "stationsFile": null },
-    { "key": "fukui", "name": "福井県", "region": "北陸", "stationsFile": null },
-
-    { "key": "gifu", "name": "岐阜県", "region": "東海", "stationsFile": null },
-    { "key": "shizuoka", "name": "静岡県", "region": "東海", "stationsFile": null },
-    { "key": "aichi", "name": "愛知県", "region": "東海", "stationsFile": null },
-    { "key": "mie", "name": "三重県", "region": "東海", "stationsFile": null },
-
-    { "key": "shiga", "name": "滋賀県", "region": "近畿", "stationsFile": "config/stations/shiga.json" },
-    { "key": "kyoto", "name": "京都府", "region": "近畿", "stationsFile": "config/stations/kyoto.json" },
-    { "key": "osaka", "name": "大阪府", "region": "近畿", "stationsFile": "config/stations/osaka.json" },
-    { "key": "hyogo", "name": "兵庫県", "region": "近畿", "stationsFile": "config/stations/hyogo.json" },
-    { "key": "nara", "name": "奈良県", "region": "近畿", "stationsFile": "config/stations/nara.json" },
-    { "key": "wakayama", "name": "和歌山県", "region": "近畿", "stationsFile": "config/stations/wakayama.json" },
-
-    { "key": "tottori", "name": "鳥取県", "region": "中国", "stationsFile": null },
-    { "key": "shimane", "name": "島根県", "region": "中国", "stationsFile": null },
-    { "key": "okayama", "name": "岡山県", "region": "中国", "stationsFile": null },
-    { "key": "hiroshima", "name": "広島県", "region": "中国", "stationsFile": null },
-    { "key": "yamaguchi", "name": "山口県", "region": "中国", "stationsFile": null },
-
-    { "key": "tokushima", "name": "徳島県", "region": "四国", "stationsFile": null },
-    { "key": "kagawa", "name": "香川県", "region": "四国", "stationsFile": null },
-    { "key": "ehime", "name": "愛媛県", "region": "四国", "stationsFile": null },
-    { "key": "kochi", "name": "高知県", "region": "四国", "stationsFile": null },
-
-    { "key": "fukuoka", "name": "福岡県", "region": "九州北部", "stationsFile": null },
-    { "key": "saga", "name": "佐賀県", "region": "九州北部", "stationsFile": null },
-    { "key": "nagasaki", "name": "長崎県", "region": "九州北部", "stationsFile": null },
-    { "key": "kumamoto", "name": "熊本県", "region": "九州北部", "stationsFile": null },
-    { "key": "oita", "name": "大分県", "region": "九州北部", "stationsFile": null },
-
-    { "key": "miyazaki", "name": "宮崎県", "region": "九州南部・奄美", "stationsFile": null },
-    { "key": "kagoshima", "name": "鹿児島県", "region": "九州南部・奄美", "stationsFile": null },
-
-    { "key": "okinawa", "name": "沖縄県", "region": "沖縄", "stationsFile": null }
+    { "key": "shiga", "name": "滋賀県", "region": "近畿" },
+    { "key": "kyoto", "name": "京都府", "region": "近畿" },
+    { "key": "osaka", "name": "大阪府", "region": "近畿" },
+    { "key": "hyogo", "name": "兵庫県", "region": "近畿" },
+    { "key": "nara", "name": "奈良県", "region": "近畿" },
+    { "key": "wakayama", "name": "和歌山県", "region": "近畿" }
   ]
 }
