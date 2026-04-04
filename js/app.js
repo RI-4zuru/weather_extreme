@@ -5,10 +5,11 @@ import {
   DEFAULT_REGION,
   ELEMENT_LABELS
 } from "./constants.js";
-
+import { loadLiveSummaryData, loadManifest, loadPrefectures, loadTableData } from "./data-loader.js";
 import {
   buildStatusText,
   getElementDescription,
+  hasAnyRankIn,
   isTopRankItem,
   makeHeader,
   renderDebugPanel,
@@ -19,20 +20,8 @@ import {
   renderTableMessage,
   renderTopRankAlert
 } from "./renderers.js";
-
-import {
-  loadLiveSummaryData,
-  loadManifest,
-  loadPrefectures,
-  loadTableData
-} from "./data-loader.js";
-
 import { state } from "./state.js";
 import { escapeHtml } from "./utils.js";
-
-/* =========================
-   DOM取得
-========================= */
 
 const regionSelect = document.getElementById("regionSelect");
 const prefSelect = document.getElementById("prefSelect");
@@ -46,10 +35,6 @@ const rankInBadgeEl = document.getElementById("rankInBadge");
 const debugDetailsEl = document.getElementById("debugDetails");
 const debugBodyEl = document.getElementById("debugBody");
 const topRankAlertEl = document.getElementById("topRankAlert");
-
-/* =========================
-   ユーティリティ
-========================= */
 
 function getSelectedElement() {
   const checked = document.querySelector('input[name="element"]:checked');
@@ -75,10 +60,6 @@ function updateDebugSelections() {
   state.debugState.selectedElementLabel = getSelectedElementLabel();
 }
 
-/* =========================
-   初期化（都道府県）
-========================= */
-
 function populatePrefectures() {
   const region = regionSelect.value;
   const list = state.prefecturesData.filter((p) => p.region === region);
@@ -92,9 +73,8 @@ async function initPrefectures() {
   const prefectures = await loadPrefectures();
 
   const regions = [...new Set(prefectures.map((p) => p.region))];
-
   regionSelect.innerHTML = regions
-    .map((r) => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`)
+    .map((region) => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`)
     .join("");
 
   if (regions.includes(DEFAULT_REGION)) {
@@ -103,80 +83,50 @@ async function initPrefectures() {
 
   populatePrefectures();
 
-  if ([...prefSelect.options].some((o) => o.value === DEFAULT_PREF)) {
+  if ([...prefSelect.options].some((opt) => opt.value === DEFAULT_PREF)) {
     prefSelect.value = DEFAULT_PREF;
   }
 
   monthSelect.value = DEFAULT_MONTH;
 
-  const defaultRadio = document.querySelector(
-    `input[name="element"][value="${DEFAULT_ELEMENT}"]`
-  );
-  if (defaultRadio) defaultRadio.checked = true;
+  const defaultRadio = document.querySelector(`input[name="element"][value="${DEFAULT_ELEMENT}"]`);
+  if (defaultRadio) {
+    defaultRadio.checked = true;
+  }
 
   updateDebugSelections();
-
   renderDebugPanel(debugBodyEl, debugDetailsEl);
-
-  /* ← 初期状態では絶対に非表示 */
   renderTopRankAlert(topRankAlertEl, false);
   renderRankInBadge(rankInBadgeEl, false);
 }
 
-/* =========================
-   実況欄更新（ここが今回の本命）
-========================= */
-
 async function refreshLiveSummary(prefKey) {
   try {
     const data = await loadLiveSummaryData(prefKey);
-
     const status = data.status || "ok";
     const message = data.message || "";
     const items = Array.isArray(data.items) ? data.items : [];
 
     if (status === "error") {
-      renderLiveSummaryMessage(
-        liveSummaryEl,
-        message || "実況一覧の取得に失敗しました。"
-      );
-
+      renderLiveSummaryMessage(liveSummaryEl, message || "実況一覧の取得に失敗しました。");
       renderTopRankAlert(topRankAlertEl, false);
       renderRankInBadge(rankInBadgeEl, false);
-
     } else {
       renderLiveSummary(liveSummaryEl, items);
-
-      /* ===== ここが今回の重要修正 ===== */
-
-      // 1位があるか（厳密判定）
       const hasTopRank = items.some((item) => isTopRankItem(item));
-
-      // ランクインがあるか（1件でもあればOK）
-      const hasRankIn = items.length > 0;
-
+      const hasRankIn = hasAnyRankIn(items);
       renderTopRankAlert(topRankAlertEl, hasTopRank);
       renderRankInBadge(rankInBadgeEl, hasRankIn);
     }
-
   } catch (error) {
     console.error(error);
-
-    renderLiveSummaryMessage(
-      liveSummaryEl,
-      "実況一覧の読み込みに失敗しました。"
-    );
-
+    renderLiveSummaryMessage(liveSummaryEl, "実況一覧の読み込みに失敗しました。");
     renderTopRankAlert(topRankAlertEl, false);
     renderRankInBadge(rankInBadgeEl, false);
   }
 
   renderDebugPanel(debugBodyEl, debugDetailsEl);
 }
-
-/* =========================
-   テーブル更新
-========================= */
 
 async function refreshTable() {
   updateDebugSelections();
@@ -190,21 +140,19 @@ async function refreshTable() {
 
   try {
     await loadManifest();
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error(error);
   }
-
   renderDebugPanel(debugBodyEl, debugDetailsEl);
 
   if (!prefMeta) {
     statusEl.textContent = "都道府県情報が見つかりません";
-
     makeHeader(tableHead);
     renderTableMessage(tableBody, "都道府県情報が見つかりません。");
-
+    renderLiveSummaryMessage(liveSummaryEl, "実況一覧を表示できません。");
     renderTopRankAlert(topRankAlertEl, false);
     renderRankInBadge(rankInBadgeEl, false);
-
+    renderDebugPanel(debugBodyEl, debugDetailsEl);
     return;
   }
 
@@ -212,16 +160,14 @@ async function refreshTable() {
 
   if (!prefMeta.stationsFile) {
     makeHeader(tableHead);
-
     renderTableMessage(tableBody, "この都道府県は未対応です。");
-
     statusEl.textContent = buildStatusText({
       rowCount: 0,
       elementLabel,
       elementDescription,
       extraMessage: "未対応"
     });
-
+    renderDebugPanel(debugBodyEl, debugDetailsEl);
     return;
   }
 
@@ -229,51 +175,72 @@ async function refreshTable() {
 
   try {
     const data = await loadTableData(prefKey, elementKey, month);
-
     const rows = data.rows || [];
     const status = data.status || "ok";
     const message = data.message || "";
-    const observationTime =
-      data.observationTime || data.baseTime || data.updatedAt || "";
+    const observationTime = data.observationTime || data.baseTime || data.updatedAt || "";
 
     makeHeader(tableHead);
 
     if (status === "error") {
-      renderTableMessage(tableBody, message || "データ取得失敗");
-
+      renderTableMessage(tableBody, message || "データ取得に失敗しました。");
+      statusEl.textContent = buildStatusText({
+        observationTime,
+        rowCount: 0,
+        elementLabel,
+        elementDescription,
+        extraMessage: message || "データ取得失敗"
+      });
     } else if (status === "no_observation") {
-      renderTableMessage(
-        tableBody,
-        "この要素は、この県では観測対象がありません。"
-      );
-
+      renderTableMessage(tableBody, "この要素は、この県では観測対象がありません。");
+      statusEl.textContent = buildStatusText({
+        observationTime,
+        rowCount: 0,
+        elementLabel,
+        elementDescription
+      });
     } else {
       renderTable(tableBody, rows);
+      statusEl.textContent = buildStatusText({
+        observationTime,
+        rowCount: rows.length,
+        elementLabel,
+        elementDescription
+      });
     }
-
-    statusEl.textContent = buildStatusText({
-      observationTime,
-      rowCount: rows.length,
-      elementLabel,
-      elementDescription
-    });
-
   } catch (error) {
     console.error(error);
 
     makeHeader(tableHead);
+    renderTableMessage(tableBody, "JSONの読み込みに失敗しました。");
 
-    renderTableMessage(tableBody, "JSON読み込み失敗");
-
-    statusEl.textContent = "JSONの読み込みに失敗しました";
+    statusEl.textContent = buildStatusText({
+      observationTime:
+        state.manifestCache?.observationTime ||
+        state.manifestCache?.baseTime ||
+        state.manifestCache?.updatedAt ||
+        "",
+      rowCount: 0,
+      elementLabel,
+      elementDescription,
+      extraMessage: "JSONの読み込みに失敗しました"
+    });
   }
 
   renderDebugPanel(debugBodyEl, debugDetailsEl);
 }
 
-/* =========================
-   アラートクリックジャンプ
-========================= */
+function startAutoRefresh() {
+  if (state.refreshTimer) {
+    clearInterval(state.refreshTimer);
+  }
+
+  state.refreshTimer = setInterval(() => {
+    refreshTable().catch((error) => {
+      console.error(error);
+    });
+  }, 10 * 60 * 1000);
+}
 
 function setupTopRankAlertJump() {
   if (!topRankAlertEl || !liveSummarySectionEl) return;
@@ -282,7 +249,6 @@ function setupTopRankAlertJump() {
     if (!liveSummarySectionEl.open) {
       liveSummarySectionEl.open = true;
     }
-
     liveSummarySectionEl.scrollIntoView({
       behavior: "smooth",
       block: "start"
@@ -290,33 +256,15 @@ function setupTopRankAlertJump() {
   });
 }
 
-/* =========================
-   自動更新
-========================= */
-
-function startAutoRefresh() {
-  if (state.refreshTimer) {
-    clearInterval(state.refreshTimer);
-  }
-
-  state.refreshTimer = setInterval(() => {
-    refreshTable().catch(console.error);
-  }, 10 * 60 * 1000);
-}
-
-/* =========================
-   初期化
-========================= */
-
 async function init() {
   makeHeader(tableHead);
-
   await initPrefectures();
-
   setupTopRankAlertJump();
 
   regionSelect.addEventListener("change", async () => {
     populatePrefectures();
+    updateDebugSelections();
+    renderDebugPanel(debugBodyEl, debugDetailsEl);
     await refreshTable();
   });
 
@@ -328,15 +276,12 @@ async function init() {
   });
 
   await refreshTable();
-
   startAutoRefresh();
 }
 
 init().catch((error) => {
   console.error(error);
-
-  statusEl.textContent = `初期化に失敗: ${error?.message || error}`;
-
+  statusEl.textContent = `初期化に失敗しました: ${error?.message || error}`;
   renderTopRankAlert(topRankAlertEl, false);
   renderRankInBadge(rankInBadgeEl, false);
 });
