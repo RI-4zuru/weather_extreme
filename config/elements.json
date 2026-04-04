@@ -1,1 +1,66 @@
-
+{
+  "groups": [
+    {
+      "label": "降水",
+      "items": [
+        { "key": "dailyPrecip", "label": "日降水量" },
+        { "key": "max10minPrecip", "label": "日最大10分間降水量" },
+        { "key": "max1hPrecip", "label": "日最大1時間降水量" },
+        { "key": "max3hPrecip", "label": "月最大3時間降水量" },
+        { "key": "max6hPrecip", "label": "月最大6時間降水量" },
+        { "key": "max12hPrecip", "label": "月最大12時間降水量" },
+        { "key": "max24hPrecip", "label": "月最大24時間降水量" },
+        { "key": "max48hPrecip", "label": "月最大48時間降水量" },
+        { "key": "max72hPrecip", "label": "月最大72時間降水量" },
+        { "key": "monthlyPrecipHigh", "label": "月降水量の多い方" },
+        { "key": "monthlyPrecipLow", "label": "月降水量の少ない方" }
+      ]
+    },
+    {
+      "label": "気温",
+      "items": [
+        { "key": "dailyMaxTempHigh", "label": "日最高気温の高い方" },
+        { "key": "dailyMaxTempLow", "label": "日最高気温の低い方" },
+        { "key": "dailyMinTempHigh", "label": "日最低気温の高い方" },
+        { "key": "dailyMinTempLow", "label": "日最低気温の低い方" },
+        { "key": "monthlyMeanTempHigh", "label": "月平均気温の高い方" },
+        { "key": "monthlyMeanTempLow", "label": "月平均気温の低い方" }
+      ]
+    },
+    {
+      "label": "湿度",
+      "items": [
+        { "key": "dailyMinHumidity", "label": "日最小相対湿度" }
+      ]
+    },
+    {
+      "label": "風",
+      "items": [
+        { "key": "dailyMaxWind", "label": "日最大風速" },
+        { "key": "dailyMaxGust", "label": "日最大瞬間風速" }
+      ]
+    },
+    {
+      "label": "日照",
+      "items": [
+        { "key": "monthlySunshineHigh", "label": "月間日照時間の多い方" },
+        { "key": "monthlySunshineLow", "label": "月間日照時間の少ない方" }
+      ]
+    },
+    {
+      "label": "雪",
+      "items": [
+        { "key": "dailySnowfall", "label": "降雪の深さ日合計" },
+        { "key": "monthlySnowfall", "label": "降雪の深さ月合計" },
+        { "key": "max3hSnow", "label": "月最大3時間降雪量" },
+        { "key": "max6hSnow", "label": "月最大6時間降雪量" },
+        { "key": "max12hSnow", "label": "月最大12時間降雪量" },
+        { "key": "max24hSnow", "label": "月最大24時間降雪量" },
+        { "key": "max48hSnow", "label": "月最大48時間降雪量" },
+        { "key": "max72hSnow", "label": "月最大72時間降雪量" },
+        { "key": "monthlyMaxSnowDepthHigh", "label": "月最深積雪の大きい方" },
+        { "key": "monthlyMaxSnowDepthLow", "label": "月最深積雪の小さい方" }
+      ]
+    }
+  ]
+}
