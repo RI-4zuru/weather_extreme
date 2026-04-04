@@ -27,6 +27,7 @@ const statusEl = document.getElementById("status");
 const tableHead = document.getElementById("tableHead");
 const tableBody = document.getElementById("tableBody");
 const liveSummaryEl = document.getElementById("liveSummary");
+const liveSummarySectionEl = document.getElementById("liveSummarySection");
 const debugDetailsEl = document.getElementById("debugDetails");
 const debugBodyEl = document.getElementById("debugBody");
 const topRankAlertEl = document.getElementById("topRankAlert");
@@ -231,9 +232,24 @@ function startAutoRefresh() {
   }, 10 * 60 * 1000);
 }
 
+function setupTopRankAlertJump() {
+  if (!topRankAlertEl || !liveSummarySectionEl) return;
+
+  topRankAlertEl.addEventListener("click", () => {
+    if (!liveSummarySectionEl.open) {
+      liveSummarySectionEl.open = true;
+    }
+    liveSummarySectionEl.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+}
+
 async function init() {
   makeHeader(tableHead);
   await initPrefectures();
+  setupTopRankAlertJump();
 
   regionSelect.addEventListener("change", async () => {
     populatePrefectures();
@@ -255,6 +271,6 @@ async function init() {
 
 init().catch((error) => {
   console.error(error);
-  statusEl.textContent = "初期化に失敗しました";
+  statusEl.textContent = `初期化に失敗しました: ${error?.message || error}`;
   renderTopRankAlert(topRankAlertEl, false);
 });
