@@ -1,4 +1,4 @@
-import { ELEMENT_DESCRIPTIONS, ELEMENT_LABELS, LIVE_SUMMARY_ORDER } from "./constants.js";
+import { ELEMENT_DESCRIPTIONS, LIVE_SUMMARY_ORDER } from "./constants.js";
 import { state } from "./state.js";
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
@@ -17,6 +17,28 @@ export function makeHeader(tableHead) {
 
 export function getElementDescription(elementKey) {
   return ELEMENT_DESCRIPTIONS[elementKey] || "この要素の説明は未設定です。";
+}
+
+export function normalizeRank(rank) {
+  if (rank === null || rank === undefined) return null;
+
+  if (typeof rank === "number") {
+    return Number.isFinite(rank) ? rank : null;
+  }
+
+  const text = String(rank).trim();
+  if (!text) return null;
+
+  const matched = text.match(/\d+/);
+  if (!matched) return null;
+
+  const value = Number(matched[0]);
+  return Number.isFinite(value) ? value : null;
+}
+
+export function isTopRankItem(item) {
+  const rankValue = normalizeRank(item?.rank);
+  return rankValue === 1;
 }
 
 export function renderDebugPanel(debugBodyEl, debugDetailsEl) {
@@ -122,7 +144,6 @@ export function renderTable(tableBody, rows) {
 
       if (rank) {
         const classes = ["rank-cell"];
-        if (i === 0) classes.push("top-rank");
         if (rank.highlightLive) classes.push("live-in-rank");
         if (rank.highlightWithinYear) classes.push("within-year");
         td.className = classes.join(" ");
@@ -132,9 +153,7 @@ export function renderTable(tableBody, rows) {
           <div class="date">${renderDualLine(rank.date || "-")}</div>
         `;
       } else {
-        const classes = ["rank-cell"];
-        if (i === 0) classes.push("top-rank");
-        td.className = classes.join(" ");
+        td.className = "rank-cell";
         td.innerHTML = `
           <div class="value">-</div>
           <div class="date">-</div>
@@ -170,7 +189,11 @@ export function renderLiveSummary(liveSummaryEl, items) {
     const oa = LIVE_SUMMARY_ORDER.indexOf(a.elementKey);
     const ob = LIVE_SUMMARY_ORDER.indexOf(b.elementKey);
     if (oa !== ob) return oa - ob;
-    if (a.rank !== b.rank) return a.rank - b.rank;
+
+    const rankA = normalizeRank(a.rank) ?? 9999;
+    const rankB = normalizeRank(b.rank) ?? 9999;
+    if (rankA !== rankB) return rankA - rankB;
+
     return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
   });
 
@@ -185,15 +208,14 @@ export function renderLiveSummary(liveSummaryEl, items) {
           data.length === 0
             ? `<div class="live-summary-empty">該当なし</div>`
             : data.map((item) => {
-                const itemClass =
-                  Number(item.rank) === 1
-                    ? "live-summary-item live-summary-item-top1"
-                    : "live-summary-item live-summary-item-rankin";
+                const itemClass = isTopRankItem(item)
+                  ? "live-summary-item live-summary-item-top1"
+                  : "live-summary-item live-summary-item-rankin";
 
                 return `
                   <div class="${itemClass}">
                     <div class="live-summary-main">
-                      <span>${escapeHtml(String(item.rank))}位</span>
+                      <span>${escapeHtml(String(item.rank ?? "-"))}</span>
                       <span>${escapeHtml(item.stationName || "-")}</span>
                       <span>${escapeHtml(item.elementLabel || "-")}</span>
                     </div>
