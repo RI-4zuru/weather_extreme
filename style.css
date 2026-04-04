@@ -122,6 +122,13 @@ select {
   gap: 10px;
 }
 
+.summary-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: #006aa3;
+  letter-spacing: 0.01em;
+}
+
 .rank-in-badge {
   margin-left: auto;
   display: inline-flex;
@@ -144,6 +151,7 @@ select {
 
 .live-summary-empty {
   color: #60707b;
+  font-size: 13px;
 }
 
 .live-summary-grid {
@@ -157,10 +165,17 @@ select {
 }
 
 .live-summary-column-title {
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: #0077b6;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #005f8f;
+  background: linear-gradient(135deg, #dff6ff, #e8fff3);
+  border: 2px solid #90e0ef;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.08);
 }
 
 .live-summary-scroll {
@@ -458,6 +473,10 @@ th {
 
   .summary-row {
     flex-wrap: wrap;
+  }
+
+  .summary-title {
+    font-size: 15px;
   }
 
   .rank-in-badge {
