@@ -24,6 +24,7 @@ let deferredInstallPrompt = null;
 let appState = {
   prefectures: null,
   elements: null,
+  elementLabelMap: new Map(),
   selectedRegion: "",
   selectedPref: "",
   selectedMonth: "all",
@@ -41,10 +42,17 @@ function escapeHtml(value) {
 }
 
 function setStatus(message) {
+  if (!statusBox) return;
   statusBox.textContent = message;
 }
 
+function hideStatusBox() {
+  if (!statusBox) return;
+  statusBox.style.display = "none";
+}
+
 function setDebug(entries) {
+  if (!debugGrid) return;
   debugGrid.innerHTML = "";
   for (const [key, value] of entries) {
     const k = document.createElement("div");
@@ -78,7 +86,7 @@ function saveValue(key, value) {
   try {
     localStorage.setItem(key, value);
   } catch {
-    // 何もしない
+    // 保存失敗時は何もしない
   }
 }
 
@@ -95,6 +103,23 @@ function buildRegionMap(prefectureConfig) {
   }
 
   return map;
+}
+
+function buildElementLabelMap(elementsConfig) {
+  const map = new Map();
+  const groups = elementsConfig?.groups || [];
+
+  for (const group of groups) {
+    for (const item of group.items || []) {
+      map.set(item.key, item.label);
+    }
+  }
+
+  return map;
+}
+
+function getSelectedElementLabel() {
+  return appState.elementLabelMap.get(appState.selectedElement) || appState.selectedElement || "";
 }
 
 function fillRegionSelect(prefectureConfig) {
@@ -199,7 +224,7 @@ function fillElementPanel(elementsConfig) {
 function buildTableHead() {
   rankTableHead.innerHTML = `
     <tr>
-      <th>地点</th>
+      <th class="station-col">地点</th>
       <th>1位</th>
       <th>2位</th>
       <th>3位</th>
@@ -229,35 +254,15 @@ function normalizeSummaryItems(summaryData) {
 
       return {
         rank,
-        rankText:
-          item.rankText ||
-          (rank ? `${rank}位` : ""),
-        station:
-          item.station ||
-          item.stationName ||
-          item.point ||
-          "",
+        rankText: item.rankText || (rank ? `${rank}位` : ""),
+        station: item.station || item.stationName || item.point || "",
         element:
           item.element ||
           item.elementName ||
           item.type ||
-          "",
-        value:
-          item.valueText ||
-          item.value ||
-          "",
-        date:
-          item.dateText ||
-          item.date ||
-          item.observedAt ||
-          "",
-        month:
-          item.monthText ||
-          item.month ||
-          "",
-        rankIn:
-          item.rankIn ??
-          (rank !== null && rank >= 1 && rank <= 10)
+          getSelectedElementLabel(),
+        value: item.valueText || item.value || "",
+        rankIn: item.rankIn ?? (rank !== null && rank >= 1 && rank <= 10)
       };
     });
   }
@@ -270,20 +275,22 @@ function normalizeSummaryItems(summaryData) {
       rank: Number(item.rank) || 1,
       rankText: item.rankText || "1位",
       station: item.station || item.stationName || "",
-      element: item.element || item.elementName || "",
+      element:
+        item.element ||
+        item.elementName ||
+        getSelectedElementLabel(),
       value: item.valueText || item.value || "",
-      date: item.dateText || item.date || "",
-      month: item.monthText || item.month || "",
       rankIn: true
     })),
     ...rankIn.map((item) => ({
       rank: Number(item.rank) || null,
       rankText: item.rankText || (item.rank ? `${item.rank}位` : ""),
       station: item.station || item.stationName || "",
-      element: item.element || item.elementName || "",
+      element:
+        item.element ||
+        item.elementName ||
+        getSelectedElementLabel(),
       value: item.valueText || item.value || "",
-      date: item.dateText || item.date || "",
-      month: item.monthText || item.month || "",
       rankIn: true
     }))
   ];
@@ -308,8 +315,6 @@ function formatLiveSummaryItems(items) {
           <span class="live-summary-token live-summary-station">${escapeHtml(item.station || "")}</span>
           <span class="live-summary-token live-summary-element">${escapeHtml(item.element || "")}</span>
           <span class="live-summary-token live-summary-value">${escapeHtml(item.value || "")}</span>
-          <span class="live-summary-token live-summary-date">${escapeHtml(item.date || "")}</span>
-          <span class="live-summary-token live-summary-month">${escapeHtml(item.month || "")}</span>
         </div>
       </div>
     `;
@@ -345,41 +350,26 @@ function renderLiveSummary(summaryData) {
 }
 
 function normalizeStations(tableData) {
-  if (!tableData || typeof tableData !== "object") {
-    return [];
-  }
-
-  const sourceRows = Array.isArray(tableData.rows)
+  const sourceRows = Array.isArray(tableData?.rows)
     ? tableData.rows
-    : Array.isArray(tableData.stations)
+    : Array.isArray(tableData?.stations)
       ? tableData.stations
       : [];
 
-  return sourceRows.map((station) => {
-    const ranks = Array.isArray(station.ranks) ? station.ranks : [];
-
-    return {
-      stationName:
-        station.stationName ||
-        station.name ||
-        station.station ||
-        "",
-      startDate:
-        station.startDate ||
-        station.start ||
-        "",
-      startSub:
-        station.startSub ||
-        "",
-      ranks: ranks.map((rank) => ({
-        value: rank?.value ?? rank?.valueText ?? "",
-        date: rank?.date ?? rank?.dateText ?? "",
-        dateSub: rank?.dateSub ?? "",
-        highlightLive: Boolean(rank?.highlightLive ?? rank?.liveInRank),
-        highlightWithinYear: Boolean(rank?.highlightWithinYear ?? rank?.withinYear)
-      }))
-    };
-  });
+  return sourceRows.map((station) => ({
+    stationName: station.stationName || station.name || station.station || "",
+    startDate: station.startDate || station.start || "",
+    startSub: station.startSub || "",
+    ranks: Array.isArray(station.ranks)
+      ? station.ranks.map((rank) => ({
+          value: rank?.value ?? rank?.valueText ?? "",
+          date: rank?.date ?? rank?.dateText ?? "",
+          dateSub: rank?.dateSub ?? "",
+          highlightLive: Boolean(rank?.highlightLive ?? rank?.liveInRank),
+          highlightWithinYear: Boolean(rank?.highlightWithinYear ?? rank?.withinYear)
+        }))
+      : []
+  }));
 }
 
 function formatStationCell(station) {
@@ -403,7 +393,7 @@ function formatRankCell(rank) {
 
   return `
     <td class="${classes.join(" ")}">
-      <div class="value">${escapeHtml(rank.value || "")}</div>
+      <div class="value">${escapeHtml(rank.value ?? "")}</div>
       <div class="date">
         ${escapeHtml(rank.date || "")}
         ${rank.dateSub ? `<span class="sub">${escapeHtml(rank.dateSub)}</span>` : ""}
@@ -417,7 +407,7 @@ function renderRankTable(tableData) {
 
   const stations = normalizeStations(tableData);
 
-  if (stations.length === 0) {
+  if (!stations.length) {
     rankTableBody.innerHTML = `
       <tr>
         <td class="station-col">該当なし</td>
@@ -428,17 +418,15 @@ function renderRankTable(tableData) {
   }
 
   rankTableBody.innerHTML = stations.map((station) => {
-    const ranks = station.ranks || [];
-    const rankCells = [];
-
+    const cells = [];
     for (let i = 0; i < 10; i += 1) {
-      rankCells.push(formatRankCell(ranks[i]));
+      cells.push(formatRankCell(station.ranks[i]));
     }
 
     return `
       <tr>
         <td class="station-col">${formatStationCell(station)}</td>
-        ${rankCells.join("")}
+        ${cells.join("")}
       </tr>
     `;
   }).join("");
@@ -513,6 +501,7 @@ async function refreshAll() {
     ["都道府県", appState.selectedPref],
     ["月", appState.selectedMonth],
     ["要素", appState.selectedElement],
+    ["要素名", getSelectedElementLabel()],
     ["実況一覧パス", liveResult.path || ""],
     ["表データパス", tableResult.path || ""],
     ["manifest 基準時刻", manifestTime],
@@ -520,15 +509,7 @@ async function refreshAll() {
     ["表データ", tableResult.ok ? "成功" : `失敗: ${tableResult.error}`]
   ]);
 
-  if (liveResult.ok && tableResult.ok) {
-    setStatus(`表示中: ${appState.selectedPref} / ${appState.selectedElement} / ${appState.selectedMonth}`);
-  } else if (!liveResult.ok && !tableResult.ok) {
-    setStatus("実況一覧と表データの読み込みに失敗しました");
-  } else if (!liveResult.ok) {
-    setStatus("実況一覧の読み込みに失敗しました");
-  } else {
-    setStatus("表データの読み込みに失敗しました");
-  }
+  hideStatusBox();
 }
 
 function applySavedMonth() {
@@ -608,6 +589,7 @@ async function init() {
 
     appState.prefectures = prefectures;
     appState.elements = elements;
+    appState.elementLabelMap = buildElementLabelMap(elements);
 
     fillRegionSelect(prefectures);
     fillPrefSelect(prefectures);
@@ -624,9 +606,7 @@ async function init() {
     await refreshAll();
   } catch (err) {
     setStatus(`初期化に失敗しました: ${err.message}`);
-    setDebug([
-      ["エラー", err.message]
-    ]);
+    setDebug([["エラー", err.message]]);
   }
 }
 
