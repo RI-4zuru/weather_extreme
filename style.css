@@ -166,11 +166,11 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: linear-gradient(135deg, #00b4d8, #2dc653);
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   box-shadow: 0 4px 10px rgba(45, 198, 83, 0.18);
   white-space: nowrap;
@@ -198,11 +198,11 @@ select {
 .live-summary-column-title {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #005f8f;
   background: linear-gradient(135deg, #dff6ff, #e8fff3);
   border: 2px solid #90e0ef;
@@ -210,17 +210,17 @@ select {
 }
 
 .live-summary-scroll {
-  max-height: 320px;
+  max-height: 280px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding-right: 4px;
 }
 
 .live-summary-item {
-  padding: 10px 12px;
-  border-radius: 14px;
+  padding: 8px 10px;
+  border-radius: 13px;
   border: 2px solid #bfeaf7;
   background: linear-gradient(135deg, #f8fdff, #f8fffb);
   box-shadow: 0 2px 8px rgba(0, 119, 182, 0.05);
@@ -240,7 +240,7 @@ select {
 .live-summary-line {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: nowrap;
   overflow-x: auto;
   white-space: nowrap;
@@ -255,12 +255,8 @@ select {
 .live-summary-rank {
   font-weight: 900;
   color: #005f8f;
-  min-width: 34px;
-}
-
-.live-summary-station {
-  font-weight: 800;
-  color: #244252;
+  min-width: 30px;
+  font-size: 12px;
 }
 
 .live-summary-element {
@@ -269,13 +265,20 @@ select {
   background: #e8f8ff;
   border: 1px solid #bfeaf7;
   border-radius: 999px;
-  padding: 3px 8px;
+  padding: 2px 7px;
+  font-size: 11px;
+}
+
+.live-summary-station {
+  font-weight: 800;
+  color: #244252;
+  font-size: 12px;
 }
 
 .live-summary-value {
   font-weight: 900;
   color: #1d3557;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .element-panel {
@@ -552,28 +555,33 @@ tbody .station-col {
   }
 
   .live-summary-column-title {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .live-summary-item {
-    padding: 9px 10px;
+    padding: 7px 9px;
   }
 
   .live-summary-line {
-    gap: 10px;
+    gap: 8px;
   }
 
   .live-summary-rank {
-    min-width: 30px;
+    min-width: 28px;
+    font-size: 11px;
   }
 
   .live-summary-element {
-    font-size: 12px;
-    padding: 2px 7px;
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .live-summary-station {
+    font-size: 11px;
   }
 
   .live-summary-value {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .element-row {
