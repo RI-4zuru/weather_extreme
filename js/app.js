@@ -2,7 +2,6 @@ const regionSelect = document.getElementById("regionSelect");
 const prefSelect = document.getElementById("prefSelect");
 const monthSelect = document.getElementById("monthSelect");
 const topRankAlert = document.getElementById("topRankAlert");
-const installAppBtn = document.getElementById("installAppBtn");
 
 const liveSummaryBody = document.getElementById("liveSummaryBody");
 const rankInBadge = document.getElementById("rankInBadge");
@@ -18,8 +17,6 @@ const STORAGE_KEYS = {
   month: "weather_extreme_month",
   element: "weather_extreme_element"
 };
-
-let deferredInstallPrompt = null;
 
 let appState = {
   prefectures: null,
@@ -123,10 +120,6 @@ function buildElementLabelMap(elementsConfig) {
   return map;
 }
 
-function getSelectedElementLabel() {
-  return appState.elementLabelMap.get(appState.selectedElement) || appState.selectedElement || "";
-}
-
 function getElementLabelFromAnyKey(raw) {
   if (!raw) return "";
 
@@ -135,13 +128,11 @@ function getElementLabelFromAnyKey(raw) {
   }
 
   const normalized = String(raw).trim();
-
   if (appState.elementLabelMap.has(normalized)) {
     return appState.elementLabelMap.get(normalized);
   }
 
   const lower = normalized.toLowerCase();
-
   for (const [key, label] of appState.elementLabelMap.entries()) {
     if (String(key).toLowerCase() === lower) {
       return label;
@@ -169,10 +160,8 @@ function getElementLabelFromAnyKey(raw) {
     monthlymeantemplow: "月平均気温の低い方",
 
     dailyminhumidity: "日最小相対湿度",
-
     dailymaxwind: "日最大風速",
     dailymaxgust: "日最大瞬間風速",
-
     monthlysunshinehigh: "月間日照時間の多い方",
     monthlysunshinelow: "月間日照時間の少ない方",
 
@@ -225,7 +214,6 @@ function fillPrefSelect(prefectureConfig) {
 
   const saved = getSavedValue(STORAGE_KEYS.pref);
   const found = list.find((x) => x.key === saved);
-
   if (found) {
     prefSelect.value = saved;
   }
@@ -309,32 +297,6 @@ function buildTableHead() {
   `;
 }
 
-function inferElementLabelFromItem(item) {
-  const candidates = [
-    item?.elementLabel,
-    item?.element_name,
-    item?.displayElement,
-    item?.displayName,
-    item?.element,
-    item?.elementName,
-    item?.type,
-    item?.item,
-    item?.kind,
-    item?.target,
-    item?.category,
-    item?.metric,
-    item?.elementKey
-  ];
-
-  for (const candidate of candidates) {
-    if (!candidate) continue;
-    const label = getElementLabelFromAnyKey(candidate);
-    if (label) return label;
-  }
-
-  return getSelectedElementLabel();
-}
-
 function normalizeSummaryItems(summaryData) {
   if (!summaryData || typeof summaryData !== "object") {
     return [];
@@ -358,47 +320,20 @@ function normalizeSummaryItems(summaryData) {
         rank,
         rankText: item.rankText || (hasRank ? `${rank}位` : ""),
         station: item.station || item.stationName || item.point || "",
-        element: inferElementLabelFromItem(item),
+        element:
+          item.elementLabel ||
+          getElementLabelFromAnyKey(item.elementKey) ||
+          getElementLabelFromAnyKey(item.elementName) ||
+          getElementLabelFromAnyKey(item.element) ||
+          "",
         value: item.valueText || item.value || "",
-        rankIn: Boolean(
-          item.rankIn === true ||
-          item.isRankIn === true ||
-          item.inRank === true ||
-          hasRank
-        )
+        monthLabel: item.monthLabel || "",
+        rankIn: hasRank
       };
     });
   }
 
-  const top1 = Array.isArray(summaryData.top1) ? summaryData.top1 : [];
-  const rankIn = Array.isArray(summaryData.rankIn) ? summaryData.rankIn : [];
-
-  return [
-    ...top1.map((item) => ({
-      rank: 1,
-      rankText: item.rankText || "1位",
-      station: item.station || item.stationName || "",
-      element: inferElementLabelFromItem(item),
-      value: item.valueText || item.value || "",
-      rankIn: true
-    })),
-    ...rankIn.map((item) => {
-      const rank =
-        Number(item.rank) ||
-        Number(item.currentRank) ||
-        Number(item.rankNo) ||
-        null;
-
-      return {
-        rank,
-        rankText: item.rankText || (rank ? `${rank}位` : ""),
-        station: item.station || item.stationName || "",
-        element: inferElementLabelFromItem(item),
-        value: item.valueText || item.value || "",
-        rankIn: true
-      };
-    })
-  ];
+  return [];
 }
 
 function formatLiveSummaryItems(items) {
@@ -432,11 +367,11 @@ function renderLiveSummary(summaryData) {
   const annualItems = allItems.filter((item) => item.rankIn === true);
   const monthlyItems = allItems.filter((item) => item.rankIn === true);
 
-  const hasAnnual = annualItems.length > 0;
-  const hasMonthly = monthlyItems.length > 0;
+  const hasTop1 = annualItems.some((item) => item.rank === 1);
+  const hasRankIn = monthlyItems.length > 0;
 
-  rankInBadge.hidden = !hasMonthly;
-  topRankAlert.hidden = !hasAnnual;
+  rankInBadge.hidden = !hasRankIn;
+  topRankAlert.hidden = !hasTop1;
 
   liveSummaryBody.innerHTML = `
     <div class="live-summary-grid">
@@ -609,7 +544,6 @@ async function refreshAll() {
     ["都道府県", appState.selectedPref],
     ["月", appState.selectedMonth],
     ["要素", appState.selectedElement],
-    ["要素名", getSelectedElementLabel()],
     ["実況一覧パス", liveResult.path || ""],
     ["表データパス", tableResult.path || ""],
     ["manifest 基準時刻", manifestTime],
@@ -655,35 +589,6 @@ function bindEvents() {
       block: "start"
     });
   });
-
-  installAppBtn.addEventListener("click", async () => {
-    if (!deferredInstallPrompt) return;
-    deferredInstallPrompt.prompt();
-    await deferredInstallPrompt.userChoice;
-    deferredInstallPrompt = null;
-    installAppBtn.hidden = true;
-  });
-
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredInstallPrompt = event;
-    installAppBtn.hidden = false;
-  });
-
-  window.addEventListener("appinstalled", () => {
-    deferredInstallPrompt = null;
-    installAppBtn.hidden = true;
-  });
-}
-
-async function registerServiceWorker() {
-  if (!("serviceWorker" in navigator)) return;
-
-  try {
-    await navigator.serviceWorker.register("./sw.js");
-  } catch (err) {
-    console.error("service worker registration failed", err);
-  }
 }
 
 async function init() {
@@ -710,7 +615,6 @@ async function init() {
 
     await loadManifest();
     bindEvents();
-    await registerServiceWorker();
     await refreshAll();
   } catch (err) {
     showStatusBox();
