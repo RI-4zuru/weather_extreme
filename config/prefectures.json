@@ -1,10 +1,40 @@
 {
   "prefectures": [
-    { "key": "shiga", "name": "滋賀県", "region": "近畿" },
-    { "key": "kyoto", "name": "京都府", "region": "近畿" },
-    { "key": "osaka", "name": "大阪府", "region": "近畿" },
-    { "key": "hyogo", "name": "兵庫県", "region": "近畿" },
-    { "key": "nara", "name": "奈良県", "region": "近畿" },
-    { "key": "wakayama", "name": "和歌山県", "region": "近畿" }
+    {
+      "key": "shiga",
+      "name": "滋賀県",
+      "region": "近畿",
+      "stationsFile": "config/stations/shiga.json"
+    },
+    {
+      "key": "kyoto",
+      "name": "京都府",
+      "region": "近畿",
+      "stationsFile": "config/stations/kyoto.json"
+    },
+    {
+      "key": "osaka",
+      "name": "大阪府",
+      "region": "近畿",
+      "stationsFile": "config/stations/osaka.json"
+    },
+    {
+      "key": "hyogo",
+      "name": "兵庫県",
+      "region": "近畿",
+      "stationsFile": "config/stations/hyogo.json"
+    },
+    {
+      "key": "nara",
+      "name": "奈良県",
+      "region": "近畿",
+      "stationsFile": "config/stations/nara.json"
+    },
+    {
+      "key": "wakayama",
+      "name": "和歌山県",
+      "region": "近畿",
+      "stationsFile": "config/stations/wakayama.json"
+    }
   ]
 }
