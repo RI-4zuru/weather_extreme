@@ -1,66 +1,103 @@
 {
-  "groups": [
-    {
-      "label": "降水",
-      "items": [
-        { "key": "dailyPrecip", "label": "日降水量" },
-        { "key": "max10minPrecip", "label": "日最大10分間降水量" },
-        { "key": "max1hPrecip", "label": "日最大1時間降水量" },
-        { "key": "max3hPrecip", "label": "月最大3時間降水量" },
-        { "key": "max6hPrecip", "label": "月最大6時間降水量" },
-        { "key": "max12hPrecip", "label": "月最大12時間降水量" },
-        { "key": "max24hPrecip", "label": "月最大24時間降水量" },
-        { "key": "max48hPrecip", "label": "月最大48時間降水量" },
-        { "key": "max72hPrecip", "label": "月最大72時間降水量" },
-        { "key": "monthlyPrecipHigh", "label": "月降水量の多い方" },
-        { "key": "monthlyPrecipLow", "label": "月降水量の少ない方" }
-      ]
-    },
-    {
-      "label": "気温",
-      "items": [
-        { "key": "dailyMaxTempHigh", "label": "日最高気温の高い方" },
-        { "key": "dailyMaxTempLow", "label": "日最高気温の低い方" },
-        { "key": "dailyMinTempHigh", "label": "日最低気温の高い方" },
-        { "key": "dailyMinTempLow", "label": "日最低気温の低い方" },
-        { "key": "monthlyMeanTempHigh", "label": "月平均気温の高い方" },
-        { "key": "monthlyMeanTempLow", "label": "月平均気温の低い方" }
-      ]
-    },
-    {
-      "label": "湿度",
-      "items": [
-        { "key": "dailyMinHumidity", "label": "日最小相対湿度" }
-      ]
-    },
-    {
-      "label": "風",
-      "items": [
-        { "key": "dailyMaxWind", "label": "日最大風速" },
-        { "key": "dailyMaxGust", "label": "日最大瞬間風速" }
-      ]
-    },
-    {
-      "label": "日照",
-      "items": [
-        { "key": "monthlySunshineHigh", "label": "月間日照時間の多い方" },
-        { "key": "monthlySunshineLow", "label": "月間日照時間の少ない方" }
-      ]
-    },
-    {
-      "label": "雪",
-      "items": [
-        { "key": "dailySnowfall", "label": "降雪の深さ日合計" },
-        { "key": "monthlySnowfall", "label": "降雪の深さ月合計" },
-        { "key": "max3hSnow", "label": "月最大3時間降雪量" },
-        { "key": "max6hSnow", "label": "月最大6時間降雪量" },
-        { "key": "max12hSnow", "label": "月最大12時間降雪量" },
-        { "key": "max24hSnow", "label": "月最大24時間降雪量" },
-        { "key": "max48hSnow", "label": "月最大48時間降雪量" },
-        { "key": "max72hSnow", "label": "月最大72時間降雪量" },
-        { "key": "monthlyMaxSnowDepthHigh", "label": "月最深積雪の大きい方" },
-        { "key": "monthlyMaxSnowDepthLow", "label": "月最深積雪の小さい方" }
-      ]
-    }
+  "defaultRegion": "近畿",
+  "defaultPref": "osaka",
+  "defaultMonth": "all",
+  "annualDefaultElement": "dailyPrecip",
+  "monthlyDefaultElement": "dailyPrecip",
+  "annualElements": [
+    { "key": "dailyMinSeaLevelPressure", "label": "日最低海面気圧", "unit": "hPa" },
+
+    { "key": "dailyPrecip", "label": "日降水量", "unit": "mm" },
+    { "key": "max10mPrecip", "label": "日最大10分間降水量", "unit": "mm" },
+    { "key": "max1hPrecip", "label": "日最大1時間降水量", "unit": "mm" },
+    { "key": "monthMax1h10mPrecip", "label": "日最大1時間降水量(10分間隔)", "unit": "mm" },
+    { "key": "monthMax3hPrecip", "label": "月最大3時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax6hPrecip", "label": "月最大6時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax12hPrecip", "label": "月最大12時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax48hPrecip", "label": "月最大48時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax72hPrecip", "label": "月最大72時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthPrecipHigh", "label": "月降水量の多い方から", "unit": "mm" },
+    { "key": "monthPrecipLow", "label": "月降水量の少ない方から", "unit": "mm" },
+    { "key": "yearPrecipHigh", "label": "年降水量の多い方から", "unit": "mm" },
+    { "key": "yearPrecipLow", "label": "年降水量の少ない方から", "unit": "mm" },
+
+    { "key": "dailyMaxTempHigh", "label": "日最高気温の高い方から", "unit": "℃" },
+    { "key": "dailyMaxTempLow", "label": "日最高気温の低い方から", "unit": "℃" },
+    { "key": "dailyMinTempHigh", "label": "日最低気温の高い方から", "unit": "℃" },
+    { "key": "dailyMinTempLow", "label": "日最低気温の低い方から", "unit": "℃" },
+    { "key": "monthAvgTempHigh", "label": "月平均気温の高い方から", "unit": "℃" },
+    { "key": "monthAvgTempLow", "label": "月平均気温の低い方から", "unit": "℃" },
+    { "key": "yearAvgTempHigh", "label": "年平均気温の高い方から", "unit": "℃" },
+    { "key": "yearAvgTempLow", "label": "年平均気温の低い方から", "unit": "℃" },
+
+    { "key": "annualDaysMeanTempBelow0", "label": "日平均気温0℃未満継続年間日数", "unit": "日" },
+    { "key": "annualDaysMeanTempAtOrAbove25", "label": "日平均気温25℃以上年間日数", "unit": "日" },
+    { "key": "annualDaysMaxTempBelow0", "label": "日最高気温0℃未満継続年間日数", "unit": "日" },
+    { "key": "annualDaysMaxTempAtOrAbove25", "label": "日最高気温25℃以上年間日数", "unit": "日" },
+    { "key": "annualDaysMaxTempAtOrAbove30", "label": "日最高気温30℃以上年間日数", "unit": "日" },
+    { "key": "annualDaysMaxTempAtOrAbove35", "label": "日最高気温35℃以上年間日数", "unit": "日" },
+    { "key": "annualDaysMinTempBelow0", "label": "日最低気温0℃未満継続年間日数", "unit": "日" },
+    { "key": "annualDaysMinTempAtOrAbove25", "label": "日最低気温25℃以上年間日数", "unit": "日" },
+
+    { "key": "dailyMinHumidity", "label": "日最小相対湿度", "unit": "%" },
+    { "key": "dailyMaxWind", "label": "日最大風速・風向", "unit": "m/s" },
+    { "key": "dailyMaxGust", "label": "日最大瞬間風速・風向", "unit": "m/s" },
+
+    { "key": "monthSunshineHigh", "label": "月間日照時間の多い方から", "unit": "時間" },
+    { "key": "monthSunshineLow", "label": "月間日照時間の少ない方から", "unit": "時間" },
+    { "key": "yearSunshineHigh", "label": "年間日照時間の多い方から", "unit": "時間" },
+    { "key": "yearSunshineLow", "label": "年間日照時間の少ない方から", "unit": "時間" },
+
+    { "key": "dailySnowDepth", "label": "降雪の深さ日合計", "unit": "cm" },
+    { "key": "monthSnowDepth", "label": "降雪の深さ月合計", "unit": "cm" },
+    { "key": "yearCumulativeSnowDepth", "label": "降雪の深さ累積年合計", "unit": "cm" },
+    { "key": "monthMax3hSnow", "label": "月最大3時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax6hSnow", "label": "月最大6時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax12hSnow", "label": "月最大12時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax24hSnow", "label": "月最大24時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax48hSnow", "label": "月最大48時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax72hSnow", "label": "月最大72時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthDeepSnowHigh", "label": "月最深積雪の大きい方から", "unit": "cm" },
+    { "key": "monthDeepSnowLow", "label": "月最深積雪の小さい方から", "unit": "cm" }
+  ],
+  "monthlyElements": [
+    { "key": "dailyPrecip", "label": "日降水量", "unit": "mm" },
+    { "key": "max10mPrecip", "label": "日最大10分間降水量", "unit": "mm" },
+    { "key": "max1hPrecip", "label": "日最大1時間降水量", "unit": "mm" },
+    { "key": "monthMax1h10mPrecip", "label": "日最大1時間降水量(10分間隔)", "unit": "mm" },
+    { "key": "monthMax3hPrecip", "label": "月最大3時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax6hPrecip", "label": "月最大6時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax12hPrecip", "label": "月最大12時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax48hPrecip", "label": "月最大48時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthMax72hPrecip", "label": "月最大72時間降水量の多い方から", "unit": "mm" },
+    { "key": "monthPrecipHigh", "label": "月降水量の多い方から", "unit": "mm" },
+    { "key": "monthPrecipLow", "label": "月降水量の少ない方から", "unit": "mm" },
+
+    { "key": "dailyMaxTempHigh", "label": "日最高気温の高い方から", "unit": "℃" },
+    { "key": "dailyMaxTempLow", "label": "日最高気温の低い方から", "unit": "℃" },
+    { "key": "dailyMinTempHigh", "label": "日最低気温の高い方から", "unit": "℃" },
+    { "key": "dailyMinTempLow", "label": "日最低気温の低い方から", "unit": "℃" },
+    { "key": "monthAvgTempHigh", "label": "月平均気温の高い方から", "unit": "℃" },
+    { "key": "monthAvgTempLow", "label": "月平均気温の低い方から", "unit": "℃" },
+
+    { "key": "dailyMinHumidity", "label": "日最小相対湿度", "unit": "%" },
+    { "key": "dailyMaxWind", "label": "日最大風速・風向", "unit": "m/s" },
+    { "key": "dailyMaxGust", "label": "日最大瞬間風速・風向", "unit": "m/s" },
+
+    { "key": "monthSunshineHigh", "label": "月間日照時間の多い方から", "unit": "時間" },
+    { "key": "monthSunshineLow", "label": "月間日照時間の少ない方から", "unit": "時間" },
+
+    { "key": "dailySnowDepth", "label": "降雪の深さ日合計", "unit": "cm" },
+    { "key": "monthSnowDepth", "label": "降雪の深さ月合計", "unit": "cm" },
+    { "key": "monthMax3hSnow", "label": "月最大3時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax6hSnow", "label": "月最大6時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax12hSnow", "label": "月最大12時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax24hSnow", "label": "月最大24時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax48hSnow", "label": "月最大48時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthMax72hSnow", "label": "月最大72時間降雪量の多い方から", "unit": "cm" },
+    { "key": "monthDeepSnowHigh", "label": "月最深積雪の大きい方から", "unit": "cm" },
+    { "key": "monthDeepSnowLow", "label": "月最深積雪の小さい方から", "unit": "cm" }
   ]
 }
