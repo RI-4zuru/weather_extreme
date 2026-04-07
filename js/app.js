@@ -43,13 +43,66 @@ function formatDateTime(isoText) {
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
 }
 
-function renderDateTwoLines(text) {
-  if (!text) return "-";
-  const parts = String(text).split("（");
-  const line1 = parts[0] || "-";
-  const line2 = parts[1] ? `（${parts[1]}` : "";
-  if (!line2) return escapeHtml(line1);
-  return `${escapeHtml(line1)}<br>${escapeHtml(line2)}`;
+function splitJapaneseDateLines(text) {
+  if (!text) {
+    return { first: "-", second: "", third: "" };
+  }
+
+  const raw = String(text).trim();
+
+  const m1 = raw.match(/^(\d{4}年\d{1,2}月\d{1,2}日)（(.+)）$/);
+  if (m1) {
+    return {
+      first: m1[1],
+      second: `（${m1[2]}）`,
+      third: ""
+    };
+  }
+
+  const m2 = raw.match(/^(\d{4}年\d{1,2}月)（(.+)）$/);
+  if (m2) {
+    return {
+      first: m2[1],
+      second: `（${m2[2]}）`,
+      third: ""
+    };
+  }
+
+  return {
+    first: raw,
+    second: "",
+    third: ""
+  };
+}
+
+function renderStartDateTwoLines(text) {
+  const lines = splitJapaneseDateLines(text);
+  if (!lines.second) {
+    return `<div>${escapeHtml(lines.first)}</div>`;
+  }
+  return `<div>${escapeHtml(lines.first)}</div><div>${escapeHtml(lines.second)}</div>`;
+}
+
+function renderRankDateTwoLines(text) {
+  const lines = splitJapaneseDateLines(text);
+  return `
+    <div class="rank-date-line rank-date-western">${escapeHtml(lines.first || "-")}</div>
+    <div class="rank-date-line rank-date-wareki">${escapeHtml(lines.second || "")}</div>
+  `;
+}
+
+function parseObservedDate(isoText) {
+  if (!isoText) return null;
+  const d = new Date(isoText);
+  if (Number.isNaN(d.getTime())) return null;
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function parseRankDateLabelToYmd(label) {
+  if (!label) return null;
+  const m = String(label).match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+  if (!m) return null;
+  return `${m[1]}-${String(Number(m[2])).padStart(2, "0")}-${String(Number(m[3])).padStart(2, "0")}`;
 }
 
 async function fetchJson(path) {
@@ -150,6 +203,18 @@ function getSelectedElementMeta() {
   return getActiveElementList().find(item => item.key === key) || null;
 }
 
+function groupElements(list) {
+  const grouped = new Map();
+  for (const item of list) {
+    const groupName = item.group || "その他";
+    if (!grouped.has(groupName)) {
+      grouped.set(groupName, []);
+    }
+    grouped.get(groupName).push(item);
+  }
+  return grouped;
+}
+
 function renderElementPanel(preferredKey = null) {
   const list = getActiveElementList();
   const defaultKey = getDefaultElementKey();
@@ -166,12 +231,28 @@ function renderElementPanel(preferredKey = null) {
     return;
   }
 
-  elementPanel.innerHTML = list.map(item => `
-    <label class="element-option">
-      <input type="radio" name="element" value="${escapeHtml(item.key)}" ${item.key === selectedKey ? "checked" : ""}>
-      <span>${escapeHtml(item.label)}</span>
-    </label>
-  `).join("");
+  const grouped = groupElements(list);
+  const html = [];
+
+  for (const [groupName, items] of grouped.entries()) {
+    html.push(`<section class="element-group">`);
+    html.push(`<div class="element-group-title">${escapeHtml(groupName)}</div>`);
+    html.push(`<div class="element-group-grid">`);
+
+    for (const item of items) {
+      html.push(`
+        <label class="element-option">
+          <input type="radio" name="element" value="${escapeHtml(item.key)}" ${item.key === selectedKey ? "checked" : ""}>
+          <span class="element-option-text">${escapeHtml(item.shortLabel || item.label)}</span>
+        </label>
+      `);
+    }
+
+    html.push(`</div>`);
+    html.push(`</section>`);
+  }
+
+  elementPanel.innerHTML = html.join("");
 
   document.querySelectorAll('input[name="element"]').forEach(input => {
     input.addEventListener("change", () => {
@@ -209,8 +290,8 @@ function renderTableRows(rows) {
     const stationTd = document.createElement("td");
     stationTd.className = "station-col";
     stationTd.innerHTML = `
-      <div>${escapeHtml(row.stationName || "-")}</div>
-      <div>${renderDateTwoLines(row.startDate || "-")}</div>
+      <div class="station-name">${escapeHtml(row.stationName || "-")}</div>
+      <div class="station-start-date">${renderStartDateTwoLines(row.startDate || "-")}</div>
     `;
     tr.appendChild(stationTd);
 
@@ -219,15 +300,24 @@ function renderTableRows(rows) {
       const td = document.createElement("td");
 
       if (!rank) {
-        td.innerHTML = `<div>-</div><div>-</div>`;
+        td.className = "rank-cell";
+        td.innerHTML = `
+          <div class="rank-value">-</div>
+          <div class="rank-date-block">
+            <div class="rank-date-line">-</div>
+            <div class="rank-date-line"></div>
+          </div>
+        `;
       } else {
-        const classes = [];
+        const classes = ["rank-cell"];
         if (rank.highlightLive) classes.push("live-in-rank");
         if (rank.highlightWithinYear) classes.push("within-year");
         td.className = classes.join(" ");
         td.innerHTML = `
-          <div>${escapeHtml(rank.value ?? "-")}</div>
-          <div>${renderDateTwoLines(rank.date || "-")}</div>
+          <div class="rank-value">${escapeHtml(rank.value ?? "-")}</div>
+          <div class="rank-date-block">
+            ${renderRankDateTwoLines(rank.date || "-")}
+          </div>
         `;
       }
 
@@ -252,6 +342,16 @@ function buildElementOrderMap() {
     }
   }
   return orderMap;
+}
+
+function normalizeLiveItemsByObservedDate(items, observedLatestAt) {
+  const observedYmd = parseObservedDate(observedLatestAt);
+  if (!observedYmd) return [];
+
+  return (Array.isArray(items) ? items : []).filter(item => {
+    const itemYmd = parseRankDateLabelToYmd(item.date);
+    return itemYmd === observedYmd;
+  });
 }
 
 function renderLiveSummaryColumn(title, items) {
@@ -282,8 +382,11 @@ function renderLiveSummaryColumn(title, items) {
 }
 
 function renderLiveSummary(summary) {
-  const annualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
-  const monthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
+  const rawAnnualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
+  const rawMonthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
+
+  const annualItems = normalizeLiveItemsByObservedDate(rawAnnualItems, summary?.observedLatestAt);
+  const monthlyItems = normalizeLiveItemsByObservedDate(rawMonthlyItems, summary?.observedLatestAt);
 
   const orderMap = buildElementOrderMap();
   const sorter = (a, b) => {
@@ -308,7 +411,7 @@ function renderLiveSummary(summary) {
   rankInBadge.hidden = !hasAny;
   rankInBadge.setAttribute("aria-hidden", String(!hasAny));
 
-  const hasTop1 = annualSorted.some(item => Number(item.rank) === 1);
+  const hasTop1 = annualSorted.some(item => Number(item.rank) === 1) || monthlySorted.some(item => Number(item.rank) === 1);
   topRankAlert.hidden = !hasTop1;
   topRankAlert.setAttribute("aria-hidden", String(!hasTop1));
 
@@ -323,7 +426,9 @@ async function loadLiveSummary(prefKey) {
     console.error(err);
     liveSummaryBody.innerHTML = `<div class="live-summary-empty">実況一覧の読み込みに失敗しました</div>`;
     rankInBadge.hidden = true;
+    rankInBadge.setAttribute("aria-hidden", "true");
     topRankAlert.hidden = true;
+    topRankAlert.setAttribute("aria-hidden", "true");
     observedLatestAtEl.textContent = "-";
   }
 }
@@ -362,7 +467,7 @@ async function loadTable() {
     makeTableHeader();
     renderTableRows(data.rows || []);
 
-    statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.label || elementKey}`;
+    statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.shortLabel || elementMeta?.label || elementKey}`;
 
     renderDebug([
       { label: "都道府県", value: pref.name },
