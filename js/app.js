@@ -102,6 +102,12 @@ function parseRankDateLabelToYmd(label) {
   return `${m[1]}-${String(Number(m[2])).padStart(2, "0")}-${String(Number(m[3])).padStart(2, "0")}`;
 }
 
+function setBadgeVisible(el, visible) {
+  el.hidden = !visible;
+  el.setAttribute("aria-hidden", String(!visible));
+  el.style.display = visible ? "" : "none";
+}
+
 async function fetchJson(path) {
   const res = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
   if (!res.ok) {
@@ -379,29 +385,38 @@ function renderLiveSummaryColumn(title, items) {
 }
 
 function renderLiveSummary(summary) {
-  const annualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
-  const monthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
+  const rawAnnualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
+  const rawMonthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
 
-  // ★ 今日判定は使わない
-  const annualToday = annualItems.filter(i => i.highlightLive);
-  const monthlyToday = monthlyItems.filter(i => i.highlightLive);
+  const annualItems = normalizeLiveItemsByObservedDate(rawAnnualItems, summary?.observedLatestAt);
+  const monthlyItems = normalizeLiveItemsByObservedDate(rawMonthlyItems, summary?.observedLatestAt);
+
+  const orderMap = buildElementOrderMap();
+  const sorter = (a, b) => {
+    const oa = orderMap.has(a.elementKey) ? orderMap.get(a.elementKey) : 9999;
+    const ob = orderMap.has(b.elementKey) ? orderMap.get(b.elementKey) : 9999;
+    if (oa !== ob) return oa - ob;
+    if ((a.rank ?? 9999) !== (b.rank ?? 9999)) return (a.rank ?? 9999) - (b.rank ?? 9999);
+    return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
+  };
+
+  const annualSorted = [...annualItems].sort(sorter);
+  const monthlySorted = [...monthlyItems].sort(sorter);
 
   liveSummaryBody.innerHTML = `
     <div class="live-summary-grid">
-      ${renderLiveSummaryColumn("通年", annualToday)}
-      ${renderLiveSummaryColumn("当月", monthlyToday)}
+      ${renderLiveSummaryColumn("通年", annualSorted)}
+      ${renderLiveSummaryColumn("当月", monthlySorted)}
     </div>
   `;
 
-  // ★ バッジ判定（完全修正版）
-  const hasAny = annualToday.length > 0 || monthlyToday.length > 0;
-  rankInBadge.hidden = !hasAny;
-
+  const hasAny = annualSorted.length > 0 || monthlySorted.length > 0;
   const hasTop1 =
-    annualToday.some(i => Number(i.rank) === 1) ||
-    monthlyToday.some(i => Number(i.rank) === 1);
+    annualSorted.some((item) => Number(item.rank) === 1) ||
+    monthlySorted.some((item) => Number(item.rank) === 1);
 
-  topRankAlert.hidden = !hasTop1;
+  setBadgeVisible(rankInBadge, hasAny);
+  setBadgeVisible(topRankAlert, hasTop1);
 
   observedLatestAtEl.textContent = formatDateTime(summary?.observedLatestAt || "");
 }
@@ -413,10 +428,8 @@ async function loadLiveSummary(prefKey) {
   } catch (err) {
     console.error(err);
     liveSummaryBody.innerHTML = `<div class="live-summary-empty">実況一覧の読み込みに失敗しました</div>`;
-    rankInBadge.hidden = true;
-    rankInBadge.setAttribute("aria-hidden", "true");
-    topRankAlert.hidden = true;
-    topRankAlert.setAttribute("aria-hidden", "true");
+    setBadgeVisible(rankInBadge, false);
+    setBadgeVisible(topRankAlert, false);
     observedLatestAtEl.textContent = "-";
   }
 }
