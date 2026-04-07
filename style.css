@@ -252,10 +252,9 @@ select {
 }
 
 .status-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  display: flex;
   gap: 10px;
-  align-items: stretch;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -269,14 +268,15 @@ select {
 }
 
 .observed-box {
-  display: grid;
-  gap: 4px;
-  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 260px;
   white-space: nowrap;
 }
 
 .observed-box strong {
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
