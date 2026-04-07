@@ -1,23 +1,25 @@
 const regionSelect = document.getElementById("regionSelect");
 const prefSelect = document.getElementById("prefSelect");
 const monthSelect = document.getElementById("monthSelect");
-const statusEl = document.getElementById("status");
-const tableHead = document.getElementById("tableHead");
-const tableBody = document.getElementById("tableBody");
-const liveSummaryEl = document.getElementById("liveSummary");
+
+const topRankAlert = document.getElementById("topRankAlert");
+const rankInBadge = document.getElementById("rankInBadge");
 const observedLatestAtEl = document.getElementById("observedLatestAt");
-const liveRankBadge = document.getElementById("liveRankBadge");
-const recordTopBadge = document.getElementById("recordTopBadge");
-const elementOptionsEl = document.getElementById("elementOptions");
-const elementToggleBtn = document.getElementById("elementToggle");
 
-let refreshTimer = null;
-let manifestCache = null;
-let prefecturesData = [];
+const liveSummaryBody = document.getElementById("liveSummaryBody");
+const elementPanel = document.getElementById("elementPanel");
+
+const statusBox = document.getElementById("statusBox");
+const rankTableHead = document.getElementById("rankTableHead");
+const rankTableBody = document.getElementById("rankTableBody");
+const debugGrid = document.getElementById("debugGrid");
+
+let prefecturesConfig = null;
 let elementsConfig = null;
-let elementPanelOpen = true;
+let manifestCache = null;
+let refreshTimer = null;
 
-const DEFAULTS = {
+const FALLBACK_DEFAULTS = {
   region: "近畿",
   pref: "osaka",
   month: "all",
@@ -25,8 +27,8 @@ const DEFAULTS = {
   monthlyElement: "dailyPrecip"
 };
 
-function escapeHtml(str) {
-  return String(str)
+function escapeHtml(value) {
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -34,19 +36,90 @@ function escapeHtml(str) {
     .replaceAll("'", "&#39;");
 }
 
-function renderDualLine(text) {
-  if (!text) return "-";
-  const parts = String(text).split("（");
-  const first = parts[0] || "-";
-  const second = parts[1] ? "（" + parts[1] : "";
-  return `${escapeHtml(first)}<br>${escapeHtml(second)}`;
-}
-
-function formatDateTime(isoText, suffix = "") {
+function formatDateTime(isoText) {
   if (!isoText) return "-";
   const d = new Date(isoText);
   if (Number.isNaN(d.getTime())) return String(isoText);
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}${suffix}`;
+  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+}
+
+function renderDateTwoLines(text) {
+  if (!text) return "-";
+  const parts = String(text).split("（");
+  const line1 = parts[0] || "-";
+  const line2 = parts[1] ? `（${parts[1]}` : "";
+  if (!line2) return escapeHtml(line1);
+  return `${escapeHtml(line1)}<br>${escapeHtml(line2)}`;
+}
+
+async function fetchJson(path) {
+  const res = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) {
+    throw new Error(`${path} の取得に失敗しました: HTTP ${res.status}`);
+  }
+  return await res.json();
+}
+
+async function loadConfigs() {
+  const [prefData, elemData] = await Promise.all([
+    fetchJson("./config/prefectures.json"),
+    fetchJson("./config/elements.json")
+  ]);
+  prefecturesConfig = prefData;
+  elementsConfig = elemData;
+}
+
+async function loadManifest() {
+  try {
+    manifestCache = await fetchJson("./data/manifest.json");
+  } catch (err) {
+    console.error(err);
+    manifestCache = null;
+  }
+}
+
+function getPrefectures() {
+  return prefecturesConfig?.prefectures || [];
+}
+
+function getRegions() {
+  return [...new Set(getPrefectures().map(p => p.region))];
+}
+
+function getPrefecturesInRegion(region) {
+  return getPrefectures().filter(p => p.region === region);
+}
+
+function populateRegions() {
+  const regions = getRegions();
+  regionSelect.innerHTML = regions
+    .map(region => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`)
+    .join("");
+
+  const defaultRegion = elementsConfig?.defaultRegion || FALLBACK_DEFAULTS.region;
+  if (regions.includes(defaultRegion)) {
+    regionSelect.value = defaultRegion;
+  } else if (regions.length > 0) {
+    regionSelect.value = regions[0];
+  }
+}
+
+function populatePrefectures(preferredPrefKey = null) {
+  const region = regionSelect.value;
+  const list = getPrefecturesInRegion(region);
+
+  prefSelect.innerHTML = list
+    .map(pref => `<option value="${escapeHtml(pref.key)}">${escapeHtml(pref.name)}</option>`)
+    .join("");
+
+  const defaultPref = preferredPrefKey || elementsConfig?.defaultPref || FALLBACK_DEFAULTS.pref;
+  const availableKeys = list.map(p => p.key);
+
+  if (availableKeys.includes(defaultPref)) {
+    prefSelect.value = defaultPref;
+  } else if (availableKeys.length > 0) {
+    prefSelect.value = availableKeys[0];
+  }
 }
 
 function getActiveElementList() {
@@ -59,145 +132,76 @@ function getActiveElementList() {
 function getDefaultElementKey() {
   if (!elementsConfig) {
     return monthSelect.value === "all"
-      ? DEFAULTS.annualElement
-      : DEFAULTS.monthlyElement;
+      ? FALLBACK_DEFAULTS.annualElement
+      : FALLBACK_DEFAULTS.monthlyElement;
   }
   return monthSelect.value === "all"
-    ? (elementsConfig.annualDefaultElement || DEFAULTS.annualElement)
-    : (elementsConfig.monthlyDefaultElement || DEFAULTS.monthlyElement);
+    ? (elementsConfig.annualDefaultElement || FALLBACK_DEFAULTS.annualElement)
+    : (elementsConfig.monthlyDefaultElement || FALLBACK_DEFAULTS.monthlyElement);
 }
 
-function getElementMeta(key) {
-  const list = getActiveElementList();
-  return list.find(item => item.key === key) || null;
-}
-
-function getSelectedElement() {
+function getSelectedElementKey() {
   const checked = document.querySelector('input[name="element"]:checked');
-  if (checked) return checked.value;
-  return getDefaultElementKey();
+  return checked ? checked.value : getDefaultElementKey();
 }
 
-function getSelectedElementLabel() {
-  const meta = getElementMeta(getSelectedElement());
-  return meta ? meta.label : getSelectedElement();
+function getSelectedElementMeta() {
+  const key = getSelectedElementKey();
+  return getActiveElementList().find(item => item.key === key) || null;
 }
 
-function buildElementOrder() {
-  const annual = elementsConfig?.annualElements || [];
-  const monthly = elementsConfig?.monthlyElements || [];
-  const merged = [...annual, ...monthly];
-  const order = [];
-  for (const item of merged) {
-    if (!order.includes(item.key)) {
-      order.push(item.key);
-    }
-  }
-  return order;
-}
-
-async function loadPrefectures() {
-  const res = await fetch(`./config/prefectures.json?t=${Date.now()}`, { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error(`prefectures.json の取得に失敗しました: HTTP ${res.status}`);
-  }
-  const data = await res.json();
-  prefecturesData = data.prefectures || [];
-}
-
-async function loadElementsConfig() {
-  const res = await fetch(`./config/elements.json?t=${Date.now()}`, { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error(`elements.json の取得に失敗しました: HTTP ${res.status}`);
-  }
-  elementsConfig = await res.json();
-}
-
-async function loadManifest() {
-  try {
-    const res = await fetch(`./data/manifest.json?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) {
-      throw new Error(`manifest.json の取得に失敗しました: HTTP ${res.status}`);
-    }
-    manifestCache = await res.json();
-  } catch (err) {
-    console.error(err);
-    manifestCache = null;
-  }
-}
-
-function populateRegions() {
-  const regions = [...new Set(prefecturesData.map(p => p.region))];
-  regionSelect.innerHTML = regions
-    .map(region => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`)
-    .join("");
-
-  const defaultRegion = elementsConfig?.defaultRegion || DEFAULTS.region;
-  if (regions.includes(defaultRegion)) {
-    regionSelect.value = defaultRegion;
-  }
-}
-
-function populatePrefectures() {
-  const region = regionSelect.value;
-  const list = prefecturesData.filter(p => p.region === region);
-
-  prefSelect.innerHTML = list
-    .map(pref => `<option value="${escapeHtml(pref.key)}">${escapeHtml(pref.name)}</option>`)
-    .join("");
-
-  const defaultPref = elementsConfig?.defaultPref || DEFAULTS.pref;
-  if ([...prefSelect.options].some(opt => opt.value === defaultPref)) {
-    prefSelect.value = defaultPref;
-  }
-}
-
-function getSelectedPrefMeta() {
-  return prefecturesData.find(p => p.key === prefSelect.value) || null;
-}
-
-function renderElementOptions(preferredKey = null) {
+function renderElementPanel(preferredKey = null) {
   const list = getActiveElementList();
   const defaultKey = getDefaultElementKey();
-  const currentKey = preferredKey || getSelectedElement();
+  let selectedKey = preferredKey || getSelectedElementKey();
 
-  let selectedKey = currentKey;
   if (!list.some(item => item.key === selectedKey)) {
     selectedKey = list.some(item => item.key === defaultKey)
       ? defaultKey
       : (list[0]?.key || "");
   }
 
-  elementOptionsEl.innerHTML = list.map(item => {
-    const checked = item.key === selectedKey ? "checked" : "";
-    return `
-      <label class="element-option">
-        <input type="radio" name="element" value="${escapeHtml(item.key)}" ${checked}>
-        <span>${escapeHtml(item.label)}<br><small>(${escapeHtml(item.unit)})</small></span>
-      </label>
-    `;
-  }).join("");
+  if (list.length === 0) {
+    elementPanel.innerHTML = `<div class="live-summary-empty">要素定義がありません</div>`;
+    return;
+  }
 
-  document.querySelectorAll('input[name="element"]').forEach(el => {
-    el.addEventListener("change", loadTable);
+  elementPanel.innerHTML = list.map(item => `
+    <label class="element-option">
+      <input type="radio" name="element" value="${escapeHtml(item.key)}" ${item.key === selectedKey ? "checked" : ""}>
+      <span>${escapeHtml(item.label)}</span>
+    </label>
+  `).join("");
+
+  document.querySelectorAll('input[name="element"]').forEach(input => {
+    input.addEventListener("change", () => {
+      loadTable();
+    });
   });
 }
 
-function makeHeader() {
+function makeTableHeader() {
   const cols = ["地点名 / 観測開始"];
-  for (let i = 1; i <= 10; i++) {
-    cols.push(`${i}位`);
-  }
+  for (let i = 1; i <= 10; i++) cols.push(`${i}位`);
 
-  tableHead.innerHTML = `
+  rankTableHead.innerHTML = `
     <tr>
-      ${cols.map(c => `<th>${escapeHtml(c)}</th>`).join("")}
+      ${cols.map(col => `<th>${escapeHtml(col)}</th>`).join("")}
     </tr>
   `;
 }
 
-function renderTable(rows) {
-  tableBody.innerHTML = "";
+function renderTableRows(rows) {
+  rankTableBody.innerHTML = "";
+
+  if (!Array.isArray(rows) || rows.length === 0) {
+    rankTableBody.innerHTML = `
+      <tr>
+        <td colspan="11">該当データがありません。</td>
+      </tr>
+    `;
+    return;
+  }
 
   for (const row of rows) {
     const tr = document.createElement("tr");
@@ -206,61 +210,73 @@ function renderTable(rows) {
     stationTd.className = "station-col";
     stationTd.innerHTML = `
       <div>${escapeHtml(row.stationName || "-")}</div>
-      <div>${renderDualLine(row.startDate || "-")}</div>
+      <div>${renderDateTwoLines(row.startDate || "-")}</div>
     `;
     tr.appendChild(stationTd);
 
     for (let i = 0; i < 10; i++) {
-      const rankData = row.ranks?.[i];
+      const rank = row.ranks?.[i];
       const td = document.createElement("td");
 
-      if (rankData) {
-        const classes = ["rank-cell"];
-        if (rankData.highlightLive) classes.push("live-in-rank");
-        if (rankData.highlightWithinYear) classes.push("within-year");
+      if (!rank) {
+        td.innerHTML = `<div>-</div><div>-</div>`;
+      } else {
+        const classes = [];
+        if (rank.highlightLive) classes.push("live-in-rank");
+        if (rank.highlightWithinYear) classes.push("within-year");
         td.className = classes.join(" ");
         td.innerHTML = `
-          <div>${escapeHtml(rankData.value ?? "-")}</div>
-          <div>${renderDualLine(rankData.date || "-")}</div>
-        `;
-      } else {
-        td.className = "rank-cell";
-        td.innerHTML = `
-          <div>-</div>
-          <div>-</div>
+          <div>${escapeHtml(rank.value ?? "-")}</div>
+          <div>${renderDateTwoLines(rank.date || "-")}</div>
         `;
       }
 
       tr.appendChild(td);
     }
 
-    tableBody.appendChild(tr);
+    rankTableBody.appendChild(tr);
   }
 }
 
-function renderLiveColumn(title, data) {
-  if (!data || data.length === 0) {
+function buildElementOrderMap() {
+  const merged = [
+    ...(elementsConfig?.annualElements || []),
+    ...(elementsConfig?.monthlyElements || [])
+  ];
+
+  const orderMap = new Map();
+  let idx = 0;
+  for (const item of merged) {
+    if (!orderMap.has(item.key)) {
+      orderMap.set(item.key, idx++);
+    }
+  }
+  return orderMap;
+}
+
+function renderLiveSummaryColumn(title, items) {
+  if (!items.length) {
     return `
-      <div class="live-column">
-        <h3>${escapeHtml(title)}</h3>
-        <p>該当なし</p>
+      <div class="live-summary-col">
+        <div class="live-summary-col-title">${escapeHtml(title)}</div>
+        <div class="live-summary-empty">該当なし</div>
       </div>
     `;
   }
 
-  const cards = data.map(item => `
-    <div class="live-item">
-      <strong>${escapeHtml(String(item.rank))}位</strong>
-      <span>${escapeHtml(item.elementLabel || item.elementKey || "")}</span>
-      <span>${escapeHtml(item.stationName || "")}</span>
-      <strong>${escapeHtml(String(item.value ?? ""))}</strong>
-    </div>
-  `).join("");
-
   return `
-    <div class="live-column">
-      <h3>${escapeHtml(title)}</h3>
-      ${cards}
+    <div class="live-summary-col">
+      <div class="live-summary-col-title">${escapeHtml(title)}</div>
+      <div class="live-summary-list">
+        ${items.map(item => `
+          <div class="live-summary-item">
+            <div class="live-summary-rank">${escapeHtml(item.rank)}位</div>
+            <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
+            <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
+            <div class="live-summary-value">${escapeHtml(item.value ?? "")}</div>
+          </div>
+        `).join("")}
+      </div>
     </div>
   `;
 }
@@ -269,198 +285,147 @@ function renderLiveSummary(summary) {
   const annualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
   const monthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
 
-  const oldItems = Array.isArray(summary?.items) ? summary.items : [];
-  const compatibleAnnual = annualItems.length || monthlyItems.length
-    ? annualItems
-    : oldItems.filter(item => item.monthLabel === "通年");
-  const compatibleMonthly = annualItems.length || monthlyItems.length
-    ? monthlyItems
-    : oldItems.filter(item => item.monthLabel !== "通年");
-
-  const order = buildElementOrder();
+  const orderMap = buildElementOrderMap();
   const sorter = (a, b) => {
-    const oa = order.indexOf(a.elementKey);
-    const ob = order.indexOf(b.elementKey);
-    const va = oa === -1 ? 9999 : oa;
-    const vb = ob === -1 ? 9999 : ob;
-
-    if (va !== vb) return va - vb;
+    const oa = orderMap.has(a.elementKey) ? orderMap.get(a.elementKey) : 9999;
+    const ob = orderMap.has(b.elementKey) ? orderMap.get(b.elementKey) : 9999;
+    if (oa !== ob) return oa - ob;
     if ((a.rank ?? 9999) !== (b.rank ?? 9999)) return (a.rank ?? 9999) - (b.rank ?? 9999);
     return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
   };
 
-  const annualSorted = [...compatibleAnnual].sort(sorter);
-  const monthlySorted = [...compatibleMonthly].sort(sorter);
+  const annualSorted = [...annualItems].sort(sorter);
+  const monthlySorted = [...monthlyItems].sort(sorter);
 
-  liveSummaryEl.innerHTML = `
-    <div class="live-columns">
-      ${renderLiveColumn("通年", annualSorted)}
-      ${renderLiveColumn("当月", monthlySorted)}
+  liveSummaryBody.innerHTML = `
+    <div class="live-summary-grid">
+      ${renderLiveSummaryColumn("通年", annualSorted)}
+      ${renderLiveSummaryColumn("当月", monthlySorted)}
     </div>
   `;
 
   const hasAny = annualSorted.length > 0 || monthlySorted.length > 0;
-  liveRankBadge.hidden = !hasAny;
+  rankInBadge.hidden = !hasAny;
+  rankInBadge.setAttribute("aria-hidden", String(!hasAny));
 
-  const hasAnnualTop1 = annualSorted.some(item => Number(item.rank) === 1);
-  recordTopBadge.hidden = !hasAnnualTop1;
+  const hasTop1 = annualSorted.some(item => Number(item.rank) === 1);
+  topRankAlert.hidden = !hasTop1;
+  topRankAlert.setAttribute("aria-hidden", String(!hasTop1));
 
-  observedLatestAtEl.textContent = formatDateTime(summary?.observedLatestAt || "", "");
+  observedLatestAtEl.textContent = formatDateTime(summary?.observedLatestAt || "");
 }
 
 async function loadLiveSummary(prefKey) {
   try {
-    const res = await fetch(`./data/${prefKey}/live-summary.json?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) {
-      throw new Error(`live-summary.json の取得に失敗しました: HTTP ${res.status}`);
-    }
-    const data = await res.json();
-    renderLiveSummary(data);
+    const summary = await fetchJson(`./data/${prefKey}/live-summary.json`);
+    renderLiveSummary(summary);
   } catch (err) {
     console.error(err);
-    liveSummaryEl.innerHTML = `<p>実況一覧の読み込みに失敗しました。</p>`;
+    liveSummaryBody.innerHTML = `<div class="live-summary-empty">実況一覧の読み込みに失敗しました</div>`;
+    rankInBadge.hidden = true;
+    topRankAlert.hidden = true;
     observedLatestAtEl.textContent = "-";
-    liveRankBadge.hidden = true;
-    recordTopBadge.hidden = true;
   }
 }
 
-function buildStatusText({ prefName, elementLabel, jsonPath, rowCount, errorText = "" }) {
-  const parts = [];
+function getSelectedPrefMeta() {
+  return getPrefectures().find(p => p.key === prefSelect.value) || null;
+}
 
-  if (manifestCache?.updatedAt) {
-    parts.push(`manifest更新: ${formatDateTime(manifestCache.updatedAt, " 更新")}`);
-  }
-  if (manifestCache?.observedLatestAt) {
-    parts.push(`manifest観測時刻: ${formatDateTime(manifestCache.observedLatestAt)}`);
-  }
-  if (prefName) {
-    parts.push(`都道府県: ${prefName}`);
-  }
-  if (monthSelect.value) {
-    parts.push(`月: ${monthSelect.value === "all" ? "通年" : `${monthSelect.value}月`}`);
-  }
-  if (elementLabel) {
-    parts.push(`要素: ${elementLabel}`);
-  }
-  if (jsonPath) {
-    parts.push(`JSON: ${jsonPath}`);
-  }
-  if (typeof rowCount === "number") {
-    parts.push(`地点数: ${rowCount}`);
-  }
-  if (errorText) {
-    parts.push(`エラー: ${errorText}`);
-  }
-
-  return parts.join(" / ");
+function renderDebug(items) {
+  debugGrid.innerHTML = items.map(item => `
+    <div><strong>${escapeHtml(item.label)}</strong></div>
+    <div>${escapeHtml(item.value)}</div>
+  `).join("");
 }
 
 async function loadTable() {
-  const prefMeta = getSelectedPrefMeta();
-  const prefKey = prefSelect.value;
-  const elementKey = getSelectedElement();
+  const pref = getSelectedPrefMeta();
+  const elementMeta = getSelectedElementMeta();
+  const elementKey = elementMeta?.key || getSelectedElementKey();
   const month = monthSelect.value;
-  const elementLabel = getSelectedElementLabel();
-  const jsonPath = `./data/${prefKey}/${elementKey}-${month}.json`;
+  const jsonPath = `./data/${prefSelect.value}/${elementKey}-${month}.json`;
 
   await loadManifest();
 
-  if (!prefMeta) {
-    statusEl.textContent = "都道府県情報が見つかりません。";
-    tableBody.innerHTML = "";
-    liveSummaryEl.innerHTML = "<p>実況一覧を表示できません。</p>";
+  if (!pref) {
+    statusBox.textContent = "都道府県情報が見つかりません。";
     return;
   }
 
-  await loadLiveSummary(prefKey);
+  await loadLiveSummary(pref.key);
 
-  if (!prefMeta.stationsFile) {
-    tableBody.innerHTML = "";
-    statusEl.textContent = buildStatusText({
-      prefName: prefMeta.name,
-      elementLabel,
-      jsonPath,
-      rowCount: 0,
-      errorText: "未対応"
-    });
-    return;
-  }
-
-  statusEl.textContent = "読み込み中...";
+  statusBox.textContent = "読み込み中...";
 
   try {
-    const res = await fetch(`${jsonPath}?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
-    }
+    const data = await fetchJson(jsonPath);
+    makeTableHeader();
+    renderTableRows(data.rows || []);
 
-    const data = await res.json();
-    makeHeader();
-    renderTable(data.rows || []);
-    statusEl.textContent = buildStatusText({
-      prefName: prefMeta.name,
-      elementLabel,
-      jsonPath,
-      rowCount: Array.isArray(data.rows) ? data.rows.length : 0
-    });
+    statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.label || elementKey}`;
+
+    renderDebug([
+      { label: "都道府県", value: pref.name },
+      { label: "地域", value: pref.region || "-" },
+      { label: "月", value: month === "all" ? "通年" : `${month}月` },
+      { label: "要素キー", value: elementKey },
+      { label: "要素名", value: elementMeta?.label || "-" },
+      { label: "JSON", value: jsonPath },
+      { label: "地点数", value: String(Array.isArray(data.rows) ? data.rows.length : 0) },
+      { label: "manifest更新時刻", value: manifestCache?.updatedAt ? formatDateTime(manifestCache.updatedAt) : "-" },
+      { label: "manifest観測時刻", value: manifestCache?.observedLatestAt ? formatDateTime(manifestCache.observedLatestAt) : "-" }
+    ]);
   } catch (err) {
     console.error(err);
-    tableBody.innerHTML = "";
-    statusEl.textContent = buildStatusText({
-      prefName: prefMeta.name,
-      elementLabel,
-      jsonPath,
-      rowCount: 0,
-      errorText: String(err.message || err)
-    });
+    makeTableHeader();
+    renderTableRows([]);
+    statusBox.textContent = `読み込み失敗: ${err.message || err}`;
+
+    renderDebug([
+      { label: "都道府県", value: pref.name },
+      { label: "月", value: month === "all" ? "通年" : `${month}月` },
+      { label: "要素キー", value: elementKey },
+      { label: "JSON", value: jsonPath },
+      { label: "エラー", value: String(err.message || err) }
+    ]);
   }
 }
 
 function handleMonthChange() {
-  const prevElement = getSelectedElement();
-  renderElementOptions(prevElement);
+  const previous = getSelectedElementKey();
+  renderElementPanel(previous);
   loadTable();
 }
 
-function setupElementToggle() {
-  elementToggleBtn.addEventListener("click", () => {
-    elementPanelOpen = !elementPanelOpen;
-    elementOptionsEl.hidden = !elementPanelOpen;
-    elementToggleBtn.setAttribute("aria-expanded", String(elementPanelOpen));
-  });
-}
-
 function startAutoRefresh() {
-  if (refreshTimer) {
-    clearInterval(refreshTimer);
-  }
-  refreshTimer = setInterval(loadTable, 10 * 60 * 1000);
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(() => {
+    loadTable();
+  }, 10 * 60 * 1000);
 }
 
 async function init() {
-  makeHeader();
-
-  await Promise.all([
-    loadPrefectures(),
-    loadElementsConfig()
-  ]);
+  makeTableHeader();
+  await loadConfigs();
 
   populateRegions();
   populatePrefectures();
 
-  monthSelect.value = elementsConfig?.defaultMonth || DEFAULTS.month;
+  monthSelect.value = elementsConfig?.defaultMonth || FALLBACK_DEFAULTS.month;
+  renderElementPanel(getDefaultElementKey());
 
-  renderElementOptions(getDefaultElementKey());
-  setupElementToggle();
-
-  regionSelect.addEventListener("change", async () => {
+  regionSelect.addEventListener("change", () => {
     populatePrefectures();
-    await loadTable();
+    loadTable();
   });
 
-  prefSelect.addEventListener("change", loadTable);
-  monthSelect.addEventListener("change", handleMonthChange);
+  prefSelect.addEventListener("change", () => {
+    loadTable();
+  });
+
+  monthSelect.addEventListener("change", () => {
+    handleMonthChange();
+  });
 
   await loadTable();
   startAutoRefresh();
@@ -468,5 +433,5 @@ async function init() {
 
 init().catch(err => {
   console.error(err);
-  statusEl.textContent = `初期化に失敗しました: ${err.message || err}`;
+  statusBox.textContent = `初期化に失敗しました: ${err.message || err}`;
 });
