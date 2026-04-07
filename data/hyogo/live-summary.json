@@ -1,26 +1,7 @@
 {
-  "updatedAt": "2026-04-07T08:54:06.187854+09:00",
-  "observedLatestAt": "2026-04-07T08:40:00+09:00",
+  "updatedAt": "2026-04-07T11:28:46.971498+09:00",
+  "observedLatestAt": "2026-04-07T11:20:00+09:00",
   "prefecture": "兵庫県",
   "annualItems": [],
-  "monthlyItems": [
-    {
-      "stationName": "明石",
-      "elementKey": "max1hPrecip",
-      "elementLabel": "日最大1時間降水量",
-      "rank": 8,
-      "value": 13.5,
-      "date": "2026年4月4日（令和8年）",
-      "monthLabel": "4月"
-    },
-    {
-      "stationName": "明石",
-      "elementKey": "dailyPrecip",
-      "elementLabel": "日降水量",
-      "rank": 8,
-      "value": 39,
-      "date": "2026年4月4日（令和8年）",
-      "monthLabel": "4月"
-    }
-  ]
+  "monthlyItems": []
 }
