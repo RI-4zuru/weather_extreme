@@ -379,39 +379,29 @@ function renderLiveSummaryColumn(title, items) {
 }
 
 function renderLiveSummary(summary) {
-  const rawAnnualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
-  const rawMonthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
+  const annualItems = Array.isArray(summary?.annualItems) ? summary.annualItems : [];
+  const monthlyItems = Array.isArray(summary?.monthlyItems) ? summary.monthlyItems : [];
 
-  const annualItems = normalizeLiveItemsByObservedDate(rawAnnualItems, summary?.observedLatestAt);
-  const monthlyItems = normalizeLiveItemsByObservedDate(rawMonthlyItems, summary?.observedLatestAt);
-
-  const orderMap = buildElementOrderMap();
-  const sorter = (a, b) => {
-    const oa = orderMap.has(a.elementKey) ? orderMap.get(a.elementKey) : 9999;
-    const ob = orderMap.has(b.elementKey) ? orderMap.get(b.elementKey) : 9999;
-    if (oa !== ob) return oa - ob;
-    if ((a.rank ?? 9999) !== (b.rank ?? 9999)) return (a.rank ?? 9999) - (b.rank ?? 9999);
-    return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
-  };
-
-  const annualSorted = [...annualItems].sort(sorter);
-  const monthlySorted = [...monthlyItems].sort(sorter);
+  // ★ 今日判定は使わない
+  const annualToday = annualItems.filter(i => i.highlightLive);
+  const monthlyToday = monthlyItems.filter(i => i.highlightLive);
 
   liveSummaryBody.innerHTML = `
     <div class="live-summary-grid">
-      ${renderLiveSummaryColumn("通年", annualSorted)}
-      ${renderLiveSummaryColumn("当月", monthlySorted)}
+      ${renderLiveSummaryColumn("通年", annualToday)}
+      ${renderLiveSummaryColumn("当月", monthlyToday)}
     </div>
   `;
 
-  const hasAny = annualSorted.length > 0 || monthlySorted.length > 0;
+  // ★ バッジ判定（完全修正版）
+  const hasAny = annualToday.length > 0 || monthlyToday.length > 0;
   rankInBadge.hidden = !hasAny;
-  rankInBadge.setAttribute("aria-hidden", String(!hasAny));
 
-  const hasTop1 = annualSorted.some((item) => Number(item.rank) === 1)
-    || monthlySorted.some((item) => Number(item.rank) === 1);
+  const hasTop1 =
+    annualToday.some(i => Number(i.rank) === 1) ||
+    monthlyToday.some(i => Number(i.rank) === 1);
+
   topRankAlert.hidden = !hasTop1;
-  topRankAlert.setAttribute("aria-hidden", String(!hasTop1));
 
   observedLatestAtEl.textContent = formatDateTime(summary?.observedLatestAt || "");
 }
