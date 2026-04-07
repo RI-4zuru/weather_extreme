@@ -45,7 +45,7 @@ function formatDateTime(isoText) {
 
 function splitJapaneseDateLines(text) {
   if (!text) {
-    return { first: "-", second: "", third: "" };
+    return { first: "-", second: "" };
   }
 
   const raw = String(text).trim();
@@ -54,8 +54,7 @@ function splitJapaneseDateLines(text) {
   if (m1) {
     return {
       first: m1[1],
-      second: `（${m1[2]}）`,
-      third: ""
+      second: `（${m1[2]}）`
     };
   }
 
@@ -63,15 +62,13 @@ function splitJapaneseDateLines(text) {
   if (m2) {
     return {
       first: m2[1],
-      second: `（${m2[2]}）`,
-      third: ""
+      second: `（${m2[2]}）`
     };
   }
 
   return {
     first: raw,
-    second: "",
-    third: ""
+    second: ""
   };
 }
 
@@ -136,17 +133,17 @@ function getPrefectures() {
 }
 
 function getRegions() {
-  return [...new Set(getPrefectures().map(p => p.region))];
+  return [...new Set(getPrefectures().map((p) => p.region))];
 }
 
 function getPrefecturesInRegion(region) {
-  return getPrefectures().filter(p => p.region === region);
+  return getPrefectures().filter((p) => p.region === region);
 }
 
 function populateRegions() {
   const regions = getRegions();
   regionSelect.innerHTML = regions
-    .map(region => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`)
+    .map((region) => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`)
     .join("");
 
   const defaultRegion = elementsConfig?.defaultRegion || FALLBACK_DEFAULTS.region;
@@ -162,11 +159,11 @@ function populatePrefectures(preferredPrefKey = null) {
   const list = getPrefecturesInRegion(region);
 
   prefSelect.innerHTML = list
-    .map(pref => `<option value="${escapeHtml(pref.key)}">${escapeHtml(pref.name)}</option>`)
+    .map((pref) => `<option value="${escapeHtml(pref.key)}">${escapeHtml(pref.name)}</option>`)
     .join("");
 
   const defaultPref = preferredPrefKey || elementsConfig?.defaultPref || FALLBACK_DEFAULTS.pref;
-  const availableKeys = list.map(p => p.key);
+  const availableKeys = list.map((p) => p.key);
 
   if (availableKeys.includes(defaultPref)) {
     prefSelect.value = defaultPref;
@@ -200,7 +197,7 @@ function getSelectedElementKey() {
 
 function getSelectedElementMeta() {
   const key = getSelectedElementKey();
-  return getActiveElementList().find(item => item.key === key) || null;
+  return getActiveElementList().find((item) => item.key === key) || null;
 }
 
 function groupElements(list) {
@@ -220,8 +217,8 @@ function renderElementPanel(preferredKey = null) {
   const defaultKey = getDefaultElementKey();
   let selectedKey = preferredKey || getSelectedElementKey();
 
-  if (!list.some(item => item.key === selectedKey)) {
-    selectedKey = list.some(item => item.key === defaultKey)
+  if (!list.some((item) => item.key === selectedKey)) {
+    selectedKey = list.some((item) => item.key === defaultKey)
       ? defaultKey
       : (list[0]?.key || "");
   }
@@ -254,7 +251,7 @@ function renderElementPanel(preferredKey = null) {
 
   elementPanel.innerHTML = html.join("");
 
-  document.querySelectorAll('input[name="element"]').forEach(input => {
+  document.querySelectorAll('input[name="element"]').forEach((input) => {
     input.addEventListener("change", () => {
       loadTable();
     });
@@ -267,7 +264,7 @@ function makeTableHeader() {
 
   rankTableHead.innerHTML = `
     <tr>
-      ${cols.map(col => `<th>${escapeHtml(col)}</th>`).join("")}
+      ${cols.map((col) => `<th>${escapeHtml(col)}</th>`).join("")}
     </tr>
   `;
 }
@@ -348,7 +345,7 @@ function normalizeLiveItemsByObservedDate(items, observedLatestAt) {
   const observedYmd = parseObservedDate(observedLatestAt);
   if (!observedYmd) return [];
 
-  return (Array.isArray(items) ? items : []).filter(item => {
+  return (Array.isArray(items) ? items : []).filter((item) => {
     const itemYmd = parseRankDateLabelToYmd(item.date);
     return itemYmd === observedYmd;
   });
@@ -368,7 +365,7 @@ function renderLiveSummaryColumn(title, items) {
     <div class="live-summary-col">
       <div class="live-summary-col-title">${escapeHtml(title)}</div>
       <div class="live-summary-list">
-        ${items.map(item => `
+        ${items.map((item) => `
           <div class="live-summary-item">
             <div class="live-summary-rank">${escapeHtml(item.rank)}位</div>
             <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
@@ -411,7 +408,8 @@ function renderLiveSummary(summary) {
   rankInBadge.hidden = !hasAny;
   rankInBadge.setAttribute("aria-hidden", String(!hasAny));
 
-  const hasTop1 = annualSorted.some(item => Number(item.rank) === 1) || monthlySorted.some(item => Number(item.rank) === 1);
+  const hasTop1 = annualSorted.some((item) => Number(item.rank) === 1)
+    || monthlySorted.some((item) => Number(item.rank) === 1);
   topRankAlert.hidden = !hasTop1;
   topRankAlert.setAttribute("aria-hidden", String(!hasTop1));
 
@@ -434,11 +432,11 @@ async function loadLiveSummary(prefKey) {
 }
 
 function getSelectedPrefMeta() {
-  return getPrefectures().find(p => p.key === prefSelect.value) || null;
+  return getPrefectures().find((p) => p.key === prefSelect.value) || null;
 }
 
 function renderDebug(items) {
-  debugGrid.innerHTML = items.map(item => `
+  debugGrid.innerHTML = items.map((item) => `
     <div><strong>${escapeHtml(item.label)}</strong></div>
     <div>${escapeHtml(item.value)}</div>
   `).join("");
@@ -460,14 +458,12 @@ async function loadTable() {
 
   await loadLiveSummary(pref.key);
 
-  statusBox.textContent = "読み込み中...";
+  statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.shortLabel || elementMeta?.label || elementKey}`;
 
   try {
     const data = await fetchJson(jsonPath);
     makeTableHeader();
     renderTableRows(data.rows || []);
-
-    statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.shortLabel || elementMeta?.label || elementKey}`;
 
     renderDebug([
       { label: "都道府県", value: pref.name },
@@ -484,7 +480,7 @@ async function loadTable() {
     console.error(err);
     makeTableHeader();
     renderTableRows([]);
-    statusBox.textContent = `読み込み失敗: ${err.message || err}`;
+    statusBox.textContent = `${pref.name} / ${month === "all" ? "通年" : `${month}月`} / ${elementMeta?.shortLabel || elementMeta?.label || elementKey} / 読み込み失敗`;
 
     renderDebug([
       { label: "都道府県", value: pref.name },
@@ -536,7 +532,7 @@ async function init() {
   startAutoRefresh();
 }
 
-init().catch(err => {
+init().catch((err) => {
   console.error(err);
   statusBox.textContent = `初期化に失敗しました: ${err.message || err}`;
 });
