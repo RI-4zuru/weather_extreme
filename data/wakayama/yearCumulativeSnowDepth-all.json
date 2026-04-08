@@ -1,8 +1,75 @@
 {
-  "updatedAt": "2026-04-08T22:02:43.217630+09:00",
-  "observedLatestAt": "2026-04-08T21:50:00+09:00",
+  "updatedAt": "2026-04-08T22:14:24.384995+09:00",
+  "observedLatestAt": "2026-04-08T22:00:00+09:00",
   "prefecture": "和歌山県",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
-  "rows": []
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 21,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 15,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 14,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 8,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 8,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 7,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 6,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    }
+  ]
 }
