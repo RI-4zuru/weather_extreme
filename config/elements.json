@@ -11,7 +11,7 @@
     { "key": "dailyPrecip", "label": "日降水量", "shortLabel": "日降水", "group": "雨", "unit": "mm" },
     { "key": "max10mPrecip", "label": "日最大10分間降水量", "shortLabel": "10分雨量", "group": "雨", "unit": "mm" },
     { "key": "max1hPrecip", "label": "日最大1時間降水量", "shortLabel": "1時間雨量", "group": "雨", "unit": "mm" },
-    { "key": "monthMax24hPrecipValue", "label": "月最大24時間降水量", "shortLabel": "月最大24時間雨量", "group": "雨", "unit": "mm" },
+    { "key": "max24hPrecip", "label": "月最大24時間降水量", "shortLabel": "24時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthPrecipHigh", "label": "月降水量の多い方から", "shortLabel": "月降水(多)", "group": "雨", "unit": "mm" },
     { "key": "monthPrecipLow", "label": "月降水量の少ない方から", "shortLabel": "月降水(少)", "group": "雨", "unit": "mm" },
     { "key": "yearPrecipHigh", "label": "年降水量の多い方から", "shortLabel": "年降水(多)", "group": "雨", "unit": "mm" },
@@ -21,7 +21,7 @@
     { "key": "monthMax3hPrecip", "label": "月最大3時間降水量の多い方から", "shortLabel": "3時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax6hPrecip", "label": "月最大6時間降水量の多い方から", "shortLabel": "6時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax12hPrecip", "label": "月最大12時間降水量の多い方から", "shortLabel": "12時間雨量", "group": "雨", "unit": "mm" },
-    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "shortLabel": "24時間雨量(多)", "group": "雨", "unit": "mm" },
+    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "shortLabel": "24時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax48hPrecip", "label": "月最大48時間降水量の多い方から", "shortLabel": "48時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax72hPrecip", "label": "月最大72時間降水量の多い方から", "shortLabel": "72時間雨量", "group": "雨", "unit": "mm" },
 
@@ -36,12 +36,12 @@
 
     { "key": "annualDaysMeanTempBelow0", "label": "日平均気温0℃未満継続年間日数", "shortLabel": "平均0℃未満日数", "group": "気温", "unit": "日" },
     { "key": "annualDaysMeanTempAtOrAbove25", "label": "日平均気温25℃以上年間日数", "shortLabel": "平均25℃以上日数", "group": "気温", "unit": "日" },
-    { "key": "annualDaysMaxTempBelow0", "label": "日最高気温0℃未満継続年間日数", "shortLabel": "最高0℃未満日数", "group": "気温", "unit": "日" },
-    { "key": "annualDaysMaxTempAtOrAbove25", "label": "日最高気温25℃以上年間日数", "shortLabel": "最高25℃以上日数", "group": "気温", "unit": "日" },
+    { "key": "annualDaysMinTempAtOrAbove25", "label": "日最低気温25℃以上年間日数", "shortLabel": "熱帯夜日数", "group": "気温", "unit": "日" },
+    { "key": "annualDaysMaxTempAtOrAbove25", "label": "日最高気温25℃以上年間日数", "shortLabel": "夏日日数", "group": "気温", "unit": "日" },
     { "key": "annualDaysMaxTempAtOrAbove30", "label": "日最高気温30℃以上年間日数", "shortLabel": "真夏日日数", "group": "気温", "unit": "日" },
     { "key": "annualDaysMaxTempAtOrAbove35", "label": "日最高気温35℃以上年間日数", "shortLabel": "猛暑日日数", "group": "気温", "unit": "日" },
-    { "key": "annualDaysMinTempBelow0", "label": "日最低気温0℃未満継続年間日数", "shortLabel": "最低0℃未満日数", "group": "気温", "unit": "日" },
-    { "key": "annualDaysMinTempAtOrAbove25", "label": "日最低気温25℃以上年間日数", "shortLabel": "熱帯夜日数", "group": "気温", "unit": "日" },
+    { "key": "annualDaysMinTempBelow0", "label": "日最低気温0℃未満継続年間日数", "shortLabel": "冬日日数", "group": "気温", "unit": "日" },
+    { "key": "annualDaysMaxTempBelow0", "label": "日最高気温0℃未満継続年間日数", "shortLabel": "真冬日日数", "group": "気温", "unit": "日" },
 
     { "key": "dailyMinHumidity", "label": "日最小相対湿度", "shortLabel": "最小湿度", "group": "湿度", "unit": "%" },
 
@@ -55,7 +55,7 @@
 
     { "key": "dailySnowDepth", "label": "降雪の深さ日合計", "shortLabel": "日降雪", "group": "雪", "unit": "cm" },
     { "key": "monthSnowDepth", "label": "降雪の深さ月合計", "shortLabel": "月降雪", "group": "雪", "unit": "cm" },
-    { "key": "yearCumulativeSnowDepth", "label": "降雪の深さ累積年合計", "shortLabel": "年降雪", "group": "雪", "unit": "cm" },
+    { "key": "yearCumulativeSnowDepth", "label": "降雪の深さ寒候期合計", "shortLabel": "年降雪", "group": "雪", "unit": "cm" },
     { "key": "monthDeepSnowHigh", "label": "月最深積雪の大きい方から", "shortLabel": "最深積雪(大)", "group": "雪", "unit": "cm" },
     { "key": "monthDeepSnowLow", "label": "月最深積雪の小さい方から", "shortLabel": "最深積雪(小)", "group": "雪", "unit": "cm" },
 
@@ -71,7 +71,7 @@
     { "key": "dailyPrecip", "label": "日降水量", "shortLabel": "日降水", "group": "雨", "unit": "mm" },
     { "key": "max10mPrecip", "label": "日最大10分間降水量", "shortLabel": "10分雨量", "group": "雨", "unit": "mm" },
     { "key": "max1hPrecip", "label": "日最大1時間降水量", "shortLabel": "1時間雨量", "group": "雨", "unit": "mm" },
-    { "key": "monthMax24hPrecipValue", "label": "月最大24時間降水量", "shortLabel": "月最大24時間雨量", "group": "雨", "unit": "mm" },
+    { "key": "max24hPrecip", "label": "月最大24時間降水量", "shortLabel": "24時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthPrecipHigh", "label": "月降水量の多い方から", "shortLabel": "月降水(多)", "group": "雨", "unit": "mm" },
     { "key": "monthPrecipLow", "label": "月降水量の少ない方から", "shortLabel": "月降水(少)", "group": "雨", "unit": "mm" },
 
@@ -79,7 +79,7 @@
     { "key": "monthMax3hPrecip", "label": "月最大3時間降水量の多い方から", "shortLabel": "3時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax6hPrecip", "label": "月最大6時間降水量の多い方から", "shortLabel": "6時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax12hPrecip", "label": "月最大12時間降水量の多い方から", "shortLabel": "12時間雨量", "group": "雨", "unit": "mm" },
-    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "shortLabel": "24時間雨量(多)", "group": "雨", "unit": "mm" },
+    { "key": "monthMax24hPrecip", "label": "月最大24時間降水量の多い方から", "shortLabel": "24時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax48hPrecip", "label": "月最大48時間降水量の多い方から", "shortLabel": "48時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax72hPrecip", "label": "月最大72時間降水量の多い方から", "shortLabel": "72時間雨量", "group": "雨", "unit": "mm" },
 
