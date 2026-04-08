@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-08T22:33:29.423622+09:00",
-  "observedLatestAt": "2026-04-08T22:20:00+09:00",
+  "updatedAt": "2026-04-08T23:23:56.339871+09:00",
+  "observedLatestAt": "2026-04-08T23:10:00+09:00",
   "prefecture": "和歌山県",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
@@ -68,6 +68,72 @@
           "value": 6,
           "date": "2023年",
           "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "潮岬",
+      "startDate": "",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2,
+          "date": "1959年",
+          "_date_raw": "1959/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
         }
       ]
     }

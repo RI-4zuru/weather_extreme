@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-08T22:33:29.423622+09:00",
-  "observedLatestAt": "2026-04-08T22:20:00+09:00",
+  "updatedAt": "2026-04-08T23:23:56.339871+09:00",
+  "observedLatestAt": "2026-04-08T23:10:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthDeepSnowHigh",
   "month": "3",
@@ -68,6 +68,24 @@
           "value": 1,
           "date": "1984年3月1日（昭和59年）",
           "_date_raw": "1984/03/01"
+        }
+      ]
+    },
+    {
+      "stationName": "潮岬",
+      "startDate": "1916年3月（大正5年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1,
+          "date": "1977年3月4日（昭和52年）",
+          "_date_raw": "1977/03/04"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "1965年3月20日（昭和40年）",
+          "_date_raw": "1965/03/20"
         }
       ]
     }
