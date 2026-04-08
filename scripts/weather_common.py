@@ -260,7 +260,7 @@ ELEMENTS = {
         "live_mode": None,
     },
     "yearCumulativeSnowDepth": {
-        "labels": ["降雪の深さ寒候期合計"],
+        "labels": ["降雪の深さ寒候年合計"],
         "direction": "desc",
         "category": "snow",
         "live_mode": None,
