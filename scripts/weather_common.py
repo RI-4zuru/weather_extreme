@@ -461,7 +461,8 @@ def format_start_date_label(raw: str) -> str:
         return raw
 
     if re.match(r"^\d{4}/\d{1,2}寒候年$", raw):
-        return raw
+        m = re.match(r"^(\d{4})/\d{1,2}寒候年$", raw)
+        return f"{m.group(1)}寒候年" if m else raw
 
     return raw
 
