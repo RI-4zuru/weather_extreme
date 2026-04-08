@@ -55,7 +55,7 @@
 
     { "key": "dailySnowDepth", "label": "降雪の深さ日合計", "shortLabel": "日降雪", "group": "雪", "unit": "cm" },
     { "key": "monthSnowDepth", "label": "降雪の深さ月合計", "shortLabel": "月降雪", "group": "雪", "unit": "cm" },
-    { "key": "yearCumulativeSnowDepth", "label": "降雪の深さ寒候期合計", "shortLabel": "年降雪", "group": "雪", "unit": "cm" },
+    { "key": "yearCumulativeSnowDepth", "label": "降雪の深さ寒候年合計", "shortLabel": "年降雪", "group": "雪", "unit": "cm" },
     { "key": "monthDeepSnowHigh", "label": "月最深積雪の大きい方から", "shortLabel": "最深積雪(大)", "group": "雪", "unit": "cm" },
     { "key": "monthDeepSnowLow", "label": "月最深積雪の小さい方から", "shortLabel": "最深積雪(小)", "group": "雪", "unit": "cm" },
 
