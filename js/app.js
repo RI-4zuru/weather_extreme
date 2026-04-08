@@ -48,6 +48,25 @@ function formatDateTime(isoText) {
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日 ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
 }
 
+function toWarekiYearText(year) {
+  const y = Number(year);
+  if (!Number.isFinite(y)) return "";
+
+  if (y >= 2019) {
+    return `令和${y - 2018 === 1 ? "元" : y - 2018}年`;
+  }
+  if (y >= 1989) {
+    return `平成${y - 1988 === 1 ? "元" : y - 1988}年`;
+  }
+  if (y >= 1926) {
+    return `昭和${y - 1925 === 1 ? "元" : y - 1925}年`;
+  }
+  if (y >= 1912) {
+    return `大正${y - 1911 === 1 ? "元" : y - 1911}年`;
+  }
+  return `明治${y - 1867 === 1 ? "元" : y - 1867}年`;
+}
+
 function splitJapaneseDateLines(text) {
   if (!text) {
     return { first: "-", second: "" };
@@ -68,6 +87,30 @@ function splitJapaneseDateLines(text) {
     return {
       first: m2[1],
       second: `（${m2[2]}）`
+    };
+  }
+
+  const m3 = raw.match(/^(\d{4})年$/);
+  if (m3) {
+    return {
+      first: `${m3[1]}年`,
+      second: `（${toWarekiYearText(m3[1])}）`
+    };
+  }
+
+  const m4 = raw.match(/^(\d{4})寒候年$/);
+  if (m4) {
+    return {
+      first: `${m4[1]}寒候年`,
+      second: `（${toWarekiYearText(m4[1])}）`
+    };
+  }
+
+  const m5 = raw.match(/^(\d{4})年寒候年$/);
+  if (m5) {
+    return {
+      first: `${m5[1]}寒候年`,
+      second: `（${toWarekiYearText(m5[1])}）`
     };
   }
 
