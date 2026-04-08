@@ -6,14 +6,11 @@ from weather_common import (
     MONTHS,
     JST,
     build_dir_manifest,
-    dedupe_live_summary,
     ensure_dir,
     fetch_latest_time,
     fetch_today_live_extreme,
     load_prefecture_configs,
     merge_live,
-    month_label,
-    month_sort_key,
     read_json_file,
     write_json,
 )
@@ -32,13 +29,11 @@ def main():
     ensure_dir(BASE_DIR)
     prefectures = load_prefecture_configs()
 
-    # 観測時刻（実況判定用）
     latest_obs_iso = fetch_latest_time()
     latest_dt = datetime.fromisoformat(
         latest_obs_iso.replace("Z", "+00:00")
     ).astimezone(JST)
 
-    # 表示用の更新時刻は「実際の生成時刻」
     generated_iso = datetime.now(JST).isoformat()
 
     for pref in prefectures:
@@ -50,67 +45,63 @@ def main():
         pref_dir = os.path.join(BASE_DIR, pref_key)
         ensure_dir(pref_dir)
 
-        live_summary_items = []
-
         for element_key, element_def in ELEMENTS.items():
             for month in MONTHS:
                 base_data = load_base_rows(pref_key, element_key, month)
+                if not base_data:
+                    continue
+
                 rows = []
 
-                if base_data:
-                    for base_row in base_data.get("rows", []):
-                        station_name = base_row["stationName"]
-                        station = station_map.get(station_name)
-                        if not station:
-                            continue
+                for base_row in base_data.get("rows", []):
+                    station_name = base_row.get("stationName")
+                    if not station_name:
+                        continue
 
-                        try:
-                            live_info = fetch_today_live_extreme(
-                                station["amedasCode"],
-                                latest_dt,
-                                element_def["live_mode"],
-                                month,
-                            )
+                    station = station_map.get(station_name)
+                    if not station:
+                        # 設定側に観測所が無い場合は、そのまま通す
+                        rows.append(
+                            {
+                                "stationName": station_name,
+                                "startDate": base_row.get("startDate", ""),
+                                "ranks": base_row.get("ranks", []),
+                            }
+                        )
+                        continue
 
-                            ranks, live_summary_item = merge_live(
-                                base_row["ranks"],
-                                live_info,
-                                element_def["direction"],
-                                latest_dt,
-                            )
+                    try:
+                        live_info = fetch_today_live_extreme(
+                            station["amedasCode"],
+                            latest_dt,
+                            element_def["live_mode"],
+                            month,
+                        )
 
-                            rows.append(
-                                {
-                                    "stationName": station_name,
-                                    "startDate": base_row.get("startDate", ""),
-                                    "ranks": ranks,
-                                }
-                            )
+                        merged_ranks, _ = merge_live(
+                            base_row.get("ranks", []),
+                            live_info,
+                            element_def["direction"],
+                            latest_dt,
+                        )
 
-                            if live_summary_item:
-                                live_summary_items.append(
-                                    {
-                                        "stationName": station_name,
-                                        "elementKey": element_key,
-                                        "elementLabel": element_def["labels"][0],
-                                        "rank": live_summary_item["rank"],
-                                        "value": live_summary_item["value"],
-                                        "date": live_summary_item["date"],
-                                        "monthLabel": month_label(month),
-                                        "monthSort": month_sort_key(month),
-                                    }
-                                )
+                        rows.append(
+                            {
+                                "stationName": station_name,
+                                "startDate": base_row.get("startDate", ""),
+                                "ranks": merged_ranks,
+                            }
+                        )
 
-                        except Exception:
-                            # 実況取得失敗時も、ベースの順位表自体は残す
-                            rows.append(
-                                {
-                                    "stationName": station_name,
-                                    "startDate": base_row.get("startDate", ""),
-                                    "ranks": base_row.get("ranks", []),
-                                }
-                            )
-                            continue
+                    except Exception:
+                        # 実況取得失敗でも元順位表は残す
+                        rows.append(
+                            {
+                                "stationName": station_name,
+                                "startDate": base_row.get("startDate", ""),
+                                "ranks": base_row.get("ranks", []),
+                            }
+                        )
 
                 output = {
                     "updatedAt": generated_iso,
@@ -124,15 +115,6 @@ def main():
                 file_name = f"{element_key}-{month}.json"
                 write_json(os.path.join(pref_dir, file_name), output)
                 print(f"wrote: {BASE_DIR}/{pref_key}/{file_name}")
-
-        live_summary_output = {
-            "updatedAt": generated_iso,
-            "observedLatestAt": latest_obs_iso,
-            "prefecture": pref_name,
-            "items": dedupe_live_summary(live_summary_items),
-        }
-        write_json(os.path.join(pref_dir, "live-summary.json"), live_summary_output)
-        print(f"wrote: {BASE_DIR}/{pref_key}/live-summary.json")
 
     manifest = build_dir_manifest(BASE_DIR, generated_iso, prefectures)
     manifest["observedLatestAt"] = latest_obs_iso
