@@ -32,14 +32,15 @@ jobs:
         run: python scripts/update_rankings.py
 
       - name: Show manifest
-        run: cat data_base/manifest.json
+        run: cat data/manifest.json
 
       - name: Commit data if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data_base
+          git add data
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
