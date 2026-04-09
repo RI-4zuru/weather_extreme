@@ -8,6 +8,7 @@
       "amedasCode": "62078",
       "temp": true,
       "precip": true,
+      "pressure": true,
       "humidity": true,
       "wind": true,
       "sunshine": true,
