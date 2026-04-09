@@ -43,7 +43,7 @@
       "humidity": false,
       "wind": false,
       "sunshine": true,
-      "snow": false,
+      "snow": true,
       "rank_candidates": [
         { "rank_type": "a", "blockNo": "1524", "view": "h0" },
         { "rank_type": "a", "blockNo": "1524", "view": "np0" },
@@ -72,6 +72,7 @@
       "amedasCode": "60131",
       "temp": true,
       "precip": true,
+      "pressure": true,
       "humidity": true,
       "wind": true,
       "sunshine": true,
@@ -88,6 +89,7 @@
       "amedasCode": "60316",
       "temp": true,
       "precip": true,
+      "pressure": true,
       "humidity": false,
       "wind": true,
       "sunshine": true,
@@ -107,7 +109,7 @@
       "humidity": false,
       "wind": true,
       "sunshine": true,
-      "snow": false,
+      "snow": true,
       "rank_candidates": [
         { "rank_type": "a", "blockNo": "0586", "view": "h0" },
         { "rank_type": "a", "blockNo": "0586", "view": "np0" },
@@ -155,7 +157,7 @@
       "humidity": false,
       "wind": false,
       "sunshine": false,
-      "snow": false,
+      "snow": true,
       "rank_candidates": [
         { "rank_type": "a", "blockNo": "1087", "view": "h0" },
         { "rank_type": "a", "blockNo": "1087", "view": "np0" },
