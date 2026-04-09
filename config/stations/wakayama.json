@@ -8,10 +8,11 @@
       "amedasCode": "65021",
       "temp": false,
       "precip": true,
+      "pressure": true,
       "humidity": false,
       "wind": false,
       "sunshine": false,
-      "snow": false,
+      "snow": true,
       "rank_candidates": [
         { "rank_type": "a", "blockNo": "0642", "view": "h0" },
         { "rank_type": "a", "blockNo": "0642", "view": "np0" },
