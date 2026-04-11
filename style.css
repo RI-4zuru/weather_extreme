@@ -149,6 +149,7 @@ input {
   padding: 14px;
 }
 
+/* 上部の実況ランクイン表示 */
 .live-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -212,6 +213,7 @@ input {
   font-size: 1rem;
 }
 
+/* 要素選択 */
 .element-toggle {
   width: 100%;
   border: 0;
@@ -232,6 +234,8 @@ input {
   padding: 14px;
   background: #f8fcff;
   border-top: 1px solid var(--line);
+  max-height: none;
+  overflow: visible;
 }
 
 #elementPanel.collapsed {
@@ -253,10 +257,12 @@ input {
   font-weight: 800;
 }
 
+/* 1行6要素 */
 .element-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px 12px;
+  width: 100%;
 }
 
 .element-option {
@@ -264,6 +270,7 @@ input {
   align-items: center;
   gap: 8px;
   min-height: 42px;
+  width: 100%;
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -273,6 +280,7 @@ input {
     border-color 0.15s ease,
     background 0.15s ease,
     box-shadow 0.15s ease;
+  margin: 0;
 }
 
 .element-option:hover {
@@ -286,10 +294,12 @@ input {
 }
 
 .element-option span {
+  display: block;
   color: var(--text);
-  font-size: 0.98rem;
-  line-height: 1.25;
-  word-break: break-word;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .element-empty {
@@ -401,9 +411,10 @@ input {
 }
 
 .station-start-date {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: #607a90;
-  line-height: 1.2;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 
 .rank-cell {
@@ -424,7 +435,7 @@ input {
 }
 
 .rank-value {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   font-weight: 800;
   line-height: 1.02;
   color: #0c304c;
@@ -432,10 +443,20 @@ input {
 }
 
 .rank-date-wrap {
-  font-size: 0.78rem;
-  line-height: 1.15;
+  font-size: 0.71rem;
+  line-height: 1.05;
   color: #4b667d;
+  letter-spacing: -0.015em;
   word-break: keep-all;
+  white-space: normal;
+}
+
+.rank-date-wrap > div:first-child {
+  white-space: nowrap;
+}
+
+.rank-date-wrap > div:last-child {
+  white-space: nowrap;
 }
 
 .debug-panel {
@@ -521,6 +542,14 @@ input {
   .debug-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .rank-value {
+    font-size: 1.7rem;
+  }
+
+  .rank-date-wrap {
+    font-size: 0.68rem;
+  }
 }
 
 @media (max-width: 960px) {
@@ -550,7 +579,8 @@ input {
   }
 
   .rank-date-wrap {
-    font-size: 0.73rem;
+    font-size: 0.64rem;
+    line-height: 1.02;
   }
 
   .rank-table thead th:first-child {
@@ -593,12 +623,12 @@ input {
   }
 
   .rank-value {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .rank-date-wrap,
   .station-start-date {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
   }
 
   .rank-table thead th {
