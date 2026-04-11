@@ -30,7 +30,7 @@ const FALLBACK_DEFAULTS = {
 const UI_STATE_STORAGE_KEY = "weatherExtremeUIState_v1";
 
 // 現在は基礎ランキングを data_base から表示
-const BASE_RANKING_DIR = "./data_base";
+const BASE_RANKING_DIR = "./data";
 
 // 実況一覧は data 側
 const LIVE_DATA_DIR = "./data";
