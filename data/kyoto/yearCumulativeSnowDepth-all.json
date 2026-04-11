@@ -1,10 +1,76 @@
 {
-  "updatedAt": "2026-04-11T11:02:21.560777+09:00",
-  "observedLatestAt": "2026-04-11T10:50:00+09:00",
+  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
+  "observedLatestAt": "2026-04-11T11:10:00+09:00",
   "prefecture": "京都府",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
   "rows": [
+    {
+      "stationName": "峰山",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 755,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 555,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 549,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 517,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 493,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 472,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 345,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 329,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 322,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 320,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        }
+      ]
+    },
     {
       "stationName": "舞鶴",
       "startDate": "1953寒候年",
@@ -68,6 +134,72 @@
           "value": 279,
           "date": "1975年",
           "_date_raw": "1975/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "美山",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 648,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 465,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 431,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 369,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 343,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 330,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 330,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 325,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 304,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 249,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
         }
       ]
     },
