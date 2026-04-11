@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T12:57:15.619879+09:00",
-  "observedLatestAt": "2026-04-11T12:50:00+09:00",
+  "updatedAt": "2026-04-11T13:34:58.735602+09:00",
+  "observedLatestAt": "2026-04-11T13:20:00+09:00",
   "prefecture": "奈良県",
   "element": "dailyMaxTempHigh",
   "month": "4",
@@ -42,7 +42,7 @@
           "value": 29.5,
           "date": "2025年4月19日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
@@ -111,7 +111,7 @@
           "value": 26.9,
           "date": "2025年4月19日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
@@ -222,7 +222,7 @@
           "value": 27.2,
           "date": "2025年4月19日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
@@ -242,7 +242,7 @@
           "value": 29.4,
           "date": "2025年4月19日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
@@ -346,7 +346,7 @@
           "value": 29.5,
           "date": "2025年4月21日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
@@ -422,7 +422,7 @@
           "value": 29.4,
           "date": "2025年4月21日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 6,

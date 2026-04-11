@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T12:57:15.619879+09:00",
-  "observedLatestAt": "2026-04-11T12:50:00+09:00",
+  "updatedAt": "2026-04-11T13:34:58.735602+09:00",
+  "observedLatestAt": "2026-04-11T13:20:00+09:00",
   "prefecture": "奈良県",
   "element": "max1hPrecip",
   "month": "4",
@@ -892,7 +892,7 @@
           "value": 17.5,
           "date": "2025年4月13日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
@@ -975,7 +975,7 @@
           "value": 12.5,
           "date": "2025年4月13日（令和7年）",
           "highlightLive": false,
-          "highlightWithinYear": true
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
