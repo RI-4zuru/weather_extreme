@@ -407,11 +407,11 @@ input {
 }
 
 .table-panel .rank-table thead th:first-child {
-  width: 12.5%;
+  width: 10%;
 }
 
 .table-panel .rank-table thead th:not(:first-child) {
-  width: 8.75%;
+  width: 9%;
 }
 
 .table-panel .rank-table th,
