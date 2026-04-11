@@ -29,9 +29,10 @@ const FALLBACK_DEFAULTS = {
 
 const UI_STATE_STORAGE_KEY = "weatherExtremeUIState_v1";
 
-// 基礎ランキングの読み込み元
+// 現時点では基礎ランキングを data_base から表示
 const BASE_RANKING_DIR = "./data_base";
-// 実況系は今後使う想定。現時点では data 側を読む
+
+// 実況一覧は data 側
 const LIVE_DATA_DIR = "./data";
 
 function escapeHtml(value) {
@@ -63,21 +64,15 @@ function toWarekiYearText(year) {
 }
 
 function splitJapaneseDateLines(text) {
-  if (!text) {
-    return { first: "-", second: "" };
-  }
+  if (!text) return { first: "-", second: "" };
 
   const raw = String(text).trim();
 
   const m1 = raw.match(/^(\d{4}年\d{1,2}月\d{1,2}日)（(.+)）$/);
-  if (m1) {
-    return { first: m1[1], second: `（${m1[2]}）` };
-  }
+  if (m1) return { first: m1[1], second: `（${m1[2]}）` };
 
   const m2 = raw.match(/^(\d{4}年\d{1,2}月)（(.+)）$/);
-  if (m2) {
-    return { first: m2[1], second: `（${m2[2]}）` };
-  }
+  if (m2) return { first: m2[1], second: `（${m2[2]}）` };
 
   const m3 = raw.match(/^(\d{4})年$/);
   if (m3) {
@@ -167,9 +162,6 @@ async function fetchJson(path) {
   return await res.json();
 }
 
-/* -----------------------------
- * UI state persistence
- * ----------------------------- */
 function loadUIState() {
   try {
     const raw = localStorage.getItem(UI_STATE_STORAGE_KEY);
@@ -292,9 +284,6 @@ function updateSavedElementKeyForCurrentMonth(selectedKey) {
   }
 }
 
-/* -----------------------------
- * config / manifest
- * ----------------------------- */
 async function loadConfigs() {
   const [prefData, elemData] = await Promise.all([
     fetchJson("./config/prefectures.json"),
@@ -430,7 +419,7 @@ function renderElementPanel(preferredKey = null) {
   for (const [groupName, items] of grouped.entries()) {
     html.push(`<section class="element-group">`);
     html.push(`<h3 class="element-group-title">${escapeHtml(groupName)}</h3>`);
-    html.push(`<div class="element-group-items">`);
+    html.push(`<div class="element-grid">`);
 
     for (const item of items) {
       const checked = item.key === selectedKey ? "checked" : "";
@@ -461,9 +450,7 @@ function renderElementPanel(preferredKey = null) {
 function makeTableHeader() {
   const cols = ["地点名 / 観測開始"];
   for (let i = 1; i <= 10; i++) cols.push(`${i}位`);
-  rankTableHead.innerHTML = `<tr>${cols
-    .map((col) => `<th>${escapeHtml(col)}</th>`)
-    .join("")}</tr>`;
+  rankTableHead.innerHTML = `<tr>${cols.map((col) => `<th>${escapeHtml(col)}</th>`).join("")}</tr>`;
 }
 
 function renderTableRows(rows) {
@@ -499,6 +486,7 @@ function renderTableRows(rows) {
         const classes = ["rank-cell"];
         if (rank.highlightLive) classes.push("live-in-rank");
         if (rank.highlightWithinYear) classes.push("within-year");
+
         td.className = classes.join(" ");
         td.innerHTML = `
           <div class="rank-value">${escapeHtml(rank.value ?? "-")}</div>
@@ -548,20 +536,22 @@ function renderLiveSummaryColumn(title, items) {
   return `
     <div class="live-summary-col">
       <div class="live-summary-title">${escapeHtml(title)}</div>
-      ${items
-        .map(
-          (item) => `
-        <div class="live-summary-item">
-          <div class="live-summary-rank">${escapeHtml(item.rank)}位</div>
-          <div class="live-summary-element">${escapeHtml(
-            item.elementLabel || item.elementKey || ""
-          )}</div>
-          <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
-          <div class="live-summary-value">${escapeHtml(item.value ?? "")}</div>
-        </div>
-      `
-        )
-        .join("")}
+      <div class="live-summary-list">
+        ${items
+          .map(
+            (item) => `
+          <div class="live-summary-item">
+            <div class="live-summary-rank">${escapeHtml(item.rank)}位</div>
+            <div class="live-summary-element">${escapeHtml(
+              item.elementLabel || item.elementKey || ""
+            )}</div>
+            <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
+            <div class="live-summary-value">${escapeHtml(item.value ?? "")}</div>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
     </div>
   `;
 }
@@ -592,8 +582,10 @@ function renderLiveSummary(summary) {
   const monthlySorted = [...monthlyItems].sort(sorter);
 
   liveSummaryBody.innerHTML = `
-    ${renderLiveSummaryColumn("通年", annualSorted)}
-    ${renderLiveSummaryColumn("当月", monthlySorted)}
+    <div class="live-summary-grid">
+      ${renderLiveSummaryColumn("通年", annualSorted)}
+      ${renderLiveSummaryColumn("当月", monthlySorted)}
+    </div>
   `;
 
   const hasAny = annualSorted.length > 0 || monthlySorted.length > 0;
@@ -613,13 +605,15 @@ async function loadLiveSummary(prefKey) {
   } catch (err) {
     console.warn("live-summary.json がまだ無いため、実況一覧は空表示にします。", err);
     liveSummaryBody.innerHTML = `
-      <div class="live-summary-col">
-        <div class="live-summary-title">通年</div>
-        <div class="live-summary-empty">該当なし</div>
-      </div>
-      <div class="live-summary-col">
-        <div class="live-summary-title">当月</div>
-        <div class="live-summary-empty">該当なし</div>
+      <div class="live-summary-grid">
+        <div class="live-summary-col">
+          <div class="live-summary-title">通年</div>
+          <div class="live-summary-empty">該当なし</div>
+        </div>
+        <div class="live-summary-col">
+          <div class="live-summary-title">当月</div>
+          <div class="live-summary-empty">該当なし</div>
+        </div>
       </div>
     `;
     setBadgeVisible(rankInBadge, false);
