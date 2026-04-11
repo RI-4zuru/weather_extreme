@@ -1,0 +1,75 @@
+{
+  "updatedAt": "2026-04-11T12:08:20.490918+09:00",
+  "observedLatestAt": "2026-04-11T12:00:00+09:00",
+  "prefecture": "滋賀県",
+  "element": "annualDaysMaxTempAtOrAbove30",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "彦根",
+      "startDate": "1893年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 87,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 84,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 83,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 77,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 73,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 72,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 71,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 71,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 69,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 69,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        }
+      ]
+    }
+  ]
+}

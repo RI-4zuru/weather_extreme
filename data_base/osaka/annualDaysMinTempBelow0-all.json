@@ -1,0 +1,75 @@
+{
+  "updatedAt": "2026-04-11T12:08:20.490918+09:00",
+  "observedLatestAt": "2026-04-11T12:00:00+09:00",
+  "prefecture": "大阪府",
+  "element": "annualDaysMinTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 85,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 80,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 71,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 65,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 64,
+          "date": "1896年",
+          "_date_raw": "1896/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 64,
+          "date": "1892年",
+          "_date_raw": "1892/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 64,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 63,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 62,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 60,
+          "date": "1948年",
+          "_date_raw": "1948/01/01"
+        }
+      ]
+    }
+  ]
+}
