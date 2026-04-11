@@ -1,17 +1,17 @@
 :root {
-  --bg: #edf4fa;
+  --bg: #eef4f9;
   --panel: #ffffff;
-  --panel-head: #c7dbea;
-  --line: #6b879f;
-  --line-soft: #8ea8bd;
-  --line-strong: #4e6c87;
+  --panel-head: #c8d9e7;
+  --line: #627f97;
+  --line-soft: #88a1b5;
+  --line-strong: #4b677f;
   --text: #183246;
-  --text-soft: #476377;
+  --text-soft: #496477;
   --accent: #0c6fae;
-  --accent-dark: #084d79;
-  --accent-soft: #dcecf9;
+  --accent-dark: #084b78;
+  --accent-soft: #deecf8;
   --warn: #ffe067;
-  --live: #ff9393;
+  --live: #ff9898;
   --shadow: 0 4px 14px rgba(24, 57, 86, 0.08);
   --radius-lg: 18px;
   --radius-md: 14px;
@@ -45,13 +45,13 @@ input {
 }
 
 .container {
-  width: min(1680px, calc(100% - 18px));
+  width: min(1700px, calc(100% - 14px));
   margin: 0 auto;
-  padding: 8px 0 20px;
+  padding: 6px 0 16px;
 }
 
 .page-title {
-  margin: 8px 0 12px;
+  margin: 6px 0 10px;
   font-size: 2rem;
   font-weight: 900;
   color: var(--accent);
@@ -61,27 +61,27 @@ input {
 .top-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 14px;
+  gap: 10px 12px;
   align-items: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .control-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  min-width: 118px;
+  gap: 4px;
+  min-width: 112px;
 }
 
 .control-group label {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   color: var(--text-soft);
 }
 
 .control-group select {
   height: 42px;
-  min-width: 104px;
+  min-width: 100px;
   padding: 0 12px;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
@@ -107,20 +107,20 @@ input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
-  padding: 5px 12px;
+  min-height: 32px;
+  padding: 4px 11px;
   border-radius: 999px;
-  border: 1px solid #b95656;
-  background: #ffd4d4;
-  color: #7a1111;
+  border: 1px solid #b95353;
+  background: #ffd3d3;
+  color: #7b1111;
   font-weight: 900;
   white-space: nowrap;
 }
 
 .status-badge.rankin {
-  border-color: #a98318;
-  background: #ffe8a0;
-  color: #6e5500;
+  border-color: #ab8417;
+  background: #ffe79e;
+  color: #695200;
 }
 
 .panel {
@@ -129,56 +129,56 @@ input {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .panel-header {
-  padding: 12px 15px;
+  padding: 10px 14px;
   background: var(--panel-head);
   border-bottom: 1px solid var(--line-strong);
-  font-size: 1.04rem;
+  font-size: 1.02rem;
   font-weight: 900;
   color: var(--text);
 }
 
 .panel-body {
-  padding: 12px;
+  padding: 10px 12px;
 }
 
 /* 上部実況一覧 */
 .live-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .live-summary-col {
   background: #f7fbff;
   border: 1px solid var(--line-soft);
   border-radius: 14px;
-  padding: 12px 14px;
-  min-height: 88px;
+  padding: 11px 13px;
+  min-height: 84px;
 }
 
 .live-summary-title {
-  font-size: 1.14rem;
+  font-size: 1.08rem;
   font-weight: 900;
   color: var(--text);
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .live-summary-list {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 6px;
 }
 
 .live-summary-item {
   display: grid;
-  grid-template-columns: 46px minmax(100px, 1.2fr) minmax(80px, 1fr) auto;
-  gap: 7px;
+  grid-template-columns: 44px minmax(96px, 1.15fr) minmax(72px, 0.95fr) auto;
+  gap: 6px;
   align-items: center;
-  padding: 7px 9px;
+  padding: 6px 8px;
   background: #fff;
   border: 1px solid #aec4d6;
   border-radius: 10px;
@@ -207,8 +207,8 @@ input {
 }
 
 .live-summary-empty {
-  color: #698194;
-  font-size: 0.96rem;
+  color: #6b8295;
+  font-size: 0.94rem;
 }
 
 /* 要素選択 */
@@ -218,18 +218,18 @@ input {
   background: var(--panel-head);
   color: var(--text);
   text-align: left;
-  padding: 12px 15px;
+  padding: 10px 14px;
   font-size: 1rem;
   font-weight: 900;
   cursor: pointer;
 }
 
 .element-toggle:hover {
-  background: #b9d2e4;
+  background: #bfd3e3;
 }
 
 #elementPanel {
-  padding: 12px;
+  padding: 10px 12px;
   background: #f7fbff;
   border-top: 1px solid var(--line-soft);
   max-height: none;
@@ -241,7 +241,7 @@ input {
 }
 
 .element-group {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .element-group:last-child {
@@ -249,15 +249,15 @@ input {
 }
 
 .element-group-title {
-  margin: 0 0 8px;
+  margin: 0 0 7px;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 900;
 }
 
 .element-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 8px 10px;
   width: 100%;
 }
@@ -267,9 +267,9 @@ input {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 36px;
+  min-height: 34px;
   width: 100%;
-  padding: 5px 8px;
+  padding: 4px 8px;
   border: 1px solid var(--line-soft);
   border-radius: 10px;
   background: #ffffff;
@@ -295,8 +295,8 @@ input {
 .element-option span {
   display: block;
   color: var(--text);
-  font-size: 0.88rem;
-  line-height: 1.15;
+  font-size: 0.87rem;
+  line-height: 1.12;
   word-break: keep-all;
   overflow-wrap: anywhere;
   text-align: center;
@@ -306,13 +306,13 @@ input {
   color: var(--text-soft);
 }
 
-/* ステータス */
+/* 状態行 */
 .status-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(250px, 0.9fr);
-  gap: 12px;
-  align-items: stretch;
-  margin: 12px 0 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(290px, 340px);
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0 8px;
 }
 
 .status-box,
@@ -320,20 +320,20 @@ input {
   background: var(--panel);
   border: 1px solid var(--line-strong);
   border-radius: 14px;
-  padding: 12px 14px;
-  min-height: 52px;
+  padding: 10px 14px;
+  min-height: 48px;
   display: flex;
   align-items: center;
 }
 
 .status-box {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--text);
   font-weight: 700;
 }
 
 .observed-box {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 8px;
   color: var(--text);
   white-space: nowrap;
@@ -355,19 +355,19 @@ input {
 }
 
 .table-wrap {
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
-.rank-table {
-  width: 100%;
-  min-width: 0;
-  border-collapse: collapse;
-  table-layout: fixed;
+.table-panel .rank-table {
+  width: 100% !important;
+  min-width: 100% !important;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
   background: #fff;
-  border: 2px solid var(--line-strong);
+  border: 2px solid var(--line-strong) !important;
 }
 
-.rank-table thead th {
+.table-panel .rank-table thead th {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -375,61 +375,65 @@ input {
   color: #ffffff;
   font-size: 0.88rem;
   font-weight: 900;
-  padding: 8px 4px;
-  border: 1px solid #35556f;
-  border-bottom: 2px solid #27445c;
+  padding: 8px 3px;
   text-align: center;
+  border: 1px solid #35556f !important;
+  border-bottom: 2px solid #27445c !important;
 }
 
-.rank-table thead th:first-child {
-  width: 12%;
+.table-panel .rank-table thead th:first-child {
+  width: 12.5%;
 }
 
-.rank-table thead th:not(:first-child) {
-  width: 8.8%;
+.table-panel .rank-table thead th:not(:first-child) {
+  width: 8.75%;
 }
 
-.rank-table th,
-.rank-table td {
-  border: 1px solid #6b889f;
+.table-panel .rank-table th,
+.table-panel .rank-table td {
+  border: 1px solid #6b889f !important;
 }
 
-.rank-table tbody tr:nth-child(even) {
+.table-panel .rank-table tbody tr:nth-child(even) {
   background: #f7fbff;
 }
 
-.rank-table tbody td {
-  padding: 5px 3px 6px;
-  text-align: center;
-  vertical-align: middle;
+.table-panel .rank-table tbody td {
+  padding: 5px 2px 6px;
+  text-align: center !important;
+  vertical-align: middle !important;
 }
 
 .station-col {
   background: #edf6fd;
-  text-align: center;
+  text-align: center !important;
 }
 
 .station-name {
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 900;
   color: #0a2a40;
-  line-height: 1.14;
+  line-height: 1.12;
   margin-bottom: 3px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .station-start-date {
-  font-size: 0.68rem;
-  color: #49667d;
-  line-height: 1.04;
+  font-size: 0.67rem;
+  color: #4a667d;
+  line-height: 1.03;
   letter-spacing: -0.01em;
-  text-align: center;
+  text-align: center !important;
+}
+
+.station-start-date > div {
+  text-align: center !important;
 }
 
 .rank-cell {
   background: transparent;
   transition: background 0.15s ease;
-  text-align: center;
+  text-align: center !important;
 }
 
 .rank-cell.within-year {
@@ -441,34 +445,34 @@ input {
 }
 
 .rank-cell.live-in-rank.within-year {
-  background: linear-gradient(180deg, #ff9393 0%, #ffe067 100%);
+  background: linear-gradient(180deg, #ff9898 0%, #ffe067 100%);
 }
 
 .rank-value {
-  font-size: 1.72rem;
+  font-size: 1.7rem;
   font-weight: 900;
   line-height: 1;
   color: #0b2c45;
   margin-bottom: 1px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .rank-date-wrap {
-  font-size: 0.64rem;
+  font-size: 0.63rem;
   line-height: 1.02;
-  color: #436079;
+  color: #45617a;
   letter-spacing: -0.01em;
-  text-align: center;
+  text-align: center !important;
 }
 
 .rank-date-wrap > div {
   white-space: nowrap;
-  text-align: center;
+  text-align: center !important;
 }
 
 /* 診断情報 */
 .debug-panel {
-  margin-top: 12px;
+  margin-top: 10px;
   background: var(--panel);
   border: 1px solid var(--line-strong);
   border-radius: 16px;
@@ -477,18 +481,18 @@ input {
 }
 
 .debug-header {
-  padding: 12px 15px;
+  padding: 10px 14px;
   background: var(--panel-head);
   border-bottom: 1px solid var(--line-strong);
-  font-size: 1.03rem;
+  font-size: 1.02rem;
   font-weight: 900;
 }
 
 .debug-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 22px;
-  padding: 14px 16px 16px;
+  gap: 12px 20px;
+  padding: 12px 15px 14px;
 }
 
 .debug-item {
@@ -496,14 +500,14 @@ input {
 }
 
 .debug-label {
-  font-size: 0.9rem;
+  font-size: 0.89rem;
   font-weight: 900;
   color: var(--accent-dark);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .debug-value {
-  font-size: 0.94rem;
+  font-size: 0.93rem;
   color: var(--text);
   word-break: break-all;
 }
@@ -541,7 +545,7 @@ input {
   }
 
   .rank-value {
-    font-size: 1.48rem;
+    font-size: 1.45rem;
   }
 
   .rank-date-wrap {
@@ -559,7 +563,7 @@ input {
   }
 
   .live-summary-item {
-    grid-template-columns: 46px 1fr;
+    grid-template-columns: 44px 1fr;
   }
 
   .live-summary-station,
@@ -569,15 +573,19 @@ input {
   }
 
   .element-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
   }
 
-  .rank-table thead th:first-child {
-    width: 104px;
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  .table-panel .rank-table {
+    min-width: 980px !important;
   }
 
   .rank-value {
-    font-size: 1.28rem;
+    font-size: 1.25rem;
   }
 
   .rank-date-wrap,
@@ -588,17 +596,17 @@ input {
 
 @media (max-width: 700px) {
   .container {
-    width: min(100%, calc(100% - 12px));
-    padding-bottom: 14px;
+    width: min(100%, calc(100% - 10px));
+    padding-bottom: 12px;
   }
 
   .page-title {
-    font-size: 1.6rem;
+    font-size: 1.58rem;
     margin-top: 6px;
   }
 
   .top-controls {
-    gap: 9px 9px;
+    gap: 8px;
   }
 
   .control-group {
@@ -617,11 +625,11 @@ input {
   }
 
   .element-grid {
-    grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
   }
 
   .rank-value {
-    font-size: 1.08rem;
+    font-size: 1.06rem;
   }
 
   .rank-date-wrap,
@@ -629,12 +637,12 @@ input {
     font-size: 0.52rem;
   }
 
-  .rank-table thead th {
+  .table-panel .rank-table thead th {
     font-size: 0.76rem;
     padding: 7px 3px;
   }
 
-  .rank-table tbody td {
+  .table-panel .rank-table tbody td {
     padding: 4px 2px 5px;
   }
 }
@@ -647,21 +655,21 @@ input {
   .panel-header,
   .element-toggle,
   .debug-header {
-    padding: 11px 13px;
+    padding: 10px 12px;
   }
 
   .panel-body,
   #elementPanel {
-    padding: 10px;
+    padding: 9px 10px;
   }
 
   .live-summary-col,
   .status-box,
   .observed-box {
-    padding: 10px 12px;
+    padding: 9px 11px;
   }
 
   .page-title {
-    font-size: 1.42rem;
+    font-size: 1.4rem;
   }
 }
