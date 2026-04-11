@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T14:21:59.077859+09:00",
-  "observedLatestAt": "2026-04-11T14:10:00+09:00",
+  "updatedAt": "2026-04-12T02:05:43.146080+09:00",
+  "observedLatestAt": "2026-04-12T01:50:00+09:00",
   "prefecture": "奈良県",
   "element": "monthMax48hPrecip",
   "month": "4",
@@ -122,27 +122,34 @@
         },
         {
           "rank": 6,
+          "value": 60.5,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 7,
           "value": 55,
           "date": "1998年4月10日（平成10年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 55,
           "date": "1977年4月29日（昭和52年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 54,
           "date": "1991年4月8日（平成3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 53,
           "date": "1981年4月2日（昭和56年）",
           "highlightLive": false,
@@ -152,7 +159,7 @@
     },
     {
       "stationName": "田原本",
-      "startDate": "2009年4月16日（平成21年）",
+      "startDate": "2026年4月11日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -216,6 +223,13 @@
           "date": "2009年4月16日（平成21年）",
           "highlightLive": false,
           "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 47.5,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -453,62 +467,69 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 66.5,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 2,
           "value": 55,
           "date": "2024年4月10日（令和6年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 53,
           "date": "2018年4月16日（平成30年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 52.5,
           "date": "2021年4月18日（令和3年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 44,
           "date": "2022年4月28日（令和4年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 44,
           "date": "2011年4月29日（平成23年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 44,
           "date": "2010年4月23日（平成22年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 44,
           "date": "2008年4月11日（平成20年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 42,
           "date": "2006年4月4日（平成18年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 37.5,
           "date": "2023年4月16日（令和5年）",
           "highlightLive": false,

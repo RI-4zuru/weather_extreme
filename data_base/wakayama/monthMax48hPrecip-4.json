@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T14:21:59.077859+09:00",
-  "observedLatestAt": "2026-04-11T14:10:00+09:00",
+  "updatedAt": "2026-04-12T02:05:43.146080+09:00",
+  "observedLatestAt": "2026-04-12T01:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthMax48hPrecip",
   "month": "4",
@@ -83,7 +83,7 @@
     },
     {
       "stationName": "かつらぎ",
-      "startDate": "1983年4月17日（昭和58年）",
+      "startDate": "2026年4月11日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -147,6 +147,13 @@
           "date": "1983年4月17日（昭和58年）",
           "highlightLive": false,
           "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 52.5,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },

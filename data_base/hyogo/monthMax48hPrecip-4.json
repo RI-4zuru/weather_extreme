@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T14:21:59.077859+09:00",
-  "observedLatestAt": "2026-04-11T14:10:00+09:00",
+  "updatedAt": "2026-04-12T02:05:43.146080+09:00",
+  "observedLatestAt": "2026-04-12T01:50:00+09:00",
   "prefecture": "兵庫県",
   "element": "monthMax48hPrecip",
   "month": "4",
@@ -691,7 +691,7 @@
     },
     {
       "stationName": "佐用",
-      "startDate": "2008年4月18日（平成20年）",
+      "startDate": "2026年4月11日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -755,6 +755,13 @@
           "date": "2008年4月18日（平成20年）",
           "highlightLive": false,
           "highlightWithinYear": false
+        },
+        {
+          "rank": 10,
+          "value": 57,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -813,13 +820,20 @@
         },
         {
           "rank": 8,
+          "value": 92,
+          "date": "2026年4月11日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 9,
           "value": 88.5,
           "date": "2015年4月5日（平成27年）",
           "highlightLive": false,
           "highlightWithinYear": false
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 82.5,
           "date": "2017年4月19日（平成29年）",
           "highlightLive": false,

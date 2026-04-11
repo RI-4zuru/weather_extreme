@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T14:21:59.077859+09:00",
-  "observedLatestAt": "2026-04-11T14:10:00+09:00",
+  "updatedAt": "2026-04-12T02:05:43.146080+09:00",
+  "observedLatestAt": "2026-04-12T01:50:00+09:00",
   "prefecture": "大阪府",
   "element": "dailySnowDepth",
   "month": "4",
@@ -12,42 +12,42 @@
         {
           "rank": 1,
           "value": 0,
-          "date": "2026年4月10日（令和8年）",
+          "date": "2026年4月11日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
-          "date": "2026年4月9日（令和8年）",
+          "date": "2026年4月10日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
-          "date": "2026年4月8日（令和8年）",
+          "date": "2026年4月9日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
-          "date": "2026年4月7日（令和8年）",
+          "date": "2026年4月8日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
-          "date": "2026年4月6日（令和8年）",
+          "date": "2026年4月7日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
-          "date": "2026年4月5日（令和8年）",
+          "date": "2026年4月6日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
