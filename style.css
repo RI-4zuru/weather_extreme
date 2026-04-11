@@ -1,17 +1,19 @@
 :root {
-  --bg: #f3f8fc;
+  --bg: #eef5fb;
   --panel: #ffffff;
   --panel-soft: #eef6fb;
-  --panel-head: #dcecf7;
-  --line: #bcd7ea;
-  --line-strong: #8fb8d4;
-  --text: #18354d;
-  --text-soft: #4f6b82;
-  --accent: #0a72b8;
-  --accent-soft: #e7f3fb;
-  --warn: #fff3bf;
-  --live: #ffd9d9;
-  --shadow: 0 4px 14px rgba(28, 72, 108, 0.08);
+  --panel-head: #cfe0ee;
+  --line: #7f9bb3;
+  --line-soft: #a7bdd0;
+  --line-strong: #597a97;
+  --text: #173247;
+  --text-soft: #4c687c;
+  --accent: #0b6fb0;
+  --accent-dark: #084e80;
+  --accent-soft: #dfeffc;
+  --warn: #ffe066;
+  --live: #ff8f8f;
+  --shadow: 0 4px 14px rgba(25, 60, 90, 0.09);
   --radius-lg: 18px;
   --radius-md: 14px;
   --radius-sm: 10px;
@@ -57,7 +59,7 @@ input {
 .page-title {
   margin: 8px 0 14px;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--accent);
   letter-spacing: 0.02em;
 }
@@ -79,7 +81,7 @@ input {
 
 .control-group label {
   font-size: 0.98rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-soft);
 }
 
@@ -96,7 +98,7 @@ input {
 
 .control-group select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(10, 114, 184, 0.12);
+  box-shadow: 0 0 0 3px rgba(11, 111, 176, 0.14);
 }
 
 .badge-row {
@@ -114,22 +116,22 @@ input {
   min-height: 36px;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid #e2a2a2;
-  background: #ffe2e2;
-  color: #8f1f1f;
-  font-weight: 800;
+  border: 1px solid #c75e5e;
+  background: #ffd9d9;
+  color: #7f1010;
+  font-weight: 900;
   white-space: nowrap;
 }
 
 .status-badge.rankin {
-  border-color: #e5c780;
-  background: #fff3cc;
-  color: #7a5a00;
+  border-color: #b18a1c;
+  background: #ffe9a8;
+  color: #6b5200;
 }
 
 .panel {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -139,9 +141,9 @@ input {
 .panel-header {
   padding: 14px 16px;
   background: var(--panel-head);
-  border-bottom: 1px solid var(--line);
-  font-size: 1.05rem;
-  font-weight: 800;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 1.08rem;
+  font-weight: 900;
   color: var(--text);
 }
 
@@ -149,7 +151,6 @@ input {
   padding: 14px;
 }
 
-/* 上部の実況ランクイン表示 */
 .live-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -157,8 +158,8 @@ input {
 }
 
 .live-summary-col {
-  background: #f9fcff;
-  border: 1px solid var(--line);
+  background: #f7fbff;
+  border: 1px solid var(--line-soft);
   border-radius: 16px;
   padding: 14px 16px;
   min-height: 92px;
@@ -166,7 +167,7 @@ input {
 
 .live-summary-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text);
   margin-bottom: 8px;
 }
@@ -184,17 +185,17 @@ input {
   align-items: center;
   padding: 8px 10px;
   background: #fff;
-  border: 1px solid #d7e7f3;
+  border: 1px solid #b7ccdc;
   border-radius: 12px;
 }
 
 .live-summary-rank {
-  font-weight: 800;
+  font-weight: 900;
   color: var(--accent);
 }
 
 .live-summary-element {
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text);
 }
 
@@ -204,16 +205,15 @@ input {
 
 .live-summary-value {
   text-align: right;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text);
 }
 
 .live-summary-empty {
-  color: #758ca1;
+  color: #6a8194;
   font-size: 1rem;
 }
 
-/* 要素選択 */
 .element-toggle {
   width: 100%;
   border: 0;
@@ -222,18 +222,18 @@ input {
   text-align: left;
   padding: 14px 16px;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
 }
 
 .element-toggle:hover {
-  background: #d4e7f4;
+  background: #c1d8ea;
 }
 
 #elementPanel {
   padding: 14px;
-  background: #f8fcff;
-  border-top: 1px solid var(--line);
+  background: #f7fbff;
+  border-top: 1px solid var(--line-soft);
   max-height: none;
   overflow: visible;
 }
@@ -254,10 +254,9 @@ input {
   margin: 0 0 10px;
   color: var(--accent);
   font-size: 1.35rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
-/* 1行6要素 */
 .element-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -272,9 +271,9 @@ input {
   min-height: 42px;
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   border-radius: 12px;
-  background: #fff;
+  background: #ffffff;
   cursor: pointer;
   transition:
     border-color 0.15s ease,
@@ -317,7 +316,7 @@ input {
 .status-box,
 .observed-box {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 16px;
   padding: 14px 16px;
   min-height: 56px;
@@ -328,6 +327,7 @@ input {
 .status-box {
   font-size: 1rem;
   color: var(--text);
+  font-weight: 700;
 }
 
 .observed-box {
@@ -335,16 +335,17 @@ input {
   gap: 10px;
   color: var(--text);
   white-space: nowrap;
+  font-weight: 700;
 }
 
 .observed-box-label {
-  font-weight: 800;
-  color: var(--text-soft);
+  font-weight: 900;
+  color: var(--accent-dark);
 }
 
 .table-panel {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 2px solid var(--line-strong);
   border-radius: 18px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -359,18 +360,20 @@ input {
   border-collapse: collapse;
   table-layout: fixed;
   background: #fff;
+  border: 2px solid var(--line-strong);
 }
 
 .rank-table thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--panel-head);
-  color: var(--text);
-  font-size: 0.94rem;
-  font-weight: 800;
+  background: #527a9a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 900;
   padding: 10px 6px;
-  border-bottom: 1px solid var(--line-strong);
+  border: 1px solid #3c607d;
+  border-bottom: 2px solid #2f5069;
 }
 
 .rank-table thead th:first-child {
@@ -379,40 +382,38 @@ input {
 
 .rank-table th,
 .rank-table td {
-  border-right: 1px solid #d6e6f1;
-}
-
-.rank-table th:last-child,
-.rank-table td:last-child {
-  border-right: 0;
+  border: 1px solid #6d8ca6;
 }
 
 .rank-table tbody tr:nth-child(even) {
-  background: #fbfdff;
+  background: #f7fbff;
+}
+
+.rank-table tbody tr {
+  border-bottom: 1px solid #6d8ca6;
 }
 
 .rank-table tbody td {
   padding: 6px 5px 7px;
   text-align: center;
   vertical-align: top;
-  border-bottom: 1px solid #dfeaf2;
 }
 
 .station-col {
-  background: #f7fbff;
+  background: #edf6fd;
 }
 
 .station-name {
-  font-size: 1.02rem;
-  font-weight: 800;
-  color: #0d2d45;
-  line-height: 1.2;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #0a2a40;
+  line-height: 1.18;
   margin-bottom: 4px;
 }
 
 .station-start-date {
   font-size: 0.74rem;
-  color: #607a90;
+  color: #4f6c84;
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
@@ -431,30 +432,27 @@ input {
 }
 
 .rank-cell.live-in-rank.within-year {
-  background: linear-gradient(180deg, #ffe1e1 0%, #fff0bf 100%);
+  background: linear-gradient(180deg, #ff8f8f 0%, #ffe066 100%);
 }
 
 .rank-value {
-  font-size: 1.85rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 900;
   line-height: 1.02;
-  color: #0c304c;
+  color: #0b2c45;
   margin-bottom: 2px;
 }
 
 .rank-date-wrap {
-  font-size: 0.71rem;
-  line-height: 1.05;
-  color: #4b667d;
+  font-size: 0.7rem;
+  line-height: 1.04;
+  color: #45627b;
   letter-spacing: -0.015em;
   word-break: keep-all;
   white-space: normal;
 }
 
-.rank-date-wrap > div:first-child {
-  white-space: nowrap;
-}
-
+.rank-date-wrap > div:first-child,
 .rank-date-wrap > div:last-child {
   white-space: nowrap;
 }
@@ -462,7 +460,7 @@ input {
 .debug-panel {
   margin-top: 14px;
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 18px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -471,9 +469,9 @@ input {
 .debug-header {
   padding: 14px 16px;
   background: var(--panel-head);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
   font-size: 1.05rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .debug-grid {
@@ -489,8 +487,8 @@ input {
 
 .debug-label {
   font-size: 0.94rem;
-  font-weight: 800;
-  color: var(--text-soft);
+  font-weight: 900;
+  color: var(--accent-dark);
   margin-bottom: 4px;
 }
 
@@ -504,7 +502,6 @@ input {
   display: none !important;
 }
 
-/* スクロールバー */
 .table-wrap::-webkit-scrollbar,
 #elementPanel::-webkit-scrollbar {
   height: 10px;
@@ -513,17 +510,16 @@ input {
 
 .table-wrap::-webkit-scrollbar-thumb,
 #elementPanel::-webkit-scrollbar-thumb {
-  background: #a8c6da;
+  background: #91aec6;
   border-radius: 999px;
 }
 
 .table-wrap::-webkit-scrollbar-track,
 #elementPanel::-webkit-scrollbar-track {
-  background: #edf5fb;
+  background: #e6f0f7;
   border-radius: 999px;
 }
 
-/* レスポンシブ */
 @media (max-width: 1400px) {
   .element-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -544,11 +540,11 @@ input {
   }
 
   .rank-value {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
   }
 
   .rank-date-wrap {
-    font-size: 0.68rem;
+    font-size: 0.67rem;
   }
 }
 
@@ -575,11 +571,11 @@ input {
   }
 
   .rank-value {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
   .rank-date-wrap {
-    font-size: 0.64rem;
+    font-size: 0.63rem;
     line-height: 1.02;
   }
 
@@ -623,12 +619,12 @@ input {
   }
 
   .rank-value {
-    font-size: 1.15rem;
+    font-size: 1.18rem;
   }
 
   .rank-date-wrap,
   .station-start-date {
-    font-size: 0.62rem;
+    font-size: 0.61rem;
   }
 
   .rank-table thead th {
