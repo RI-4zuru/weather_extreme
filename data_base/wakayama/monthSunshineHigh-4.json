@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T12:08:20.490918+09:00",
-  "observedLatestAt": "2026-04-11T12:00:00+09:00",
+  "updatedAt": "2026-04-11T13:39:28.645154+09:00",
+  "observedLatestAt": "2026-04-11T13:30:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthSunshineHigh",
   "month": "4",
@@ -13,31 +13,36 @@
           "rank": 1,
           "value": 211.6,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 204.9,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 198.6,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 184.6,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 140.9,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -49,31 +54,36 @@
           "rank": 1,
           "value": 237.9,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 217.9,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 211.8,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 204.6,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 152.6,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -85,61 +95,71 @@
           "rank": 1,
           "value": 258.6,
           "date": "1947年4月（昭和22年）",
-          "_date_raw": "1947/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 253.5,
           "date": "2004年4月（平成16年）",
-          "_date_raw": "2004/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 243,
           "date": "1945年4月（昭和20年）",
-          "_date_raw": "1945/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 238,
           "date": "2020年4月（令和2年）",
-          "_date_raw": "2020/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 236.6,
           "date": "1943年4月（昭和18年）",
-          "_date_raw": "1943/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 236.5,
           "date": "2005年4月（平成17年）",
-          "_date_raw": "2005/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 234.3,
           "date": "1940年4月（昭和15年）",
-          "_date_raw": "1940/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 234,
           "date": "2009年4月（平成21年）",
-          "_date_raw": "2009/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 232.5,
           "date": "1942年4月（昭和17年）",
-          "_date_raw": "1942/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 231.7,
           "date": "1941年4月（昭和16年）",
-          "_date_raw": "1941/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -151,31 +171,36 @@
           "rank": 1,
           "value": 206.2,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 191.8,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 181.4,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 164.3,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 139.6,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -187,31 +212,36 @@
           "rank": 1,
           "value": 207.3,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 203.5,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 193.1,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 169.1,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 136.4,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -223,31 +253,36 @@
           "rank": 1,
           "value": 211.5,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 201.4,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 198.7,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 162.4,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 132.1,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -259,31 +294,36 @@
           "rank": 1,
           "value": 229.7,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 213.8,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 203.6,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 183.3,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 140.4,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -295,31 +335,36 @@
           "rank": 1,
           "value": 210.2,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 204.9,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 191.2,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 171,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 135.8,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -331,31 +376,36 @@
           "rank": 1,
           "value": 203.1,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 194.6,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 186.9,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 175.3,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 124.8,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -367,31 +417,36 @@
           "rank": 1,
           "value": 199.1,
           "date": "2021年4月（令和3年）",
-          "_date_raw": "2021/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 198.8,
           "date": "2025年4月（令和7年）",
-          "_date_raw": "2025/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 176.9,
           "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 176.2,
           "date": "2023年4月（令和5年）",
-          "_date_raw": "2023/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 119.6,
           "date": "2024年4月（令和6年）",
-          "_date_raw": "2024/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -403,61 +458,71 @@
           "rank": 1,
           "value": 258.2,
           "date": "2020年4月（令和2年）",
-          "_date_raw": "2020/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 256,
           "date": "1947年4月（昭和22年）",
-          "_date_raw": "1947/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 247.7,
           "date": "2018年4月（平成30年）",
-          "_date_raw": "2018/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 246.5,
           "date": "2013年4月（平成25年）",
-          "_date_raw": "2013/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 244.5,
           "date": "2004年4月（平成16年）",
-          "_date_raw": "2004/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 243.2,
           "date": "2011年4月（平成23年）",
-          "_date_raw": "2011/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 239.4,
           "date": "1919年4月（大正8年）",
-          "_date_raw": "1919/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 237.9,
           "date": "1938年4月（昭和13年）",
-          "_date_raw": "1938/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 236.8,
           "date": "2005年4月（平成17年）",
-          "_date_raw": "2005/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 235.6,
           "date": "2009年4月（平成21年）",
-          "_date_raw": "2009/04/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }
