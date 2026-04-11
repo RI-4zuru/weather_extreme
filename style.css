@@ -308,10 +308,7 @@ input {
 
 /* 状態行 */
 .status-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(290px, 340px);
-  gap: 10px;
-  align-items: center;
+  display: block;
   margin: 10px 0 8px;
 }
 
@@ -327,9 +324,37 @@ input {
 }
 
 .status-box {
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   font-size: 1rem;
   color: var(--text);
   font-weight: 700;
+}
+
+#statusText {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.observed-inline {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: #ffffff;
+  white-space: nowrap;
+  font-size: 0.92rem;
+  line-height: 1;
 }
 
 .observed-box {
