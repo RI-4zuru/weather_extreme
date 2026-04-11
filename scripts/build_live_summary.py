@@ -200,7 +200,13 @@ def update_manifest_observed_latest_at():
     observed_list = []
 
     for pref in manifest.get("prefectures", []):
-        pref_key = pref.get("key")
+        if isinstance(pref, str):
+            pref_key = pref
+        else:
+            pref_key = pref.get("key")
+    
+        if pref_key != "nara":
+            continue
         if not pref_key:
             continue
         summary_path = DATA_DIR / pref_key / "live-summary.json"
