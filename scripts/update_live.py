@@ -22,7 +22,7 @@ from weather_common import (
 BASE_DIR = "data_base"
 PUBLIC_DIR = "data"
 
-# 改良2: 近畿全体を対象にする
+# 近畿全体を対象
 TARGET_PREF_KEYS = {
     "shiga",
     "kyoto",
@@ -32,7 +32,7 @@ TARGET_PREF_KEYS = {
     "wakayama",
 }
 
-# 今回、実況差し込み対象にする要素だけを明示
+# 実況差し込み対象
 LIVE_TARGETS = {
     "dailyMaxTempHigh": {"mode": "temp_max", "direction": "desc"},
     "dailyMaxTempLow": {"mode": "temp_max", "direction": "asc"},
@@ -50,8 +50,7 @@ LIVE_TARGETS = {
     "dailyMinSeaLevelPressure": {"mode": "sea_level_pressure_min", "direction": "asc"},
 }
 
-# JMA bosai の point JSON で使うキー候補
-# 地点や要素によって多少差異が出ても拾えるよう、候補を複数持たせる
+# JMA bosai point JSON のキー候補
 FIELD_ALIASES = {
     "temp": ["temp", "temperature"],
     "precip10m": ["precipitation10m", "precipitation"],
@@ -59,7 +58,6 @@ FIELD_ALIASES = {
     "precip3h": ["precipitation3h"],
     "precip24h": ["precipitation24h"],
     "wind": ["wind"],
-    "windDirection": ["windDirection"],
     "snow6h": ["snow6h", "snowfall6h"],
     "snow12h": ["snow12h", "snowfall12h"],
     "snow24h": ["snow24h", "snowfall24h"],
@@ -112,7 +110,7 @@ def build_public_row_from_base(base_row: dict) -> dict:
 def should_show_live(month: str, latest_dt: datetime) -> bool:
     """
     通年(all)には常に反映。
-    月別は「今月」のファイルにだけ反映。
+    月別は今月のファイルにだけ反映。
     """
     return month == "all" or month == str(latest_dt.month)
 
@@ -150,51 +148,7 @@ def extract_any(item: dict, aliases):
     return None
 
 
-def extract_wind_direction(item: dict):
-    raw = None
-    for key in FIELD_ALIASES["windDirection"]:
-        if key in item:
-            raw = item.get(key)
-            break
-
-    if isinstance(raw, list):
-        raw = raw[0] if raw else None
-
-    if raw in (None, "", "×", "///"):
-        return ""
-
-    if isinstance(raw, str):
-        return raw
-
-    try:
-        code = int(raw)
-    except Exception:
-        return str(raw)
-
-    # JMAの16方位コード想定
-    direction_map = {
-        0: "静穏",
-        1: "北北東",
-        2: "北東",
-        3: "東北東",
-        4: "東",
-        5: "東南東",
-        6: "南東",
-        7: "南南東",
-        8: "南",
-        9: "南南西",
-        10: "南西",
-        11: "西南西",
-        12: "西",
-        13: "西北西",
-        14: "北西",
-        15: "北北西",
-        16: "北",
-    }
-    return direction_map.get(code, str(code))
-
-
-def update_best(current, value, obs_dt, kind: str, wind_direction: str = ""):
+def update_best(current, value, obs_dt, kind: str):
     """
     kind = "max" or "min"
     同値なら後の時刻を優先する。
@@ -206,7 +160,6 @@ def update_best(current, value, obs_dt, kind: str, wind_direction: str = ""):
         return {
             "value": float(value),
             "obs_dt": obs_dt,
-            "windDirection": wind_direction,
         }
 
     current_value = float(current["value"])
@@ -222,7 +175,6 @@ def update_best(current, value, obs_dt, kind: str, wind_direction: str = ""):
         return {
             "value": float(value),
             "obs_dt": obs_dt,
-            "windDirection": wind_direction,
         }
 
     return current
@@ -270,7 +222,6 @@ def collect_station_live_stats(amedas_code: str, latest_dt: datetime):
             precip3h = extract_any(item, FIELD_ALIASES["precip3h"])
             precip24h = extract_any(item, FIELD_ALIASES["precip24h"])
             wind = extract_any(item, FIELD_ALIASES["wind"])
-            wind_direction = extract_wind_direction(item)
             snow6h = extract_any(item, FIELD_ALIASES["snow6h"])
             snow12h = extract_any(item, FIELD_ALIASES["snow12h"])
             snow24h = extract_any(item, FIELD_ALIASES["snow24h"])
@@ -283,7 +234,7 @@ def collect_station_live_stats(amedas_code: str, latest_dt: datetime):
             stats["precip1h_max"] = update_best(stats["precip1h_max"], precip1h, obs_dt, "max")
             stats["precip3h_max"] = update_best(stats["precip3h_max"], precip3h, obs_dt, "max")
             stats["precip24h_max"] = update_best(stats["precip24h_max"], precip24h, obs_dt, "max")
-            stats["wind_max"] = update_best(stats["wind_max"], wind, obs_dt, "max", wind_direction)
+            stats["wind_max"] = update_best(stats["wind_max"], wind, obs_dt, "max")
             stats["snow6h_max"] = update_best(stats["snow6h_max"], snow6h, obs_dt, "max")
             stats["snow12h_max"] = update_best(stats["snow12h_max"], snow12h, obs_dt, "max")
             stats["snow24h_max"] = update_best(stats["snow24h_max"], snow24h, obs_dt, "max")
@@ -304,16 +255,11 @@ def build_live_info(stats: dict, mode: str):
         return None
 
     raw_date = data["obs_dt"].strftime("%Y/%m/%d")
-    live_info = {
+    return {
         "value": trim_number(data["value"]),
         "date": format_dual_ymd_from_raw(raw_date),
         "_date_raw": raw_date,
     }
-
-    if mode == "wind_max" and data.get("windDirection"):
-        live_info["windDirection"] = data["windDirection"]
-
-    return live_info
 
 
 def extract_raw_date_from_rank(rank_item: dict) -> str:
@@ -352,7 +298,6 @@ def normalize_records_for_merge(base_row: dict):
                 "value": float(item["value"]),
                 "date": item.get("date", ""),
                 "_date_raw": raw_date,
-                "windDirection": item.get("windDirection", ""),
                 "isLive": False,
             }
         )
@@ -368,7 +313,6 @@ def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, lates
                 "value": float(live_info["value"]),
                 "date": live_info["date"],
                 "_date_raw": live_info["_date_raw"],
-                "windDirection": live_info.get("windDirection", ""),
                 "isLive": True,
             }
         )
@@ -396,9 +340,6 @@ def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, lates
             "highlightLive": bool(item["isLive"]),
             "highlightWithinYear": within_one_year(item["_date_raw"], latest_dt),
         }
-
-        if item.get("windDirection"):
-            rank_item["windDirection"] = item["windDirection"]
 
         if item["isLive"]:
             entered_rank = i
