@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 59,
           "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 54,
           "date": "1893年",
-          "_date_raw": "1893/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 52,
           "date": "1881年",
-          "_date_raw": "1881/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 51,
           "date": "1945年",
-          "_date_raw": "1945/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 50,
           "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 50,
           "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 47,
           "date": "1936年",
-          "_date_raw": "1936/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 47,
           "date": "1929年",
-          "_date_raw": "1929/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 45,
           "date": "1918年",
-          "_date_raw": "1918/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 44,
           "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 15,
           "date": "1936年",
-          "_date_raw": "1936/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 15,
           "date": "1918年",
-          "_date_raw": "1918/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 13,
           "date": "1977年",
-          "_date_raw": "1977/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 13,
           "date": "1929年",
-          "_date_raw": "1929/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 12,
           "date": "1917年",
-          "_date_raw": "1917/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 11,
           "date": "1945年",
-          "_date_raw": "1945/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 10,
           "date": "1938年",
-          "_date_raw": "1938/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 10,
           "date": "1927年",
-          "_date_raw": "1927/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 10,
           "date": "1923年",
-          "_date_raw": "1923/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 8,
           "date": "1984年",
-          "_date_raw": "1984/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

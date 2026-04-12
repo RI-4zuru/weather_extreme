@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "兵庫県",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 155,
           "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 153,
           "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 146,
           "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 144,
           "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 143,
           "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 143,
           "date": "2005年",
-          "_date_raw": "2005/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 142,
           "date": "2002年",
-          "_date_raw": "2002/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 142,
           "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 141,
           "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 139,
           "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 149,
           "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 147,
           "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 147,
           "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 143,
           "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 142,
           "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 142,
           "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 142,
           "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 142,
           "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 141,
           "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 140,
           "date": "1998年",
-          "_date_raw": "1998/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -145,61 +165,71 @@
           "rank": 1,
           "value": 147,
           "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 146,
           "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 146,
           "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 145,
           "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 144,
           "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 143,
           "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 140,
           "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 140,
           "date": "1998年",
-          "_date_raw": "1998/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 139,
           "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 139,
           "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -211,61 +241,71 @@
           "rank": 1,
           "value": 150,
           "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 149,
           "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 146,
           "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 144,
           "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 139,
           "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 132,
           "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 128,
           "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 128,
           "date": "1964年",
-          "_date_raw": "1964/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 127,
           "date": "2018年",
-          "_date_raw": "2018/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 126,
           "date": "1967年",
-          "_date_raw": "1967/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

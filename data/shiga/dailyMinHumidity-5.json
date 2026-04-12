@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "dailyMinHumidity",
   "month": "5",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 12,
           "date": "1999年5月1日（平成11年）",
-          "_date_raw": "1999/05/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 13,
           "date": "2013年5月9日（平成25年）",
-          "_date_raw": "2013/05/09"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 14,
           "date": "2011年5月15日（平成23年）",
-          "_date_raw": "2011/05/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 14,
           "date": "2008年5月6日（平成20年）",
-          "_date_raw": "2008/05/06"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 14,
           "date": "1987年5月9日（昭和62年）",
-          "_date_raw": "1987/05/09"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 15,
           "date": "2002年5月13日（平成14年）",
-          "_date_raw": "2002/05/13"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 16,
           "date": "1951年5月3日（昭和26年）",
-          "_date_raw": "1951/05/03"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 17,
           "date": "2015年5月2日（平成27年）",
-          "_date_raw": "2015/05/02"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 17,
           "date": "1990年5月17日（平成2年）",
-          "_date_raw": "1990/05/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 17,
           "date": "1974年5月3日（昭和49年）",
-          "_date_raw": "1974/05/03"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

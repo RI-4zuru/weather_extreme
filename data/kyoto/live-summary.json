@@ -1,7 +1,89 @@
 {
-  "updatedAt": "2026-04-08T18:13:23.192299+09:00",
-  "observedLatestAt": "2026-04-08T17:20:00+09:00",
-  "prefecture": "京都府",
-  "annualItems": [],
-  "monthlyItems": []
+  "prefecture": "kyoto",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
+  "annualItems": [
+    {
+      "rank": 2,
+      "elementKey": "dailyMinHumidity",
+      "elementLabel": "最小湿度",
+      "stationName": "福知山",
+      "value": 14,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 3,
+      "elementKey": "dailyMinHumidity",
+      "elementLabel": "最小湿度",
+      "stationName": "園部",
+      "value": 14,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 6,
+      "elementKey": "dailyMinHumidity",
+      "elementLabel": "最小湿度",
+      "stationName": "京田辺",
+      "value": 14,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 9,
+      "elementKey": "dailyMinHumidity",
+      "elementLabel": "最小湿度",
+      "stationName": "美山",
+      "value": 17,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    }
+  ],
+  "monthlyItems": [
+    {
+      "rank": 1,
+      "elementKey": "monthMax12hSnow",
+      "elementLabel": "12時間降雪",
+      "stationName": "京都",
+      "value": 0,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 2,
+      "elementKey": "monthMax12hSnow",
+      "elementLabel": "12時間降雪",
+      "stationName": "美山",
+      "value": 0,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 2,
+      "elementKey": "monthMax12hSnow",
+      "elementLabel": "12時間降雪",
+      "stationName": "舞鶴",
+      "value": 0,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 3,
+      "elementKey": "monthMax12hSnow",
+      "elementLabel": "12時間降雪",
+      "stationName": "峰山",
+      "value": 0,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    },
+    {
+      "rank": 1,
+      "elementKey": "monthMax24hSnow",
+      "elementLabel": "24時間降雪",
+      "stationName": "京都",
+      "value": 0,
+      "date": "2026年4月12日（令和8年）",
+      "observedLatestAt": "2026-04-12T16:50:00+09:00"
+    }
+  ]
 }

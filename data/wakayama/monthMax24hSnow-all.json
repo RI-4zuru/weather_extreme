@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthMax24hSnow",
   "month": "all",
@@ -13,57 +13,74 @@
           "rank": 1,
           "value": 6,
           "date": "2023年1月25日（令和5年）",
-          "_date_raw": "2023/01/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 6,
           "date": "2014年2月15日（平成26年）",
-          "_date_raw": "2014/02/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 3,
           "date": "2017年1月24日（平成29年）",
-          "_date_raw": "2017/01/24"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 2,
           "date": "2018年2月14日（平成30年）",
-          "_date_raw": "2018/02/14"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 1,
           "date": "2016年1月25日（平成28年）",
-          "_date_raw": "2016/01/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
-          "date": "2026年3月31日（令和8年）",
-          "_date_raw": "2026/03/31"
+          "date": "2026年4月12日（令和8年）",
+          "highlightLive": true,
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
-          "date": "2026年2月28日（令和8年）",
-          "_date_raw": "2026/02/28"
+          "date": "2026年3月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
-          "date": "2026年1月31日（令和8年）",
-          "_date_raw": "2026/01/31"
+          "date": "2026年2月28日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
+          "date": "2026年1月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 10,
+          "value": 0,
           "date": "2025年12月31日（令和7年）",
-          "_date_raw": "2025/12/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
-      ]
+      ],
+      "liveEnteredRank": 6
     }
   ]
 }

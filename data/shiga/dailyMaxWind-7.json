@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "dailyMaxWind",
   "month": "7",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 12.8,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 12,
           "date": "2007年7月15日（平成19年）",
-          "_date_raw": "2007/07/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 11.8,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 11,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 10.8,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 10.6,
           "date": "2015年7月16日（平成27年）",
-          "_date_raw": "2015/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 10.5,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 10,
           "date": "1997年7月27日（平成9年）",
-          "_date_raw": "1997/07/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 10,
           "date": "1989年7月27日（平成元年）",
-          "_date_raw": "1989/07/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 9,
           "date": "2002年7月6日（平成14年）",
-          "_date_raw": "2002/07/06"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 13.2,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 11.6,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 11,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 10.9,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 10,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 9.7,
           "date": "2015年7月16日（平成27年）",
-          "_date_raw": "2015/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 9,
           "date": "2004年7月31日（平成16年）",
-          "_date_raw": "2004/07/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 8.9,
           "date": "2014年7月10日（平成26年）",
-          "_date_raw": "2014/07/10"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 8.5,
           "date": "2018年7月3日（平成30年）",
-          "_date_raw": "2018/07/03"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 8.4,
           "date": "2012年7月11日（平成24年）",
-          "_date_raw": "2012/07/11"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -145,61 +165,71 @@
           "rank": 1,
           "value": 18.5,
           "date": "1970年7月5日（昭和45年）",
-          "_date_raw": "1970/07/05"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 16.7,
           "date": "1918年7月12日（大正7年）",
-          "_date_raw": "1918/07/12"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 15.8,
           "date": "1951年7月2日（昭和26年）",
-          "_date_raw": "1951/07/02"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 15,
           "date": "1962年7月27日（昭和37年）",
-          "_date_raw": "1962/07/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 14.2,
           "date": "1949年7月29日（昭和24年）",
-          "_date_raw": "1949/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 13.8,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 13.8,
           "date": "1946年7月30日（昭和21年）",
-          "_date_raw": "1946/07/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 13.5,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 13.5,
           "date": "1946年7月29日（昭和21年）",
-          "_date_raw": "1946/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 13.3,
           "date": "1990年7月24日（平成2年）",
-          "_date_raw": "1990/07/24"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -211,61 +241,71 @@
           "rank": 1,
           "value": 10.3,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 10.2,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 10,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 10,
           "date": "1989年7月28日（平成元年）",
-          "_date_raw": "1989/07/28"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 9,
           "date": "2007年7月15日（平成19年）",
-          "_date_raw": "2007/07/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 9,
           "date": "2004年7月31日（平成16年）",
-          "_date_raw": "2004/07/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 9,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 9,
           "date": "1996年7月10日（平成8年）",
-          "_date_raw": "1996/07/10"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 9,
           "date": "1989年7月27日（平成元年）",
-          "_date_raw": "1989/07/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 8.9,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -277,61 +317,71 @@
           "rank": 1,
           "value": 10.8,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 9.5,
           "date": "2024年7月22日（令和6年）",
-          "_date_raw": "2024/07/22"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 9,
           "date": "2021年7月11日（令和3年）",
-          "_date_raw": "2021/07/11"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 9,
           "date": "2004年7月31日（平成16年）",
-          "_date_raw": "2004/07/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 9,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 8.8,
           "date": "2020年7月8日（令和2年）",
-          "_date_raw": "2020/07/08"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 8.4,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 8.3,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 8.2,
           "date": "2015年7月16日（平成27年）",
-          "_date_raw": "2015/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 8.2,
           "date": "2010年7月12日（平成22年）",
-          "_date_raw": "2010/07/12"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -343,61 +393,71 @@
           "rank": 1,
           "value": 12.2,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 10,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 9.4,
           "date": "2020年7月8日（令和2年）",
-          "_date_raw": "2020/07/08"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 9,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 8.3,
           "date": "2015年7月16日（平成27年）",
-          "_date_raw": "2015/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 8.3,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 8,
           "date": "2005年7月26日（平成17年）",
-          "_date_raw": "2005/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 8,
           "date": "2005年7月7日（平成17年）",
-          "_date_raw": "2005/07/07"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 7.4,
           "date": "2018年7月30日（平成30年）",
-          "_date_raw": "2018/07/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 7.4,
           "date": "2011年7月25日（平成23年）",
-          "_date_raw": "2011/07/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -409,61 +469,71 @@
           "rank": 1,
           "value": 14.8,
           "date": "2011年7月20日（平成23年）",
-          "_date_raw": "2011/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 14.7,
           "date": "2011年7月19日（平成23年）",
-          "_date_raw": "2011/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 14.3,
           "date": "2015年7月17日（平成27年）",
-          "_date_raw": "2015/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 14,
           "date": "2018年7月29日（平成30年）",
-          "_date_raw": "2018/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 13.7,
           "date": "2015年7月16日（平成27年）",
-          "_date_raw": "2015/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 10.8,
           "date": "2011年7月18日（平成23年）",
-          "_date_raw": "2011/07/18"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 10,
           "date": "1997年7月26日（平成9年）",
-          "_date_raw": "1997/07/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 9.9,
           "date": "2020年7月8日（令和2年）",
-          "_date_raw": "2020/07/08"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 9.7,
           "date": "2019年7月11日（令和元年）",
-          "_date_raw": "2019/07/11"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 9.7,
           "date": "2014年7月10日（平成26年）",
-          "_date_raw": "2014/07/10"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

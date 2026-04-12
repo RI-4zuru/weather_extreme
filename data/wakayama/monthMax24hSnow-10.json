@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthMax24hSnow",
   "month": "10",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 0,
           "date": "2025年10月31日（令和7年）",
-          "_date_raw": "2025/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2024年10月31日（令和6年）",
-          "_date_raw": "2024/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2023年10月31日（令和5年）",
-          "_date_raw": "2023/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2022年10月31日（令和4年）",
-          "_date_raw": "2022/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2021年10月31日（令和3年）",
-          "_date_raw": "2021/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2020年10月31日（令和2年）",
-          "_date_raw": "2020/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2019年10月31日（令和元年）",
-          "_date_raw": "2019/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2018年10月31日（平成30年）",
-          "_date_raw": "2018/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2017年10月31日（平成29年）",
-          "_date_raw": "2017/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2016年10月31日（平成28年）",
-          "_date_raw": "2016/10/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

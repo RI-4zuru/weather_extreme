@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "京都府",
   "element": "dailySnowDepth",
   "month": "8",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 0,
           "date": "2025年8月31日（令和7年）",
-          "_date_raw": "2025/08/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2025年8月30日（令和7年）",
-          "_date_raw": "2025/08/30"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2025年8月29日（令和7年）",
-          "_date_raw": "2025/08/29"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2025年8月28日（令和7年）",
-          "_date_raw": "2025/08/28"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2025年8月27日（令和7年）",
-          "_date_raw": "2025/08/27"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2025年8月26日（令和7年）",
-          "_date_raw": "2025/08/26"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2025年8月25日（令和7年）",
-          "_date_raw": "2025/08/25"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2025年8月24日（令和7年）",
-          "_date_raw": "2025/08/24"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2025年8月23日（令和7年）",
-          "_date_raw": "2025/08/23"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2025年8月22日（令和7年）",
-          "_date_raw": "2025/08/22"
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 0,
           "date": "2025年8月31日（令和7年）",
-          "_date_raw": "2025/08/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2025年8月30日（令和7年）",
-          "_date_raw": "2025/08/30"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2025年8月29日（令和7年）",
-          "_date_raw": "2025/08/29"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2025年8月28日（令和7年）",
-          "_date_raw": "2025/08/28"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2025年8月27日（令和7年）",
-          "_date_raw": "2025/08/27"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2025年8月26日（令和7年）",
-          "_date_raw": "2025/08/26"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2025年8月25日（令和7年）",
-          "_date_raw": "2025/08/25"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2025年8月24日（令和7年）",
-          "_date_raw": "2025/08/24"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2025年8月23日（令和7年）",
-          "_date_raw": "2025/08/23"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2025年8月22日（令和7年）",
-          "_date_raw": "2025/08/22"
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -145,61 +165,71 @@
           "rank": 1,
           "value": 0,
           "date": "2025年8月31日（令和7年）",
-          "_date_raw": "2025/08/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2025年8月30日（令和7年）",
-          "_date_raw": "2025/08/30"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2025年8月29日（令和7年）",
-          "_date_raw": "2025/08/29"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2025年8月28日（令和7年）",
-          "_date_raw": "2025/08/28"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2025年8月27日（令和7年）",
-          "_date_raw": "2025/08/27"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2025年8月26日（令和7年）",
-          "_date_raw": "2025/08/26"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2025年8月25日（令和7年）",
-          "_date_raw": "2025/08/25"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2025年8月24日（令和7年）",
-          "_date_raw": "2025/08/24"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2025年8月23日（令和7年）",
-          "_date_raw": "2025/08/23"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2025年8月22日（令和7年）",
-          "_date_raw": "2025/08/22"
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     },
@@ -211,61 +241,71 @@
           "rank": 1,
           "value": 0,
           "date": "2025年8月31日（令和7年）",
-          "_date_raw": "2025/08/31"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2025年8月30日（令和7年）",
-          "_date_raw": "2025/08/30"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2025年8月29日（令和7年）",
-          "_date_raw": "2025/08/29"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2025年8月28日（令和7年）",
-          "_date_raw": "2025/08/28"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2025年8月27日（令和7年）",
-          "_date_raw": "2025/08/27"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2025年8月26日（令和7年）",
-          "_date_raw": "2025/08/26"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2025年8月25日（令和7年）",
-          "_date_raw": "2025/08/25"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2025年8月24日（令和7年）",
-          "_date_raw": "2025/08/24"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2025年8月23日（令和7年）",
-          "_date_raw": "2025/08/23"
+          "highlightLive": false,
+          "highlightWithinYear": true
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2025年8月22日（令和7年）",
-          "_date_raw": "2025/08/22"
+          "highlightLive": false,
+          "highlightWithinYear": true
         }
       ]
     }

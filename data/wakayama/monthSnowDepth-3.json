@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthSnowDepth",
   "month": "3",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 8,
           "date": "1965年3月（昭和40年）",
-          "_date_raw": "1965/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 8,
           "date": "1963年3月（昭和38年）",
-          "_date_raw": "1963/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 3,
           "date": "1977年3月（昭和52年）",
-          "_date_raw": "1977/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 2,
           "date": "1978年3月（昭和53年）",
-          "_date_raw": "1978/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 1,
           "date": "1981年3月（昭和56年）",
-          "_date_raw": "1981/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 1,
           "date": "1958年3月（昭和33年）",
-          "_date_raw": "1958/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2012年3月（平成24年）",
-          "_date_raw": "2012/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
           "date": "2011年3月（平成23年）",
-          "_date_raw": "2011/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
           "date": "2010年3月（平成22年）",
-          "_date_raw": "2010/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
           "date": "2009年3月（平成21年）",
-          "_date_raw": "2009/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 1,
           "date": "1977年3月（昭和52年）",
-          "_date_raw": "1977/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2006年3月（平成18年）",
-          "_date_raw": "2006/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2005年3月（平成17年）",
-          "_date_raw": "2005/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2001年3月（平成13年）",
-          "_date_raw": "2001/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 0,
           "date": "1987年3月（昭和62年）",
-          "_date_raw": "1987/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
           "date": "1986年3月（昭和61年）",
-          "_date_raw": "1986/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
           "date": "1983年3月（昭和58年）",
-          "_date_raw": "1983/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
           "date": "1982年3月（昭和57年）",
-          "_date_raw": "1982/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
           "date": "1978年3月（昭和53年）",
-          "_date_raw": "1978/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
           "date": "1970年3月（昭和45年）",
-          "_date_raw": "1970/03/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

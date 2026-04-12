@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "dailyMinHumidity",
   "month": "9",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 16,
           "date": "1951年9月4日（昭和26年）",
-          "_date_raw": "1951/09/04"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 27,
           "date": "2013年9月27日（平成25年）",
-          "_date_raw": "2013/09/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 28,
           "date": "2001年9月23日（平成13年）",
-          "_date_raw": "2001/09/23"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 28,
           "date": "1994年9月21日（平成6年）",
-          "_date_raw": "1994/09/21"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 29,
           "date": "1965年9月20日（昭和40年）",
-          "_date_raw": "1965/09/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 30,
           "date": "2000年9月17日（平成12年）",
-          "_date_raw": "2000/09/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 30,
           "date": "2000年9月4日（平成12年）",
-          "_date_raw": "2000/09/04"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 30,
           "date": "1984年9月27日（昭和59年）",
-          "_date_raw": "1984/09/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 30,
           "date": "1978年9月25日（昭和53年）",
-          "_date_raw": "1978/09/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 31,
           "date": "2001年9月29日（平成13年）",
-          "_date_raw": "2001/09/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

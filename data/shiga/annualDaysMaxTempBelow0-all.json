@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "滋賀県",
   "element": "annualDaysMaxTempBelow0",
   "month": "all",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 4,
           "date": "1977年",
-          "_date_raw": "1977/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 4,
           "date": "1936年",
-          "_date_raw": "1936/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 2,
           "date": "1945年",
-          "_date_raw": "1945/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 2,
           "date": "1923年",
-          "_date_raw": "1923/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 2,
           "date": "1922年",
-          "_date_raw": "1922/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 2,
           "date": "1904年",
-          "_date_raw": "1904/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 1,
           "date": "1985年",
-          "_date_raw": "1985/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 1,
           "date": "1984年",
-          "_date_raw": "1984/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 1,
           "date": "1981年",
-          "_date_raw": "1981/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 1,
           "date": "1967年",
-          "_date_raw": "1967/01/01"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

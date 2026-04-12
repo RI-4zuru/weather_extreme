@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "大阪府",
   "element": "dailySnowDepth",
   "month": "1",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 18,
           "date": "1984年1月31日（昭和59年）",
-          "_date_raw": "1984/01/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 5,
           "date": "1997年1月22日（平成9年）",
-          "_date_raw": "1997/01/22"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 4,
           "date": "1990年1月31日（平成2年）",
-          "_date_raw": "1990/01/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 4,
           "date": "1984年1月19日（昭和59年）",
-          "_date_raw": "1984/01/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 3,
           "date": "1982年1月17日（昭和57年）",
-          "_date_raw": "1982/01/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 3,
           "date": "1954年1月26日（昭和29年）",
-          "_date_raw": "1954/01/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 2,
           "date": "1984年1月22日（昭和59年）",
-          "_date_raw": "1984/01/22"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 2,
           "date": "1967年1月11日（昭和42年）",
-          "_date_raw": "1967/01/11"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 2,
           "date": "1963年1月23日（昭和38年）",
-          "_date_raw": "1963/01/23"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 1,
           "date": "1985年1月30日（昭和60年）",
-          "_date_raw": "1985/01/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

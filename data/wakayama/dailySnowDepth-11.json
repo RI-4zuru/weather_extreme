@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "dailySnowDepth",
   "month": "11",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 0,
           "date": "2012年11月15日（平成24年）",
-          "_date_raw": "2012/11/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 0,
           "date": "1989年11月29日（平成元年）",
-          "_date_raw": "1989/11/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 0,
           "date": "1983年11月27日（昭和58年）",
-          "_date_raw": "1983/11/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 0,
           "date": "1978年11月29日（昭和53年）",
-          "_date_raw": "1978/11/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 0,
           "date": "1974年11月18日（昭和49年）",
-          "_date_raw": "1974/11/18"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
           "date": "1974年11月14日（昭和49年）",
-          "_date_raw": "1974/11/14"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
           "date": "1970年11月30日（昭和45年）",
-          "_date_raw": "1970/11/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
           "date": "1969年11月25日（昭和44年）",
-          "_date_raw": "1969/11/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
           "date": "1966年11月21日（昭和41年）",
-          "_date_raw": "1966/11/21"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
           "date": "1963年11月27日（昭和38年）",
-          "_date_raw": "1963/11/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 0,
           "date": "2008年11月30日（平成20年）",
-          "_date_raw": "2008/11/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 0,
           "date": "2008年11月29日（平成20年）",
-          "_date_raw": "2008/11/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 0,
           "date": "2008年11月28日（平成20年）",
-          "_date_raw": "2008/11/28"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 0,
           "date": "2008年11月27日（平成20年）",
-          "_date_raw": "2008/11/27"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 0,
           "date": "2008年11月26日（平成20年）",
-          "_date_raw": "2008/11/26"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 0,
           "date": "2008年11月25日（平成20年）",
-          "_date_raw": "2008/11/25"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 0,
           "date": "2008年11月24日（平成20年）",
-          "_date_raw": "2008/11/24"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 0,
           "date": "1978年11月28日（昭和53年）",
-          "_date_raw": "1978/11/28"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 0,
           "date": "1972年11月15日（昭和47年）",
-          "_date_raw": "1972/11/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 0,
           "date": "1970年11月30日（昭和45年）",
-          "_date_raw": "1970/11/30"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-11T11:22:38.835976+09:00",
-  "observedLatestAt": "2026-04-11T11:10:00+09:00",
+  "updatedAt": "2026-04-12T16:57:01.085061+09:00",
+  "observedLatestAt": "2026-04-12T16:50:00+09:00",
   "prefecture": "和歌山県",
   "element": "dailyMinHumidity",
   "month": "7",
@@ -13,61 +13,71 @@
           "rank": 1,
           "value": 18,
           "date": "1959年7月29日（昭和34年）",
-          "_date_raw": "1959/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 24,
           "date": "2004年7月23日（平成16年）",
-          "_date_raw": "2004/07/23"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 25,
           "date": "2007年7月24日（平成19年）",
-          "_date_raw": "2007/07/24"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 25,
           "date": "1996年7月12日（平成8年）",
-          "_date_raw": "1996/07/12"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 25,
           "date": "1975年7月19日（昭和50年）",
-          "_date_raw": "1975/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 26,
           "date": "2013年7月20日（平成25年）",
-          "_date_raw": "2013/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 27,
           "date": "1994年7月19日（平成6年）",
-          "_date_raw": "1994/07/19"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 28,
           "date": "2002年7月24日（平成14年）",
-          "_date_raw": "2002/07/24"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 29,
           "date": "1994年7月22日（平成6年）",
-          "_date_raw": "1994/07/22"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 29,
           "date": "1979年7月6日（昭和54年）",
-          "_date_raw": "1979/07/06"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     },
@@ -79,61 +89,71 @@
           "rank": 1,
           "value": 32,
           "date": "1999年7月9日（平成11年）",
-          "_date_raw": "1999/07/09"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 2,
           "value": 44,
           "date": "1985年7月16日（昭和60年）",
-          "_date_raw": "1985/07/16"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 3,
           "value": 45,
           "date": "2016年7月31日（平成28年）",
-          "_date_raw": "2016/07/31"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 4,
           "value": 45,
           "date": "1985年7月15日（昭和60年）",
-          "_date_raw": "1985/07/15"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 5,
           "value": 46,
           "date": "1956年7月17日（昭和31年）",
-          "_date_raw": "1956/07/17"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 6,
           "value": 47,
           "date": "1998年7月10日（平成10年）",
-          "_date_raw": "1998/07/10"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 7,
           "value": 47,
           "date": "1992年7月20日（平成4年）",
-          "_date_raw": "1992/07/20"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 8,
           "value": 47,
           "date": "1952年7月7日（昭和27年）",
-          "_date_raw": "1952/07/07"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
           "value": 48,
           "date": "2014年7月12日（平成26年）",
-          "_date_raw": "2014/07/12"
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 10,
           "value": 49,
           "date": "2006年7月29日（平成18年）",
-          "_date_raw": "2006/07/29"
+          "highlightLive": false,
+          "highlightWithinYear": false
         }
       ]
     }
