@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-12T20:21:50.576652+09:00",
-  "observedLatestAt": "2026-04-12T20:10:00+09:00",
+  "updatedAt": "2026-04-12T21:01:57.343066+09:00",
+  "observedLatestAt": "2026-04-12T20:50:00+09:00",
   "prefecture": "滋賀県",
   "prefKey": "shiga",
   "stations": [
@@ -26,19 +26,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 5.3,
@@ -85,19 +85,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 6,
@@ -184,19 +184,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 5.5,
@@ -266,19 +266,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 3.4,
@@ -325,19 +325,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 6.2,
@@ -384,19 +384,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T20:10:00+09:00"
+          "observedAt": "2026-04-12T20:50:00+09:00"
         },
         "dailyMaxWind": {
           "value": 5.2,

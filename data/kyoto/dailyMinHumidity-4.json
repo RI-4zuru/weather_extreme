@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-12T20:21:50.576652+09:00",
-  "observedLatestAt": "2026-04-12T20:10:00+09:00",
+  "updatedAt": "2026-04-12T21:01:57.343066+09:00",
+  "observedLatestAt": "2026-04-12T20:50:00+09:00",
   "prefecture": "京都府",
   "element": "dailyMinHumidity",
   "month": "4",
@@ -54,16 +54,16 @@
         {
           "rank": 7,
           "value": 29,
-          "date": "2025年4月17日（令和7年）",
-          "highlightLive": false,
-          "highlightWithinYear": false
-        },
-        {
-          "rank": 8,
-          "value": 32,
           "date": "2026年4月12日（令和8年）",
           "highlightLive": true,
           "highlightWithinYear": true
+        },
+        {
+          "rank": 8,
+          "value": 29,
+          "date": "2025年4月17日（令和7年）",
+          "highlightLive": false,
+          "highlightWithinYear": false
         },
         {
           "rank": 9,
@@ -80,7 +80,7 @@
           "highlightWithinYear": true
         }
       ],
-      "liveEnteredRank": 8
+      "liveEnteredRank": 7
     },
     {
       "stationName": "宮津",

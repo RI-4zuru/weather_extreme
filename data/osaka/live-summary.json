@@ -1,6 +1,6 @@
 {
   "prefecture": "osaka",
-  "observedLatestAt": "2026-04-12T20:10:00+09:00",
+  "observedLatestAt": "2026-04-12T20:50:00+09:00",
   "annualItems": [
     {
       "rank": 1,
@@ -9,7 +9,7 @@
       "stationName": "能勢",
       "value": 12,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     },
     {
       "rank": 2,
@@ -18,7 +18,7 @@
       "stationName": "生駒山",
       "value": 17,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     },
     {
       "rank": 3,
@@ -27,7 +27,7 @@
       "stationName": "枚方",
       "value": 11,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     }
   ],
   "monthlyItems": [
@@ -38,7 +38,7 @@
       "stationName": "枚方",
       "value": 11,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     },
     {
       "rank": 1,
@@ -47,7 +47,7 @@
       "stationName": "生駒山",
       "value": 17,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     },
     {
       "rank": 1,
@@ -56,7 +56,7 @@
       "stationName": "能勢",
       "value": 12,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     },
     {
       "rank": 6,
@@ -65,7 +65,7 @@
       "stationName": "堺",
       "value": 16,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T20:10:00+09:00"
+      "observedLatestAt": "2026-04-12T20:50:00+09:00"
     }
   ],
   "badgeMode": "top1",
