@@ -499,7 +499,7 @@ function makeTableHeader() {
   rankTableHead.innerHTML = `<tr>${cols.map((col) => `<th>${escapeHtml(col)}</th>`).join("")}</tr>`;
 }
 
-function renderTableRows(rows) {
+function renderTableRows(rows, elementKey) {
   rankTableBody.innerHTML = "";
 
   if (!Array.isArray(rows) || rows.length === 0) {
@@ -847,7 +847,7 @@ async function loadTable() {
     const data = await fetchJson(jsonPath);
 
     makeTableHeader();
-    renderTableRows(data.rows || []);
+    renderTableRows(data.rows || [], elementKey);
 
     renderDebug([
       { label: "都道府県", value: pref.name },
@@ -871,7 +871,7 @@ async function loadTable() {
   } catch (err) {
     console.error(err);
     makeTableHeader();
-    renderTableRows([]);
+    renderTableRows([], elementKey);
     statusTextEl.textContent = `${pref.name} / ${
       month === "all" ? "通年" : `${month}月`
     } / ${elementMeta?.shortLabel || elementMeta?.label || elementKey} / 読み込み失敗`;
