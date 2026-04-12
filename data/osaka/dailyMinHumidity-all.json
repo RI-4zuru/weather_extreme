@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-12T19:14:56.336768+09:00",
-  "observedLatestAt": "2026-04-12T19:00:00+09:00",
+  "updatedAt": "2026-04-12T20:21:50.576652+09:00",
+  "observedLatestAt": "2026-04-12T20:10:00+09:00",
   "prefecture": "大阪府",
   "element": "dailyMinHumidity",
   "month": "all",
@@ -172,23 +172,23 @@
         {
           "rank": 2,
           "value": 17,
+          "date": "2026年4月12日（令和8年）",
+          "highlightLive": true,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 3,
+          "value": 17,
           "date": "2026年3月6日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 18,
           "date": "2023年4月24日（令和5年）",
           "highlightLive": false,
           "highlightWithinYear": false
-        },
-        {
-          "rank": 4,
-          "value": 19,
-          "date": "2026年4月12日（令和8年）",
-          "highlightLive": true,
-          "highlightWithinYear": true
         },
         {
           "rank": 5,
@@ -233,7 +233,7 @@
           "highlightWithinYear": false
         }
       ],
-      "liveEnteredRank": 4
+      "liveEnteredRank": 2
     },
     {
       "stationName": "熊取",

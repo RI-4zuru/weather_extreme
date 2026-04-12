@@ -1,6 +1,6 @@
 {
   "prefecture": "kyoto",
-  "observedLatestAt": "2026-04-12T19:00:00+09:00",
+  "observedLatestAt": "2026-04-12T20:10:00+09:00",
   "annualItems": [
     {
       "rank": 2,
@@ -9,7 +9,7 @@
       "stationName": "福知山",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 3,
@@ -18,7 +18,7 @@
       "stationName": "園部",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 6,
@@ -27,7 +27,7 @@
       "stationName": "京田辺",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 9,
@@ -36,7 +36,7 @@
       "stationName": "美山",
       "value": 17,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     }
   ],
   "monthlyItems": [
@@ -47,7 +47,7 @@
       "stationName": "園部",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 1,
@@ -56,7 +56,7 @@
       "stationName": "福知山",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 2,
@@ -65,7 +65,7 @@
       "stationName": "京田辺",
       "value": 14,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 2,
@@ -74,7 +74,7 @@
       "stationName": "美山",
       "value": 17,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     },
     {
       "rank": 8,
@@ -83,7 +83,7 @@
       "stationName": "宮津",
       "value": 28,
       "date": "2026年4月12日（令和8年）",
-      "observedLatestAt": "2026-04-12T19:00:00+09:00"
+      "observedLatestAt": "2026-04-12T20:10:00+09:00"
     }
   ],
   "badgeMode": "top1",

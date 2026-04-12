@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-12T19:14:56.336768+09:00",
-  "observedLatestAt": "2026-04-12T19:00:00+09:00",
+  "updatedAt": "2026-04-12T20:21:50.576652+09:00",
+  "observedLatestAt": "2026-04-12T20:10:00+09:00",
   "prefecture": "奈良県",
   "prefKey": "nara",
   "stations": [
@@ -26,19 +26,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 4.3,
@@ -46,15 +46,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 14,
@@ -88,19 +88,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 3.3,
@@ -108,15 +108,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 19,
@@ -135,32 +135,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -176,32 +176,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -217,32 +217,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -270,19 +270,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 3.7,
@@ -290,15 +290,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 24,
@@ -329,19 +329,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 3.4,
@@ -349,15 +349,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 27,
@@ -376,32 +376,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -417,32 +417,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -470,19 +470,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 4.4,
@@ -490,15 +490,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 18,
@@ -529,19 +529,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": {
           "value": 2.6,
@@ -549,15 +549,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 24,
@@ -576,32 +576,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -617,32 +617,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:10:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-12T19:00:00+09:00"
+          "observedAt": "2026-04-12T20:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
