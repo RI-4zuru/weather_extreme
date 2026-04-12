@@ -63,9 +63,27 @@ function formatDateTime(isoText) {
   ).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
 }
 
-function formatValue(value) {
+function formatValue(value, elementKey = "") {
   const num = Number(value);
   if (!Number.isFinite(num)) return value ?? "-";
+
+  // 小数なしにする要素
+  const noDecimalKeys = [
+    "minHumidity",      // 日最小湿度
+    "snow6h",           // 6時間降雪
+    "snow12h",          // 12時間降雪
+    "snow24h",          // 24時間降雪
+    "snowDepth",        // 積雪系あれば
+  ];
+
+  // 「日数」系（気温の○日など）
+  const isCountType = elementKey.includes("days");
+
+  if (noDecimalKeys.includes(elementKey) || isCountType) {
+    return Math.round(num).toString();
+  }
+
+  // それ以外は小数1位
   return num.toFixed(1);
 }
 
@@ -520,7 +538,7 @@ function renderTableRows(rows) {
 
         td.className = classes.join(" ");
         td.innerHTML = `
-          <div class="rank-value">${escapeHtml(formatValue(rank.value))}</div>
+          <div class="rank-value">${escapeHtml(formatValue(rank.value, elementKey))}</div>
           ${renderRankDateTwoLines(rank.date || "-")}
         `;
       }
@@ -662,7 +680,7 @@ function renderLiveSummaryColumn(title, items, monthType) {
                 <div class="live-summary-main">
                   <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
                 </div>
-                <div class="live-summary-value">${escapeHtml(formatValue(item.value))}</div>
+                <div class="live-summary-value">${escapeHtml(formatValue(item.value, item.elementKey))}</div>
                 <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
               </button>
             `;
