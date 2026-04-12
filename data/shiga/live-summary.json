@@ -1,20 +1,10 @@
 {
   "prefecture": "shiga",
-  "observedLatestAt": "2026-04-13T06:40:00+09:00",
+  "observedLatestAt": "2026-04-13T08:40:00+09:00",
   "annualItems": [],
-  "monthlyItems": [
-    {
-      "rank": 8,
-      "elementKey": "dailyMaxTempLow",
-      "elementLabel": "最高気温(低)",
-      "stationName": "信楽",
-      "value": 6.8,
-      "date": "2026年4月13日（令和8年）",
-      "observedLatestAt": "2026-04-13T06:40:00+09:00"
-    }
-  ],
-  "badgeMode": "rankin",
-  "badgeText": "ランクイン有り",
+  "monthlyItems": [],
+  "badgeMode": "none",
+  "badgeText": "",
   "hasTop1": false,
-  "hasAny": true
+  "hasAny": false
 }

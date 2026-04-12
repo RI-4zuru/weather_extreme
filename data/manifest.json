@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-13T06:53:58.911197+09:00",
+  "updatedAt": "2026-04-13T08:56:24.663025+09:00",
   "prefectures": {
     "shiga": [
       "annualDaysMaxTempAtOrAbove25-1.json",
@@ -3920,5 +3920,5 @@
       "yearSunshineLow-all.json"
     ]
   },
-  "observedLatestAt": "2026-04-13T06:40:00+09:00"
+  "observedLatestAt": "2026-04-13T08:40:00+09:00"
 }

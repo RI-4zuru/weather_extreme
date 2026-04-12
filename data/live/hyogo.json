@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-13T06:53:58.911197+09:00",
-  "observedLatestAt": "2026-04-13T06:40:00+09:00",
+  "updatedAt": "2026-04-13T08:56:24.663025+09:00",
+  "observedLatestAt": "2026-04-13T08:40:00+09:00",
   "prefecture": "兵庫県",
   "prefKey": "hyogo",
   "stations": [
@@ -9,12 +9,12 @@
       "amedasCode": "63016",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 13.9,
-          "observedAt": "2026-04-13T02:30:00+09:00"
+          "value": 18.2,
+          "observedAt": "2026-04-13T08:30:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 13.9,
-          "observedAt": "2026-04-13T02:30:00+09:00"
+          "value": 18.2,
+          "observedAt": "2026-04-13T08:30:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 12.7,
@@ -26,19 +26,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 5,
@@ -46,19 +46,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 49,
-          "observedAt": "2026-04-13T02:30:00+09:00"
+          "value": 47,
+          "observedAt": "2026-04-13T08:30:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -73,32 +73,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -109,12 +109,12 @@
       "amedasCode": "63051",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:30:00+09:00"
+          "value": 14.4,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:30:00+09:00"
+          "value": 14.4,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 8.6,
@@ -126,39 +126,39 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
-          "value": 1.3,
-          "observedAt": "2026-04-13T04:50:00+09:00"
+          "value": 1.4,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 65,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 57,
+          "observedAt": "2026-04-13T08:30:00+09:00"
         },
         "dailyMinSeaLevelPressure": {
           "value": 1015.6,
@@ -171,12 +171,12 @@
       "amedasCode": "63071",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 15,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "value": 17.1,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 15,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "value": 17.1,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 11.8,
@@ -188,35 +188,35 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
-          "value": 1.6,
-          "observedAt": "2026-04-13T01:10:00+09:00"
+          "value": 2.5,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 38,
@@ -235,32 +235,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -276,32 +276,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -312,12 +312,12 @@
       "amedasCode": "63121",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 13,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 13,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 7.3,
@@ -329,19 +329,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.4,
@@ -349,15 +349,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 60,
@@ -371,12 +371,12 @@
       "amedasCode": "63201",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 10.1,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 15.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 10.1,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 15.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 8.3,
@@ -388,19 +388,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.9,
@@ -408,19 +408,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 65,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 57,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -430,12 +430,12 @@
       "amedasCode": "63216",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 10.1,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 13.3,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 10.1,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 13.3,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 7,
@@ -447,19 +447,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.7,
@@ -467,19 +467,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 62,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 52,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -494,32 +494,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -530,12 +530,12 @@
       "amedasCode": "63251",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 11.9,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 14.8,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 11.9,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 14.8,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 9.6,
@@ -547,19 +547,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.5,
@@ -567,19 +567,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 75,
-          "observedAt": "2026-04-13T01:30:00+09:00"
+          "value": 65,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -589,12 +589,12 @@
       "amedasCode": "63321",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 12.9,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 12.9,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 10.3,
@@ -606,19 +606,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.1,
@@ -626,19 +626,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 60,
-          "observedAt": "2026-04-13T00:40:00+09:00"
+          "value": 37,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -648,12 +648,12 @@
       "amedasCode": "63331",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 11,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 14.1,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 11,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 14.1,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 7.7,
@@ -665,39 +665,39 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
-          "value": 0.8,
-          "observedAt": "2026-04-13T06:10:00+09:00"
+          "value": 1,
+          "observedAt": "2026-04-13T07:50:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 55,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 54,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -712,32 +712,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -748,12 +748,12 @@
       "amedasCode": "63366",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 12.4,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 16.3,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 12.4,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 16.3,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 10.1,
@@ -765,19 +765,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 2.8,
@@ -785,19 +785,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 74,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 66,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -807,12 +807,12 @@
       "amedasCode": "63383",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 14.2,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 17.9,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 14.2,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 17.9,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 11.6,
@@ -824,19 +824,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 2,
@@ -844,19 +844,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 61,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 51,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": {
           "value": 1015.6,
@@ -869,12 +869,12 @@
       "amedasCode": "63411",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 16.5,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 10.6,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 16.5,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 7.3,
@@ -886,19 +886,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.2,
@@ -906,19 +906,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 57,
-          "observedAt": "2026-04-13T00:30:00+09:00"
+          "value": 43,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -928,12 +928,12 @@
       "amedasCode": "63461",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 13.8,
-          "observedAt": "2026-04-13T04:00:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 13.8,
-          "observedAt": "2026-04-13T04:00:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 10.5,
@@ -945,19 +945,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 2.4,
@@ -965,19 +965,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 39,
-          "observedAt": "2026-04-13T04:10:00+09:00"
+          "value": 30,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -992,32 +992,32 @@
         "dailyMinTempLow": null,
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": null,
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -1028,12 +1028,12 @@
       "amedasCode": "63491",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 14.2,
-          "observedAt": "2026-04-13T02:10:00+09:00"
+          "value": 16.1,
+          "observedAt": "2026-04-13T07:50:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 14.2,
-          "observedAt": "2026-04-13T02:10:00+09:00"
+          "value": 16.1,
+          "observedAt": "2026-04-13T07:50:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 12.7,
@@ -1045,19 +1045,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.5,
@@ -1065,19 +1065,19 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 61,
-          "observedAt": "2026-04-13T02:10:00+09:00"
+          "value": 60,
+          "observedAt": "2026-04-13T08:30:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
@@ -1087,12 +1087,12 @@
       "amedasCode": "63496",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 15.2,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 16.6,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 15.2,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 16.6,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 12.4,
@@ -1104,19 +1104,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 3.6,
@@ -1124,15 +1124,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 35,
@@ -1163,35 +1163,35 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 4.3,
-          "observedAt": "2026-04-13T02:20:00+09:00"
+          "observedAt": "2026-04-13T07:50:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -1219,19 +1219,19 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 4.3,
@@ -1239,15 +1239,15 @@
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 35,
@@ -1264,12 +1264,12 @@
       "amedasCode": "63551",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 12.3,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 15.8,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 12.3,
-          "observedAt": "2026-04-13T00:10:00+09:00"
+          "value": 15.8,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 10.7,
@@ -1281,35 +1281,35 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
-          "value": 1.7,
-          "observedAt": "2026-04-13T00:50:00+09:00"
+          "value": 2.3,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": null,
         "dailyMinSeaLevelPressure": null
@@ -1320,12 +1320,12 @@
       "amedasCode": "63571",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 14,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 15.2,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 14,
-          "observedAt": "2026-04-13T00:20:00+09:00"
+          "value": 15.2,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 12.4,
@@ -1337,35 +1337,35 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
-          "value": 2.2,
-          "observedAt": "2026-04-13T04:30:00+09:00"
+          "value": 2.4,
+          "observedAt": "2026-04-13T08:10:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
           "value": 58,
@@ -1382,12 +1382,12 @@
       "amedasCode": "63588",
       "values": {
         "dailyMaxTempHigh": {
-          "value": 12.9,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxTempLow": {
-          "value": 12.9,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "value": 16.7,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinTempHigh": {
           "value": 12.1,
@@ -1399,39 +1399,39 @@
         },
         "max10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax1h10mPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax3hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax24hPrecip": {
           "value": 0,
-          "observedAt": "2026-04-13T06:40:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMaxWind": {
           "value": 1.2,
-          "observedAt": "2026-04-13T06:30:00+09:00"
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "monthMax6hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax12hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "monthMax24hSnow": {
           "value": 0,
-          "observedAt": "2026-04-13T06:00:00+09:00"
+          "observedAt": "2026-04-13T08:00:00+09:00"
         },
         "dailyMinHumidity": {
-          "value": 72,
-          "observedAt": "2026-04-13T00:00:00+09:00"
+          "value": 61,
+          "observedAt": "2026-04-13T08:40:00+09:00"
         },
         "dailyMinSeaLevelPressure": null
       }
