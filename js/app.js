@@ -329,6 +329,10 @@ function getPrefectures() {
   return prefecturesConfig?.prefectures || [];
 }
 
+function getSelectedPrefMeta() {
+  return getPrefectures().find((p) => p.key === prefSelect.value) || null;
+}
+
 function getRegions() {
   return [...new Set(getPrefectures().map((p) => p.region))];
 }
@@ -540,6 +544,21 @@ function buildElementOrderMap() {
   return orderMap;
 }
 
+function buildStationOrderMap() {
+  const pref = getSelectedPrefMeta();
+  const stationOrderMap = new Map();
+
+  const stations = Array.isArray(pref?.stations) ? pref.stations : [];
+  stations.forEach((station, index) => {
+    const name = station?.stationName;
+    if (name && !stationOrderMap.has(name)) {
+      stationOrderMap.set(name, index);
+    }
+  });
+
+  return stationOrderMap;
+}
+
 function normalizeLiveItemsByObservedDate(items, observedLatestAt) {
   const observedYmd = parseObservedDate(observedLatestAt);
   if (!observedYmd) return [];
@@ -660,12 +679,17 @@ function renderLiveSummary(summary) {
   );
 
   const orderMap = buildElementOrderMap();
+  const stationOrderMap = buildStationOrderMap();
 
   const sorter = (a, b) => {
     const oa = orderMap.has(a.elementKey) ? orderMap.get(a.elementKey) : 9999;
     const ob = orderMap.has(b.elementKey) ? orderMap.get(b.elementKey) : 9999;
-
     if (oa !== ob) return oa - ob;
+
+    const sa = stationOrderMap.has(a.stationName) ? stationOrderMap.get(a.stationName) : 9999;
+    const sb = stationOrderMap.has(b.stationName) ? stationOrderMap.get(b.stationName) : 9999;
+    if (sa !== sb) return sa - sb;
+
     if ((a.rank ?? 9999) !== (b.rank ?? 9999)) return (a.rank ?? 9999) - (b.rank ?? 9999);
 
     return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
@@ -727,10 +751,6 @@ async function loadLiveSummary(prefKey) {
     setBadgeVisible(topRankAlert, false);
     observedLatestAtEl.textContent = "-";
   }
-}
-
-function getSelectedPrefMeta() {
-  return getPrefectures().find((p) => p.key === prefSelect.value) || null;
 }
 
 function renderDebug(items) {
