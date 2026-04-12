@@ -212,11 +212,11 @@ h1 {
 
 .live-summary-item {
   display: grid;
-  grid-template-columns: 44px 64px 1fr auto;
+  grid-template-columns: 40px minmax(0, 1fr) auto minmax(72px, auto);
   align-items: center;
-  gap: 6px 10px;
+  gap: 8px 12px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 8px 12px;
   border: 1px solid #d7e5ef;
   border-radius: 12px;
   background: #fff;
@@ -255,26 +255,26 @@ h1 {
 }
 
 .rank-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  font-size: 1.25rem;
+  display: none;
 }
 
 .live-summary-rank {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 30px;
+  min-height: 28px;
+  padding: 0 8px;
   border-radius: 8px;
   background: #edf5fb;
   color: var(--accent-dark);
   font-weight: 900;
+  white-space: nowrap;
 }
 
 .live-summary-main {
   min-width: 0;
+  display: flex;
+  align-items: center;
 }
 
 .live-summary-element,
@@ -286,19 +286,28 @@ h1 {
 
 .live-summary-element {
   font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .live-summary-station,
 .live-summary-date {
   color: var(--text-soft);
-  font-size: 0.86rem;
+  font-size: 0.92rem;
+}
+
+.live-summary-station {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .live-summary-value {
   text-align: right;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 900;
   color: #0b2c45;
+  white-space: nowrap;
 }
 
 .element-details {
@@ -626,10 +635,11 @@ h1 {
   }
 
   .live-summary-item {
-    grid-template-columns: 40px 56px 1fr;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    row-gap: 6px;
   }
 
-  .live-summary-value {
+  .live-summary-station {
     grid-column: 2 / 4;
     text-align: left;
   }
@@ -730,5 +740,21 @@ h1 {
   .element-panel,
   .debug-grid {
     padding: 9px 10px;
+  }
+
+  .live-summary-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .live-summary-rank,
+  .live-summary-value,
+  .live-summary-station {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .live-summary-main {
+    display: block;
   }
 }
