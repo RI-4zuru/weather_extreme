@@ -1,0 +1,636 @@
+{
+  "updatedAt": "2026-04-12T17:27:36.201297+09:00",
+  "observedLatestAt": "2026-04-12T17:20:00+09:00",
+  "prefecture": "大阪府",
+  "prefKey": "osaka",
+  "stations": [
+    {
+      "stationName": "大阪",
+      "amedasCode": "62078",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22.4,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22.4,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 14.3,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 14.3,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4.7,
+          "observedAt": "2026-04-12T09:20:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 14,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": {
+          "value": 1011.9,
+          "observedAt": "2026-04-12T00:10:00+09:00"
+        }
+      }
+    },
+    {
+      "stationName": "能勢",
+      "amedasCode": "62016",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22,
+          "observedAt": "2026-04-12T13:40:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22,
+          "observedAt": "2026-04-12T13:40:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 10.4,
+          "observedAt": "2026-04-12T00:50:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 10.4,
+          "observedAt": "2026-04-12T00:50:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 3.3,
+          "observedAt": "2026-04-12T10:10:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 12,
+          "observedAt": "2026-04-12T15:50:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "豊中",
+      "amedasCode": "62078",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22.4,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22.4,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 14.3,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 14.3,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4.7,
+          "observedAt": "2026-04-12T09:20:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 14,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": {
+          "value": 1011.9,
+          "observedAt": "2026-04-12T00:10:00+09:00"
+        }
+      }
+    },
+    {
+      "stationName": "生駒山",
+      "amedasCode": "62081",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 17.7,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 17.7,
+          "observedAt": "2026-04-12T15:10:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 9.4,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 9.4,
+          "observedAt": "2026-04-12T05:50:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4.2,
+          "observedAt": "2026-04-12T03:00:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 19,
+          "observedAt": "2026-04-12T16:30:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "河内長野",
+      "amedasCode": "62051",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 23.1,
+          "observedAt": "2026-04-12T15:20:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 23.1,
+          "observedAt": "2026-04-12T15:20:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 13.4,
+          "observedAt": "2026-04-12T05:30:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 13.4,
+          "observedAt": "2026-04-12T05:30:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 5.2,
+          "observedAt": "2026-04-12T13:40:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": null,
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "熊取",
+      "amedasCode": "62131",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 20.9,
+          "observedAt": "2026-04-12T14:50:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 20.9,
+          "observedAt": "2026-04-12T14:50:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 13.2,
+          "observedAt": "2026-04-12T03:20:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 13.2,
+          "observedAt": "2026-04-12T03:20:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4,
+          "observedAt": "2026-04-12T14:20:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 29,
+          "observedAt": "2026-04-12T16:40:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "茨木",
+      "amedasCode": "62037",
+      "values": {
+        "dailyMaxTempHigh": null,
+        "dailyMaxTempLow": null,
+        "dailyMinTempHigh": null,
+        "dailyMinTempLow": null,
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": null,
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": null,
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "枚方",
+      "amedasCode": "62046",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22.9,
+          "observedAt": "2026-04-12T15:00:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22.9,
+          "observedAt": "2026-04-12T15:00:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 12.8,
+          "observedAt": "2026-04-12T06:10:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 12.8,
+          "observedAt": "2026-04-12T06:10:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0.5,
+          "observedAt": "2026-04-12T06:10:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 3.9,
+          "observedAt": "2026-04-12T11:30:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 11,
+          "observedAt": "2026-04-12T16:30:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "堺",
+      "amedasCode": "62091",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22.8,
+          "observedAt": "2026-04-12T15:20:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22.8,
+          "observedAt": "2026-04-12T15:20:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 12.1,
+          "observedAt": "2026-04-12T05:30:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 12.1,
+          "observedAt": "2026-04-12T05:30:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4,
+          "observedAt": "2026-04-12T08:30:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": {
+          "value": 16,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "八尾",
+      "amedasCode": "62096",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 22.5,
+          "observedAt": "2026-04-12T15:30:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 22.5,
+          "observedAt": "2026-04-12T15:30:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 14.4,
+          "observedAt": "2026-04-12T01:20:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 14.4,
+          "observedAt": "2026-04-12T01:20:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 4.3,
+          "observedAt": "2026-04-12T03:00:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": null,
+        "dailyMinSeaLevelPressure": null
+      }
+    },
+    {
+      "stationName": "関空島",
+      "amedasCode": "62101",
+      "values": {
+        "dailyMaxTempHigh": {
+          "value": 17.7,
+          "observedAt": "2026-04-12T14:30:00+09:00"
+        },
+        "dailyMaxTempLow": {
+          "value": 17.7,
+          "observedAt": "2026-04-12T14:30:00+09:00"
+        },
+        "dailyMinTempHigh": {
+          "value": 13.5,
+          "observedAt": "2026-04-12T02:00:00+09:00"
+        },
+        "dailyMinTempLow": {
+          "value": 13.5,
+          "observedAt": "2026-04-12T02:00:00+09:00"
+        },
+        "max10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax1h10mPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax3hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "monthMax24hPrecip": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:20:00+09:00"
+        },
+        "dailyMaxWind": {
+          "value": 6,
+          "observedAt": "2026-04-12T03:40:00+09:00"
+        },
+        "monthMax6hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax12hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "monthMax24hSnow": {
+          "value": 0,
+          "observedAt": "2026-04-12T17:00:00+09:00"
+        },
+        "dailyMinHumidity": null,
+        "dailyMinSeaLevelPressure": null
+      }
+    }
+  ]
+}
