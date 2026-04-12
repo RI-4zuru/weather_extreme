@@ -562,17 +562,21 @@ function renderLiveSummary(summary) {
     rawAnnualItems,
     summary?.observedLatestAt
   );
+
   const monthlyItems = normalizeLiveItemsByObservedDate(
     rawMonthlyItems,
     summary?.observedLatestAt
   );
 
   const orderMap = buildElementOrderMap();
+
   const sorter = (a, b) => {
     const oa = orderMap.has(a.elementKey) ? orderMap.get(a.elementKey) : 9999;
     const ob = orderMap.has(b.elementKey) ? orderMap.get(b.elementKey) : 9999;
+
     if (oa !== ob) return oa - ob;
     if ((a.rank ?? 9999) !== (b.rank ?? 9999)) return (a.rank ?? 9999) - (b.rank ?? 9999);
+
     return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
   };
 
@@ -591,8 +595,17 @@ function renderLiveSummary(summary) {
     annualSorted.some((item) => Number(item.rank) === 1) ||
     monthlySorted.some((item) => Number(item.rank) === 1);
 
-  setBadgeVisible(rankInBadge, hasAny);
-  setBadgeVisible(topRankAlert, hasTop1);
+  if (hasTop1) {
+    setBadgeVisible(topRankAlert, true);
+    setBadgeVisible(rankInBadge, false);
+  } else if (hasAny) {
+    setBadgeVisible(topRankAlert, false);
+    setBadgeVisible(rankInBadge, true);
+  } else {
+    setBadgeVisible(topRankAlert, false);
+    setBadgeVisible(rankInBadge, false);
+  }
+
   observedLatestAtEl.textContent = formatDateTime(summary?.observedLatestAt || "");
 }
 
