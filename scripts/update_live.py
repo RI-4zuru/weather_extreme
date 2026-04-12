@@ -23,7 +23,6 @@ BASE_DIR = "data_base"
 PUBLIC_DIR = "data"
 LIVE_DEBUG_DIR = os.path.join(PUBLIC_DIR, "live")
 
-# 近畿全体を対象
 TARGET_PREF_KEYS = {
     "shiga",
     "kyoto",
@@ -33,25 +32,79 @@ TARGET_PREF_KEYS = {
     "wakayama",
 }
 
-# 実況差し込み対象
 LIVE_TARGETS = {
-    "dailyMaxTempHigh": {"mode": "temp_max", "direction": "desc"},
-    "dailyMaxTempLow": {"mode": "temp_max", "direction": "asc"},
-    "dailyMinTempHigh": {"mode": "temp_min", "direction": "desc"},
-    "dailyMinTempLow": {"mode": "temp_min", "direction": "asc"},
-    "max10mPrecip": {"mode": "precip10m_max", "direction": "desc"},
-    "monthMax1h10mPrecip": {"mode": "precip1h_max", "direction": "desc"},
-    "monthMax3hPrecip": {"mode": "precip3h_max", "direction": "desc"},
-    "monthMax24hPrecip": {"mode": "precip24h_max", "direction": "desc"},
-    "dailyMaxWind": {"mode": "wind_max", "direction": "desc"},
-    "monthMax6hSnow": {"mode": "snow6h_max", "direction": "desc"},
-    "monthMax12hSnow": {"mode": "snow12h_max", "direction": "desc"},
-    "monthMax24hSnow": {"mode": "snow24h_max", "direction": "desc"},
-    "dailyMinHumidity": {"mode": "humidity_min", "direction": "asc"},
-    "dailyMinSeaLevelPressure": {"mode": "sea_level_pressure_min", "direction": "asc"},
+    "dailyMaxTempHigh": {
+        "mode": "temp_max",
+        "direction": "desc",
+        "skip_zero": False,
+    },
+    "dailyMaxTempLow": {
+        "mode": "temp_max",
+        "direction": "asc",
+        "skip_zero": False,
+    },
+    "dailyMinTempHigh": {
+        "mode": "temp_min",
+        "direction": "desc",
+        "skip_zero": False,
+    },
+    "dailyMinTempLow": {
+        "mode": "temp_min",
+        "direction": "asc",
+        "skip_zero": False,
+    },
+    "max10mPrecip": {
+        "mode": "precip10m_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax1h10mPrecip": {
+        "mode": "precip1h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax3hPrecip": {
+        "mode": "precip3h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax24hPrecip": {
+        "mode": "precip24h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "dailyMaxWind": {
+        "mode": "wind_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax6hSnow": {
+        "mode": "snow6h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax12hSnow": {
+        "mode": "snow12h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "monthMax24hSnow": {
+        "mode": "snow24h_max",
+        "direction": "desc",
+        "skip_zero": True,
+    },
+    "dailyMinHumidity": {
+        "mode": "humidity_min",
+        "direction": "asc",
+        "skip_zero": False,
+    },
+    "dailyMinSeaLevelPressure": {
+        "mode": "sea_level_pressure_min",
+        "direction": "asc",
+        "skip_zero": False,
+    },
 }
 
-# JMA bosai point JSON のキー候補
 FIELD_ALIASES = {
     "temp": ["temp", "temperature"],
     "precip10m": ["precipitation10m", "precipitation"],
@@ -77,14 +130,25 @@ def load_base_rows(pref_key: str, element_key: str, month: str):
 def normalize_base_ranks(base_row: dict):
     ranks = base_row.get("ranks")
     if isinstance(ranks, list):
-        return ranks
+        out = []
+        for i, rank in enumerate(ranks[:10], start=1):
+            out.append(
+                {
+                    "rank": i,
+                    "value": trim_number(rank.get("value", 0)),
+                    "date": rank.get("date", ""),
+                    "highlightLive": bool(rank.get("highlightLive", False)),
+                    "highlightWithinYear": bool(rank.get("highlightWithinYear", False)),
+                }
+            )
+        return out
 
     records = base_row.get("records")
     if not isinstance(records, list):
         return []
 
     out = []
-    for i, rec in enumerate(records, start=1):
+    for i, rec in enumerate(records[:10], start=1):
         out.append(
             {
                 "rank": i,
@@ -143,10 +207,6 @@ def extract_any(item: dict, aliases):
 
 
 def update_best(current, value, obs_dt, kind: str):
-    """
-    kind = "max" or "min"
-    同値なら後の時刻を優先する。
-    """
     if value is None or obs_dt is None:
         return current
 
@@ -159,7 +219,6 @@ def update_best(current, value, obs_dt, kind: str):
     current_value = float(current["value"])
     current_dt = current["obs_dt"]
 
-    replace = False
     if kind == "max":
         replace = value > current_value or (value == current_value and obs_dt > current_dt)
     else:
@@ -175,10 +234,6 @@ def update_best(current, value, obs_dt, kind: str):
 
 
 def collect_station_live_stats(amedas_code: str, latest_dt: datetime):
-    """
-    当日00:00〜最新観測時刻までの point JSON を見て、
-    必要な要素の当日最大・最小をまとめる。
-    """
     stats = {
         "temp_max": None,
         "temp_min": None,
@@ -243,14 +298,49 @@ def collect_station_live_stats(amedas_code: str, latest_dt: datetime):
     return stats
 
 
-def build_live_info(stats: dict, mode: str):
+def format_dual_ymd_from_raw(raw_date: str) -> str:
+    try:
+        dt = parse_date_ymd(raw_date)
+    except Exception:
+        return raw_date
+
+    year = dt.year
+    month = dt.month
+    day = dt.day
+
+    if dt >= datetime(2019, 5, 1, tzinfo=JST):
+        era_name = "令和"
+        era_year = year - 2018
+    elif dt >= datetime(1989, 1, 8, tzinfo=JST):
+        era_name = "平成"
+        era_year = year - 1988
+    elif dt >= datetime(1926, 12, 25, tzinfo=JST):
+        era_name = "昭和"
+        era_year = year - 1925
+    elif dt >= datetime(1912, 7, 30, tzinfo=JST):
+        era_name = "大正"
+        era_year = year - 1911
+    else:
+        era_name = "明治"
+        era_year = year - 1867
+
+    era_year_text = "元" if era_year == 1 else str(era_year)
+    return f"{year}年{month}月{day}日（{era_name}{era_year_text}年）"
+
+
+def build_live_info(stats: dict, mode: str, *, skip_zero: bool = False):
     data = stats.get(mode)
     if not data:
         return None
 
+    value = float(data["value"])
+
+    if skip_zero and value == 0.0:
+        return None
+
     raw_date = data["obs_dt"].strftime("%Y/%m/%d")
     return {
-        "value": trim_number(data["value"]),
+        "value": trim_number(value),
         "date": format_dual_ymd_from_raw(raw_date),
         "_date_raw": raw_date,
     }
@@ -286,16 +376,36 @@ def normalize_records_for_merge(base_row: dict):
         if "value" not in item:
             continue
 
-        raw_date = extract_raw_date_from_rank(item)
+        try:
+            value = float(item["value"])
+        except Exception:
+            continue
+
         records.append(
             {
-                "value": float(item["value"]),
+                "value": value,
                 "date": item.get("date", ""),
-                "_date_raw": raw_date,
+                "_date_raw": extract_raw_date_from_rank(item),
                 "isLive": False,
             }
         )
     return records
+
+
+def sort_merged_records(records, direction: str):
+    if direction == "desc":
+        records.sort(
+            key=lambda x: (float(x["value"]), parse_date_ymd(x["_date_raw"]).timestamp()),
+            reverse=True,
+        )
+        return
+
+    records.sort(
+        key=lambda x: (
+            float(x["value"]),
+            -parse_date_ymd(x["_date_raw"]).timestamp(),
+        )
+    )
 
 
 def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, latest_dt: datetime):
@@ -311,16 +421,7 @@ def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, lates
             }
         )
 
-    if direction == "desc":
-        merged.sort(
-            key=lambda x: (float(x["value"]), parse_date_ymd(x["_date_raw"])),
-            reverse=True,
-        )
-    else:
-        merged.sort(
-            key=lambda x: (float(x["value"]), -parse_date_ymd(x["_date_raw"]).timestamp())
-        )
-
+    sort_merged_records(merged, direction)
     merged = merged[:10]
 
     out = []
@@ -341,36 +442,6 @@ def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, lates
         out.append(rank_item)
 
     return out, entered_rank
-
-
-def format_dual_ymd_from_raw(raw_date: str) -> str:
-    try:
-        dt = parse_date_ymd(raw_date)
-    except Exception:
-        return raw_date
-
-    year = dt.year
-    month = dt.month
-    day = dt.day
-
-    if dt >= datetime(2019, 5, 1, tzinfo=JST):
-        era_name = "令和"
-        era_year = year - 2018
-    elif dt >= datetime(1989, 1, 8, tzinfo=JST):
-        era_name = "平成"
-        era_year = year - 1988
-    elif dt >= datetime(1926, 12, 25, tzinfo=JST):
-        era_name = "昭和"
-        era_year = year - 1925
-    elif dt >= datetime(1912, 7, 30, tzinfo=JST):
-        era_name = "大正"
-        era_year = year - 1911
-    else:
-        era_name = "明治"
-        era_year = year - 1867
-
-    era_year_text = "元" if era_year == 1 else str(era_year)
-    return f"{year}年{month}月{day}日（{era_name}{era_year_text}年）"
 
 
 def build_station_live_debug(station: dict, stats: dict):
@@ -405,7 +476,14 @@ def build_station_live_debug(station: dict, stats: dict):
     }
 
 
-def write_pref_live_debug(pref_key: str, pref_name: str, stations: list, live_cache: dict, latest_obs_iso: str, generated_iso: str):
+def write_pref_live_debug(
+    pref_key: str,
+    pref_name: str,
+    stations: list,
+    live_cache: dict,
+    latest_obs_iso: str,
+    generated_iso: str,
+):
     ensure_dir(LIVE_DEBUG_DIR)
 
     items = []
@@ -482,10 +560,7 @@ def main() -> None:
 
         for station in stations:
             amedas_code = station.get("amedasCode")
-            if not amedas_code:
-                continue
-
-            if amedas_code in live_cache:
+            if not amedas_code or amedas_code in live_cache:
                 continue
 
             try:
@@ -503,8 +578,10 @@ def main() -> None:
         ensure_dir(public_pref_dir)
 
         for element_key, element_def in ELEMENTS.items():
-            direction = LIVE_TARGETS.get(element_key, {}).get("direction", element_def.get("direction"))
-            live_mode = LIVE_TARGETS.get(element_key, {}).get("mode")
+            live_conf = LIVE_TARGETS.get(element_key, {})
+            direction = live_conf.get("direction", element_def.get("direction"))
+            live_mode = live_conf.get("mode")
+            skip_zero = bool(live_conf.get("skip_zero", False))
 
             for month in MONTHS:
                 base_data = load_base_rows(pref_key, element_key, month)
@@ -547,17 +624,25 @@ def main() -> None:
                         rows.append(row)
                         continue
 
-                    live_info = build_live_info(cache["stats"], live_mode)
+                    live_info = build_live_info(
+                        cache["stats"],
+                        live_mode,
+                        skip_zero=skip_zero,
+                    )
+
                     merged_ranks, entered_rank = merge_live_into_ranks(
                         base_row,
                         live_info,
                         direction,
                         latest_dt,
                     )
+
                     row["ranks"] = merged_ranks
 
                     if entered_rank is not None:
                         row["liveEnteredRank"] = entered_rank
+                    else:
+                        row.pop("liveEnteredRank", None)
 
                     rows.append(row)
 
