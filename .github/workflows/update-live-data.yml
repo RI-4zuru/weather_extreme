@@ -3,21 +3,34 @@ name: Update live data
 on:
   workflow_dispatch:
   schedule:
-    # 10分ごと
+    # JST の 07,17,27,37,47,57 分ごろを狙う
+    # GitHub Actions の cron は UTC 基準
     - cron: "7,17,27,37,47,57 * * * *"
 
 permissions:
   contents: write
 
+# 手動実行(workflow_dispatch)と定期実行(schedule)を別グループにする
+# これで手動実行中でも schedule が潰れにくくなる
 concurrency:
-  group: update-live
+  group: update-live-${{ github.event_name }}
   cancel-in-progress: false
 
 jobs:
   build-live:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
+      - name: Show trigger info
+        run: |
+          echo "event_name=${{ github.event_name }}"
+          echo "ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
+          echo "actor=${{ github.actor }}"
+          date -u
+          TZ=Asia/Tokyo date
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -28,17 +41,31 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 改良1:
-      # 極値ランキングの再生成はここでは行わない
-      # 実況更新だけを担当させる
-      - name: Generate public live data from data_base
-        run: python scripts/update_live.py
+      - name: Show repository files
+        run: |
+          pwd
+          ls -la
+          ls -la .github/workflows || true
+          ls -la scripts || true
+          ls -la data || true
 
-      - name: Show data manifest
-        run: cat data/manifest.json
+      # 実況更新のみを実施
+      - name: Update live ranking data
+        run: python scripts/update_live.py
 
       - name: Build live summary
         run: python scripts/build_live_summary.py
+
+      - name: Show manifest
+        run: |
+          echo "===== data/manifest.json ====="
+          cat data/manifest.json || true
+          echo ""
+          echo "===== data/live sample ====="
+          ls -la data/live || true
+          echo ""
+          echo "===== nara debug sample ====="
+          cat data/live/nara.json || true
 
       - name: Commit data if changed
         run: |
@@ -56,6 +83,6 @@ jobs:
 
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin main && break
-            echo "Retry $i failed, retrying..."
+            echo "Push retry $i failed, retrying..."
             sleep 5
           done
