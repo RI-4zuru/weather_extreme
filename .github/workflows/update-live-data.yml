@@ -3,15 +3,11 @@ name: Update live data
 on:
   workflow_dispatch:
   schedule:
-    # JST の 07,17,27,37,47,57 分ごろを狙う
-    # GitHub Actions の cron は UTC 基準
-    - cron: "7,17,27,37,47,57 * * * *"
+    - cron: "7,37 * * * *"
 
 permissions:
   contents: write
 
-# 手動実行(workflow_dispatch)と定期実行(schedule)を別グループにする
-# これで手動実行中でも schedule が潰れにくくなる
 concurrency:
   group: update-live-${{ github.event_name }}
   cancel-in-progress: false
@@ -25,49 +21,24 @@ jobs:
       - name: Show trigger info
         run: |
           echo "event_name=${{ github.event_name }}"
-          echo "ref=${{ github.ref }}"
-          echo "sha=${{ github.sha }}"
-          echo "actor=${{ github.actor }}"
           date -u
           TZ=Asia/Tokyo date
 
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Show repository files
-        run: |
-          pwd
-          ls -la
-          ls -la .github/workflows || true
-          ls -la scripts || true
-          ls -la data || true
-
-      # 実況更新のみを実施
-      - name: Update live ranking data
+      - name: Update live data
         run: python scripts/update_live.py
 
-      - name: Build live summary
+      - name: Build summary
         run: python scripts/build_live_summary.py
 
-      - name: Show manifest
-        run: |
-          echo "===== data/manifest.json ====="
-          cat data/manifest.json || true
-          echo ""
-          echo "===== data/live sample ====="
-          ls -la data/live || true
-          echo ""
-          echo "===== nara debug sample ====="
-          cat data/live/nara.json || true
-
-      - name: Commit data if changed
+      - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -75,14 +46,10 @@ jobs:
           git add data
 
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
             exit 0
           fi
 
           git commit -m "Update live data"
-
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin main && break
-            echo "Push retry $i failed, retrying..."
-            sleep 5
-          done
+          git pull --rebase origin main
+          git push origin main
