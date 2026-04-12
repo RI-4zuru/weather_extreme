@@ -19,6 +19,7 @@ let manifestCache = null;
 let refreshTimer = null;
 let restoreScrollPending = false;
 let restoredInitialScroll = false;
+let lastObservedLatestAt = "";
 
 const FALLBACK_DEFAULTS = {
   region: "近畿",
@@ -30,8 +31,8 @@ const FALLBACK_DEFAULTS = {
 
 const UI_STATE_STORAGE_KEY = "weatherExtremeUIState_v1";
 
-// いまは基礎ランキングを表示
-const BASE_RANKING_DIR = "./data_base";
+// 実況差し込み済みランキングを表示
+const BASE_RANKING_DIR = "./data";
 // 上部の実況ランクイン一覧
 const LIVE_DATA_DIR = "./data";
 
@@ -42,6 +43,15 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function escapeJs(value) {
+  return String(value ?? "")
+    .replaceAll("\\", "\\\\")
+    .replaceAll("'", "\\'")
+    .replaceAll('"', '\\"')
+    .replaceAll("\n", "\\n")
+    .replaceAll("\r", "\\r");
 }
 
 function formatDateTime(isoText) {
@@ -521,7 +531,14 @@ function normalizeLiveItemsByObservedDate(items, observedLatestAt) {
   });
 }
 
-function renderLiveSummaryColumn(title, items) {
+function getRankIcon(rank) {
+  if (rank === 1) return "👑";
+  if (rank === 2) return "🥈";
+  if (rank === 3) return "🥉";
+  return "•";
+}
+
+function renderLiveSummaryColumn(title, items, monthType) {
   if (!items.length) {
     return `
       <div class="live-summary-col">
@@ -534,20 +551,28 @@ function renderLiveSummaryColumn(title, items) {
   return `
     <div class="live-summary-col">
       <div class="live-summary-title">${escapeHtml(title)}</div>
-      <div class="live-summary-list">
+      <div class="live-summary-list scrollable">
         ${items
-          .map(
-            (item) => `
-          <div class="live-summary-item">
-            <div class="live-summary-rank">${escapeHtml(item.rank)}位</div>
-            <div class="live-summary-element">${escapeHtml(
-              item.elementLabel || item.elementKey || ""
-            )}</div>
-            <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
-            <div class="live-summary-value">${escapeHtml(formatValue(item.value))}</div>
-          </div>
-        `
-          )
+          .map((item) => {
+            const monthValue = monthType === "all" ? "all" : String(monthSelect.value === "all" ? new Date().getMonth() + 1 : monthSelect.value);
+            const rankNum = Number(item.rank || 0);
+
+            return `
+              <button
+                type="button"
+                class="live-summary-item rank-${rankNum}"
+                onclick="jumpToRanking('${escapeJs(item.elementKey || "")}', '${escapeJs(monthValue)}')"
+              >
+                <div class="rank-icon">${escapeHtml(getRankIcon(rankNum))}</div>
+                <div class="live-summary-rank">${escapeHtml(String(item.rank || ""))}位</div>
+                <div class="live-summary-main">
+                  <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
+                  <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
+                </div>
+                <div class="live-summary-value">${escapeHtml(formatValue(item.value))}</div>
+              </button>
+            `;
+          })
           .join("")}
       </div>
     </div>
@@ -585,8 +610,8 @@ function renderLiveSummary(summary) {
 
   liveSummaryBody.innerHTML = `
     <div class="live-summary-grid">
-      ${renderLiveSummaryColumn("通年", annualSorted)}
-      ${renderLiveSummaryColumn("当月", monthlySorted)}
+      ${renderLiveSummaryColumn("通年", annualSorted, "all")}
+      ${renderLiveSummaryColumn("当月", monthlySorted, "month")}
     </div>
   `;
 
@@ -650,6 +675,30 @@ function renderDebug(items) {
     .join("");
 }
 
+function setSelectedElementRadio(elementKey) {
+  const radios = document.querySelectorAll('input[name="element"]');
+  radios.forEach((radio) => {
+    radio.checked = radio.value === elementKey;
+  });
+}
+
+function jumpToRanking(elementKey, month) {
+  if (!elementKey) return;
+
+  if (monthSelect) {
+    monthSelect.value = String(month || "all");
+  }
+
+  renderElementPanel(elementKey);
+  setSelectedElementRadio(elementKey);
+  updateSavedElementKeyForCurrentMonth(elementKey);
+  markScrollRestorePending();
+  saveUIState();
+  loadTable();
+}
+
+window.jumpToRanking = jumpToRanking;
+
 async function loadTable() {
   const pref = getSelectedPrefMeta();
   const elementMeta = getSelectedElementMeta();
@@ -659,6 +708,10 @@ async function loadTable() {
   const jsonPath = `${BASE_RANKING_DIR}/${prefSelect.value}/${elementKey}-${month}.json`;
 
   await loadManifest();
+
+  if (manifestCache?.observedLatestAt) {
+    lastObservedLatestAt = manifestCache.observedLatestAt;
+  }
 
   if (!pref) {
     statusTextEl.textContent = "都道府県情報が見つかりません。";
@@ -727,13 +780,34 @@ function handleMonthChange() {
   loadTable();
 }
 
+async function autoReloadIfUpdated() {
+  try {
+    await loadManifest();
+    const latest = manifestCache?.observedLatestAt || "";
+
+    if (!latest) return;
+
+    if (!lastObservedLatestAt) {
+      lastObservedLatestAt = latest;
+      return;
+    }
+
+    if (latest !== lastObservedLatestAt) {
+      lastObservedLatestAt = latest;
+      markScrollRestorePending();
+      saveUIState();
+      await loadTable();
+    }
+  } catch (err) {
+    console.warn("自動更新確認に失敗しました", err);
+  }
+}
+
 function startAutoRefresh() {
   if (refreshTimer) clearInterval(refreshTimer);
   refreshTimer = setInterval(() => {
-    markScrollRestorePending();
-    saveUIState();
-    loadTable();
-  }, 10 * 60 * 1000);
+    autoReloadIfUpdated();
+  }, 60 * 1000);
 }
 
 function bindElementPanelToggle() {
