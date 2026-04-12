@@ -69,11 +69,26 @@ function formatValue(value, elementKey = "") {
 
   // 小数なしにする要素
   const noDecimalKeys = [
-    "minHumidity",      // 日最小湿度
-    "snow6h",           // 6時間降雪
-    "snow12h",          // 12時間降雪
-    "snow24h",          // 24時間降雪
-    "snowDepth",        // 積雪系あれば
+    "annualDaysMeanTempBelow0",
+    "annualDaysMeanTempAtOrAbove25",
+    "annualDaysMinTempAtOrAbove25",
+    "annualDaysMaxTempAtOrAbove25",
+    "annualDaysMaxTempAtOrAbove30",
+    "annualDaysMaxTempAtOrAbove35",
+    "annualDaysMinTempBelow0",
+    "annualDaysMaxTempBelow0",
+    "dailyMinHumidity",
+    "dailySnowDepth",
+    "monthSnowDepth",
+    "yearCumulativeSnowDepth",
+    "monthDeepSnowHigh",
+    "monthDeepSnowLow",
+    "monthMax3hSnow",
+    "monthMax6hSnow",
+    "monthMax12hSnow",
+    "monthMax24hSnow",
+    "monthMax48hSnow",
+    "monthMax72hSnow",
   ];
 
   // 「日数」系（気温の○日など）
