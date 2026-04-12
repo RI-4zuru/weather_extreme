@@ -5,6 +5,7 @@ const topRankAlert = document.getElementById("topRankAlert");
 const rankInBadge = document.getElementById("rankInBadge");
 const observedLatestAtEl = document.getElementById("observedLatestAt");
 const liveSummaryBody = document.getElementById("liveSummaryBody");
+const liveSummarySection = document.getElementById("liveSummarySection");
 const elementPanel = document.getElementById("elementPanel");
 const elementPanelToggle = document.getElementById("elementPanelToggle");
 const statusBox = document.getElementById("statusBox");
@@ -192,6 +193,7 @@ function saveUIState() {
       annualElement: getSavedAnnualElementKey(),
       monthlyElement: getSavedMonthlyElementKey(),
       elementPanelOpen: isElementPanelOpen(),
+      liveSummaryOpen: isLiveSummaryOpen(),
       scrollY: window.scrollY || 0,
     };
     localStorage.setItem(UI_STATE_STORAGE_KEY, JSON.stringify(state));
@@ -205,6 +207,11 @@ function isElementPanelOpen() {
   return !elementPanel.classList.contains("collapsed");
 }
 
+function isLiveSummaryOpen() {
+  if (!liveSummarySection) return true;
+  return !!liveSummarySection.open;
+}
+
 function setElementPanelOpen(open) {
   if (!elementPanel) return;
   if (open) {
@@ -215,6 +222,11 @@ function setElementPanelOpen(open) {
   if (elementPanelToggle) {
     elementPanelToggle.setAttribute("aria-expanded", String(open));
   }
+}
+
+function setLiveSummaryOpen(open) {
+  if (!liveSummarySection) return;
+  liveSummarySection.open = !!open;
 }
 
 function restoreScrollPosition(force = false) {
@@ -283,6 +295,7 @@ function updateSavedElementKeyForCurrentMonth(selectedKey) {
   saved.pref = prefSelect?.value || saved.pref || "";
   saved.month = monthSelect?.value || saved.month || "all";
   saved.elementPanelOpen = isElementPanelOpen();
+  saved.liveSummaryOpen = isLiveSummaryOpen();
   saved.scrollY = window.scrollY || 0;
 
   try {
@@ -492,8 +505,11 @@ function renderTableRows(rows) {
         `;
       } else {
         const classes = ["rank-cell"];
-        if (rank.highlightLive) classes.push("live-in-rank");
-        if (rank.highlightWithinYear) classes.push("within-year");
+        if (rank.highlightLive) {
+          classes.push("live-in-rank");
+        } else if (rank.highlightWithinYear) {
+          classes.push("within-year");
+        }
 
         td.className = classes.join(" ");
         td.innerHTML = `
@@ -535,7 +551,7 @@ function getRankIcon(rank) {
   if (rank === 1) return "👑";
   if (rank === 2) return "🥈";
   if (rank === 3) return "🥉";
-  return "•";
+  return "";
 }
 
 function renderLiveSummaryColumn(title, items, monthType) {
@@ -554,7 +570,10 @@ function renderLiveSummaryColumn(title, items, monthType) {
       <div class="live-summary-list scrollable">
         ${items
           .map((item) => {
-            const monthValue = monthType === "all" ? "all" : String(monthSelect.value === "all" ? new Date().getMonth() + 1 : monthSelect.value);
+            const monthValue =
+              monthType === "all"
+                ? "all"
+                : String(monthSelect.value === "all" ? new Date().getMonth() + 1 : monthSelect.value);
             const rankNum = Number(item.rank || 0);
 
             return `
@@ -563,13 +582,13 @@ function renderLiveSummaryColumn(title, items, monthType) {
                 class="live-summary-item rank-${rankNum}"
                 onclick="jumpToRanking('${escapeJs(item.elementKey || "")}', '${escapeJs(monthValue)}')"
               >
-                <div class="rank-icon">${escapeHtml(getRankIcon(rankNum))}</div>
+                <div class="rank-icon ${rankNum >= 4 ? "empty" : ""}">${escapeHtml(getRankIcon(rankNum))}</div>
                 <div class="live-summary-rank">${escapeHtml(String(item.rank || ""))}位</div>
                 <div class="live-summary-main">
                   <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
-                  <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
                 </div>
                 <div class="live-summary-value">${escapeHtml(formatValue(item.value))}</div>
+                <div class="live-summary-station">${escapeHtml(item.stationName || "")}</div>
               </button>
             `;
           })
@@ -819,6 +838,14 @@ function bindElementPanelToggle() {
   });
 }
 
+function bindLiveSummaryPersistence() {
+  if (!liveSummarySection) return;
+
+  liveSummarySection.addEventListener("toggle", () => {
+    saveUIState();
+  });
+}
+
 async function init() {
   makeTableHeader();
   await loadConfigs();
@@ -839,7 +866,12 @@ async function init() {
   const panelOpen = typeof saved?.elementPanelOpen === "boolean" ? saved.elementPanelOpen : true;
   setElementPanelOpen(panelOpen);
 
+  const liveSummaryOpen =
+    typeof saved?.liveSummaryOpen === "boolean" ? saved.liveSummaryOpen : true;
+  setLiveSummaryOpen(liveSummaryOpen);
+
   bindElementPanelToggle();
+  bindLiveSummaryPersistence();
 
   regionSelect.addEventListener("change", () => {
     const savedNow = loadUIState();
