@@ -32,9 +32,7 @@ const FALLBACK_DEFAULTS = {
 
 const UI_STATE_STORAGE_KEY = "weatherExtremeUIState_v1";
 
-// 実況差し込み済みランキングを表示
 const BASE_RANKING_DIR = "./data";
-// 上部の実況ランクイン一覧
 const LIVE_DATA_DIR = "./data";
 
 function escapeHtml(value) {
@@ -194,6 +192,8 @@ function saveUIState() {
       monthlyElement: getSavedMonthlyElementKey(),
       elementPanelOpen: isElementPanelOpen(),
       liveSummaryOpen: isLiveSummaryOpen(),
+      liveSummaryAnnualCollapsed: isLiveSummaryColumnCollapsed("annual"),
+      liveSummaryMonthlyCollapsed: isLiveSummaryColumnCollapsed("monthly"),
       scrollY: window.scrollY || 0,
     };
     localStorage.setItem(UI_STATE_STORAGE_KEY, JSON.stringify(state));
@@ -296,6 +296,8 @@ function updateSavedElementKeyForCurrentMonth(selectedKey) {
   saved.month = monthSelect?.value || saved.month || "all";
   saved.elementPanelOpen = isElementPanelOpen();
   saved.liveSummaryOpen = isLiveSummaryOpen();
+  saved.liveSummaryAnnualCollapsed = isLiveSummaryColumnCollapsed("annual");
+  saved.liveSummaryMonthlyCollapsed = isLiveSummaryColumnCollapsed("monthly");
   saved.scrollY = window.scrollY || 0;
 
   try {
@@ -554,10 +556,54 @@ function getRankIcon(rank) {
   return "";
 }
 
+function isLiveSummaryColumnCollapsed(type) {
+  const col = liveSummaryBody?.querySelector(`.live-summary-col[data-col="${type}"]`);
+  if (!col) return false;
+  return col.classList.contains("is-collapsed");
+}
+
+function setLiveSummaryColumnCollapsed(type, collapsed) {
+  const col = liveSummaryBody?.querySelector(`.live-summary-col[data-col="${type}"]`);
+  if (!col) return;
+  col.classList.toggle("is-collapsed", !!collapsed);
+}
+
+function bindLiveSummaryColumnToggle() {
+  const titles = liveSummaryBody?.querySelectorAll(".live-summary-col > .live-summary-title");
+  if (!titles) return;
+
+  titles.forEach((titleEl) => {
+    titleEl.addEventListener("click", () => {
+      if (window.innerWidth > 900) return;
+
+      const parent = titleEl.closest(".live-summary-col");
+      if (!parent) return;
+
+      parent.classList.toggle("is-collapsed");
+      saveUIState();
+    });
+  });
+}
+
+function applySavedLiveSummaryColumnState() {
+  const saved = loadUIState();
+  if (!saved) return;
+
+  if (window.innerWidth <= 900) {
+    setLiveSummaryColumnCollapsed("annual", !!saved.liveSummaryAnnualCollapsed);
+    setLiveSummaryColumnCollapsed("monthly", !!saved.liveSummaryMonthlyCollapsed);
+  } else {
+    setLiveSummaryColumnCollapsed("annual", false);
+    setLiveSummaryColumnCollapsed("monthly", false);
+  }
+}
+
 function renderLiveSummaryColumn(title, items, monthType) {
+  const colType = monthType === "all" ? "annual" : "monthly";
+
   if (!items.length) {
     return `
-      <div class="live-summary-col">
+      <div class="live-summary-col" data-col="${escapeHtml(colType)}">
         <div class="live-summary-title">${escapeHtml(title)}</div>
         <div class="live-summary-empty">該当なし</div>
       </div>
@@ -565,7 +611,7 @@ function renderLiveSummaryColumn(title, items, monthType) {
   }
 
   return `
-    <div class="live-summary-col">
+    <div class="live-summary-col" data-col="${escapeHtml(colType)}">
       <div class="live-summary-title">${escapeHtml(title)}</div>
       <div class="live-summary-list scrollable">
         ${items
@@ -575,6 +621,7 @@ function renderLiveSummaryColumn(title, items, monthType) {
                 ? "all"
                 : String(monthSelect.value === "all" ? new Date().getMonth() + 1 : monthSelect.value);
             const rankNum = Number(item.rank || 0);
+            const rankIcon = getRankIcon(rankNum);
 
             return `
               <button
@@ -582,7 +629,7 @@ function renderLiveSummaryColumn(title, items, monthType) {
                 class="live-summary-item rank-${rankNum}"
                 onclick="jumpToRanking('${escapeJs(item.elementKey || "")}', '${escapeJs(monthValue)}')"
               >
-                <div class="rank-icon ${rankNum >= 4 ? "empty" : ""}">${escapeHtml(getRankIcon(rankNum))}</div>
+                <div class="rank-icon ${rankIcon ? "" : "empty"}">${escapeHtml(rankIcon)}</div>
                 <div class="live-summary-rank">${escapeHtml(String(item.rank || ""))}位</div>
                 <div class="live-summary-main">
                   <div class="live-summary-element">${escapeHtml(item.elementLabel || item.elementKey || "")}</div>
@@ -634,6 +681,9 @@ function renderLiveSummary(summary) {
     </div>
   `;
 
+  bindLiveSummaryColumnToggle();
+  applySavedLiveSummaryColumnState();
+
   const hasAny = annualSorted.length > 0 || monthlySorted.length > 0;
   const hasTop1 =
     annualSorted.some((item) => Number(item.rank) === 1) ||
@@ -661,16 +711,18 @@ async function loadLiveSummary(prefKey) {
     console.warn("live-summary.json がまだ無いため、実況一覧は空表示にします。", err);
     liveSummaryBody.innerHTML = `
       <div class="live-summary-grid">
-        <div class="live-summary-col">
+        <div class="live-summary-col" data-col="annual">
           <div class="live-summary-title">通年</div>
           <div class="live-summary-empty">該当なし</div>
         </div>
-        <div class="live-summary-col">
+        <div class="live-summary-col" data-col="monthly">
           <div class="live-summary-title">当月</div>
           <div class="live-summary-empty">該当なし</div>
         </div>
       </div>
     `;
+    bindLiveSummaryColumnToggle();
+    applySavedLiveSummaryColumnState();
     setBadgeVisible(rankInBadge, false);
     setBadgeVisible(topRankAlert, false);
     observedLatestAtEl.textContent = "-";
@@ -845,6 +897,10 @@ function bindLiveSummaryPersistence() {
     saveUIState();
   });
 }
+
+window.addEventListener("resize", () => {
+  applySavedLiveSummaryColumnState();
+});
 
 async function init() {
   makeTableHeader();
