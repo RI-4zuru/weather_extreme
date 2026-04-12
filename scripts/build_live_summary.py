@@ -4,7 +4,6 @@ from typing import Any, Dict, List
 from weather_common import ensure_dir, read_json_file, write_json
 
 PUBLIC_DIR = "data"
-TARGET_PREF_KEYS = {"nara"}
 
 
 def load_manifest() -> Dict[str, Any]:
@@ -20,7 +19,6 @@ def load_elements_config() -> Dict[str, str]:
         return {}
 
     data = read_json_file(path)
-
     label_map: Dict[str, str] = {}
 
     for item in data.get("annualElements", []):
@@ -39,8 +37,12 @@ def load_elements_config() -> Dict[str, str]:
 
 
 def normalize_pref_keys(prefectures_value: Any) -> List[str]:
-    result: List[str] = []
+    # manifest["prefectures"] が dict の場合
+    if isinstance(prefectures_value, dict):
+        return list(prefectures_value.keys())
 
+    # 旧形式の list の場合
+    result: List[str] = []
     if not isinstance(prefectures_value, list):
         return result
 
@@ -55,7 +57,21 @@ def normalize_pref_keys(prefectures_value: Any) -> List[str]:
     return result
 
 
-def collect_live_items_from_pref(pref_key: str, element_label_map: Dict[str, str]) -> Dict[str, List[Dict[str, Any]]]:
+def sorted_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    return sorted(
+        items,
+        key=lambda x: (
+            str(x.get("elementLabel", "")),
+            int(x.get("rank", 999)),
+            str(x.get("stationName", "")),
+        ),
+    )
+
+
+def collect_live_items_from_pref(
+    pref_key: str,
+    element_label_map: Dict[str, str],
+) -> Dict[str, List[Dict[str, Any]]]:
     pref_dir = os.path.join(PUBLIC_DIR, pref_key)
     if not os.path.isdir(pref_dir):
         return {"annualItems": [], "monthlyItems": []}
@@ -68,8 +84,6 @@ def collect_live_items_from_pref(pref_key: str, element_label_map: Dict[str, str
             continue
         if file_name == "live-summary.json":
             continue
-
-        # 例: dailyPrecip-all.json / dailyPrecip-4.json
         if "-" not in file_name:
             continue
 
@@ -91,7 +105,6 @@ def collect_live_items_from_pref(pref_key: str, element_label_map: Dict[str, str
 
             ranks = row.get("ranks", [])
             rank_index = int(live_rank) - 1
-
             if rank_index < 0 or rank_index >= len(ranks):
                 continue
 
@@ -106,6 +119,9 @@ def collect_live_items_from_pref(pref_key: str, element_label_map: Dict[str, str
                 "observedLatestAt": observed_latest_at,
             }
 
+            if "windDirection" in rank_data:
+                item["windDirection"] = rank_data.get("windDirection", "")
+
             if month_part == "all":
                 annual_items.append(item)
             else:
@@ -117,20 +133,12 @@ def collect_live_items_from_pref(pref_key: str, element_label_map: Dict[str, str
     }
 
 
-def sorted_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    return sorted(
-        items,
-        key=lambda x: (
-            str(x.get("elementLabel", "")),
-            int(x.get("rank", 999)),
-            str(x.get("stationName", "")),
-        ),
-    )
-
-
-def build_summary(pref_key: str, observed_latest_at: str, element_label_map: Dict[str, str]) -> Dict[str, Any]:
+def build_summary(
+    pref_key: str,
+    observed_latest_at: str,
+    element_label_map: Dict[str, str],
+) -> Dict[str, Any]:
     collected = collect_live_items_from_pref(pref_key, element_label_map)
-
     return {
         "prefecture": pref_key,
         "observedLatestAt": observed_latest_at,
@@ -153,11 +161,6 @@ def main() -> None:
     element_label_map = load_elements_config()
 
     pref_keys = normalize_pref_keys(manifest.get("prefectures", []))
-    pref_keys = [k for k in pref_keys if k in TARGET_PREF_KEYS]
-
-    if not pref_keys:
-        pref_keys = ["nara"]
-
     observed_latest_at = manifest.get("observedLatestAt", "")
 
     for pref_key in pref_keys:
@@ -165,7 +168,6 @@ def main() -> None:
         ensure_dir(pref_dir)
 
         summary = build_summary(pref_key, observed_latest_at, element_label_map)
-
         output_path = os.path.join(pref_dir, "live-summary.json")
         write_json(output_path, summary)
         print(f"wrote: {output_path}")
