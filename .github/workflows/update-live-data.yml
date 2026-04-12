@@ -28,7 +28,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate public data from data_base
+      # 改良1:
+      # 極値ランキングの再生成はここでは行わない
+      # 実況更新だけを担当させる
+      - name: Generate public live data from data_base
         run: python scripts/update_live.py
 
       - name: Show data manifest
