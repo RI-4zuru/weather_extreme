@@ -1,6 +1,6 @@
 {
   "prefecture": "osaka",
-  "observedLatestAt": "2026-04-13T02:50:00+09:00",
+  "observedLatestAt": "2026-04-13T04:40:00+09:00",
   "annualItems": [
     {
       "rank": 2,
@@ -9,7 +9,7 @@
       "stationName": "生駒山",
       "value": 17,
       "date": "2026年4月13日（令和8年）",
-      "observedLatestAt": "2026-04-13T02:50:00+09:00"
+      "observedLatestAt": "2026-04-13T04:40:00+09:00"
     }
   ],
   "monthlyItems": [
@@ -20,7 +20,7 @@
       "stationName": "生駒山",
       "value": 17,
       "date": "2026年4月13日（令和8年）",
-      "observedLatestAt": "2026-04-13T02:50:00+09:00"
+      "observedLatestAt": "2026-04-13T04:40:00+09:00"
     }
   ],
   "badgeMode": "top1",
