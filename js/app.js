@@ -21,6 +21,7 @@ let refreshTimer = null;
 let restoreScrollPending = false;
 let restoredInitialScroll = false;
 let lastObservedLatestAt = "";
+let currentLiveStationOrderMap = new Map();
 
 const FALLBACK_DEFAULTS = {
   region: "近畿",
@@ -545,18 +546,26 @@ function buildElementOrderMap() {
 }
 
 function buildStationOrderMap() {
-  const pref = getSelectedPrefMeta();
-  const stationOrderMap = new Map();
+  return currentLiveStationOrderMap;
+}
 
-  const stations = Array.isArray(pref?.stations) ? pref.stations : [];
-  stations.forEach((station, index) => {
-    const name = station?.stationName;
-    if (name && !stationOrderMap.has(name)) {
-      stationOrderMap.set(name, index);
-    }
-  });
+async function loadLiveStationOrder(prefKey) {
+  currentLiveStationOrderMap = new Map();
 
-  return stationOrderMap;
+  try {
+    const liveDebug = await fetchJson(`${LIVE_DATA_DIR}/live/${prefKey}.json`);
+    const stations = Array.isArray(liveDebug?.stations) ? liveDebug.stations : [];
+
+    stations.forEach((station, index) => {
+      const name = station?.stationName;
+      if (name && !currentLiveStationOrderMap.has(name)) {
+        currentLiveStationOrderMap.set(name, index);
+      }
+    });
+  } catch (err) {
+    console.warn("地点順読込に失敗したため、地点順ソートは無効化します。", err);
+    currentLiveStationOrderMap = new Map();
+  }
 }
 
 function normalizeLiveItemsByObservedDate(items, observedLatestAt) {
@@ -729,6 +738,7 @@ function renderLiveSummary(summary) {
 
 async function loadLiveSummary(prefKey) {
   try {
+    await loadLiveStationOrder(prefKey);
     const summary = await fetchJson(`${LIVE_DATA_DIR}/${prefKey}/live-summary.json`);
     renderLiveSummary(summary);
   } catch (err) {
