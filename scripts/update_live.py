@@ -21,6 +21,7 @@ from weather_common import (
 
 BASE_DIR = "data_base"
 PUBLIC_DIR = "data"
+LIVE_DEBUG_DIR = os.path.join(PUBLIC_DIR, "live")
 
 # 近畿全体を対象
 TARGET_PREF_KEYS = {
@@ -74,9 +75,6 @@ def load_base_rows(pref_key: str, element_key: str, month: str):
 
 
 def normalize_base_ranks(base_row: dict):
-    """
-    data_base 側の rows は ranks の場合も records の場合もあり得るため吸収する。
-    """
     ranks = base_row.get("ranks")
     if isinstance(ranks, list):
         return ranks
@@ -108,10 +106,6 @@ def build_public_row_from_base(base_row: dict) -> dict:
 
 
 def should_show_live(month: str, latest_dt: datetime) -> bool:
-    """
-    通年(all)には常に反映。
-    月別は今月のファイルにだけ反映。
-    """
     return month == "all" or month == str(latest_dt.month)
 
 
@@ -350,9 +344,6 @@ def merge_live_into_ranks(base_row: dict, live_info: dict, direction: str, lates
 
 
 def format_dual_ymd_from_raw(raw_date: str) -> str:
-    """
-    既存表示に合わせて YYYY年M月D日（和暦）形式へ変換
-    """
     try:
         dt = parse_date_ymd(raw_date)
     except Exception:
@@ -382,8 +373,94 @@ def format_dual_ymd_from_raw(raw_date: str) -> str:
     return f"{year}年{month}月{day}日（{era_name}{era_year_text}年）"
 
 
+def build_station_live_debug(station: dict, stats: dict):
+    def item_of(stat_key: str):
+        data = stats.get(stat_key)
+        if not data:
+            return None
+        return {
+            "value": trim_number(data["value"]),
+            "observedAt": data["obs_dt"].isoformat(),
+        }
+
+    return {
+        "stationName": station.get("stationName", ""),
+        "amedasCode": station.get("amedasCode", ""),
+        "values": {
+            "dailyMaxTempHigh": item_of("temp_max"),
+            "dailyMaxTempLow": item_of("temp_max"),
+            "dailyMinTempHigh": item_of("temp_min"),
+            "dailyMinTempLow": item_of("temp_min"),
+            "max10mPrecip": item_of("precip10m_max"),
+            "monthMax1h10mPrecip": item_of("precip1h_max"),
+            "monthMax3hPrecip": item_of("precip3h_max"),
+            "monthMax24hPrecip": item_of("precip24h_max"),
+            "dailyMaxWind": item_of("wind_max"),
+            "monthMax6hSnow": item_of("snow6h_max"),
+            "monthMax12hSnow": item_of("snow12h_max"),
+            "monthMax24hSnow": item_of("snow24h_max"),
+            "dailyMinHumidity": item_of("humidity_min"),
+            "dailyMinSeaLevelPressure": item_of("sea_level_pressure_min"),
+        },
+    }
+
+
+def write_pref_live_debug(pref_key: str, pref_name: str, stations: list, live_cache: dict, latest_obs_iso: str, generated_iso: str):
+    ensure_dir(LIVE_DEBUG_DIR)
+
+    items = []
+
+    for station in stations:
+        amedas_code = station.get("amedasCode")
+        if not amedas_code:
+            items.append(
+                {
+                    "stationName": station.get("stationName", ""),
+                    "amedasCode": "",
+                    "error": "amedasCode not found",
+                }
+            )
+            continue
+
+        cache = live_cache.get(amedas_code)
+        if not cache:
+            items.append(
+                {
+                    "stationName": station.get("stationName", ""),
+                    "amedasCode": amedas_code,
+                    "error": "live cache not found",
+                }
+            )
+            continue
+
+        if not cache.get("ok"):
+            items.append(
+                {
+                    "stationName": station.get("stationName", ""),
+                    "amedasCode": amedas_code,
+                    "error": cache.get("error", "unknown error"),
+                }
+            )
+            continue
+
+        items.append(build_station_live_debug(station, cache["stats"]))
+
+    output = {
+        "updatedAt": generated_iso,
+        "observedLatestAt": latest_obs_iso,
+        "prefecture": pref_name,
+        "prefKey": pref_key,
+        "stations": items,
+    }
+
+    output_path = os.path.join(LIVE_DEBUG_DIR, f"{pref_key}.json")
+    write_json(output_path, output)
+    print(f"wrote: {output_path}")
+
+
 def main() -> None:
     ensure_dir(PUBLIC_DIR)
+    ensure_dir(LIVE_DEBUG_DIR)
 
     prefectures = load_prefecture_configs()
     target_prefs = [p for p in prefectures if p["key"] in TARGET_PREF_KEYS]
@@ -402,6 +479,25 @@ def main() -> None:
 
         station_map = {s["stationName"]: s for s in stations}
         live_cache = {}
+
+        for station in stations:
+            amedas_code = station.get("amedasCode")
+            if not amedas_code:
+                continue
+
+            if amedas_code in live_cache:
+                continue
+
+            try:
+                live_cache[amedas_code] = {
+                    "ok": True,
+                    "stats": collect_station_live_stats(amedas_code, latest_dt),
+                }
+            except Exception as err:
+                live_cache[amedas_code] = {
+                    "ok": False,
+                    "error": str(err),
+                }
 
         public_pref_dir = os.path.join(PUBLIC_DIR, pref_key)
         ensure_dir(public_pref_dir)
@@ -440,19 +536,12 @@ def main() -> None:
                         rows.append(row)
                         continue
 
-                    if amedas_code not in live_cache:
-                        try:
-                            live_cache[amedas_code] = {
-                                "ok": True,
-                                "stats": collect_station_live_stats(amedas_code, latest_dt),
-                            }
-                        except Exception as err:
-                            live_cache[amedas_code] = {
-                                "ok": False,
-                                "error": str(err),
-                            }
+                    cache = live_cache.get(amedas_code)
+                    if not cache:
+                        row["liveError"] = "live cache not found"
+                        rows.append(row)
+                        continue
 
-                    cache = live_cache[amedas_code]
                     if not cache["ok"]:
                         row["liveError"] = cache["error"]
                         rows.append(row)
@@ -484,6 +573,15 @@ def main() -> None:
                 output_path = os.path.join(public_pref_dir, f"{element_key}-{month}.json")
                 write_json(output_path, output)
                 print(f"wrote: {output_path}")
+
+        write_pref_live_debug(
+            pref_key=pref_key,
+            pref_name=pref_name,
+            stations=stations,
+            live_cache=live_cache,
+            latest_obs_iso=latest_obs_iso,
+            generated_iso=generated_iso,
+        )
 
     manifest = build_dir_manifest(PUBLIC_DIR, generated_iso, target_prefs)
     manifest["observedLatestAt"] = latest_obs_iso
