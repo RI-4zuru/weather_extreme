@@ -270,6 +270,7 @@ async function refresh() {
       liveSupportBadgeEl: liveSupportBadge,
       prefName: prefMeta.name,
       month: monthSelect.value,
+      elementKey: elementMeta.key,
       elementLabel: elementMeta.shortLabel || elementMeta.label || elementMeta.key,
       rowCount: rows.length,
       latestObservationTime,
