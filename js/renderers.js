@@ -157,6 +157,7 @@ export function renderStatus({
   liveSupportBadgeEl,
   prefName,
   month,
+  elementKey,
   elementLabel,
   rowCount,
   latestObservationTime,
@@ -172,7 +173,7 @@ export function renderStatus({
   parts.push(`地点数: ${rowCount}`);
   parts.push(`要素: ${elementLabel}`);
 
-  const description = ELEMENT_DESCRIPTIONS[elementLabel] || ELEMENT_DESCRIPTIONS[Object.keys(ELEMENT_DESCRIPTIONS).find((key) => key === elementLabel)] || "";
+  const description = ELEMENT_DESCRIPTIONS[elementKey] || "";
   if (description) {
     parts.push(description);
   }
