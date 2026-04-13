@@ -1,97 +1,140 @@
+import { PATHS } from "./constants.js";
 import { state } from "./state.js";
-import { fetchJsonWithMeta } from "./utils.js";
+import { fetchJson, normalizeStationName } from "./utils.js";
 
 export async function loadPrefectures() {
-  const data = await fetchJsonWithMeta("./config/prefectures.json");
-  state.prefecturesData = data.prefectures || [];
-  return state.prefecturesData;
+  const data = await fetchJson(PATHS.prefectures);
+  state.prefectures = data.prefectures || [];
+  return state.prefectures;
+}
+
+export async function loadElements() {
+  const data = await fetchJson(PATHS.elements);
+  state.elements = data;
+  return data;
 }
 
 export async function loadManifest() {
-  const debug = state.debugState.manifest;
-
-  debug.ok = false;
-  debug.error = "";
-  debug.observationTime = "";
-  debug.generatedAt = "";
-
   try {
-    const data = await fetchJsonWithMeta("./data/manifest.json");
-    state.manifestCache = data;
-
-    debug.ok = true;
-    debug.observationTime =
-      data.observationTime || data.baseTime || data.updatedAt || "";
-    debug.generatedAt = data.generatedAt || "";
-
+    const data = await fetchJson(PATHS.manifest);
+    state.manifest = data;
     return data;
   } catch (error) {
-    state.manifestCache = null;
-    debug.error = error.message || String(error);
-    throw error;
+    state.manifest = null;
+    return null;
   }
 }
 
-export async function loadLiveSummaryData(prefKey) {
-  const path = `./data/${prefKey}/live-summary.json`;
-  const debug = state.debugState.liveSummary;
-
-  debug.path = path;
-  debug.ok = false;
-  debug.itemCount = 0;
-  debug.status = "";
-  debug.message = "";
-  debug.observationTime = "";
-  debug.generatedAt = "";
-  debug.error = "";
-
-  try {
-    const data = await fetchJsonWithMeta(path);
-
-    const items = data.items || [];
-    debug.ok = true;
-    debug.itemCount = items.length;
-    debug.status = data.status || "ok";
-    debug.message = data.message || "";
-    debug.observationTime =
-      data.observationTime || data.baseTime || data.updatedAt || "";
-    debug.generatedAt = data.generatedAt || "";
-
-    return data;
-  } catch (error) {
-    debug.error = error.message || String(error);
-    throw error;
+export async function loadStations(prefKey) {
+  if (state.stationConfigCache.has(prefKey)) {
+    return state.stationConfigCache.get(prefKey);
   }
+
+  const path = PATHS.stations(prefKey);
+  state.debug.stationsPath = path;
+  const raw = await fetchJson(path);
+  const stations = normalizeStations(raw);
+  const indexed = buildStationIndex(stations);
+  const payload = { stations, index: indexed };
+  state.stationConfigCache.set(prefKey, payload);
+  return payload;
 }
 
-export async function loadTableData(prefKey, elementKey, month) {
-  const path = `./data/${prefKey}/${elementKey}-${month}.json`;
-  const debug = state.debugState.table;
-
-  debug.path = path;
-  debug.ok = false;
-  debug.rowCount = 0;
-  debug.status = "";
-  debug.message = "";
-  debug.observationTime = "";
-  debug.generatedAt = "";
-  debug.error = "";
-
-  try {
-    const data = await fetchJsonWithMeta(path);
-
-    const rows = data.rows || [];
-    debug.ok = true;
-    debug.rowCount = rows.length;
-    debug.status = data.status || "ok";
-    debug.message = data.message || "";
-    debug.observationTime =
-      data.observationTime || data.baseTime || data.updatedAt || "";
-    debug.generatedAt = data.generatedAt || "";
-
-    return data;
-  } catch (error) {
-    debug.error = error.message || String(error);
-    throw error;
+export async function loadTable(prefKey, elementKey, month) {
+  const cacheKey = `${prefKey}|${elementKey}|${month}`;
+  if (state.tableCache.has(cacheKey)) {
+    return state.tableCache.get(cacheKey);
   }
+
+  const path = PATHS.table(prefKey, elementKey, month);
+  state.debug.tablePath = path;
+  const data = await fetchJson(path);
+  state.tableCache.set(cacheKey, data);
+  return data;
+}
+
+function normalizeStations(raw) {
+  const list = [];
+
+  const pushItem = (item) => {
+    if (!item || typeof item !== "object") return;
+
+    const code = String(
+      item.blockNo ??
+      item.amedasCode ??
+      item.stationCode ??
+      item.code ??
+      ""
+    ).trim();
+
+    const name =
+      item.name ??
+      item.stationName ??
+      item.kjName ??
+      item.label ??
+      "";
+
+    if (!code || !name) return;
+
+    list.push({
+      code,
+      name: String(name).trim(),
+      startDate: item.startDate ?? item.observedStart ?? item.beginDate ?? "",
+      raw: item,
+    });
+  };
+
+  if (Array.isArray(raw?.stations)) {
+    raw.stations.forEach(pushItem);
+  } else if (Array.isArray(raw)) {
+    raw.forEach(pushItem);
+  } else if (raw && typeof raw === "object") {
+    Object.values(raw).forEach((value) => {
+      if (Array.isArray(value)) {
+        value.forEach(pushItem);
+      } else if (value && typeof value === "object") {
+        pushItem(value);
+      }
+    });
+  }
+
+  return list;
+}
+
+function buildStationIndex(stations) {
+  const byNormalizedName = new Map();
+  const byCode = new Map();
+
+  for (const station of stations) {
+    byCode.set(station.code, station);
+    byNormalizedName.set(normalizeStationName(station.name), station);
+
+    const aliases = station.raw?.aliases || station.raw?.alias || [];
+    const aliasList = Array.isArray(aliases) ? aliases : [aliases];
+    for (const alias of aliasList) {
+      const key = normalizeStationName(alias);
+      if (key) byNormalizedName.set(key, station);
+    }
+  }
+
+  return { byNormalizedName, byCode };
+}
+
+export function findStationByRowName(rowStationName, stationIndex) {
+  const key = normalizeStationName(rowStationName);
+  return stationIndex.byNormalizedName.get(key) || null;
+}
+
+export function getElementListByMonth(month, elementsConfig) {
+  if (!elementsConfig) return [];
+  return month === "all"
+    ? (elementsConfig.annualElements || [])
+    : (elementsConfig.monthlyElements || []);
+}
+
+export function getDefaultElementKey(month, elementsConfig) {
+  if (!elementsConfig) return "";
+  return month === "all"
+    ? (elementsConfig.annualDefaultElement || "")
+    : (elementsConfig.monthlyDefaultElement || "");
 }
