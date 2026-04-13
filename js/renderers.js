@@ -1,282 +1,209 @@
-import { ELEMENT_DESCRIPTIONS, LIVE_SUMMARY_ORDER } from "./constants.js";
-import { state } from "./state.js";
+import { ELEMENT_DESCRIPTIONS, LIVE_SUPPORT_MODE_LABELS } from "./constants.js";
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
-export function makeHeader(tableHead) {
-  const cols = ["地点名 / 観測開始"];
-  for (let i = 1; i <= 10; i++) {
-    cols.push(`${i}位`);
+export function makeTableHead(tableHead) {
+  const headers = ["地点名 / 観測開始"];
+  for (let i = 1; i <= 10; i += 1) {
+    headers.push(`${i}位`);
   }
 
   tableHead.innerHTML = `
     <tr>
-      ${cols.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}
+      ${headers.map((label) => `<th>${escapeHtml(label)}</th>`).join("")}
     </tr>
   `;
 }
 
-export function getElementDescription(elementKey) {
-  return ELEMENT_DESCRIPTIONS[elementKey] || "この要素の説明は未設定です。";
-}
-
-export function normalizeRank(rank) {
-  if (rank === null || rank === undefined) return null;
-
-  if (typeof rank === "number") {
-    return Number.isFinite(rank) ? rank : null;
+export function renderElementPanel(elementPanel, elementList, selectedKey) {
+  if (!elementList.length) {
+    elementPanel.innerHTML = `<div class="empty-message">要素定義がありません。</div>`;
+    return;
   }
 
-  const text = String(rank).trim();
-  if (!text) return null;
-
-  const matched = text.match(/^\D*(\d{1,2})\D*$/);
-  if (!matched) return null;
-
-  const value = Number(matched[1]);
-  if (!Number.isFinite(value)) return null;
-
-  return value;
-}
-
-export function isValidRankItem(item) {
-  const rankValue = normalizeRank(item?.rank);
-  return rankValue !== null && rankValue >= 1 && rankValue <= 10;
-}
-
-export function isTopRankItem(item) {
-  const rankValue = normalizeRank(item?.rank);
-  return rankValue === 1;
-}
-
-export function getValidRankItems(items) {
-  if (!Array.isArray(items)) return [];
-  return items.filter((item) => isValidRankItem(item));
-}
-
-export function hasAnyRankIn(items) {
-  return getValidRankItems(items).length > 0;
-}
-
-export function renderDebugPanel(debugBodyEl, debugDetailsEl) {
-  if (!debugBodyEl || !debugDetailsEl) return;
-
-  const debugState = state.debugState;
-
-  const lines = [
-    ["地域", debugState.selectedRegion],
-    ["都道府県", `${debugState.selectedPrefName} (${debugState.selectedPref})`],
-    ["月", debugState.selectedMonth],
-    ["要素", `${debugState.selectedElementLabel} (${debugState.selectedElement})`],
-
-    ["manifest path", debugState.manifest.path],
-    ["manifest OK", String(debugState.manifest.ok)],
-    ["manifest observationTime", debugState.manifest.observationTime || "-"],
-    ["manifest generatedAt", debugState.manifest.generatedAt || "-"],
-    ["manifest error", debugState.manifest.error || "-"],
-
-    ["live-summary path", debugState.liveSummary.path || "-"],
-    ["live-summary OK", String(debugState.liveSummary.ok)],
-    ["live-summary itemCount", String(debugState.liveSummary.itemCount)],
-    ["live-summary status", debugState.liveSummary.status || "-"],
-    ["live-summary message", debugState.liveSummary.message || "-"],
-    ["live-summary observationTime", debugState.liveSummary.observationTime || "-"],
-    ["live-summary generatedAt", debugState.liveSummary.generatedAt || "-"],
-    ["live-summary error", debugState.liveSummary.error || "-"],
-
-    ["table path", debugState.table.path || "-"],
-    ["table OK", String(debugState.table.ok)],
-    ["table rowCount", String(debugState.table.rowCount)],
-    ["table status", debugState.table.status || "-"],
-    ["table message", debugState.table.message || "-"],
-    ["table observationTime", debugState.table.observationTime || "-"],
-    ["table generatedAt", debugState.table.generatedAt || "-"],
-    ["table error", debugState.table.error || "-"]
-  ];
-
-  debugBodyEl.innerHTML = `
-    <div class="debug-grid">
-      ${lines.map(([k, v]) => `
-        <div class="debug-key">${escapeHtml(k)}</div>
-        <div class="debug-value">${escapeHtml(v)}</div>
-      `).join("")}
-    </div>
-  `;
-
-  debugDetailsEl.hidden = false;
-}
-
-export function buildStatusText({
-  observationTime,
-  rowCount,
-  elementLabel,
-  elementDescription,
-  extraMessage
-}) {
-  const parts = [];
-
-  if (observationTime) {
-    parts.push(`更新時刻:${formatObservationLabel(observationTime)}`);
-  } else if (state.manifestCache?.observationTime || state.manifestCache?.baseTime || state.manifestCache?.updatedAt) {
-    const fallbackTime =
-      state.manifestCache.observationTime ||
-      state.manifestCache.baseTime ||
-      state.manifestCache.updatedAt;
-    parts.push(`更新時刻:${formatObservationLabel(fallbackTime)}`);
+  const grouped = new Map();
+  for (const item of elementList) {
+    const group = item.group || "その他";
+    if (!grouped.has(group)) grouped.set(group, []);
+    grouped.get(group).push(item);
   }
 
-  if (typeof rowCount === "number") {
-    parts.push(`地点数:${rowCount}`);
-  }
-  if (elementLabel) {
-    parts.push(`選択中要素:${elementLabel}`);
-  }
-  if (elementDescription) {
-    parts.push(`説明:${elementDescription}`);
-  }
-  if (extraMessage) {
-    parts.push(extraMessage);
-  }
-
-  return parts.join(" / ");
-}
-
-export function renderTable(tableBody, rows) {
-  tableBody.innerHTML = "";
-
-  for (const row of rows) {
-    const tr = document.createElement("tr");
-
-    const stationTd = document.createElement("td");
-    stationTd.className = "station-col";
-    stationTd.innerHTML = `
-      <div class="station-name">${escapeHtml(row.stationName || "-")}</div>
-      <div class="station-start">${renderDualLine(row.startDate || "-")}</div>
-    `;
-    tr.appendChild(stationTd);
-
-    for (let i = 0; i < 10; i++) {
-      const rank = row.ranks?.[i];
-      const td = document.createElement("td");
-
-      if (rank) {
-        const classes = ["rank-cell"];
-        if (rank.highlightLive) classes.push("live-in-rank");
-        if (rank.highlightWithinYear) classes.push("within-year");
-        td.className = classes.join(" ");
-
-        td.innerHTML = `
-          <div class="value">${escapeHtml(rank.value ?? "-")}</div>
-          <div class="date">${renderDualLine(rank.date || "-")}</div>
-        `;
-      } else {
-        td.className = "rank-cell";
-        td.innerHTML = `
-          <div class="value">-</div>
-          <div class="date">-</div>
-        `;
-      }
-
-      tr.appendChild(td);
-    }
-
-    tableBody.appendChild(tr);
-  }
-}
-
-export function renderTableMessage(tableBody, message) {
-  tableBody.innerHTML = `
-    <tr>
-      <td colspan="11">${escapeHtml(message)}</td>
-    </tr>
-  `;
-}
-
-export function renderLiveSummary(liveSummaryEl, items) {
-  const validItems = getValidRankItems(items);
-
-  if (validItems.length === 0) {
-    liveSummaryEl.innerHTML = `
-      <div class="live-summary-grid">
-        <div class="live-summary-column">
-          <div class="live-summary-column-title">通年</div>
-          <div class="live-summary-empty">該当なし</div>
+  elementPanel.innerHTML = [...grouped.entries()]
+    .map(([groupName, items]) => `
+      <section class="element-group">
+        <h3 class="element-group-title">${escapeHtml(groupName)}</h3>
+        <div class="element-button-grid">
+          ${items.map((item) => `
+            <button
+              type="button"
+              class="element-button ${item.key === selectedKey ? "active" : ""}"
+              data-element-key="${escapeHtml(item.key)}"
+            >
+              ${escapeHtml(item.shortLabel || item.label || item.key)}
+            </button>
+          `).join("")}
         </div>
-        <div class="live-summary-column">
-          <div class="live-summary-column-title">当月</div>
-          <div class="live-summary-empty">該当なし</div>
-        </div>
-      </div>
+      </section>
+    `)
+    .join("");
+}
+
+export function renderTable(tableBody, rows, elementKey) {
+  if (!rows.length) {
+    tableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="11">該当データがありません。</td>
+      </tr>
     `;
     return;
   }
 
-  const sorted = [...validItems].sort((a, b) => {
-    const oa = LIVE_SUMMARY_ORDER.indexOf(a.elementKey);
-    const ob = LIVE_SUMMARY_ORDER.indexOf(b.elementKey);
-    if (oa !== ob) return oa - ob;
+  tableBody.innerHTML = rows.map((row) => {
+    const live = row.liveCandidate || {};
+    const liveRank = live.rank;
+    const showLiveBadge = live.supported && Number.isFinite(live.value) && Number.isFinite(liveRank);
 
-    const rankA = normalizeRank(a.rank) ?? 9999;
-    const rankB = normalizeRank(b.rank) ?? 9999;
-    if (rankA !== rankB) return rankA - rankB;
+    const stationLiveBadge = showLiveBadge
+      ? `
+        <span class="station-live-badge ${liveRank === 1 ? "top1" : ""}">
+          実況: ${escapeHtml(String(liveRank))}位相当<br>
+          値: ${escapeHtml(String(live.value))}<br>
+          ${escapeHtml(formatObservationLabel(live.observedAt))}
+        </span>
+      `
+      : live.supported === false
+        ? `<span class="station-live-badge unsupported">実況判定未対応</span>`
+        : live.error
+          ? `<span class="station-live-badge unsupported">実況取得失敗</span>`
+          : "";
 
-    return String(a.stationName || "").localeCompare(String(b.stationName || ""), "ja");
-  });
+    const cells = [];
+    for (let i = 0; i < 10; i += 1) {
+      const rankItem = row.ranks?.[i];
+      if (!rankItem) {
+        cells.push(`
+          <td class="rank-cell">
+            <span class="rank-value">-</span>
+            <span class="rank-date">-</span>
+          </td>
+        `);
+        continue;
+      }
 
-  const overall = sorted.filter((item) => item.monthLabel === "通年");
-  const monthly = sorted.filter((item) => item.monthLabel !== "通年");
+      const isLiveTarget = liveRank === i + 1;
+      const isWithinYear = !!rankItem.highlightWithinYear;
 
-  const renderColumn = (title, data) => `
+      let cellClass = "rank-cell";
+      if (isLiveTarget && isWithinYear) {
+        cellClass += " live-and-year";
+      } else if (isLiveTarget) {
+        cellClass += " live-target";
+      } else if (isWithinYear) {
+        cellClass += " within-year";
+      }
+
+      cells.push(`
+        <td class="${cellClass}">
+          <span class="rank-value">${escapeHtml(String(rankItem.value ?? "-"))}</span>
+          <span class="rank-date">${renderDualLine(rankItem.date || "-")}</span>
+        </td>
+      `);
+    }
+
+    return `
+      <tr>
+        <td class="station-col">
+          <span class="station-name">${escapeHtml(row.stationName || "-")}</span>
+          <span class="start-date">${renderDualLine(row.startDate || "-")}</span>
+          ${stationLiveBadge}
+        </td>
+        ${cells.join("")}
+      </tr>
+    `;
+  }).join("");
+}
+
+export function renderLiveSummary(liveSummaryBody, annualItems, monthlyItems) {
+  const renderColumn = (title, items) => `
     <div class="live-summary-column">
-      <div class="live-summary-column-title">${escapeHtml(title)}</div>
+      <h3>${escapeHtml(title)}</h3>
       ${
-        data.length === 0
-          ? `<div class="live-summary-empty">該当なし</div>`
+        items.length === 0
+          ? `<div class="empty-message">該当なし</div>`
           : `
-            <div class="live-summary-scroll">
-              ${data.map((item) => {
-                const itemClass = isTopRankItem(item)
-                  ? "live-summary-item live-summary-item-top1"
-                  : "live-summary-item live-summary-item-rankin";
-
-                return `
-                  <div class="${itemClass}">
-                    <div class="live-summary-line">
-                      <span class="live-summary-token live-summary-rank">${escapeHtml(String(normalizeRank(item.rank)))}位</span>
-                      <span class="live-summary-token live-summary-station">${escapeHtml(item.stationName || "-")}</span>
-                      <span class="live-summary-token live-summary-element">${escapeHtml(item.elementLabel || "-")}</span>
-                      <span class="live-summary-token live-summary-value">${escapeHtml(String(item.value ?? "-"))}</span>
-                      <span class="live-summary-token live-summary-date">${escapeHtml(item.date || "-")}</span>
-                      <span class="live-summary-token live-summary-month">${escapeHtml(item.monthLabel || "")}</span>
-                    </div>
-                  </div>
-                `;
-              }).join("")}
+            <div class="live-summary-list">
+              ${items.map((item) => `
+                <div class="live-summary-item ${item.top1 ? "top1" : ""}">
+                  <span class="rank">${escapeHtml(String(item.rank))}位</span>
+                  ${escapeHtml(item.stationName)} / ${escapeHtml(item.elementLabel)} / ${escapeHtml(String(item.value))}
+                  <span class="meta">${escapeHtml(formatObservationLabel(item.observedAt))}</span>
+                </div>
+              `).join("")}
             </div>
           `
       }
     </div>
   `;
 
-  liveSummaryEl.innerHTML = `
-    <div class="live-summary-grid">
-      ${renderColumn("通年", overall)}
-      ${renderColumn("当月", monthly)}
-    </div>
+  liveSummaryBody.innerHTML = `
+    ${renderColumn("通年", annualItems)}
+    ${renderColumn("当月", monthlyItems)}
   `;
 }
 
-export function renderLiveSummaryMessage(liveSummaryEl, message) {
-  liveSummaryEl.innerHTML = `
-    <div class="live-summary-empty">${escapeHtml(message)}</div>
-  `;
+export function renderStatus({
+  tableTitleEl,
+  statusTextEl,
+  observedLatestAtEl,
+  liveSupportBadgeEl,
+  prefName,
+  month,
+  elementLabel,
+  rowCount,
+  latestObservationTime,
+  liveSupportMode,
+  supportMessage,
+}) {
+  tableTitleEl.textContent = `${prefName}/${month === "all" ? "通年" : `${month}月`}/${elementLabel}`;
+  observedLatestAtEl.textContent = latestObservationTime
+    ? formatObservationLabel(latestObservationTime)
+    : "実況未取得";
+
+  const parts = [];
+  parts.push(`地点数: ${rowCount}`);
+  parts.push(`要素: ${elementLabel}`);
+
+  const description = ELEMENT_DESCRIPTIONS[elementLabel] || ELEMENT_DESCRIPTIONS[Object.keys(ELEMENT_DESCRIPTIONS).find((key) => key === elementLabel)] || "";
+  if (description) {
+    parts.push(description);
+  }
+  if (supportMessage) {
+    parts.push(supportMessage);
+  }
+
+  statusTextEl.textContent = parts.join(" / ");
+  liveSupportBadgeEl.textContent = LIVE_SUPPORT_MODE_LABELS[liveSupportMode] || "実況判定: 不明";
 }
 
-export function renderTopRankAlert(topRankAlertEl, hasTopRank) {
-  if (!topRankAlertEl) return;
-  topRankAlertEl.hidden = !hasTopRank;
-}
+export function renderDebug(debugGrid, debug) {
+  const entries = [
+    ["地域", debug.selectedRegion],
+    ["都道府県", `${debug.selectedPrefName} (${debug.selectedPrefKey})`],
+    ["月", debug.selectedMonth],
+    ["要素", `${debug.selectedElementLabel} (${debug.selectedElementKey})`],
+    ["stations path", debug.stationsPath],
+    ["table path", debug.tablePath],
+    ["table rowCount", String(debug.tableRowCount)],
+    ["latest observation", debug.latestObservationTime || "-"],
+    ["point fetch count", String(debug.pointFetchCount)],
+    ["summary item count", String(debug.summaryItemCount)],
+    ["live support", debug.liveSupported || "-"],
+    ["live error", debug.liveError || "-"],
+  ];
 
-export function renderRankInBadge(rankInBadgeEl, hasRankIn) {
-  if (!rankInBadgeEl) return;
-  rankInBadgeEl.hidden = !hasRankIn;
+  debugGrid.innerHTML = entries
+    .map(([key, value]) => `
+      <div class="debug-key">${escapeHtml(key)}</div>
+      <div class="debug-value">${escapeHtml(value || "-")}</div>
+    `)
+    .join("");
 }
