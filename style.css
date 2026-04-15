@@ -199,6 +199,10 @@ select {
   gap: 12px;
 }
 
+.element-panel[hidden] {
+  display: none !important;
+}
+
 .element-group {
   border: 1px solid var(--border);
   border-radius: 12px;
