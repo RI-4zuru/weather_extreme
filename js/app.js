@@ -263,6 +263,20 @@ async function refresh() {
 
     state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
 
+    // 要素選択
+elementPanelToggle.addEventListener("click", () => {
+  const nextHidden = !elementPanel.hidden;
+  elementPanel.hidden = nextHidden;
+  elementPanelToggle.textContent = nextHidden ? "要素選択を開く" : "要素選択を閉じる";
+});
+
+// 実況サマリー
+summaryToggle.addEventListener("click", () => {
+  const nextHidden = !liveSummaryBody.hidden;
+  liveSummaryBody.hidden = nextHidden;
+  summaryToggle.textContent = nextHidden ? "開く" : "閉じる";
+});
+
     renderTable(rankTableBody, decoratedRows);
     renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
     renderStatus({
