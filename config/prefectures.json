@@ -35,6 +35,30 @@
       "name": "和歌山県",
       "region": "近畿",
       "stationsFile": "config/stations/wakayama.json"
+    },
+    {
+      "key": "tokushima",
+      "name": "徳島県",
+      "region": "四国",
+      "stationsFile": "config/stations/tokushima.json"
+    },
+    {
+      "key": "kagawa",
+      "name": "香川県",
+      "region": "四国",
+      "stationsFile": "config/stations/kagawa.json"
+    },
+    {
+      "key": "ehime",
+      "name": "愛媛県",
+      "region": "四国",
+      "stationsFile": "config/stations/ehime.json"
+    },
+    {
+      "key": "kochi",
+      "name": "高知県",
+      "region": "四国",
+      "stationsFile": "config/stations/kochi.json"
     }
   ]
 }
