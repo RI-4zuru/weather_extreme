@@ -1,17 +1,19 @@
-import { ELEMENT_DESCRIPTIONS } from "./constants.js";
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
 export function makeTableHead(tableHead) {
-  const headers = ["地点名 / 観測開始"];
+  const headers = [];
+  headers.push(`
+    <th class="rank-head-station">
+      <span class="rank-head-station-main">地点名</span>
+      <span class="rank-head-station-sub">観測開始</span>
+    </th>
+  `);
+
   for (let i = 1; i <= 10; i += 1) {
-    headers.push(`${i}位`);
+    headers.push(`<th>${i}位</th>`);
   }
 
-  tableHead.innerHTML = `
-    <tr>
-      ${headers.map((label) => `<th>${escapeHtml(label)}</th>`).join("")}
-    </tr>
-  `;
+  tableHead.innerHTML = `<tr>${headers.join("")}</tr>`;
 }
 
 export function renderElementPanel(elementPanel, elementList, selectedKey) {
@@ -37,6 +39,7 @@ export function renderElementPanel(elementPanel, elementList, selectedKey) {
               type="button"
               class="element-button ${item.key === selectedKey ? "active" : ""}"
               data-element-key="${escapeHtml(item.key)}"
+              title="${escapeHtml(item.label || item.shortLabel || item.key)}"
             >
               ${escapeHtml(item.shortLabel || item.label || item.key)}
             </button>
@@ -157,30 +160,16 @@ export function renderStatus({
   observedLatestAtEl,
   prefName,
   month,
-  elementKey,
   elementLabel,
   rowCount,
   latestObservationTime,
-  supportMessage,
 }) {
   tableTitleEl.textContent = `${prefName}/${month === "all" ? "通年" : `${month}月`}/${elementLabel}`;
   observedLatestAtEl.textContent = latestObservationTime
     ? formatObservationLabel(latestObservationTime)
     : "実況未取得";
 
-  const parts = [];
-  parts.push(`地点数: ${rowCount}`);
-  parts.push(`要素: ${elementLabel}`);
-
-  const description = ELEMENT_DESCRIPTIONS[elementKey] || "";
-  if (description) {
-    parts.push(description);
-  }
-  if (supportMessage) {
-    parts.push(supportMessage);
-  }
-
-  statusTextEl.textContent = parts.join(" / ");
+  statusTextEl.textContent = `地点数: ${rowCount} / 要素: ${elementLabel}`;
 }
 
 export function renderDebug(debugGrid, debug) {
