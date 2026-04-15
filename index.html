@@ -61,7 +61,13 @@
 
   <main class="app-main">
     <section class="summary-section">
-      <div class="section-title-row">
+      <div
+        id="summaryHeader"
+        class="section-title-row section-title-row-clickable"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+      >
         <div class="summary-title-wrap">
           <h2>実況で10位以内に入った項目</h2>
           <div class="summary-badges">
@@ -70,9 +76,7 @@
           </div>
         </div>
 
-        <button id="summaryToggle" class="toggle-button toggle-button-small" type="button" aria-expanded="false">
-          開く
-        </button>
+        <div id="summaryChevron" class="summary-chevron" aria-hidden="true">▼</div>
       </div>
 
       <div id="liveSummaryBody" class="live-summary-grid" hidden>
