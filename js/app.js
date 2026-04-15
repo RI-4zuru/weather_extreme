@@ -22,8 +22,6 @@ import {
 import {
   buildLiveSummaryItems,
   decorateRowsWithLive,
-  hasAnyRankIn,
-  hasAnyTop1,
 } from "./ranking.js";
 import {
   makeTableHead,
@@ -77,7 +75,9 @@ async function main() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">初期化に失敗しました: ${error.message || String(error)}</td>
+        <td class="message-cell" colspan="11">
+          初期化に失敗しました: ${error.message || String(error)}
+        </td>
       </tr>
     `;
   }
@@ -100,6 +100,10 @@ function initControls() {
   liveSummaryBody.hidden = true;
   summaryToggle.textContent = "開く";
   summaryToggle.setAttribute("aria-expanded", "false");
+
+  rankInBadge.hidden = true;
+  topRankAlert.hidden = true;
+  observedLatestAtEl.textContent = "読み込み待ち";
 }
 
 function bindEvents() {
@@ -210,6 +214,17 @@ function renderElementButtons() {
   renderElementPanel(elementPanel, getCurrentElementList(), currentElementKey);
 }
 
+function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
+  if (latestObservationTime) return latestObservationTime;
+
+  const observedList = Object.values(liveValuesByCode || {})
+    .map((item) => item?.observedAt || "")
+    .filter(Boolean)
+    .sort();
+
+  return observedList.length ? observedList[observedList.length - 1] : "";
+}
+
 async function refresh() {
   const prefMeta = getCurrentPrefMeta();
   const elementMeta = getCurrentElementMeta();
@@ -220,6 +235,9 @@ async function refresh() {
         <td class="message-cell" colspan="11">都道府県または要素が未選択です。</td>
       </tr>
     `;
+    rankInBadge.hidden = true;
+    topRankAlert.hidden = true;
+    observedLatestAtEl.textContent = "実況未取得";
     return;
   }
 
@@ -258,13 +276,14 @@ async function refresh() {
     let latestObservationTime = "";
     let liveValuesByCode = {};
 
-    if (isLiveSupported(elementMeta.key, monthSelect.value)) {
+    if (isLiveSupported(elementMeta.key, monthSelect.value) && neededStationCodes.length > 0) {
       try {
         const liveBundle = await buildLiveValuesForStations({
           stationCodes: neededStationCodes,
           elementKey: elementMeta.key,
           month: monthSelect.value,
         });
+
         latestObservationTime = liveBundle.latestIso || "";
         liveValuesByCode = liveBundle.valuesByCode || {};
         liveSupportMode = liveBundle.support || "supported";
@@ -273,8 +292,13 @@ async function refresh() {
         liveSupportMode = "error";
         liveSupportMessage = "実況取得に失敗したため、極値表のみ表示しています。";
         state.debug.liveError = error.message || String(error);
+        liveValuesByCode = {};
+        latestObservationTime = "";
       }
     }
+
+    // latestIso が空でも、各地点 observedAt が取れていればそれを採用
+    latestObservationTime = pickLatestObservedAt(latestObservationTime, liveValuesByCode);
 
     state.debug.latestObservationTime = latestObservationTime;
     state.debug.liveSupported = liveSupportMode;
@@ -322,11 +346,14 @@ async function refresh() {
       supportMessage: liveSupportMessage,
     });
 
-    const rankIn = hasAnyRankIn(decoratedRows);
-    const top1 = hasAnyTop1(decoratedRows);
+    // バッジは rows ではなく、実際に表示対象になった summary 件数で判定
+    const totalSummaryCount = annualSummary.length + monthlySummary.length;
+    const hasTop1Summary =
+      annualSummary.some((item) => item.rank === 1) ||
+      monthlySummary.some((item) => item.rank === 1);
 
-    rankInBadge.hidden = !rankIn;
-    topRankAlert.hidden = !top1;
+    rankInBadge.hidden = totalSummaryCount === 0;
+    topRankAlert.hidden = !hasTop1Summary;
 
     renderDebug(debugGrid, state.debug);
   } catch (error) {
@@ -337,6 +364,9 @@ async function refresh() {
       </tr>
     `;
     state.debug.liveError = error.message || String(error);
+    rankInBadge.hidden = true;
+    topRankAlert.hidden = true;
+    observedLatestAtEl.textContent = "実況未取得";
     renderDebug(debugGrid, state.debug);
   }
 }
