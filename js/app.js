@@ -44,7 +44,6 @@ const elementPanelToggle = document.getElementById("elementPanelToggle");
 
 const rankInBadge = document.getElementById("rankInBadge");
 const topRankAlert = document.getElementById("topRankAlert");
-const liveSupportBadge = document.getElementById("liveSupportBadge");
 const observedLatestAtEl = document.getElementById("observedLatestAt");
 
 const tableTitleEl = document.getElementById("tableTitle");
@@ -261,25 +260,26 @@ async function refresh() {
 
     state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
 
-    renderTable(rankTableBody, decoratedRows, elementMeta.key);
+    renderTable(rankTableBody, decoratedRows);
     renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
     renderStatus({
       tableTitleEl,
       statusTextEl,
       observedLatestAtEl,
-      liveSupportBadgeEl: liveSupportBadge,
       prefName: prefMeta.name,
       month: monthSelect.value,
       elementKey: elementMeta.key,
       elementLabel: elementMeta.shortLabel || elementMeta.label || elementMeta.key,
       rowCount: rows.length,
       latestObservationTime,
-      liveSupportMode,
       supportMessage: liveSupportMessage,
     });
 
-    rankInBadge.hidden = !hasAnyRankIn(decoratedRows);
-    topRankAlert.hidden = !hasAnyTop1(decoratedRows);
+    const rankIn = hasAnyRankIn(decoratedRows);
+    const top1 = hasAnyTop1(decoratedRows);
+
+    rankInBadge.hidden = !rankIn;
+    topRankAlert.hidden = !top1;
 
     renderDebug(debugGrid, state.debug);
   } catch (error) {
