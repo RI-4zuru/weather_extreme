@@ -126,32 +126,30 @@ export function renderTable(tableBody, rows) {
   }).join("");
 }
 
-export function renderLiveSummary(liveSummaryBody, annualItems, monthlyItems) {
-  const renderColumn = (title, items) => `
-    <div class="live-summary-column">
-      <h3>${escapeHtml(title)}</h3>
-      ${
-        items.length === 0
-          ? `<div class="empty-message">該当なし</div>`
-          : `
-            <div class="live-summary-list">
-              ${items.map((item) => `
-                <div class="live-summary-item ${item.top1 ? "top1" : ""}">
-                  <span class="rank">${escapeHtml(String(item.rank))}位</span>
-                  ${escapeHtml(item.stationName)} / ${escapeHtml(item.elementLabel)} / ${escapeHtml(String(item.value))}
-                  <span class="meta">${escapeHtml(formatObservationLabel(item.observedAt))}</span>
-                </div>
-              `).join("")}
-            </div>
-          `
-      }
-    </div>
-  `;
+function renderSummaryList(items) {
+  if (!items.length) {
+    return `<div class="empty-message">該当なし</div>`;
+  }
 
-  liveSummaryBody.innerHTML = `
-    ${renderColumn("通年", annualItems)}
-    ${renderColumn("当月", monthlyItems)}
-  `;
+  return items.map((item) => `
+    <div class="live-summary-item ${item.top1 ? "top1" : ""}">
+      <span class="rank">${escapeHtml(String(item.rank))}位</span>
+      ${escapeHtml(item.stationName)} / ${escapeHtml(item.elementLabel)} / ${escapeHtml(String(item.value))}
+      <span class="meta">${escapeHtml(formatObservationLabel(item.observedAt))}</span>
+    </div>
+  `).join("");
+}
+
+export function renderLiveSummary(liveSummaryBody, annualItems, monthlyItems) {
+  const annualBody = liveSummaryBody.querySelector('[data-summary-body="annual"] .live-summary-column-body');
+  const monthlyBody = liveSummaryBody.querySelector('[data-summary-body="monthly"] .live-summary-column-body');
+
+  if (annualBody) {
+    annualBody.innerHTML = renderSummaryList(annualItems);
+  }
+  if (monthlyBody) {
+    monthlyBody.innerHTML = renderSummaryList(monthlyItems);
+  }
 }
 
 export function renderStatus({
