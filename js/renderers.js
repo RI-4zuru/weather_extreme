@@ -1,4 +1,4 @@
-import { ELEMENT_DESCRIPTIONS, LIVE_SUPPORT_MODE_LABELS } from "./constants.js";
+import { ELEMENT_DESCRIPTIONS } from "./constants.js";
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
 export function makeTableHead(tableHead) {
@@ -47,7 +47,7 @@ export function renderElementPanel(elementPanel, elementList, selectedKey) {
     .join("");
 }
 
-export function renderTable(tableBody, rows, elementKey) {
+export function renderTable(tableBody, rows) {
   if (!rows.length) {
     tableBody.innerHTML = `
       <tr>
@@ -60,7 +60,12 @@ export function renderTable(tableBody, rows, elementKey) {
   tableBody.innerHTML = rows.map((row) => {
     const live = row.liveCandidate || {};
     const liveRank = live.rank;
-    const showLiveBadge = live.supported && Number.isFinite(live.value) && Number.isFinite(liveRank);
+    const showLiveBadge =
+      live.supported &&
+      Number.isFinite(live.value) &&
+      Number.isFinite(liveRank) &&
+      liveRank >= 1 &&
+      liveRank <= 10;
 
     const stationLiveBadge = showLiveBadge
       ? `
@@ -70,11 +75,7 @@ export function renderTable(tableBody, rows, elementKey) {
           ${escapeHtml(formatObservationLabel(live.observedAt))}
         </span>
       `
-      : live.supported === false
-        ? `<span class="station-live-badge unsupported">実況判定未対応</span>`
-        : live.error
-          ? `<span class="station-live-badge unsupported">実況取得失敗</span>`
-          : "";
+      : "";
 
     const cells = [];
     for (let i = 0; i < 10; i += 1) {
@@ -154,14 +155,12 @@ export function renderStatus({
   tableTitleEl,
   statusTextEl,
   observedLatestAtEl,
-  liveSupportBadgeEl,
   prefName,
   month,
   elementKey,
   elementLabel,
   rowCount,
   latestObservationTime,
-  liveSupportMode,
   supportMessage,
 }) {
   tableTitleEl.textContent = `${prefName}/${month === "all" ? "通年" : `${month}月`}/${elementLabel}`;
@@ -182,7 +181,6 @@ export function renderStatus({
   }
 
   statusTextEl.textContent = parts.join(" / ");
-  liveSupportBadgeEl.textContent = LIVE_SUPPORT_MODE_LABELS[liveSupportMode] || "実況判定: 不明";
 }
 
 export function renderDebug(debugGrid, debug) {
