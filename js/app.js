@@ -40,7 +40,40 @@ const STORAGE_KEYS = {
   month: "weather_extreme:last_month",
   element: "weather_extreme:last_element",
   enabledPrefs: "weather_extreme:enabled_prefs",
+  prefOrder: "weather_extreme:pref_order",
 };
+
+const STANDARD_REGIONS = [
+  "北海道",
+  "東北",
+  "関東甲信",
+  "北陸",
+  "東海",
+  "近畿",
+  "中国",
+  "四国",
+  "九州",
+  "沖縄",
+];
+
+const REGION_PREF_ORDER = {
+  "北海道": ["北海道"],
+  "東北": ["青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県"],
+  "関東甲信": ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "山梨県", "長野県"],
+  "北陸": ["新潟県", "富山県", "石川県", "福井県"],
+  "東海": ["岐阜県", "静岡県", "愛知県", "三重県"],
+  "近畿": ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"],
+  "中国": ["鳥取県", "島根県", "岡山県", "広島県", "山口県"],
+  "四国": ["徳島県", "香川県", "愛媛県", "高知県"],
+  "九州": ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"],
+  "沖縄": ["沖縄県"],
+};
+
+const PREF_TO_REGION = Object.fromEntries(
+  Object.entries(REGION_PREF_ORDER).flatMap(([region, prefs]) => prefs.map((name) => [name, region]))
+);
+
+const ALL_PREF_ORDER = STANDARD_REGIONS.flatMap((region) => REGION_PREF_ORDER[region]);
 
 const prefButtons = document.getElementById("prefButtons");
 const monthSelect = document.getElementById("monthSelect");
@@ -77,6 +110,7 @@ let currentElementKey = "";
 let currentMonth = DEFAULT_MONTH;
 
 let enabledPrefKeys = new Set();
+let prefOrderKeys = [];
 let customEditingRegion = "";
 
 async function main() {
@@ -87,6 +121,7 @@ async function main() {
       loadManifest(),
     ]);
 
+    normalizePrefectureRegions();
     makeTableHead(rankTableHead);
 
     initControls();
@@ -121,8 +156,77 @@ function writeStorage(key, value) {
   }
 }
 
+function normalizePrefectureRegions() {
+  state.prefectures = (state.prefectures || []).map((item) => {
+    const inferredRegion = PREF_TO_REGION[item.name] || item.region || "";
+    return {
+      ...item,
+      region: inferredRegion,
+    };
+  });
+}
+
 function getAllPrefKeys() {
   return (state.prefectures || []).map((item) => item.key);
+}
+
+function getPrefMetaByKey(prefKey) {
+  return (state.prefectures || []).find((item) => item.key === prefKey) || null;
+}
+
+function getPrefMetaByName(prefName) {
+  return (state.prefectures || []).find((item) => item.name === prefName) || null;
+}
+
+function buildDefaultPrefOrderKeys() {
+  const result = [];
+  const used = new Set();
+
+  for (const prefName of ALL_PREF_ORDER) {
+    const prefMeta = getPrefMetaByName(prefName);
+    if (prefMeta) {
+      result.push(prefMeta.key);
+      used.add(prefMeta.key);
+    }
+  }
+
+  for (const item of state.prefectures || []) {
+    if (!used.has(item.key)) {
+      result.push(item.key);
+      used.add(item.key);
+    }
+  }
+
+  return result;
+}
+
+function loadPrefOrderKeys() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.prefOrder);
+    const allKeys = new Set(getAllPrefKeys());
+    const defaultOrder = buildDefaultPrefOrderKeys();
+
+    if (!raw) {
+      prefOrderKeys = defaultOrder;
+      return;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      prefOrderKeys = defaultOrder;
+      return;
+    }
+
+    const valid = parsed.filter((key) => allKeys.has(key));
+    const missing = defaultOrder.filter((key) => !valid.includes(key));
+    prefOrderKeys = [...valid, ...missing];
+  } catch {
+    prefOrderKeys = buildDefaultPrefOrderKeys();
+  }
+}
+
+function savePrefOrderKeys() {
+  writeStorage(STORAGE_KEYS.prefOrder, JSON.stringify(prefOrderKeys));
 }
 
 function loadEnabledPrefKeys() {
@@ -156,6 +260,7 @@ function saveEnabledPrefKeys() {
 
 function initControls() {
   loadEnabledPrefKeys();
+  loadPrefOrderKeys();
 
   currentRegion = getInitialRegion();
   currentPrefKey = getInitialPrefKey(currentRegion);
@@ -172,6 +277,8 @@ function initControls() {
   elementPanelToggle.setAttribute("aria-expanded", "false");
 
   setSummaryExpanded(false);
+  setSummaryPanelExpanded("annual", true);
+  setSummaryPanelExpanded("monthly", true);
 
   rankInBadge.hidden = true;
   topRankAlert.hidden = true;
@@ -238,6 +345,31 @@ function bindEvents() {
     }
   });
 
+  liveSummaryBody.addEventListener("click", (event) => {
+    const toggle = event.target.closest("[data-summary-toggle]");
+    if (!toggle) return;
+
+    const panelKey = toggle.dataset.summaryToggle;
+    const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
+    if (!body) return;
+
+    setSummaryPanelExpanded(panelKey, body.hidden);
+  });
+
+  liveSummaryBody.addEventListener("keydown", (event) => {
+    const toggle = event.target.closest("[data-summary-toggle]");
+    if (!toggle) return;
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      const panelKey = toggle.dataset.summaryToggle;
+      const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
+      if (!body) return;
+
+      setSummaryPanelExpanded(panelKey, body.hidden);
+    }
+  });
+
   customizeButton.addEventListener("click", () => {
     openCustomModal();
   });
@@ -286,6 +418,18 @@ function bindEvents() {
     }
   });
 
+  customPrefChecklist.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-order-action]");
+    if (!button) return;
+
+    const prefKey = button.dataset.prefKey || "";
+    const action = button.dataset.orderAction || "";
+    if (!prefKey || !action) return;
+
+    movePrefOrderWithinRegion(customEditingRegion, prefKey, action === "up" ? -1 : 1);
+    renderCustomPrefChecklist();
+  });
+
   customSaveButton.addEventListener("click", async () => {
     ensureAtLeastOneEnabledPref();
 
@@ -296,6 +440,7 @@ function bindEvents() {
     writeStorage(STORAGE_KEYS.region, currentRegion);
     writeStorage(STORAGE_KEYS.pref, currentPrefKey);
     saveEnabledPrefKeys();
+    savePrefOrderKeys();
 
     renderPrefButtons();
     closeCustomModal();
@@ -309,20 +454,38 @@ function setSummaryExpanded(expanded) {
   summaryChevron.classList.toggle("expanded", expanded);
 }
 
+function setSummaryPanelExpanded(panelKey, expanded) {
+  const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
+  const toggle = document.querySelector(`[data-summary-toggle="${panelKey}"]`);
+  const chevron = document.querySelector(`[data-summary-chevron="${panelKey}"]`);
+  if (!body || !toggle || !chevron) return;
+
+  body.hidden = !expanded;
+  toggle.setAttribute("aria-expanded", String(expanded));
+  chevron.classList.toggle("expanded", expanded);
+}
+
 function getRegions() {
-  return [...new Set((state.prefectures || []).map((item) => item.region).filter(Boolean))];
+  const available = new Set(
+    (state.prefectures || [])
+      .map((item) => item.region)
+      .filter(Boolean)
+  );
+  return STANDARD_REGIONS.filter((region) => available.has(region));
 }
 
 function getPrefsByRegion(region) {
-  return (state.prefectures || []).filter((item) => item.region === region);
+  const prefs = (state.prefectures || []).filter((item) => item.region === region);
+  const orderMap = new Map(prefOrderKeys.map((key, index) => [key, index]));
+  return prefs.slice().sort((a, b) => {
+    const ia = orderMap.has(a.key) ? orderMap.get(a.key) : Number.MAX_SAFE_INTEGER;
+    const ib = orderMap.has(b.key) ? orderMap.get(b.key) : Number.MAX_SAFE_INTEGER;
+    return ia - ib;
+  });
 }
 
 function getVisiblePrefsByRegion(region) {
   return getPrefsByRegion(region).filter((item) => enabledPrefKeys.has(item.key));
-}
-
-function getPrefMetaByKey(prefKey) {
-  return (state.prefectures || []).find((item) => item.key === prefKey) || null;
 }
 
 function getInitialRegion() {
@@ -470,18 +633,63 @@ function renderCustomRegionTabs() {
 
 function renderCustomPrefChecklist() {
   const prefs = getPrefsByRegion(customEditingRegion);
+
   customPrefChecklist.innerHTML = prefs
-    .map((item) => `
-      <label class="pref-check-item">
-        <input
-          type="checkbox"
-          data-pref-check="${item.key}"
-          ${enabledPrefKeys.has(item.key) ? "checked" : ""}
-        />
-        <span>${item.name}</span>
-      </label>
+    .map((item, index) => `
+      <div class="pref-check-item">
+        <label class="pref-check-main">
+          <input
+            type="checkbox"
+            data-pref-check="${item.key}"
+            ${enabledPrefKeys.has(item.key) ? "checked" : ""}
+          />
+          <span>${item.name}</span>
+        </label>
+
+        <div></div>
+
+        <div class="pref-order-actions">
+          <button
+            type="button"
+            class="order-button"
+            data-order-action="up"
+            data-pref-key="${item.key}"
+            ${index === 0 ? "disabled" : ""}
+          >
+            ↑
+          </button>
+          <button
+            type="button"
+            class="order-button"
+            data-order-action="down"
+            data-pref-key="${item.key}"
+            ${index === prefs.length - 1 ? "disabled" : ""}
+          >
+            ↓
+          </button>
+        </div>
+      </div>
     `)
     .join("");
+}
+
+function movePrefOrderWithinRegion(region, prefKey, delta) {
+  const regionKeys = getPrefsByRegion(region).map((item) => item.key);
+  const currentIndex = regionKeys.indexOf(prefKey);
+  if (currentIndex < 0) return;
+
+  const targetIndex = currentIndex + delta;
+  if (targetIndex < 0 || targetIndex >= regionKeys.length) return;
+
+  const sourceKey = regionKeys[currentIndex];
+  const targetKey = regionKeys[targetIndex];
+
+  const sourceOrderIndex = prefOrderKeys.indexOf(sourceKey);
+  const targetOrderIndex = prefOrderKeys.indexOf(targetKey);
+  if (sourceOrderIndex < 0 || targetOrderIndex < 0) return;
+
+  [prefOrderKeys[sourceOrderIndex], prefOrderKeys[targetOrderIndex]] =
+    [prefOrderKeys[targetOrderIndex], prefOrderKeys[sourceOrderIndex]];
 }
 
 function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
