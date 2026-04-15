@@ -849,6 +849,17 @@ async function refresh() {
       loadTable(prefMeta.key, elementMeta.key, currentMonth),
     ]);
 
+    if (!tableData || !tableData.rows || tableData.rows.length === 0) {
+      rankTableBody.innerHTML = `
+        <tr>
+          <td class="message-cell" colspan="11">
+            この都道府県は現在データ未対応です
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
     const rows = tableData.rows || [];
     state.debug.tableRowCount = rows.length;
 
