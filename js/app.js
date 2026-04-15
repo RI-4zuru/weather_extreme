@@ -34,8 +34,15 @@ import {
 import { state } from "./state.js";
 import { unique } from "./utils.js";
 
-const regionSelect = document.getElementById("regionSelect");
-const prefSelect = document.getElementById("prefSelect");
+const STORAGE_KEYS = {
+  region: "weather_extreme:last_region",
+  pref: "weather_extreme:last_pref",
+  month: "weather_extreme:last_month",
+  element: "weather_extreme:last_element",
+};
+
+const regionTabs = document.getElementById("regionTabs");
+const prefButtons = document.getElementById("prefButtons");
 const monthSelect = document.getElementById("monthSelect");
 const elementPanel = document.getElementById("elementPanel");
 const elementPanelToggle = document.getElementById("elementPanelToggle");
@@ -54,6 +61,8 @@ const rankTableBody = document.getElementById("rankTableBody");
 
 const debugGrid = document.getElementById("debugGrid");
 
+let currentRegion = "";
+let currentPrefKey = "";
 let currentElementKey = "";
 let currentMonth = DEFAULT_MONTH;
 
@@ -83,14 +92,31 @@ async function main() {
   }
 }
 
+function readStorage(key, fallback = "") {
+  try {
+    return localStorage.getItem(key) || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // no-op
+  }
+}
+
 function initControls() {
-  populateRegions();
-  populatePrefectures(regionSelect.value);
+  currentRegion = getInitialRegion();
+  currentPrefKey = getInitialPrefKey(currentRegion);
+  currentMonth = getInitialMonth();
+  currentElementKey = getInitialElementKey(currentMonth);
 
-  monthSelect.value = DEFAULT_MONTH;
-  currentMonth = monthSelect.value;
-
-  currentElementKey = getInitialElementKey();
+  renderRegionTabs();
+  renderPrefButtons();
+  monthSelect.value = currentMonth;
   renderElementButtons();
 
   elementPanel.hidden = true;
@@ -107,18 +133,45 @@ function initControls() {
 }
 
 function bindEvents() {
-  regionSelect.addEventListener("change", async () => {
-    populatePrefectures(regionSelect.value);
+  regionTabs.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-region]");
+    if (!button) return;
+
+    const nextRegion = button.dataset.region || "";
+    if (!nextRegion || nextRegion === currentRegion) return;
+
+    currentRegion = nextRegion;
+    writeStorage(STORAGE_KEYS.region, currentRegion);
+
+    currentPrefKey = getInitialPrefKey(currentRegion);
+    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+
+    renderRegionTabs();
+    renderPrefButtons();
     await refresh();
   });
 
-  prefSelect.addEventListener("change", async () => {
+  prefButtons.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-pref-key]");
+    if (!button) return;
+
+    const nextPrefKey = button.dataset.prefKey || "";
+    if (!nextPrefKey || nextPrefKey === currentPrefKey) return;
+
+    currentPrefKey = nextPrefKey;
+    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+
+    renderPrefButtons();
     await refresh();
   });
 
   monthSelect.addEventListener("change", async () => {
     currentMonth = monthSelect.value;
-    currentElementKey = getInitialElementKey();
+    writeStorage(STORAGE_KEYS.month, currentMonth);
+
+    currentElementKey = getInitialElementKey(currentMonth);
+    writeStorage(STORAGE_KEYS.element, currentElementKey);
+
     renderElementButtons();
     await refresh();
   });
@@ -128,6 +181,8 @@ function bindEvents() {
     if (!button) return;
 
     currentElementKey = button.dataset.elementKey || "";
+    writeStorage(STORAGE_KEYS.element, currentElementKey);
+
     renderElementButtons();
     await refresh();
   });
@@ -147,67 +202,104 @@ function bindEvents() {
   });
 }
 
-function populateRegions() {
-  const regionList = [...new Set((state.prefectures || []).map((item) => item.region).filter(Boolean))];
-
-  regionSelect.innerHTML = regionList
-    .map((region) => `<option value="${region}">${region}</option>`)
-    .join("");
-
-  if (!regionList.length) {
-    regionSelect.innerHTML = `<option value="">地域なし</option>`;
-    return;
-  }
-
-  if (regionList.includes(DEFAULT_REGION)) {
-    regionSelect.value = DEFAULT_REGION;
-  } else {
-    regionSelect.value = regionList[0];
-  }
+function getRegions() {
+  return [...new Set((state.prefectures || []).map((item) => item.region).filter(Boolean))];
 }
 
-function populatePrefectures(region) {
-  const prefList = (state.prefectures || []).filter((item) => item.region === region);
+function getPrefsByRegion(region) {
+  return (state.prefectures || []).filter((item) => item.region === region);
+}
 
-  prefSelect.innerHTML = prefList
-    .map((item) => `<option value="${item.key}">${item.name}</option>`)
-    .join("");
+function getInitialRegion() {
+  const regions = getRegions();
+  const savedRegion = readStorage(STORAGE_KEYS.region);
 
-  if (!prefList.length) {
-    prefSelect.innerHTML = `<option value="">都道府県なし</option>`;
-    return;
+  if (savedRegion && regions.includes(savedRegion)) {
+    return savedRegion;
   }
+  if (regions.includes(DEFAULT_REGION)) {
+    return DEFAULT_REGION;
+  }
+  return regions[0] || "";
+}
 
+function getInitialPrefKey(region) {
+  const prefList = getPrefsByRegion(region);
+  const savedPref = readStorage(STORAGE_KEYS.pref);
+
+  if (savedPref && prefList.some((item) => item.key === savedPref)) {
+    return savedPref;
+  }
   if (prefList.some((item) => item.key === DEFAULT_PREF)) {
-    prefSelect.value = DEFAULT_PREF;
-  } else {
-    prefSelect.value = prefList[0].key;
+    return DEFAULT_PREF;
   }
+  return prefList[0]?.key || "";
+}
+
+function getInitialMonth() {
+  const savedMonth = readStorage(STORAGE_KEYS.month, DEFAULT_MONTH);
+  const allowed = new Set(["all", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]);
+  return allowed.has(savedMonth) ? savedMonth : DEFAULT_MONTH;
+}
+
+function getCurrentElementList(month = currentMonth) {
+  return getElementListByMonth(month, state.elements);
+}
+
+function getInitialElementKey(month = currentMonth) {
+  const list = getCurrentElementList(month);
+  if (!list.length) return "";
+
+  const savedElement = readStorage(STORAGE_KEYS.element);
+  if (savedElement && list.some((item) => item.key === savedElement)) {
+    return savedElement;
+  }
+
+  const defaultKey =
+    getDefaultElementKey(month, state.elements) ||
+    (month === "all" ? DEFAULT_ANNUAL_ELEMENT : DEFAULT_MONTHLY_ELEMENT);
+
+  return list.some((item) => item.key === defaultKey)
+    ? defaultKey
+    : list[0].key;
 }
 
 function getCurrentPrefMeta() {
-  return (state.prefectures || []).find((item) => item.key === prefSelect.value) || null;
-}
-
-function getCurrentElementList() {
-  return getElementListByMonth(monthSelect.value, state.elements);
+  return (state.prefectures || []).find((item) => item.key === currentPrefKey) || null;
 }
 
 function getCurrentElementMeta() {
   return getCurrentElementList().find((item) => item.key === currentElementKey) || null;
 }
 
-function getInitialElementKey() {
-  const list = getCurrentElementList();
-  if (!list.length) return "";
+function renderRegionTabs() {
+  const regions = getRegions();
+  regionTabs.innerHTML = regions
+    .map((region) => `
+      <button
+        type="button"
+        class="region-tab ${region === currentRegion ? "active" : ""}"
+        data-region="${region}"
+      >
+        ${region}
+      </button>
+    `)
+    .join("");
+}
 
-  const defaultKey =
-    getDefaultElementKey(monthSelect.value, state.elements) ||
-    (monthSelect.value === "all" ? DEFAULT_ANNUAL_ELEMENT : DEFAULT_MONTHLY_ELEMENT);
-
-  return list.some((item) => item.key === defaultKey)
-    ? defaultKey
-    : list[0].key;
+function renderPrefButtons() {
+  const prefList = getPrefsByRegion(currentRegion);
+  prefButtons.innerHTML = prefList
+    .map((item) => `
+      <button
+        type="button"
+        class="pref-button ${item.key === currentPrefKey ? "active" : ""}"
+        data-pref-key="${item.key}"
+      >
+        ${item.name}
+      </button>
+    `)
+    .join("");
 }
 
 function renderElementButtons() {
@@ -241,10 +333,10 @@ async function refresh() {
     return;
   }
 
-  state.debug.selectedRegion = regionSelect.value;
+  state.debug.selectedRegion = currentRegion;
   state.debug.selectedPrefKey = prefMeta.key;
   state.debug.selectedPrefName = prefMeta.name;
-  state.debug.selectedMonth = monthSelect.value;
+  state.debug.selectedMonth = currentMonth;
   state.debug.selectedElementKey = elementMeta.key;
   state.debug.selectedElementLabel = elementMeta.shortLabel || elementMeta.label || elementMeta.key;
   state.debug.pointFetchCount = 0;
@@ -259,7 +351,7 @@ async function refresh() {
   try {
     const [{ index }, tableData] = await Promise.all([
       loadStations(prefMeta.key),
-      loadTable(prefMeta.key, elementMeta.key, monthSelect.value),
+      loadTable(prefMeta.key, elementMeta.key, currentMonth),
     ]);
 
     const rows = tableData.rows || [];
@@ -276,12 +368,12 @@ async function refresh() {
     let latestObservationTime = "";
     let liveValuesByCode = {};
 
-    if (isLiveSupported(elementMeta.key, monthSelect.value) && neededStationCodes.length > 0) {
+    if (isLiveSupported(elementMeta.key, currentMonth) && neededStationCodes.length > 0) {
       try {
         const liveBundle = await buildLiveValuesForStations({
           stationCodes: neededStationCodes,
           elementKey: elementMeta.key,
-          month: monthSelect.value,
+          month: currentMonth,
         });
 
         latestObservationTime = liveBundle.latestIso || "";
@@ -297,7 +389,6 @@ async function refresh() {
       }
     }
 
-    // latestIso が空でも、各地点 observedAt が取れていればそれを採用
     latestObservationTime = pickLatestObservedAt(latestObservationTime, liveValuesByCode);
 
     state.debug.latestObservationTime = latestObservationTime;
@@ -311,7 +402,7 @@ async function refresh() {
       liveSupportMode
     );
 
-    const annualSummary = monthSelect.value === "all"
+    const annualSummary = currentMonth === "all"
       ? buildLiveSummaryItems(
           decoratedRows,
           elementMeta.key,
@@ -320,13 +411,13 @@ async function refresh() {
         )
       : [];
 
-    const monthlySummary = monthSelect.value === "all"
+    const monthlySummary = currentMonth === "all"
       ? []
       : buildLiveSummaryItems(
           decoratedRows,
           elementMeta.key,
           elementMeta.shortLabel || elementMeta.label || elementMeta.key,
-          monthSelect.value
+          currentMonth
         );
 
     state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
@@ -338,7 +429,7 @@ async function refresh() {
       statusTextEl,
       observedLatestAtEl,
       prefName: prefMeta.name,
-      month: monthSelect.value,
+      month: currentMonth,
       elementKey: elementMeta.key,
       elementLabel: elementMeta.shortLabel || elementMeta.label || elementMeta.key,
       rowCount: rows.length,
@@ -346,7 +437,6 @@ async function refresh() {
       supportMessage: liveSupportMessage,
     });
 
-    // バッジは rows ではなく、実際に表示対象になった summary 件数で判定
     const totalSummaryCount = annualSummary.length + monthlySummary.length;
     const hasTop1Summary =
       annualSummary.some((item) => item.rank === 1) ||
