@@ -110,9 +110,9 @@ function bindEvents() {
   });
 
   elementPanelToggle.addEventListener("click", () => {
-    const isHidden = elementPanel.hidden;
-    elementPanel.hidden = !isHidden;
-    elementPanelToggle.setAttribute("aria-expanded", String(isHidden));
+    const nextHidden = !elementPanel.hidden;
+    elementPanel.hidden = nextHidden;
+    elementPanelToggle.setAttribute("aria-expanded", String(!nextHidden));
   });
 }
 
