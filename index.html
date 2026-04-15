@@ -1,113 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>県内極値一覧</title>
-  <link rel="stylesheet" href="./style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>県内極値一覧</title>
+<link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-  <header class="app-header">
-    <div class="title-row">
-      <h1>県内極値一覧</h1>
-      <div class="header-meta">
-        <span class="meta-label">実況観測時刻</span>
-        <span id="observedLatestAt" class="meta-value">読み込み待ち</span>
-      </div>
+
+<header class="app-header">
+
+  <div class="title-row">
+    <h1>県内極値一覧</h1>
+    <div class="header-meta">
+      <span>実況観測時刻</span>
+      <span id="observedLatestAt">-</span>
     </div>
+  </div>
 
-    <section class="control-panel">
-      <div class="control-grid">
-        <label class="control-item">
-          <span class="control-label">地域</span>
-          <select id="regionSelect"></select>
-        </label>
+  <div class="control-panel">
+    <select id="regionSelect"></select>
+    <select id="prefSelect"></select>
+    <select id="monthSelect">
+      <option value="all">通年</option>
+      <option value="1">1月</option>
+      <option value="2">2月</option>
+      <option value="3">3月</option>
+      <option value="4">4月</option>
+      <option value="5">5月</option>
+      <option value="6">6月</option>
+      <option value="7">7月</option>
+      <option value="8">8月</option>
+      <option value="9">9月</option>
+      <option value="10">10月</option>
+      <option value="11">11月</option>
+      <option value="12">12月</option>
+    </select>
+  </div>
 
-        <label class="control-item">
-          <span class="control-label">都道府県</span>
-          <select id="prefSelect"></select>
-        </label>
+  <!-- 要素選択 -->
+  <div class="element-panel-wrap">
+    <button id="elementPanelToggle">要素選択を開く</button>
+    <div id="elementPanel" hidden></div>
+  </div>
 
-        <label class="control-item">
-          <span class="control-label">月</span>
-          <select id="monthSelect">
-            <option value="all">通年</option>
-            <option value="1">1月</option>
-            <option value="2">2月</option>
-            <option value="3">3月</option>
-            <option value="4">4月</option>
-            <option value="5">5月</option>
-            <option value="6">6月</option>
-            <option value="7">7月</option>
-            <option value="8">8月</option>
-            <option value="9">9月</option>
-            <option value="10">10月</option>
-            <option value="11">11月</option>
-            <option value="12">12月</option>
-          </select>
-        </label>
-      </div>
-    </section>
+</header>
 
-    <!-- 要素選択（初期は閉じる） -->
-    <section class="element-panel-wrap">
-      <button id="elementPanelToggle" class="toggle-button" type="button" aria-expanded="false">
-        要素選択を開く
-      </button>
-      <div id="elementPanel" class="element-panel" hidden></div>
-    </section>
-  </header>
+<main>
 
-  <main class="app-main">
+<!-- サマリー -->
+<section class="summary-section">
 
-    <!-- 実況サマリー（折りたたみ化） -->
-    <section class="summary-section">
-      <div class="section-title-row">
-        <div class="summary-title-left">
-          <h2>実況で10位以内に入った項目</h2>
+  <div class="summary-header">
+    <h2>実況で10位以内に入った項目</h2>
 
-          <!-- ★ここにバッジ移動 -->
-          <div class="summary-badges">
-            <span id="rankInBadge" class="status-badge status-badge-rankin" hidden>ランクイン有り</span>
-            <span id="topRankAlert" class="status-badge status-badge-top1" hidden>極値1位更新有り</span>
-          </div>
-        </div>
+    <div class="summary-right">
+      <span id="rankInBadge" class="badge red" hidden>ランクイン有り</span>
+      <span id="topRankAlert" class="badge strong" hidden>極値1位更新有り</span>
+      <button id="summaryToggle">開く</button>
+    </div>
+  </div>
 
-        <button id="summaryToggle" class="toggle-button small" type="button" aria-expanded="false">
-          開く
-        </button>
-      </div>
+  <div id="liveSummaryBody" hidden></div>
 
-      <div id="liveSummaryBody" hidden class="live-summary-grid">
-        <div class="live-summary-column">
-          <h3>通年</h3>
-          <div class="empty-message">読み込み待ち</div>
-        </div>
-        <div class="live-summary-column">
-          <h3>当月</h3>
-          <div class="empty-message">読み込み待ち</div>
-        </div>
-      </div>
-    </section>
+</section>
 
-    <section class="table-section">
-      <div class="table-heading-row">
-        <div>
-          <h2 id="tableTitle">読み込み待ち</h2>
-          <p id="statusText" class="status-text">読み込み待ち</p>
-        </div>
-      </div>
+<!-- 表 -->
+<section>
+  <h2 id="tableTitle"></h2>
+  <table class="rank-table">
+    <thead id="rankTableHead"></thead>
+    <tbody id="rankTableBody"></tbody>
+  </table>
+</section>
 
-      <div class="table-scroll">
-        <table class="rank-table">
-          <thead id="rankTableHead"></thead>
-          <tbody id="rankTableBody"></tbody>
-        </table>
-      </div>
-    </section>
+</main>
 
-  </main>
+<script type="module" src="./js/app.js"></script>
 
-  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
