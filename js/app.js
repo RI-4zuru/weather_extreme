@@ -112,6 +112,7 @@ let currentMonth = DEFAULT_MONTH;
 let enabledPrefKeys = new Set();
 let prefOrderKeys = [];
 let customEditingRegion = "";
+let dragSourceKey = null;
 
 async function main() {
   try {
@@ -418,15 +419,59 @@ function bindEvents() {
     }
   });
 
-  customPrefChecklist.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-order-action]");
-    if (!button) return;
+  customPrefChecklist.addEventListener("dragstart", (event) => {
+    const item = event.target.closest(".pref-check-item");
+    if (!item) return;
 
-    const prefKey = button.dataset.prefKey || "";
-    const action = button.dataset.orderAction || "";
-    if (!prefKey || !action) return;
+    dragSourceKey = item.dataset.prefKey || null;
+    item.classList.add("dragging");
+    if (event.dataTransfer) {
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", dragSourceKey || "");
+    }
+  });
 
-    movePrefOrderWithinRegion(customEditingRegion, prefKey, action === "up" ? -1 : 1);
+  customPrefChecklist.addEventListener("dragend", (event) => {
+    const item = event.target.closest(".pref-check-item");
+    if (item) {
+      item.classList.remove("dragging");
+    }
+
+    customPrefChecklist.querySelectorAll(".pref-check-item").forEach((el) => {
+      el.classList.remove("drag-over");
+    });
+
+    dragSourceKey = null;
+  });
+
+  customPrefChecklist.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    const item = event.target.closest(".pref-check-item");
+    if (!item) return;
+
+    customPrefChecklist.querySelectorAll(".pref-check-item").forEach((el) => {
+      el.classList.remove("drag-over");
+    });
+
+    item.classList.add("drag-over");
+  });
+
+  customPrefChecklist.addEventListener("dragleave", (event) => {
+    const item = event.target.closest(".pref-check-item");
+    if (!item) return;
+    item.classList.remove("drag-over");
+  });
+
+  customPrefChecklist.addEventListener("drop", (event) => {
+    event.preventDefault();
+
+    const target = event.target.closest(".pref-check-item");
+    if (!target || !dragSourceKey) return;
+
+    const targetKey = target.dataset.prefKey || "";
+    if (!targetKey || targetKey === dragSourceKey) return;
+
+    reorderPrefWithinRegion(customEditingRegion, dragSourceKey, targetKey);
     renderCustomPrefChecklist();
   });
 
@@ -635,8 +680,14 @@ function renderCustomPrefChecklist() {
   const prefs = getPrefsByRegion(customEditingRegion);
 
   customPrefChecklist.innerHTML = prefs
-    .map((item, index) => `
-      <div class="pref-check-item">
+    .map((item) => `
+      <div
+        class="pref-check-item"
+        draggable="true"
+        data-pref-key="${item.key}"
+      >
+        <div class="drag-handle" aria-hidden="true">≡</div>
+
         <label class="pref-check-main">
           <input
             type="checkbox"
@@ -645,51 +696,23 @@ function renderCustomPrefChecklist() {
           />
           <span>${item.name}</span>
         </label>
-
-        <div></div>
-
-        <div class="pref-order-actions">
-          <button
-            type="button"
-            class="order-button"
-            data-order-action="up"
-            data-pref-key="${item.key}"
-            ${index === 0 ? "disabled" : ""}
-          >
-            ↑
-          </button>
-          <button
-            type="button"
-            class="order-button"
-            data-order-action="down"
-            data-pref-key="${item.key}"
-            ${index === prefs.length - 1 ? "disabled" : ""}
-          >
-            ↓
-          </button>
-        </div>
       </div>
     `)
     .join("");
 }
 
-function movePrefOrderWithinRegion(region, prefKey, delta) {
-  const regionKeys = getPrefsByRegion(region).map((item) => item.key);
-  const currentIndex = regionKeys.indexOf(prefKey);
-  if (currentIndex < 0) return;
-
-  const targetIndex = currentIndex + delta;
-  if (targetIndex < 0 || targetIndex >= regionKeys.length) return;
-
-  const sourceKey = regionKeys[currentIndex];
-  const targetKey = regionKeys[targetIndex];
+function reorderPrefWithinRegion(region, sourceKey, targetKey) {
+  const regionPrefKeys = getPrefsByRegion(region).map((item) => item.key);
+  if (!regionPrefKeys.includes(sourceKey) || !regionPrefKeys.includes(targetKey)) return;
 
   const sourceOrderIndex = prefOrderKeys.indexOf(sourceKey);
   const targetOrderIndex = prefOrderKeys.indexOf(targetKey);
   if (sourceOrderIndex < 0 || targetOrderIndex < 0) return;
 
-  [prefOrderKeys[sourceOrderIndex], prefOrderKeys[targetOrderIndex]] =
-    [prefOrderKeys[targetOrderIndex], prefOrderKeys[sourceOrderIndex]];
+  prefOrderKeys.splice(sourceOrderIndex, 1);
+
+  const adjustedTargetIndex = prefOrderKeys.indexOf(targetKey);
+  prefOrderKeys.splice(adjustedTargetIndex, 0, sourceKey);
 }
 
 function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
