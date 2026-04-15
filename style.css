@@ -250,6 +250,23 @@ select {
   padding: 14px;
 }
 
+.summary-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-badges {
+  display: flex;
+  gap: 6px;
+}
+
+.toggle-button.small {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
 .section-title-row,
 .table-heading-row {
   display: flex;
