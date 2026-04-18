@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-18T03:09:05.688606+09:00",
-  "observedLatestAt": "2026-04-18T03:00:00+09:00",
+  "updatedAt": "2026-04-19T00:55:43.307674+09:00",
+  "observedLatestAt": "2026-04-19T00:40:00+09:00",
   "prefecture": "和歌山県",
   "element": "monthMax12hSnow",
   "month": "all",
@@ -47,26 +47,33 @@
         {
           "rank": 6,
           "value": 0,
-          "date": "2026年3月31日（令和8年）",
+          "date": "2026年4月18日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 7,
           "value": 0,
-          "date": "2026年2月28日（令和8年）",
+          "date": "2026年3月31日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 8,
           "value": 0,
-          "date": "2026年1月31日（令和8年）",
+          "date": "2026年2月28日（令和8年）",
           "highlightLive": false,
           "highlightWithinYear": true
         },
         {
           "rank": 9,
+          "value": 0,
+          "date": "2026年1月31日（令和8年）",
+          "highlightLive": false,
+          "highlightWithinYear": true
+        },
+        {
+          "rank": 10,
           "value": 0,
           "date": "2025年12月31日（令和7年）",
           "highlightLive": false,
