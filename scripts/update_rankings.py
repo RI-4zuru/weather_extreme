@@ -31,20 +31,12 @@ REGION_KEY_MAP = {
 
 
 def normalize_region_dir(region_name: str) -> str:
-    """
-    prefectures.json の region 表記を、data 配下のディレクトリ名に変換する。
-    未定義の地域は others に落とす。
-    """
     if not region_name:
         return "others"
     return REGION_KEY_MAP.get(region_name, "others")
 
 
 def build_pref_output_dir(pref: dict) -> str:
-    """
-    県ごとの出力先ディレクトリを返す。
-    例: data/kinki/nara
-    """
     region_name = pref.get("region", "")
     region_dir = normalize_region_dir(region_name)
     pref_key = pref["key"]
@@ -55,9 +47,15 @@ def main():
     ensure_dir(BASE_DIR)
 
     prefectures = load_prefecture_configs()
-
     latest_obs_iso = fetch_latest_time()
     generated_iso = datetime.now(JST).isoformat()
+
+    written_file_count = 0
+    processed_pref_count = 0
+    skipped_pref_count = 0
+
+    print("=== create base rankings start ===")
+    print(f"prefecture count: {len(prefectures)}")
 
     for pref in prefectures:
         pref_key = pref["key"]
@@ -68,12 +66,14 @@ def main():
         pref_dir = build_pref_output_dir(pref)
         ensure_dir(pref_dir)
 
-        print(f"start: {pref_name} ({pref_region}) -> {pref_dir}")
+        print(f"[pref start] {pref_name} region={pref_region} output={pref_dir}")
 
-        # stations が空でもディレクトリだけは作る
         if not stations:
-            print(f"skip rows (stations empty): {pref_name}")
+            print(f"[pref skip] {pref_name}: stations empty")
+            skipped_pref_count += 1
             continue
+
+        pref_written = 0
 
         for element_key, element_def in ELEMENTS.items():
             for month in MONTHS:
@@ -94,12 +94,8 @@ def main():
                             "ranks": parsed["records"],
                         })
 
-                    except Exception as exc:
-                        print(
-                            f"skip station: pref={pref_key} "
-                            f"station={station.get('stationName', '-')}, "
-                            f"element={element_key}, month={month}, error={exc}"
-                        )
+                    except Exception:
+                        # 問題なさそうな個別欠落ログは出さずに黙ってスキップ
                         continue
 
                 output = {
@@ -116,14 +112,22 @@ def main():
                 output_path = os.path.join(pref_dir, file_name)
                 write_json(output_path, output)
 
-                print(f"wrote: {output_path}")
+                pref_written += 1
+                written_file_count += 1
+
+        processed_pref_count += 1
+        print(f"[pref done] {pref_name}: wrote {pref_written} files")
 
     manifest = build_dir_manifest(BASE_DIR, generated_iso, prefectures)
     manifest["observedLatestAt"] = latest_obs_iso
-    write_json(os.path.join(BASE_DIR, "manifest.json"), manifest)
+    manifest_path = os.path.join(BASE_DIR, "manifest.json")
+    write_json(manifest_path, manifest)
 
-    print(f"wrote: {BASE_DIR}/manifest.json")
-    print("done rankings")
+    print("=== create base rankings done ===")
+    print(f"processed prefectures: {processed_pref_count}")
+    print(f"skipped prefectures: {skipped_pref_count}")
+    print(f"written files: {written_file_count}")
+    print(f"manifest: {manifest_path}")
 
 
 if __name__ == "__main__":
