@@ -21,10 +21,11 @@
     <section class="control-panel">
       <div class="control-block">
         <div class="control-label-row">
-          <div class="control-label">都道府県</div>
+          <div class="control-label">地域・都道府県</div>
           <button id="customizeButton" class="sub-action-button" type="button">カスタム</button>
         </div>
-        <div id="prefButtons" class="pref-buttons"></div>
+        <div id="regionTabs" class="region-tabs"></div>
+        <div id="prefButtons" class="pref-buttons pref-buttons-grid"></div>
       </div>
 
       <div class="control-grid single-row two-cols">
@@ -144,25 +145,15 @@
 
       <div class="modal-body">
         <section class="modal-section">
-          <div class="modal-section-title">地域</div>
-          <div id="customRegionTabs" class="region-tabs"></div>
-        </section>
-
-        <section class="modal-section">
           <div class="modal-section-title-row">
-            <div class="modal-section-title">表示する都道府県</div>
+            <div class="modal-section-title">地域ごとの表示設定</div>
             <div class="modal-mini-actions">
               <button id="selectAllPrefsButton" class="sub-action-button" type="button">全選択</button>
               <button id="clearAllPrefsButton" class="sub-action-button" type="button">全解除</button>
             </div>
           </div>
-          <div id="customPrefChecklist" class="pref-checklist"></div>
-        </section>
-
-        <section class="modal-section">
-          <div class="modal-section-title">表示順の並び替え</div>
-          <div class="modal-help-text">ドラッグまたはタッチ操作で並び替えます。表示ONの都道府県だけ対象です。</div>
-          <div id="customPrefSortList" class="pref-sort-list"></div>
+          <div class="modal-help-text">地域を開いて表示する都道府県を選択します。</div>
+          <div id="customRegionList" class="custom-region-list"></div>
         </section>
       </div>
 
