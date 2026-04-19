@@ -1138,8 +1138,8 @@ def try_fetch_station_rows(station, element_def, month):
                 f"rankType={rank_type} error={repr(e)}"
             )
 
-    for msg in tried_messages:
-        print(msg, file=sys.stderr)
+    # for msg in tried_messages:
+    #     print(msg, file=sys.stderr)
 
     if last_error:
         raise last_error
