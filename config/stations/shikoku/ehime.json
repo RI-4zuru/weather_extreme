@@ -2,9 +2,22 @@
   "pref": "愛媛県",
   "stations": [
     {
-      "name": "松山",
+      "stationName": "松山",
       "blockNo": "47887",
-      "view": "h0"
+      "view": "h0",
+      "precip": true,
+      "temp": true,
+      "wind": true,
+      "pressure": true,
+      "humidity": true,
+      "sunshine": true
+    },
+    {
+      "stationName": "宇和島",
+      "blockNo": "47890",
+      "view": "h0",
+      "precip": true,
+      "temp": true
     }
   ]
 }
