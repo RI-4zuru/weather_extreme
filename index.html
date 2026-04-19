@@ -9,167 +9,137 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="page-shell">
-    <header class="app-header">
-      <div class="title-row">
-        <div class="title-block">
-          <p class="eyebrow">Weather Extreme</p>
-          <h1>県内極値一覧</h1>
+  <header class="app-header">
+    <div class="title-row">
+      <h1>県内極値一覧</h1>
+      <div class="header-meta">
+        <span class="meta-label">実況観測時刻</span>
+        <span id="observedLatestAt" class="meta-value">読み込み待ち</span>
+      </div>
+    </div>
+
+    <section class="control-panel">
+      <div class="control-block">
+        <div class="control-label-row">
+          <div class="control-label">都道府県</div>
+          <button id="customizeButton" class="sub-action-button" type="button">カスタム</button>
+        </div>
+        <div id="prefButtons" class="pref-buttons"></div>
+      </div>
+
+      <div class="control-grid single-row two-cols">
+        <label class="control-item">
+          <span class="control-label">月</span>
+          <select id="monthSelect">
+            <option value="all">通年</option>
+            <option value="1">1月</option>
+            <option value="2">2月</option>
+            <option value="3">3月</option>
+            <option value="4">4月</option>
+            <option value="5">5月</option>
+            <option value="6">6月</option>
+            <option value="7">7月</option>
+            <option value="8">8月</option>
+            <option value="9">9月</option>
+            <option value="10">10月</option>
+            <option value="11">11月</option>
+            <option value="12">12月</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="element-panel-wrap">
+      <button id="elementPanelToggle" class="toggle-button" type="button" aria-expanded="false">
+        要素選択を開く
+      </button>
+      <div id="elementPanel" class="element-panel" hidden></div>
+    </section>
+  </header>
+
+  <main class="app-main">
+    <section class="summary-section">
+      <div
+        id="summaryHeader"
+        class="section-title-row section-title-row-clickable"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
+      >
+        <div class="summary-title-wrap">
+          <h2>実況で10位以内に入った項目</h2>
+          <div class="summary-badges">
+            <span id="rankInBadge" class="status-badge status-badge-rankin" hidden>ランクイン有り</span>
+            <span id="topRankAlert" class="status-badge status-badge-top1" hidden>極値1位更新有り</span>
+          </div>
         </div>
 
-        <div class="header-meta" aria-label="実況観測時刻">
-          <span class="meta-label">実況観測時刻</span>
-          <span id="observedLatestAt" class="meta-value">読み込み待ち</span>
+        <div id="summaryChevron" class="summary-chevron" aria-hidden="true">▼</div>
+      </div>
+
+      <div id="liveSummaryBody" class="live-summary-grid" hidden>
+        <div class="summary-panel" data-summary-panel="annual">
+          <div class="summary-panel-header" role="button" tabindex="0" aria-expanded="true" data-summary-toggle="annual">
+            <h3>通年</h3>
+            <div class="summary-panel-chevron" data-summary-chevron="annual">▼</div>
+          </div>
+          <div class="summary-panel-body" data-summary-body="annual">
+            <div class="live-summary-column-body">
+              <div class="empty-message">読み込み待ち</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-panel" data-summary-panel="monthly">
+          <div class="summary-panel-header" role="button" tabindex="0" aria-expanded="true" data-summary-toggle="monthly">
+            <h3>当月</h3>
+            <div class="summary-panel-chevron" data-summary-chevron="monthly">▼</div>
+          </div>
+          <div class="summary-panel-body" data-summary-body="monthly">
+            <div class="live-summary-column-body">
+              <div class="empty-message">読み込み待ち</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <div class="table-heading-row">
+        <div>
+          <h2 id="tableTitle">読み込み待ち</h2>
+          <p id="statusText" class="status-text">読み込み待ち</p>
         </div>
       </div>
 
-      <section class="control-panel" aria-label="表示条件">
-        <div class="control-block control-block-prefs">
-          <div class="control-label-row">
-            <div class="control-heading-wrap">
-              <div class="control-label">都道府県</div>
-              <div class="control-help">メイン表示に出す都道府県を選択・整理</div>
-            </div>
-            <button id="customizeButton" class="sub-action-button" type="button">表示カスタム</button>
-          </div>
+      <div class="legend">
+        <span class="legend-chip live-chip">赤系：実況で順位相当あり</span>
+        <span class="legend-chip within-chip">黄系：1年以内の記録</span>
+      </div>
 
-          <div id="prefButtons" class="pref-buttons" aria-live="polite"></div>
-        </div>
+      <div class="table-scroll">
+        <table class="rank-table">
+          <thead id="rankTableHead"></thead>
+          <tbody id="rankTableBody">
+            <tr>
+              <td class="message-cell" colspan="11">読み込み待ち</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-        <div class="control-grid single-row two-cols">
-          <label class="control-item control-item-month">
-            <span class="control-label">月</span>
-            <select id="monthSelect">
-              <option value="all">通年</option>
-              <option value="1">1月</option>
-              <option value="2">2月</option>
-              <option value="3">3月</option>
-              <option value="4">4月</option>
-              <option value="5">5月</option>
-              <option value="6">6月</option>
-              <option value="7">7月</option>
-              <option value="8">8月</option>
-              <option value="9">9月</option>
-              <option value="10">10月</option>
-              <option value="11">11月</option>
-              <option value="12">12月</option>
-            </select>
-          </label>
-        </div>
-      </section>
-
-      <section class="element-panel-wrap">
-        <button id="elementPanelToggle" class="toggle-button" type="button" aria-expanded="false">
-          要素選択を開く
-        </button>
-        <div id="elementPanel" class="element-panel" hidden></div>
-      </section>
-    </header>
-
-    <main class="app-main">
-      <section class="summary-section">
-        <div
-          id="summaryHeader"
-          class="section-title-row section-title-row-clickable"
-          role="button"
-          tabindex="0"
-          aria-expanded="false"
-        >
-          <div class="summary-title-wrap">
-            <div class="section-heading-stack">
-              <p class="section-kicker">LIVE SUMMARY</p>
-              <h2>実況で10位以内に入った項目</h2>
-            </div>
-
-            <div class="summary-badges">
-              <span id="rankInBadge" class="status-badge status-badge-rankin" hidden>ランクイン有り</span>
-              <span id="topRankAlert" class="status-badge status-badge-top1" hidden>極値1位更新有り</span>
-            </div>
-          </div>
-
-          <div id="summaryChevron" class="summary-chevron" aria-hidden="true">▼</div>
-        </div>
-
-        <div id="liveSummaryBody" class="live-summary-grid" hidden>
-          <div class="summary-panel" data-summary-panel="annual">
-            <div
-              class="summary-panel-header"
-              role="button"
-              tabindex="0"
-              aria-expanded="true"
-              data-summary-toggle="annual"
-            >
-              <h3>通年</h3>
-              <div class="summary-panel-chevron" data-summary-chevron="annual">▼</div>
-            </div>
-            <div class="summary-panel-body" data-summary-body="annual">
-              <div class="live-summary-column-body">
-                <div class="empty-message">読み込み待ち</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="summary-panel" data-summary-panel="monthly">
-            <div
-              class="summary-panel-header"
-              role="button"
-              tabindex="0"
-              aria-expanded="true"
-              data-summary-toggle="monthly"
-            >
-              <h3>当月</h3>
-              <div class="summary-panel-chevron" data-summary-chevron="monthly">▼</div>
-            </div>
-            <div class="summary-panel-body" data-summary-body="monthly">
-              <div class="live-summary-column-body">
-                <div class="empty-message">読み込み待ち</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="table-section">
-        <div class="table-heading-row">
-          <div class="table-heading-main">
-            <p class="section-kicker">RANKING TABLE</p>
-            <h2 id="tableTitle">読み込み待ち</h2>
-            <p id="statusText" class="status-text">読み込み待ち</p>
-          </div>
-        </div>
-
-        <div class="legend">
-          <span class="legend-chip live-chip">赤系：実況で順位相当あり</span>
-          <span class="legend-chip within-chip">黄系：1年以内の記録</span>
-        </div>
-
-        <div class="table-scroll">
-          <table class="rank-table">
-            <thead id="rankTableHead"></thead>
-            <tbody id="rankTableBody">
-              <tr>
-                <td class="message-cell" colspan="11">読み込み待ち</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <details class="debug-section" id="debugDetails">
-          <summary>診断情報</summary>
-          <div id="debugGrid" class="debug-grid"></div>
-        </details>
-      </section>
-    </main>
-  </div>
+    <details class="debug-section" id="debugDetails">
+      <summary>診断情報</summary>
+      <div id="debugGrid" class="debug-grid"></div>
+    </details>
+  </main>
 
   <div id="customModal" class="modal-backdrop" hidden>
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
       <div class="modal-header">
-        <div class="modal-title-block">
-          <p class="section-kicker">CUSTOM DISPLAY</p>
-          <h2 id="customModalTitle">表示カスタム</h2>
-        </div>
-        <button id="customCloseButton" class="modal-close-button" type="button" aria-label="閉じる">×</button>
+        <h2 id="customModalTitle">表示カスタム</h2>
+        <button id="customCloseButton" class="modal-close-button" type="button">×</button>
       </div>
 
       <div class="modal-body">
