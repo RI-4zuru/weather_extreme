@@ -2,9 +2,23 @@
   "pref": "高知県",
   "stations": [
     {
-      "name": "高知",
+      "stationName": "高知",
       "blockNo": "47893",
-      "view": "h0"
+      "view": "h0",
+      "precip": true,
+      "temp": true,
+      "wind": true,
+      "pressure": true,
+      "humidity": true,
+      "sunshine": true
+    },
+    {
+      "stationName": "室戸岬",
+      "blockNo": "47898",
+      "view": "h0",
+      "precip": true,
+      "temp": true,
+      "wind": true
     }
   ]
 }
