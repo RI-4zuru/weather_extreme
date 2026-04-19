@@ -1,0 +1,23 @@
+{
+  "prefKey": "tohoku",
+  "prefName": "宮城県",
+  "stations": [
+    {
+      "stationName": "青森",
+      "precNo": "14",
+      "amedasCode": "64036",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47412", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47412", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47412", "view": "ns0" }
+      ]
+    }
+  ]
+}
