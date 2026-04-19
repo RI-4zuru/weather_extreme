@@ -1161,6 +1161,7 @@ def load_prefecture_configs():
         loaded.append({
             "key": pref["key"],
             "name": pref["name"],
+            "region": pref.get("region", ""),
             "stations": station_data.get("stations", [])
         })
 
