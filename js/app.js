@@ -40,7 +40,6 @@ const STORAGE_KEYS = {
   month: "weather_extreme:last_month",
   element: "weather_extreme:last_element",
   enabledPrefs: "weather_extreme:enabled_prefs",
-  prefOrder: "weather_extreme:pref_order",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
@@ -66,7 +65,7 @@ const REGION_PREF_ORDER = {
   "北陸": ["新潟県", "富山県", "石川県", "福井県"],
   "東海": ["岐阜県", "静岡県", "愛知県", "三重県"],
   "近畿": ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"],
-  "中国": ["鳥取県", "島根県", "岡山県", "広島県"],
+  "中国": ["鳥取県", "島根県", "岡山県", "広島県", "山口県"],
   "四国": ["徳島県", "香川県", "愛媛県", "高知県"],
   "九州北部": ["山口県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県"],
   "九州南部・奄美": ["宮崎県", "鹿児島県"],
@@ -79,6 +78,7 @@ const PREF_TO_REGION = Object.fromEntries(
 
 const ALL_PREF_ORDER = STANDARD_REGIONS.flatMap((region) => REGION_PREF_ORDER[region]);
 
+const regionTabs = document.getElementById("regionTabs");
 const prefButtons = document.getElementById("prefButtons");
 const monthSelect = document.getElementById("monthSelect");
 const elementPanel = document.getElementById("elementPanel");
@@ -103,9 +103,7 @@ const customModal = document.getElementById("customModal");
 const customCloseButton = document.getElementById("customCloseButton");
 const customCancelButton = document.getElementById("customCancelButton");
 const customSaveButton = document.getElementById("customSaveButton");
-const customRegionTabs = document.getElementById("customRegionTabs");
-const customPrefChecklist = document.getElementById("customPrefChecklist");
-const customPrefSortList = document.getElementById("customPrefSortList");
+const customRegionList = document.getElementById("customRegionList");
 const selectAllPrefsButton = document.getElementById("selectAllPrefsButton");
 const clearAllPrefsButton = document.getElementById("clearAllPrefsButton");
 
@@ -115,10 +113,8 @@ let currentElementKey = "";
 let currentMonth = DEFAULT_MONTH;
 
 let enabledPrefKeys = new Set();
-let prefOrderKeys = [];
-let customEditingRegion = "";
-let dragSourceKey = null;
-let touchSourceKey = null;
+let customExpandedRegions = new Set();
+let defaultPrefOrderKeys = [];
 
 async function main() {
   try {
@@ -129,6 +125,7 @@ async function main() {
     ]);
 
     normalizePrefectureRegions();
+    defaultPrefOrderKeys = buildDefaultPrefOrderKeys();
     makeTableHead(rankTableHead);
 
     initControls();
@@ -208,35 +205,6 @@ function buildDefaultPrefOrderKeys() {
   return result;
 }
 
-function loadPrefOrderKeys() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEYS.prefOrder);
-    const allKeys = new Set(getAllPrefKeys());
-    const defaultOrder = buildDefaultPrefOrderKeys();
-
-    if (!raw) {
-      prefOrderKeys = defaultOrder;
-      return;
-    }
-
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) {
-      prefOrderKeys = defaultOrder;
-      return;
-    }
-
-    const valid = parsed.filter((key) => allKeys.has(key));
-    const missing = defaultOrder.filter((key) => !valid.includes(key));
-    prefOrderKeys = [...valid, ...missing];
-  } catch {
-    prefOrderKeys = buildDefaultPrefOrderKeys();
-  }
-}
-
-function savePrefOrderKeys() {
-  writeStorage(STORAGE_KEYS.prefOrder, JSON.stringify(prefOrderKeys));
-}
-
 function loadEnabledPrefKeys() {
   try {
     const raw = localStorage.getItem(STORAGE_KEYS.enabledPrefs);
@@ -268,7 +236,6 @@ function saveEnabledPrefKeys() {
 
 function initControls() {
   loadEnabledPrefKeys();
-  loadPrefOrderKeys();
 
   currentRegion = getInitialRegion();
   currentPrefKey = getInitialPrefKey(currentRegion);
@@ -277,6 +244,8 @@ function initControls() {
 
   monthSelect.value = currentMonth;
 
+  ensureCurrentRegionAndPref();
+  renderRegionTabs();
   renderPrefButtons();
   renderElementButtons();
 
@@ -291,9 +260,31 @@ function initControls() {
   rankInBadge.hidden = true;
   topRankAlert.hidden = true;
   observedLatestAtEl.textContent = "読み込み待ち";
+
+  if (currentRegion) {
+    customExpandedRegions = new Set([currentRegion]);
+  }
 }
 
 function bindEvents() {
+  regionTabs.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-region-tab]");
+    if (!button) return;
+
+    const nextRegion = button.dataset.regionTab || "";
+    if (!nextRegion || nextRegion === currentRegion) return;
+
+    currentRegion = nextRegion;
+    ensureCurrentRegionAndPref();
+
+    writeStorage(STORAGE_KEYS.region, currentRegion);
+    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+
+    renderRegionTabs();
+    renderPrefButtons();
+    await refresh();
+  });
+
   prefButtons.addEventListener("click", async (event) => {
     const button = event.target.closest("[data-pref-key]");
     if (!button) return;
@@ -309,6 +300,7 @@ function bindEvents() {
     }
     writeStorage(STORAGE_KEYS.pref, currentPrefKey);
 
+    renderRegionTabs();
     renderPrefButtons();
     await refresh();
   });
@@ -391,146 +383,64 @@ function bindEvents() {
     }
   });
 
-  customRegionTabs.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-custom-region]");
-    if (!button) return;
+  customRegionList.addEventListener("click", (event) => {
+    const toggleButton = event.target.closest("[data-region-toggle]");
+    if (!toggleButton) return;
 
-    customEditingRegion = button.dataset.customRegion || "";
-    renderCustomRegionTabs();
-    renderCustomPrefChecklist();
-    renderCustomPrefSortList();
-  });
+    const region = toggleButton.dataset.regionToggle || "";
+    if (!region) return;
 
-  selectAllPrefsButton.addEventListener("click", () => {
-    const prefs = getPrefsByRegion(customEditingRegion);
-    prefs.forEach((item) => enabledPrefKeys.add(item.key));
-    renderCustomPrefChecklist();
-    renderCustomPrefSortList();
-  });
-
-  clearAllPrefsButton.addEventListener("click", () => {
-    const prefs = getPrefsByRegion(customEditingRegion);
-    prefs.forEach((item) => enabledPrefKeys.delete(item.key));
-    renderCustomPrefChecklist();
-    renderCustomPrefSortList();
-  });
-
-  customPrefChecklist.addEventListener("change", (event) => {
-    const input = event.target.closest("[data-pref-check]");
-    if (!input) return;
-
-    const prefKey = input.dataset.prefCheck || "";
-    if (!prefKey) return;
-
-    if (input.checked) {
-      enabledPrefKeys.add(prefKey);
+    if (customExpandedRegions.has(region)) {
+      customExpandedRegions.delete(region);
     } else {
-      enabledPrefKeys.delete(prefKey);
+      customExpandedRegions.add(region);
     }
 
-    renderCustomPrefSortList();
+    renderCustomRegionList();
   });
 
-  customPrefSortList.addEventListener("dragstart", (event) => {
-    const item = event.target.closest(".pref-sort-item");
-    if (!item) return;
+  customRegionList.addEventListener("change", (event) => {
+    const prefCheck = event.target.closest("[data-pref-check]");
+    if (prefCheck) {
+      const prefKey = prefCheck.dataset.prefCheck || "";
+      if (!prefKey) return;
 
-    dragSourceKey = item.dataset.prefKey || null;
-    item.classList.add("dragging");
+      if (prefCheck.checked) {
+        enabledPrefKeys.add(prefKey);
+      } else {
+        enabledPrefKeys.delete(prefKey);
+      }
 
-    if (event.dataTransfer) {
-      event.dataTransfer.effectAllowed = "move";
-      event.dataTransfer.setData("text/plain", dragSourceKey || "");
-    }
-  });
-
-  customPrefSortList.addEventListener("dragend", (event) => {
-    const item = event.target.closest(".pref-sort-item");
-    if (item) {
-      item.classList.remove("dragging");
-    }
-
-    customPrefSortList.querySelectorAll(".pref-sort-item").forEach((el) => {
-      el.classList.remove("drag-over");
-    });
-
-    dragSourceKey = null;
-  });
-
-  customPrefSortList.addEventListener("dragover", (event) => {
-    event.preventDefault();
-    const item = event.target.closest(".pref-sort-item");
-    if (!item) return;
-
-    customPrefSortList.querySelectorAll(".pref-sort-item").forEach((el) => {
-      el.classList.remove("drag-over");
-    });
-
-    item.classList.add("drag-over");
-  });
-
-  customPrefSortList.addEventListener("dragleave", (event) => {
-    const item = event.target.closest(".pref-sort-item");
-    if (!item) return;
-    item.classList.remove("drag-over");
-  });
-
-  customPrefSortList.addEventListener("drop", (event) => {
-    event.preventDefault();
-
-    const target = event.target.closest(".pref-sort-item");
-    if (!target || !dragSourceKey) return;
-
-    const targetKey = target.dataset.prefKey || "";
-    if (!targetKey || targetKey === dragSourceKey) return;
-
-    reorderPrefWithinRegion(customEditingRegion, dragSourceKey, targetKey);
-    renderCustomPrefSortList();
-  });
-
-  customPrefSortList.addEventListener("touchstart", (event) => {
-    const item = event.target.closest(".pref-sort-item");
-    if (!item) return;
-
-    touchSourceKey = item.dataset.prefKey || null;
-    item.classList.add("dragging");
-  }, { passive: true });
-
-  customPrefSortList.addEventListener("touchmove", (event) => {
-    const touch = event.touches[0];
-    if (!touch) return;
-
-    const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    const item = target?.closest(".pref-sort-item");
-    if (!item) return;
-
-    customPrefSortList.querySelectorAll(".pref-sort-item").forEach((el) => {
-      el.classList.remove("drag-over");
-    });
-
-    item.classList.add("drag-over");
-  }, { passive: true });
-
-  customPrefSortList.addEventListener("touchend", (event) => {
-    const touch = event.changedTouches[0];
-    if (!touch) {
-      cleanupTouchSort();
+      renderCustomRegionList();
       return;
     }
 
-    const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    const item = target?.closest(".pref-sort-item");
+    const regionBulk = event.target.closest("[data-region-bulk]");
+    if (regionBulk) {
+      const region = regionBulk.dataset.regionBulk || "";
+      if (!region) return;
 
-    if (item && touchSourceKey) {
-      const targetKey = item.dataset.prefKey || "";
-      if (targetKey && targetKey !== touchSourceKey) {
-        reorderPrefWithinRegion(customEditingRegion, touchSourceKey, targetKey);
-        renderCustomPrefSortList();
-      }
+      getPrefsByRegion(region).forEach((item) => {
+        if (regionBulk.checked) {
+          enabledPrefKeys.add(item.key);
+        } else {
+          enabledPrefKeys.delete(item.key);
+        }
+      });
+
+      renderCustomRegionList();
     }
+  });
 
-    cleanupTouchSort();
-  }, { passive: true });
+  selectAllPrefsButton.addEventListener("click", () => {
+    getAllPrefKeys().forEach((key) => enabledPrefKeys.add(key));
+    renderCustomRegionList();
+  });
+
+  clearAllPrefsButton.addEventListener("click", () => {
+    enabledPrefKeys.clear();
+    renderCustomRegionList();
+  });
 
   customSaveButton.addEventListener("click", async () => {
     ensureAtLeastOneEnabledPref();
@@ -542,19 +452,12 @@ function bindEvents() {
     writeStorage(STORAGE_KEYS.region, currentRegion);
     writeStorage(STORAGE_KEYS.pref, currentPrefKey);
     saveEnabledPrefKeys();
-    savePrefOrderKeys();
 
+    renderRegionTabs();
     renderPrefButtons();
     closeCustomModal();
     await refresh();
   });
-}
-
-function cleanupTouchSort() {
-  customPrefSortList.querySelectorAll(".pref-sort-item").forEach((el) => {
-    el.classList.remove("dragging", "drag-over");
-  });
-  touchSourceKey = null;
 }
 
 function startAutoRefresh() {
@@ -593,7 +496,7 @@ function getRegions() {
 
 function getPrefsByRegion(region) {
   const prefs = (state.prefectures || []).filter((item) => item.region === region);
-  const orderMap = new Map(prefOrderKeys.map((key, index) => [key, index]));
+  const orderMap = new Map(defaultPrefOrderKeys.map((key, index) => [key, index]));
   return prefs.slice().sort((a, b) => {
     const ia = orderMap.has(a.key) ? orderMap.get(a.key) : Number.MAX_SAFE_INTEGER;
     const ib = orderMap.has(b.key) ? orderMap.get(b.key) : Number.MAX_SAFE_INTEGER;
@@ -603,6 +506,29 @@ function getPrefsByRegion(region) {
 
 function getVisiblePrefsByRegion(region) {
   return getPrefsByRegion(region).filter((item) => enabledPrefKeys.has(item.key));
+}
+
+function getEnabledRegions() {
+  return getRegions().filter((region) => getVisiblePrefsByRegion(region).length > 0);
+}
+
+function ensureCurrentRegionAndPref() {
+  const enabledRegions = getEnabledRegions();
+
+  if (!enabledRegions.length) {
+    currentRegion = "";
+    currentPrefKey = "";
+    return;
+  }
+
+  if (!enabledRegions.includes(currentRegion)) {
+    currentRegion = enabledRegions[0];
+  }
+
+  const visiblePrefs = getVisiblePrefsByRegion(currentRegion);
+  if (!visiblePrefs.some((item) => item.key === currentPrefKey)) {
+    currentPrefKey = visiblePrefs[0]?.key || "";
+  }
 }
 
 function getInitialRegion() {
@@ -634,7 +560,7 @@ function getInitialPrefKey(region) {
 }
 
 function getBestRegionAndPref() {
-  const regions = getRegions();
+  const regions = getEnabledRegions();
 
   if (currentRegion) {
     const visiblePrefs = getVisiblePrefsByRegion(currentRegion);
@@ -653,7 +579,7 @@ function getBestRegionAndPref() {
     }
   }
 
-  return { region: regions[0] || "", prefKey: getPrefsByRegion(regions[0] || "")[0]?.key || "" };
+  return { region: "", prefKey: "" };
 }
 
 function ensureAtLeastOneEnabledPref() {
@@ -697,8 +623,31 @@ function getCurrentElementMeta() {
   return getCurrentElementList().find((item) => item.key === currentElementKey) || null;
 }
 
+function renderRegionTabs() {
+  const regionList = getEnabledRegions();
+
+  if (!regionList.length) {
+    regionTabs.innerHTML = `<div class="empty-message">表示対象の地域がありません。カスタムから設定してください。</div>`;
+    return;
+  }
+
+  regionTabs.innerHTML = regionList
+    .map((region) => `
+      <button
+        type="button"
+        class="region-tab ${region === currentRegion ? "active" : ""}"
+        data-region-tab="${region}"
+      >
+        ${region}
+      </button>
+    `)
+    .join("");
+}
+
 function renderPrefButtons() {
-  const prefList = getVisiblePrefsByRegion(currentRegion);
+  ensureCurrentRegionAndPref();
+
+  const prefList = currentRegion ? getVisiblePrefsByRegion(currentRegion) : [];
 
   if (!prefList.length) {
     prefButtons.innerHTML = `<div class="empty-message">表示対象の都道府県がありません。カスタムから設定してください。</div>`;
@@ -723,10 +672,14 @@ function renderElementButtons() {
 }
 
 function openCustomModal() {
-  customEditingRegion = currentRegion || getRegions()[0] || "";
-  renderCustomRegionTabs();
-  renderCustomPrefChecklist();
-  renderCustomPrefSortList();
+  if (customExpandedRegions.size === 0) {
+    const initialRegion = currentRegion || getRegions()[0] || "";
+    customExpandedRegions = initialRegion ? new Set([initialRegion]) : new Set();
+  } else if (currentRegion) {
+    customExpandedRegions.add(currentRegion);
+  }
+
+  renderCustomRegionList();
   customModal.hidden = false;
 }
 
@@ -734,73 +687,71 @@ function closeCustomModal() {
   customModal.hidden = true;
 }
 
-function renderCustomRegionTabs() {
+function renderCustomRegionList() {
   const regions = getRegions();
-  customRegionTabs.innerHTML = regions
-    .map((region) => `
-      <button
-        type="button"
-        class="region-tab ${region === customEditingRegion ? "active" : ""}"
-        data-custom-region="${region}"
-      >
-        ${region}
-      </button>
-    `)
+
+  customRegionList.innerHTML = regions
+    .map((region) => {
+      const prefs = getPrefsByRegion(region);
+      const enabledCount = prefs.filter((item) => enabledPrefKeys.has(item.key)).length;
+      const allChecked = prefs.length > 0 && enabledCount === prefs.length;
+      const expanded = customExpandedRegions.has(region);
+
+      return `
+        <section class="region-accordion">
+          <div class="region-accordion-header">
+            <label class="region-bulk-wrap">
+              <input
+                type="checkbox"
+                data-region-bulk="${region}"
+                ${allChecked ? "checked" : ""}
+              />
+              <span>${region}</span>
+            </label>
+
+            <div class="region-accordion-title"></div>
+
+            <button
+              type="button"
+              class="region-accordion-toggle"
+              data-region-toggle="${region}"
+              aria-expanded="${expanded ? "true" : "false"}"
+            >
+              ${expanded ? "閉じる" : "開く"}
+            </button>
+          </div>
+
+          <div class="region-accordion-body" ${expanded ? "" : "hidden"}>
+            <div class="region-pref-grid">
+              ${prefs
+                .map((item) => `
+                  <label class="region-pref-item">
+                    <input
+                      type="checkbox"
+                      data-pref-check="${item.key}"
+                      ${enabledPrefKeys.has(item.key) ? "checked" : ""}
+                    />
+                    <span>${item.name}</span>
+                  </label>
+                `)
+                .join("")}
+            </div>
+          </div>
+        </section>
+      `;
+    })
     .join("");
+
+  syncRegionBulkStates();
 }
 
-function renderCustomPrefChecklist() {
-  const prefs = getPrefsByRegion(customEditingRegion);
-
-  customPrefChecklist.innerHTML = prefs
-    .map((item) => `
-      <label class="pref-check-item">
-        <div class="pref-check-main">
-          <input
-            type="checkbox"
-            data-pref-check="${item.key}"
-            ${enabledPrefKeys.has(item.key) ? "checked" : ""}
-          />
-          <span>${item.name}</span>
-        </div>
-      </label>
-    `)
-    .join("");
-}
-
-function renderCustomPrefSortList() {
-  const prefs = getVisiblePrefsByRegion(customEditingRegion);
-
-  if (!prefs.length) {
-    customPrefSortList.innerHTML = `<div class="empty-message">表示ONの都道府県がありません。</div>`;
-    return;
-  }
-
-  customPrefSortList.innerHTML = prefs
-    .map((item) => `
-      <div
-        class="pref-sort-item"
-        draggable="true"
-        data-pref-key="${item.key}"
-      >
-        <div class="drag-handle" aria-hidden="true">≡</div>
-        <div class="pref-sort-main">${item.name}</div>
-      </div>
-    `)
-    .join("");
-}
-
-function reorderPrefWithinRegion(region, sourceKey, targetKey) {
-  const regionPrefKeys = getPrefsByRegion(region).map((item) => item.key);
-  if (!regionPrefKeys.includes(sourceKey) || !regionPrefKeys.includes(targetKey)) return;
-
-  const sourceOrderIndex = prefOrderKeys.indexOf(sourceKey);
-  const targetOrderIndex = prefOrderKeys.indexOf(targetKey);
-  if (sourceOrderIndex < 0 || targetOrderIndex < 0) return;
-
-  prefOrderKeys.splice(sourceOrderIndex, 1);
-  const adjustedTargetIndex = prefOrderKeys.indexOf(targetKey);
-  prefOrderKeys.splice(adjustedTargetIndex, 0, sourceKey);
+function syncRegionBulkStates() {
+  customRegionList.querySelectorAll("[data-region-bulk]").forEach((input) => {
+    const region = input.dataset.regionBulk;
+    const prefs = getPrefsByRegion(region);
+    const enabledCount = prefs.filter((item) => enabledPrefKeys.has(item.key)).length;
+    input.indeterminate = enabledCount > 0 && enabledCount < prefs.length;
+  });
 }
 
 function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
