@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "岐阜県",
+  "region": "東海",
+  "element": "yearAvgTempHigh",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1877年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 10.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 10.2,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.2,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.1,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 9.8,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 9.8,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        }
+      ]
+    }
+  ]
+}

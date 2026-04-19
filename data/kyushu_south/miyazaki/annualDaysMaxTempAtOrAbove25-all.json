@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "宮崎県",
+  "region": "九州南部・奄美",
+  "element": "annualDaysMaxTempAtOrAbove25",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1876年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 91,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 86,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 79,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 79,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 73,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 72,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 72,
+          "date": "1948年",
+          "_date_raw": "1948/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 72,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 71,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        }
+      ]
+    }
+  ]
+}

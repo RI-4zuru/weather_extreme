@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "富山県",
+  "region": "北陸",
+  "element": "yearCumulativeSnowDepth",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 680,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 637,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 632,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 630,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 628,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 617,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 617,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 613,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 613,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 598,
+          "date": "1955年",
+          "_date_raw": "1955/01/01"
+        }
+      ]
+    }
+  ]
+}

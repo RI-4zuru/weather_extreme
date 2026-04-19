@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "群馬県",
+  "region": "関東甲信",
+  "element": "annualDaysMaxTempAtOrAbove35",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1876年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 3,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 3,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1,
+          "date": "1972年",
+          "_date_raw": "1972/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1,
+          "date": "1950年",
+          "_date_raw": "1950/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        }
+      ]
+    }
+  ]
+}

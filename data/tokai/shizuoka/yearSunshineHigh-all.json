@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "静岡県",
+  "region": "東海",
+  "element": "yearSunshineHigh",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1891年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2096,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2062.5,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2049,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2049,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 2004.3,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1987.7,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1961.6,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1932.2,
+          "date": "1904年",
+          "_date_raw": "1904/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1919.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1918.4,
+          "date": "1958年",
+          "_date_raw": "1958/01/01"
+        }
+      ]
+    }
+  ]
+}

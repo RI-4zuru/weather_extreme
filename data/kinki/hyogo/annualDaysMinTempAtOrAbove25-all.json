@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "兵庫県",
+  "region": "近畿",
+  "element": "annualDaysMinTempAtOrAbove25",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "豊岡",
+      "startDate": "1918年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 28,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 27,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 22,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 18,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 18,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 14,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 13,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 12,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 12,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "姫路",
+      "startDate": "1948年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 53,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 48,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 41,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 34,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 30,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 30,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 29,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 27,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 26,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 26,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "神戸",
+      "startDate": "1896年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 82,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 77,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 69,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 65,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 62,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 61,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 59,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 57,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 57,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 56,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "洲本",
+      "startDate": "1919年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 49,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 48,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 36,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 32,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 30,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 29,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 27,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 25,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 25,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 24,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        }
+      ]
+    }
+  ]
+}

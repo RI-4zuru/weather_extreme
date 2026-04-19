@@ -1,0 +1,142 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "和歌山県",
+  "region": "近畿",
+  "element": "annualDaysMeanTempAtOrAbove25",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "和歌山",
+      "startDate": "1879年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 106,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 98,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 94,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 94,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 92,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 92,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 91,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 90,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 89,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 88,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "潮岬",
+      "startDate": "1913年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 103,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 88,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 88,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 85,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 84,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 83,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 83,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 81,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 80,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 79,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        }
+      ]
+    }
+  ]
+}

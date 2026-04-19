@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "大阪府",
+  "region": "近畿",
+  "element": "annualDaysMeanTempAtOrAbove25",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "大阪",
+      "startDate": "1883年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 107,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 106,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 103,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 99,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 96,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 94,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 92,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 92,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 92,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 91,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        }
+      ]
+    }
+  ]
+}

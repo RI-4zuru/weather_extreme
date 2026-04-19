@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "奈良県",
+  "region": "近畿",
+  "element": "annualDaysMeanTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "奈良",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 15,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 10,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 8,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 6,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 5,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 5,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 5,
+          "date": "1966年",
+          "_date_raw": "1966/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 4,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 4,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        }
+      ]
+    }
+  ]
+}

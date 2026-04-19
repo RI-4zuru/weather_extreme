@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "秋田県",
+  "region": "東北",
+  "element": "yearPrecipHigh",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1876年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1671.5,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1559,
+          "date": "1972年",
+          "_date_raw": "1972/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1444.5,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1432,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1403,
+          "date": "1879年",
+          "_date_raw": "1879/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1362.7,
+          "date": "1932年",
+          "_date_raw": "1932/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1360,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1359.1,
+          "date": "1926年",
+          "_date_raw": "1926/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1352.1,
+          "date": "1955年",
+          "_date_raw": "1955/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1347,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        }
+      ]
+    }
+  ]
+}

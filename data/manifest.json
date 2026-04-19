@@ -1,6 +1,32 @@
 {
-  "updatedAt": "2026-04-13T08:56:24.663025+09:00",
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
   "prefectures": {
+    "hokkaido": [
+      "hokkaido"
+    ],
+    "aomori": [],
+    "iwate": [],
+    "miyagi": [],
+    "akita": [],
+    "yamagata": [],
+    "fukushima": [],
+    "ibaraki": [],
+    "tochigi": [],
+    "gunma": [],
+    "saitama": [],
+    "chiba": [],
+    "tokyo": [],
+    "kanagawa": [],
+    "yamanashi": [],
+    "nagano": [],
+    "niigata": [],
+    "toyama": [],
+    "ishikawa": [],
+    "fukui": [],
+    "gifu": [],
+    "shizuoka": [],
+    "aichi": [],
+    "mie": [],
     "shiga": [
       "annualDaysMaxTempAtOrAbove25-1.json",
       "annualDaysMaxTempAtOrAbove25-10.json",
@@ -3918,7 +3944,26 @@
       "yearSunshineLow-8.json",
       "yearSunshineLow-9.json",
       "yearSunshineLow-all.json"
+    ],
+    "tottori": [],
+    "shimane": [],
+    "okayama": [],
+    "hiroshima": [],
+    "tokushima": [],
+    "kagawa": [],
+    "ehime": [],
+    "kochi": [],
+    "yamaguchi": [],
+    "fukuoka": [],
+    "saga": [],
+    "nagasaki": [],
+    "kumamoto": [],
+    "oita": [],
+    "miyazaki": [],
+    "kagoshima": [],
+    "okinawa": [
+      "okinawa"
     ]
   },
-  "observedLatestAt": "2026-04-13T08:40:00+09:00"
+  "observedLatestAt": "2026-04-19T23:40:00+09:00"
 }

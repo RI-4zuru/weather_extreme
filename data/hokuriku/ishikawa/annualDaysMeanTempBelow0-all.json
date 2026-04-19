@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-19T23:56:26.830699+09:00",
+  "observedLatestAt": "2026-04-19T23:40:00+09:00",
+  "prefecture": "石川県",
+  "region": "北陸",
+  "element": "annualDaysMeanTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "青森",
+      "startDate": "1879寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 135,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 133,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 130,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 130,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 127,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 121,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 119,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 119,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 119,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 119,
+          "date": "1887年",
+          "_date_raw": "1887/01/01"
+        }
+      ]
+    }
+  ]
+}
