@@ -2,9 +2,24 @@
   "pref": "徳島県",
   "stations": [
     {
-      "name": "徳島",
+      "stationName": "徳島",
       "blockNo": "47895",
-      "view": "h0"
+      "view": "h0",
+      "precip": true,
+      "temp": true,
+      "wind": true,
+      "snow": false,
+      "pressure": true,
+      "humidity": true,
+      "sunshine": true
+    },
+    {
+      "stationName": "池田",
+      "blockNo": "47893",
+      "view": "h0",
+      "precip": true,
+      "temp": true,
+      "wind": false
     }
   ]
 }
