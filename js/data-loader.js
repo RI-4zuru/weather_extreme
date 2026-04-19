@@ -1,56 +1,84 @@
-import { PATHS } from "./constants.js";
 import { state } from "./state.js";
 import { fetchJson, normalizeStationName } from "./utils.js";
 
 export async function loadPrefectures() {
-  const data = await fetchJson(PATHS.prefectures);
-  state.prefectures = data.prefectures || [];
+  const data = await fetchJson("./config/prefectures.json");
+  state.prefectures = Array.isArray(data) ? data : (data.prefectures || []);
   return state.prefectures;
 }
 
 export async function loadElements() {
-  const data = await fetchJson(PATHS.elements);
+  const data = await fetchJson("./config/elements.json");
   state.elements = data;
   return data;
 }
 
 export async function loadManifest() {
   try {
-    const data = await fetchJson(PATHS.manifest);
+    const data = await fetchJson("./data/manifest.json");
     state.manifest = data;
     return data;
-  } catch (error) {
+  } catch {
     state.manifest = null;
     return null;
   }
 }
 
-export async function loadStations(prefKey) {
-  if (state.stationConfigCache.has(prefKey)) {
-    return state.stationConfigCache.get(prefKey);
+export async function loadStations(prefKey, region) {
+  const cacheKey = `${region}|${prefKey}`;
+  if (state.stationConfigCache.has(cacheKey)) {
+    return state.stationConfigCache.get(cacheKey);
   }
 
-  const path = PATHS.stations(prefKey);
+  const path = `./config/stations/${region}/${prefKey}.json`;
   state.debug.stationsPath = path;
-  const raw = await fetchJson(path);
-  const stations = normalizeStations(raw);
-  const indexed = buildStationIndex(stations);
-  const payload = { stations, index: indexed };
-  state.stationConfigCache.set(prefKey, payload);
-  return payload;
+
+  try {
+    const raw = await fetchJson(path);
+    const stations = normalizeStations(raw);
+    const indexed = buildStationIndex(stations);
+    const payload = { stations, index: indexed, missing: false };
+    state.stationConfigCache.set(cacheKey, payload);
+    return payload;
+  } catch (error) {
+    const payload = {
+      stations: [],
+      index: buildStationIndex([]),
+      missing: true,
+      error: error.message || String(error),
+    };
+    state.stationConfigCache.set(cacheKey, payload);
+    return payload;
+  }
 }
 
-export async function loadTable(prefKey, elementKey, month) {
-  const cacheKey = `${prefKey}|${elementKey}|${month}`;
+export async function loadTable(prefKey, region, elementKey, month) {
+  const cacheKey = `${region}|${prefKey}|${elementKey}|${month}`;
   if (state.tableCache.has(cacheKey)) {
     return state.tableCache.get(cacheKey);
   }
 
-  const path = PATHS.table(prefKey, elementKey, month);
+  const path = `./data/${region}/${prefKey}/${elementKey}-${month}.json`;
   state.debug.tablePath = path;
-  const data = await fetchJson(path);
-  state.tableCache.set(cacheKey, data);
-  return data;
+
+  try {
+    const data = await fetchJson(path);
+    const normalized = {
+      ...data,
+      rows: Array.isArray(data?.rows) ? data.rows : [],
+      missing: false,
+    };
+    state.tableCache.set(cacheKey, normalized);
+    return normalized;
+  } catch (error) {
+    const fallback = {
+      rows: [],
+      missing: true,
+      error: error.message || String(error),
+    };
+    state.tableCache.set(cacheKey, fallback);
+    return fallback;
+  }
 }
 
 function normalizeStations(raw) {
