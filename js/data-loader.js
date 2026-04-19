@@ -24,20 +24,33 @@ export async function loadManifest() {
   }
 }
 
-export async function loadStations(prefKey, region) {
+/**
+ * 都道府県の stations 設定を読む。
+ * 新パス専用:
+ *   ./config/stations/kinki/nara.json
+ */
+export async function loadStations(prefKey, region = "") {
   const cacheKey = `${region}|${prefKey}`;
   if (state.stationConfigCache.has(cacheKey)) {
     return state.stationConfigCache.get(cacheKey);
   }
 
-  const path = `./config/stations/${region}/${prefKey}.json`;
+  const regionDir = normalizeRegionDir(region);
+  const path = `./config/stations/${regionDir}/${prefKey}.json`;
   state.debug.stationsPath = path;
 
   try {
     const raw = await fetchJson(path);
     const stations = normalizeStations(raw);
     const indexed = buildStationIndex(stations);
-    const payload = { stations, index: indexed, missing: false };
+
+    const payload = {
+      stations,
+      index: indexed,
+      missing: false,
+      path,
+    };
+
     state.stationConfigCache.set(cacheKey, payload);
     return payload;
   } catch (error) {
@@ -46,19 +59,28 @@ export async function loadStations(prefKey, region) {
       index: buildStationIndex([]),
       missing: true,
       error: error.message || String(error),
+      path,
     };
+
     state.stationConfigCache.set(cacheKey, payload);
     return payload;
   }
 }
 
-export async function loadTable(prefKey, region, elementKey, month) {
+/**
+ * 極値テーブルJSONを読む。
+ * 新パス専用:
+ *   ./data/kinki/nara/dailyPrecip-all.json
+ */
+export async function loadTable(prefKey, region = "", elementKey, month) {
   const cacheKey = `${region}|${prefKey}|${elementKey}|${month}`;
   if (state.tableCache.has(cacheKey)) {
     return state.tableCache.get(cacheKey);
   }
 
-  const path = `./data/${region}/${prefKey}/${elementKey}-${month}.json`;
+  const regionDir = normalizeRegionDir(region);
+  const fileName = `${elementKey}-${month}.json`;
+  const path = `./data/${regionDir}/${prefKey}/${fileName}`;
   state.debug.tablePath = path;
 
   try {
@@ -67,7 +89,9 @@ export async function loadTable(prefKey, region, elementKey, month) {
       ...data,
       rows: Array.isArray(data?.rows) ? data.rows : [],
       missing: false,
+      path,
     };
+
     state.tableCache.set(cacheKey, normalized);
     return normalized;
   } catch (error) {
@@ -75,10 +99,32 @@ export async function loadTable(prefKey, region, elementKey, month) {
       rows: [],
       missing: true,
       error: error.message || String(error),
+      path,
     };
+
     state.tableCache.set(cacheKey, fallback);
     return fallback;
   }
+}
+
+function normalizeRegionDir(region) {
+  if (!region) return "";
+
+  const map = {
+    "北海道": "hokkaido",
+    "東北": "tohoku",
+    "関東甲信": "kanto_koshin",
+    "北陸": "hokuriku",
+    "東海": "tokai",
+    "近畿": "kinki",
+    "中国": "chugoku",
+    "四国": "shikoku",
+    "九州北部": "kyushu_north",
+    "九州南部・奄美": "kyushu_south",
+    "沖縄": "okinawa",
+  };
+
+  return map[region] || region;
 }
 
 function normalizeStations(raw) {
@@ -139,9 +185,12 @@ function buildStationIndex(stations) {
 
     const aliases = station.raw?.aliases || station.raw?.alias || [];
     const aliasList = Array.isArray(aliases) ? aliases : [aliases];
+
     for (const alias of aliasList) {
       const key = normalizeStationName(alias);
-      if (key) byNormalizedName.set(key, station);
+      if (key) {
+        byNormalizedName.set(key, station);
+      }
     }
   }
 
@@ -150,7 +199,7 @@ function buildStationIndex(stations) {
 
 export function findStationByRowName(rowStationName, stationIndex) {
   const key = normalizeStationName(rowStationName);
-  return stationIndex.byNormalizedName.get(key) || null;
+  return stationIndex?.byNormalizedName?.get(key) || null;
 }
 
 export function getElementListByMonth(month, elementsConfig) {
