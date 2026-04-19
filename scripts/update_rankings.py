@@ -24,15 +24,16 @@ REGION_KEY_MAP = {
     "近畿": "kinki",
     "中国": "chugoku",
     "四国": "shikoku",
-    "九州": "kyushu",
+    "九州北部": "kyushu_north",
+    "九州南部・奄美": "kyushu_south",
     "沖縄": "okinawa",
 }
 
 
 def normalize_region_dir(region_name: str) -> str:
     """
-    都道府県設定の region 表記を、data 配下のディレクトリ名に変換する。
-    未定義の地域は安全側で 'others' に落とす。
+    prefectures.json の region 表記を、data 配下のディレクトリ名に変換する。
+    未定義の地域は others に落とす。
     """
     if not region_name:
         return "others"
@@ -55,10 +56,7 @@ def main():
 
     prefectures = load_prefecture_configs()
 
-    # 観測時刻（内部計算や確認用）
     latest_obs_iso = fetch_latest_time()
-
-    # 表示用の更新時刻は「実際の生成時刻」
     generated_iso = datetime.now(JST).isoformat()
 
     for pref in prefectures:
@@ -71,6 +69,11 @@ def main():
         ensure_dir(pref_dir)
 
         print(f"start: {pref_name} ({pref_region}) -> {pref_dir}")
+
+        # stations が空でもディレクトリだけは作る
+        if not stations:
+            print(f"skip rows (stations empty): {pref_name}")
+            continue
 
         for element_key, element_def in ELEMENTS.items():
             for month in MONTHS:
@@ -90,6 +93,7 @@ def main():
                             "startDate": parsed["startDate"],
                             "ranks": parsed["records"],
                         })
+
                     except Exception as exc:
                         print(
                             f"skip station: pref={pref_key} "
