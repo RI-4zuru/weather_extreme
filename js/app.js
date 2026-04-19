@@ -812,6 +812,46 @@ function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
   return observedList.length ? observedList[observedList.length - 1] : "";
 }
 
+function renderLiveOnlyTable(stations, liveValuesByCode) {
+  if (!stations.length) {
+    rankTableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="11">
+          この都道府県は現在データ未対応です
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  const rows = stations.map((station) => {
+    const live = liveValuesByCode?.[station.code];
+    const valueText = Number.isFinite(live?.value) ? String(live.value) : "-";
+    const timeText = live?.observedAt ? live.observedAt : "-";
+
+    return `
+      <tr>
+        <td class="station-col">
+          <span class="station-name">${station.name}</span>
+          <span class="start-date">${station.startDate || "-"}</span>
+        </td>
+        <td class="rank-cell" colspan="10">
+          <span class="rank-value">${valueText}</span>
+          <span class="rank-date">${timeText}</span>
+        </td>
+      </tr>
+    `;
+  }).join("");
+
+  rankTableBody.innerHTML = rows || `
+    <tr>
+      <td class="message-cell" colspan="11">
+        この都道府県は現在データ未対応です
+      </td>
+    </tr>
+  `;
+}
+
 async function refresh() {
   const prefMeta = getCurrentPrefMeta();
   const elementMeta = getCurrentElementMeta();
@@ -844,30 +884,22 @@ async function refresh() {
   `;
 
   try {
-    const [{ index }, tableData] = await Promise.all([
-      loadStations(prefMeta.key),
-      loadTable(prefMeta.key, elementMeta.key, currentMonth),
+    const [{ stations, index }, tableData] = await Promise.all([
+      loadStations(prefMeta.key, prefMeta.region),
+      loadTable(prefMeta.key, prefMeta.region, elementMeta.key, currentMonth),
     ]);
 
-    if (!tableData || !tableData.rows || tableData.rows.length === 0) {
-      rankTableBody.innerHTML = `
-        <tr>
-          <td class="message-cell" colspan="11">
-            この都道府県は現在データ未対応です
-          </td>
-        </tr>
-      `;
-      return;
-    }
-
-    const rows = tableData.rows || [];
+    const hasTable = !!(tableData && Array.isArray(tableData.rows) && tableData.rows.length > 0);
+    const rows = hasTable ? tableData.rows : [];
     state.debug.tableRowCount = rows.length;
 
-    const neededStationCodes = unique(
-      rows
-        .map((row) => findStationByRowName(row.stationName, index)?.code || null)
-        .filter(Boolean)
-    );
+    const neededStationCodes = hasTable
+      ? unique(
+          rows
+            .map((row) => findStationByRowName(row.stationName, index)?.code || null)
+            .filter(Boolean)
+        )
+      : unique((stations || []).map((station) => station.code).filter(Boolean));
 
     let liveSupportMode = "unsupported";
     let latestObservationTime = "";
@@ -897,38 +929,63 @@ async function refresh() {
     state.debug.latestObservationTime = latestObservationTime;
     state.debug.liveSupported = liveSupportMode;
 
-    const decoratedRows = decorateRowsWithLive(
-      rows,
-      (rowStationName) => findStationByRowName(rowStationName, index),
-      liveValuesByCode,
-      elementMeta.key,
-      liveSupportMode
-    );
-
     const fullLabel = elementMeta.label || elementMeta.shortLabel || elementMeta.key;
 
-    const annualSummary = currentMonth === "all"
-      ? buildLiveSummaryItems(
-          decoratedRows,
-          elementMeta.key,
-          fullLabel,
-          "all"
-        )
-      : [];
+    if (hasTable) {
+      const decoratedRows = decorateRowsWithLive(
+        rows,
+        (rowStationName) => findStationByRowName(rowStationName, index),
+        liveValuesByCode,
+        elementMeta.key,
+        liveSupportMode
+      );
 
-    const monthlySummary = currentMonth === "all"
-      ? []
-      : buildLiveSummaryItems(
-          decoratedRows,
-          elementMeta.key,
-          fullLabel,
-          currentMonth
-        );
+      const annualSummary = currentMonth === "all"
+        ? buildLiveSummaryItems(
+            decoratedRows,
+            elementMeta.key,
+            fullLabel,
+            "all"
+          )
+        : [];
 
-    state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
+      const monthlySummary = currentMonth === "all"
+        ? []
+        : buildLiveSummaryItems(
+            decoratedRows,
+            elementMeta.key,
+            fullLabel,
+            currentMonth
+          );
 
-    renderTable(rankTableBody, decoratedRows);
-    renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
+      state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
+
+      renderTable(rankTableBody, decoratedRows);
+      renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
+
+      const totalSummaryCount = annualSummary.length + monthlySummary.length;
+      const hasTop1Summary =
+        annualSummary.some((item) => item.rank === 1) ||
+        monthlySummary.some((item) => item.rank === 1);
+
+      if (totalSummaryCount === 0) {
+        rankInBadge.hidden = true;
+        topRankAlert.hidden = true;
+      } else if (hasTop1Summary) {
+        rankInBadge.hidden = true;
+        topRankAlert.hidden = false;
+      } else {
+        rankInBadge.hidden = false;
+        topRankAlert.hidden = true;
+      }
+    } else {
+      renderLiveOnlyTable(stations || [], liveValuesByCode);
+      renderLiveSummary(liveSummaryBody, [], []);
+      state.debug.summaryItemCount = 0;
+      rankInBadge.hidden = true;
+      topRankAlert.hidden = true;
+    }
+
     renderStatus({
       tableTitleEl,
       statusTextEl,
@@ -936,25 +993,9 @@ async function refresh() {
       prefName: prefMeta.name,
       month: currentMonth,
       elementLabel: fullLabel,
-      rowCount: rows.length,
+      rowCount: hasTable ? rows.length : (stations || []).length,
       latestObservationTime,
     });
-
-    const totalSummaryCount = annualSummary.length + monthlySummary.length;
-    const hasTop1Summary =
-      annualSummary.some((item) => item.rank === 1) ||
-      monthlySummary.some((item) => item.rank === 1);
-
-    if (totalSummaryCount === 0) {
-      rankInBadge.hidden = true;
-      topRankAlert.hidden = true;
-    } else if (hasTop1Summary) {
-      rankInBadge.hidden = true;
-      topRankAlert.hidden = false;
-    } else {
-      rankInBadge.hidden = false;
-      topRankAlert.hidden = true;
-    }
 
     renderDebug(debugGrid, state.debug);
   } catch (error) {
