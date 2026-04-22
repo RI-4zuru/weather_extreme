@@ -20,7 +20,9 @@ import {
   isLiveSupported,
 } from "./live-source.js";
 import {
+  applyHighlightModeToRows,
   buildLiveSummaryItems,
+  buildPrefectureAggregateRow,
   decorateRowsWithLive,
 } from "./ranking.js";
 import {
@@ -40,9 +42,12 @@ const STORAGE_KEYS = {
   month: "weather_extreme:last_month",
   element: "weather_extreme:last_element",
   enabledPrefs: "weather_extreme:enabled_prefs",
+  withinMode: "weather_extreme:within_mode",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
+
+const WITHIN_HIGHLIGHT_MODES = ["rolling-year", "current-year", "current-month"];
 
 const STANDARD_REGIONS = [
   "北海道",
@@ -65,9 +70,9 @@ const REGION_PREF_ORDER = {
   "北陸": ["新潟県", "富山県", "石川県", "福井県"],
   "東海": ["岐阜県", "静岡県", "愛知県", "三重県"],
   "近畿": ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"],
-  "中国": ["鳥取県", "島根県", "岡山県", "広島県"],
+  "中国": ["鳥取県", "島根県", "岡山県", "広島県", "山口県"],
   "四国": ["徳島県", "香川県", "愛媛県", "高知県"],
-  "九州北部": ["山口県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県"],
+  "九州北部": ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県"],
   "九州南部・奄美": ["宮崎県", "鹿児島県"],
   "沖縄": ["沖縄県"],
 };
@@ -91,6 +96,7 @@ const liveSummaryBody = document.getElementById("liveSummaryBody");
 const rankInBadge = document.getElementById("rankInBadge");
 const topRankAlert = document.getElementById("topRankAlert");
 const observedLatestAtEl = document.getElementById("observedLatestAt");
+const withinChip = document.getElementById("withinChip");
 
 const tableTitleEl = document.getElementById("tableTitle");
 const statusTextEl = document.getElementById("statusText");
@@ -115,6 +121,7 @@ let currentMonth = DEFAULT_MONTH;
 let enabledPrefKeys = new Set();
 let customExpandedRegions = new Set();
 let defaultPrefOrderKeys = [];
+let withinHighlightMode = "rolling-year";
 
 async function main() {
   try {
@@ -234,6 +241,35 @@ function saveEnabledPrefKeys() {
   writeStorage(STORAGE_KEYS.enabledPrefs, JSON.stringify([...enabledPrefKeys]));
 }
 
+function getInitialWithinHighlightMode() {
+  const saved = readStorage(STORAGE_KEYS.withinMode, "rolling-year");
+  return WITHIN_HIGHLIGHT_MODES.includes(saved) ? saved : "rolling-year";
+}
+
+function updateWithinChipLabel() {
+  if (!withinChip) return;
+
+  if (withinHighlightMode === "current-year") {
+    withinChip.textContent = "黄系：今年の記録";
+    return;
+  }
+
+  if (withinHighlightMode === "current-month") {
+    withinChip.textContent = "黄系：当月の記録";
+    return;
+  }
+
+  withinChip.textContent = "黄系：1年以内の記録";
+}
+
+function cycleWithinHighlightMode() {
+  const currentIndex = WITHIN_HIGHLIGHT_MODES.indexOf(withinHighlightMode);
+  const nextIndex = (currentIndex + 1) % WITHIN_HIGHLIGHT_MODES.length;
+  withinHighlightMode = WITHIN_HIGHLIGHT_MODES[nextIndex];
+  writeStorage(STORAGE_KEYS.withinMode, withinHighlightMode);
+  updateWithinChipLabel();
+}
+
 function initControls() {
   loadEnabledPrefKeys();
 
@@ -241,8 +277,10 @@ function initControls() {
   currentPrefKey = getInitialPrefKey(currentRegion);
   currentMonth = getInitialMonth();
   currentElementKey = getInitialElementKey(currentMonth);
+  withinHighlightMode = getInitialWithinHighlightMode();
 
   monthSelect.value = currentMonth;
+  updateWithinChipLabel();
 
   ensureCurrentRegionAndPref();
   renderRegionTabs();
@@ -369,6 +407,13 @@ function bindEvents() {
       setSummaryPanelExpanded(panelKey, body.hidden);
     }
   });
+
+  if (withinChip) {
+    withinChip.addEventListener("click", async () => {
+      cycleWithinHighlightMode();
+      await refresh();
+    });
+  }
 
   customizeButton.addEventListener("click", () => {
     openCustomModal();
@@ -765,7 +810,7 @@ function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
   return observedList.length ? observedList[observedList.length - 1] : "";
 }
 
-function renderLiveOnlyTable(stations, liveValuesByCode) {
+function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
   if (!stations.length) {
     rankTableBody.innerHTML = `
       <tr>
@@ -799,7 +844,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode) {
   rankTableBody.innerHTML = rows || `
     <tr>
       <td class="message-cell" colspan="11">
-        この都道府県は現在データ未対応です
+        ${prefMeta?.name || "この都道府県"}は現在データ未対応です
       </td>
     </tr>
   `;
@@ -893,9 +938,25 @@ async function refresh() {
         liveSupportMode
       );
 
+      const highlightedRows = applyHighlightModeToRows(
+        decoratedRows,
+        withinHighlightMode,
+        latestObservationTime
+      );
+
+      const prefectureAggregateRow = buildPrefectureAggregateRow(
+        highlightedRows,
+        prefMeta.name,
+        elementMeta.key
+      );
+
+      const displayRows = prefectureAggregateRow
+        ? [prefectureAggregateRow, ...highlightedRows]
+        : highlightedRows;
+
       const annualSummary = currentMonth === "all"
         ? buildLiveSummaryItems(
-            decoratedRows,
+            highlightedRows,
             elementMeta.key,
             fullLabel,
             "all"
@@ -905,7 +966,7 @@ async function refresh() {
       const monthlySummary = currentMonth === "all"
         ? []
         : buildLiveSummaryItems(
-            decoratedRows,
+            highlightedRows,
             elementMeta.key,
             fullLabel,
             currentMonth
@@ -913,15 +974,21 @@ async function refresh() {
 
       state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
 
-      renderTable(rankTableBody, decoratedRows);
+      renderTable(rankTableBody, displayRows);
       renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
 
       const totalSummaryCount = annualSummary.length + monthlySummary.length;
       const hasTop1Summary =
         annualSummary.some((item) => item.rank === 1) ||
-        monthlySummary.some((item) => item.rank === 1);
+        monthlySummary.some((item) => item.rank === 1) ||
+        prefectureAggregateRow?.liveCandidate?.rank === 1;
 
-      if (totalSummaryCount === 0) {
+      const hasAnyPrefRankIn =
+        Number.isFinite(prefectureAggregateRow?.liveCandidate?.rank) &&
+        prefectureAggregateRow.liveCandidate.rank >= 1 &&
+        prefectureAggregateRow.liveCandidate.rank <= 10;
+
+      if (totalSummaryCount === 0 && !hasAnyPrefRankIn) {
         rankInBadge.hidden = true;
         topRankAlert.hidden = true;
       } else if (hasTop1Summary) {
@@ -932,7 +999,7 @@ async function refresh() {
         topRankAlert.hidden = true;
       }
     } else {
-      renderLiveOnlyTable(stations || [], liveValuesByCode);
+      renderLiveOnlyTable(stations || [], liveValuesByCode, prefMeta);
       renderLiveSummary(liveSummaryBody, [], []);
       state.debug.summaryItemCount = 0;
       rankInBadge.hidden = true;
@@ -946,7 +1013,7 @@ async function refresh() {
       prefName: prefMeta.name,
       month: currentMonth,
       elementLabel: fullLabel,
-      rowCount: hasTable ? rows.length : (stations || []).length,
+      rowCount: hasTable ? rows.length + 1 : (stations || []).length,
       latestObservationTime,
     });
 
