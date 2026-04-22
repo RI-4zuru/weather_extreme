@@ -1,11 +1,11 @@
 {
-  "prefKey": "kyushu_south",
+  "prefKey": "kagoshima",
   "prefName": "鹿児島県",
   "stations": [
     {
-      "stationName": "青森",
-      "precNo": "14",
-      "amedasCode": "64036",
+      "stationName": "阿久根",
+      "precNo": "88",
+      "amedasCode": "88061",
       "temp": true,
       "precip": true,
       "pressure": true,
@@ -14,9 +14,723 @@
       "sunshine": true,
       "snow": true,
       "rank_candidates": [
-        { "rank_type": "s", "blockNo": "47412", "view": "h0" },
-        { "rank_type": "s", "blockNo": "47412", "view": "np0" },
-        { "rank_type": "s", "blockNo": "47412", "view": "ns0" }
+        { "rank_type": "s", "blockNo": "47823", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47823", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47823", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "出水",
+      "precNo": "88",
+      "amedasCode": "88066",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0934", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0934", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0934", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "大口",
+      "precNo": "88",
+      "amedasCode": "88081",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0875", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0875", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0875", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "紫尾山",
+      "precNo": "88",
+      "amedasCode": "88101",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0877", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0877", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0877", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "さつま柏原",
+      "precNo": "88",
+      "amedasCode": "88107",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0878", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0878", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0878", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "中甑",
+      "precNo": "88",
+      "amedasCode": "88131",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0879", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0879", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0879", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "川内",
+      "precNo": "88",
+      "amedasCode": "88151",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0880", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0880", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0880", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "溝辺",
+      "precNo": "88",
+      "amedasCode": "88166",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "0881", "view": "h0" },
+        { "rank_type": "s", "blockNo": "0881", "view": "np0" },
+        { "rank_type": "s", "blockNo": "0881", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "八重山",
+      "precNo": "88",
+      "amedasCode": "88211",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0882", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0882", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0882", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "東市来",
+      "precNo": "88",
+      "amedasCode": "88261",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0883", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0883", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0883", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "牧之原",
+      "precNo": "88",
+      "amedasCode": "88286",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0935", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0935", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0935", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "鹿児島",
+      "precNo": "88",
+      "amedasCode": "88317",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47827", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47827", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47827", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "輝北",
+      "precNo": "88",
+      "amedasCode": "88331",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1146", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1146", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1146", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "大隅",
+      "precNo": "88",
+      "amedasCode": "88341",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1149", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1149", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1149", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "加世田",
+      "precNo": "88",
+      "amedasCode": "88371",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0887", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0887", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0887", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "吉ケ別府",
+      "precNo": "88",
+      "amedasCode": "88392",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0888", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0888", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0888", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "志布志",
+      "precNo": "88",
+      "amedasCode": "88406",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0936", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0936", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0936", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "喜入",
+      "precNo": "88",
+      "amedasCode": "88432",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0890", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0890", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0890", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "鹿屋",
+      "precNo": "88",
+      "amedasCode": "88442",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0937", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0937", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0937", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "肝付前田",
+      "precNo": "88",
+      "amedasCode": "88447",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1181", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1181", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1181", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "枕崎",
+      "precNo": "88",
+      "amedasCode": "88466",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47831", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47831", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47831", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "指宿",
+      "precNo": "88",
+      "amedasCode": "88486",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0893", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0893", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0893", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "内之浦",
+      "precNo": "88",
+      "amedasCode": "88506",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0895", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0895", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0895", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "田代",
+      "precNo": "88",
+      "amedasCode": "88536",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1136", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1136", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1136", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "佐多",
+      "precNo": "88",
+      "amedasCode": "88551",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1161", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1161", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1161", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "種子島",
+      "precNo": "88",
+      "amedasCode": "88612",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47837", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47837", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47837", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "中種子",
+      "precNo": "88",
+      "amedasCode": "88621",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "0897", "view": "h0" },
+        { "rank_type": "s", "blockNo": "0897", "view": "np0" },
+        { "rank_type": "s", "blockNo": "0897", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "上中",
+      "precNo": "88",
+      "amedasCode": "88666",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0898", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0898", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0898", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "屋久島",
+      "precNo": "88",
+      "amedasCode": "88686",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47836", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47836", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47836", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "尾之間",
+      "precNo": "88",
+      "amedasCode": "88706",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0899", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0899", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0899", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "中之島",
+      "precNo": "88",
+      "amedasCode": "88736",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1540", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1540", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1540", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "平島",
+      "precNo": "88",
+      "amedasCode": "88746",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1658", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1658", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1658", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "諏訪之瀬島",
+      "precNo": "88",
+      "amedasCode": "88756",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1654", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1654", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1654", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "小宝島",
+      "precNo": "88",
+      "amedasCode": "88776",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1655", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1655", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1655", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "宝島",
+      "precNo": "88",
+      "amedasCode": "88781",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1647", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1647", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1647", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "笠利",
+      "precNo": "88",
+      "amedasCode": "88821",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "1520", "view": "h0" },
+        { "rank_type": "s", "blockNo": "1520", "view": "np0" },
+        { "rank_type": "s", "blockNo": "1520", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "名瀬",
+      "precNo": "88",
+      "amedasCode": "88837",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47909", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47909", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47909", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "喜界島",
+      "precNo": "88",
+      "amedasCode": "88851",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "1296", "view": "h0" },
+        { "rank_type": "s", "blockNo": "1296", "view": "np0" },
+        { "rank_type": "s", "blockNo": "1296", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "古仁屋",
+      "precNo": "88",
+      "amedasCode": "88901",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0980", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0980", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0980", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "天城",
+      "precNo": "88",
+      "amedasCode": "88931",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "1542", "view": "h0" },
+        { "rank_type": "s", "blockNo": "1542", "view": "np0" },
+        { "rank_type": "s", "blockNo": "1542", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "伊仙",
+      "precNo": "88",
+      "amedasCode": "88956",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1139", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1139", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1139", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "沖永良部",
+      "precNo": "88",
+      "amedasCode": "88971",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47942", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47942", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47942", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "与論島",
+      "precNo": "88",
+      "amedasCode": "88986",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "1277", "view": "h0" },
+        { "rank_type": "s", "blockNo": "1277", "view": "np0" },
+        { "rank_type": "s", "blockNo": "1277", "view": "ns0" }
       ]
     }
   ]
