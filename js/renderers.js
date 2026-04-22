@@ -1,6 +1,6 @@
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
-export function makeTableHead(tableHead) {
+export function makeTableHead(tableHead, showLiveColumn = false) {
   const headers = [];
   headers.push(`
     <th class="rank-head-station">
@@ -11,6 +11,15 @@ export function makeTableHead(tableHead) {
 
   for (let i = 1; i <= 10; i += 1) {
     headers.push(`<th>${i}位</th>`);
+  }
+
+  if (showLiveColumn) {
+    headers.push(`
+      <th class="rank-head-live">
+        <span class="rank-head-station-main">実況</span>
+        <span class="rank-head-station-sub">最新観測</span>
+      </th>
+    `);
   }
 
   tableHead.innerHTML = `<tr>${headers.join("")}</tr>`;
@@ -50,11 +59,13 @@ export function renderElementPanel(elementPanel, elementList, selectedKey) {
     .join("");
 }
 
-export function renderTable(tableBody, rows) {
+export function renderTable(tableBody, rows, options = {}) {
+  const { showLiveColumn = false } = options;
+
   if (!rows.length) {
     tableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">該当データがありません。</td>
+        <td class="message-cell" colspan="${showLiveColumn ? 12 : 11}">該当データがありません。</td>
       </tr>
     `;
     return;
@@ -64,6 +75,7 @@ export function renderTable(tableBody, rows) {
     const live = row.liveCandidate || {};
     const liveRank = live.rank;
     const showLiveBadge =
+      !showLiveColumn &&
       live.supported &&
       Number.isFinite(live.value) &&
       Number.isFinite(liveRank) &&
@@ -125,6 +137,34 @@ export function renderTable(tableBody, rows) {
       `);
     }
 
+    let liveColumnHtml = "";
+    if (showLiveColumn) {
+      const liveSupported =
+        live.supported &&
+        Number.isFinite(live.value) &&
+        live.observedAt;
+
+      if (liveSupported) {
+        const liveStation = row.isPrefectureAggregate && live.stationName
+          ? `<span class="rank-station">${escapeHtml(String(live.stationName))}</span>`
+          : "";
+
+        liveColumnHtml = `
+          <td class="live-col-cell ${Number.isFinite(liveRank) && liveRank >= 1 && liveRank <= 10 ? "live-target" : ""}">
+            <span class="rank-value">${escapeHtml(String(live.value))}</span>
+            ${liveStation}
+            <span class="rank-date">${escapeHtml(formatObservationLabel(live.observedAt))}</span>
+          </td>
+        `;
+      } else {
+        liveColumnHtml = `
+          <td class="live-col-cell">
+            <span class="live-col-empty">実況なし</span>
+          </td>
+        `;
+      }
+    }
+
     const stationColClass = row.isPrefectureAggregate
       ? "station-col prefecture-aggregate-col"
       : "station-col";
@@ -137,6 +177,7 @@ export function renderTable(tableBody, rows) {
           ${stationLiveBadge}
         </td>
         ${cells.join("")}
+        ${liveColumnHtml}
       </tr>
     `;
   }).join("");
