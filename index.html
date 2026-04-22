@@ -19,34 +19,45 @@
     </div>
 
     <section class="control-panel">
-      <div class="control-block">
-        <div class="control-label-row">
-          <div class="control-label">地域・都道府県</div>
-          <button id="customizeButton" class="sub-action-button" type="button">カスタム</button>
-        </div>
-        <div id="regionTabs" class="region-tabs"></div>
-        <div id="prefButtons" class="pref-buttons pref-buttons-grid"></div>
-      </div>
+      <button
+        id="controlPanelToggle"
+        class="toggle-button control-toggle-button"
+        type="button"
+        aria-expanded="true"
+      >
+        地域・都道府県選択 / 月選択を閉じる
+      </button>
 
-      <div class="control-grid single-row two-cols">
-        <label class="control-item">
-          <span class="control-label">月</span>
-          <select id="monthSelect">
-            <option value="all">通年</option>
-            <option value="1">1月</option>
-            <option value="2">2月</option>
-            <option value="3">3月</option>
-            <option value="4">4月</option>
-            <option value="5">5月</option>
-            <option value="6">6月</option>
-            <option value="7">7月</option>
-            <option value="8">8月</option>
-            <option value="9">9月</option>
-            <option value="10">10月</option>
-            <option value="11">11月</option>
-            <option value="12">12月</option>
-          </select>
-        </label>
+      <div id="controlPanelBody" class="control-panel-body">
+        <div class="control-block">
+          <div class="control-label-row">
+            <div class="control-label">地域・都道府県</div>
+            <button id="customizeButton" class="sub-action-button" type="button">カスタム</button>
+          </div>
+          <div id="regionTabs" class="region-tabs"></div>
+          <div id="prefButtons" class="pref-buttons pref-buttons-grid"></div>
+        </div>
+
+        <div class="control-grid single-row two-cols">
+          <label class="control-item">
+            <span class="control-label">月</span>
+            <select id="monthSelect">
+              <option value="all">通年</option>
+              <option value="1">1月</option>
+              <option value="2">2月</option>
+              <option value="3">3月</option>
+              <option value="4">4月</option>
+              <option value="5">5月</option>
+              <option value="6">6月</option>
+              <option value="7">7月</option>
+              <option value="8">8月</option>
+              <option value="9">9月</option>
+              <option value="10">10月</option>
+              <option value="11">11月</option>
+              <option value="12">12月</option>
+            </select>
+          </label>
+        </div>
       </div>
     </section>
 
