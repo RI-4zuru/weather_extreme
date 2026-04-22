@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-23T00:25:07.605184+09:00",
-  "observedLatestAt": "2026-04-23T00:10:00+09:00",
+  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
+  "observedLatestAt": "2026-04-23T01:20:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "飯塚",
+      "startDate": "1935年",
       "ranks": [
         {
           "rank": 1,
-          "value": 98,
+          "value": 160,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 156,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 154,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 152,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 151,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 151,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 149,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 149,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 147,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 147,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "福岡",
+      "startDate": "1890年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 155,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 91,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 86,
+          "value": 155,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
+          "rank": 3,
+          "value": 155,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
           "rank": 4,
-          "value": 79,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 153,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 5,
-          "value": 79,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "value": 152,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
         },
         {
           "rank": 6,
-          "value": 73,
-          "date": "1961年",
-          "_date_raw": "1961/01/01"
+          "value": 150,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 7,
-          "value": 72,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 149,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 8,
-          "value": 72,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 148,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 9,
-          "value": 72,
-          "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "value": 148,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 10,
-          "value": 71,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "value": 147,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
         }
       ]
     }

@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-23T00:25:07.605184+09:00",
-  "observedLatestAt": "2026-04-23T00:10:00+09:00",
+  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
+  "observedLatestAt": "2026-04-23T01:20:00+09:00",
   "prefecture": "山口県",
   "region": "九州北部",
   "element": "annualDaysMeanTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1879年",
+      "stationName": "萩",
+      "startDate": "1948年",
       "ranks": [
         {
           "rank": 1,
-          "value": 39,
+          "value": 95,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 37,
+          "value": 89,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 84,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
-          "rank": 3,
-          "value": 27,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
           "rank": 4,
-          "value": 25,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
+          "value": 83,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 5,
-          "value": 23,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "value": 76,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
         },
         {
           "rank": 6,
-          "value": 22,
+          "value": 75,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 74,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 74,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 72,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 70,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山口",
+      "startDate": "1966年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 100,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 90,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 87,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 83,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 80,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 80,
           "date": "2010年",
           "_date_raw": "2010/01/01"
         },
         {
           "rank": 7,
-          "value": 20,
+          "value": 80,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 79,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 77,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 77,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "下関",
+      "startDate": "1883年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 109,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 96,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
+          "rank": 3,
+          "value": 93,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 90,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 89,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 84,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 82,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
           "rank": 8,
-          "value": 19,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 81,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
         },
         {
           "rank": 9,
-          "value": 19,
-          "date": "1984年",
-          "_date_raw": "1984/01/01"
+          "value": 80,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 10,
-          "value": 18,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "value": 79,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         }
       ]
     }

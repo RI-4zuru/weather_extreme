@@ -1,14 +1,80 @@
 {
-  "updatedAt": "2026-04-23T00:25:07.605184+09:00",
-  "observedLatestAt": "2026-04-23T00:10:00+09:00",
+  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
+  "observedLatestAt": "2026-04-23T01:20:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "monthDeepSnowHigh",
   "month": "8",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1890年8月（明治23年）",
+      "stationName": "飯塚",
+      "startDate": "1936年8月（昭和11年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2000年8月（平成12年）",
+          "_date_raw": "2000/08/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "1999年8月（平成11年）",
+          "_date_raw": "1999/08/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "1998年8月（平成10年）",
+          "_date_raw": "1998/08/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "1997年8月（平成9年）",
+          "_date_raw": "1997/08/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "1996年8月（平成8年）",
+          "_date_raw": "1996/08/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "1995年8月（平成7年）",
+          "_date_raw": "1995/08/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "1994年8月（平成6年）",
+          "_date_raw": "1994/08/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "1993年8月（平成5年）",
+          "_date_raw": "1993/08/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "1992年8月（平成4年）",
+          "_date_raw": "1992/08/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "1991年8月（平成3年）",
+          "_date_raw": "1991/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "福岡",
+      "startDate": "1894年8月（明治27年）",
       "ranks": [
         {
           "rank": 1,
