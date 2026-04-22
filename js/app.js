@@ -44,9 +44,11 @@ const STORAGE_KEYS = {
   enabledPrefs: "weather_extreme:enabled_prefs",
   withinMode: "weather_extreme:within_mode",
   showLiveColumn: "weather_extreme:show_live_column",
+  liveValueCache: "weather_extreme:live_value_cache",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
+const LIVE_CACHE_MAX_AGE_MS = 48 * 60 * 60 * 1000;
 
 const WITHIN_HIGHLIGHT_MODES = ["rolling-year", "current-year", "current-month"];
 
@@ -126,6 +128,17 @@ let defaultPrefOrderKeys = [];
 let withinHighlightMode = "rolling-year";
 let showLiveColumn = false;
 
+/**
+ * {
+ *   "<elementKey>|<month>|<stationCode>": {
+ *      value: number,
+ *      observedAt: string,
+ *      cachedAt: number
+ *   }
+ * }
+ */
+let liveValueCache = {};
+
 async function main() {
   try {
     await Promise.all([
@@ -136,7 +149,9 @@ async function main() {
 
     normalizePrefectureRegions();
     defaultPrefOrderKeys = buildDefaultPrefOrderKeys();
-    makeTableHead(rankTableHead, showLiveColumn);
+    loadLiveValueCache();
+
+    makeTableHead(rankTableHead, false);
 
     initControls();
     bindEvents();
@@ -147,7 +162,7 @@ async function main() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan()}">
+        <td class="message-cell" colspan="${getTotalTableColspan(false)}">
           初期化に失敗しました: ${error.message || String(error)}
         </td>
       </tr>
@@ -244,6 +259,105 @@ function saveEnabledPrefKeys() {
   writeStorage(STORAGE_KEYS.enabledPrefs, JSON.stringify([...enabledPrefKeys]));
 }
 
+function loadLiveValueCache() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.liveValueCache);
+    if (!raw) {
+      liveValueCache = {};
+      return;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") {
+      liveValueCache = {};
+      return;
+    }
+
+    const now = Date.now();
+    const next = {};
+
+    for (const [key, value] of Object.entries(parsed)) {
+      if (!value || typeof value !== "object") continue;
+      if (!Number.isFinite(value.value)) continue;
+      if (!value.observedAt) continue;
+      if (!Number.isFinite(value.cachedAt)) continue;
+      if (now - value.cachedAt > LIVE_CACHE_MAX_AGE_MS) continue;
+      next[key] = value;
+    }
+
+    liveValueCache = next;
+  } catch {
+    liveValueCache = {};
+  }
+}
+
+function saveLiveValueCache() {
+  writeStorage(STORAGE_KEYS.liveValueCache, JSON.stringify(liveValueCache));
+}
+
+function makeLiveCacheKey(elementKey, month, stationCode) {
+  return `${elementKey}|${month}|${stationCode}`;
+}
+
+function updateLiveValueCache(valuesByCode, elementKey, month) {
+  const now = Date.now();
+  for (const [stationCode, value] of Object.entries(valuesByCode || {})) {
+    if (!value || !Number.isFinite(value.value) || !value.observedAt) continue;
+    liveValueCache[makeLiveCacheKey(elementKey, month, stationCode)] = {
+      value: value.value,
+      observedAt: value.observedAt,
+      cachedAt: now,
+    };
+  }
+  saveLiveValueCache();
+}
+
+function mergeLiveValuesWithCache(stationCodes, liveValuesByCode, elementKey, month) {
+  const merged = { ...(liveValuesByCode || {}) };
+  const now = Date.now();
+
+  for (const stationCode of stationCodes || []) {
+    const current = merged[stationCode];
+    if (current && Number.isFinite(current.value) && current.observedAt) {
+      continue;
+    }
+
+    const cached = liveValueCache[makeLiveCacheKey(elementKey, month, stationCode)];
+    if (!cached) continue;
+    if (now - cached.cachedAt > LIVE_CACHE_MAX_AGE_MS) continue;
+
+    merged[stationCode] = {
+      ...(current || {}),
+      value: cached.value,
+      observedAt: cached.observedAt,
+      fromCache: true,
+    };
+  }
+
+  return merged;
+}
+
+function isCurrentSelectionLiveSupported() {
+  const elementMeta = getCurrentElementMeta();
+  if (!elementMeta) return false;
+  return isLiveSupported(elementMeta.key, currentMonth);
+}
+
+function syncLiveColumnAvailability(forceOff = false) {
+  const supported = isCurrentSelectionLiveSupported();
+
+  if (!supported || forceOff) {
+    showLiveColumn = false;
+  }
+
+  if (liveColumnToggle) {
+    liveColumnToggle.hidden = !supported;
+  }
+
+  updateLiveColumnToggleLabel();
+  makeTableHead(rankTableHead, supported && showLiveColumn);
+}
+
 function getInitialWithinHighlightMode() {
   const saved = readStorage(STORAGE_KEYS.withinMode, "rolling-year");
   return WITHIN_HIGHLIGHT_MODES.includes(saved) ? saved : "rolling-year";
@@ -284,8 +398,8 @@ function cycleWithinHighlightMode() {
   updateWithinChipLabel();
 }
 
-function getTotalTableColspan() {
-  return showLiveColumn ? 12 : 11;
+function getTotalTableColspan(showLive = showLiveColumn) {
+  return showLive ? 12 : 11;
 }
 
 function initControls() {
@@ -300,13 +414,12 @@ function initControls() {
 
   monthSelect.value = currentMonth;
   updateWithinChipLabel();
-  updateLiveColumnToggleLabel();
 
   ensureCurrentRegionAndPref();
   renderRegionTabs();
   renderPrefButtons();
   renderElementButtons();
-  makeTableHead(rankTableHead, showLiveColumn);
+  syncLiveColumnAvailability();
 
   elementPanel.hidden = true;
   elementPanelToggle.textContent = "要素選択を開く";
@@ -341,6 +454,7 @@ function bindEvents() {
 
     renderRegionTabs();
     renderPrefButtons();
+    syncLiveColumnAvailability();
     await refresh();
   });
 
@@ -361,6 +475,7 @@ function bindEvents() {
 
     renderRegionTabs();
     renderPrefButtons();
+    syncLiveColumnAvailability();
     await refresh();
   });
 
@@ -372,6 +487,7 @@ function bindEvents() {
     writeStorage(STORAGE_KEYS.element, currentElementKey);
 
     renderElementButtons();
+    syncLiveColumnAvailability();
     await refresh();
   });
 
@@ -383,6 +499,7 @@ function bindEvents() {
     writeStorage(STORAGE_KEYS.element, currentElementKey);
 
     renderElementButtons();
+    syncLiveColumnAvailability();
     await refresh();
   });
 
@@ -438,10 +555,13 @@ function bindEvents() {
 
   if (liveColumnToggle) {
     liveColumnToggle.addEventListener("click", async () => {
-      showLiveColumn = !showLiveColumn;
+      if (!isCurrentSelectionLiveSupported()) {
+        showLiveColumn = false;
+      } else {
+        showLiveColumn = !showLiveColumn;
+      }
       writeStorage(STORAGE_KEYS.showLiveColumn, String(showLiveColumn));
-      updateLiveColumnToggleLabel();
-      makeTableHead(rankTableHead, showLiveColumn);
+      syncLiveColumnAvailability();
       await refresh();
     });
   }
@@ -531,6 +651,7 @@ function bindEvents() {
 
     renderRegionTabs();
     renderPrefButtons();
+    syncLiveColumnAvailability();
     closeCustomModal();
     await refresh();
   });
@@ -845,7 +966,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
   if (!stations.length) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan()}">
+        <td class="message-cell" colspan="${getTotalTableColspan(isCurrentSelectionLiveSupported() && showLiveColumn)}">
           この都道府県は現在データ未対応です
         </td>
       </tr>
@@ -864,7 +985,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
           <span class="station-name">${station.name}</span>
           <span class="start-date">${station.startDate || "-"}</span>
         </td>
-        <td class="rank-cell" colspan="${showLiveColumn ? 11 : 10}">
+        <td class="rank-cell" colspan="${isCurrentSelectionLiveSupported() && showLiveColumn ? 11 : 10}">
           <span class="rank-value">${valueText}</span>
           <span class="rank-date">${timeText}</span>
         </td>
@@ -874,7 +995,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
 
   rankTableBody.innerHTML = rows || `
     <tr>
-      <td class="message-cell" colspan="${getTotalTableColspan()}">
+      <td class="message-cell" colspan="${getTotalTableColspan(isCurrentSelectionLiveSupported() && showLiveColumn)}">
         ${prefMeta?.name || "この都道府県"}は現在データ未対応です
       </td>
     </tr>
@@ -884,11 +1005,14 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
 async function refresh() {
   const prefMeta = getCurrentPrefMeta();
   const elementMeta = getCurrentElementMeta();
+  const canShowLiveColumn = isCurrentSelectionLiveSupported() && showLiveColumn;
+
+  makeTableHead(rankTableHead, canShowLiveColumn);
 
   if (!prefMeta || !elementMeta) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan()}">都道府県または要素が未選択です。</td>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">都道府県または要素が未選択です。</td>
       </tr>
     `;
     rankInBadge.hidden = true;
@@ -908,7 +1032,7 @@ async function refresh() {
 
   rankTableBody.innerHTML = `
     <tr>
-      <td class="message-cell" colspan="${getTotalTableColspan()}">読み込み中です…</td>
+      <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">読み込み中です…</td>
     </tr>
   `;
 
@@ -945,10 +1069,23 @@ async function refresh() {
         latestObservationTime = liveBundle.latestIso || "";
         liveValuesByCode = liveBundle.valuesByCode || {};
         liveSupportMode = liveBundle.support || "supported";
+
+        updateLiveValueCache(liveValuesByCode, elementMeta.key, currentMonth);
+        liveValuesByCode = mergeLiveValuesWithCache(
+          neededStationCodes,
+          liveValuesByCode,
+          elementMeta.key,
+          currentMonth
+        );
       } catch (error) {
         liveSupportMode = "error";
         state.debug.liveError = error.message || String(error);
-        liveValuesByCode = {};
+        liveValuesByCode = mergeLiveValuesWithCache(
+          neededStationCodes,
+          {},
+          elementMeta.key,
+          currentMonth
+        );
         latestObservationTime = "";
       }
     }
@@ -1005,7 +1142,7 @@ async function refresh() {
 
       state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
 
-      renderTable(rankTableBody, displayRows, { showLiveColumn });
+      renderTable(rankTableBody, displayRows, { showLiveColumn: canShowLiveColumn });
       renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
 
       const totalSummaryCount = annualSummary.length + monthlySummary.length;
@@ -1053,7 +1190,7 @@ async function refresh() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan()}">表示に失敗しました: ${error.message || String(error)}</td>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">表示に失敗しました: ${error.message || String(error)}</td>
       </tr>
     `;
     state.debug.liveError = error.message || String(error);
