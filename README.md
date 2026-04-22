@@ -139,6 +139,7 @@ data/manifest.json
 
 ## ディレクトリ構成
 
+```text
 weather_extreme/
 ├─ .github/
 │  └─ workflows/
