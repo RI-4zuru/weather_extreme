@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-22T23:13:07.355501+09:00",
-  "observedLatestAt": "2026-04-22T23:00:00+09:00",
+  "updatedAt": "2026-04-23T00:25:07.605184+09:00",
+  "observedLatestAt": "2026-04-23T00:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "annualDaysMeanTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1879寒候年",
+      "stationName": "津山",
+      "startDate": "1943寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 135,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 36,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         },
         {
           "rank": 2,
-          "value": 133,
-          "date": "1909年",
-          "_date_raw": "1909/01/01"
+          "value": 33,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 3,
-          "value": 130,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 32,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
         },
         {
           "rank": 4,
-          "value": 130,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 31,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 5,
-          "value": 127,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 30,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
         },
         {
           "rank": 6,
-          "value": 121,
-          "date": "1925年",
-          "_date_raw": "1925/01/01"
+          "value": 30,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
         },
         {
           "rank": 7,
-          "value": 119,
-          "date": "1957年",
-          "_date_raw": "1957/01/01"
+          "value": 29,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
         },
         {
           "rank": 8,
-          "value": 119,
-          "date": "1939年",
-          "_date_raw": "1939/01/01"
+          "value": 28,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
         },
         {
           "rank": 9,
-          "value": 119,
-          "date": "1908年",
-          "_date_raw": "1908/01/01"
+          "value": 22,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
         },
         {
           "rank": 10,
-          "value": 119,
-          "date": "1887年",
-          "_date_raw": "1887/01/01"
+          "value": 20,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "岡山",
+      "startDate": "1891寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 16,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 14,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 13,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 11,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 8,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 8,
+          "date": "1917年",
+          "_date_raw": "1917/01/01"
         }
       ]
     }
