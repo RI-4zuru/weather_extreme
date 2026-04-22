@@ -443,6 +443,10 @@ select {
   border-color: var(--year-border);
 }
 
+#withinChip {
+  cursor: pointer;
+}
+
 .live-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -574,6 +578,10 @@ select {
   background: #d7e3f0;
 }
 
+.prefecture-aggregate-col {
+  background: #c9d9eb;
+}
+
 .station-name {
   display: block;
   font-weight: 800;
@@ -603,6 +611,7 @@ select {
   color: #0b1828;
 }
 
+.rank-station,
 .rank-date {
   display: block;
   margin-top: 2px;
