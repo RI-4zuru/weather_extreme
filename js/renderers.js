@@ -241,7 +241,7 @@ export function renderStatus({
     ? formatObservationLabel(latestObservationTime)
     : "実況未取得";
 
-  statusTextEl.textContent = `地点数: ${rowCount}-1 / 要素: ${elementLabel}`;
+  statusTextEl.textContent = `地点数: ${rowCount-1} / 要素: ${elementLabel}`;
 }
 
 export function renderDebug(debugGrid, debug) {
