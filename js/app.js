@@ -45,6 +45,7 @@ const STORAGE_KEYS = {
   withinMode: "weather_extreme:within_mode",
   showLiveColumn: "weather_extreme:show_live_column",
   liveValueCache: "weather_extreme:live_value_cache",
+  controlPanelCollapsed: "weather_extreme:control_panel_collapsed",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
@@ -92,6 +93,9 @@ const monthSelect = document.getElementById("monthSelect");
 const elementPanel = document.getElementById("elementPanel");
 const elementPanelToggle = document.getElementById("elementPanelToggle");
 
+const controlPanelToggle = document.getElementById("controlPanelToggle");
+const controlPanelBody = document.getElementById("controlPanelBody");
+
 const summaryHeader = document.getElementById("summaryHeader");
 const summaryChevron = document.getElementById("summaryChevron");
 const liveSummaryBody = document.getElementById("liveSummaryBody");
@@ -127,6 +131,7 @@ let customExpandedRegions = new Set();
 let defaultPrefOrderKeys = [];
 let withinHighlightMode = "rolling-year";
 let showLiveColumn = false;
+let controlPanelCollapsed = false;
 
 /**
  * {
@@ -367,6 +372,13 @@ function getInitialShowLiveColumn() {
   return readStorage(STORAGE_KEYS.showLiveColumn, "false") === "true";
 }
 
+function getInitialControlPanelCollapsed() {
+  const saved = readStorage(STORAGE_KEYS.controlPanelCollapsed, "");
+  if (saved === "true") return true;
+  if (saved === "false") return false;
+  return window.matchMedia("(max-width: 900px)").matches;
+}
+
 function updateWithinChipLabel() {
   if (!withinChip) return;
 
@@ -390,6 +402,15 @@ function updateLiveColumnToggleLabel() {
   liveColumnToggle.classList.toggle("is-on", showLiveColumn);
 }
 
+function updateControlPanelToggleLabel() {
+  if (!controlPanelToggle || !controlPanelBody) return;
+  controlPanelBody.hidden = controlPanelCollapsed;
+  controlPanelToggle.setAttribute("aria-expanded", String(!controlPanelCollapsed));
+  controlPanelToggle.textContent = controlPanelCollapsed
+    ? "地域・都道府県選択 / 月選択を開く"
+    : "地域・都道府県選択 / 月選択を閉じる";
+}
+
 function cycleWithinHighlightMode() {
   const currentIndex = WITHIN_HIGHLIGHT_MODES.indexOf(withinHighlightMode);
   const nextIndex = (currentIndex + 1) % WITHIN_HIGHLIGHT_MODES.length;
@@ -411,9 +432,11 @@ function initControls() {
   currentElementKey = getInitialElementKey(currentMonth);
   withinHighlightMode = getInitialWithinHighlightMode();
   showLiveColumn = getInitialShowLiveColumn();
+  controlPanelCollapsed = getInitialControlPanelCollapsed();
 
   monthSelect.value = currentMonth;
   updateWithinChipLabel();
+  updateControlPanelToggleLabel();
 
   ensureCurrentRegionAndPref();
   renderRegionTabs();
@@ -439,6 +462,14 @@ function initControls() {
 }
 
 function bindEvents() {
+  if (controlPanelToggle) {
+    controlPanelToggle.addEventListener("click", () => {
+      controlPanelCollapsed = !controlPanelCollapsed;
+      writeStorage(STORAGE_KEYS.controlPanelCollapsed, String(controlPanelCollapsed));
+      updateControlPanelToggleLabel();
+    });
+  }
+
   regionTabs.addEventListener("click", async (event) => {
     const button = event.target.closest("[data-region-tab]");
     if (!button) return;
@@ -963,10 +994,12 @@ function pickLatestObservedAt(latestObservationTime, liveValuesByCode) {
 }
 
 function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
+  const canShowLiveColumn = isCurrentSelectionLiveSupported() && showLiveColumn;
+
   if (!stations.length) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan(isCurrentSelectionLiveSupported() && showLiveColumn)}">
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
           この都道府県は現在データ未対応です
         </td>
       </tr>
@@ -985,7 +1018,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
           <span class="station-name">${station.name}</span>
           <span class="start-date">${station.startDate || "-"}</span>
         </td>
-        <td class="rank-cell" colspan="${isCurrentSelectionLiveSupported() && showLiveColumn ? 11 : 10}">
+        <td class="rank-cell" colspan="${canShowLiveColumn ? 11 : 10}">
           <span class="rank-value">${valueText}</span>
           <span class="rank-date">${timeText}</span>
         </td>
@@ -995,7 +1028,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
 
   rankTableBody.innerHTML = rows || `
     <tr>
-      <td class="message-cell" colspan="${getTotalTableColspan(isCurrentSelectionLiveSupported() && showLiveColumn)}">
+      <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
         ${prefMeta?.name || "この都道府県"}は現在データ未対応です
       </td>
     </tr>
