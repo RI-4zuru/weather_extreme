@@ -2,7 +2,6 @@
   "prefKey": "hyogo",
   "prefName": "兵庫県",
   "stations": [
-
     {
       "stationName": "香住",
       "precNo": "63",
@@ -20,7 +19,6 @@
         { "rank_type": "s", "blockNo": "47750", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "温泉",
       "precNo": "63",
@@ -38,7 +36,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "豊岡",
       "precNo": "63",
@@ -56,7 +53,6 @@
         { "rank_type": "s", "blockNo": "47747", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "兎和野高原",
       "precNo": "63",
@@ -74,7 +70,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "大屋",
       "precNo": "63",
@@ -92,7 +87,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "八鹿",
       "precNo": "63",
@@ -110,7 +104,6 @@
         { "rank_type": "a", "blockNo": "0632", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "和田山",
       "precNo": "63",
@@ -128,7 +121,6 @@
         { "rank_type": "a", "blockNo": "0633", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "生野",
       "precNo": "63",
@@ -146,7 +138,6 @@
         { "rank_type": "a", "blockNo": "0634", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "柏原",
       "precNo": "63",
@@ -164,7 +155,6 @@
         { "rank_type": "a", "blockNo": "0635", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "佐用",
       "precNo": "63",
@@ -182,7 +172,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "一宮",
       "precNo": "63",
@@ -200,7 +189,6 @@
         { "rank_type": "a", "blockNo": "0636", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "福崎",
       "precNo": "63",
@@ -218,7 +206,6 @@
         { "rank_type": "a", "blockNo": "0637", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "西脇",
       "precNo": "63",
@@ -236,7 +223,6 @@
         { "rank_type": "a", "blockNo": "0638", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "後川",
       "precNo": "63",
@@ -254,7 +240,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "上郡",
       "precNo": "63",
@@ -272,7 +257,6 @@
         { "rank_type": "a", "blockNo": "0640", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "姫路",
       "precNo": "63",
@@ -290,7 +274,6 @@
         { "rank_type": "s", "blockNo": "47769", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "三田",
       "precNo": "63",
@@ -308,7 +291,6 @@
         { "rank_type": "a", "blockNo": "0639", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "三木",
       "precNo": "63",
@@ -326,7 +308,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "西宮",
       "precNo": "63",
@@ -344,7 +325,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "家島",
       "precNo": "63",
@@ -362,7 +342,6 @@
         { "rank_type": "a", "blockNo": "0642", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "明石",
       "precNo": "63",
@@ -380,7 +359,6 @@
         { "rank_type": "a", "blockNo": "0643", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "神戸空港",
       "precNo": "63",
@@ -398,7 +376,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "神戸",
       "precNo": "63",
@@ -416,7 +393,6 @@
         { "rank_type": "s", "blockNo": "47770", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "郡家",
       "precNo": "63",
@@ -434,7 +410,6 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "洲本",
       "precNo": "63",
@@ -452,7 +427,6 @@
         { "rank_type": "s", "blockNo": "47771", "view": "ns0" }
       ]
     },
-
     {
       "stationName": "南淡",
       "precNo": "63",
@@ -470,6 +444,5 @@
         { "rank_type": "a", "blockNo": "XXXX", "view": "ns0" }
       ]
     }
-
   ]
 }
