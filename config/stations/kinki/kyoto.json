@@ -2,6 +2,7 @@
   "prefKey": "kyoto",
   "prefName": "京都府",
   "stations": [
+
     {
       "stationName": "間人",
       "precNo": "61",
@@ -19,6 +20,7 @@
         { "rank_type": "a", "blockNo": "0965", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "峰山",
       "precNo": "61",
@@ -36,6 +38,7 @@
         { "rank_type": "a", "blockNo": "0588", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "宮津",
       "precNo": "61",
@@ -53,6 +56,7 @@
         { "rank_type": "a", "blockNo": "0589", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "坂浦",
       "precNo": "61",
@@ -70,6 +74,7 @@
         { "rank_type": "a", "blockNo": "1641", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "舞鶴",
       "precNo": "61",
@@ -87,6 +92,7 @@
         { "rank_type": "s", "blockNo": "47750", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "睦寄",
       "precNo": "61",
@@ -104,6 +110,7 @@
         { "rank_type": "a", "blockNo": "1160", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "福知山",
       "precNo": "61",
@@ -121,6 +128,7 @@
         { "rank_type": "a", "blockNo": "0593", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "三和",
       "precNo": "61",
@@ -138,6 +146,7 @@
         { "rank_type": "a", "blockNo": "1383", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "綾部山家",
       "precNo": "61",
@@ -155,6 +164,7 @@
         { "rank_type": "a", "blockNo": "1671", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "本庄",
       "precNo": "61",
@@ -172,6 +182,7 @@
         { "rank_type": "a", "blockNo": "0966", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "美山",
       "precNo": "61",
@@ -189,6 +200,7 @@
         { "rank_type": "a", "blockNo": "1303", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "須知",
       "precNo": "61",
@@ -206,6 +218,7 @@
         { "rank_type": "a", "blockNo": "1378", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "園部",
       "precNo": "61",
@@ -223,6 +236,7 @@
         { "rank_type": "a", "blockNo": "0596", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "京北",
       "precNo": "61",
@@ -240,6 +254,7 @@
         { "rank_type": "a", "blockNo": "0928", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "京都",
       "precNo": "61",
@@ -257,6 +272,7 @@
         { "rank_type": "s", "blockNo": "47759", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "長岡京",
       "precNo": "61",
@@ -274,6 +290,7 @@
         { "rank_type": "a", "blockNo": "1025", "view": "ns0" }
       ]
     },
+
     {
       "stationName": "京田辺",
       "precNo": "61",
@@ -291,5 +308,6 @@
         { "rank_type": "a", "blockNo": "0598", "view": "ns0" }
       ]
     }
+
   ]
 }
