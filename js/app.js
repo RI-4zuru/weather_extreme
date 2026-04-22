@@ -43,6 +43,7 @@ const STORAGE_KEYS = {
   element: "weather_extreme:last_element",
   enabledPrefs: "weather_extreme:enabled_prefs",
   withinMode: "weather_extreme:within_mode",
+  showLiveColumn: "weather_extreme:show_live_column",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
@@ -97,6 +98,7 @@ const rankInBadge = document.getElementById("rankInBadge");
 const topRankAlert = document.getElementById("topRankAlert");
 const observedLatestAtEl = document.getElementById("observedLatestAt");
 const withinChip = document.getElementById("withinChip");
+const liveColumnToggle = document.getElementById("liveColumnToggle");
 
 const tableTitleEl = document.getElementById("tableTitle");
 const statusTextEl = document.getElementById("statusText");
@@ -122,6 +124,7 @@ let enabledPrefKeys = new Set();
 let customExpandedRegions = new Set();
 let defaultPrefOrderKeys = [];
 let withinHighlightMode = "rolling-year";
+let showLiveColumn = false;
 
 async function main() {
   try {
@@ -133,7 +136,7 @@ async function main() {
 
     normalizePrefectureRegions();
     defaultPrefOrderKeys = buildDefaultPrefOrderKeys();
-    makeTableHead(rankTableHead);
+    makeTableHead(rankTableHead, showLiveColumn);
 
     initControls();
     bindEvents();
@@ -144,7 +147,7 @@ async function main() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">
+        <td class="message-cell" colspan="${getTotalTableColspan()}">
           初期化に失敗しました: ${error.message || String(error)}
         </td>
       </tr>
@@ -246,6 +249,10 @@ function getInitialWithinHighlightMode() {
   return WITHIN_HIGHLIGHT_MODES.includes(saved) ? saved : "rolling-year";
 }
 
+function getInitialShowLiveColumn() {
+  return readStorage(STORAGE_KEYS.showLiveColumn, "false") === "true";
+}
+
 function updateWithinChipLabel() {
   if (!withinChip) return;
 
@@ -262,12 +269,23 @@ function updateWithinChipLabel() {
   withinChip.textContent = "黄系：1年以内の記録";
 }
 
+function updateLiveColumnToggleLabel() {
+  if (!liveColumnToggle) return;
+  liveColumnToggle.textContent = showLiveColumn ? "実況を表から隠す" : "実況を表に出す";
+  liveColumnToggle.setAttribute("aria-pressed", String(showLiveColumn));
+  liveColumnToggle.classList.toggle("is-on", showLiveColumn);
+}
+
 function cycleWithinHighlightMode() {
   const currentIndex = WITHIN_HIGHLIGHT_MODES.indexOf(withinHighlightMode);
   const nextIndex = (currentIndex + 1) % WITHIN_HIGHLIGHT_MODES.length;
   withinHighlightMode = WITHIN_HIGHLIGHT_MODES[nextIndex];
   writeStorage(STORAGE_KEYS.withinMode, withinHighlightMode);
   updateWithinChipLabel();
+}
+
+function getTotalTableColspan() {
+  return showLiveColumn ? 12 : 11;
 }
 
 function initControls() {
@@ -278,14 +296,17 @@ function initControls() {
   currentMonth = getInitialMonth();
   currentElementKey = getInitialElementKey(currentMonth);
   withinHighlightMode = getInitialWithinHighlightMode();
+  showLiveColumn = getInitialShowLiveColumn();
 
   monthSelect.value = currentMonth;
   updateWithinChipLabel();
+  updateLiveColumnToggleLabel();
 
   ensureCurrentRegionAndPref();
   renderRegionTabs();
   renderPrefButtons();
   renderElementButtons();
+  makeTableHead(rankTableHead, showLiveColumn);
 
   elementPanel.hidden = true;
   elementPanelToggle.textContent = "要素選択を開く";
@@ -411,6 +432,16 @@ function bindEvents() {
   if (withinChip) {
     withinChip.addEventListener("click", async () => {
       cycleWithinHighlightMode();
+      await refresh();
+    });
+  }
+
+  if (liveColumnToggle) {
+    liveColumnToggle.addEventListener("click", async () => {
+      showLiveColumn = !showLiveColumn;
+      writeStorage(STORAGE_KEYS.showLiveColumn, String(showLiveColumn));
+      updateLiveColumnToggleLabel();
+      makeTableHead(rankTableHead, showLiveColumn);
       await refresh();
     });
   }
@@ -814,7 +845,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
   if (!stations.length) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">
+        <td class="message-cell" colspan="${getTotalTableColspan()}">
           この都道府県は現在データ未対応です
         </td>
       </tr>
@@ -833,7 +864,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
           <span class="station-name">${station.name}</span>
           <span class="start-date">${station.startDate || "-"}</span>
         </td>
-        <td class="rank-cell" colspan="10">
+        <td class="rank-cell" colspan="${showLiveColumn ? 11 : 10}">
           <span class="rank-value">${valueText}</span>
           <span class="rank-date">${timeText}</span>
         </td>
@@ -843,7 +874,7 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
 
   rankTableBody.innerHTML = rows || `
     <tr>
-      <td class="message-cell" colspan="11">
+      <td class="message-cell" colspan="${getTotalTableColspan()}">
         ${prefMeta?.name || "この都道府県"}は現在データ未対応です
       </td>
     </tr>
@@ -857,7 +888,7 @@ async function refresh() {
   if (!prefMeta || !elementMeta) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">都道府県または要素が未選択です。</td>
+        <td class="message-cell" colspan="${getTotalTableColspan()}">都道府県または要素が未選択です。</td>
       </tr>
     `;
     rankInBadge.hidden = true;
@@ -877,7 +908,7 @@ async function refresh() {
 
   rankTableBody.innerHTML = `
     <tr>
-      <td class="message-cell" colspan="11">読み込み中です…</td>
+      <td class="message-cell" colspan="${getTotalTableColspan()}">読み込み中です…</td>
     </tr>
   `;
 
@@ -974,7 +1005,7 @@ async function refresh() {
 
       state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
 
-      renderTable(rankTableBody, displayRows);
+      renderTable(rankTableBody, displayRows, { showLiveColumn });
       renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
 
       const totalSummaryCount = annualSummary.length + monthlySummary.length;
@@ -1022,7 +1053,7 @@ async function refresh() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="11">表示に失敗しました: ${error.message || String(error)}</td>
+        <td class="message-cell" colspan="${getTotalTableColspan()}">表示に失敗しました: ${error.message || String(error)}</td>
       </tr>
     `;
     state.debug.liveError = error.message || String(error);
