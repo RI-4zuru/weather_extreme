@@ -6,10 +6,11 @@
 
 ## このページでできること
 
-- 地域・都道府県・月を切り替えて県内極値一覧を表示
+- 都道府県・月を切り替えて県内極値一覧を表示
 - 要素ごとに、各観測所の 1 位〜10 位の記録を表示
 - 観測所ごとに観測開始日を併記
 - 実況値をもとに、上位ランクに入る可能性のある値を表示
+- 「ランクインあり」「極値1位更新あり」の判定表示
 - 直近の記録や実況ランクイン候補を色分け表示
 - GitHub Actions によるデータ更新
 
@@ -45,18 +46,19 @@
 
 ## ページの見方
 
-### 1. 地域・都道府県・月の切り替え
+### 1. 都道府県・月の切り替え
+
 画面上部で以下を選択します。
 
-- 地域
 - 都道府県
 - 月
   - 通年
   - 1月〜12月
 
-地域を切り替えると、その地域に属する都道府県一覧へ切り替わります。
+※ 地域は内部的に管理されており、都道府県選択に応じて自動的に切り替わります。
 
 ### 2. 要素の切り替え
+
 要素選択から、表示したい気象要素を切り替えます。
 
 - 一度に表示する要素は 1 つ
@@ -64,6 +66,7 @@
 - 地点名の下に観測開始日を表示
 
 ### 3. 色分け
+
 表では主に次の色分けを行います。
 
 - 赤系: 実況で上位ランクに入る見込みのある値
@@ -71,6 +74,7 @@
 - 赤 + 黄: 両方に該当する値
 
 ### 4. 更新時刻
+
 画面上の更新時刻は、できるだけ「処理完了時刻」ではなく、最後に取得した実況・観測の基準時刻を表示する想定です。
 
 例:
@@ -78,11 +82,43 @@
 - 画面には 10:20 時点のデータとして表示
 
 ### 5. データがない場合
+
 データ未表示のケースは、次のように切り分けて扱う想定です。
 
 - その県・その要素について観測対象がない
 - 観測対象はあるが、その回の取得に失敗した
 - 県または要素がまだ未対応
+
+## データ構造
+
+極値データは以下の形式で保存されています。
+
+data/<region>/<pref>/<element>-<month>.json
+
+例:
+data/kinki/nara/dailyPrecip-all.json
+
+また、全体の更新情報は以下にまとめられます。
+
+data/manifest.json
+
+## 地域区分
+
+本アプリでは以下の地域区分を使用しています。
+
+北海道 → hokkaido  
+東北 → tohoku  
+関東甲信 → kanto_koshin  
+北陸 → hokuriku  
+東海 → tokai  
+近畿 → kinki  
+中国 → chugoku  
+四国 → shikoku  
+九州北部 → kyushu_north  
+九州南部・奄美 → kyushu_south  
+沖縄 → okinawa  
+
+※ prefectures.json / Pythonスクリプト / フロント側で完全一致させる必要があります。
 
 ## データ更新の流れ
 
@@ -90,60 +126,68 @@
 
 大まかな役割は次のとおりです。
 
-- `scripts/update_rankings.py`
-  - 極値一覧データの更新
-- `scripts/update_live.py`
-  - 実況データの更新
-- `scripts/build_live_summary.py`
-  - 実況と極値一覧を突き合わせるための集約データ作成
-- `scripts/update_weather_data.py`
-  - 関連する気象データの取得・更新
-- `scripts/weather_common.py`
-  - 共通処理
+- scripts/update_rankings.py  
+  極値一覧データの生成（メイン処理）
 
-ワークフローは `.github/workflows/` にあります。
+- scripts/weather_common.py  
+  共通処理（取得・解析・整形）
 
-- `build_extremes.yml`
-- `build_live_data.yml`
+ワークフローは .github/workflows/ にあります。
+
+- update-rankings.yml  
+  極値データを生成し、data/ に保存
 
 ## ディレクトリ構成
 
-```text
 weather_extreme/
 ├─ .github/
 │  └─ workflows/
-│     ├─ build_extremes.yml
-│     └─ build_live_data.yml
+│     └─ update-rankings.yml
 │
 ├─ config/
 │  ├─ elements.json
 │  ├─ prefectures.json
 │  └─ stations/
+│     ├─ kinki/
+│     ├─ shikoku/
+│     ├─ kyushu_north/
+│     ├─ kyushu_south/
+│     └─ ...
 │
 ├─ data/
-│  ├─ hyogo/
-│  ├─ kyoto/
-│  ├─ nara/
-│  ├─ osaka/
-│  ├─ shiga/
-│  ├─ wakayama/
+│  ├─ kinki/
+│  ├─ shikoku/
+│  ├─ kyushu_north/
+│  ├─ kyushu_south/
+│  ├─ tohoku/
+│  ├─ kanto_koshin/
+│  ├─ hokuriku/
+│  ├─ tokai/
+│  ├─ chugoku/
+│  ├─ hokkaido/
+│  ├─ okinawa/
 │  └─ manifest.json
 │
-├─ data_base/
-│  └─ 元データ・中間生成物
-│
-├─ icons/
 ├─ js/
 ├─ scripts/
-│  ├─ build_live_summary.py
-│  ├─ update_live.py
 │  ├─ update_rankings.py
-│  ├─ update_weather_data.py
 │  └─ weather_common.py
 │
-├─ app.js
 ├─ index.html
+├─ app.js
 ├─ style.css
-├─ sw.js
-├─ manifest.webmanfest
 └─ README.md
+
+## 補足・注意事項
+
+- 気象庁の仕様上、ランキングが存在しない場合やデータが欠ける場合があります（正常挙動）
+- 観測要素は観測所ごとに異なるため、全ての要素が表示されるとは限りません
+- data/live は旧構造の名残として残っていますが、現在は使用していない可能性があります（将来的に削除予定）
+
+## 今後の予定
+
+- 全国データの充実
+- UI改善（スマホ最適化）
+- 実況処理のフロント側完全移行
+- data/live の整理・削除
+- パフォーマンス改善
