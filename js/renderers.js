@@ -6,7 +6,7 @@ function formatLiveColumnLabel(observedAt) {
 
   const text = String(base).trim();
 
-  const matched = text.match(/^(.*?)(\d{1,2}:\d{2}時点)$/);
+  const matched = text.match(/^(.*?)(\d{1,2}:\d{2}\s*時点)$/);
   if (!matched) {
     return escapeHtml(text);
   }
