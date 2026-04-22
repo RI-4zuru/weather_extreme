@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "佐賀県",
   "region": "九州北部",
   "element": "monthSnowDepth",
   "month": "9",
   "rows": [
     {
-      "stationName": "青森",
+      "stationName": "佐賀",
       "startDate": "1953年9月（昭和28年）",
       "ranks": [
         {
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 0,
-          "date": "1969年9月（昭和44年）",
-          "_date_raw": "1969/09/01"
+          "date": "2016年9月（平成28年）",
+          "_date_raw": "2016/09/01"
         }
       ]
     }

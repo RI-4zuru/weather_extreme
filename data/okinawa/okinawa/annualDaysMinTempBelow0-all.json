@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877寒候年",
+      "stationName": "名護",
+      "startDate": "1967寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 173,
-          "date": "1905年",
-          "_date_raw": "1905/01/01"
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 2,
-          "value": 173,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 3,
-          "value": 172,
-          "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 4,
-          "value": 172,
-          "date": "1899年",
-          "_date_raw": "1899/01/01"
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         },
         {
           "rank": 5,
-          "value": 172,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 6,
-          "value": 172,
-          "date": "1896年",
-          "_date_raw": "1896/01/01"
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 7,
-          "value": 171,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
         },
         {
           "rank": 8,
-          "value": 171,
-          "date": "1904年",
-          "_date_raw": "1904/01/01"
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 9,
-          "value": 169,
-          "date": "1892年",
-          "_date_raw": "1892/01/01"
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 10,
-          "value": 167,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "久米島",
+      "startDate": "1958寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "那覇",
+      "startDate": "1890寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
         }
       ]
     }

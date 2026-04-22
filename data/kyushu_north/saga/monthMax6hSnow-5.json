@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "佐賀県",
   "region": "九州北部",
   "element": "monthMax6hSnow",
   "month": "5",
   "rows": [
     {
-      "stationName": "青森",
+      "stationName": "佐賀",
       "startDate": "2016年5月31日（平成28年）",
       "ranks": [
         {

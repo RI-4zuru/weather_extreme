@@ -1,74 +1,272 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877寒候年",
+      "stationName": "延岡",
+      "startDate": "1961寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 173,
-          "date": "1905年",
-          "_date_raw": "1905/01/01"
+          "value": 61,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 2,
-          "value": 173,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 58,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
         },
         {
           "rank": 3,
-          "value": 172,
-          "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "value": 57,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
         },
         {
           "rank": 4,
-          "value": 172,
-          "date": "1899年",
-          "_date_raw": "1899/01/01"
+          "value": 51,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         },
         {
           "rank": 5,
-          "value": 172,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 50,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
         },
         {
           "rank": 6,
-          "value": 172,
+          "value": 47,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 45,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 42,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 41,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 38,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "宮崎",
+      "startDate": "1886寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 57,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 52,
           "date": "1896年",
           "_date_raw": "1896/01/01"
         },
         {
+          "rank": 3,
+          "value": 49,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 48,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 47,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 45,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
           "rank": 7,
-          "value": 171,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 45,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
         },
         {
           "rank": 8,
-          "value": 171,
-          "date": "1904年",
-          "_date_raw": "1904/01/01"
+          "value": 45,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 9,
-          "value": 169,
-          "date": "1892年",
-          "_date_raw": "1892/01/01"
+          "value": 45,
+          "date": "1907年",
+          "_date_raw": "1907/01/01"
         },
         {
           "rank": 10,
-          "value": 167,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 44,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "都城",
+      "startDate": "1942寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 101,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 81,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 81,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 76,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 75,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 75,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 72,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 72,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 72,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 68,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "油津",
+      "startDate": "1949寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 34,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 33,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 26,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 22,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 21,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 20,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 20,
+          "date": "1962年",
+          "_date_raw": "1962/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 20,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 18,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 18,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
         }
       ]
     }

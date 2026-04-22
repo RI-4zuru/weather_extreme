@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "annualDaysMaxTempAtOrAbove30",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "名護",
+      "startDate": "1966年",
       "ranks": [
         {
           "rank": 1,
-          "value": 35,
+          "value": 142,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 31,
-          "date": "1924年",
-          "_date_raw": "1924/01/01"
+          "value": 135,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 3,
-          "value": 30,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "value": 122,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
         },
         {
           "rank": 4,
-          "value": 27,
+          "value": 120,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 119,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 117,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 115,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 112,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 111,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 111,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "久米島",
+      "startDate": "1958年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 144,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 136,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 130,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 125,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
           "rank": 5,
-          "value": 27,
-          "date": "1951年",
-          "_date_raw": "1951/01/01"
+          "value": 123,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 6,
-          "value": 23,
-          "date": "1883年",
-          "_date_raw": "1883/01/01"
+          "value": 120,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
         },
         {
           "rank": 7,
-          "value": 22,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
+          "value": 117,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 8,
-          "value": 22,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 116,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
         },
         {
           "rank": 9,
-          "value": 20,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 116,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
         },
         {
           "rank": 10,
-          "value": 20,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 115,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "那覇",
+      "startDate": "1890年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 146,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 137,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 124,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 124,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 121,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 121,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 121,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 119,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 119,
+          "date": "1915年",
+          "_date_raw": "1915/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 118,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
         }
       ]
     }

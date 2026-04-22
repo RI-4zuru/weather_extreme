@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1953寒候年",
+      "stationName": "名護",
+      "startDate": "1967寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 680,
-          "date": "1996年",
-          "_date_raw": "1996/01/01"
+          "value": 0,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
         },
         {
           "rank": 2,
-          "value": 637,
-          "date": "1991年",
-          "_date_raw": "1991/01/01"
+          "value": 0,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
         },
         {
           "rank": 3,
-          "value": 632,
+          "value": 0,
           "date": "1999年",
           "_date_raw": "1999/01/01"
         },
         {
           "rank": 4,
-          "value": 630,
+          "value": 0,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "久米島",
+      "startDate": "1958寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
           "date": "2000年",
           "_date_raw": "2000/01/01"
         },
         {
-          "rank": 5,
-          "value": 628,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
-        },
-        {
           "rank": 6,
-          "value": 617,
-          "date": "2005年",
-          "_date_raw": "2005/01/01"
+          "value": 0,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         },
         {
           "rank": 7,
-          "value": 617,
-          "date": "1981年",
-          "_date_raw": "1981/01/01"
+          "value": 0,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
         },
         {
           "rank": 8,
-          "value": 613,
-          "date": "1982年",
-          "_date_raw": "1982/01/01"
+          "value": 0,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
         },
         {
           "rank": 9,
-          "value": 613,
-          "date": "1965年",
-          "_date_raw": "1965/01/01"
+          "value": 0,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
         },
         {
           "rank": 10,
-          "value": 598,
-          "date": "1955年",
-          "_date_raw": "1955/01/01"
+          "value": 0,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "那覇",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "1959年",
+          "_date_raw": "1959/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "1958年",
+          "_date_raw": "1958/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "1956年",
+          "_date_raw": "1956/01/01"
         }
       ]
     }

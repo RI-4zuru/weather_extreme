@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "monthMax12hSnow",
   "month": "8",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "2016年8月31日（平成28年）",
+      "stationName": "宮崎",
+      "startDate": "2020年8月31日（令和2年）",
       "ranks": [
         {
           "rank": 1,
@@ -45,30 +45,6 @@
           "value": 0,
           "date": "2020年8月31日（令和2年）",
           "_date_raw": "2020/08/31"
-        },
-        {
-          "rank": 7,
-          "value": 0,
-          "date": "2019年8月31日（令和元年）",
-          "_date_raw": "2019/08/31"
-        },
-        {
-          "rank": 8,
-          "value": 0,
-          "date": "2018年8月31日（平成30年）",
-          "_date_raw": "2018/08/31"
-        },
-        {
-          "rank": 9,
-          "value": 0,
-          "date": "2017年8月31日（平成29年）",
-          "_date_raw": "2017/08/31"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2016年8月31日（平成28年）",
-          "_date_raw": "2016/08/31"
         }
       ]
     }

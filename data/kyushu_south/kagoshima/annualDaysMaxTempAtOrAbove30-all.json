@@ -1,74 +1,470 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "鹿児島県",
   "region": "九州南部・奄美",
   "element": "annualDaysMaxTempAtOrAbove30",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "阿久根",
+      "startDate": "1939年",
       "ranks": [
         {
           "rank": 1,
-          "value": 35,
+          "value": 94,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 31,
-          "date": "1924年",
-          "_date_raw": "1924/01/01"
+          "value": 78,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 3,
-          "value": 30,
+          "value": 77,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 73,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 73,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 69,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 69,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 69,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 69,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 68,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "鹿児島",
+      "startDate": "1883年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 117,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 98,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 97,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 4,
-          "value": 27,
+          "value": 97,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 96,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 96,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 96,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
-          "rank": 5,
-          "value": 27,
-          "date": "1951年",
-          "_date_raw": "1951/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 23,
-          "date": "1883年",
-          "_date_raw": "1883/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 22,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
-        },
-        {
           "rank": 8,
-          "value": 22,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 96,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
         },
         {
           "rank": 9,
-          "value": 20,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 95,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 10,
-          "value": 20,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 91,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "枕崎",
+      "startDate": "1923年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 109,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 89,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 85,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 81,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 81,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 77,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 76,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 74,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 74,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 74,
+          "date": "1934年",
+          "_date_raw": "1934/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "種子島",
+      "startDate": "1948年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 103,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 87,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 86,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 84,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 84,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 81,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 78,
+          "date": "1956年",
+          "_date_raw": "1956/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 77,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 77,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 77,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "屋久島",
+      "startDate": "1937年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 112,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 89,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 88,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 84,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 82,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 79,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 77,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 77,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 76,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 76,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "名瀬",
+      "startDate": "1896年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 132,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 115,
+          "date": "1956年",
+          "_date_raw": "1956/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 114,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 114,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 114,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 113,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 112,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 110,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 109,
+          "date": "1938年",
+          "_date_raw": "1938/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 108,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "沖永良部",
+      "startDate": "1969年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 126,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 111,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 108,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 108,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 107,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 107,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 102,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 101,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 101,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 96,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
         }
       ]
     }

@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-23T01:35:02.950436+09:00",
-  "observedLatestAt": "2026-04-23T01:20:00+09:00",
+  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
+  "observedLatestAt": "2026-04-23T04:40:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "annualDaysMaxTempAtOrAbove35",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "名護",
+      "startDate": "1966年",
       "ranks": [
         {
           "rank": 1,
-          "value": 3,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "value": 2,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
         },
         {
           "rank": 2,
-          "value": 3,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "value": 1,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 3,
-          "value": 2,
+          "value": 1,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
+          "rank": 6,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "久米島",
+      "startDate": "1958年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 4,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
           "rank": 4,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "那覇",
+      "startDate": "1890年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 8,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 8,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
+        },
+        {
+          "rank": 3,
           "value": 2,
-          "date": "2000年",
-          "_date_raw": "2000/01/01"
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
         },
         {
           "rank": 5,
           "value": 1,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
         },
         {
           "rank": 6,
           "value": 1,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
         },
         {
           "rank": 7,
           "value": 1,
-          "date": "1978年",
-          "_date_raw": "1978/01/01"
+          "date": "1910年",
+          "_date_raw": "1910/01/01"
         },
         {
           "rank": 8,
           "value": 1,
-          "date": "1972年",
-          "_date_raw": "1972/01/01"
+          "date": "1906年",
+          "_date_raw": "1906/01/01"
         },
         {
           "rank": 9,
           "value": 1,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
         },
         {
           "rank": 10,
           "value": 1,
-          "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "date": "1890年",
+          "_date_raw": "1890/01/01"
         }
       ]
     }
