@@ -1,76 +1,9 @@
 {
-  "updatedAt": "2026-04-22T19:27:26.973085+09:00",
-  "observedLatestAt": "2026-04-22T19:20:00+09:00",
+  "updatedAt": "2026-04-22T20:23:52.763253+09:00",
+  "observedLatestAt": "2026-04-22T20:10:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "annualDaysMeanTempAtOrAbove25",
   "month": "all",
-  "rows": [
-    {
-      "stationName": "奈良",
-      "startDate": "1953年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 97,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 95,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 90,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 86,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 77,
-          "date": "1961年",
-          "_date_raw": "1961/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 76,
-          "date": "2011年",
-          "_date_raw": "2011/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 76,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 73,
-          "date": "1978年",
-          "_date_raw": "1978/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 72,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 72,
-          "date": "2018年",
-          "_date_raw": "2018/01/01"
-        }
-      ]
-    }
-  ]
+  "rows": []
 }
