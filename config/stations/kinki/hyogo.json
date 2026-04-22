@@ -14,9 +14,9 @@
       "sunshine": true,
       "snow": true,
       "rank_candidates": [
-        { "rank_type": "s", "blockNo": "0607", "view": "h0" },
-        { "rank_type": "s", "blockNo": "0607", "view": "np0" },
-        { "rank_type": "s", "blockNo": "0607", "view": "ns0" }
+        { "rank_type": "a", "blockNo": "0607", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0607", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0607", "view": "ns0" }
       ]
     },
     {
@@ -156,23 +156,6 @@
       ]
     },
     {
-      "stationName": "佐用",
-      "precNo": "63",
-      "amedasCode": "63241",
-      "temp": true,
-      "precip": true,
-      "pressure": true,
-      "humidity": true,
-      "wind": true,
-      "sunshine": true,
-      "snow": true,
-      "rank_candidates": [
-        { "rank_type": "a", "blockNo": "0617", "view": "h0" },
-        { "rank_type": "a", "blockNo": "0617", "view": "np0" },
-        { "rank_type": "a", "blockNo": "0617", "view": "ns0" }
-      ]
-    },
-    {
       "stationName": "一宮",
       "precNo": "63",
       "amedasCode": "63251",
@@ -187,6 +170,23 @@
         { "rank_type": "a", "blockNo": "0615", "view": "h0" },
         { "rank_type": "a", "blockNo": "0615", "view": "np0" },
         { "rank_type": "a", "blockNo": "0615", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "佐用",
+      "precNo": "63",
+      "amedasCode": "63241",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0617", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0617", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0617", "view": "ns0" }
       ]
     },
     {
@@ -306,23 +306,6 @@
         { "rank_type": "a", "blockNo": "1227", "view": "h0" },
         { "rank_type": "a", "blockNo": "1227", "view": "np0" },
         { "rank_type": "a", "blockNo": "1227", "view": "ns0" }
-      ]
-    },
-    {
-      "stationName": "西宮",
-      "precNo": "63",
-      "amedasCode": "63477",
-      "temp": true,
-      "precip": true,
-      "pressure": true,
-      "humidity": true,
-      "wind": true,
-      "sunshine": true,
-      "snow": true,
-      "rank_candidates": [
-        { "rank_type": "a", "blockNo": "1588", "view": "h0" },
-        { "rank_type": "a", "blockNo": "1588", "view": "np0" },
-        { "rank_type": "a", "blockNo": "1588", "view": "ns0" }
       ]
     },
     {
