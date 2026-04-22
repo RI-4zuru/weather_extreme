@@ -178,6 +178,7 @@ weather_extreme/
 ├─ app.js
 ├─ style.css
 └─ README.md
+```
 
 ## 補足・注意事項
 
