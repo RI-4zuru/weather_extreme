@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-22T20:23:52.763253+09:00",
-  "observedLatestAt": "2026-04-22T20:10:00+09:00",
+  "updatedAt": "2026-04-22T22:24:55.644279+09:00",
+  "observedLatestAt": "2026-04-22T22:10:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "annualDaysMinTempBelow0",
@@ -201,6 +201,72 @@
           "value": 45,
           "date": "1984年",
           "_date_raw": "1984/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "洲本",
+      "startDate": "1919寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 52,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 45,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 44,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 43,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 42,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 39,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 37,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 37,
+          "date": "1938年",
+          "_date_raw": "1938/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 36,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 33,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         }
       ]
     }
