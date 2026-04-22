@@ -553,7 +553,7 @@ select {
 
 .rank-table {
   width: 100%;
-  min-width: 1020px;
+  min-width: 920px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -627,9 +627,20 @@ select {
   line-height: 1.08;
 }
 
+/* ここを少し細く */
 .rank-cell,
 .live-col-cell {
   height: 54px;
+}
+
+.rank-cell {
+  width: 6.6%;
+  min-width: 58px;
+}
+
+.live-col-cell {
+  width: 108px;
+  min-width: 108px;
 }
 
 .rank-value {
@@ -924,7 +935,11 @@ select {
   }
 
   .rank-table {
-    min-width: 900px;
+    min-width: 860px;
+  }
+
+  .rank-cell {
+    min-width: 52px;
   }
 }
 
@@ -935,5 +950,9 @@ select {
 
   .region-pref-grid {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .rank-cell {
+    min-width: 48px;
   }
 }
