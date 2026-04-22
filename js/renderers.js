@@ -4,10 +4,17 @@ function formatLiveColumnLabel(observedAt) {
   const base = formatObservationLabel(observedAt || "");
   if (!base || base === "-") return "-";
 
-  const matched = base.match(/^(.+)\s+(\d{1,2}:\d{2})時点$/);
-  if (!matched) return escapeHtml(base);
+  const text = String(base).trim();
 
-  return `${escapeHtml(matched[1])}<br>${escapeHtml(matched[2])}時点`;
+  const matched = text.match(/^(.*?)(\d{1,2}:\d{2}時点)$/);
+  if (!matched) {
+    return escapeHtml(text);
+  }
+
+  const datePart = matched[1].trim();
+  const timePart = matched[2].trim();
+
+  return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
 }
 
 export function makeTableHead(tableHead, showLiveColumn = false) {
