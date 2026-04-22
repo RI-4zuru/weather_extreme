@@ -1,9 +1,142 @@
 {
-  "updatedAt": "2026-04-22T17:45:41.122287+09:00",
-  "observedLatestAt": "2026-04-22T17:30:00+09:00",
+  "updatedAt": "2026-04-22T19:27:26.973085+09:00",
+  "observedLatestAt": "2026-04-22T19:20:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
-  "rows": []
+  "rows": [
+    {
+      "stationName": "松山",
+      "startDate": "1890年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 154,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 154,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 153,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 153,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 152,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 151,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 150,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 149,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 148,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 147,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "宇和島",
+      "startDate": "1922年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 160,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 157,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 156,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 156,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 156,
+          "date": "1940年",
+          "_date_raw": "1940/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 155,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 155,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 154,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 152,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 150,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        }
+      ]
+    }
+  ]
 }

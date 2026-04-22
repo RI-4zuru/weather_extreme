@@ -1,9 +1,142 @@
 {
-  "updatedAt": "2026-04-22T17:45:41.122287+09:00",
-  "observedLatestAt": "2026-04-22T17:30:00+09:00",
+  "updatedAt": "2026-04-22T19:27:26.973085+09:00",
+  "observedLatestAt": "2026-04-22T19:20:00+09:00",
   "prefecture": "香川県",
   "region": "四国",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
-  "rows": []
+  "rows": [
+    {
+      "stationName": "高松",
+      "startDate": "1942寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 67,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 62,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 61,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 59,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 59,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 58,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 57,
+          "date": "1948年",
+          "_date_raw": "1948/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 56,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 52,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 51,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "多度津",
+      "startDate": "1892寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 47,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 46,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 42,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 41,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 41,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 40,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 39,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 37,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 36,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 36,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        }
+      ]
+    }
+  ]
 }
