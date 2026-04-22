@@ -1,5 +1,15 @@
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
+function formatLiveColumnLabel(observedAt) {
+  const base = formatObservationLabel(observedAt || "");
+  if (!base || base === "-") return "-";
+
+  const matched = base.match(/^(.+)\s+(\d{1,2}:\d{2})時点$/);
+  if (!matched) return escapeHtml(base);
+
+  return `${escapeHtml(matched[1])}<br>${escapeHtml(matched[2])}時点`;
+}
+
 export function makeTableHead(tableHead, showLiveColumn = false) {
   const headers = [];
   headers.push(`
@@ -93,7 +103,7 @@ export function renderTable(tableBody, rows, options = {}) {
           実況: ${escapeHtml(String(liveRank))}位相当<br>
           ${liveStationLine}
           値: ${escapeHtml(String(live.value))}<br>
-          ${escapeHtml(formatObservationLabel(live.observedAt))}
+          ${formatLiveColumnLabel(live.observedAt)}
         </span>
       `
       : "";
@@ -153,7 +163,7 @@ export function renderTable(tableBody, rows, options = {}) {
           <td class="live-col-cell ${Number.isFinite(liveRank) && liveRank >= 1 && liveRank <= 10 ? "live-target" : ""}">
             <span class="rank-value">${escapeHtml(String(live.value))}</span>
             ${liveStation}
-            <span class="rank-date">${escapeHtml(formatObservationLabel(live.observedAt))}</span>
+            <span class="rank-date">${formatLiveColumnLabel(live.observedAt)}</span>
           </td>
         `;
       } else {
