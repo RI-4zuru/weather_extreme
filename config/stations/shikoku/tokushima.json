@@ -3,23 +3,6 @@
   "prefName": "徳島県",
   "stations": [
     {
-      "stationName": "徳島",
-      "precNo": "71",
-      "amedasCode": "71106",
-      "temp": true,
-      "precip": true,
-      "pressure": true,
-      "humidity": true,
-      "wind": true,
-      "sunshine": true,
-      "snow": true,
-      "rank_candidates": [
-        { "rank_type": "s", "blockNo": "47895", "view": "h0" },
-        { "rank_type": "s", "blockNo": "47895", "view": "np0" },
-        { "rank_type": "s", "blockNo": "47895", "view": "ns0" }
-      ]
-    },
-    {
       "stationName": "池田",
       "precNo": "71",
       "amedasCode": "71066",
@@ -54,6 +37,40 @@
       ]
     },
     {
+      "stationName": "徳島",
+      "precNo": "71",
+      "amedasCode": "71106",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47895", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47895", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47895", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "半田",
+      "precNo": "71",
+      "amedasCode": "71136",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1327", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1327", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1327", "view": "ns0" }
+      ]
+    },
+    {
       "stationName": "東祖谷",
       "precNo": "71",
       "amedasCode": "71192",
@@ -68,6 +85,23 @@
         { "rank_type": "a", "blockNo": "1677", "view": "h0" },
         { "rank_type": "a", "blockNo": "1677", "view": "np0" },
         { "rank_type": "a", "blockNo": "1677", "view": "ns0" }
+      ]
+    },
+    {
+      "stationName": "福原旭",
+      "precNo": "71",
+      "amedasCode": "71211",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "1098", "view": "h0" },
+        { "rank_type": "a", "blockNo": "1098", "view": "np0" },
+        { "rank_type": "a", "blockNo": "1098", "view": "ns0" }
       ]
     },
     {
@@ -136,40 +170,6 @@
         { "rank_type": "a", "blockNo": "1604", "view": "h0" },
         { "rank_type": "a", "blockNo": "1604", "view": "np0" },
         { "rank_type": "a", "blockNo": "1604", "view": "ns0" }
-      ]
-    },
-    {
-      "stationName": "半田",
-      "precNo": "71",
-      "amedasCode": "71136",
-      "temp": true,
-      "precip": true,
-      "pressure": true,
-      "humidity": true,
-      "wind": true,
-      "sunshine": true,
-      "snow": true,
-      "rank_candidates": [
-        { "rank_type": "a", "blockNo": "1327", "view": "h0" },
-        { "rank_type": "a", "blockNo": "1327", "view": "np0" },
-        { "rank_type": "a", "blockNo": "1327", "view": "ns0" }
-      ]
-    },
-    {
-      "stationName": "福原旭",
-      "precNo": "71",
-      "amedasCode": "71211",
-      "temp": true,
-      "precip": true,
-      "pressure": true,
-      "humidity": true,
-      "wind": true,
-      "sunshine": true,
-      "snow": true,
-      "rank_candidates": [
-        { "rank_type": "a", "blockNo": "1098", "view": "h0" },
-        { "rank_type": "a", "blockNo": "1098", "view": "np0" },
-        { "rank_type": "a", "blockNo": "1098", "view": "ns0" }
       ]
     }
   ]
