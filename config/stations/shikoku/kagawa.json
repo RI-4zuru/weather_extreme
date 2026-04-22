@@ -120,6 +120,23 @@
         { "rank_type": "a", "blockNo": "1239", "view": "np0" },
         { "rank_type": "a", "blockNo": "1239", "view": "ns0" }
       ]
+    },
+    {
+      "stationName": "竜王山",
+      "precNo": "72",
+      "amedasCode": "72176",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "a", "blockNo": "0731", "view": "h0" },
+        { "rank_type": "a", "blockNo": "0731", "view": "np0" },
+        { "rank_type": "a", "blockNo": "0731", "view": "ns0" }
+      ]
     }
   ]
 }
