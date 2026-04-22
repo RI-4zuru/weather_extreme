@@ -109,6 +109,14 @@ body {
   padding: 12px;
 }
 
+.control-panel-body[hidden] {
+  display: none !important;
+}
+
+.control-toggle-button {
+  margin-bottom: 10px;
+}
+
 .control-block {
   margin-bottom: 12px;
 }
@@ -627,7 +635,6 @@ select {
   line-height: 1.08;
 }
 
-/* ここを少し細く */
 .rank-cell,
 .live-col-cell {
   height: 54px;
