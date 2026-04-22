@@ -70,10 +70,16 @@ export function renderTable(tableBody, rows) {
       liveRank >= 1 &&
       liveRank <= 10;
 
+    const liveStationLine =
+      row.isPrefectureAggregate && live.stationName
+        ? `地点: ${escapeHtml(String(live.stationName))}<br>`
+        : "";
+
     const stationLiveBadge = showLiveBadge
       ? `
         <span class="station-live-badge ${liveRank === 1 ? "top1" : ""}">
           実況: ${escapeHtml(String(liveRank))}位相当<br>
+          ${liveStationLine}
           値: ${escapeHtml(String(live.value))}<br>
           ${escapeHtml(formatObservationLabel(live.observedAt))}
         </span>
@@ -87,6 +93,7 @@ export function renderTable(tableBody, rows) {
         cells.push(`
           <td class="rank-cell">
             <span class="rank-value">-</span>
+            <span class="rank-station">-</span>
             <span class="rank-date">-</span>
           </td>
         `);
@@ -105,17 +112,26 @@ export function renderTable(tableBody, rows) {
         cellClass += " within-year";
       }
 
+      const stationLine = rankItem.stationName
+        ? `<span class="rank-station">${escapeHtml(String(rankItem.stationName))}</span>`
+        : "";
+
       cells.push(`
         <td class="${cellClass}">
           <span class="rank-value">${escapeHtml(String(rankItem.value ?? "-"))}</span>
+          ${stationLine}
           <span class="rank-date">${renderDualLine(rankItem.date || "-")}</span>
         </td>
       `);
     }
 
+    const stationColClass = row.isPrefectureAggregate
+      ? "station-col prefecture-aggregate-col"
+      : "station-col";
+
     return `
-      <tr>
-        <td class="station-col">
+      <tr class="${row.isPrefectureAggregate ? "prefecture-aggregate-row" : ""}">
+        <td class="${stationColClass}">
           <span class="station-name">${escapeHtml(row.stationName || "-")}</span>
           <span class="start-date">${renderDualLine(row.startDate || "-")}</span>
           ${stationLiveBadge}
