@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
-  "observedLatestAt": "2026-04-23T04:40:00+09:00",
+  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
+  "observedLatestAt": "2026-04-24T01:40:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "annualDaysMaxTempAtOrAbove30",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "輪島",
+      "startDate": "1929年",
       "ranks": [
         {
           "rank": 1,
-          "value": 35,
+          "value": 73,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 31,
-          "date": "1924年",
-          "_date_raw": "1924/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 30,
+          "value": 66,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
+          "rank": 3,
+          "value": 54,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
           "rank": 4,
-          "value": 27,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "value": 52,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 5,
-          "value": 27,
-          "date": "1951年",
-          "_date_raw": "1951/01/01"
+          "value": 50,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
         },
         {
           "rank": 6,
-          "value": 23,
-          "date": "1883年",
-          "_date_raw": "1883/01/01"
+          "value": 49,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 7,
-          "value": 22,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
+          "value": 47,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 8,
-          "value": 22,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 47,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
         },
         {
           "rank": 9,
-          "value": 20,
+          "value": 44,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 43,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "金沢",
+      "startDate": "1882年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 87,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 85,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 78,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 71,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 69,
+          "date": "1894年",
+          "_date_raw": "1894/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 67,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 65,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 64,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 62,
           "date": "2012年",
           "_date_raw": "2012/01/01"
         },
         {
           "rank": 10,
-          "value": 20,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 62,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
         }
       ]
     }

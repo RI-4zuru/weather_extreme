@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
-  "observedLatestAt": "2026-04-23T04:40:00+09:00",
+  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
+  "observedLatestAt": "2026-04-24T01:40:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "高山",
+      "startDate": "1899年",
       "ranks": [
         {
           "rank": 1,
-          "value": 98,
+          "value": 130,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 128,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 127,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
+          "rank": 4,
+          "value": 125,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 124,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 124,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 124,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 123,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 121,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 121,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "岐阜",
+      "startDate": "1883年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 161,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
           "rank": 2,
-          "value": 91,
+          "value": 153,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 3,
-          "value": 86,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "value": 153,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 4,
-          "value": 79,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 152,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
         },
         {
           "rank": 5,
-          "value": 79,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "value": 152,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 6,
-          "value": 73,
-          "date": "1961年",
-          "_date_raw": "1961/01/01"
+          "value": 151,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
         },
         {
           "rank": 7,
-          "value": 72,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 150,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 8,
-          "value": 72,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 150,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
         },
         {
           "rank": 9,
-          "value": 72,
-          "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "value": 149,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 10,
-          "value": 71,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "value": 149,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         }
       ]
     }

@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-23T04:56:23.980886+09:00",
-  "observedLatestAt": "2026-04-23T04:40:00+09:00",
+  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
+  "observedLatestAt": "2026-04-24T01:40:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "annualDaysMeanTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1879寒候年",
+      "stationName": "高山",
+      "startDate": "1899寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 135,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 96,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 2,
-          "value": 133,
-          "date": "1909年",
-          "_date_raw": "1909/01/01"
+          "value": 96,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
         },
         {
           "rank": 3,
-          "value": 130,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 96,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
         },
         {
           "rank": 4,
-          "value": 130,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 93,
+          "date": "1934年",
+          "_date_raw": "1934/01/01"
         },
         {
           "rank": 5,
-          "value": 127,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 92,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 6,
-          "value": 121,
+          "value": 92,
           "date": "1925年",
           "_date_raw": "1925/01/01"
         },
         {
           "rank": 7,
-          "value": 119,
-          "date": "1957年",
-          "_date_raw": "1957/01/01"
+          "value": 91,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
         },
         {
           "rank": 8,
-          "value": 119,
-          "date": "1939年",
-          "_date_raw": "1939/01/01"
+          "value": 88,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
         },
         {
           "rank": 9,
-          "value": 119,
-          "date": "1908年",
-          "_date_raw": "1908/01/01"
+          "value": 88,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
         },
         {
           "rank": 10,
-          "value": 119,
-          "date": "1887年",
-          "_date_raw": "1887/01/01"
+          "value": 87,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "岐阜",
+      "startDate": "1883寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 20,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 20,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 19,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 18,
+          "date": "1940年",
+          "_date_raw": "1940/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 17,
+          "date": "1917年",
+          "_date_raw": "1917/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16,
+          "date": "1886年",
+          "_date_raw": "1886/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 15,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 14,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 14,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 13,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
         }
       ]
     }
