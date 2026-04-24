@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
-  "observedLatestAt": "2026-04-24T01:40:00+09:00",
+  "updatedAt": "2026-04-25T01:14:16.517806+09:00",
+  "observedLatestAt": "2026-04-25T01:00:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "monthPrecipHigh",
@@ -324,7 +324,7 @@
         },
         {
           "rank": 9,
-          "value": 161.5,
+          "value": 162,
           "date": "2026年4月（令和8年）",
           "_date_raw": "2026/04/01"
         },

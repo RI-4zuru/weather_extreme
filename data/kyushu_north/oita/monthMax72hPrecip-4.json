@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
-  "observedLatestAt": "2026-04-24T01:40:00+09:00",
+  "updatedAt": "2026-04-25T01:14:16.517806+09:00",
+  "observedLatestAt": "2026-04-25T01:00:00+09:00",
   "prefecture": "大分県",
   "region": "九州北部",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "国見",
-      "startDate": "2016年4月24日（平成28年）",
+      "startDate": "1983年4月2日（昭和58年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 69,
           "date": "1983年4月2日（昭和58年）",
           "_date_raw": "1983/04/02"
-        },
-        {
-          "rank": 10,
-          "value": 64,
-          "date": "2016年4月24日（平成28年）",
-          "_date_raw": "2016/04/24"
         }
       ]
     },

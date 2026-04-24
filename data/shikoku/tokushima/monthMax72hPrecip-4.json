@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-24T01:54:14.765058+09:00",
-  "observedLatestAt": "2026-04-24T01:40:00+09:00",
+  "updatedAt": "2026-04-25T01:14:16.517806+09:00",
+  "observedLatestAt": "2026-04-25T01:00:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthMax72hPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "穴吹",
-      "startDate": "2006年4月5日（平成18年）",
+      "startDate": "2008年4月10日（平成20年）",
       "ranks": [
         {
           "rank": 1,
@@ -129,12 +129,6 @@
           "value": 33,
           "date": "2008年4月10日（平成20年）",
           "_date_raw": "2008/04/10"
-        },
-        {
-          "rank": 10,
-          "value": 33,
-          "date": "2006年4月5日（平成18年）",
-          "_date_raw": "2006/04/05"
         }
       ]
     },
