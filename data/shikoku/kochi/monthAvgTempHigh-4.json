@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-25T01:14:16.517806+09:00",
-  "observedLatestAt": "2026-04-25T01:00:00+09:00",
+  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
+  "observedLatestAt": "2026-04-26T00:50:00+09:00",
   "prefecture": "高知県",
   "region": "四国",
   "element": "monthAvgTempHigh",
@@ -925,8 +925,8 @@
         {
           "rank": 10,
           "value": 16.5,
-          "date": "2022年4月（令和4年）",
-          "_date_raw": "2022/04/01"
+          "date": "2026年4月（令和8年）",
+          "_date_raw": "2026/04/01"
         }
       ]
     },
