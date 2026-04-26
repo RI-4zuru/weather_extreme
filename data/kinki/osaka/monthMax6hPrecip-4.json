@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "大阪府",
   "region": "近畿",
   "element": "monthMax6hPrecip",
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "関空島",
-      "startDate": "2003年4月5日（平成15年）",
+      "startDate": "2020年4月1日（令和2年）",
       "ranks": [
         {
           "rank": 1,
@@ -591,12 +591,6 @@
           "value": 25,
           "date": "2020年4月1日（令和2年）",
           "_date_raw": "2020/04/01"
-        },
-        {
-          "rank": 10,
-          "value": 23,
-          "date": "2003年4月5日（平成15年）",
-          "_date_raw": "2003/04/05"
         }
       ]
     },

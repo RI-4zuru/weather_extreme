@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "茨城県",
   "region": "関東甲信",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "水戸",
+      "startDate": "1897年",
       "ranks": [
         {
           "rank": 1,
-          "value": 98,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "value": 132,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 2,
-          "value": 91,
+          "value": 130,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 3,
-          "value": 86,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "value": 129,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 4,
-          "value": 79,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 121,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 5,
-          "value": 79,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "value": 119,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 6,
-          "value": 73,
+          "value": 117,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 113,
+          "date": "1922年",
+          "_date_raw": "1922/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 111,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 110,
           "date": "1961年",
           "_date_raw": "1961/01/01"
         },
         {
+          "rank": 10,
+          "value": 110,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "つくば",
+      "startDate": "1921年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 139,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 137,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 135,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 125,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 124,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 124,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
           "rank": 7,
-          "value": 72,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 120,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         },
         {
           "rank": 8,
-          "value": 72,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
+          "value": 119,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 9,
-          "value": 72,
-          "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "value": 119,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 10,
-          "value": 71,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "value": 118,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         }
       ]
     }

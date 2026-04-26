@@ -1,74 +1,170 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "埼玉県",
   "region": "関東甲信",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
+      "stationName": "熊谷",
       "startDate": "1953寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 680,
-          "date": "1996年",
-          "_date_raw": "1996/01/01"
+          "value": 106,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
         },
         {
           "rank": 2,
-          "value": 637,
-          "date": "1991年",
-          "_date_raw": "1991/01/01"
+          "value": 89,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 3,
-          "value": 632,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "value": 72,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
         },
         {
           "rank": 4,
-          "value": 630,
-          "date": "2000年",
-          "_date_raw": "2000/01/01"
+          "value": 60,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
         },
         {
           "rank": 5,
-          "value": 628,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "value": 57,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
         },
         {
           "rank": 6,
-          "value": 617,
+          "value": 53,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 53,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 53,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 43,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 40,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "秩父",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 236,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 200,
           "date": "2005年",
           "_date_raw": "2005/01/01"
         },
         {
+          "rank": 3,
+          "value": 161,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 154,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 120,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 108,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
           "rank": 7,
-          "value": 617,
-          "date": "1981年",
-          "_date_raw": "1981/01/01"
+          "value": 94,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
         },
         {
           "rank": 8,
-          "value": 613,
-          "date": "1982年",
-          "_date_raw": "1982/01/01"
+          "value": 91,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
         },
         {
           "rank": 9,
-          "value": 613,
-          "date": "1965年",
-          "_date_raw": "1965/01/01"
+          "value": 85,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         },
         {
           "rank": 10,
-          "value": 598,
-          "date": "1955年",
-          "_date_raw": "1955/01/01"
+          "value": 84,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "さいたま",
+      "startDate": "2022寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 13,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 5,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 4,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         }
       ]
     }

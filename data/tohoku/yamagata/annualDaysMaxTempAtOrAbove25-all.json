@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "酒田",
+      "startDate": "1937年",
       "ranks": [
         {
           "rank": 1,
-          "value": 98,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 91,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 86,
+          "value": 119,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
+          "rank": 2,
+          "value": 117,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 109,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
           "rank": 4,
-          "value": 79,
+          "value": 109,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 108,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 107,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 104,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 102,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 99,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 98,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "新庄",
+      "startDate": "1957年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 121,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 114,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 114,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 108,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 107,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 106,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 105,
           "date": "2010年",
           "_date_raw": "2010/01/01"
         },
         {
-          "rank": 5,
-          "value": 79,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 73,
-          "date": "1961年",
-          "_date_raw": "1961/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 72,
+          "rank": 8,
+          "value": 104,
           "date": "2012年",
           "_date_raw": "2012/01/01"
         },
         {
-          "rank": 8,
-          "value": 72,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
-        },
-        {
           "rank": 9,
-          "value": 72,
-          "date": "1943年",
-          "_date_raw": "1943/01/01"
+          "value": 103,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
         },
         {
           "rank": 10,
-          "value": 71,
+          "value": 102,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山形",
+      "startDate": "1889年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 139,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 126,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 124,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 124,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 119,
           "date": "2022年",
           "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 117,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 116,
+          "date": "1922年",
+          "_date_raw": "1922/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 115,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 114,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 114,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
         }
       ]
     }

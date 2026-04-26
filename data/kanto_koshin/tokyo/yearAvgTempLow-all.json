@@ -1,74 +1,1130 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "yearAvgTempLow",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877年",
+      "stationName": "小河内",
+      "startDate": "1976年",
       "ranks": [
         {
           "rank": 1,
-          "value": 5.7,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 10.6,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 2,
-          "value": 5.7,
+          "value": 10.9,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 11.1,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 11.2,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 11.4,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 11.4,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 11.5,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 11.6,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "青梅",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 12.3,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 12.6,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 12.7,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 12.8,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 12.8,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 12.9,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 13.1,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 13.2,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 13.2,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 13.3,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "練馬",
+      "startDate": "2012年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 15.4,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 15.6,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 15.8,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 15.9,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 16.1,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16.2,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 16.3,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 16.3,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 16.4,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 16.6,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "八王子",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 13,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 13.1,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 13.3,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 13.3,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 13.5,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 13.6,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 13.6,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 13.8,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 13.9,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 13.9,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "府中",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 13.5,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 13.6,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 13.7,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 13.8,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 14,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 14,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 14.2,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 14.3,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 14.4,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 14.4,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "東京",
+      "startDate": "1875年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 12.9,
           "date": "1884年",
           "_date_raw": "1884/01/01"
         },
         {
+          "rank": 2,
+          "value": 13.1,
+          "date": "1906年",
+          "_date_raw": "1906/01/01"
+        },
+        {
           "rank": 3,
-          "value": 5.8,
+          "value": 13.1,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 13.2,
           "date": "1908年",
           "_date_raw": "1908/01/01"
         },
         {
-          "rank": 4,
-          "value": 5.9,
+          "rank": 5,
+          "value": 13.2,
           "date": "1897年",
           "_date_raw": "1897/01/01"
         },
         {
-          "rank": 5,
-          "value": 6.2,
-          "date": "1893年",
-          "_date_raw": "1893/01/01"
-        },
-        {
           "rank": 6,
-          "value": 6.2,
+          "value": 13.3,
           "date": "1889年",
           "_date_raw": "1889/01/01"
         },
         {
           "rank": 7,
-          "value": 6.3,
-          "date": "1912年",
-          "_date_raw": "1912/01/01"
+          "value": 13.3,
+          "date": "1883年",
+          "_date_raw": "1883/01/01"
         },
         {
           "rank": 8,
-          "value": 6.3,
-          "date": "1906年",
-          "_date_raw": "1906/01/01"
+          "value": 13.4,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
         },
         {
           "rank": 9,
-          "value": 6.3,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 13.5,
+          "date": "1910年",
+          "_date_raw": "1910/01/01"
         },
         {
           "rank": 10,
-          "value": 6.4,
-          "date": "1931年",
-          "_date_raw": "1931/01/01"
+          "value": 13.5,
+          "date": "1907年",
+          "_date_raw": "1907/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "江戸川臨海",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 14,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 14.1,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 14.4,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 14.5,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 14.5,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 14.7,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 14.8,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 14.8,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 15,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 15,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "羽田",
+      "startDate": "1993年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 15.6,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 15.6,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 15.8,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 15.8,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 16,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 16.1,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 16.1,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 16.2,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 16.3,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大島",
+      "startDate": "1938年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 14,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 14.2,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 14.3,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 14.3,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 14.3,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 14.3,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 14.3,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 14.4,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 14.4,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 14.6,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大島北ノ山",
+      "startDate": "2003年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 16.3,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 16.4,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 16.4,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 16.5,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 16.5,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16.7,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 16.7,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 16.7,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 16.7,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 16.9,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "新島",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 16.3,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 16.8,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 16.8,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 16.9,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 16.9,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 16.9,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 17,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 17,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 17.3,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 17.3,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三宅島",
+      "startDate": "1942年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 16.5,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 16.8,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 16.8,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 16.9,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 16.9,
+          "date": "1963年",
+          "_date_raw": "1963/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 17,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 17,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 17.1,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 17.1,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 17.1,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三宅坪田",
+      "startDate": "2001年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 18.1,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 18.1,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 18.2,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 18.2,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 18.2,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 18.3,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 18.3,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 18.4,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 18.4,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 18.6,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "八重見ヶ原",
+      "startDate": "2003年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 18.2,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 18.2,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 18.4,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 18.4,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 18.4,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 18.5,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 18.5,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 18.5,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 18.6,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 18.7,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "八丈島",
+      "startDate": "1906年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 17.2,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 17.3,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 17.3,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 17.4,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 17.4,
+          "date": "1926年",
+          "_date_raw": "1926/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 17.4,
+          "date": "1924年",
+          "_date_raw": "1924/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 17.4,
+          "date": "1917年",
+          "_date_raw": "1917/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 17.5,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 17.5,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 17.5,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "父島",
+      "startDate": "1968年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 22.3,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 22.5,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 22.6,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 22.6,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 22.6,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 22.6,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 22.6,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 22.7,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 22.7,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 22.8,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "南鳥島",
+      "startDate": "1951年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 24.8,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 24.9,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 24.9,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 25,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 25,
+          "date": "1979年",
+          "_date_raw": "1979/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 25,
+          "date": "1962年",
+          "_date_raw": "1962/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 25,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 25.1,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 25.1,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 25.1,
+          "date": "1972年",
+          "_date_raw": "1972/01/01"
         }
       ]
     }

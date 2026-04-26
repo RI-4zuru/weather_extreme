@@ -1,74 +1,404 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "annualDaysMinTempAtOrAbove25",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1876年",
+      "stationName": "東京",
+      "startDate": "1875年",
       "ranks": [
         {
           "rank": 1,
-          "value": 7,
+          "value": 57,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 2,
-          "value": 4,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "value": 56,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 3,
-          "value": 3,
+          "value": 55,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 49,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 49,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 47,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 47,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 46,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 42,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 41,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大島",
+      "startDate": "1938年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 47,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 44,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 38,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 29,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 26,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 25,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 24,
           "date": "2019年",
           "_date_raw": "2019/01/01"
         },
         {
+          "rank": 8,
+          "value": 23,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 23,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 17,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三宅島",
+      "startDate": "1942年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 56,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 46,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 42,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
           "rank": 4,
-          "value": 2,
+          "value": 41,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 5,
-          "value": 2,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "value": 41,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
         },
         {
           "rank": 6,
-          "value": 1,
-          "date": "1985年",
-          "_date_raw": "1985/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 1,
-          "date": "1981年",
-          "_date_raw": "1981/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 0,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 0,
+          "value": 38,
           "date": "2022年",
           "_date_raw": "2022/01/01"
         },
         {
+          "rank": 7,
+          "value": 38,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 37,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 36,
+          "date": "1955年",
+          "_date_raw": "1955/01/01"
+        },
+        {
           "rank": 10,
-          "value": 0,
+          "value": 35,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "八丈島",
+      "startDate": "1906年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 53,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 45,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 42,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 41,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 36,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 35,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 34,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 33,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 32,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 32,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "父島",
+      "startDate": "1968年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 141,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 135,
           "date": "2020年",
           "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 131,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 122,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 120,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 119,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 117,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 116,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 114,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 113,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "南鳥島",
+      "startDate": "1951年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 182,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 176,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 175,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 172,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 172,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 172,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 171,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 170,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 169,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 169,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
         }
       ]
     }

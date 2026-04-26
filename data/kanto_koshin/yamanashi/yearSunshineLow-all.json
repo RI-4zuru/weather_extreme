@@ -1,74 +1,380 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "山梨県",
   "region": "関東甲信",
   "element": "yearSunshineLow",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1891年",
+      "stationName": "大泉",
+      "startDate": "2021年",
       "ranks": [
         {
           "rank": 1,
-          "value": 1427.8,
-          "date": "1931年",
-          "_date_raw": "1931/01/01"
+          "value": 2224.3,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 2,
-          "value": 1447.5,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 2295.1,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 3,
-          "value": 1448.2,
-          "date": "1936年",
-          "_date_raw": "1936/01/01"
+          "value": 2393.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 4,
-          "value": 1460.7,
-          "date": "1907年",
-          "_date_raw": "1907/01/01"
+          "value": 2534.6,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "韮崎",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2111.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2176.6,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2286.1,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2397.7,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "甲府",
+      "startDate": "1898年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1797.4,
+          "date": "1910年",
+          "_date_raw": "1910/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1815,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1862.7,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1881.9,
+          "date": "1923年",
+          "_date_raw": "1923/01/01"
         },
         {
           "rank": 5,
-          "value": 1473.6,
-          "date": "1893年",
-          "_date_raw": "1893/01/01"
+          "value": 1883,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
         },
         {
           "rank": 6,
-          "value": 1477.5,
-          "date": "1926年",
-          "_date_raw": "1926/01/01"
+          "value": 1895.2,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
         },
         {
           "rank": 7,
-          "value": 1488,
-          "date": "1935年",
-          "_date_raw": "1935/01/01"
+          "value": 1895.8,
+          "date": "1938年",
+          "_date_raw": "1938/01/01"
         },
         {
           "rank": 8,
-          "value": 1522.7,
-          "date": "1945年",
-          "_date_raw": "1945/01/01"
+          "value": 1898,
+          "date": "1903年",
+          "_date_raw": "1903/01/01"
         },
         {
           "rank": 9,
-          "value": 1526.9,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 1901.2,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
         },
         {
           "rank": 10,
-          "value": 1548,
-          "date": "1966年",
-          "_date_raw": "1966/01/01"
+          "value": 1914.4,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "勝沼",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2191.1,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2277.7,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2333.3,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2454,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大月",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2078.6,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2112.3,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2253.7,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2350.4,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "古関",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1995.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2032.8,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2091.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2196.5,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "切石",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2088.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 2163.1,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2230.2,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2345,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "河口湖",
+      "startDate": "1933年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1657.2,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1676.3,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1693.6,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1697.9,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1702.4,
+          "date": "1959年",
+          "_date_raw": "1959/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1724.1,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1732.1,
+          "date": "1952年",
+          "_date_raw": "1952/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1748.9,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1751.5,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1759.4,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山中",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1882.6,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1893.3,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 2043.1,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2097.9,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "南部",
+      "startDate": "2021年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1885.6,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1894.9,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1966.2,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2042.3,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         }
       ]
     }

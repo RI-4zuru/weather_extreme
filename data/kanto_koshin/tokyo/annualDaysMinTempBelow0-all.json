@@ -1,74 +1,404 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877寒候年",
+      "stationName": "東京",
+      "startDate": "1875寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 173,
-          "date": "1905年",
-          "_date_raw": "1905/01/01"
+          "value": 104,
+          "date": "1881年",
+          "_date_raw": "1881/01/01"
         },
         {
           "rank": 2,
-          "value": 173,
+          "value": 100,
           "date": "1885年",
           "_date_raw": "1885/01/01"
         },
         {
           "rank": 3,
-          "value": 172,
-          "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "value": 89,
+          "date": "1877年",
+          "_date_raw": "1877/01/01"
         },
         {
           "rank": 4,
-          "value": 172,
-          "date": "1899年",
-          "_date_raw": "1899/01/01"
+          "value": 88,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
         },
         {
           "rank": 5,
-          "value": 172,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 88,
+          "date": "1876年",
+          "_date_raw": "1876/01/01"
         },
         {
           "rank": 6,
-          "value": 172,
-          "date": "1896年",
-          "_date_raw": "1896/01/01"
+          "value": 85,
+          "date": "1883年",
+          "_date_raw": "1883/01/01"
         },
         {
           "rank": 7,
-          "value": 171,
+          "value": 82,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 80,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 78,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 77,
+          "date": "1882年",
+          "_date_raw": "1882/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大島",
+      "startDate": "1939寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 21,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 17,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 16,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 16,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 14,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 14,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 12,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三宅島",
+      "startDate": "1942寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 6,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 3,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 3,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 2,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 2,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "八丈島",
+      "startDate": "1906寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1,
+          "date": "1941年",
+          "_date_raw": "1941/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1,
+          "date": "1930年",
+          "_date_raw": "1930/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1923年",
+          "_date_raw": "1923/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1,
           "date": "1913年",
           "_date_raw": "1913/01/01"
         },
         {
-          "rank": 8,
-          "value": 171,
-          "date": "1904年",
-          "_date_raw": "1904/01/01"
-        },
-        {
           "rank": 9,
-          "value": 169,
-          "date": "1892年",
-          "_date_raw": "1892/01/01"
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 167,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "父島",
+      "startDate": "1969寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "南鳥島",
+      "startDate": "1951寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
         }
       ]
     }

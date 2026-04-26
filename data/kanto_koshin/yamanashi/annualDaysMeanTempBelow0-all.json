@@ -1,74 +1,140 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "山梨県",
   "region": "関東甲信",
   "element": "annualDaysMeanTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1879寒候年",
+      "stationName": "甲府",
+      "startDate": "1895寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 135,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 38,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 2,
-          "value": 133,
-          "date": "1909年",
-          "_date_raw": "1909/01/01"
+          "value": 37,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 3,
-          "value": 130,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 36,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
         },
         {
           "rank": 4,
-          "value": 130,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 33,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
         },
         {
           "rank": 5,
-          "value": 127,
+          "value": 30,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 30,
           "date": "1913年",
           "_date_raw": "1913/01/01"
         },
         {
-          "rank": 6,
-          "value": 121,
-          "date": "1925年",
-          "_date_raw": "1925/01/01"
-        },
-        {
           "rank": 7,
-          "value": 119,
-          "date": "1957年",
-          "_date_raw": "1957/01/01"
+          "value": 30,
+          "date": "1895年",
+          "_date_raw": "1895/01/01"
         },
         {
           "rank": 8,
-          "value": 119,
+          "value": 27,
+          "date": "1923年",
+          "_date_raw": "1923/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 27,
+          "date": "1922年",
+          "_date_raw": "1922/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 26,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "河口湖",
+      "startDate": "1933寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 91,
+          "date": "1934年",
+          "_date_raw": "1934/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 87,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 86,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 80,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 78,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 77,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 76,
           "date": "1939年",
           "_date_raw": "1939/01/01"
         },
         {
           "rank": 9,
-          "value": 119,
-          "date": "1908年",
-          "_date_raw": "1908/01/01"
+          "value": 75,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         },
         {
           "rank": 10,
-          "value": 119,
-          "date": "1887年",
-          "_date_raw": "1887/01/01"
+          "value": 75,
+          "date": "1940年",
+          "_date_raw": "1940/01/01"
         }
       ]
     }

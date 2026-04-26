@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "annualDaysMinTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877寒候年",
+      "stationName": "酒田",
+      "startDate": "1937寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 173,
-          "date": "1905年",
-          "_date_raw": "1905/01/01"
+          "value": 106,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 2,
-          "value": 173,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 105,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 3,
-          "value": 172,
-          "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "value": 102,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
         },
         {
           "rank": 4,
-          "value": 172,
-          "date": "1899年",
-          "_date_raw": "1899/01/01"
+          "value": 95,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
         },
         {
           "rank": 5,
-          "value": 172,
+          "value": 94,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 94,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 93,
+          "date": "1948年",
+          "_date_raw": "1948/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 93,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 90,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 89,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "新庄",
+      "startDate": "1958寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 141,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 139,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 138,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 136,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 135,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 134,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 134,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 133,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 130,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 129,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山形",
+      "startDate": "1889寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 141,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 140,
+          "date": "1934年",
+          "_date_raw": "1934/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 140,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 140,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 138,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 137,
+          "date": "1916年",
+          "_date_raw": "1916/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 136,
           "date": "1898年",
           "_date_raw": "1898/01/01"
         },
         {
-          "rank": 6,
-          "value": 172,
-          "date": "1896年",
-          "_date_raw": "1896/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 171,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
-        },
-        {
           "rank": 8,
-          "value": 171,
-          "date": "1904年",
-          "_date_raw": "1904/01/01"
+          "value": 135,
+          "date": "1935年",
+          "_date_raw": "1935/01/01"
         },
         {
           "rank": 9,
-          "value": 169,
-          "date": "1892年",
-          "_date_raw": "1892/01/01"
+          "value": 135,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
         },
         {
           "rank": 10,
-          "value": 167,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 134,
+          "date": "1918年",
+          "_date_raw": "1918/01/01"
         }
       ]
     }

@@ -1,74 +1,338 @@
 {
-  "updatedAt": "2026-04-26T00:58:56.653777+09:00",
-  "observedLatestAt": "2026-04-26T00:50:00+09:00",
+  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "observedLatestAt": "2026-04-27T00:50:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "annualDaysMaxTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1877寒候年",
+      "stationName": "福島",
+      "startDate": "1889寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 90,
+          "value": 11,
+          "date": "1922年",
+          "_date_raw": "1922/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 9,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 9,
           "date": "1945年",
           "_date_raw": "1945/01/01"
         },
         {
-          "rank": 2,
-          "value": 88,
-          "date": "1908年",
-          "_date_raw": "1908/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 87,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
-        },
-        {
           "rank": 4,
-          "value": 86,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
+          "value": 9,
+          "date": "1906年",
+          "_date_raw": "1906/01/01"
         },
         {
           "rank": 5,
-          "value": 81,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 8,
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
         },
         {
           "rank": 6,
-          "value": 76,
-          "date": "1892年",
-          "_date_raw": "1892/01/01"
+          "value": 8,
+          "date": "1927年",
+          "_date_raw": "1927/01/01"
         },
         {
           "rank": 7,
-          "value": 74,
-          "date": "1911年",
-          "_date_raw": "1911/01/01"
+          "value": 8,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
         },
         {
           "rank": 8,
-          "value": 74,
+          "value": 8,
           "date": "1893年",
           "_date_raw": "1893/01/01"
         },
         {
           "rank": 9,
-          "value": 72,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "value": 7,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
         },
         {
           "rank": 10,
-          "value": 72,
-          "date": "1902年",
-          "_date_raw": "1902/01/01"
+          "value": 7,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "若松",
+      "startDate": "1954寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 40,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 33,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 26,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 25,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 24,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 22,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 18,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 18,
+          "date": "1955年",
+          "_date_raw": "1955/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 17,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 17,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "玉川",
+      "startDate": "1910寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1,
+          "date": "1960年",
+          "_date_raw": "1960/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1,
+          "date": "1952年",
+          "_date_raw": "1952/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1915年",
+          "_date_raw": "1915/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "白河",
+      "startDate": "1940寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 23,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 19,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 18,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 14,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 13,
+          "date": "1942年",
+          "_date_raw": "1942/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 12,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 9,
+          "date": "1940年",
+          "_date_raw": "1940/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 8,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "小名浜",
+      "startDate": "1910寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1,
+          "date": "1960年",
+          "_date_raw": "1960/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1,
+          "date": "1952年",
+          "_date_raw": "1952/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1,
+          "date": "1915年",
+          "_date_raw": "1915/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         }
       ]
     }
