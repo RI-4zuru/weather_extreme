@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "旭川",
+  "region": "北海道",
+  "element": "yearPrecipLow",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "名寄",
+      "startDate": "1888年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 728,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 779,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 793.2,
+          "date": "1921年",
+          "_date_raw": "1921/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 813.5,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 822.2,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 828,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 863.5,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 878.8,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 880.9,
+          "date": "1905年",
+          "_date_raw": "1905/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 883,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "旭川",
+      "startDate": "1888年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 728,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 779,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 793.2,
+          "date": "1921年",
+          "_date_raw": "1921/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 813.5,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 822.2,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 828,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 863.5,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 878.8,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 880.9,
+          "date": "1905年",
+          "_date_raw": "1905/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 883,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "羽幌",
+      "startDate": "1921年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 933,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 961.7,
+          "date": "1921年",
+          "_date_raw": "1921/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 983.4,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 992.5,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 996.5,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1004.5,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1022.9,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1041.5,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1050,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1062.5,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "留萌",
+      "startDate": "1943年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 819,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 858,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 899.5,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 910.5,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 929,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 932,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 942,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 993,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1004,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1029,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
+        }
+      ]
+    }
+  ]
+}

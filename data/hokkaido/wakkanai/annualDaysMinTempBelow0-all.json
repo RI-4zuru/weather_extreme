@@ -1,0 +1,142 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "稚内",
+  "region": "北海道",
+  "element": "annualDaysMinTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "稚内",
+      "startDate": "1938寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 166,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 152,
+          "date": "1966年",
+          "_date_raw": "1966/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 150,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 149,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 149,
+          "date": "1951年",
+          "_date_raw": "1951/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 148,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 147,
+          "date": "1949年",
+          "_date_raw": "1949/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 146,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 146,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 146,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "北見枝幸",
+      "startDate": "1943寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 171,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 165,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 164,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 164,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 161,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 161,
+          "date": "1966年",
+          "_date_raw": "1966/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 159,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 159,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 159,
+          "date": "1989年",
+          "_date_raw": "1989/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 159,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        }
+      ]
+    }
+  ]
+}

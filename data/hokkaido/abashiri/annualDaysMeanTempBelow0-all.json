@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "網走",
+  "region": "北海道",
+  "element": "annualDaysMeanTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "雄武",
+      "startDate": "1942寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 148,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 134,
+          "date": "1966年",
+          "_date_raw": "1966/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 134,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 133,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 133,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 133,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 133,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 133,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 133,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 131,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "紋別",
+      "startDate": "1956寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 132,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 129,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 128,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 127,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 126,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 126,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 126,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 124,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 124,
+          "date": "1979年",
+          "_date_raw": "1979/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 124,
+          "date": "1960年",
+          "_date_raw": "1960/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "紋別小向",
+      "startDate": "1956寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 132,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 129,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 128,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 127,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 126,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 126,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 126,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 124,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 124,
+          "date": "1979年",
+          "_date_raw": "1979/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 124,
+          "date": "1960年",
+          "_date_raw": "1960/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "網走",
+      "startDate": "1890寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 138,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 133,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 132,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 132,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 132,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 132,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 132,
+          "date": "1905年",
+          "_date_raw": "1905/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 131,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 131,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 129,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
+        }
+      ]
+    }
+  ]
+}

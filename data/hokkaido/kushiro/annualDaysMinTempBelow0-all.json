@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "釧路",
+  "region": "北海道",
+  "element": "annualDaysMinTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "中標津",
+      "startDate": "1879寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 210,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 176,
+          "date": "1883年",
+          "_date_raw": "1883/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 173,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 169,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 168,
+          "date": "1905年",
+          "_date_raw": "1905/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 165,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 165,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 165,
+          "date": "1900年",
+          "_date_raw": "1900/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 164,
+          "date": "1912年",
+          "_date_raw": "1912/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 164,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "釧路",
+      "startDate": "1910寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 184,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 179,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 177,
+          "date": "1915年",
+          "_date_raw": "1915/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 175,
+          "date": "1943年",
+          "_date_raw": "1943/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 174,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 173,
+          "date": "1941年",
+          "_date_raw": "1941/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 172,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 172,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 172,
+          "date": "1914年",
+          "_date_raw": "1914/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 171,
+          "date": "1950年",
+          "_date_raw": "1950/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "帯広",
+      "startDate": "1892寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 204,
+          "date": "1899年",
+          "_date_raw": "1899/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 203,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 203,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 203,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 201,
+          "date": "1897年",
+          "_date_raw": "1897/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 200,
+          "date": "1896年",
+          "_date_raw": "1896/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 199,
+          "date": "1905年",
+          "_date_raw": "1905/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 195,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 195,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 194,
+          "date": "1915年",
+          "_date_raw": "1915/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "広尾",
+      "startDate": "1958寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 167,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 166,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 166,
+          "date": "1965年",
+          "_date_raw": "1965/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 164,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 162,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 161,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 160,
+          "date": "1979年",
+          "_date_raw": "1979/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 159,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 157,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 156,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        }
+      ]
+    }
+  ]
+}

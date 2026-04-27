@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "札幌",
+  "region": "北海道",
+  "element": "annualDaysMeanTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "札幌",
+      "startDate": "1879寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 135,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 133,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 130,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 130,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 127,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 121,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 119,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 119,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 119,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 119,
+          "date": "1887年",
+          "_date_raw": "1887/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "岩見沢",
+      "startDate": "1947寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 130,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 129,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 122,
+          "date": "1954年",
+          "_date_raw": "1954/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 120,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 120,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 120,
+          "date": "1974年",
+          "_date_raw": "1974/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 120,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 119,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 119,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 118,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "余市",
+      "startDate": "1943寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 116,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 112,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 110,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 109,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 108,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 105,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 105,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 105,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 105,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 104,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "小樽",
+      "startDate": "1943寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 116,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 112,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 110,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 109,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 108,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 105,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 105,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 105,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 105,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 104,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        }
+      ]
+    }
+  ]
+}

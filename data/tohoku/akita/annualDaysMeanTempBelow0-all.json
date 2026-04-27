@@ -1,74 +1,74 @@
 {
-  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
-  "observedLatestAt": "2026-04-27T00:50:00+09:00",
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
   "prefecture": "秋田県",
   "region": "東北",
   "element": "annualDaysMeanTempBelow0",
   "month": "all",
   "rows": [
     {
-      "stationName": "青森",
-      "startDate": "1879寒候年",
+      "stationName": "秋田",
+      "startDate": "1883寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 135,
-          "date": "1885年",
-          "_date_raw": "1885/01/01"
+          "value": 92,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
         },
         {
           "rank": 2,
-          "value": 133,
-          "date": "1909年",
-          "_date_raw": "1909/01/01"
+          "value": 85,
+          "date": "1893年",
+          "_date_raw": "1893/01/01"
         },
         {
           "rank": 3,
-          "value": 130,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
+          "value": 83,
+          "date": "1936年",
+          "_date_raw": "1936/01/01"
         },
         {
           "rank": 4,
-          "value": 130,
-          "date": "1884年",
-          "_date_raw": "1884/01/01"
+          "value": 77,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         },
         {
           "rank": 5,
-          "value": 127,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 121,
+          "value": 77,
           "date": "1925年",
           "_date_raw": "1925/01/01"
         },
         {
+          "rank": 6,
+          "value": 77,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
           "rank": 7,
-          "value": 119,
-          "date": "1957年",
-          "_date_raw": "1957/01/01"
+          "value": 76,
+          "date": "1924年",
+          "_date_raw": "1924/01/01"
         },
         {
           "rank": 8,
-          "value": 119,
-          "date": "1939年",
-          "_date_raw": "1939/01/01"
+          "value": 74,
+          "date": "1910年",
+          "_date_raw": "1910/01/01"
         },
         {
           "rank": 9,
-          "value": 119,
+          "value": 74,
           "date": "1908年",
           "_date_raw": "1908/01/01"
         },
         {
           "rank": 10,
-          "value": 119,
-          "date": "1887年",
-          "_date_raw": "1887/01/01"
+          "value": 74,
+          "date": "1888年",
+          "_date_raw": "1888/01/01"
         }
       ]
     }

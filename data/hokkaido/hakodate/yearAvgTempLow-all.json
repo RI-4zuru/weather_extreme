@@ -1,0 +1,76 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "函館",
+  "region": "北海道",
+  "element": "yearAvgTempLow",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "函館",
+      "startDate": "1872年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 6.8,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 7.1,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 7.3,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 7.5,
+          "date": "1952年",
+          "_date_raw": "1952/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 7.5,
+          "date": "1941年",
+          "_date_raw": "1941/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 7.5,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 7.5,
+          "date": "1897年",
+          "_date_raw": "1897/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 7.5,
+          "date": "1889年",
+          "_date_raw": "1889/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 7.6,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 7.6,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        }
+      ]
+    }
+  ]
+}

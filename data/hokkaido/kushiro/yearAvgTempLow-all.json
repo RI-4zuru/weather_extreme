@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "釧路",
+  "region": "北海道",
+  "element": "yearAvgTempLow",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "中標津",
+      "startDate": "1879年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 3.8,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 4.1,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 4.5,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 4.5,
+          "date": "1912年",
+          "_date_raw": "1912/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 4.5,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 4.6,
+          "date": "1897年",
+          "_date_raw": "1897/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 4.7,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 4.7,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 4.7,
+          "date": "1906年",
+          "_date_raw": "1906/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 4.8,
+          "date": "1884年",
+          "_date_raw": "1884/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "釧路",
+      "startDate": "1910年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 3.6,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 4.1,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 4.1,
+          "date": "1912年",
+          "_date_raw": "1912/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 4.3,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 4.4,
+          "date": "1926年",
+          "_date_raw": "1926/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 4.5,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 4.6,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 4.6,
+          "date": "1941年",
+          "_date_raw": "1941/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 4.7,
+          "date": "1952年",
+          "_date_raw": "1952/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 4.8,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "帯広",
+      "startDate": "1892年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 3.4,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 3.9,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 4,
+          "date": "1912年",
+          "_date_raw": "1912/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 4,
+          "date": "1897年",
+          "_date_raw": "1897/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 4.1,
+          "date": "1900年",
+          "_date_raw": "1900/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 4.2,
+          "date": "1902年",
+          "_date_raw": "1902/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 4.3,
+          "date": "1895年",
+          "_date_raw": "1895/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 4.4,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 4.4,
+          "date": "1906年",
+          "_date_raw": "1906/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 4.5,
+          "date": "1926年",
+          "_date_raw": "1926/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "広尾",
+      "startDate": "1958年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 5.7,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 5.7,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 5.8,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 5.9,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 6,
+          "date": "1981年",
+          "_date_raw": "1981/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 6,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 6.1,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 6.2,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 6.2,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 6.2,
+          "date": "1980年",
+          "_date_raw": "1980/01/01"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
+  "prefecture": "旭川",
+  "region": "北海道",
+  "element": "annualDaysMeanTempBelow0",
+  "month": "all",
+  "rows": [
+    {
+      "stationName": "名寄",
+      "startDate": "1888寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 144,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 144,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 143,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 140,
+          "date": "1907年",
+          "_date_raw": "1907/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 137,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 136,
+          "date": "1896年",
+          "_date_raw": "1896/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 135,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 135,
+          "date": "1900年",
+          "_date_raw": "1900/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 134,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 134,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "旭川",
+      "startDate": "1888寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 144,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 144,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 143,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 140,
+          "date": "1907年",
+          "_date_raw": "1907/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 137,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 136,
+          "date": "1896年",
+          "_date_raw": "1896/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 135,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 135,
+          "date": "1900年",
+          "_date_raw": "1900/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 134,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 134,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "羽幌",
+      "startDate": "1921寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 126,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 123,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 120,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 119,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 119,
+          "date": "1939年",
+          "_date_raw": "1939/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 117,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 116,
+          "date": "1923年",
+          "_date_raw": "1923/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 115,
+          "date": "1931年",
+          "_date_raw": "1931/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 115,
+          "date": "1929年",
+          "_date_raw": "1929/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 114,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "留萌",
+      "startDate": "1943寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 122,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 121,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 117,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 116,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 116,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 115,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 114,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 112,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 112,
+          "date": "1951年",
+          "_date_raw": "1951/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 112,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
+        }
+      ]
+    }
+  ]
+}

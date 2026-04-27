@@ -1,9 +1,13 @@
 {
-  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
   "prefectures": {
-    "hokkaido": [
-      "hokkaido"
-    ],
+    "wakkanai": [],
+    "asahikawa": [],
+    "sapporo": [],
+    "abashiri": [],
+    "kushiro": [],
+    "muroran": [],
+    "hakodate": [],
     "aomori": [],
     "iwate": [],
     "miyagi": [],
@@ -53,5 +57,5 @@
       "okinawa"
     ]
   },
-  "observedLatestAt": "2026-04-27T00:50:00+09:00"
+  "observedLatestAt": "2026-04-28T03:00:00+09:00"
 }

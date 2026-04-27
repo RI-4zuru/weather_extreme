@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-27T01:00:20.204997+09:00",
-  "observedLatestAt": "2026-04-27T00:50:00+09:00",
+  "updatedAt": "2026-04-28T03:14:20.610944+09:00",
+  "observedLatestAt": "2026-04-28T03:00:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "monthMax24hSnow",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "北上",
-      "startDate": "2026年4月26日（令和8年）",
+      "startDate": "1995年4月4日（平成7年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,12 +657,6 @@
           "value": 1,
           "date": "1995年4月4日（平成7年）",
           "_date_raw": "1995/04/04"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2026年4月26日（令和8年）",
-          "_date_raw": "2026/04/26"
         }
       ]
     },
