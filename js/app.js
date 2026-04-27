@@ -48,6 +48,9 @@ const STORAGE_KEYS = {
   showLiveColumn: "weather_extreme:show_live_column",
   liveValueCache: "weather_extreme:live_value_cache",
   controlPanelCollapsed: "weather_extreme:control_panel_collapsed",
+  areaSelection: "weather_extreme:area_selection",
+  enabledAreas: "weather_extreme:enabled_areas",
+  nationModeEnabled: "weather_extreme:nation_mode_enabled",
 };
 
 const AUTO_REFRESH_INTERVAL = 10 * 60 * 1000;
@@ -134,6 +137,10 @@ let defaultPrefOrderKeys = [];
 let withinHighlightMode = "rolling-year";
 let showLiveColumn = false;
 let controlPanelCollapsed = false;
+
+let currentSelectionType = "prefecture"; // prefecture / region / nation
+let enabledAreaKeys = new Set();
+let nationModeEnabled = false;
 
 /**
  * {
@@ -473,44 +480,101 @@ function bindEvents() {
   }
 
   regionTabs.addEventListener("click", async (event) => {
-    const button = event.target.closest("[data-region-tab]");
-    if (!button) return;
-
-    const nextRegion = button.dataset.regionTab || "";
-    if (!nextRegion || nextRegion === currentRegion) return;
-
-    currentRegion = nextRegion;
-    ensureCurrentRegionAndPref();
-
-    writeStorage(STORAGE_KEYS.region, currentRegion);
-    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+  const nationButton = event.target.closest("[data-nation-tab]");
+  if (nationButton) {
+    currentSelectionType = "nation";
+    writeStorage(STORAGE_KEYS.areaSelection, "nation");
 
     renderRegionTabs();
     renderPrefButtons();
     syncLiveColumnAvailability();
     await refresh();
-  });
+    return;
+  }
+
+  const button = event.target.closest("[data-region-tab]");
+  if (!button) return;
+
+  const nextRegion = button.dataset.regionTab || "";
+  if (!nextRegion) return;
+
+  currentRegion = nextRegion;
+
+  if (currentSelectionType === "nation") {
+    currentSelectionType = isRegionAreaEnabled(currentRegion) ? "region" : "prefecture";
+  }
+
+  ensureCurrentRegionAndPref();
+
+  if (currentSelectionType === "region") {
+    writeStorage(STORAGE_KEYS.areaSelection, makeRegionAreaKey(currentRegion));
+  } else {
+    writeStorage(STORAGE_KEYS.areaSelection, "prefecture");
+    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+  }
+
+  writeStorage(STORAGE_KEYS.region, currentRegion);
+
+  renderRegionTabs();
+  renderPrefButtons();
+  syncLiveColumnAvailability();
+  await refresh();
+});
 
   prefButtons.addEventListener("click", async (event) => {
-    const button = event.target.closest("[data-pref-key]");
-    if (!button) return;
-
-    const nextPrefKey = button.dataset.prefKey || "";
-    if (!nextPrefKey || nextPrefKey === currentPrefKey) return;
-
-    currentPrefKey = nextPrefKey;
-    const prefMeta = getPrefMetaByKey(currentPrefKey);
-    if (prefMeta?.region) {
-      currentRegion = prefMeta.region;
-      writeStorage(STORAGE_KEYS.region, currentRegion);
-    }
-    writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+  const nationSelect = event.target.closest("[data-nation-select]");
+  if (nationSelect) {
+    currentSelectionType = "nation";
+    writeStorage(STORAGE_KEYS.areaSelection, "nation");
 
     renderRegionTabs();
     renderPrefButtons();
     syncLiveColumnAvailability();
     await refresh();
-  });
+    return;
+  }
+
+  const regionAreaButton = event.target.closest("[data-region-area-select]");
+  if (regionAreaButton) {
+    const region = regionAreaButton.dataset.regionAreaSelect || "";
+    if (!region) return;
+
+    currentSelectionType = "region";
+    currentRegion = region;
+
+    writeStorage(STORAGE_KEYS.region, currentRegion);
+    writeStorage(STORAGE_KEYS.areaSelection, makeRegionAreaKey(currentRegion));
+
+    renderRegionTabs();
+    renderPrefButtons();
+    syncLiveColumnAvailability();
+    await refresh();
+    return;
+  }
+
+  const button = event.target.closest("[data-pref-key]");
+  if (!button) return;
+
+  const nextPrefKey = button.dataset.prefKey || "";
+  if (!nextPrefKey) return;
+
+  currentSelectionType = "prefecture";
+  currentPrefKey = nextPrefKey;
+
+  const prefMeta = getPrefMetaByKey(currentPrefKey);
+  if (prefMeta?.region) {
+    currentRegion = prefMeta.region;
+    writeStorage(STORAGE_KEYS.region, currentRegion);
+  }
+
+  writeStorage(STORAGE_KEYS.areaSelection, "prefecture");
+  writeStorage(STORAGE_KEYS.pref, currentPrefKey);
+
+  renderRegionTabs();
+  renderPrefButtons();
+  syncLiveColumnAvailability();
+  await refresh();
+});
 
   monthSelect.addEventListener("change", async () => {
     currentMonth = monthSelect.value;
@@ -664,6 +728,30 @@ function bindEvents() {
 
   customRegionList.addEventListener("change", (event) => {
     const prefCheck = event.target.closest("[data-pref-check]");
+    const areaCheck = event.target.closest("[data-area-check]");
+    if (areaCheck) {
+      const areaKey = areaCheck.dataset.areaCheck || "";
+      if (!areaKey) return;
+    
+      if (areaCheck.checked) {
+        enabledAreaKeys.add(areaKey);
+      } else {
+        enabledAreaKeys.delete(areaKey);
+    
+        if (
+          currentSelectionType === "region" &&
+          areaKey === makeRegionAreaKey(currentRegion)
+        ) {
+          currentSelectionType = "prefecture";
+        }
+      }
+    
+      saveEnabledAreaKeys();
+      renderRegionTabs();
+      renderPrefButtons();
+      renderCustomRegionList();
+      return;
+    }
     if (prefCheck) {
       const prefKey = prefCheck.dataset.prefCheck || "";
       if (!prefKey) return;
@@ -715,6 +803,8 @@ function bindEvents() {
     writeStorage(STORAGE_KEYS.region, currentRegion);
     writeStorage(STORAGE_KEYS.pref, currentPrefKey);
     saveEnabledPrefKeys();
+    saveEnabledAreaKeys();
+    saveNationModeEnabled();
 
     renderRegionTabs();
     renderPrefButtons();
@@ -766,6 +856,80 @@ function getPrefsByRegion(region) {
     const ib = orderMap.has(b.key) ? orderMap.get(b.key) : Number.MAX_SAFE_INTEGER;
     return ia - ib;
   });
+}
+
+function makeRegionAreaKey(region) {
+  return `region:${region}`;
+}
+
+function makeNationAreaKey() {
+  return "nation:all";
+}
+
+function getRegionFromAreaKey(areaKey) {
+  return String(areaKey || "").replace(/^region:/, "");
+}
+
+function isRegionAreaEnabled(region) {
+  return enabledAreaKeys.has(makeRegionAreaKey(region));
+}
+
+function isNationAreaEnabled() {
+  return nationModeEnabled && enabledAreaKeys.has(makeNationAreaKey());
+}
+
+function loadEnabledAreaKeys() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.enabledAreas);
+    if (!raw) {
+      enabledAreaKeys = new Set();
+      return;
+    }
+
+    const parsed = JSON.parse(raw);
+    enabledAreaKeys = Array.isArray(parsed) ? new Set(parsed) : new Set();
+  } catch {
+    enabledAreaKeys = new Set();
+  }
+}
+
+function saveEnabledAreaKeys() {
+  writeStorage(STORAGE_KEYS.enabledAreas, JSON.stringify([...enabledAreaKeys]));
+}
+
+function loadNationModeEnabled() {
+  nationModeEnabled = readStorage(STORAGE_KEYS.nationModeEnabled, "false") === "true";
+}
+
+function saveNationModeEnabled() {
+  writeStorage(STORAGE_KEYS.nationModeEnabled, String(nationModeEnabled));
+}
+
+function getAllRegionNames() {
+  return getRegions();
+}
+
+function getAllPrefMetasForNation() {
+  const result = [];
+  const used = new Set();
+
+  for (const region of getAllRegionNames()) {
+    for (const pref of getPrefsByRegion(region)) {
+      if (!used.has(pref.key)) {
+        result.push(pref);
+        used.add(pref.key);
+      }
+    }
+  }
+
+  return result;
+}
+
+function getCurrentSelectionLabel() {
+  if (currentSelectionType === "nation") return "全国";
+  if (currentSelectionType === "region") return currentRegion;
+  const pref = getCurrentPrefMeta();
+  return pref?.name || "";
 }
 
 function getVisiblePrefsByRegion(region) {
@@ -895,40 +1059,79 @@ function renderRegionTabs() {
     return;
   }
 
-  regionTabs.innerHTML = regionList
-    .map((region) => `
+  const nationButton = isNationAreaEnabled()
+    ? `
       <button
         type="button"
-        class="region-tab ${region === currentRegion ? "active" : ""}"
-        data-region-tab="${region}"
+        class="region-tab ${currentSelectionType === "nation" ? "active" : ""}"
+        data-nation-tab="true"
       >
-        ${region}
+        全国
       </button>
-    `)
-    .join("");
+    `
+    : "";
+
+  regionTabs.innerHTML = `
+    ${nationButton}
+    ${regionList
+      .map((region) => `
+        <button
+          type="button"
+          class="region-tab ${region === currentRegion && currentSelectionType !== "nation" ? "active" : ""}"
+          data-region-tab="${region}"
+        >
+          ${region}
+        </button>
+      `)
+      .join("")}
+  `;
 }
 
 function renderPrefButtons() {
   ensureCurrentRegionAndPref();
 
-  const prefList = currentRegion ? getVisiblePrefsByRegion(currentRegion) : [];
+  if (currentSelectionType === "nation") {
+    prefButtons.innerHTML = `
+      <button type="button" class="pref-button active" data-nation-select="true">
+        全国
+      </button>
+    `;
+    return;
+  }
 
-  if (!prefList.length) {
+  const prefList = currentRegion ? getVisiblePrefsByRegion(currentRegion) : [];
+  const regionAreaEnabled = isRegionAreaEnabled(currentRegion);
+
+  if (!prefList.length && !regionAreaEnabled) {
     prefButtons.innerHTML = `<div class="empty-message">表示対象の都道府県がありません。カスタムから設定してください。</div>`;
     return;
   }
 
-  prefButtons.innerHTML = prefList
+  const regionButton = regionAreaEnabled
+    ? `
+      <button
+        type="button"
+        class="pref-button ${currentSelectionType === "region" ? "active" : ""}"
+        data-region-area-select="${currentRegion}"
+      >
+        ${currentRegion}
+      </button>
+    `
+    : "";
+
+  const prefButtonHtml = prefList
     .map((item) => `
       <button
         type="button"
-        class="pref-button ${item.key === currentPrefKey ? "active" : ""}"
+        class="pref-button ${currentSelectionType === "prefecture" && item.key === currentPrefKey ? "active" : ""}"
         data-pref-key="${item.key}"
       >
         ${item.name}
       </button>
     `)
     .join("");
+
+  prefButtons.innerHTML = `${regionButton}${prefButtonHtml}`;
 }
 
 function renderElementButtons() {
@@ -951,7 +1154,45 @@ function closeCustomModal() {
   customModal.hidden = true;
 }
 
+function ensureSecretNationButton() {
+  if (!selectAllPrefsButton) return;
+  if (document.getElementById("secretNationButton")) return;
+
+  const button = document.createElement("button");
+  button.id = "secretNationButton";
+  button.type = "button";
+  button.className = "secret-nation-button";
+  button.title = "";
+  button.setAttribute("aria-label", "全国表示を切り替え");
+
+  button.addEventListener("click", () => {
+    nationModeEnabled = !nationModeEnabled;
+
+    if (nationModeEnabled) {
+      enabledAreaKeys.add(makeNationAreaKey());
+      currentSelectionType = "nation";
+      writeStorage(STORAGE_KEYS.areaSelection, "nation");
+    } else {
+      enabledAreaKeys.delete(makeNationAreaKey());
+      if (currentSelectionType === "nation") {
+        currentSelectionType = "prefecture";
+      }
+    }
+
+    saveNationModeEnabled();
+    saveEnabledAreaKeys();
+
+    renderRegionTabs();
+    renderPrefButtons();
+    renderCustomRegionList();
+  });
+
+  selectAllPrefsButton.parentElement?.insertBefore(button, selectAllPrefsButton);
+}
+
 function renderCustomRegionList() {
+  ensureSecretNationButton();
+
   const regions = getRegions();
 
   customRegionList.innerHTML = regions
@@ -960,6 +1201,7 @@ function renderCustomRegionList() {
       const enabledCount = prefs.filter((item) => enabledPrefKeys.has(item.key)).length;
       const allChecked = prefs.length > 0 && enabledCount === prefs.length;
       const expanded = customExpandedRegions.has(region);
+      const regionAreaChecked = isRegionAreaEnabled(region);
 
       return `
         <section class="region-accordion">
@@ -987,6 +1229,15 @@ function renderCustomRegionList() {
 
           <div class="region-accordion-body" ${expanded ? "" : "hidden"}>
             <div class="region-pref-grid">
+              <label class="region-pref-item region-area-item">
+                <input
+                  type="checkbox"
+                  data-area-check="${makeRegionAreaKey(region)}"
+                  ${regionAreaChecked ? "checked" : ""}
+                />
+                <span>${region}</span>
+              </label>
+
               ${prefs
                 .map((item) => `
                   <label class="region-pref-item">
@@ -1179,6 +1430,222 @@ async function buildAllLiveSummaryForPref({
   return {
     annualItems,
     monthlyItems,
+  };
+}
+
+async function buildDecoratedRowsForPref(prefMeta, elementMeta, month) {
+  const [{ index }, tableData] = await Promise.all([
+    loadStations(prefMeta.key, prefMeta.region),
+    loadTable(prefMeta.key, prefMeta.region, elementMeta.key, month),
+  ]);
+
+  const rows = Array.isArray(tableData?.rows) ? tableData.rows : [];
+  if (!rows.length) {
+    return {
+      prefMeta,
+      rows: [],
+      index,
+    };
+  }
+
+  const stationCodes = unique(
+    rows
+      .map((row) => findStationByRowName(row.stationName, index)?.code || null)
+      .filter(Boolean)
+  );
+
+  let liveSupportMode = "unsupported";
+  let latestObservationTime = "";
+  let liveValuesByCode = {};
+
+  if (isLiveSupported(elementMeta.key, month) && stationCodes.length > 0) {
+    try {
+      const liveBundle = await buildLiveValuesForStations({
+        stationCodes,
+        elementKey: elementMeta.key,
+        month,
+      });
+
+      latestObservationTime = liveBundle.latestIso || "";
+      liveValuesByCode = liveBundle.valuesByCode || {};
+      liveSupportMode = liveBundle.support || "supported";
+
+      updateLiveValueCache(liveValuesByCode, elementMeta.key, month);
+      liveValuesByCode = mergeLiveValuesWithCache(
+        stationCodes,
+        liveValuesByCode,
+        elementMeta.key,
+        month
+      );
+    } catch (error) {
+      liveSupportMode = "error";
+      liveValuesByCode = mergeLiveValuesWithCache(
+        stationCodes,
+        {},
+        elementMeta.key,
+        month
+      );
+      latestObservationTime = "";
+    }
+  }
+
+  const decoratedRows = decorateRowsWithLive(
+    rows,
+    (rowStationName) => findStationByRowName(rowStationName, index),
+    liveValuesByCode,
+    elementMeta.key,
+    liveSupportMode
+  ).map((row) => ({
+    ...row,
+    prefName: prefMeta.name,
+    sourcePrefName: prefMeta.name,
+    sourcePrefKey: prefMeta.key,
+    sourceRegion: prefMeta.region,
+  }));
+
+  return {
+    prefMeta,
+    rows: decoratedRows,
+    latestObservationTime,
+    index,
+  };
+}
+
+async function buildAreaDisplayRows({
+  areaName,
+  areaLabel,
+  prefMetas,
+  elementMeta,
+  month,
+}) {
+  const prefResults = await Promise.all(
+    prefMetas.map((prefMeta) =>
+      buildDecoratedRowsForPref(prefMeta, elementMeta, month).catch((error) => {
+        console.warn("地域表示用データ取得失敗:", prefMeta.name, error);
+        return {
+          prefMeta,
+          rows: [],
+          latestObservationTime: "",
+        };
+      })
+    )
+  );
+
+  const allStationRows = prefResults.flatMap((result) => result.rows || []);
+
+  const highlightedAllRows = applyHighlightModeToRows(
+    allStationRows,
+    withinHighlightMode,
+    ""
+  );
+
+  const areaAggregateRow = buildAreaAggregateRow(
+    highlightedAllRows,
+    areaName,
+    areaLabel,
+    elementMeta.key
+  );
+
+  const prefAggregateRows = [];
+
+  for (const result of prefResults) {
+    const prefRows = highlightedAllRows.filter(
+      (row) => row.sourcePrefKey === result.prefMeta.key
+    );
+
+    const prefAggregate = buildPrefectureAggregateRow(
+      prefRows,
+      result.prefMeta.name,
+      elementMeta.key
+    );
+
+    if (prefAggregate) {
+      prefAggregateRows.push({
+        ...prefAggregate,
+        prefName: result.prefMeta.name,
+        sourcePrefName: result.prefMeta.name,
+        sourcePrefKey: result.prefMeta.key,
+        sourceRegion: result.prefMeta.region,
+      });
+    }
+  }
+
+  return {
+    rows: insertLiveIntoRankRows(
+      [areaAggregateRow, ...prefAggregateRows].filter(Boolean)
+    ),
+    latestObservationTime:
+      prefResults
+        .map((result) => result.latestObservationTime || "")
+        .filter(Boolean)
+        .sort()
+        .at(-1) || "",
+  };
+}
+
+async function buildNationDisplayRows(elementMeta, month) {
+  const regionRows = [];
+  const allPrefRows = [];
+  const allStationRows = [];
+  const latestList = [];
+
+  for (const region of getAllRegionNames()) {
+    const prefMetas = getPrefsByRegion(region);
+    const regionResult = await buildAreaDisplayRows({
+      areaName: region,
+      areaLabel: "地域総合",
+      prefMetas,
+      elementMeta,
+      month,
+    });
+
+    if (regionResult.latestObservationTime) {
+      latestList.push(regionResult.latestObservationTime);
+    }
+
+    const regionAggregate = regionResult.rows?.[0] || null;
+    if (regionAggregate) {
+      regionRows.push(regionAggregate);
+    }
+
+    allPrefRows.push(...(regionResult.rows || []).slice(1));
+
+    const prefStationRows = await Promise.all(
+      prefMetas.map((prefMeta) =>
+        buildDecoratedRowsForPref(prefMeta, elementMeta, month).catch(() => ({
+          prefMeta,
+          rows: [],
+          latestObservationTime: "",
+        }))
+      )
+    );
+
+    for (const result of prefStationRows) {
+      allStationRows.push(...(result.rows || []));
+      if (result.latestObservationTime) {
+        latestList.push(result.latestObservationTime);
+      }
+    }
+  }
+
+  const highlightedAllStationRows = applyHighlightModeToRows(
+    allStationRows,
+    withinHighlightMode,
+    ""
+  );
+
+  const nationAggregateRow = buildAreaAggregateRow(
+    highlightedAllStationRows,
+    "全国",
+    "全国総合",
+    elementMeta.key
+  );
+
+  return {
+    rows: insertLiveIntoRankRows(
+      [nationAggregateRow, ...regionRows, ...allPrefRows].filter(Boolean)
+    ),
+    latestObservationTime: latestList.filter(Boolean).sort().at(-1) || "",
   };
 }
 
