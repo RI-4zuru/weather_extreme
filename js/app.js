@@ -434,6 +434,8 @@ function getTotalTableColspan(showLive = showLiveColumn) {
 
 function initControls() {
   loadEnabledPrefKeys();
+  loadEnabledAreaKeys();
+  loadNationModeEnabled();
 
   currentRegion = getInitialRegion();
   currentPrefKey = getInitialPrefKey(currentRegion);
@@ -442,6 +444,20 @@ function initControls() {
   withinHighlightMode = getInitialWithinHighlightMode();
   showLiveColumn = getInitialShowLiveColumn();
   controlPanelCollapsed = getInitialControlPanelCollapsed();
+
+  const savedAreaSelection = readStorage(STORAGE_KEYS.areaSelection, "prefecture");
+
+  if (savedAreaSelection === "nation" && isNationAreaEnabled()) {
+    currentSelectionType = "nation";
+  } else if (
+    savedAreaSelection.startsWith("region:") &&
+    enabledAreaKeys.has(savedAreaSelection)
+  ) {
+    currentSelectionType = "region";
+    currentRegion = getRegionFromAreaKey(savedAreaSelection);
+  } else {
+    currentSelectionType = "prefecture";
+  }
 
   monthSelect.value = currentMonth;
   updateWithinChipLabel();
@@ -469,7 +485,6 @@ function initControls() {
     customExpandedRegions = new Set([currentRegion]);
   }
 }
-
 function bindEvents() {
   if (controlPanelToggle) {
     controlPanelToggle.addEventListener("click", () => {
@@ -1650,16 +1665,17 @@ async function buildNationDisplayRows(elementMeta, month) {
 }
 
 async function refresh() {
-  const prefMeta = getCurrentPrefMeta();
   const elementMeta = getCurrentElementMeta();
   const canShowLiveColumn = isCurrentSelectionLiveSupported() && showLiveColumn;
 
   makeTableHead(rankTableHead, canShowLiveColumn);
 
-  if (!prefMeta || !elementMeta) {
+  if (!elementMeta) {
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">都道府県または要素が未選択です。</td>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+          要素が未選択です。
+        </td>
       </tr>
     `;
     rankInBadge.hidden = true;
@@ -1668,18 +1684,166 @@ async function refresh() {
     return;
   }
 
+  const fullLabel = elementMeta.label || elementMeta.shortLabel || elementMeta.key;
+
   state.debug.selectedRegion = currentRegion;
-  state.debug.selectedPrefKey = prefMeta.key;
-  state.debug.selectedPrefName = prefMeta.name;
   state.debug.selectedMonth = currentMonth;
   state.debug.selectedElementKey = elementMeta.key;
-  state.debug.selectedElementLabel = elementMeta.label || elementMeta.shortLabel || elementMeta.key;
+  state.debug.selectedElementLabel = fullLabel;
   state.debug.pointFetchCount = 0;
   state.debug.liveError = "";
 
+  // =========================
+  // 地域表示
+  // =========================
+  if (currentSelectionType === "region") {
+    state.debug.selectedPrefKey = makeRegionAreaKey(currentRegion);
+    state.debug.selectedPrefName = currentRegion;
+
+    rankTableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+          地域ランキングを作成中です…
+        </td>
+      </tr>
+    `;
+
+    try {
+      const prefMetas = getPrefsByRegion(currentRegion);
+
+      const areaResult = await buildAreaDisplayRows({
+        areaName: currentRegion,
+        areaLabel: "地域総合",
+        prefMetas,
+        elementMeta,
+        month: currentMonth,
+      });
+
+      state.debug.tableRowCount = areaResult.rows.length;
+      state.debug.latestObservationTime = areaResult.latestObservationTime;
+      state.debug.summaryItemCount = 0;
+
+      renderTable(rankTableBody, areaResult.rows, {
+        showLiveColumn: canShowLiveColumn,
+      });
+
+      renderLiveSummary(liveSummaryBody, [], []);
+      rankInBadge.hidden = true;
+      topRankAlert.hidden = true;
+
+      renderStatus({
+        tableTitleEl,
+        statusTextEl,
+        observedLatestAtEl,
+        prefName: currentRegion,
+        month: currentMonth,
+        elementLabel: fullLabel,
+        rowCount: areaResult.rows.length,
+        latestObservationTime: areaResult.latestObservationTime,
+      });
+
+      renderDebug(debugGrid, state.debug);
+    } catch (error) {
+      console.error(error);
+      rankTableBody.innerHTML = `
+        <tr>
+          <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+            地域ランキングの作成に失敗しました: ${error.message || String(error)}
+          </td>
+        </tr>
+      `;
+      state.debug.liveError = error.message || String(error);
+      renderDebug(debugGrid, state.debug);
+    }
+
+    return;
+  }
+
+  // =========================
+  // 全国表示
+  // =========================
+  if (currentSelectionType === "nation") {
+    state.debug.selectedPrefKey = "nation";
+    state.debug.selectedPrefName = "全国";
+
+    rankTableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+          全国ランキングを作成中です…
+        </td>
+      </tr>
+    `;
+
+    try {
+      const nationResult = await buildNationDisplayRows(elementMeta, currentMonth);
+
+      state.debug.tableRowCount = nationResult.rows.length;
+      state.debug.latestObservationTime = nationResult.latestObservationTime;
+      state.debug.summaryItemCount = 0;
+
+      renderTable(rankTableBody, nationResult.rows, {
+        showLiveColumn: canShowLiveColumn,
+      });
+
+      renderLiveSummary(liveSummaryBody, [], []);
+      rankInBadge.hidden = true;
+      topRankAlert.hidden = true;
+
+      renderStatus({
+        tableTitleEl,
+        statusTextEl,
+        observedLatestAtEl,
+        prefName: "全国",
+        month: currentMonth,
+        elementLabel: fullLabel,
+        rowCount: nationResult.rows.length,
+        latestObservationTime: nationResult.latestObservationTime,
+      });
+
+      renderDebug(debugGrid, state.debug);
+    } catch (error) {
+      console.error(error);
+      rankTableBody.innerHTML = `
+        <tr>
+          <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+            全国ランキングの作成に失敗しました: ${error.message || String(error)}
+          </td>
+        </tr>
+      `;
+      state.debug.liveError = error.message || String(error);
+      renderDebug(debugGrid, state.debug);
+    }
+
+    return;
+  }
+
+  // =========================
+  // 通常の都道府県表示
+  // =========================
+  const prefMeta = getCurrentPrefMeta();
+
+  if (!prefMeta) {
+    rankTableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+          都道府県が未選択です。
+        </td>
+      </tr>
+    `;
+    rankInBadge.hidden = true;
+    topRankAlert.hidden = true;
+    observedLatestAtEl.textContent = "実況未取得";
+    return;
+  }
+
+  state.debug.selectedPrefKey = prefMeta.key;
+  state.debug.selectedPrefName = prefMeta.name;
+
   rankTableBody.innerHTML = `
     <tr>
-      <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">読み込み中です…</td>
+      <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+        読み込み中です…
+      </td>
     </tr>
   `;
 
@@ -1742,8 +1906,6 @@ async function refresh() {
     state.debug.latestObservationTime = latestObservationTime;
     state.debug.liveSupported = liveSupportMode;
 
-    const fullLabel = elementMeta.label || elementMeta.shortLabel || elementMeta.key;
-
     if (hasTable) {
       const decoratedRows = decorateRowsWithLive(
         rows,
@@ -1768,7 +1930,7 @@ async function refresh() {
       const baseDisplayRows = prefectureAggregateRow
         ? [prefectureAggregateRow, ...highlightedRows]
         : highlightedRows;
-      
+
       const displayRows = insertLiveIntoRankRows(baseDisplayRows);
 
       const allSummary = await buildAllLiveSummaryForPref({
@@ -1776,13 +1938,16 @@ async function refresh() {
         stationIndex: index,
         latestObservationTime,
       });
-      
+
       const annualSummary = allSummary.annualItems;
       const monthlySummary = allSummary.monthlyItems;
-      
+
       state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
-      
-      renderTable(rankTableBody, displayRows, { showLiveColumn: canShowLiveColumn });
+
+      renderTable(rankTableBody, displayRows, {
+        showLiveColumn: canShowLiveColumn,
+      });
+
       renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
 
       const totalSummaryCount = annualSummary.length + monthlySummary.length;
@@ -1830,7 +1995,9 @@ async function refresh() {
     console.error(error);
     rankTableBody.innerHTML = `
       <tr>
-        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">表示に失敗しました: ${error.message || String(error)}</td>
+        <td class="message-cell" colspan="${getTotalTableColspan(canShowLiveColumn)}">
+          表示に失敗しました: ${error.message || String(error)}
+        </td>
       </tr>
     `;
     state.debug.liveError = error.message || String(error);
@@ -1840,5 +2007,4 @@ async function refresh() {
     renderDebug(debugGrid, state.debug);
   }
 }
-
 main();
