@@ -24,6 +24,7 @@ import {
   buildLiveSummaryItems,
   buildPrefectureAggregateRow,
   decorateRowsWithLive,
+  insertLiveIntoRankRows,
 } from "./ranking.js";
 import {
   makeTableHead,
@@ -1296,9 +1297,11 @@ async function refresh() {
         elementMeta.key
       );
 
-      const displayRows = prefectureAggregateRow
+      const baseDisplayRows = prefectureAggregateRow
         ? [prefectureAggregateRow, ...highlightedRows]
         : highlightedRows;
+      
+      const displayRows = insertLiveIntoRankRows(baseDisplayRows);
 
       const allSummary = await buildAllLiveSummaryForPref({
         prefMeta,
