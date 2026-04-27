@@ -17,6 +17,32 @@
   --shadow: 0 8px 20px rgba(15, 29, 47, 0.16);
 }
 
+[data-theme="dark"] {
+  --bg: #0f141b;
+  --panel: #161c24;
+  --panel-2: #1c2430;
+
+  --border: #2f3a48;
+  --border-strong: #4a5a6e;
+
+  --text: #e6edf3;
+  --subtext: #9aa7b5;
+
+  --accent: #6ea8ff;
+  --accent-2: #8cbcff;
+
+  --live-bg: #3a1f1f;
+  --live-border: #d36a6a;
+
+  --year-bg: #4a3f1a;
+  --year-border: #bfa43a;
+
+  --top1-bg: #4a2424;
+  --top1-border: #ff6b6b;
+
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
 * {
   box-sizing: border-box;
 }
