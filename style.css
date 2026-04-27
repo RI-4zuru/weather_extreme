@@ -103,7 +103,6 @@ body {
 }
 
 .theme-toggle {
-  position: absolute;
   right: 12px;
   top: 12px;
   border: 1px solid var(--border);
