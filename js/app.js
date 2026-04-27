@@ -552,30 +552,64 @@ function bindEvents() {
     }
   });
 
-  liveSummaryBody.addEventListener("click", (event) => {
-    const toggle = event.target.closest("[data-summary-toggle]");
-    if (!toggle) return;
+  liveSummaryBody.addEventListener("click", async (event) => {
+  const jumpButton = event.target.closest("[data-summary-jump]");
+  if (jumpButton) {
+    const nextElementKey = jumpButton.dataset.elementKey || "";
+    const nextMonth = jumpButton.dataset.month || "all";
 
+    if (nextMonth && nextMonth !== currentMonth) {
+      currentMonth = nextMonth;
+      monthSelect.value = currentMonth;
+      writeStorage(STORAGE_KEYS.month, currentMonth);
+    }
+
+    if (nextElementKey && nextElementKey !== currentElementKey) {
+      currentElementKey = nextElementKey;
+      writeStorage(STORAGE_KEYS.element, currentElementKey);
+    }
+
+    renderElementButtons();
+    syncLiveColumnAvailability();
+    await refresh();
+
+    document.querySelector(".table-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    return;
+  }
+
+  const toggle = event.target.closest("[data-summary-toggle]");
+  if (!toggle) return;
+
+  const panelKey = toggle.dataset.summaryToggle;
+  const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
+  if (!body) return;
+
+  setSummaryPanelExpanded(panelKey, body.hidden);
+});
+  liveSummaryBody.addEventListener("keydown", async (event) => {
+  const jumpButton = event.target.closest("[data-summary-jump]");
+  if (jumpButton && (event.key === "Enter" || event.key === " ")) {
+    event.preventDefault();
+    jumpButton.click();
+    return;
+  }
+
+  const toggle = event.target.closest("[data-summary-toggle]");
+  if (!toggle) return;
+
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
     const panelKey = toggle.dataset.summaryToggle;
     const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
     if (!body) return;
 
     setSummaryPanelExpanded(panelKey, body.hidden);
-  });
-
-  liveSummaryBody.addEventListener("keydown", (event) => {
-    const toggle = event.target.closest("[data-summary-toggle]");
-    if (!toggle) return;
-
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      const panelKey = toggle.dataset.summaryToggle;
-      const body = document.querySelector(`[data-summary-body="${panelKey}"]`);
-      if (!body) return;
-
-      setSummaryPanelExpanded(panelKey, body.hidden);
-    }
-  });
+  }
+});
 
   if (withinChip) {
     withinChip.addEventListener("click", async () => {
