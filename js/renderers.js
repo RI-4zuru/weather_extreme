@@ -18,6 +18,23 @@ function formatLiveColumnLabel(observedAt) {
   return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
 }
 
+function formatLiveRankDate(observedAt) {
+  const base = formatObservationLabel(observedAt || "");
+  if (!base || base === "-") return "-";
+
+  const text = String(base).trim();
+
+  const matched = text.match(/^(.*?)(\d{1,2}:\d{2}\s*時点)$/);
+  if (!matched) {
+    return escapeHtml(text);
+  }
+
+  const datePart = matched[1].trim();
+  const timePart = matched[2].trim();
+
+  return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
+}
+
 export function makeTableHead(tableHead, showLiveColumn = false) {
   const headers = [];
   headers.push(`
