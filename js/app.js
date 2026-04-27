@@ -21,6 +21,7 @@ import {
 } from "./live-source.js";
 import {
   applyHighlightModeToRows,
+  buildAreaAggregateRow,
   buildLiveSummaryItems,
   buildPrefectureAggregateRow,
   decorateRowsWithLive,
