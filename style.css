@@ -2,18 +2,27 @@
   --bg: #cfd9e5;
   --panel: #dde7f1;
   --panel-2: #cedaea;
+  
   --border: #768aa3;
   --border-strong: #52657c;
+  
   --text: #0f1c2b;
   --subtext: #3e5065;
+  
   --accent: #173f82;
   --accent-2: #28579f;
+  
   --live-bg: #efc4c4;
   --live-border: #b95b5b;
+  
   --year-bg: #e6d58d;
   --year-border: #9e8221;
+  
   --top1-bg: #e6aaaa;
   --top1-border: #9e3c3c;
+  
+  --card-bg: #edf3fa;
+  
   --shadow: 0 8px 20px rgba(15, 29, 47, 0.16);
 }
 
@@ -39,6 +48,8 @@
 
   --top1-bg: #4a2424;
   --top1-border: #ff6b6b;
+
+  --card-bg: #1c2430;
 
   --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
@@ -83,7 +94,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #edf3fa;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 8px 12px;
@@ -214,7 +225,7 @@ input {
   border: 1px solid #7f95af;
   border-radius: 999px;
   padding: 8px 14px;
-  background: #edf3fa;
+  background: var(--card-bg);
   color: var(--text);
   cursor: pointer;
   font-weight: 700;
@@ -295,7 +306,7 @@ input {
   border: 1px solid #7f95af;
   border-radius: 10px;
   padding: 7px 12px;
-  background: #edf3fa;
+  background: var(--card-bg);
   color: var(--text);
   cursor: pointer;
   font-weight: 700;
@@ -310,7 +321,7 @@ select {
   border: 1px solid #8da0b8;
   border-radius: 10px;
   padding: 8px 10px;
-  background: #edf3fa;
+  background: var(--card-bg);
   color: var(--text);
 }
 
@@ -370,7 +381,7 @@ select {
   border: 1px solid #8ea1b8;
   border-radius: 8px;
   padding: 7px 4px;
-  background: #edf3fa;
+  background: var(--card-bg);
   text-align: center;
   cursor: pointer;
   font-size: 0.78rem;
@@ -515,7 +526,7 @@ select {
   border-radius: 999px;
   padding: 5px 10px;
   font-size: 0.83rem;
-  background: #eaf1f8;
+  background: var(--card-bg);
 }
 
 .live-chip {
@@ -669,7 +680,7 @@ select {
   padding: 2px 1px;
   text-align: center;
   vertical-align: middle;
-  background: #edf3fa;
+  background: var(--card-bg);
 }
 
 .rank-table th {
@@ -738,7 +749,7 @@ select {
 }
 
 .live-col-cell {
-  background: #edf3fa;
+  background: var(--card-bg);
 }
 
 .rank-value {
@@ -789,7 +800,7 @@ select {
 .message-cell {
   padding: 18px 12px !important;
   color: var(--subtext);
-  background: #edf3fa !important;
+  bbackground: var(--card-bg) !important;
 }
 
 .debug-grid {
@@ -997,6 +1008,45 @@ select {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
+}
+
+[data-theme="dark"] .app-header {
+  background: rgba(15, 20, 27, 0.97);
+}
+
+[data-theme="dark"] .pref-buttons.pref-buttons-grid,
+[data-theme="dark"] .pref-buttons.pref-buttons-grid .pref-button,
+[data-theme="dark"] .region-accordion,
+[data-theme="dark"] .region-pref-item,
+[data-theme="dark"] .modal-card {
+  background: var(--panel);
+}
+
+[data-theme="dark"] .element-group,
+[data-theme="dark"] .summary-panel,
+[data-theme="dark"] .summary-panel-header,
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+  background: var(--panel-2);
+}
+
+[data-theme="dark"] .rank-table th {
+  background: #243044;
+}
+
+[data-theme="dark"] .rank-table td,
+[data-theme="dark"] .station-col,
+[data-theme="dark"] .live-col-cell,
+[data-theme="dark"] .message-cell {
+  background: #151c27 !important;
+}
+
+[data-theme="dark"] .rank-value {
+  color: var(--text);
+}
+
+[data-theme="dark"] .rank-cell.within-year {
+  background: var(--year-bg) !important;
 }
 
 @media (max-width: 1200px) {
