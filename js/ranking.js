@@ -261,6 +261,111 @@ export function buildPrefectureAggregateRow(rows, prefName, elementKey) {
   };
 }
 
+export function buildAreaAggregateRow(rows, areaName, areaLabel, elementKey) {
+  const historicalEntries = [];
+
+  for (const row of rows || []) {
+    for (const rankItem of row.ranks || []) {
+      const numericValue = parseValue(rankItem?.value);
+      if (!Number.isFinite(numericValue)) continue;
+
+      const prefName = row.prefName || row.sourcePrefName || "";
+      const stationName = rankItem.stationName || row.stationName || "-";
+      const stationWithPref = prefName
+        ? `${stationName}（${prefName}）`
+        : stationName;
+
+      historicalEntries.push({
+        numericValue,
+        rawValue: rankItem?.value ?? "-",
+        date: rankItem?.date || "-",
+        sortDate: parseDateLike(rankItem?.date || ""),
+        stationName: stationWithPref,
+        stationCodeNumber: getStationCodeNumber(row.stationCode),
+        highlightWithinYear: !!rankItem?.highlightWithinYear,
+      });
+    }
+  }
+
+  if (!historicalEntries.length) {
+    return null;
+  }
+
+  historicalEntries.sort((a, b) => compareEntries(a, b, elementKey));
+
+  const aggregateRanks = historicalEntries.slice(0, 10).map((item) => ({
+    value: item.rawValue,
+    date: item.date,
+    stationName: item.stationName,
+    highlightWithinYear: item.highlightWithinYear,
+  }));
+
+  const liveEntries = (rows || [])
+    .map((row) => {
+      const live = row.liveCandidate || {};
+      const prefName = row.prefName || row.sourcePrefName || "";
+      const stationName = live.stationName || row.stationName || "-";
+      const stationWithPref = prefName
+        ? `${stationName}（${prefName}）`
+        : stationName;
+
+      return {
+        stationName: stationWithPref,
+        stationCodeNumber: getStationCodeNumber(row.stationCode),
+        live,
+        numericValue: Number.isFinite(live.value) ? live.value : null,
+        sortDate: normalizeTimestamp(live.observedAt || ""),
+      };
+    })
+    .filter((item) => Number.isFinite(item.numericValue));
+
+  liveEntries.sort((a, b) =>
+    compareEntries(
+      {
+        numericValue: a.numericValue,
+        sortDate: a.sortDate,
+        stationCodeNumber: a.stationCodeNumber,
+        stationName: a.stationName,
+      },
+      {
+        numericValue: b.numericValue,
+        sortDate: b.sortDate,
+        stationCodeNumber: b.stationCodeNumber,
+        stationName: b.stationName,
+      },
+      elementKey
+    )
+  );
+
+  const bestLive = liveEntries[0] || null;
+
+  const aggregateLiveCandidate = bestLive
+    ? {
+        ...bestLive.live,
+        stationName: bestLive.stationName,
+        rank: judgeLiveRank(bestLive.numericValue, { ranks: aggregateRanks }, elementKey),
+      }
+    : {
+        supportMode: rows?.[0]?.liveCandidate?.supportMode || "unsupported",
+        supported: rows?.[0]?.liveCandidate?.supported || false,
+        value: null,
+        rank: null,
+        observedAt: "",
+        error: "",
+        stationName: "",
+      };
+
+  return {
+    stationName: areaName,
+    startDate: areaLabel,
+    stationCode: "",
+    isAreaAggregate: true,
+    isPrefectureAggregate: true,
+    ranks: aggregateRanks,
+    liveCandidate: aggregateLiveCandidate,
+  };
+}
+
 export function buildLiveSummaryItems(rows, elementKey, elementLabel, month) {
   const items = [];
 
@@ -321,7 +426,10 @@ export function insertLiveIntoRankRows(rows) {
     const liveRankItem = {
       value: live.value,
       date: live.observedAt || "",
-      stationName: row.isPrefectureAggregate ? live.stationName || "" : "",
+      stationName:
+        row.isAreaAggregate || row.isPrefectureAggregate
+          ? live.stationName || ""
+          : "",
       highlightWithinYear: false,
       isLiveRank: true,
     };
