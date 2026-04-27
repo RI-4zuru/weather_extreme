@@ -380,7 +380,7 @@ select {
 
 .element-button.active {
   background: var(--accent);
-  color: #fff;
+  color: #1b5e20;
   border-color: var(--accent);
   font-weight: 800;
 }
