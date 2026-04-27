@@ -60,7 +60,6 @@ export const LIVE_SUPPORTED_ANNUAL_KEYS = new Set([
   "dailyMaxGust",
 ]);
 
-/*
 export const LIVE_SUPPORTED_MONTHLY_KEYS = new Set([
   //"monthMax3hPrecip",
   //"monthMax6hPrecip",
@@ -71,7 +70,6 @@ export const LIVE_SUPPORTED_MONTHLY_KEYS = new Set([
   //"monthDeepSnowHigh",
   //"monthDeepSnowLow",
 ]);
-*/
 
 export const LOW_IS_BETTER_KEYS = new Set([
   "dailyMaxTempLow",
