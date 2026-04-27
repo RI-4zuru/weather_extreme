@@ -1,3 +1,4 @@
+import { LIVE_SUPPORTED_ANNUAL_KEYS, LIVE_SUPPORTED_MONTHLY_KEYS } from "./constants.js";
 import { escapeHtml, formatObservationLabel, renderDualLine } from "./utils.js";
 
 function formatLiveColumnLabel(observedAt) {
