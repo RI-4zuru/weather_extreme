@@ -485,6 +485,7 @@ function initControls() {
     customExpandedRegions = new Set([currentRegion]);
   }
 }
+
 function bindEvents() {
   if (controlPanelToggle) {
     controlPanelToggle.addEventListener("click", () => {
