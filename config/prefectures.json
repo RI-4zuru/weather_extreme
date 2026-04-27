@@ -1,6 +1,12 @@
 {
   "prefectures": [
-    { "key": "hokkaido", "name": "北海道", "region": "北海道", "stationsFile": "config/stations/hokkaido/hokkaido.json" },
+    { "key": "wakkanai", "name": "北海道（稚内）", "region": "北海道", "stationsFile": "config/stations/hokkaido/wakkanai.json" },
+    { "key": "asahikawa", "name": "北海道（旭川）", "region": "北海道", "stationsFile": "config/stations/hokkaido/asahikawa.json" },
+    { "key": "sapporo", "name": "北海道（札幌）", "region": "北海道", "stationsFile": "config/stations/hokkaido/sapporo.json" },
+    { "key": "abashiri", "name": "北海道（網走）", "region": "北海道", "stationsFile": "config/stations/hokkaido/abashiri.json" },
+    { "key": "kushiro", "name": "北海道（釧路）", "region": "北海道", "stationsFile": "config/stations/hokkaido/kushiro.json" },
+    { "key": "muroran", "name": "北海道（室蘭）", "region": "北海道", "stationsFile": "config/stations/hokkaido/muroran.json" },
+    { "key": "hakodate", "name": "北海道（函館）", "region": "北海道", "stationsFile": "config/stations/hokkaido/hakodat.json" },
 
     { "key": "aomori", "name": "青森県", "region": "東北", "stationsFile": "config/stations/tohoku/aomori.json" },
     { "key": "iwate", "name": "岩手県", "region": "東北", "stationsFile": "config/stations/tohoku/iwate.json" },
