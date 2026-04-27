@@ -15,9 +15,9 @@
     { "key": "monthPrecipHigh", "label": "月降水量の多い方から", "shortLabel": "月降水(多)", "group": "雨", "unit": "mm" },
     { "key": "monthPrecipLow", "label": "月降水量の少ない方から", "shortLabel": "月降水(少)", "group": "雨", "unit": "mm" },
     { "key": "yearPrecipHigh", "label": "年降水量の多い方から", "shortLabel": "年降水(多)", "group": "雨", "unit": "mm" },
-    { "key": "yearPrecipLow", "label": "年降水量の少ない方から", "shortLabel": "年降水(少)", "group": "雨", "unit": "mm" },
+    { "key": "yearPrecipLow", "label": "年降水量の少ない方から", "shortLabel": "年降水(少)", "group": "雨", "hidden": , "unit": "mm" },
 
-    { "key": "monthMax1h10mPrecip", "label": "日最大1時間降水量(10分間隔)", "shortLabel": "1時間雨量(10分)", "group": "雨", "unit": "mm" },
+    { "key": "monthMax1h10mPrecip", "label": "日最大1時間降水量(10分間隔)", "shortLabel": "1時間雨量(10分)", "group": "雨", "hidden": true, "unit": "mm" },
     { "key": "monthMax3hPrecip", "label": "月最大3時間降水量の多い方から", "shortLabel": "3時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax6hPrecip", "label": "月最大6時間降水量の多い方から", "shortLabel": "6時間雨量", "group": "雨", "unit": "mm" },
     { "key": "monthMax12hPrecip", "label": "月最大12時間降水量の多い方から", "shortLabel": "12時間雨量", "group": "雨", "unit": "mm" },
