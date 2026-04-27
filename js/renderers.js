@@ -42,7 +42,7 @@ export function makeTableHead(tableHead, showLiveColumn = false) {
   tableHead.innerHTML = `<tr>${headers.join("")}</tr>`;
 }
 
-export function renderElementPanel(elementPanel, elementList, selectedKey) {
+export function renderElementPanel(elementPanel, elementList, selectedKey, month) {
   if (!elementList.length) {
     elementPanel.innerHTML = `<div class="empty-message">要素定義がありません。</div>`;
     return;
@@ -58,18 +58,25 @@ export function renderElementPanel(elementPanel, elementList, selectedKey) {
   elementPanel.innerHTML = [...grouped.entries()]
     .map(([groupName, items]) => `
       <section class="element-group">
-        <h3 class="element-group-title">${escapeHtml(groupName)}</h3>
+        <h3 class="element-group-title">${groupName}</h3>
         <div class="element-button-grid">
-          ${items.map((item) => `
-            <button
-              type="button"
-              class="element-button ${item.key === selectedKey ? "active" : ""}"
-              data-element-key="${escapeHtml(item.key)}"
-              title="${escapeHtml(item.label || item.shortLabel || item.key)}"
-            >
-              ${escapeHtml(item.shortLabel || item.label || item.key)}
-            </button>
-          `).join("")}
+          ${items.map((item) => {
+            const isLive =
+              (month === "all" && LIVE_SUPPORTED_ANNUAL_KEYS.has(item.key)) ||
+              (month !== "all" && LIVE_SUPPORTED_MONTHLY_KEYS.has(item.key));
+
+            return `
+              <button
+                type="button"
+                class="element-button
+                  ${item.key === selectedKey ? "active" : ""}
+                  ${isLive ? "live-supported" : ""}"
+                data-element-key="${item.key}"
+              >
+                ${item.shortLabel || item.label || item.key}
+              </button>
+            `;
+          }).join("")}
         </div>
       </section>
     `)
