@@ -6,7 +6,7 @@
     { "key": "abashiri", "name": "網走", "region": "北海道", "stationsFile": "config/stations/hokkaido/abashiri.json" },
     { "key": "kushiro", "name": "釧路", "region": "北海道", "stationsFile": "config/stations/hokkaido/kushiro.json" },
     { "key": "muroran", "name": "室蘭", "region": "北海道", "stationsFile": "config/stations/hokkaido/muroran.json" },
-    { "key": "hakodate", "name": "函館", "region": "北海道", "stationsFile": "config/stations/hokkaido/hakodat.json" },
+    { "key": "hakodate", "name": "函館", "region": "北海道", "stationsFile": "config/stations/hokkaido/hakodate.json" },
 
     { "key": "aomori", "name": "青森県", "region": "東北", "stationsFile": "config/stations/tohoku/aomori.json" },
     { "key": "iwate", "name": "岩手県", "region": "東北", "stationsFile": "config/stations/tohoku/iwate.json" },
