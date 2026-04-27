@@ -588,8 +588,6 @@ select {
 }
 
 .rank-head-live {
-  width: 108px;
-  min-width: 108px;
   background: #d2deec !important;
 }
 
@@ -638,16 +636,12 @@ select {
 .rank-cell,
 .live-col-cell {
   height: 54px;
-}
-
-.rank-cell {
   width: 6.6%;
   min-width: 58px;
 }
 
 .live-col-cell {
-  width: 108px;
-  min-width: 108px;
+  background: #edf3fa;
 }
 
 .rank-value {
@@ -945,7 +939,8 @@ select {
     min-width: 860px;
   }
 
-  .rank-cell {
+  .rank-cell,
+  .live-col-cell {
     min-width: 52px;
   }
 }
@@ -959,7 +954,8 @@ select {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
 
-  .rank-cell {
+  .rank-cell,
+  .live-col-cell {
     min-width: 48px;
   }
 }
