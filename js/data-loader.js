@@ -204,9 +204,12 @@ export function findStationByRowName(rowStationName, stationIndex) {
 
 export function getElementListByMonth(month, elementsConfig) {
   if (!elementsConfig) return [];
-  return month === "all"
+
+  const list = month === "all"
     ? (elementsConfig.annualElements || [])
     : (elementsConfig.monthlyElements || []);
+
+  return list.filter(item => !item.hidden);
 }
 
 export function getDefaultElementKey(month, elementsConfig) {
