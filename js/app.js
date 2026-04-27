@@ -896,7 +896,7 @@ function renderPrefButtons() {
 }
 
 function renderElementButtons() {
-  renderElementPanel(elementPanel, getCurrentElementList(), currentElementKey);
+  renderElementPanel(elementPanel, getCurrentElementList(), currentElementKey, currentMonth);
 }
 
 function openCustomModal() {
