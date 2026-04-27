@@ -743,6 +743,29 @@ function bindEvents() {
   });
 
   customRegionList.addEventListener("change", (event) => {
+    const nationCheck = event.target.closest("[data-nation-check]");
+      if (nationCheck) {
+        nationModeEnabled = nationCheck.checked;
+      
+        if (nationModeEnabled) {
+          enabledAreaKeys.add(makeNationAreaKey());
+        } else {
+          enabledAreaKeys.delete(makeNationAreaKey());
+      
+          if (currentSelectionType === "nation") {
+            currentSelectionType = "prefecture";
+            writeStorage(STORAGE_KEYS.areaSelection, "prefecture");
+          }
+        }
+      
+        saveNationModeEnabled();
+        saveEnabledAreaKeys();
+      
+        renderRegionTabs();
+        renderPrefButtons();
+        renderCustomRegionList();
+        return;
+      }
     const prefCheck = event.target.closest("[data-pref-check]");
     const areaCheck = event.target.closest("[data-area-check]");
     if (areaCheck) {
@@ -1170,108 +1193,85 @@ function closeCustomModal() {
   customModal.hidden = true;
 }
 
-function ensureSecretNationButton() {
-  if (!selectAllPrefsButton) return;
-  if (document.getElementById("secretNationButton")) return;
-
-  const button = document.createElement("button");
-  button.id = "secretNationButton";
-  button.type = "button";
-  button.className = "secret-nation-button";
-  button.title = "";
-  button.setAttribute("aria-label", "全国表示を切り替え");
-
-  button.addEventListener("click", () => {
-    nationModeEnabled = !nationModeEnabled;
-
-    if (nationModeEnabled) {
-      enabledAreaKeys.add(makeNationAreaKey());
-      currentSelectionType = "nation";
-      writeStorage(STORAGE_KEYS.areaSelection, "nation");
-    } else {
-      enabledAreaKeys.delete(makeNationAreaKey());
-      if (currentSelectionType === "nation") {
-        currentSelectionType = "prefecture";
-      }
-    }
-
-    saveNationModeEnabled();
-    saveEnabledAreaKeys();
-
-    renderRegionTabs();
-    renderPrefButtons();
-    renderCustomRegionList();
-  });
-
-  selectAllPrefsButton.parentElement?.insertBefore(button, selectAllPrefsButton);
-}
-
 function renderCustomRegionList() {
-  ensureSecretNationButton();
-
   const regions = getRegions();
 
-  customRegionList.innerHTML = regions
-    .map((region) => {
-      const prefs = getPrefsByRegion(region);
-      const enabledCount = prefs.filter((item) => enabledPrefKeys.has(item.key)).length;
-      const allChecked = prefs.length > 0 && enabledCount === prefs.length;
-      const expanded = customExpandedRegions.has(region);
-      const regionAreaChecked = isRegionAreaEnabled(region);
+  customRegionList.innerHTML = `
+    <section class="region-accordion">
+      <div class="region-accordion-header">
+        <label class="region-bulk-wrap">
+          <input
+            type="checkbox"
+            data-nation-check="true"
+            ${isNationAreaEnabled() ? "checked" : ""}
+          />
+          <span>全国</span>
+        </label>
+      </div>
+    </section>
 
-      return `
-        <section class="region-accordion">
-          <div class="region-accordion-header">
-            <label class="region-bulk-wrap">
-              <input
-                type="checkbox"
-                data-region-bulk="${region}"
-                ${allChecked ? "checked" : ""}
-              />
-              <span>${region}</span>
-            </label>
+    ${regions
+      .map((region) => {
+        const prefs = getPrefsByRegion(region);
+        const enabledCount = prefs.filter((item) => enabledPrefKeys.has(item.key)).length;
+        const allChecked = prefs.length > 0 && enabledCount === prefs.length;
+        const expanded = customExpandedRegions.has(region);
+        const regionAreaChecked = isRegionAreaEnabled(region);
 
-            <div class="region-accordion-title"></div>
-
-            <button
-              type="button"
-              class="region-accordion-toggle"
-              data-region-toggle="${region}"
-              aria-expanded="${expanded ? "true" : "false"}"
-            >
-              ${expanded ? "閉じる" : "開く"}
-            </button>
-          </div>
-
-          <div class="region-accordion-body" ${expanded ? "" : "hidden"}>
-            <div class="region-pref-grid">
-              <label class="region-pref-item region-area-item">
+        return `
+          <section class="region-accordion">
+            <div class="region-accordion-header">
+              <label class="region-bulk-wrap">
                 <input
                   type="checkbox"
-                  data-area-check="${makeRegionAreaKey(region)}"
-                  ${regionAreaChecked ? "checked" : ""}
+                  data-region-bulk="${region}"
+                  ${allChecked ? "checked" : ""}
                 />
                 <span>${region}</span>
               </label>
 
-              ${prefs
-                .map((item) => `
-                  <label class="region-pref-item">
-                    <input
-                      type="checkbox"
-                      data-pref-check="${item.key}"
-                      ${enabledPrefKeys.has(item.key) ? "checked" : ""}
-                    />
-                    <span>${item.name}</span>
-                  </label>
-                `)
-                .join("")}
+              <div class="region-accordion-title"></div>
+
+              <button
+                type="button"
+                class="region-accordion-toggle"
+                data-region-toggle="${region}"
+                aria-expanded="${expanded ? "true" : "false"}"
+              >
+                ${expanded ? "閉じる" : "開く"}
+              </button>
             </div>
-          </div>
-        </section>
-      `;
-    })
-    .join("");
+
+            <div class="region-accordion-body" ${expanded ? "" : "hidden"}>
+              <div class="region-pref-grid">
+                <label class="region-pref-item region-area-item">
+                  <input
+                    type="checkbox"
+                    data-area-check="${makeRegionAreaKey(region)}"
+                    ${regionAreaChecked ? "checked" : ""}
+                  />
+                  <span>${region}</span>
+                </label>
+
+                ${prefs
+                  .map((item) => `
+                    <label class="region-pref-item">
+                      <input
+                        type="checkbox"
+                        data-pref-check="${item.key}"
+                        ${enabledPrefKeys.has(item.key) ? "checked" : ""}
+                      />
+                      <span>${item.name}</span>
+                    </label>
+                  `)
+                  .join("")}
+              </div>
+            </div>
+          </section>
+        `;
+      })
+      .join("")}
+  `;
 
   syncRegionBulkStates();
 }
