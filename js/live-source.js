@@ -17,9 +17,15 @@ import {
 } from "./utils.js";
 
 export function isLiveSupported(elementKey, month) {
-  return month === "all"
-    ? LIVE_SUPPORTED_ANNUAL_KEYS.has(elementKey)
-    : LIVE_SUPPORTED_MONTHLY_KEYS.has(elementKey);
+  if (LIVE_SUPPORTED_ANNUAL_KEYS.has(elementKey)) {
+    return true;
+  }
+
+  if (month !== "all" && LIVE_SUPPORTED_MONTHLY_KEYS.has(elementKey)) {
+    return true;
+  }
+
+  return false;
 }
 
 export async function fetchLatestObservationTime() {
