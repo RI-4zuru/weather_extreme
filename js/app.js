@@ -1069,6 +1069,117 @@ function renderLiveOnlyTable(stations, liveValuesByCode, prefMeta) {
   `;
 }
 
+function getCurrentJstMonth(latestObservationTime = "") {
+  const d = latestObservationTime ? new Date(latestObservationTime) : new Date();
+  if (Number.isNaN(d.getTime())) return String(new Date().getMonth() + 1);
+  return String(d.getMonth() + 1);
+}
+
+function getLiveSummaryTargets(latestObservationTime = "") {
+  const currentJstMonth = getCurrentJstMonth(latestObservationTime);
+
+  const annualTargets = getElementListByMonth("all", state.elements)
+    .filter((item) => isLiveSupported(item.key, "all"))
+    .map((item) => ({
+      element: item,
+      month: "all",
+    }));
+
+  const monthlyTargets = getElementListByMonth(currentJstMonth, state.elements)
+    .filter((item) => isLiveSupported(item.key, currentJstMonth))
+    .map((item) => ({
+      element: item,
+      month: currentJstMonth,
+    }));
+
+  return {
+    annualTargets,
+    monthlyTargets,
+    currentJstMonth,
+  };
+}
+
+async function buildAllLiveSummaryForPref({
+  prefMeta,
+  stationIndex,
+  latestObservationTime,
+}) {
+  const { annualTargets, monthlyTargets } = getLiveSummaryTargets(latestObservationTime);
+
+  const annualItems = [];
+  const monthlyItems = [];
+
+  async function collectForTarget(target, outputItems) {
+    const elementMeta = target.element;
+    const month = target.month;
+
+    try {
+      const tableData = await loadTable(
+        prefMeta.key,
+        prefMeta.region,
+        elementMeta.key,
+        month
+      );
+
+      const rows = Array.isArray(tableData?.rows) ? tableData.rows : [];
+      if (!rows.length) return;
+
+      const stationCodes = unique(
+        rows
+          .map((row) => findStationByRowName(row.stationName, stationIndex)?.code || null)
+          .filter(Boolean)
+      );
+
+      if (!stationCodes.length) return;
+
+      const liveBundle = await buildLiveValuesForStations({
+        stationCodes,
+        elementKey: elementMeta.key,
+        month,
+      });
+
+      let valuesByCode = liveBundle.valuesByCode || {};
+
+      updateLiveValueCache(valuesByCode, elementMeta.key, month);
+      valuesByCode = mergeLiveValuesWithCache(
+        stationCodes,
+        valuesByCode,
+        elementMeta.key,
+        month
+      );
+
+      const decoratedRows = decorateRowsWithLive(
+        rows,
+        (rowStationName) => findStationByRowName(rowStationName, stationIndex),
+        valuesByCode,
+        elementMeta.key,
+        liveBundle.support || "supported"
+      );
+
+      const items = buildLiveSummaryItems(
+        decoratedRows,
+        elementMeta.key,
+        elementMeta.label || elementMeta.shortLabel || elementMeta.key,
+        month
+      );
+
+      outputItems.push(...items);
+    } catch (error) {
+      console.warn("実況サマリー作成失敗:", elementMeta.key, month, error);
+    }
+  }
+
+  await Promise.all([
+    ...annualTargets.map((target) => collectForTarget(target, annualItems)),
+    ...monthlyTargets.map((target) => collectForTarget(target, monthlyItems)),
+  ]);
+
+  return {
+    annualItems,
+    monthlyItems,
+  };
+}
+
 async function refresh() {
   const prefMeta = getCurrentPrefMeta();
   const elementMeta = getCurrentElementMeta();
@@ -1189,26 +1300,17 @@ async function refresh() {
         ? [prefectureAggregateRow, ...highlightedRows]
         : highlightedRows;
 
-      const annualSummary = currentMonth === "all"
-        ? buildLiveSummaryItems(
-            highlightedRows,
-            elementMeta.key,
-            fullLabel,
-            "all"
-          )
-        : [];
-
-      const monthlySummary = currentMonth === "all"
-        ? []
-        : buildLiveSummaryItems(
-            highlightedRows,
-            elementMeta.key,
-            fullLabel,
-            currentMonth
-          );
-
+      const allSummary = await buildAllLiveSummaryForPref({
+        prefMeta,
+        stationIndex: index,
+        latestObservationTime,
+      });
+      
+      const annualSummary = allSummary.annualItems;
+      const monthlySummary = allSummary.monthlyItems;
+      
       state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
-
+      
       renderTable(rankTableBody, displayRows, { showLiveColumn: canShowLiveColumn });
       renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
 
