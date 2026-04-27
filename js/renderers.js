@@ -191,11 +191,18 @@ function renderSummaryList(items) {
   }
 
   return items.map((item) => `
-    <div class="live-summary-item ${item.top1 ? "top1" : ""}">
+    <button
+      type="button"
+      class="live-summary-item ${item.top1 ? "top1" : ""}"
+      data-summary-jump="true"
+      data-element-key="${escapeHtml(item.elementKey)}"
+      data-month="${escapeHtml(item.month || "all")}"
+      title="この要素へ移動"
+    >
       <span class="rank">${escapeHtml(String(item.rank))}位</span>
       ${escapeHtml(item.stationName)} / ${escapeHtml(item.elementLabel)} / ${escapeHtml(String(item.value))}
       <span class="meta">${escapeHtml(formatObservationLabel(item.observedAt))}</span>
-    </div>
+    </button>
   `).join("");
 }
 
