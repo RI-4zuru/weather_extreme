@@ -303,3 +303,35 @@ export function hasAnyRankIn(rows) {
 export function hasAnyTop1(rows) {
   return (rows || []).some((row) => row?.liveCandidate?.rank === 1);
 }
+
+export function insertLiveIntoRankRows(rows) {
+  return (rows || []).map((row) => {
+    const live = row.liveCandidate;
+
+    if (
+      !live ||
+      !Number.isFinite(live.value) ||
+      !Number.isFinite(live.rank) ||
+      live.rank < 1 ||
+      live.rank > 10
+    ) {
+      return row;
+    }
+
+    const liveRankItem = {
+      value: live.value,
+      date: live.observedAt || "",
+      stationName: row.isPrefectureAggregate ? live.stationName || "" : "",
+      highlightWithinYear: false,
+      isLiveRank: true,
+    };
+
+    const nextRanks = [...(row.ranks || [])];
+    nextRanks.splice(live.rank - 1, 0, liveRankItem);
+
+    return {
+      ...row,
+      ranks: nextRanks.slice(0, 10),
+    };
+  });
+}
