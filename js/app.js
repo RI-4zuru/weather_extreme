@@ -2009,3 +2009,28 @@ async function refresh() {
   }
 }
 main();
+
+const themeToggle = document.getElementById("themeToggle");
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("theme") || "light";
+  applyTheme(saved);
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
+initTheme();
