@@ -91,6 +91,18 @@ body {
   white-space: nowrap;
 }
 
+.theme-toggle {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
 .meta-label {
   color: var(--subtext);
   font-size: 0.84rem;
