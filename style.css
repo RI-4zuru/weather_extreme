@@ -340,6 +340,13 @@ select {
   background: #d8efe4;
 }
 
+.element-button.live-supported::after {
+  content: "●";
+  color: #2e9e5b;
+  font-size: 0.6rem;
+  margin-left: 4px;
+}
+
 .app-main {
   padding: 14px 16px 24px;
 }
