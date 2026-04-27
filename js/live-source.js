@@ -179,7 +179,16 @@ export async function buildLiveValuesForStations({
     };
   }
 
-  if (month === "all") {
+  // ===== ここが重要：elementKeyで分岐 =====
+
+  const isAnnual = LIVE_SUPPORTED_ANNUAL_KEYS.has(elementKey);
+  const isMonthly = LIVE_SUPPORTED_MONTHLY_KEYS.has(elementKey);
+
+  // ------------------------
+  // ■ 通年系（気温・風・湿度・短時間雨）
+  // → 月選択でもここに入る
+  // ------------------------
+  if (isAnnual) {
     await Promise.all(
       stationCodes.map(async (stationCode) => {
         try {
@@ -187,6 +196,7 @@ export async function buildLiveValuesForStations({
           const metrics = calcDailyMetrics(records);
 
           const value = pickAnnualMetric(metrics, elementKey);
+
           result[stationCode] = {
             value,
             observedAt: latestIso,
@@ -209,37 +219,58 @@ export async function buildLiveValuesForStations({
     };
   }
 
-  await Promise.all(
-    stationCodes.map(async (stationCode) => {
-      try {
-        const mapItem = mapData?.[stationCode] || {};
-        const monthlyLite = calcMonthlyLiteMetricsFromMap(mapItem);
-        let value = monthlyLite[elementKey] ?? null;
+  // ------------------------
+  // ■ 月系（長時間雨・雪）
+  // ------------------------
+  if (isMonthly && month !== "all") {
+    await Promise.all(
+      stationCodes.map(async (stationCode) => {
+        try {
+          const mapItem = mapData?.[stationCode] || {};
+          const monthlyLite = calcMonthlyLiteMetricsFromMap(mapItem);
 
-        if ((elementKey === "monthMax6hPrecip" || elementKey === "monthMax12hPrecip") && value === null) {
-          const ext = await calcMonthlyPointExtendedMetrics(stationCode, latestIso);
-          value = ext[elementKey] ?? null;
+          let value = monthlyLite[elementKey] ?? null;
+
+          // 6h・12hは point データから計算
+          if (
+            (elementKey === "monthMax6hPrecip" ||
+              elementKey === "monthMax12hPrecip") &&
+            value === null
+          ) {
+            const ext = await calcMonthlyPointExtendedMetrics(
+              stationCode,
+              latestIso
+            );
+            value = ext[elementKey] ?? null;
+          }
+
+          result[stationCode] = {
+            value,
+            observedAt: latestIso,
+          };
+        } catch (error) {
+          result[stationCode] = {
+            value: null,
+            observedAt: latestIso,
+            error: error.message || String(error),
+          };
         }
+      })
+    );
 
-        result[stationCode] = {
-          value,
-          observedAt: latestIso,
-        };
-      } catch (error) {
-        result[stationCode] = {
-          value: null,
-          observedAt: latestIso,
-          error: error.message || String(error),
-        };
-      }
-    })
-  );
+    return {
+      latestIso,
+      valuesByCode: result,
+      support: "partial",
+      message: "当月側は直近積算・現在積雪深のみブラウザ判定しています。",
+    };
+  }
 
   return {
     latestIso,
     valuesByCode: result,
-    support: "partial",
-    message: "当月側は直近積算・現在積雪深のみブラウザ判定しています。",
+    support: "unsupported",
+    message: "未対応要素です。",
   };
 }
 
