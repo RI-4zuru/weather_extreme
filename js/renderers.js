@@ -99,30 +99,7 @@ export function renderTable(tableBody, rows, options = {}) {
   tableBody.innerHTML = rows.map((row) => {
     const live = row.liveCandidate || {};
     const liveRank = live.rank;
-    const showLiveBadge =
-      !showLiveColumn &&
-      live.supported &&
-      Number.isFinite(live.value) &&
-      Number.isFinite(liveRank) &&
-      liveRank >= 1 &&
-      liveRank <= 10;
-
-    const liveStationLine =
-      row.isPrefectureAggregate && live.stationName
-        ? `地点: ${escapeHtml(String(live.stationName))}<br>`
-        : "";
-
-    const stationLiveBadge = showLiveBadge
-      ? `
-        <span class="station-live-badge ${liveRank === 1 ? "top1" : ""}">
-          実況: ${escapeHtml(String(liveRank))}位相当<br>
-          ${liveStationLine}
-          値: ${escapeHtml(String(live.value))}<br>
-          ${formatLiveColumnLabel(live.observedAt)}
-        </span>
-      `
-      : "";
-
+    const stationLiveBadge = "";
     const cells = [];
     for (let i = 0; i < 10; i += 1) {
       const rankItem = row.ranks?.[i];
@@ -175,7 +152,7 @@ export function renderTable(tableBody, rows, options = {}) {
           : "";
 
         liveColumnHtml = `
-          <td class="live-col-cell ${Number.isFinite(liveRank) && liveRank >= 1 && liveRank <= 10 ? "live-target" : ""}">
+          <td class="live-col-cell">
             <span class="rank-value">${escapeHtml(String(live.value))}</span>
             ${liveStation}
             <span class="rank-date">${formatLiveColumnLabel(live.observedAt)}</span>
