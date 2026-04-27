@@ -114,7 +114,7 @@ export function renderTable(tableBody, rows, options = {}) {
         continue;
       }
 
-      const isLiveTarget = liveRank === i + 1;
+      const isLiveTarget = !!rankItem.isLiveRank;
       const isWithinYear = !!rankItem.highlightWithinYear;
 
       let cellClass = "rank-cell";
@@ -134,7 +134,11 @@ export function renderTable(tableBody, rows, options = {}) {
         <td class="${cellClass}">
           <span class="rank-value">${escapeHtml(String(rankItem.value ?? "-"))}</span>
           ${stationLine}
-          <span class="rank-date">${renderDualLine(rankItem.date || "-")}</span>
+          <span class="rank-date">
+          ${rankItem.isLiveRank
+            ? formatLiveColumnLabel(rankItem.date || "")
+            : renderDualLine(rankItem.date || "-")}
+        </span>
         </td>
       `);
     }
