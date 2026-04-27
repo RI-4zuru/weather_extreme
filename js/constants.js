@@ -62,13 +62,13 @@ export const LIVE_SUPPORTED_ANNUAL_KEYS = new Set([
 
 export const LIVE_SUPPORTED_MONTHLY_KEYS = new Set([
   "monthMax3hPrecip",
-  //"monthMax6hPrecip",
-  //"monthMax12hPrecip",
+  "monthMax6hPrecip",
+  "monthMax12hPrecip",
   "monthMax24hPrecip",
-  //"monthMax48hPrecip",
-  //"monthMax72hPrecip",
-  //"monthDeepSnowHigh",
-  //"monthDeepSnowLow",
+  "monthMax48hPrecip",
+  "monthMax72hPrecip",
+  "monthDeepSnowHigh",
+  "monthDeepSnowLow",
   "monthMax6hSnow",
   "monthMax24hSnow",
 ]);
