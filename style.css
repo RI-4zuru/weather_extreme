@@ -331,6 +331,15 @@ select {
   font-weight: 800;
 }
 
+.element-button.live-supported {
+  border: 2px solid #2e9e5b;
+  background: #e8f6ee;
+}
+
+.element-button.live-supported:hover {
+  background: #d8efe4;
+}
+
 .app-main {
   padding: 14px 16px 24px;
 }
