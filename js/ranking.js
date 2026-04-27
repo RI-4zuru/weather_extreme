@@ -276,6 +276,7 @@ export function buildLiveSummaryItems(rows, elementKey, elementLabel, month) {
       rank: live.rank,
       value: live.value,
       observedAt: live.observedAt || "",
+      month,
       monthLabel: month === "all" ? "通年" : "当月",
       top1: live.rank === 1,
     });
