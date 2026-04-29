@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-29T20:05:53.860871+09:00",
-  "observedLatestAt": "2026-04-29T19:50:00+09:00",
+  "updatedAt": "2026-04-30T01:54:18.984692+09:00",
+  "observedLatestAt": "2026-04-30T01:40:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "monthAvgTempHigh",
@@ -342,7 +342,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 15.5,
+          "value": 15.4,
           "date": "2026年4月（令和8年）",
           "_date_raw": "2026/04/01"
         },
@@ -480,7 +480,7 @@
         },
         {
           "rank": 2,
-          "value": 15.7,
+          "value": 15.6,
           "date": "2026年4月（令和8年）",
           "_date_raw": "2026/04/01"
         },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-29T20:05:53.860871+09:00",
-  "observedLatestAt": "2026-04-29T19:50:00+09:00",
+  "updatedAt": "2026-04-30T01:54:18.984692+09:00",
+  "observedLatestAt": "2026-04-30T01:40:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "monthAvgTempHigh",
@@ -24,7 +24,7 @@
         },
         {
           "rank": 3,
-          "value": 9.6,
+          "value": 9.5,
           "date": "2026年4月（令和8年）",
           "_date_raw": "2026/04/01"
         },
