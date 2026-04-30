@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-30T20:06:36.823713+09:00",
-  "observedLatestAt": "2026-04-30T19:50:00+09:00",
+  "updatedAt": "2026-05-01T01:48:28.719950+09:00",
+  "observedLatestAt": "2026-05-01T01:40:00+09:00",
   "prefecture": "鹿児島県",
   "region": "九州南部・奄美",
   "element": "monthMax48hSnow",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "鹿児島",
-      "startDate": "2016年5月31日（平成28年）",
+      "startDate": "2017年5月31日（平成29年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 0,
           "date": "2017年5月31日（平成29年）",
           "_date_raw": "2017/05/31"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2016年5月31日（平成28年）",
-          "_date_raw": "2016/05/31"
         }
       ]
     }

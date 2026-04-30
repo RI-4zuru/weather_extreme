@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-30T20:06:36.823713+09:00",
-  "observedLatestAt": "2026-04-30T19:50:00+09:00",
+  "updatedAt": "2026-05-01T01:48:28.719950+09:00",
+  "observedLatestAt": "2026-05-01T01:40:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "monthAvgTempHigh",
@@ -882,7 +882,7 @@
         },
         {
           "rank": 3,
-          "value": 12.8,
+          "value": 12.7,
           "date": "2026年4月（令和8年）",
           "_date_raw": "2026/04/01"
         },

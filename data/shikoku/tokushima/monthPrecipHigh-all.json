@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-30T20:06:36.823713+09:00",
-  "observedLatestAt": "2026-04-30T19:50:00+09:00",
+  "updatedAt": "2026-05-01T01:48:28.719950+09:00",
+  "observedLatestAt": "2026-05-01T01:40:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthPrecipHigh",
@@ -276,42 +276,48 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 294,
+          "date": "2026年4月（令和8年）",
+          "_date_raw": "2026/04/01"
+        },
+        {
+          "rank": 2,
           "value": 171,
           "date": "2025年9月（令和7年）",
           "_date_raw": "2025/09/01"
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 142,
           "date": "2025年10月（令和7年）",
           "_date_raw": "2025/10/01"
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 112,
           "date": "2026年2月（令和8年）",
           "_date_raw": "2026/02/01"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 93.5,
           "date": "2026年3月（令和8年）",
           "_date_raw": "2026/03/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 40.5,
           "date": "2025年12月（令和7年）",
           "_date_raw": "2025/12/01"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 27,
           "date": "2026年1月（令和8年）",
           "_date_raw": "2026/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 22,
           "date": "2025年11月（令和7年）",
           "_date_raw": "2025/11/01"

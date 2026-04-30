@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-04-30T20:06:36.823713+09:00",
-  "observedLatestAt": "2026-04-30T19:50:00+09:00",
+  "updatedAt": "2026-05-01T01:48:28.719950+09:00",
+  "observedLatestAt": "2026-05-01T01:40:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "monthPrecipLow",
@@ -822,12 +822,18 @@
         },
         {
           "rank": 4,
+          "value": 279,
+          "date": "2026年4月（令和8年）",
+          "_date_raw": "2026/04/01"
+        },
+        {
+          "rank": 5,
           "value": 284,
           "date": "2021年4月（令和3年）",
           "_date_raw": "2021/04/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 343,
           "date": "2023年4月（令和5年）",
           "_date_raw": "2023/04/01"
