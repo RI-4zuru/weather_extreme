@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-01T19:44:09.553536+09:00",
-  "observedLatestAt": "2026-05-01T19:30:00+09:00",
+  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
+  "observedLatestAt": "2026-05-02T01:00:00+09:00",
   "prefecture": "富山県",
   "region": "北陸",
   "element": "dailyMinHumidity",
@@ -399,6 +399,18 @@
           "value": 21,
           "date": "2022年5月6日（令和4年）",
           "_date_raw": "2022/05/06"
+        }
+      ]
+    },
+    {
+      "stationName": "上市",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 70,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },

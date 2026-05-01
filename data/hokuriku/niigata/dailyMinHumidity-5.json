@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-05-01T19:44:09.553536+09:00",
-  "observedLatestAt": "2026-05-01T19:30:00+09:00",
+  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
+  "observedLatestAt": "2026-05-02T01:00:00+09:00",
   "prefecture": "新潟県",
   "region": "北陸",
   "element": "dailyMinHumidity",
   "month": "5",
   "rows": [
+    {
+      "stationName": "粟島",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 47,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
     {
       "stationName": "弾崎",
       "startDate": "2024年5月（令和6年）",
@@ -201,6 +213,30 @@
           "value": 16,
           "date": "1989年5月6日（平成元年）",
           "_date_raw": "1989/05/06"
+        }
+      ]
+    },
+    {
+      "stationName": "両津",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 57,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
+      "stationName": "中条",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 52,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
@@ -469,6 +505,30 @@
       ]
     },
     {
+      "stationName": "巻",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 56,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
+      "stationName": "寺泊",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 52,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
       "stationName": "三条",
       "startDate": "2024年5月（令和6年）",
       "ranks": [
@@ -733,6 +793,18 @@
       ]
     },
     {
+      "stationName": "守門",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 53,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
       "stationName": "大潟",
       "startDate": "2022年5月（令和4年）",
       "ranks": [
@@ -795,6 +867,18 @@
           "value": 28,
           "date": "2024年5月11日（令和6年）",
           "_date_raw": "2024/05/11"
+        }
+      ]
+    },
+    {
+      "stationName": "小出",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 54,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
@@ -865,6 +949,42 @@
       ]
     },
     {
+      "stationName": "安塚",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 55,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
+      "stationName": "十日町",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 51,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
+      "stationName": "糸魚川",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 44,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
       "stationName": "能生",
       "startDate": "2025年5月（令和7年）",
       "ranks": [
@@ -931,6 +1051,18 @@
       ]
     },
     {
+      "stationName": "関山",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 57,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
       "stationName": "津南",
       "startDate": "2025年5月（令和7年）",
       "ranks": [
@@ -993,6 +1125,18 @@
           "value": 43,
           "date": "2025年5月3日（令和7年）",
           "_date_raw": "2025/05/03"
+        }
+      ]
+    },
+    {
+      "stationName": "湯沢",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 50,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-01T19:44:09.553536+09:00",
-  "observedLatestAt": "2026-05-01T19:30:00+09:00",
+  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
+  "observedLatestAt": "2026-05-02T01:00:00+09:00",
   "prefecture": "長野県",
   "region": "関東甲信",
   "element": "monthMax24hPrecip",
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "長野",
-      "startDate": "1996年5月6日（平成8年）",
+      "startDate": "2021年5月21日（令和3年）",
       "ranks": [
         {
           "rank": 1,
@@ -459,12 +459,6 @@
           "value": 40,
           "date": "2021年5月21日（令和3年）",
           "_date_raw": "2021/05/21"
-        },
-        {
-          "rank": 10,
-          "value": 40,
-          "date": "1996年5月6日（平成8年）",
-          "_date_raw": "1996/05/06"
         }
       ]
     },

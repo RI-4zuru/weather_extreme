@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-01T19:44:09.553536+09:00",
-  "observedLatestAt": "2026-05-01T19:30:00+09:00",
+  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
+  "observedLatestAt": "2026-05-02T01:00:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
@@ -201,6 +201,18 @@
           "value": 25,
           "date": "2023年5月9日（令和5年）",
           "_date_raw": "2023/05/09"
+        }
+      ]
+    },
+    {
+      "stationName": "土呂部",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 79,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
@@ -469,6 +481,30 @@
       ]
     },
     {
+      "stationName": "那須烏山",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 68,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
+      "stationName": "鹿沼",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 76,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
+        }
+      ]
+    },
+    {
       "stationName": "宇都宮",
       "startDate": "1950年5月（昭和25年）",
       "ranks": [
@@ -663,6 +699,18 @@
           "value": 40,
           "date": "2025年5月14日（令和7年）",
           "_date_raw": "2025/05/14"
+        }
+      ]
+    },
+    {
+      "stationName": "小山",
+      "startDate": "2026年5月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 70,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     }

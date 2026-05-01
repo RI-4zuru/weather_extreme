@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-01T19:44:09.553536+09:00",
-  "observedLatestAt": "2026-05-01T19:30:00+09:00",
+  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
+  "observedLatestAt": "2026-05-02T01:00:00+09:00",
   "prefecture": "愛知県",
   "region": "東海",
   "element": "monthMax24hPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "大府",
-      "startDate": "2015年5月13日（平成27年）",
+      "startDate": "2026年5月1日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -660,9 +660,9 @@
         },
         {
           "rank": 10,
-          "value": 41,
-          "date": "2015年5月13日（平成27年）",
-          "_date_raw": "2015/05/13"
+          "value": 43.5,
+          "date": "2026年5月1日（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
