@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
-  "observedLatestAt": "2026-05-02T01:00:00+09:00",
+  "updatedAt": "2026-05-02T07:07:12.799749+09:00",
+  "observedLatestAt": "2026-05-02T07:00:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -630,7 +630,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 89,
+          "value": 69,
           "date": "2026年5月1日（令和8年）",
           "_date_raw": "2026/05/01"
         }

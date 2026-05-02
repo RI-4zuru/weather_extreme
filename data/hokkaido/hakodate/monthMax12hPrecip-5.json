@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-02T01:09:43.030885+09:00",
-  "observedLatestAt": "2026-05-02T01:00:00+09:00",
+  "updatedAt": "2026-05-02T07:07:12.799749+09:00",
+  "observedLatestAt": "2026-05-02T07:00:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "monthMax12hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "函館",
-      "startDate": "1999年5月27日（平成11年）",
+      "startDate": "2010年5月25日（平成22年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 37.5,
           "date": "2010年5月25日（平成22年）",
           "_date_raw": "2010/05/25"
-        },
-        {
-          "rank": 10,
-          "value": 37,
-          "date": "1999年5月27日（平成11年）",
-          "_date_raw": "1999/05/27"
         }
       ]
     }
