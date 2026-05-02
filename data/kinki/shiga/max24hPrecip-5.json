@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-02T19:11:46.577156+09:00",
-  "observedLatestAt": "2026-05-02T19:00:00+09:00",
+  "updatedAt": "2026-05-03T01:02:34.363340+09:00",
+  "observedLatestAt": "2026-05-03T00:50:00+09:00",
   "prefecture": "滋賀県",
   "region": "近畿",
   "element": "max24hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "柳ケ瀬",
-      "startDate": "2004年5月17日（平成16年）",
+      "startDate": "2026年5月2日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,6 +63,12 @@
           "value": 82,
           "date": "2004年5月17日（平成16年）",
           "_date_raw": "2004/05/17"
+        },
+        {
+          "rank": 10,
+          "value": 80,
+          "date": "2026年5月2日（令和8年）",
+          "_date_raw": "2026/05/02"
         }
       ]
     },
