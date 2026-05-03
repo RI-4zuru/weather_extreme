@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-03T01:02:34.363340+09:00",
-  "observedLatestAt": "2026-05-03T00:50:00+09:00",
+  "updatedAt": "2026-05-03T07:00:10.681939+09:00",
+  "observedLatestAt": "2026-05-03T06:50:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "monthMax3hPrecip",
@@ -1460,7 +1460,7 @@
     },
     {
       "stationName": "沢内",
-      "startDate": "2026年5月1日（令和8年）",
+      "startDate": "2026年5月2日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1512,9 +1512,9 @@
         },
         {
           "rank": 9,
-          "value": 8.5,
-          "date": "2026年5月1日（令和8年）",
-          "_date_raw": "2026/05/01"
+          "value": 9,
+          "date": "2026年5月2日（令和8年）",
+          "_date_raw": "2026/05/02"
         }
       ]
     },
