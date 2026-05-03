@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-03T19:17:37.381460+09:00",
-  "observedLatestAt": "2026-05-03T19:10:00+09:00",
+  "updatedAt": "2026-05-04T01:02:26.219494+09:00",
+  "observedLatestAt": "2026-05-04T00:50:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "monthMax1h10mPrecip",
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "名張",
-      "startDate": "1995年5月1日（平成7年）",
+      "startDate": "1976年5月19日（昭和51年）",
       "ranks": [
         {
           "rank": 1,
@@ -525,12 +525,6 @@
           "value": 18,
           "date": "1976年5月19日（昭和51年）",
           "_date_raw": "1976/05/19"
-        },
-        {
-          "rank": 10,
-          "value": 16,
-          "date": "1995年5月1日（平成7年）",
-          "_date_raw": "1995/05/01"
         }
       ]
     },
