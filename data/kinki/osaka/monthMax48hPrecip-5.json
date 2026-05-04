@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-04T20:19:09.625544+09:00",
-  "observedLatestAt": "2026-05-04T20:10:00+09:00",
+  "updatedAt": "2026-05-05T02:02:43.741898+09:00",
+  "observedLatestAt": "2026-05-05T01:50:00+09:00",
   "prefecture": "大阪府",
   "region": "近畿",
   "element": "monthMax48hPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "茨木",
-      "startDate": "2014年5月1日（平成26年）",
+      "startDate": "2025年5月26日（令和7年）",
       "ranks": [
         {
           "rank": 1,
@@ -129,12 +129,6 @@
           "value": 56.5,
           "date": "2025年5月26日（令和7年）",
           "_date_raw": "2025/05/26"
-        },
-        {
-          "rank": 10,
-          "value": 50,
-          "date": "2014年5月1日（平成26年）",
-          "_date_raw": "2014/05/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-04T20:19:09.625544+09:00",
-  "observedLatestAt": "2026-05-04T20:10:00+09:00",
+  "updatedAt": "2026-05-05T02:02:43.741898+09:00",
+  "observedLatestAt": "2026-05-05T01:50:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "monthMax48hPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "渡名喜",
-      "startDate": "2023年5月19日（令和5年）",
+      "startDate": "2019年5月2日（令和元年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,12 +657,6 @@
           "value": 46.5,
           "date": "2019年5月2日（令和元年）",
           "_date_raw": "2019/05/02"
-        },
-        {
-          "rank": 10,
-          "value": 37,
-          "date": "2023年5月19日（令和5年）",
-          "_date_raw": "2023/05/19"
         }
       ]
     },
