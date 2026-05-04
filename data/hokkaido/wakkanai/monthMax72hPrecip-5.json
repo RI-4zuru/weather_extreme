@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-04T01:02:26.219494+09:00",
-  "observedLatestAt": "2026-05-04T00:50:00+09:00",
+  "updatedAt": "2026-05-04T07:02:14.742867+09:00",
+  "observedLatestAt": "2026-05-04T06:50:00+09:00",
   "prefecture": "稚内",
   "region": "北海道",
   "element": "monthMax72hPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "浜頓別",
-      "startDate": "1997年5月18日（平成9年）",
+      "startDate": "2003年5月2日（平成15年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,12 +657,6 @@
           "value": 44,
           "date": "2003年5月2日（平成15年）",
           "_date_raw": "2003/05/02"
-        },
-        {
-          "rank": 10,
-          "value": 41,
-          "date": "1997年5月18日（平成9年）",
-          "_date_raw": "1997/05/18"
         }
       ]
     },
