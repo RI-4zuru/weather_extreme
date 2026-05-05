@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-05T19:57:09.733432+09:00",
-  "observedLatestAt": "2026-05-05T19:50:00+09:00",
+  "updatedAt": "2026-05-06T01:56:18.583688+09:00",
+  "observedLatestAt": "2026-05-06T01:40:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "dailyMinTempLow",
@@ -210,24 +210,30 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 3.1,
+          "date": "2026年5月5日（令和8年）",
+          "_date_raw": "2026/05/05"
+        },
+        {
+          "rank": 2,
           "value": 5.8,
           "date": "2026年5月2日（令和8年）",
           "_date_raw": "2026/05/02"
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 8,
           "date": "2026年5月4日（令和8年）",
           "_date_raw": "2026/05/04"
         },
         {
-          "rank": 3,
+          "rank": 4,
           "value": 8.6,
           "date": "2026年5月1日（令和8年）",
           "_date_raw": "2026/05/01"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 10.5,
           "date": "2026年5月3日（令和8年）",
           "_date_raw": "2026/05/03"
