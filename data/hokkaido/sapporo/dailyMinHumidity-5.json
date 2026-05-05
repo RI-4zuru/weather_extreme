@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-05T02:02:43.741898+09:00",
-  "observedLatestAt": "2026-05-05T01:50:00+09:00",
+  "updatedAt": "2026-05-05T07:16:12.324079+09:00",
+  "observedLatestAt": "2026-05-05T07:00:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -294,7 +294,7 @@
         },
         {
           "rank": 4,
-          "value": 88,
+          "value": 84,
           "date": "2026年5月4日（令和8年）",
           "_date_raw": "2026/05/04"
         }
