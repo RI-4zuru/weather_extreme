@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-08T07:18:19.336593+09:00",
-  "observedLatestAt": "2026-05-08T07:10:00+09:00",
+  "updatedAt": "2026-05-08T14:38:04.717569+09:00",
+  "observedLatestAt": "2026-05-08T14:30:00+09:00",
   "prefecture": "網走",
   "region": "北海道",
   "element": "max24hPrecip",
@@ -18,7 +18,7 @@
         },
         {
           "rank": 2,
-          "value": 58.5,
+          "value": 59,
           "date": "2026年5月2日（令和8年）",
           "_date_raw": "2026/05/02"
         },
