@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-09T01:46:37.007591+09:00",
-  "observedLatestAt": "2026-05-09T01:30:00+09:00",
+  "updatedAt": "2026-05-09T07:12:49.122689+09:00",
+  "observedLatestAt": "2026-05-09T07:00:00+09:00",
   "prefecture": "釧路",
   "region": "北海道",
   "element": "monthMax72hPrecip",
@@ -258,7 +258,7 @@
         },
         {
           "rank": 9,
-          "value": 112.5,
+          "value": 113,
           "date": "2026年5月4日（令和8年）",
           "_date_raw": "2026/05/04"
         },
