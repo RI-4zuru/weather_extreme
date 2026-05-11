@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-11T21:24:40.328411+09:00",
-  "observedLatestAt": "2026-05-11T21:10:00+09:00",
+  "updatedAt": "2026-05-12T02:33:21.094153+09:00",
+  "observedLatestAt": "2026-05-12T02:20:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "monthMax12hPrecip",
@@ -654,9 +654,9 @@
         },
         {
           "rank": 9,
-          "value": 33,
-          "date": "2026年5月6日（令和8年）",
-          "_date_raw": "2026/05/06"
+          "value": 41.5,
+          "date": "2026年5月11日（令和8年）",
+          "_date_raw": "2026/05/11"
         },
         {
           "rank": 10,
