@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-19T21:23:42.290269+09:00",
-  "observedLatestAt": "2026-05-19T21:10:00+09:00",
+  "updatedAt": "2026-05-20T02:44:52.469086+09:00",
+  "observedLatestAt": "2026-05-20T02:30:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -792,9 +792,9 @@
         },
         {
           "rank": 10,
-          "value": 37,
-          "date": "2026年5月15日（令和8年）",
-          "_date_raw": "2026/05/15"
+          "value": 36,
+          "date": "2026年5月19日（令和8年）",
+          "_date_raw": "2026/05/19"
         }
       ]
     },
