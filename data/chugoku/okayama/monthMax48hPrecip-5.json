@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-22T21:04:19.045886+09:00",
-  "observedLatestAt": "2026-05-22T20:50:00+09:00",
+  "updatedAt": "2026-05-23T02:21:41.284143+09:00",
+  "observedLatestAt": "2026-05-23T02:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "monthMax48hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "上長田",
-      "startDate": "1994年5月13日（平成6年）",
+      "startDate": "1990年5月19日（平成2年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 71,
           "date": "1990年5月19日（平成2年）",
           "_date_raw": "1990/05/19"
-        },
-        {
-          "rank": 10,
-          "value": 62,
-          "date": "1994年5月13日（平成6年）",
-          "_date_raw": "1994/05/13"
         }
       ]
     },
