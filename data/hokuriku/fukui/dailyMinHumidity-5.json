@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-24T19:54:00.770696+09:00",
-  "observedLatestAt": "2026-05-24T19:40:00+09:00",
+  "updatedAt": "2026-05-25T01:18:46.417228+09:00",
+  "observedLatestAt": "2026-05-25T01:10:00+09:00",
   "prefecture": "福井県",
   "region": "北陸",
   "element": "dailyMinHumidity",
@@ -66,9 +66,9 @@
         },
         {
           "rank": 10,
-          "value": 51,
-          "date": "2026年5月12日（令和8年）",
-          "_date_raw": "2026/05/12"
+          "value": 50,
+          "date": "2026年5月24日（令和8年）",
+          "_date_raw": "2026/05/24"
         }
       ]
     },
