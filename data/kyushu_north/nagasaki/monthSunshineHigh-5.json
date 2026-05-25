@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-25T21:48:34.592650+09:00",
-  "observedLatestAt": "2026-05-25T21:40:00+09:00",
+  "updatedAt": "2026-05-26T02:20:12.730818+09:00",
+  "observedLatestAt": "2026-05-26T02:10:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "monthSunshineHigh",
@@ -306,9 +306,9 @@
         },
         {
           "rank": 10,
-          "value": 228.6,
-          "date": "1969年5月（昭和44年）",
-          "_date_raw": "1969/05/01"
+          "value": 228.8,
+          "date": "2026年5月（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
