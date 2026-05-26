@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-26T07:21:10.111173+09:00",
-  "observedLatestAt": "2026-05-26T07:10:00+09:00",
+  "updatedAt": "2026-05-27T03:08:45.314561+09:00",
+  "observedLatestAt": "2026-05-27T03:00:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "monthAvgTempHigh",
@@ -685,8 +685,8 @@
         {
           "rank": 10,
           "value": 18.7,
-          "date": "2020年5月（令和2年）",
-          "_date_raw": "2020/05/01"
+          "date": "2026年5月（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
