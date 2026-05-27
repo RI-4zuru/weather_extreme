@@ -392,6 +392,23 @@
         { "rank_type": "s", "blockNo": "47991", "view": "np0" },
         { "rank_type": "s", "blockNo": "47991", "view": "ns0" }
       ]
+    },
+    {
+      "stationName": "富士山",
+      "precNo": "50",
+      "amedasCode": "55066",
+      "temp": true,
+      "precip": true,
+      "pressure": true,
+      "humidity": true,
+      "wind": true,
+      "sunshine": true,
+      "snow": true,
+      "rank_candidates": [
+        { "rank_type": "s", "blockNo": "47639", "view": "h0" },
+        { "rank_type": "s", "blockNo": "47639", "view": "np0" },
+        { "rank_type": "s", "blockNo": "47639", "view": "ns0" }
+      ]
     }
   ]
 }
