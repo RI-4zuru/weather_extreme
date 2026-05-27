@@ -99,9 +99,9 @@
       "sunshine": true,
       "snow": true,
       "rank_candidates": [
-        { "rank_type": "s", "blockNo": "47686", "view": "h0" },
-        { "rank_type": "s", "blockNo": "47686", "view": "np0" },
-        { "rank_type": "s", "blockNo": "47686", "view": "ns0" }
+        { "rank_type": "s", "blockNo": "0378", "view": "h0" },
+        { "rank_type": "s", "blockNo": "0378", "view": "np0" },
+        { "rank_type": "s", "blockNo": "0378", "view": "ns0" }
       ]
     },
     {
