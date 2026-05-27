@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T21:36:18.854129+09:00",
-  "observedLatestAt": "2026-05-27T21:20:00+09:00",
+  "updatedAt": "2026-05-28T03:11:28.264796+09:00",
+  "observedLatestAt": "2026-05-28T03:00:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "yearPrecipLow",
@@ -866,103 +866,133 @@
     },
     {
       "stationName": "新島",
-      "startDate": "1976年",
+      "startDate": "2003年",
       "ranks": [
         {
           "rank": 1,
-          "value": 1423,
-          "date": "1997年",
-          "_date_raw": "1997/01/01"
+          "value": 1524.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 1724,
-          "date": "1984年",
-          "_date_raw": "1984/01/01"
+          "value": 1614,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         },
         {
           "rank": 3,
-          "value": 1769,
+          "value": 1745,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1855,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1863,
           "date": "2005年",
           "_date_raw": "2005/01/01"
         },
         {
-          "rank": 4,
-          "value": 1916,
-          "date": "1995年",
-          "_date_raw": "1995/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 1932,
-          "date": "1978年",
-          "_date_raw": "1978/01/01"
-        },
-        {
           "rank": 6,
-          "value": 1937,
+          "value": 1887,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1894.5,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1920,
           "date": "2007年",
           "_date_raw": "2007/01/01"
         },
         {
-          "rank": 7,
-          "value": 1967,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 2023,
-          "date": "2000年",
-          "_date_raw": "2000/01/01"
-        },
-        {
           "rank": 9,
-          "value": 2055,
-          "date": "1986年",
-          "_date_raw": "1986/01/01"
+          "value": 1969,
+          "date": "2008年",
+          "_date_raw": "2008/01/01"
         },
         {
           "rank": 10,
-          "value": 2058,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
+          "value": 2061,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         }
       ]
     },
     {
       "stationName": "神津島",
-      "startDate": "2000年",
+      "startDate": "2003年",
       "ranks": [
         {
           "rank": 1,
-          "value": 1731,
+          "value": 1275,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1684,
           "date": "2005年",
           "_date_raw": "2005/01/01"
         },
         {
-          "rank": 2,
-          "value": 2088,
-          "date": "2001年",
-          "_date_raw": "2001/01/01"
-        },
-        {
           "rank": 3,
-          "value": 2535,
-          "date": "2003年",
-          "_date_raw": "2003/01/01"
+          "value": 1741,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 4,
-          "value": 2608,
-          "date": "2002年",
-          "_date_raw": "2002/01/01"
+          "value": 1809.5,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 5,
-          "value": 2836,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "value": 1824,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1903.5,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1914.5,
+          "date": "2014年",
+          "_date_raw": "2014/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1997,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 2014,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 2127,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T21:36:18.854129+09:00",
-  "observedLatestAt": "2026-05-27T21:20:00+09:00",
+  "updatedAt": "2026-05-28T03:11:28.264796+09:00",
+  "observedLatestAt": "2026-05-28T03:00:00+09:00",
   "prefecture": "京都府",
   "region": "近畿",
   "element": "monthAvgTempHigh",
@@ -144,7 +144,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 19.2,
+          "value": 19.4,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },

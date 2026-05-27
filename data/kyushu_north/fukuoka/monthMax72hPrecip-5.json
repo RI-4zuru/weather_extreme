@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T21:36:18.854129+09:00",
-  "observedLatestAt": "2026-05-27T21:20:00+09:00",
+  "updatedAt": "2026-05-28T03:11:28.264796+09:00",
+  "observedLatestAt": "2026-05-28T03:00:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "小呂島",
-      "startDate": "2017年5月13日（平成29年）",
+      "startDate": "2024年5月15日（令和6年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 37,
           "date": "2024年5月15日（令和6年）",
           "_date_raw": "2024/05/15"
-        },
-        {
-          "rank": 10,
-          "value": 32,
-          "date": "2017年5月13日（平成29年）",
-          "_date_raw": "2017/05/13"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T21:36:18.854129+09:00",
-  "observedLatestAt": "2026-05-27T21:20:00+09:00",
+  "updatedAt": "2026-05-28T03:11:28.264796+09:00",
+  "observedLatestAt": "2026-05-28T03:00:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "monthMax3hPrecip",
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "福崎",
-      "startDate": "1997年5月8日（平成9年）",
+      "startDate": "2023年5月7日（令和5年）",
       "ranks": [
         {
           "rank": 1,
@@ -789,12 +789,6 @@
           "value": 29,
           "date": "2023年5月7日（令和5年）",
           "_date_raw": "2023/05/07"
-        },
-        {
-          "rank": 10,
-          "value": 29,
-          "date": "1997年5月8日（平成9年）",
-          "_date_raw": "1997/05/08"
         }
       ]
     },

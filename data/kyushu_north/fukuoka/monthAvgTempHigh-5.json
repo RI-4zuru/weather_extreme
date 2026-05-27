@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T21:36:18.854129+09:00",
-  "observedLatestAt": "2026-05-27T21:20:00+09:00",
+  "updatedAt": "2026-05-28T03:11:28.264796+09:00",
+  "observedLatestAt": "2026-05-28T03:00:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "monthAvgTempHigh",
@@ -342,7 +342,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 21.2,
+          "value": 21.3,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },
