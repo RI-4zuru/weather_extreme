@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-28T21:48:28.895839+09:00",
-  "observedLatestAt": "2026-05-28T21:40:00+09:00",
+  "updatedAt": "2026-05-29T03:27:36.546087+09:00",
+  "observedLatestAt": "2026-05-29T03:20:00+09:00",
   "prefecture": "山口県",
   "region": "九州北部",
   "element": "monthAvgTempHigh",
@@ -78,7 +78,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 19.6,
+          "value": 19.7,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },
@@ -480,7 +480,7 @@
         },
         {
           "rank": 2,
-          "value": 20.2,
+          "value": 20.3,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },
