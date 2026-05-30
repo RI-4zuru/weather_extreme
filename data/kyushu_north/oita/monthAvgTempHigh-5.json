@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-30T19:57:38.928528+09:00",
-  "observedLatestAt": "2026-05-30T19:50:00+09:00",
+  "updatedAt": "2026-05-31T01:20:38.419193+09:00",
+  "observedLatestAt": "2026-05-31T01:10:00+09:00",
   "prefecture": "大分県",
   "region": "九州北部",
   "element": "monthAvgTempHigh",
@@ -342,7 +342,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 21.2,
+          "value": 21.3,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },
@@ -540,7 +540,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 20.9,
+          "value": 21,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },

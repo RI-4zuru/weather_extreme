@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-30T19:57:38.928528+09:00",
-  "observedLatestAt": "2026-05-30T19:50:00+09:00",
+  "updatedAt": "2026-05-31T01:20:38.419193+09:00",
+  "observedLatestAt": "2026-05-31T01:10:00+09:00",
   "prefecture": "稚内",
   "region": "北海道",
   "element": "monthMax48hPrecip",
@@ -192,6 +192,12 @@
         },
         {
           "rank": 9,
+          "value": 34,
+          "date": "2026年5月30日（令和8年）",
+          "_date_raw": "2026/05/30"
+        },
+        {
+          "rank": 10,
           "value": 34,
           "date": "2010年5月8日（平成22年）",
           "_date_raw": "2010/05/08"

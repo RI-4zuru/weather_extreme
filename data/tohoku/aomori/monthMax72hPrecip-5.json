@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-30T19:57:38.928528+09:00",
-  "observedLatestAt": "2026-05-30T19:50:00+09:00",
+  "updatedAt": "2026-05-31T01:20:38.419193+09:00",
+  "observedLatestAt": "2026-05-31T01:10:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "湯野川",
-      "startDate": "2025年5月27日（令和7年）",
+      "startDate": "2026年5月30日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,6 +63,12 @@
           "value": 32,
           "date": "2025年5月27日（令和7年）",
           "_date_raw": "2025/05/27"
+        },
+        {
+          "rank": 10,
+          "value": 28,
+          "date": "2026年5月30日（令和8年）",
+          "_date_raw": "2026/05/30"
         }
       ]
     },
