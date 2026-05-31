@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-31T01:20:38.419193+09:00",
-  "observedLatestAt": "2026-05-31T01:10:00+09:00",
+  "updatedAt": "2026-05-31T07:17:14.674494+09:00",
+  "observedLatestAt": "2026-05-31T07:10:00+09:00",
   "prefecture": "網走",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -396,9 +396,9 @@
         },
         {
           "rank": 10,
-          "value": 49,
-          "date": "2026年5月18日（令和8年）",
-          "_date_raw": "2026/05/18"
+          "value": 46,
+          "date": "2026年5月30日（令和8年）",
+          "_date_raw": "2026/05/30"
         }
       ]
     },

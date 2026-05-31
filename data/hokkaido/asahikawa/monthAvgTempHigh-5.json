@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-31T01:20:38.419193+09:00",
-  "observedLatestAt": "2026-05-31T01:10:00+09:00",
+  "updatedAt": "2026-05-31T07:17:14.674494+09:00",
+  "observedLatestAt": "2026-05-31T07:10:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "monthAvgTempHigh",
@@ -199,8 +199,8 @@
         {
           "rank": 10,
           "value": 12.1,
-          "date": "2002年5月（平成14年）",
-          "_date_raw": "2002/05/01"
+          "date": "2026年5月（令和8年）",
+          "_date_raw": "2026/05/01"
         }
       ]
     },
