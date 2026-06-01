@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -201,6 +201,18 @@
           "value": 39,
           "date": "2024年6月22日（令和6年）",
           "_date_raw": "2024/06/22"
+        }
+      ]
+    },
+    {
+      "stationName": "金山",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 77,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },
@@ -469,6 +481,18 @@
       ]
     },
     {
+      "stationName": "肘折",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 81,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
       "stationName": "尾花沢",
       "startDate": "2022年6月（令和4年）",
       "ranks": [
@@ -597,6 +621,18 @@
           "value": 32,
           "date": "2023年6月4日（令和5年）",
           "_date_raw": "2023/06/04"
+        }
+      ]
+    },
+    {
+      "stationName": "大井沢",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

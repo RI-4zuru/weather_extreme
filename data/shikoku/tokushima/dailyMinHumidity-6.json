@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "dailyMinHumidity",
@@ -201,6 +201,18 @@
           "value": 22,
           "date": "1990年6月6日（平成2年）",
           "_date_raw": "1990/06/06"
+        }
+      ]
+    },
+    {
+      "stationName": "東祖谷",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 39,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

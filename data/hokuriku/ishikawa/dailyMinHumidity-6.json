@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "dailyMinHumidity",
@@ -337,6 +337,18 @@
       ]
     },
     {
+      "stationName": "かほく",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 70,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
       "stationName": "金沢",
       "startDate": "1950年6月（昭和25年）",
       "ranks": [
@@ -399,6 +411,18 @@
           "value": 22,
           "date": "2021年6月21日（令和3年）",
           "_date_raw": "2021/06/21"
+        }
+      ]
+    },
+    {
+      "stationName": "小松",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 73,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

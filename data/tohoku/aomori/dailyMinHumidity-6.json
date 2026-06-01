@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "dailyMinHumidity",
   "month": "6",
   "rows": [
+    {
+      "stationName": "湯野川",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 84,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
     {
       "stationName": "むつ",
       "startDate": "1950年6月（昭和25年）",
@@ -663,6 +675,18 @@
           "value": 30,
           "date": "2022年6月14日（令和4年）",
           "_date_raw": "2022/06/14"
+        }
+      ]
+    },
+    {
+      "stationName": "酸ケ湯",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 81,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

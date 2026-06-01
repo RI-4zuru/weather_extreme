@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "高知県",
   "region": "四国",
   "element": "dailyMinHumidity",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 33,
-          "date": "2025年6月19日（令和7年）",
-          "_date_raw": "2025/06/19"
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

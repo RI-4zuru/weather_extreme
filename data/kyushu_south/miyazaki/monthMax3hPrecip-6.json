@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "monthMax3hPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "古江",
-      "startDate": "1995年6月3日（平成7年）",
+      "startDate": "1992年6月7日（平成4年）",
       "ranks": [
         {
           "rank": 1,
@@ -129,12 +129,6 @@
           "value": 60,
           "date": "1992年6月7日（平成4年）",
           "_date_raw": "1992/06/07"
-        },
-        {
-          "rank": 10,
-          "value": 58,
-          "date": "1995年6月3日（平成7年）",
-          "_date_raw": "1995/06/03"
         }
       ]
     },

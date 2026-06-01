@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-06-01T17:49:07.221647+09:00",
-  "observedLatestAt": "2026-06-01T17:40:00+09:00",
+  "updatedAt": "2026-06-02T00:37:56.055412+09:00",
+  "observedLatestAt": "2026-06-02T00:30:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "dailyMinHumidity",
   "month": "6",
   "rows": [
+    {
+      "stationName": "河合",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 84,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
     {
       "stationName": "神岡",
       "startDate": "2025年6月（令和7年）",
@@ -73,6 +85,30 @@
       ]
     },
     {
+      "stationName": "白川",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 78,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
+      "stationName": "栃尾",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 75,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
       "stationName": "高山",
       "startDate": "1950年6月（昭和25年）",
       "ranks": [
@@ -135,6 +171,30 @@
           "value": 14,
           "date": "2013年6月9日（平成25年）",
           "_date_raw": "2013/06/09"
+        }
+      ]
+    },
+    {
+      "stationName": "六厩",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
+      "stationName": "宮之前",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 86,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },
@@ -267,6 +327,30 @@
           "value": 26,
           "date": "2022年6月13日（令和4年）",
           "_date_raw": "2022/06/13"
+        }
+      ]
+    },
+    {
+      "stationName": "八幡",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 75,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
+      "stationName": "宮地",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 80,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },
@@ -465,6 +549,18 @@
           "value": 40,
           "date": "2025年6月1日（令和7年）",
           "_date_raw": "2025/06/01"
+        }
+      ]
+    },
+    {
+      "stationName": "黒川",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 70,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },
@@ -799,6 +895,18 @@
       ]
     },
     {
+      "stationName": "大垣",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 59,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
+        }
+      ]
+    },
+    {
       "stationName": "岐阜",
       "startDate": "1950年6月（昭和25年）",
       "ranks": [
@@ -861,6 +969,18 @@
           "value": 18,
           "date": "1999年6月1日（平成11年）",
           "_date_raw": "1999/06/01"
+        }
+      ]
+    },
+    {
+      "stationName": "多治見",
+      "startDate": "2026年6月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 71,
+          "date": "2026年6月1日（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     }
