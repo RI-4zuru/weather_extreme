@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-02T08:14:34.138518+09:00",
-  "observedLatestAt": "2026-06-02T08:00:00+09:00",
+  "updatedAt": "2026-06-02T17:10:02.095696+09:00",
+  "observedLatestAt": "2026-06-02T17:00:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "monthPrecipHigh",
@@ -186,7 +186,7 @@
         },
         {
           "rank": 8,
-          "value": 126,
+          "value": 125.5,
           "date": "2026年5月（令和8年）",
           "_date_raw": "2026/05/01"
         },
