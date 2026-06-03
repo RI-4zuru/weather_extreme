@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-03T17:32:37.008552+09:00",
-  "observedLatestAt": "2026-06-03T17:20:00+09:00",
+  "updatedAt": "2026-06-03T23:10:24.726238+09:00",
+  "observedLatestAt": "2026-06-03T23:00:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "monthMax1h10mPrecip",
@@ -1644,6 +1644,12 @@
         },
         {
           "rank": 9,
+          "value": 16.5,
+          "date": "2026年6月3日（令和8年）",
+          "_date_raw": "2026/06/03"
+        },
+        {
+          "rank": 10,
           "value": 14,
           "date": "2026年6月2日（令和8年）",
           "_date_raw": "2026/06/02"
