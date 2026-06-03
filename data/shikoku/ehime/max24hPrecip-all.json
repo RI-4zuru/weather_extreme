@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-03T23:10:24.726238+09:00",
-  "observedLatestAt": "2026-06-03T23:00:00+09:00",
+  "updatedAt": "2026-06-04T04:03:41.114098+09:00",
+  "observedLatestAt": "2026-06-04T03:50:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "max24hPrecip",
@@ -306,7 +306,7 @@
         },
         {
           "rank": 6,
-          "value": 195,
+          "value": 208,
           "date": "2026年6月3日（令和8年）",
           "_date_raw": "2026/06/03"
         },
