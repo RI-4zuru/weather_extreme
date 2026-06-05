@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-05T16:22:21.879179+09:00",
-  "observedLatestAt": "2026-06-05T16:10:00+09:00",
+  "updatedAt": "2026-06-05T21:24:40.483812+09:00",
+  "observedLatestAt": "2026-06-05T21:10:00+09:00",
   "prefecture": "滋賀県",
   "region": "近畿",
   "element": "dailySnowDepth",
@@ -313,17 +313,23 @@
         {
           "rank": 7,
           "value": 0,
+          "date": "2026年6月5日（令和8年）",
+          "_date_raw": "2026/06/05"
+        },
+        {
+          "rank": 8,
+          "value": 0,
           "date": "2026年6月4日（令和8年）",
           "_date_raw": "2026/06/04"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 0,
           "date": "2026年6月3日（令和8年）",
           "_date_raw": "2026/06/03"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 0,
           "date": "2026年6月2日（令和8年）",
           "_date_raw": "2026/06/02"
