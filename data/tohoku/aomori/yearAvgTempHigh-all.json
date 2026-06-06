@@ -1,74 +1,74 @@
 {
-  "updatedAt": "2026-06-06T07:40:09.597972+09:00",
-  "observedLatestAt": "2026-06-06T07:30:00+09:00",
+  "updatedAt": "2026-06-06T20:04:26.824928+09:00",
+  "observedLatestAt": "2026-06-06T19:50:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "yearAvgTempHigh",
   "month": "all",
   "rows": [
     {
-      "stationName": "湯野川",
-      "startDate": "2008年",
+      "stationName": "大間",
+      "startDate": "1976年",
       "ranks": [
         {
           "rank": 1,
-          "value": 11.8,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 11.8,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 11.8,
+          "value": 12,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
+          "rank": 2,
+          "value": 11.9,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.7,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
           "rank": 4,
-          "value": 10.6,
+          "value": 11.3,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.9,
           "date": "2022年",
           "_date_raw": "2022/01/01"
         },
         {
-          "rank": 5,
-          "value": 10.6,
+          "rank": 6,
+          "value": 10.9,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
-          "rank": 6,
-          "value": 10.6,
+          "rank": 7,
+          "value": 10.8,
           "date": "2020年",
           "_date_raw": "2020/01/01"
         },
         {
-          "rank": 7,
-          "value": 10.6,
+          "rank": 8,
+          "value": 10.8,
           "date": "2015年",
           "_date_raw": "2015/01/01"
         },
         {
-          "rank": 8,
-          "value": 10.4,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
-        },
-        {
           "rank": 9,
-          "value": 10.2,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "value": 10.8,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 10,
-          "value": 10.2,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 10.7,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         }
       ]
     },
@@ -144,68 +144,332 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 12.5,
+          "value": 11.5,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 2,
-          "value": 12.2,
+          "value": 11.4,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 3,
-          "value": 12.1,
+          "value": 11.3,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
           "rank": 4,
-          "value": 11.5,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 11.4,
+          "value": 10.6,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
+          "rank": 5,
+          "value": 10.5,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
           "rank": 6,
-          "value": 11.4,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 11.4,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 11.3,
+          "value": 10.4,
           "date": "2022年",
           "_date_raw": "2022/01/01"
         },
         {
+          "rank": 7,
+          "value": 10.4,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.4,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
           "rank": 9,
-          "value": 11.3,
+          "value": 10.1,
           "date": "2019年",
           "_date_raw": "2019/01/01"
         },
         {
           "rank": 10,
-          "value": 11.3,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
+          "value": 10.1,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         }
       ]
     },
     {
       "stationName": "今別",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.5,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.3,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.2,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.7,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.5,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.5,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.5,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.5,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.4,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "脇野沢",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.8,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.6,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.5,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.8,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.6,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.6,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.6,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.5,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.4,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "市浦",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 12.1,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.8,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.7,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11.2,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 11.2,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 11.2,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 11,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 11,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 11,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.9,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "蟹田",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.3,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.2,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.1,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 10.8,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.5,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.4,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.3,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.1,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.1,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.1,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "五所川原",
       "startDate": "1976年",
       "ranks": [
         {
@@ -267,138 +531,6 @@
           "value": 11.2,
           "date": "2022年",
           "_date_raw": "2022/01/01"
-        }
-      ]
-    },
-    {
-      "stationName": "市浦",
-      "startDate": "1976年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 12.3,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 12.1,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 12,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 11.5,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 11.4,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 11.3,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 11.3,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 11.3,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 11.3,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 11.1,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
-        }
-      ]
-    },
-    {
-      "stationName": "蟹田",
-      "startDate": "1976年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 11.9,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 11.7,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 11.6,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 11.1,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 11.1,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 10.9,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 10.7,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 10.7,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 10.7,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 10.7,
-          "date": "2007年",
-          "_date_raw": "2007/01/01"
         }
       ]
     },
@@ -469,68 +601,134 @@
       ]
     },
     {
-      "stationName": "大和山",
-      "startDate": "1976年",
+      "stationName": "野辺地",
+      "startDate": "2008年",
       "ranks": [
         {
           "rank": 1,
-          "value": 12.1,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "value": 11.8,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 2,
-          "value": 11.9,
+          "value": 11.8,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
           "rank": 3,
           "value": 11.8,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 10.6,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.6,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.6,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.6,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.4,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.2,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.2,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "六ケ所",
+      "startDate": "1982年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.1,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.1,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 4,
-          "value": 11.3,
+          "value": 10.8,
           "date": "1990年",
           "_date_raw": "1990/01/01"
         },
         {
           "rank": 5,
-          "value": 11.1,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 10.9,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 10.9,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 10.8,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 10.8,
+          "value": 10.1,
           "date": "2015年",
           "_date_raw": "2015/01/01"
         },
         {
+          "rank": 6,
+          "value": 10.1,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
           "rank": 10,
-          "value": 10.8,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "value": 9.9,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
         }
       ]
     },
@@ -540,63 +738,129 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 11.7,
+          "value": 12.5,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 2,
-          "value": 11.6,
+          "value": 12.2,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 3,
-          "value": 11.6,
+          "value": 12.1,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
           "rank": 4,
-          "value": 10.9,
+          "value": 11.5,
           "date": "1990年",
           "_date_raw": "1990/01/01"
         },
         {
           "rank": 5,
-          "value": 10.7,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 10.6,
+          "value": 11.4,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
+          "rank": 6,
+          "value": 11.4,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
           "rank": 7,
-          "value": 10.5,
+          "value": 11.4,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 11.3,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 11.3,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 11.3,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "青森大谷",
+      "startDate": "2003年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 10.7,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 10.4,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 10.3,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 9.8,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 9.6,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 9.6,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 9.5,
           "date": "2022年",
           "_date_raw": "2022/01/01"
         },
         {
           "rank": 8,
-          "value": 10.5,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
+          "value": 9.5,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 9,
-          "value": 10.4,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "value": 9.4,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 10,
-          "value": 10.3,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "value": 9.3,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         }
       ]
     },
@@ -667,158 +931,92 @@
       ]
     },
     {
-      "stationName": "岳",
+      "stationName": "弘前",
       "startDate": "1976年",
       "ranks": [
         {
           "rank": 1,
-          "value": 10.8,
+          "value": 12.3,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 2,
-          "value": 10.6,
+          "value": 12.1,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
           "rank": 3,
-          "value": 10.5,
+          "value": 12,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
           "rank": 4,
-          "value": 10.5,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 10.3,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 10.2,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 10.1,
-          "date": "1998年",
-          "_date_raw": "1998/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 10.1,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 10,
-          "date": "1989年",
-          "_date_raw": "1989/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 9.9,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        }
-      ]
-    },
-    {
-      "stationName": "酸ケ湯",
-      "startDate": "1982年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 9.8,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 9.6,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 9.5,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 8.9,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 8.7,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 8.7,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 8.7,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 8.6,
+          "value": 11.5,
           "date": "2020年",
           "_date_raw": "2020/01/01"
         },
         {
+          "rank": 5,
+          "value": 11.4,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 11.3,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 11.3,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 11.3,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
           "rank": 9,
-          "value": 8.6,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 11.3,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
         },
         {
           "rank": 10,
-          "value": 8.5,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "value": 11.1,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         }
       ]
     },
     {
-      "stationName": "温川",
+      "stationName": "黒石",
       "startDate": "1976年",
       "ranks": [
         {
           "rank": 1,
-          "value": 11.8,
+          "value": 11.9,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
           "rank": 2,
           "value": 11.7,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 3,
-          "value": 11.5,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "value": 11.6,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 4,
@@ -834,33 +1032,231 @@
         },
         {
           "rank": 6,
-          "value": 10.8,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
+          "value": 10.9,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
         },
         {
           "rank": 7,
-          "value": 10.8,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
-        },
-        {
-          "rank": 8,
           "value": 10.7,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
+          "rank": 8,
+          "value": 10.7,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
           "rank": 9,
           "value": 10.7,
-          "date": "1997年",
-          "_date_raw": "1997/01/01"
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
         },
         {
           "rank": 10,
           "value": 10.7,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "酸ケ湯",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 7,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 6.9,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 6.7,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 6,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 6,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 6,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 5.9,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 5.9,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 5.7,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 5.7,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三沢",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 12.1,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.9,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.8,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11.3,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 11.1,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.9,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.9,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.8,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.8,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.8,
           "date": "1994年",
           "_date_raw": "1994/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "十和田",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.7,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.6,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.6,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 10.9,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.7,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.6,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.5,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.5,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.4,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.3,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         }
       ]
     },
@@ -927,6 +1323,204 @@
           "value": 11.1,
           "date": "2019年",
           "_date_raw": "2019/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "碇ヶ関",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 10.8,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 10.6,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 10.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 10.5,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 10.3,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.2,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.1,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.1,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10,
+          "date": "1989年",
+          "_date_raw": "1989/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 9.9,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "休屋",
+      "startDate": "1982年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 9.8,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 9.6,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 9.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 8.9,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 8.7,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 8.7,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 8.7,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 8.6,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 8.6,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 8.5,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "三戸",
+      "startDate": "1976年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 11.8,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 11.7,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 11.5,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 11.1,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 11.1,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 10.8,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 10.8,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 10.7,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 10.7,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 10.7,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
         }
       ]
     }
