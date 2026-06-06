@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-06T20:04:26.824928+09:00",
-  "observedLatestAt": "2026-06-06T19:50:00+09:00",
+  "updatedAt": "2026-06-07T01:24:23.354899+09:00",
+  "observedLatestAt": "2026-06-07T01:10:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "annualDaysMaxTempBelow0",
@@ -69,6 +69,72 @@
           "value": 54,
           "date": "1988年",
           "_date_raw": "1988/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "江差",
+      "startDate": "1941寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 69,
+          "date": "1945年",
+          "_date_raw": "1945/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 53,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 49,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 49,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 48,
+          "date": "1969年",
+          "_date_raw": "1969/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 47,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 46,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 43,
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 42,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 42,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         }
       ]
     }

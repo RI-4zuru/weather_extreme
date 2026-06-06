@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-06T20:04:26.824928+09:00",
-  "observedLatestAt": "2026-06-06T19:50:00+09:00",
+  "updatedAt": "2026-06-07T01:24:23.354899+09:00",
+  "observedLatestAt": "2026-06-07T01:10:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthSunshineLow",
@@ -427,6 +427,42 @@
       ]
     },
     {
+      "stationName": "鼠ケ関",
+      "startDate": "2021年9月（令和3年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 150.2,
+          "date": "2023年9月（令和5年）",
+          "_date_raw": "2023/09/01"
+        },
+        {
+          "rank": 2,
+          "value": 155.9,
+          "date": "2024年9月（令和6年）",
+          "_date_raw": "2024/09/01"
+        },
+        {
+          "rank": 3,
+          "value": 171.8,
+          "date": "2025年9月（令和7年）",
+          "_date_raw": "2025/09/01"
+        },
+        {
+          "rank": 4,
+          "value": 177.5,
+          "date": "2022年9月（令和4年）",
+          "_date_raw": "2022/09/01"
+        },
+        {
+          "rank": 5,
+          "value": 199.6,
+          "date": "2021年9月（令和3年）",
+          "_date_raw": "2021/09/01"
+        }
+      ]
+    },
+    {
       "stationName": "村山",
       "startDate": "2021年9月（令和3年）",
       "ranks": [
@@ -709,7 +745,7 @@
       ]
     },
     {
-      "stationName": "中津川",
+      "stationName": "高峰",
       "startDate": "2021年9月（令和3年）",
       "ranks": [
         {

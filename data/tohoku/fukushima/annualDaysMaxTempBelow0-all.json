@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-06T20:04:26.824928+09:00",
-  "observedLatestAt": "2026-06-06T19:50:00+09:00",
+  "updatedAt": "2026-06-07T01:24:23.354899+09:00",
+  "observedLatestAt": "2026-06-07T01:10:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "annualDaysMaxTempBelow0",
@@ -135,72 +135,6 @@
           "value": 17,
           "date": "1974年",
           "_date_raw": "1974/01/01"
-        }
-      ]
-    },
-    {
-      "stationName": "玉川",
-      "startDate": "1910寒候年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 2,
-          "date": "1931年",
-          "_date_raw": "1931/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 1,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 1,
-          "date": "1984年",
-          "_date_raw": "1984/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 1,
-          "date": "1960年",
-          "_date_raw": "1960/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 1,
-          "date": "1952年",
-          "_date_raw": "1952/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 1,
-          "date": "1915年",
-          "_date_raw": "1915/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 0,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 0,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 0,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
         }
       ]
     },

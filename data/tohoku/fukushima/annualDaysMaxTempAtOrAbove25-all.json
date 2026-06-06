@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-06T20:04:26.824928+09:00",
-  "observedLatestAt": "2026-06-06T19:50:00+09:00",
+  "updatedAt": "2026-06-07T01:24:23.354899+09:00",
+  "observedLatestAt": "2026-06-07T01:10:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -135,72 +135,6 @@
           "value": 118,
           "date": "2004年",
           "_date_raw": "2004/01/01"
-        }
-      ]
-    },
-    {
-      "stationName": "玉川",
-      "startDate": "1910年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 113,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 112,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 110,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 103,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 95,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 92,
-          "date": "1950年",
-          "_date_raw": "1950/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 91,
-          "date": "2018年",
-          "_date_raw": "2018/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 90,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 90,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 89,
-          "date": "1942年",
-          "_date_raw": "1942/01/01"
         }
       ]
     },
