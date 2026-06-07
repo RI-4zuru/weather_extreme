@@ -1,74 +1,206 @@
 {
-  "updatedAt": "2026-06-07T07:21:39.749948+09:00",
-  "observedLatestAt": "2026-06-07T07:10:00+09:00",
+  "updatedAt": "2026-06-07T16:18:10.694108+09:00",
+  "observedLatestAt": "2026-06-07T16:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "yearCumulativeSnowDepth",
   "month": "all",
   "rows": [
     {
-      "stationName": "江別",
-      "startDate": "2007寒候年",
+      "stationName": "厚田",
+      "startDate": "1982寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 320,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "value": 1284,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         },
         {
           "rank": 2,
-          "value": 288,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "value": 1044,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
         },
         {
           "rank": 3,
-          "value": 279,
+          "value": 1032,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1032,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 958,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 952,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 951,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 927,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 921,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 878,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "新篠津",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1176,
           "date": "2012年",
           "_date_raw": "2012/01/01"
         },
         {
+          "rank": 2,
+          "value": 1157,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1058,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
           "rank": 4,
-          "value": 262,
-          "date": "2009年",
-          "_date_raw": "2009/01/01"
+          "value": 1056,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         },
         {
           "rank": 5,
-          "value": 256,
-          "date": "2017年",
-          "_date_raw": "2017/01/01"
+          "value": 1014,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         },
         {
           "rank": 6,
-          "value": 245,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "value": 1013,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 7,
-          "value": 238,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "value": 954,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 8,
-          "value": 231,
-          "date": "2014年",
-          "_date_raw": "2014/01/01"
+          "value": 950,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
         },
         {
           "rank": 9,
-          "value": 224,
-          "date": "2007年",
-          "_date_raw": "2007/01/01"
+          "value": 947,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
         },
         {
           "rank": 10,
-          "value": 220,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "value": 946,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "石狩",
+      "startDate": "1988寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 922,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 904,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 800,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 789,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 764,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 759,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 735,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 732,
+          "date": "1995年",
+          "_date_raw": "1995/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 717,
+          "date": "1998年",
+          "_date_raw": "1998/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 700,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
         }
       ]
     },
@@ -135,6 +267,138 @@
           "value": 598,
           "date": "1955年",
           "_date_raw": "1955/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "小金湯",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1295,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1282,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1255,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1226,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1225,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1177,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1117,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1074,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1065,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1031,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "恵庭島松",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1012,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 717,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 712,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 707,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 672,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 657,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 655,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 654,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 651,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 641,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
         }
       ]
     },
@@ -385,6 +649,138 @@
       ]
     },
     {
+      "stationName": "芦別",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1368,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1031,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 903,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 873,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 854,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 843,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 820,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 790,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 786,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 773,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "美唄",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1090,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1088,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1083,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1065,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 983,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 959,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 957,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 926,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 889,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 883,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        }
+      ]
+    },
+    {
       "stationName": "岩見沢",
       "startDate": "1953寒候年",
       "ranks": [
@@ -451,68 +847,134 @@
       ]
     },
     {
-      "stationName": "余市",
-      "startDate": "1953寒候年",
+      "stationName": "夕張",
+      "startDate": "1980寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 792,
-          "date": "2000年",
-          "_date_raw": "2000/01/01"
+          "value": 1260,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
         },
         {
           "rank": 2,
-          "value": 786,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "value": 1147,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
         },
         {
           "rank": 3,
-          "value": 784,
-          "date": "1982年",
-          "_date_raw": "1982/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 732,
-          "date": "2005年",
-          "_date_raw": "2005/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 732,
+          "value": 1127,
           "date": "1994年",
           "_date_raw": "1994/01/01"
         },
         {
+          "rank": 4,
+          "value": 1115,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1109,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
           "rank": 6,
-          "value": 725,
+          "value": 1107,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1094,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1045,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1015,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 982,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "余市",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1344,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1329,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1306,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1228,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1093,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1074,
           "date": "2006年",
           "_date_raw": "2006/01/01"
         },
         {
           "rank": 7,
-          "value": 717,
-          "date": "1981年",
-          "_date_raw": "1981/01/01"
+          "value": 1042,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
         },
         {
           "rank": 8,
-          "value": 702,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 1002,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
         },
         {
           "rank": 9,
-          "value": 702,
-          "date": "1955年",
-          "_date_raw": "1955/01/01"
+          "value": 1001,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
         },
         {
           "rank": 10,
-          "value": 701,
-          "date": "2011年",
-          "_date_raw": "2011/01/01"
+          "value": 995,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
         }
       ]
     },
@@ -579,6 +1041,468 @@
           "value": 701,
           "date": "2011年",
           "_date_raw": "2011/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "赤井川",
+      "startDate": "1989寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1285,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1196,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1176,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1138,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1087,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1082,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1055,
+          "date": "1997年",
+          "_date_raw": "1997/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1046,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1045,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1026,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "共和",
+      "startDate": "1985寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1074,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1039,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1023,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 943,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 917,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 913,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 904,
+          "date": "1985年",
+          "_date_raw": "1985/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 864,
+          "date": "2003年",
+          "_date_raw": "2003/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 852,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 804,
+          "date": "2000年",
+          "_date_raw": "2000/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "蘭越",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1091,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1076,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 986,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 981,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 972,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 923,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 908,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 894,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 890,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 875,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "倶知安",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 2019,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1617,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1556,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1538,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1518,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1510,
+          "date": "1975年",
+          "_date_raw": "1975/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1509,
+          "date": "1982年",
+          "_date_raw": "1982/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1506,
+          "date": "1960年",
+          "_date_raw": "1960/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1486,
+          "date": "1957年",
+          "_date_raw": "1957/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1484,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "寿都",
+      "startDate": "1953寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 667,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 612,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 608,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 572,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 539,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 505,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 494,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 486,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 470,
+          "date": "2009年",
+          "_date_raw": "2009/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 462,
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "喜茂別",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1416,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1412,
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1396,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1260,
+          "date": "1987年",
+          "_date_raw": "1987/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1247,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1242,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1234,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1226,
+          "date": "1993年",
+          "_date_raw": "1993/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1202,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 1196,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "黒松内",
+      "startDate": "1982寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 1519,
+          "date": "1986年",
+          "_date_raw": "1986/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 1380,
+          "date": "1992年",
+          "_date_raw": "1992/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 1318,
+          "date": "1996年",
+          "_date_raw": "1996/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 1314,
+          "date": "1988年",
+          "_date_raw": "1988/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1275,
+          "date": "1991年",
+          "_date_raw": "1991/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 1253,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 1188,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 1056,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 1034,
+          "date": "1999年",
+          "_date_raw": "1999/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 999,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
         }
       ]
     }

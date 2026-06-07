@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-07T07:21:39.749948+09:00",
-  "observedLatestAt": "2026-06-07T07:10:00+09:00",
+  "updatedAt": "2026-06-07T16:18:10.694108+09:00",
+  "observedLatestAt": "2026-06-07T16:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "annualDaysMinTempBelow0",
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "stationName": "余市",
+      "stationName": "小樽",
       "startDate": "1943寒候年",
       "ranks": [
         {
@@ -205,68 +205,134 @@
       ]
     },
     {
-      "stationName": "小樽",
-      "startDate": "1943寒候年",
+      "stationName": "倶知安",
+      "startDate": "1944寒候年",
       "ranks": [
         {
           "rank": 1,
-          "value": 152,
-          "date": "1944年",
-          "_date_raw": "1944/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 145,
-          "date": "1970年",
-          "_date_raw": "1970/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 139,
+          "value": 180,
           "date": "1965年",
           "_date_raw": "1965/01/01"
         },
         {
+          "rank": 2,
+          "value": 179,
+          "date": "1951年",
+          "_date_raw": "1951/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 176,
+          "date": "1953年",
+          "_date_raw": "1953/01/01"
+        },
+        {
           "rank": 4,
-          "value": 138,
-          "date": "1984年",
-          "_date_raw": "1984/01/01"
+          "value": 176,
+          "date": "1947年",
+          "_date_raw": "1947/01/01"
         },
         {
           "rank": 5,
-          "value": 138,
-          "date": "1948年",
-          "_date_raw": "1948/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 138,
+          "value": 176,
           "date": "1945年",
           "_date_raw": "1945/01/01"
         },
         {
+          "rank": 6,
+          "value": 175,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
           "rank": 7,
-          "value": 137,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
+          "value": 175,
+          "date": "1976年",
+          "_date_raw": "1976/01/01"
         },
         {
           "rank": 8,
-          "value": 137,
-          "date": "1977年",
-          "_date_raw": "1977/01/01"
+          "value": 175,
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
         },
         {
           "rank": 9,
-          "value": 136,
-          "date": "1966年",
-          "_date_raw": "1966/01/01"
+          "value": 175,
+          "date": "1968年",
+          "_date_raw": "1968/01/01"
         },
         {
           "rank": 10,
+          "value": 174,
+          "date": "1979年",
+          "_date_raw": "1979/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "寿都",
+      "startDate": "1884寒候年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 156,
+          "date": "1885年",
+          "_date_raw": "1885/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 143,
+          "date": "1913年",
+          "_date_raw": "1913/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 141,
+          "date": "1909年",
+          "_date_raw": "1909/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 136,
+          "date": "1898年",
+          "_date_raw": "1898/01/01"
+        },
+        {
+          "rank": 5,
           "value": 135,
-          "date": "1999年",
-          "_date_raw": "1999/01/01"
+          "date": "1970年",
+          "_date_raw": "1970/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 135,
+          "date": "1904年",
+          "_date_raw": "1904/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 134,
+          "date": "1984年",
+          "_date_raw": "1984/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 134,
+          "date": "1910年",
+          "_date_raw": "1910/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 134,
+          "date": "1908年",
+          "_date_raw": "1908/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 133,
+          "date": "2012年",
+          "_date_raw": "2012/01/01"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-07T07:21:39.749948+09:00",
-  "observedLatestAt": "2026-06-07T07:10:00+09:00",
+  "updatedAt": "2026-06-07T16:18:10.694108+09:00",
+  "observedLatestAt": "2026-06-07T16:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "stationName": "余市",
+      "stationName": "小樽",
       "startDate": "1943年",
       "ranks": [
         {
@@ -205,44 +205,110 @@
       ]
     },
     {
-      "stationName": "小樽",
-      "startDate": "1943年",
+      "stationName": "倶知安",
+      "startDate": "1944年",
       "ranks": [
         {
           "rank": 1,
-          "value": 1,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
-        },
-        {
-          "rank": 2,
           "value": 0,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
         {
-          "rank": 3,
+          "rank": 2,
           "value": 0,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
-          "rank": 4,
+          "rank": 3,
           "value": 0,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
-          "rank": 5,
+          "rank": 4,
           "value": 0,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "value": 0,
           "date": "2022年",
           "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 0,
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 0,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
+        },
+        {
+          "rank": 9,
+          "value": 0,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
+        },
+        {
+          "rank": 10,
+          "value": 0,
+          "date": "2017年",
+          "_date_raw": "2017/01/01"
+        }
+      ]
+    },
+    {
+      "stationName": "寿都",
+      "startDate": "1884年",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 0,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 2,
+          "value": 0,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
+        },
+        {
+          "rank": 3,
+          "value": 0,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 0,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 0,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 0,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 7,
