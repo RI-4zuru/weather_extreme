@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-08T22:21:26.398238+09:00",
-  "observedLatestAt": "2026-06-08T22:10:00+09:00",
+  "updatedAt": "2026-06-09T03:13:22.729373+09:00",
+  "observedLatestAt": "2026-06-09T03:00:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "monthMax3hPrecip",
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "青森大谷",
-      "startDate": "2020年6月11日（令和2年）",
+      "startDate": "2026年6月8日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -990,9 +990,9 @@
         },
         {
           "rank": 10,
-          "value": 15.5,
-          "date": "2020年6月11日（令和2年）",
-          "_date_raw": "2020/06/11"
+          "value": 16,
+          "date": "2026年6月8日（令和8年）",
+          "_date_raw": "2026/06/08"
         }
       ]
     },
