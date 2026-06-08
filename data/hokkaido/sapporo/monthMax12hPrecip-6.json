@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-07T20:21:37.481172+09:00",
-  "observedLatestAt": "2026-06-07T20:10:00+09:00",
+  "updatedAt": "2026-06-08T07:22:55.038186+09:00",
+  "observedLatestAt": "2026-06-08T07:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "monthMax12hPrecip",
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "秩父別",
-      "startDate": "2024年6月18日（令和6年）",
+      "startDate": "2026年6月7日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -885,6 +885,12 @@
           "value": 28.5,
           "date": "2024年6月18日（令和6年）",
           "_date_raw": "2024/06/18"
+        },
+        {
+          "rank": 4,
+          "value": 0.5,
+          "date": "2026年6月7日（令和8年）",
+          "_date_raw": "2026/06/07"
         }
       ]
     },
