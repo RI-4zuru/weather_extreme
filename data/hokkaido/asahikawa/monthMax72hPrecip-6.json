@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-09T21:20:40.133022+09:00",
-  "observedLatestAt": "2026-06-09T21:10:00+09:00",
+  "updatedAt": "2026-06-10T02:35:25.089414+09:00",
+  "observedLatestAt": "2026-06-10T02:20:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "monthMax72hPrecip",
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "留萌",
-      "startDate": "1988年6月7日（昭和63年）",
+      "startDate": "2002年6月3日（平成14年）",
       "ranks": [
         {
           "rank": 1,
@@ -261,12 +261,6 @@
           "value": 38,
           "date": "2002年6月3日（平成14年）",
           "_date_raw": "2002/06/03"
-        },
-        {
-          "rank": 10,
-          "value": 37,
-          "date": "1988年6月7日（昭和63年）",
-          "_date_raw": "1988/06/07"
         }
       ]
     }

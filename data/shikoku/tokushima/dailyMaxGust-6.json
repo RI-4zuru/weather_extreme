@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-09T21:20:40.133022+09:00",
-  "observedLatestAt": "2026-06-09T21:10:00+09:00",
+  "updatedAt": "2026-06-10T02:35:25.089414+09:00",
+  "observedLatestAt": "2026-06-10T02:20:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "dailyMaxGust",
@@ -258,7 +258,7 @@
         },
         {
           "rank": 9,
-          "value": 1.4,
+          "value": 2.6,
           "date": "2026年6月9日（令和8年）",
           "_date_raw": "2026/06/09"
         }
