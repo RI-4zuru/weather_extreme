@@ -1,77 +1,11 @@
 {
-  "updatedAt": "2026-06-10T07:55:33.790590+09:00",
-  "observedLatestAt": "2026-06-10T07:40:00+09:00",
+  "updatedAt": "2026-06-10T16:22:30.310545+09:00",
+  "observedLatestAt": "2026-06-10T16:10:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "annualDaysMeanTempBelow0",
   "month": "all",
   "rows": [
-    {
-      "stationName": "名寄",
-      "startDate": "1888寒候年",
-      "ranks": [
-        {
-          "rank": 1,
-          "value": 144,
-          "date": "1909年",
-          "_date_raw": "1909/01/01"
-        },
-        {
-          "rank": 2,
-          "value": 144,
-          "date": "1898年",
-          "_date_raw": "1898/01/01"
-        },
-        {
-          "rank": 3,
-          "value": 143,
-          "date": "1913年",
-          "_date_raw": "1913/01/01"
-        },
-        {
-          "rank": 4,
-          "value": 140,
-          "date": "1907年",
-          "_date_raw": "1907/01/01"
-        },
-        {
-          "rank": 5,
-          "value": 137,
-          "date": "1957年",
-          "_date_raw": "1957/01/01"
-        },
-        {
-          "rank": 6,
-          "value": 136,
-          "date": "1896年",
-          "_date_raw": "1896/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 135,
-          "date": "1944年",
-          "_date_raw": "1944/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 135,
-          "date": "1900年",
-          "_date_raw": "1900/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 134,
-          "date": "1953年",
-          "_date_raw": "1953/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 134,
-          "date": "1925年",
-          "_date_raw": "1925/01/01"
-        }
-      ]
-    },
     {
       "stationName": "旭川",
       "startDate": "1888寒候年",
