@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-11T21:59:46.822133+09:00",
-  "observedLatestAt": "2026-06-11T21:50:00+09:00",
+  "updatedAt": "2026-06-12T03:33:49.547716+09:00",
+  "observedLatestAt": "2026-06-12T03:20:00+09:00",
   "prefecture": "新潟県",
   "region": "北陸",
   "element": "monthMax72hPrecip",
@@ -852,6 +852,12 @@
         },
         {
           "rank": 9,
+          "value": 30,
+          "date": "2026年6月11日（令和8年）",
+          "_date_raw": "2026/06/11"
+        },
+        {
+          "rank": 10,
           "value": 28,
           "date": "2021年6月25日（令和3年）",
           "_date_raw": "2021/06/25"
