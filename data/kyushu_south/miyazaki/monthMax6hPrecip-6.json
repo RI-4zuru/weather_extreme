@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-19T22:00:21.133990+09:00",
-  "observedLatestAt": "2026-06-19T21:50:00+09:00",
+  "updatedAt": "2026-06-20T02:32:18.674816+09:00",
+  "observedLatestAt": "2026-06-20T02:20:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "monthMax6hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "高千穂",
-      "startDate": "1998年6月13日（平成10年）",
+      "startDate": "2026年6月19日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 80,
-          "date": "1998年6月13日（平成10年）",
-          "_date_raw": "1998/06/13"
+          "date": "2026年6月19日（令和8年）",
+          "_date_raw": "2026/06/19"
         }
       ]
     },
