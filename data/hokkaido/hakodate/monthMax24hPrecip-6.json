@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-21T21:13:00.217890+09:00",
-  "observedLatestAt": "2026-06-21T21:00:00+09:00",
+  "updatedAt": "2026-06-22T02:01:49.209800+09:00",
+  "observedLatestAt": "2026-06-22T01:50:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "monthMax24hPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "知内",
-      "startDate": "2007年6月6日（平成19年）",
+      "startDate": "2021年6月5日（令和3年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,12 +657,6 @@
           "value": 54,
           "date": "2021年6月5日（令和3年）",
           "_date_raw": "2021/06/05"
-        },
-        {
-          "rank": 10,
-          "value": 50,
-          "date": "2007年6月6日（平成19年）",
-          "_date_raw": "2007/06/06"
         }
       ]
     },

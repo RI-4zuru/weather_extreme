@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-21T21:13:00.217890+09:00",
-  "observedLatestAt": "2026-06-21T21:00:00+09:00",
+  "updatedAt": "2026-06-22T02:01:49.209800+09:00",
+  "observedLatestAt": "2026-06-22T01:50:00+09:00",
   "prefecture": "秋田県",
   "region": "東北",
   "element": "monthMax72hPrecip",
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "藤原",
-      "startDate": "1996年6月21日（平成8年）",
+      "startDate": "2019年6月30日（令和元年）",
       "ranks": [
         {
           "rank": 1,
@@ -261,12 +261,6 @@
           "value": 73,
           "date": "2019年6月30日（令和元年）",
           "_date_raw": "2019/06/30"
-        },
-        {
-          "rank": 10,
-          "value": 73,
-          "date": "1996年6月21日（平成8年）",
-          "_date_raw": "1996/06/21"
         }
       ]
     },
