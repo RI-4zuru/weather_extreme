@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-22T07:43:09.159339+09:00",
-  "observedLatestAt": "2026-06-22T07:30:00+09:00",
+  "updatedAt": "2026-06-22T18:28:15.948582+09:00",
+  "observedLatestAt": "2026-06-22T18:20:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "monthPrecipHigh",
@@ -1176,7 +1176,7 @@
         },
         {
           "rank": 8,
-          "value": 249,
+          "value": 250,
           "date": "2026年6月（令和8年）",
           "_date_raw": "2026/06/01"
         },
