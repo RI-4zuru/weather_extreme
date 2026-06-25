@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-25T20:57:20.645758+09:00",
-  "observedLatestAt": "2026-06-25T20:50:00+09:00",
+  "updatedAt": "2026-06-26T02:30:28.044447+09:00",
+  "observedLatestAt": "2026-06-26T02:20:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "monthAvgTempHigh",
@@ -1123,8 +1123,8 @@
         {
           "rank": 10,
           "value": 27,
-          "date": "2025年6月（令和7年）",
-          "_date_raw": "2025/06/01"
+          "date": "2026年6月（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

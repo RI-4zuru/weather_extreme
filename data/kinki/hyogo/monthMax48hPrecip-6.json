@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-25T20:57:20.645758+09:00",
-  "observedLatestAt": "2026-06-25T20:50:00+09:00",
+  "updatedAt": "2026-06-26T02:30:28.044447+09:00",
+  "observedLatestAt": "2026-06-26T02:20:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "monthMax48hPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "佐用",
-      "startDate": "2026年6月4日（令和8年）",
+      "startDate": "2004年6月28日（平成16年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,12 +657,6 @@
           "value": 83,
           "date": "2004年6月28日（平成16年）",
           "_date_raw": "2004/06/28"
-        },
-        {
-          "rank": 10,
-          "value": 74,
-          "date": "2026年6月4日（令和8年）",
-          "_date_raw": "2026/06/04"
         }
       ]
     },

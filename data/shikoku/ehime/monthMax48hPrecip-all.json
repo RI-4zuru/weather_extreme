@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-25T20:57:20.645758+09:00",
-  "observedLatestAt": "2026-06-25T20:50:00+09:00",
+  "updatedAt": "2026-06-26T02:30:28.044447+09:00",
+  "observedLatestAt": "2026-06-26T02:20:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "monthMax48hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "大三島",
-      "startDate": "2004年6月27日（平成16年）",
+      "startDate": "2005年7月3日（平成17年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 175,
           "date": "2005年7月3日（平成17年）",
           "_date_raw": "2005/07/03"
-        },
-        {
-          "rank": 10,
-          "value": 174,
-          "date": "2004年6月27日（平成16年）",
-          "_date_raw": "2004/06/27"
         }
       ]
     },
