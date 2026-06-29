@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-29T22:22:44.779882+09:00",
-  "observedLatestAt": "2026-06-29T22:10:00+09:00",
+  "updatedAt": "2026-06-30T02:57:06.148035+09:00",
+  "observedLatestAt": "2026-06-30T02:50:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "monthPrecipHigh",
@@ -24,7 +24,7 @@
         },
         {
           "rank": 3,
-          "value": 362.5,
+          "value": 374,
           "date": "2026年6月（令和8年）",
           "_date_raw": "2026/06/01"
         },
