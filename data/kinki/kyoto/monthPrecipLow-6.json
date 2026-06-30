@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-30T20:58:21.722418+09:00",
-  "observedLatestAt": "2026-06-30T20:50:00+09:00",
+  "updatedAt": "2026-07-01T02:24:56.190161+09:00",
+  "observedLatestAt": "2026-07-01T02:10:00+09:00",
   "prefecture": "京都府",
   "region": "近畿",
   "element": "monthPrecipLow",
@@ -558,12 +558,18 @@
         },
         {
           "rank": 4,
+          "value": 167,
+          "date": "2026年6月（令和8年）",
+          "_date_raw": "2026/06/01"
+        },
+        {
+          "rank": 5,
           "value": 178,
           "date": "2024年6月（令和6年）",
           "_date_raw": "2024/06/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 257,
           "date": "2023年6月（令和5年）",
           "_date_raw": "2023/06/01"

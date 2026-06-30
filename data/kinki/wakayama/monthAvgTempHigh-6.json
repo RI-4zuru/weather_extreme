@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-30T20:58:21.722418+09:00",
-  "observedLatestAt": "2026-06-30T20:50:00+09:00",
+  "updatedAt": "2026-07-01T02:24:56.190161+09:00",
+  "observedLatestAt": "2026-07-01T02:10:00+09:00",
   "prefecture": "和歌山県",
   "region": "近畿",
   "element": "monthAvgTempHigh",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 21.9,
-          "date": "2002年6月（平成14年）",
-          "_date_raw": "2002/06/01"
+          "date": "2026年6月（令和8年）",
+          "_date_raw": "2026/06/01"
         }
       ]
     },

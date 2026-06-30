@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-30T20:58:21.722418+09:00",
-  "observedLatestAt": "2026-06-30T20:50:00+09:00",
+  "updatedAt": "2026-07-01T02:24:56.190161+09:00",
+  "observedLatestAt": "2026-07-01T02:10:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "monthAvgTempHigh",
@@ -1236,12 +1236,18 @@
         },
         {
           "rank": 7,
+          "value": 16.4,
+          "date": "2026年6月（令和8年）",
+          "_date_raw": "2026/06/01"
+        },
+        {
+          "rank": 8,
           "value": 16.3,
           "date": "2018年6月（平成30年）",
           "_date_raw": "2018/06/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 15.8,
           "date": "2019年6月（令和元年）",
           "_date_raw": "2019/06/01"

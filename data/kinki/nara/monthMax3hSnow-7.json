@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-30T20:58:21.722418+09:00",
-  "observedLatestAt": "2026-06-30T20:50:00+09:00",
+  "updatedAt": "2026-07-01T02:24:56.190161+09:00",
+  "observedLatestAt": "2026-07-01T02:10:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "monthMax3hSnow",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "奈良",
-      "startDate": "2016年7月31日（平成28年）",
+      "startDate": "2017年7月31日（平成29年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 0,
           "date": "2017年7月31日（平成29年）",
           "_date_raw": "2017/07/31"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2016年7月31日（平成28年）",
-          "_date_raw": "2016/07/31"
         }
       ]
     }
