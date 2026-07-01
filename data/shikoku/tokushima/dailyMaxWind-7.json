@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "dailyMaxWind",
@@ -210,7 +210,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 0.5,
+          "value": 2.2,
           "date": "2026年7月1日（令和8年）",
           "_date_raw": "2026/07/01"
         }

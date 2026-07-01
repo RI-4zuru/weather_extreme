@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "大分県",
   "region": "九州北部",
   "element": "monthMax1h10mPrecip",
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "椿ヶ鼻",
-      "startDate": "2023年7月9日（令和5年）",
+      "startDate": "2005年7月5日（平成17年）",
       "ranks": [
         {
           "rank": 1,
@@ -789,12 +789,6 @@
           "value": 51,
           "date": "2005年7月5日（平成17年）",
           "_date_raw": "2005/07/05"
-        },
-        {
-          "rank": 10,
-          "value": 50,
-          "date": "2023年7月9日（令和5年）",
-          "_date_raw": "2023/07/09"
         }
       ]
     },

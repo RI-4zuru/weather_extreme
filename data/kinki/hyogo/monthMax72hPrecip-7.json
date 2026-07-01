@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "monthMax72hPrecip",
@@ -1592,7 +1592,7 @@
     },
     {
       "stationName": "洲本",
-      "startDate": "2023年7月1日（令和5年）",
+      "startDate": "2026年7月1日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1641,6 +1641,12 @@
           "value": 42,
           "date": "2023年7月1日（令和5年）",
           "_date_raw": "2023/07/01"
+        },
+        {
+          "rank": 9,
+          "value": 13,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "千葉県",
   "region": "関東甲信",
   "element": "monthPrecipHigh",
@@ -804,7 +804,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 552.5,
+          "value": 646.5,
           "date": "2026年6月（令和8年）",
           "_date_raw": "2026/06/01"
         },

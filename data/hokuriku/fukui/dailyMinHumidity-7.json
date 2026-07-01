@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "福井県",
   "region": "北陸",
   "element": "dailyMinHumidity",
   "month": "7",
   "rows": [
+    {
+      "stationName": "三国",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 75,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
     {
       "stationName": "越廼",
       "startDate": "2022年7月（令和4年）",
@@ -135,6 +147,18 @@
           "value": 32,
           "date": "1951年7月7日（昭和26年）",
           "_date_raw": "1951/07/07"
+        }
+      ]
+    },
+    {
+      "stationName": "勝山",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 67,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },
@@ -333,6 +357,18 @@
           "value": 36,
           "date": "2014年7月26日（平成26年）",
           "_date_raw": "2014/07/26"
+        }
+      ]
+    },
+    {
+      "stationName": "美浜",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 63,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },

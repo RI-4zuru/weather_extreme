@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-01T21:25:01.601947+09:00",
-  "observedLatestAt": "2026-07-01T21:10:00+09:00",
+  "updatedAt": "2026-07-02T02:31:31.398240+09:00",
+  "observedLatestAt": "2026-07-02T02:20:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -139,6 +139,18 @@
       ]
     },
     {
+      "stationName": "美深",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 81,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
       "stationName": "名寄",
       "startDate": "2022年7月（令和4年）",
       "ranks": [
@@ -205,6 +217,66 @@
       ]
     },
     {
+      "stationName": "下川",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 83,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
+      "stationName": "士別",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 77,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
+      "stationName": "朝日",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 64,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
+      "stationName": "和寒",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 69,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
+      "stationName": "江丹別",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 64,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
       "stationName": "比布",
       "startDate": "2025年7月（令和7年）",
       "ranks": [
@@ -267,6 +339,18 @@
           "value": 51,
           "date": "2025年7月11日（令和7年）",
           "_date_raw": "2025/07/11"
+        }
+      ]
+    },
+    {
+      "stationName": "上川",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 63,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },
@@ -403,6 +487,18 @@
       ]
     },
     {
+      "stationName": "志比内",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 60,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
       "stationName": "美瑛",
       "startDate": "2025年7月（令和7年）",
       "ranks": [
@@ -465,6 +561,18 @@
           "value": 46,
           "date": "2025年7月10日（令和7年）",
           "_date_raw": "2025/07/10"
+        }
+      ]
+    },
+    {
+      "stationName": "上富良野",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 54,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },
@@ -667,6 +775,18 @@
       ]
     },
     {
+      "stationName": "占冠",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 36,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
       "stationName": "天塩",
       "startDate": "2024年7月（令和6年）",
       "ranks": [
@@ -726,9 +846,21 @@
         },
         {
           "rank": 10,
-          "value": 70,
-          "date": "2024年7月15日（令和6年）",
-          "_date_raw": "2024/07/15"
+          "value": 69,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
+      "stationName": "遠別",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 71,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },
@@ -931,6 +1063,18 @@
       ]
     },
     {
+      "stationName": "達布",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 79,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
+        }
+      ]
+    },
+    {
       "stationName": "留萌",
       "startDate": "1950年7月（昭和25年）",
       "ranks": [
@@ -1059,6 +1203,18 @@
           "value": 59,
           "date": "2025年7月18日（令和7年）",
           "_date_raw": "2025/07/18"
+        }
+      ]
+    },
+    {
+      "stationName": "幌糠",
+      "startDate": "2026年7月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 71,
+          "date": "2026年7月1日（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     }
