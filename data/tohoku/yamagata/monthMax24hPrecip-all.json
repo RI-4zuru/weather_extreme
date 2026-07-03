@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-03T20:50:03.445300+09:00",
-  "observedLatestAt": "2026-07-03T20:40:00+09:00",
+  "updatedAt": "2026-07-04T01:54:04.570983+09:00",
+  "observedLatestAt": "2026-07-04T01:40:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthMax24hPrecip",
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "上田沢",
-      "startDate": "2026年3月31日（令和8年）",
+      "startDate": "2026年7月3日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -957,6 +957,12 @@
           "value": 19,
           "date": "2026年3月31日（令和8年）",
           "_date_raw": "2026/03/31"
+        },
+        {
+          "rank": 5,
+          "value": 10,
+          "date": "2026年7月3日（令和8年）",
+          "_date_raw": "2026/07/03"
         }
       ]
     },

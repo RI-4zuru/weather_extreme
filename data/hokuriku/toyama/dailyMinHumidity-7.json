@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-03T20:50:03.445300+09:00",
-  "observedLatestAt": "2026-07-03T20:40:00+09:00",
+  "updatedAt": "2026-07-04T01:54:04.570983+09:00",
+  "observedLatestAt": "2026-07-04T01:40:00+09:00",
   "prefecture": "富山県",
   "region": "北陸",
   "element": "dailyMinHumidity",
@@ -408,12 +408,18 @@
       "ranks": [
         {
           "rank": 1,
+          "value": 64,
+          "date": "2026年7月3日（令和8年）",
+          "_date_raw": "2026/07/03"
+        },
+        {
+          "rank": 2,
           "value": 78,
           "date": "2026年7月1日（令和8年）",
           "_date_raw": "2026/07/01"
         },
         {
-          "rank": 2,
+          "rank": 3,
           "value": 93,
           "date": "2026年7月2日（令和8年）",
           "_date_raw": "2026/07/02"
