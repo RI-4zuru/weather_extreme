@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-05T20:21:36.767124+09:00",
-  "observedLatestAt": "2026-07-05T20:10:00+09:00",
+  "updatedAt": "2026-07-06T01:27:19.733171+09:00",
+  "observedLatestAt": "2026-07-06T01:20:00+09:00",
   "prefecture": "新潟県",
   "region": "北陸",
   "element": "monthMax72hPrecip",
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "瓢湖",
-      "startDate": "2022年7月14日（令和4年）",
+      "startDate": "2026年7月5日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -855,6 +855,12 @@
           "value": 58,
           "date": "2022年7月14日（令和4年）",
           "_date_raw": "2022/07/14"
+        },
+        {
+          "rank": 10,
+          "value": 56.5,
+          "date": "2026年7月5日（令和8年）",
+          "_date_raw": "2026/07/05"
         }
       ]
     },
