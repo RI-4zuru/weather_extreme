@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-07T07:46:56.390535+09:00",
-  "observedLatestAt": "2026-07-07T07:40:00+09:00",
+  "updatedAt": "2026-07-07T16:04:28.647109+09:00",
+  "observedLatestAt": "2026-07-07T15:50:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "monthPrecipHigh",
@@ -1890,7 +1890,7 @@
         },
         {
           "rank": 6,
-          "value": 547.5,
+          "value": 547,
           "date": "2026年6月（令和8年）",
           "_date_raw": "2026/06/01"
         },
