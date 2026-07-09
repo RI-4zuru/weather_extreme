@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-09T21:30:13.888575+09:00",
-  "observedLatestAt": "2026-07-09T21:20:00+09:00",
+  "updatedAt": "2026-07-10T02:35:07.759736+09:00",
+  "observedLatestAt": "2026-07-10T02:20:00+09:00",
   "prefecture": "京都府",
   "region": "近畿",
   "element": "dailyMinHumidity",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 44,
-          "date": "2025年7月23日（令和7年）",
-          "_date_raw": "2025/07/23"
+          "date": "2026年7月9日（令和8年）",
+          "_date_raw": "2026/07/09"
         }
       ]
     },

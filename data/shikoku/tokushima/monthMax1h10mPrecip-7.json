@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-09T21:30:13.888575+09:00",
-  "observedLatestAt": "2026-07-09T21:20:00+09:00",
+  "updatedAt": "2026-07-10T02:35:07.759736+09:00",
+  "observedLatestAt": "2026-07-10T02:20:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthMax1h10mPrecip",
@@ -313,11 +313,17 @@
         {
           "rank": 7,
           "value": 0,
+          "date": "2026年7月9日（令和8年）",
+          "_date_raw": "2026/07/09"
+        },
+        {
+          "rank": 8,
+          "value": 0,
           "date": "2026年7月8日（令和8年）",
           "_date_raw": "2026/07/08"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 0,
           "date": "2026年7月3日（令和8年）",
           "_date_raw": "2026/07/03"
