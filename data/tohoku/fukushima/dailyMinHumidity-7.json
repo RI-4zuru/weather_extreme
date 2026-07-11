@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-11T19:43:22.573156+09:00",
-  "observedLatestAt": "2026-07-11T19:30:00+09:00",
+  "updatedAt": "2026-07-12T01:19:59.695886+09:00",
+  "observedLatestAt": "2026-07-12T01:10:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -522,6 +522,12 @@
         },
         {
           "rank": 9,
+          "value": 83,
+          "date": "2026年7月11日（令和8年）",
+          "_date_raw": "2026/07/11"
+        },
+        {
+          "rank": 10,
           "value": 83,
           "date": "2026年7月4日（令和8年）",
           "_date_raw": "2026/07/04"
