@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-12T19:52:01.985110+09:00",
-  "observedLatestAt": "2026-07-12T19:40:00+09:00",
+  "updatedAt": "2026-07-13T01:22:00.765540+09:00",
+  "observedLatestAt": "2026-07-13T01:10:00+09:00",
   "prefecture": "室蘭",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -459,6 +459,12 @@
           "value": 88,
           "date": "2026年7月9日（令和8年）",
           "_date_raw": "2026/07/09"
+        },
+        {
+          "rank": 10,
+          "value": 96,
+          "date": "2026年7月12日（令和8年）",
+          "_date_raw": "2026/07/12"
         }
       ]
     },
