@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-13T21:26:43.178541+09:00",
-  "observedLatestAt": "2026-07-13T21:20:00+09:00",
+  "updatedAt": "2026-07-14T02:30:45.692242+09:00",
+  "observedLatestAt": "2026-07-14T02:20:00+09:00",
   "prefecture": "群馬県",
   "region": "関東甲信",
   "element": "monthMax48hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "藤原",
-      "startDate": "2015年7月30日（平成27年）",
+      "startDate": "1984年7月9日（昭和59年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 87,
           "date": "1984年7月9日（昭和59年）",
           "_date_raw": "1984/07/09"
-        },
-        {
-          "rank": 10,
-          "value": 84.5,
-          "date": "2015年7月30日（平成27年）",
-          "_date_raw": "2015/07/30"
         }
       ]
     },
