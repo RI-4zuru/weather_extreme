@@ -6,7 +6,7 @@
   <title>極値ランキングLIVE</title>
   <meta name="description" content="気象庁公開データをもとにした県内極値一覧と実況ランクイン判定" />
   <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="./style.css?v=20260717-1" />
+  <link rel="stylesheet" href="./style.css?v=20260717-2" />
 </head>
 <body>
 
@@ -46,16 +46,27 @@
         </div>
       </div>
 
-      <div id="comparisonActions" class="dashboard-actions">
-        <button id="syncComparisonButton" class="dashboard-action-button" type="button" title="左側の月・要素・表示条件を右側へ反映">
-          月・要素を揃える
-        </button>
-        <button id="swapComparisonButton" class="dashboard-action-button" type="button">
-          左右を入れ替え
-        </button>
-        <button id="linkedScrollButton" class="dashboard-action-button" type="button" aria-pressed="false">
-          スクロール連動：OFF
-        </button>
+      <div class="dashboard-action-groups">
+        <div class="dashboard-actions dashboard-actions-global">
+          <button id="dashboardSettingsToggle" class="dashboard-action-button dashboard-settings-button" type="button" aria-pressed="true">
+            設定を隠す
+          </button>
+          <button id="dashboardTableJumpButton" class="dashboard-action-button" type="button">
+            表へ移動
+          </button>
+        </div>
+
+        <div id="comparisonActions" class="dashboard-actions">
+          <button id="syncComparisonButton" class="dashboard-action-button" type="button" title="左側の月・要素・表示条件を右側へ反映">
+            月・要素を揃える
+          </button>
+          <button id="swapComparisonButton" class="dashboard-action-button" type="button">
+            左右を入れ替え
+          </button>
+          <button id="linkedScrollButton" class="dashboard-action-button" type="button" aria-pressed="false">
+            スクロール連動：OFF
+          </button>
+        </div>
       </div>
     </div>
 
@@ -123,8 +134,31 @@
       </div>
     </div>
 
-    <div class="selection-panels">
-      <section class="control-panel">
+    <div class="settings-summary-bar" aria-label="現在の表示条件">
+      <div class="settings-summary-main">
+        <span class="settings-summary-caption">表示中</span>
+        <button id="areaSelectionSummary" class="selection-summary-chip" type="button" data-open-setting="area">
+          地域・都道府県
+        </button>
+        <button id="monthSelectionSummary" class="selection-summary-chip" type="button" data-open-setting="month">
+          通年
+        </button>
+        <button id="elementSelectionSummary" class="selection-summary-chip selection-summary-chip-wide" type="button" data-open-setting="element">
+          要素を読み込み中
+        </button>
+      </div>
+      <div class="settings-summary-actions">
+        <button id="settingsVisibilityToggle" class="settings-summary-button" type="button" aria-pressed="true">
+          設定を隠す
+        </button>
+        <button id="scrollToTableButton" class="settings-summary-button" type="button">
+          表へ
+        </button>
+      </div>
+    </div>
+
+    <div id="settingsPanels" class="selection-panels">
+      <section class="control-panel area-panel">
         <button
           id="controlPanelToggle"
           class="toggle-button control-toggle-button"
@@ -132,7 +166,7 @@
           aria-expanded="true"
           aria-controls="controlPanelBody"
         >
-          地域・都道府県選択 / 月選択を閉じる
+          都道府県・地域選択を閉じる
         </button>
 
         <div id="controlPanelBody" class="control-panel-body">
@@ -144,9 +178,23 @@
             <div id="regionTabs" class="region-tabs"></div>
             <div id="prefButtons" class="pref-buttons pref-buttons-grid"></div>
           </div>
+        </div>
+      </section>
 
-          <div class="control-grid single-row two-cols">
-            <label class="control-item">
+      <section class="month-panel-wrap">
+        <button
+          id="monthPanelToggle"
+          class="toggle-button"
+          type="button"
+          aria-expanded="true"
+          aria-controls="monthPanel"
+        >
+          月選択を閉じる
+        </button>
+        <div id="monthPanel" class="month-panel">
+          <div class="month-stepper" aria-label="表示月を切り替える">
+            <button id="previousMonthButton" class="month-step-button" type="button" title="前の月へ" aria-label="前の月へ">‹</button>
+            <label class="control-item month-select-item">
               <span class="control-label">月</span>
               <select id="monthSelect">
                 <option value="all">通年</option>
@@ -164,7 +212,9 @@
                 <option value="12">12月</option>
               </select>
             </label>
+            <button id="nextMonthButton" class="month-step-button" type="button" title="次の月へ" aria-label="次の月へ">›</button>
           </div>
+          <button id="currentMonthButton" class="month-current-button" type="button">今月を表示</button>
         </div>
       </section>
 
@@ -299,6 +349,6 @@
   </div>
   </div>
 
-  <script type="module" src="./js/bootstrap.js?v=20260717-1"></script>
+  <script type="module" src="./js/bootstrap.js?v=20260717-2"></script>
 </body>
 </html>
