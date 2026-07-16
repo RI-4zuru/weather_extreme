@@ -1,4 +1,4 @@
-const BUILD_VERSION = "20260716-3";
+const BUILD_VERSION = "20260717-1";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -33,17 +33,6 @@ const params = new URLSearchParams(window.location.search);
 const paneName = params.get("pane") || "";
 const isEmbeddedPane = Boolean(paneName);
 const isDesktopDashboard = !isEmbeddedPane && window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches;
-
-await retireLegacyServiceWorker();
-initializeTheme();
-
-if (isEmbeddedPane) {
-  await initializeEmbeddedPane(paneName);
-} else if (isDesktopDashboard) {
-  initializeDesktopDashboard();
-} else {
-  await initializeLegacyView();
-}
 
 
 async function retireLegacyServiceWorker() {
@@ -650,3 +639,44 @@ function showDashboardToast(message) {
     window.setTimeout(() => toast.remove(), 220);
   }, 2200);
 }
+
+async function startApplication() {
+  await retireLegacyServiceWorker();
+  initializeTheme();
+
+  if (isEmbeddedPane) {
+    await initializeEmbeddedPane(paneName);
+  } else if (isDesktopDashboard) {
+    initializeDesktopDashboard();
+  } else {
+    await initializeLegacyView();
+  }
+}
+
+try {
+  await startApplication();
+} catch (error) {
+  console.error("画面の初期化に失敗しました:", error);
+
+  if (isDesktopDashboard) {
+    document.body.classList.add("dashboard-view-active");
+    const dashboard = document.getElementById("desktopDashboard");
+    const legacyApp = document.getElementById("legacyApp");
+    if (dashboard) dashboard.hidden = false;
+    if (legacyApp) legacyApp.hidden = true;
+
+    const stage = document.querySelector(".dashboard-stage");
+    if (stage) {
+      stage.innerHTML = `
+        <section class="dashboard-startup-error">
+          <h2>画面の初期化に失敗しました</h2>
+          <p>${escapeForHtml(error?.message || String(error))}</p>
+          <p>ブラウザーを再読み込みしてください。</p>
+        </section>
+      `;
+    }
+  } else {
+    renderApplicationLoadError(error);
+  }
+}
+
