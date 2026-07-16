@@ -1,12 +1,12 @@
 {
-  "name": "県内極値一覧",
+  "name": "極値ランキング",
   "short_name": "極値一覧",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f8fdff",
-  "theme_color": "#0077b6",
-  "description": "気象庁の極値データと実況値から、県内極値一覧とリアルタイムのランクイン状況を表示します。",
+  "background_color": "#eaf1f7",
+  "theme_color": "#173f6b",
+  "description": "気象庁の公開データをもとに、都道府県・地域・全国の観測史上の極値ランキングを表示します。実況値は参考列として確認できますが、順位には反映しません。",
   "icons": [
     {
       "src": "./icons/icon-192.png",
