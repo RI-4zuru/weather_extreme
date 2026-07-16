@@ -1,4 +1,4 @@
-const BUILD_VERSION = "20260717-2";
+const BUILD_VERSION = "20260717-3";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -76,13 +76,46 @@ async function retireLegacyServiceWorker() {
 
 async function loadApplicationModule() {
   try {
-    await import(`./app.js?v=${BUILD_VERSION}`);
+    const appUrl = new URL(`./app.js?v=${BUILD_VERSION}`, import.meta.url);
+    const response = await fetch(appUrl, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`app.js の取得に失敗しました（HTTP ${response.status}）`);
+    }
+
+    let source = await response.text();
+    source = rewriteApplicationModuleImports(source);
+
+    const moduleBlob = new Blob([source], { type: "text/javascript" });
+    const moduleUrl = URL.createObjectURL(moduleBlob);
+    try {
+      await import(moduleUrl);
+    } finally {
+      window.setTimeout(() => URL.revokeObjectURL(moduleUrl), 1000);
+    }
     return true;
   } catch (error) {
     console.error("アプリ本体の読み込みに失敗しました:", error);
     renderApplicationLoadError(error);
     return false;
   }
+}
+
+function rewriteApplicationModuleImports(source) {
+  const resolveImport = (specifier) => {
+    const clean = String(specifier || "").split("?")[0];
+    if (clean === "./ranking.js") {
+      return new URL(`./ranking-live-policy.js?v=${BUILD_VERSION}`, import.meta.url).href;
+    }
+    return new URL(specifier, import.meta.url).href;
+  };
+
+  return String(source)
+    .replace(/(\bfrom\s*["'])(\.\/[^"']+)(["'])/g, (_, before, specifier, after) => {
+      return `${before}${resolveImport(specifier)}${after}`;
+    })
+    .replace(/(\bimport\s*\(\s*["'])(\.\/[^"']+)(["']\s*\))/g, (_, before, specifier, after) => {
+      return `${before}${resolveImport(specifier)}${after}`;
+    });
 }
 
 function renderApplicationLoadError(error) {
@@ -272,7 +305,7 @@ function initializeEnhancedControls(scope = "legacy") {
   });
   document.getElementById("previousMonthButton")?.addEventListener("click", () => moveMonth(-1));
   document.getElementById("nextMonthButton")?.addEventListener("click", () => moveMonth(1));
-  document.getElementById("currentMonthButton")?.addEventListener("click", () => chooseMonth(new Date().getMonth() + 1));
+  document.getElementById("currentMonthButton")?.addEventListener("click", () => chooseMonth(getCurrentJstMonthNumber()));
   monthSelect?.addEventListener("change", scheduleSummaryUpdate);
   settingsToggle?.addEventListener("click", () => setSettingsVisible(settingsPanels.hidden));
   scrollToTableButton?.addEventListener("click", scrollToTable);
@@ -322,6 +355,8 @@ function initializeEnhancedControls(scope = "legacy") {
   updateAreaToggleLabel();
   updateElementToggleLabel();
   updateSelectionSummary();
+  initializeLiveRankingPolicyGuide();
+  initializeTableUtilities();
 
   window.weatherExtremePaneControls = {
     setSettingsVisible: (visible) => setSettingsVisible(visible, { persist: true, notify: false }),
@@ -330,6 +365,215 @@ function initializeEnhancedControls(scope = "legacy") {
     updateSelectionSummary,
   };
   return true;
+}
+
+
+function getCurrentJstMonthNumber() {
+  try {
+    return Number(new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Tokyo",
+      month: "numeric",
+    }).format(new Date()));
+  } catch {
+    return new Date().getMonth() + 1;
+  }
+}
+
+function getJstMonthFromDateLike(value) {
+  const text = String(value || "").trim();
+  const direct = text.match(/(?:^|\D)(\d{4})[\/.\-年](\d{1,2})(?:[\/.\-月]|月)/u);
+  if (direct) {
+    const month = Number(direct[2]);
+    if (month >= 1 && month <= 12) return month;
+  }
+
+  const compact = text.match(/(?:^|\D)(\d{4})(\d{2})(\d{2})(?:\D|$)/u);
+  if (compact) {
+    const month = Number(compact[2]);
+    if (month >= 1 && month <= 12) return month;
+  }
+
+  const parsed = new Date(text);
+  if (!Number.isNaN(parsed.getTime())) {
+    try {
+      return Number(new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Tokyo",
+        month: "numeric",
+      }).format(parsed));
+    } catch {
+      return parsed.getMonth() + 1;
+    }
+  }
+  return getCurrentJstMonthNumber();
+}
+
+function initializeLiveRankingPolicyGuide() {
+  const tableSection = document.querySelector(".table-section");
+  const tableHeading = tableSection?.querySelector(".table-heading-row");
+  const monthSelect = document.getElementById("monthSelect");
+  const observedAt = document.getElementById("observedLatestAt");
+  if (!tableSection || !tableHeading || !monthSelect || document.getElementById("liveRankingPolicy")) return;
+
+  const card = document.createElement("section");
+  card.id = "liveRankingPolicy";
+  card.className = "live-ranking-policy";
+  card.setAttribute("aria-live", "polite");
+  card.innerHTML = `
+    <div class="live-ranking-policy-icon" aria-hidden="true">LIVE</div>
+    <div class="live-ranking-policy-copy">
+      <div class="live-ranking-policy-title-row">
+        <strong class="live-ranking-policy-title">実況のランキング反映</strong>
+        <span class="live-ranking-policy-badge"></span>
+      </div>
+      <p class="live-ranking-policy-message"></p>
+    </div>
+    <div class="live-ranking-policy-actions">
+      <button type="button" data-live-policy-month>実況月へ</button>
+      <button type="button" data-live-policy-annual>通年へ</button>
+    </div>
+  `;
+  tableHeading.insertAdjacentElement("afterend", card);
+
+  const setMonth = (month) => {
+    const value = String(month);
+    if (![...monthSelect.options].some((option) => option.value === value)) return;
+    monthSelect.value = value;
+    monthSelect.dispatchEvent(new Event("change", { bubbles: true }));
+  };
+
+  const update = () => {
+    const selected = monthSelect.value || "all";
+    const liveMonth = getJstMonthFromDateLike(observedAt?.textContent || "");
+    const eligible = selected === "all" || Number(selected) === liveMonth;
+    const badge = card.querySelector(".live-ranking-policy-badge");
+    const message = card.querySelector(".live-ranking-policy-message");
+    const liveMonthButton = card.querySelector("[data-live-policy-month]");
+    const liveLegend = tableSection.querySelector(".legend .live-chip");
+
+    card.classList.toggle("is-eligible", eligible);
+    card.classList.toggle("is-reference", !eligible);
+    if (badge) badge.textContent = eligible ? "順位に反映" : "参考表示のみ";
+    if (message) {
+      message.textContent = eligible
+        ? selected === "all"
+          ? `実況値は通年ランキングの順位判定に反映されます。実況の観測月は${liveMonth}月です。`
+          : `${liveMonth}月の実況値なので、この月のランキング順位に反映されます。`
+        : `実況値は表の「実況」列に表示しますが、${selected}月の1位〜10位には挿入しません。順位判定は通年または${liveMonth}月だけで行います。`;
+    }
+    if (liveMonthButton) {
+      liveMonthButton.textContent = `${liveMonth}月へ`;
+      liveMonthButton.dataset.month = String(liveMonth);
+      liveMonthButton.hidden = selected === String(liveMonth);
+    }
+    if (liveLegend) {
+      liveLegend.textContent = eligible
+        ? "赤系：実況で順位相当あり"
+        : "実況：参考表示（順位対象外）";
+      liveLegend.classList.toggle("reference-only", !eligible);
+    }
+  };
+
+  card.querySelector("[data-live-policy-month]")?.addEventListener("click", (event) => {
+    setMonth(event.currentTarget.dataset.month || getCurrentJstMonthNumber());
+  });
+  card.querySelector("[data-live-policy-annual]")?.addEventListener("click", () => setMonth("all"));
+  monthSelect.addEventListener("change", update);
+  if (observedAt) {
+    new MutationObserver(update).observe(observedAt, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+  }
+  update();
+}
+
+function initializeTableUtilities() {
+  const tableSection = document.querySelector(".table-section");
+  const tableBody = document.getElementById("rankTableBody");
+  const policyCard = document.getElementById("liveRankingPolicy");
+  const legend = tableSection?.querySelector(".legend");
+  if (!tableSection || !tableBody || document.getElementById("tableUtilityBar")) return;
+
+  const bar = document.createElement("div");
+  bar.id = "tableUtilityBar";
+  bar.className = "table-utility-bar";
+  bar.innerHTML = `
+    <label class="table-search-box">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" inputmode="search" autocomplete="off" placeholder="地点・都道府県を絞り込み" aria-label="表の地点・都道府県を検索">
+      <button type="button" class="table-search-clear" title="検索をクリア" aria-label="検索をクリア">×</button>
+    </label>
+    <div class="table-utility-actions">
+      <button type="button" class="table-ranked-only" aria-pressed="false">実況ランクインのみ</button>
+      <button type="button" class="table-density-toggle" aria-pressed="false">コンパクト表示</button>
+      <span class="table-filter-count" aria-live="polite"></span>
+    </div>
+  `;
+  if (legend) tableSection.insertBefore(bar, legend);
+  else (policyCard || tableSection.firstElementChild)?.insertAdjacentElement("afterend", bar);
+
+  const input = bar.querySelector("input[type='search']");
+  const clearButton = bar.querySelector(".table-search-clear");
+  const rankedOnlyButton = bar.querySelector(".table-ranked-only");
+  const densityButton = bar.querySelector(".table-density-toggle");
+  const count = bar.querySelector(".table-filter-count");
+  const densityKey = `${APP_PREFIX}table_density`;
+  let rankedOnly = false;
+
+  const normalize = (value) => String(value || "").normalize("NFKC").toLocaleLowerCase("ja").trim();
+  const isDataRow = (row) => !row.querySelector(".message-cell");
+  const hasLiveRank = (row) => Boolean(row.querySelector(
+    ".rank-cell.live-target, .rank-cell.live-and-year, .live-col-cell.live-target, .live-col-cell.live-and-year"
+  ));
+
+  const applyFilter = () => {
+    const query = normalize(input?.value);
+    const rows = [...tableBody.querySelectorAll(":scope > tr")];
+    let total = 0;
+    let visible = 0;
+    rows.forEach((row) => {
+      if (!isDataRow(row)) {
+        row.hidden = false;
+        return;
+      }
+      total += 1;
+      const matchesText = !query || normalize(row.textContent).includes(query);
+      const matchesRank = !rankedOnly || hasLiveRank(row);
+      row.hidden = !(matchesText && matchesRank);
+      if (!row.hidden) visible += 1;
+    });
+    if (count) count.textContent = total ? `${visible} / ${total} 行` : "";
+    if (clearButton) clearButton.hidden = !input?.value;
+  };
+
+  const setDensity = (compact, { persist = true } = {}) => {
+    const normalized = Boolean(compact);
+    document.body.classList.toggle("table-density-compact", normalized);
+    densityButton?.setAttribute("aria-pressed", String(normalized));
+    if (densityButton) densityButton.textContent = normalized ? "標準表示" : "コンパクト表示";
+    if (persist) rawStorage.set(densityKey, normalized ? "compact" : "standard");
+  };
+
+  input?.addEventListener("input", applyFilter);
+  clearButton?.addEventListener("click", () => {
+    if (input) input.value = "";
+    input?.focus();
+    applyFilter();
+  });
+  rankedOnlyButton?.addEventListener("click", () => {
+    rankedOnly = !rankedOnly;
+    rankedOnlyButton.setAttribute("aria-pressed", String(rankedOnly));
+    rankedOnlyButton.classList.toggle("active", rankedOnly);
+    applyFilter();
+  });
+  densityButton?.addEventListener("click", () => {
+    setDensity(!document.body.classList.contains("table-density-compact"));
+  });
+
+  new MutationObserver(applyFilter).observe(tableBody, { childList: true, subtree: true });
+  setDensity(rawStorage.get(densityKey) === "compact", { persist: false });
+  applyFilter();
 }
 
 async function initializeLegacyView() {
