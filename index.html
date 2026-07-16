@@ -1,354 +1,423 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>極値ランキングLIVE</title>
-  <meta name="description" content="気象庁公開データをもとにした県内極値一覧と実況ランクイン判定" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="./style.css?v=20260717-3" />
-</head>
-<body>
-
-  <section id="desktopDashboard" class="desktop-dashboard" hidden aria-label="PC向け極値ダッシュボード">
-    <header class="dashboard-header">
-      <div class="dashboard-brand">
-        <div class="dashboard-brand-mark" aria-hidden="true">極</div>
-        <div>
-          <div class="dashboard-brand-title">極値ランキング LIVE</div>
-          <div class="dashboard-brand-subtitle">観測史上の極値と実況ランクインを、比較しながら確認</div>
-        </div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   極値ランキング
+  </title>
+  <meta content="気象庁公開データをもとに、都道府県・地域・全国の観測史上の極値ランキングを比較表示" name="description"/>
+  <link href="./manifest.webmanifest" rel="manifest"/>
+  <link href="./style.css?v=20260717-4" rel="stylesheet"/>
+ </head>
+ <body>
+  <section aria-label="PC向け極値ダッシュボード" class="desktop-dashboard" hidden="" id="desktopDashboard">
+   <header class="dashboard-header">
+    <div class="dashboard-brand">
+     <div aria-hidden="true" class="dashboard-brand-mark">
+      極
+     </div>
+     <div>
+      <div class="dashboard-brand-title">
+       極値ランキング
       </div>
-
-      <nav class="dashboard-mode-tabs" aria-label="表示モード">
-        <button class="dashboard-mode-button" type="button" data-dashboard-mode="single">
-          <span class="dashboard-mode-icon" aria-hidden="true">▣</span>
-          <span>単独表示</span>
-        </button>
-        <button class="dashboard-mode-button" type="button" data-dashboard-mode="compare">
-          <span class="dashboard-mode-icon" aria-hidden="true">▥</span>
-          <span>左右比較</span>
-        </button>
-        <button class="dashboard-mode-button" type="button" data-dashboard-mode="nation">
-          <span class="dashboard-mode-icon" aria-hidden="true">◎</span>
-          <span>全国ランクイン</span>
-        </button>
-      </nav>
-
-      <button id="dashboardThemeToggle" class="dashboard-icon-button" type="button" aria-label="配色を切り替える"></button>
-    </header>
-
-    <div class="dashboard-context-bar">
-      <div>
-        <div id="dashboardModeTitle" class="dashboard-context-title">左右比較</div>
-        <div id="dashboardModeDescription" class="dashboard-context-description">
-          2つの都道府県を独立して選び、順位表を横に並べて比較します。
-        </div>
+      <div class="dashboard-brand-subtitle">
+       観測史上の記録を、単独表示と左右比較で見やすく確認
       </div>
-
-      <div class="dashboard-action-groups">
-        <div class="dashboard-actions dashboard-actions-global">
-          <button id="dashboardSettingsToggle" class="dashboard-action-button dashboard-settings-button" type="button" aria-pressed="true">
-            設定を隠す
-          </button>
-          <button id="dashboardTableJumpButton" class="dashboard-action-button" type="button">
-            表へ移動
-          </button>
-        </div>
-
-        <div id="comparisonActions" class="dashboard-actions">
-          <button id="syncComparisonButton" class="dashboard-action-button" type="button" title="左側の月・要素・表示条件を右側へ反映">
-            月・要素を揃える
-          </button>
-          <button id="swapComparisonButton" class="dashboard-action-button" type="button">
-            左右を入れ替え
-          </button>
-          <button id="linkedScrollButton" class="dashboard-action-button" type="button" aria-pressed="false">
-            スクロール連動：OFF
-          </button>
-        </div>
-      </div>
+     </div>
     </div>
-
-    <main class="dashboard-stage">
-      <section class="dashboard-view dashboard-view-single" data-dashboard-view="single" hidden>
-        <article class="dashboard-frame-card">
-          <div class="dashboard-frame-heading">
-            <div>
-              <span class="dashboard-frame-kicker">SINGLE VIEW</span>
-              <strong class="dashboard-frame-title">都道府県・地域を1画面で表示</strong>
-            </div>
-            <span class="dashboard-frame-current" data-frame-current="single">読み込み中</span>
-          </div>
-          <iframe class="dashboard-frame" title="単独表示" data-dashboard-frame="single" data-frame-query="pane=single"></iframe>
-        </article>
-      </section>
-
-      <section class="dashboard-view dashboard-view-compare" data-dashboard-view="compare" hidden>
-        <article class="dashboard-frame-card dashboard-frame-card-left">
-          <div class="dashboard-frame-heading">
-            <div>
-              <span class="dashboard-frame-kicker">COMPARE A</span>
-              <strong class="dashboard-frame-title">左側</strong>
-            </div>
-            <span class="dashboard-frame-current" data-frame-current="left">読み込み中</span>
-          </div>
-          <iframe class="dashboard-frame" title="比較表示・左側" data-dashboard-frame="left" data-frame-query="pane=left"></iframe>
-        </article>
-
-        <article class="dashboard-frame-card dashboard-frame-card-right">
-          <div class="dashboard-frame-heading">
-            <div>
-              <span class="dashboard-frame-kicker">COMPARE B</span>
-              <strong class="dashboard-frame-title">右側</strong>
-            </div>
-            <span class="dashboard-frame-current" data-frame-current="right">読み込み中</span>
-          </div>
-          <iframe class="dashboard-frame" title="比較表示・右側" data-dashboard-frame="right" data-frame-query="pane=right"></iframe>
-        </article>
-      </section>
-
-      <section class="dashboard-view dashboard-view-nation" data-dashboard-view="nation" hidden>
-        <article class="dashboard-frame-card dashboard-frame-card-nation">
-          <div class="dashboard-frame-heading">
-            <div>
-              <span class="dashboard-frame-kicker">NATIONWIDE LIVE</span>
-              <strong class="dashboard-frame-title">全国の実況ランクインを都道府県別に確認</strong>
-            </div>
-            <span class="dashboard-frame-current" data-frame-current="nation">読み込み中</span>
-          </div>
-          <iframe class="dashboard-frame" title="全国ランクイン表示" data-dashboard-frame="nation" data-frame-query="pane=nation&amp;view=nation"></iframe>
-        </article>
-      </section>
-    </main>
+    <nav aria-label="表示モード" class="dashboard-mode-tabs">
+     <button class="dashboard-mode-button" data-dashboard-mode="single" type="button">
+      <span aria-hidden="true" class="dashboard-mode-icon">
+       ▣
+      </span>
+      <span>
+       単独表示
+      </span>
+     </button>
+     <button class="dashboard-mode-button" data-dashboard-mode="compare" type="button">
+      <span aria-hidden="true" class="dashboard-mode-icon">
+       ▥
+      </span>
+      <span>
+       左右比較
+      </span>
+     </button>
+    </nav>
+    <button aria-label="配色を切り替える" class="dashboard-icon-button" id="dashboardThemeToggle" type="button">
+    </button>
+   </header>
+   <div class="dashboard-context-bar">
+    <div>
+     <div class="dashboard-context-title" id="dashboardModeTitle">
+      左右比較
+     </div>
+     <div class="dashboard-context-description" id="dashboardModeDescription">
+      2つの都道府県を独立して選び、同じ条件でも別条件でも順位表を見比べます。
+     </div>
+    </div>
+    <div class="dashboard-action-groups">
+     <div class="dashboard-actions dashboard-actions-global">
+      <button aria-pressed="true" class="dashboard-action-button dashboard-settings-button" id="dashboardSettingsToggle" type="button">
+       設定を隠す
+      </button>
+      <button class="dashboard-action-button" id="dashboardTableJumpButton" type="button">
+       表へ移動
+      </button>
+     </div>
+     <div class="dashboard-actions" id="comparisonActions">
+      <button class="dashboard-action-button" id="syncComparisonButton" title="左側の月・要素・表示条件を右側へ反映" type="button">
+       月・要素を揃える
+      </button>
+      <button class="dashboard-action-button" id="swapComparisonButton" type="button">
+       左右を入れ替え
+      </button>
+      <button aria-pressed="false" class="dashboard-action-button" id="linkedScrollButton" type="button">
+       スクロール連動：OFF
+      </button>
+     </div>
+    </div>
+   </div>
+   <main class="dashboard-stage">
+    <section class="dashboard-view dashboard-view-single" data-dashboard-view="single" hidden="">
+     <article class="dashboard-frame-card">
+      <div class="dashboard-frame-heading">
+       <div>
+        <span class="dashboard-frame-kicker">
+         SINGLE VIEW
+        </span>
+        <strong class="dashboard-frame-title">
+         都道府県・地域を1画面で表示
+        </strong>
+       </div>
+       <span class="dashboard-frame-current" data-frame-current="single">
+        読み込み中
+       </span>
+      </div>
+      <iframe class="dashboard-frame" data-dashboard-frame="single" data-frame-query="pane=single" title="単独表示">
+      </iframe>
+     </article>
+    </section>
+    <section class="dashboard-view dashboard-view-compare" data-dashboard-view="compare" hidden="">
+     <article class="dashboard-frame-card dashboard-frame-card-left">
+      <div class="dashboard-frame-heading">
+       <div>
+        <span class="dashboard-frame-kicker">
+         COMPARE A
+        </span>
+        <strong class="dashboard-frame-title">
+         左側
+        </strong>
+       </div>
+       <span class="dashboard-frame-current" data-frame-current="left">
+        読み込み中
+       </span>
+      </div>
+      <iframe class="dashboard-frame" data-dashboard-frame="left" data-frame-query="pane=left" title="比較表示・左側">
+      </iframe>
+     </article>
+     <article class="dashboard-frame-card dashboard-frame-card-right">
+      <div class="dashboard-frame-heading">
+       <div>
+        <span class="dashboard-frame-kicker">
+         COMPARE B
+        </span>
+        <strong class="dashboard-frame-title">
+         右側
+        </strong>
+       </div>
+       <span class="dashboard-frame-current" data-frame-current="right">
+        読み込み中
+       </span>
+      </div>
+      <iframe class="dashboard-frame" data-dashboard-frame="right" data-frame-query="pane=right" title="比較表示・右側">
+      </iframe>
+     </article>
+    </section>
+   </main>
   </section>
-
-  <div id="legacyApp" class="legacy-app" hidden>
-<header class="app-header">
+  <div class="legacy-app" hidden="" id="legacyApp">
+   <header class="app-header">
     <div class="title-row">
-      <h1>極値ランキングLIVE</h1>
-      <div class="header-meta">
-        <button id="themeToggle" class="theme-toggle"></button>
-        <span class="meta-label">実況観測時刻</span>
-        <span id="observedLatestAt" class="meta-value">読み込み待ち</span>
-      </div>
+     <h1>
+      極値ランキング
+     </h1>
+     <div class="header-meta">
+      <button class="theme-toggle" id="themeToggle">
+      </button>
+      <span class="meta-label">
+       参考実況
+      </span>
+      <span class="meta-value" id="observedLatestAt">
+       読み込み待ち
+      </span>
+     </div>
     </div>
-
-    <div class="settings-summary-bar" aria-label="現在の表示条件">
-      <div class="settings-summary-main">
-        <span class="settings-summary-caption">表示中</span>
-        <button id="areaSelectionSummary" class="selection-summary-chip" type="button" data-open-setting="area">
+    <div aria-label="現在の表示条件" class="settings-summary-bar">
+     <div class="settings-summary-main">
+      <span class="settings-summary-caption">
+       表示中
+      </span>
+      <button class="selection-summary-chip" data-open-setting="area" id="areaSelectionSummary" type="button">
+       地域・都道府県
+      </button>
+      <button class="selection-summary-chip" data-open-setting="month" id="monthSelectionSummary" type="button">
+       通年
+      </button>
+      <button class="selection-summary-chip selection-summary-chip-wide" data-open-setting="element" id="elementSelectionSummary" type="button">
+       要素を読み込み中
+      </button>
+     </div>
+     <div class="settings-summary-actions">
+      <button aria-pressed="true" class="settings-summary-button" id="settingsVisibilityToggle" type="button">
+       設定を隠す
+      </button>
+      <button class="settings-summary-button" id="scrollToTableButton" type="button">
+       表へ
+      </button>
+     </div>
+    </div>
+    <div class="selection-panels" id="settingsPanels">
+     <section class="control-panel area-panel">
+      <button aria-controls="controlPanelBody" aria-expanded="true" class="toggle-button control-toggle-button" id="controlPanelToggle" type="button">
+       都道府県・地域選択を閉じる
+      </button>
+      <div class="control-panel-body" id="controlPanelBody">
+       <div class="control-block">
+        <div class="control-label-row">
+         <div class="control-label">
           地域・都道府県
-        </button>
-        <button id="monthSelectionSummary" class="selection-summary-chip" type="button" data-open-setting="month">
-          通年
-        </button>
-        <button id="elementSelectionSummary" class="selection-summary-chip selection-summary-chip-wide" type="button" data-open-setting="element">
-          要素を読み込み中
-        </button>
+         </div>
+         <button class="sub-action-button" id="customizeButton" type="button">
+          カスタム
+         </button>
+        </div>
+        <div class="region-tabs" id="regionTabs">
+        </div>
+        <div class="pref-buttons pref-buttons-grid" id="prefButtons">
+        </div>
+       </div>
       </div>
-      <div class="settings-summary-actions">
-        <button id="settingsVisibilityToggle" class="settings-summary-button" type="button" aria-pressed="true">
-          設定を隠す
+     </section>
+     <section class="month-panel-wrap">
+      <button aria-controls="monthPanel" aria-expanded="true" class="toggle-button" id="monthPanelToggle" type="button">
+       月選択を閉じる
+      </button>
+      <div class="month-panel" id="monthPanel">
+       <div aria-label="表示月を切り替える" class="month-stepper">
+        <button aria-label="前の月へ" class="month-step-button" id="previousMonthButton" title="前の月へ" type="button">
+         ‹
         </button>
-        <button id="scrollToTableButton" class="settings-summary-button" type="button">
-          表へ
+        <label class="control-item month-select-item">
+         <span class="control-label">
+          月
+         </span>
+         <select id="monthSelect">
+          <option value="all">
+           通年
+          </option>
+          <option value="1">
+           1月
+          </option>
+          <option value="2">
+           2月
+          </option>
+          <option value="3">
+           3月
+          </option>
+          <option value="4">
+           4月
+          </option>
+          <option value="5">
+           5月
+          </option>
+          <option value="6">
+           6月
+          </option>
+          <option value="7">
+           7月
+          </option>
+          <option value="8">
+           8月
+          </option>
+          <option value="9">
+           9月
+          </option>
+          <option value="10">
+           10月
+          </option>
+          <option value="11">
+           11月
+          </option>
+          <option value="12">
+           12月
+          </option>
+         </select>
+        </label>
+        <button aria-label="次の月へ" class="month-step-button" id="nextMonthButton" title="次の月へ" type="button">
+         ›
         </button>
+       </div>
+       <button class="month-current-button" id="currentMonthButton" type="button">
+        今月を表示
+       </button>
       </div>
+     </section>
+     <section class="element-panel-wrap">
+      <button aria-controls="elementPanel" aria-expanded="false" class="toggle-button" id="elementPanelToggle" type="button">
+       要素選択を開く
+      </button>
+      <div class="element-panel" hidden="" id="elementPanel">
+      </div>
+     </section>
     </div>
-
-    <div id="settingsPanels" class="selection-panels">
-      <section class="control-panel area-panel">
-        <button
-          id="controlPanelToggle"
-          class="toggle-button control-toggle-button"
-          type="button"
-          aria-expanded="true"
-          aria-controls="controlPanelBody"
-        >
-          都道府県・地域選択を閉じる
-        </button>
-
-        <div id="controlPanelBody" class="control-panel-body">
-          <div class="control-block">
-            <div class="control-label-row">
-              <div class="control-label">地域・都道府県</div>
-              <button id="customizeButton" class="sub-action-button" type="button">カスタム</button>
-            </div>
-            <div id="regionTabs" class="region-tabs"></div>
-            <div id="prefButtons" class="pref-buttons pref-buttons-grid"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="month-panel-wrap">
-        <button
-          id="monthPanelToggle"
-          class="toggle-button"
-          type="button"
-          aria-expanded="true"
-          aria-controls="monthPanel"
-        >
-          月選択を閉じる
-        </button>
-        <div id="monthPanel" class="month-panel">
-          <div class="month-stepper" aria-label="表示月を切り替える">
-            <button id="previousMonthButton" class="month-step-button" type="button" title="前の月へ" aria-label="前の月へ">‹</button>
-            <label class="control-item month-select-item">
-              <span class="control-label">月</span>
-              <select id="monthSelect">
-                <option value="all">通年</option>
-                <option value="1">1月</option>
-                <option value="2">2月</option>
-                <option value="3">3月</option>
-                <option value="4">4月</option>
-                <option value="5">5月</option>
-                <option value="6">6月</option>
-                <option value="7">7月</option>
-                <option value="8">8月</option>
-                <option value="9">9月</option>
-                <option value="10">10月</option>
-                <option value="11">11月</option>
-                <option value="12">12月</option>
-              </select>
-            </label>
-            <button id="nextMonthButton" class="month-step-button" type="button" title="次の月へ" aria-label="次の月へ">›</button>
-          </div>
-          <button id="currentMonthButton" class="month-current-button" type="button">今月を表示</button>
-        </div>
-      </section>
-
-      <section class="element-panel-wrap">
-        <button
-          id="elementPanelToggle"
-          class="toggle-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="elementPanel"
-        >
-          要素選択を開く
-        </button>
-        <div id="elementPanel" class="element-panel" hidden></div>
-      </section>
-    </div>
-  </header>
-
-  <main class="app-main">
-    <section class="summary-section">
-      <div
-        id="summaryHeader"
-        class="section-title-row section-title-row-clickable"
-        role="button"
-        tabindex="0"
-        aria-expanded="false"
-      >
-        <div class="summary-title-wrap">
-          <h2>実況で10位以内に入った項目</h2>
-          <div class="summary-badges">
-            <span id="rankInBadge" class="status-badge status-badge-rankin" hidden>ランクイン有り</span>
-            <span id="topRankAlert" class="status-badge status-badge-top1" hidden>極値1位更新有り</span>
-          </div>
-        </div>
-        <div id="summaryChevron" class="summary-chevron" aria-hidden="true">▼</div>
+   </header>
+   <main class="app-main">
+    <section aria-hidden="true" class="summary-section compatibility-only" hidden="">
+     <div aria-expanded="false" class="section-title-row section-title-row-clickable" id="summaryHeader" role="button" tabindex="0">
+      <div class="summary-title-wrap">
+       <h2>
+        実況で10位以内に入った項目
+       </h2>
+       <div class="summary-badges">
+        <span class="status-badge status-badge-rankin" hidden="" id="rankInBadge">
+         ランクイン有り
+        </span>
+        <span class="status-badge status-badge-top1" hidden="" id="topRankAlert">
+         極値1位更新有り
+        </span>
+       </div>
       </div>
-
-      <div id="liveSummaryBody" class="live-summary-grid" hidden>
-        <div class="summary-panel" data-summary-panel="annual">
-          <div class="summary-panel-header" role="button" tabindex="0" aria-expanded="true" data-summary-toggle="annual">
-            <h3>通年</h3>
-            <div class="summary-panel-chevron" data-summary-chevron="annual">▼</div>
-          </div>
-          <div class="summary-panel-body" data-summary-body="annual">
-            <div class="live-summary-column-body">
-              <div class="empty-message">読み込み待ち</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="summary-panel" data-summary-panel="monthly">
-          <div class="summary-panel-header" role="button" tabindex="0" aria-expanded="true" data-summary-toggle="monthly">
-            <h3>当月</h3>
-            <div class="summary-panel-chevron" data-summary-chevron="monthly">▼</div>
-          </div>
-          <div class="summary-panel-body" data-summary-body="monthly">
-            <div class="live-summary-column-body">
-              <div class="empty-message">読み込み待ち</div>
-            </div>
-          </div>
-        </div>
+      <div aria-hidden="true" class="summary-chevron" id="summaryChevron">
+       ▼
       </div>
+     </div>
+     <div class="live-summary-grid" hidden="" id="liveSummaryBody">
+      <div class="summary-panel" data-summary-panel="annual">
+       <div aria-expanded="true" class="summary-panel-header" data-summary-toggle="annual" role="button" tabindex="0">
+        <h3>
+         通年
+        </h3>
+        <div class="summary-panel-chevron" data-summary-chevron="annual">
+         ▼
+        </div>
+       </div>
+       <div class="summary-panel-body" data-summary-body="annual">
+        <div class="live-summary-column-body">
+         <div class="empty-message">
+          読み込み待ち
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="summary-panel" data-summary-panel="monthly">
+       <div aria-expanded="true" class="summary-panel-header" data-summary-toggle="monthly" role="button" tabindex="0">
+        <h3>
+         当月
+        </h3>
+        <div class="summary-panel-chevron" data-summary-chevron="monthly">
+         ▼
+        </div>
+       </div>
+       <div class="summary-panel-body" data-summary-body="monthly">
+        <div class="live-summary-column-body">
+         <div class="empty-message">
+          読み込み待ち
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
     </section>
-
     <section class="table-section">
-      <div class="table-heading-row">
-        <div>
-          <h2 id="tableTitle">読み込み待ち</h2>
-          <p id="statusText" class="status-text">読み込み待ち</p>
-        </div>
+     <div class="table-heading-row">
+      <div>
+       <h2 id="tableTitle">
+        読み込み待ち
+       </h2>
+       <p class="status-text" id="statusText">
+        読み込み待ち
+       </p>
       </div>
-
-      <div class="legend">
-        <span class="legend-chip live-chip">赤系：実況で順位相当あり</span>
-        <span
-          id="withinChip"
-          class="legend-chip within-chip"
-          title="クリックで 1年以内 → 今年 → 当月 に切り替え"
-        >黄系：1年以内の記録</span>
-        <button
-          id="liveColumnToggle"
-          class="legend-toggle-button"
-          type="button"
-          aria-pressed="false"
-        >実況を表に出す</button>
-      </div>
-
-      <div class="table-scroll">
-        <table class="rank-table">
-          <thead id="rankTableHead"></thead>
-          <tbody id="rankTableBody">
-            <tr>
-              <td class="message-cell" colspan="11">読み込み待ち</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+     </div>
+     <div class="legend">
+      <span class="legend-chip live-chip reference-only" title="実況値は右端の参考列にのみ表示し、1位〜10位の記録は変えません。">
+       実況値：参考表示（順位には反映しません）
+      </span>
+      <span class="legend-chip within-chip" id="withinChip" title="クリックで 1年以内 → 今年 → 当月 に切り替え">
+       黄系：1年以内の記録
+      </span>
+      <button aria-pressed="false" class="legend-toggle-button" id="liveColumnToggle" title="実況値を参考列として表示します。ランキング順位には反映しません。" type="button">
+       参考実況を表示
+      </button>
+     </div>
+     <div class="table-scroll">
+      <table class="rank-table">
+       <thead id="rankTableHead">
+       </thead>
+       <tbody id="rankTableBody">
+        <tr>
+         <td class="message-cell" colspan="11">
+          読み込み待ち
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
     </section>
-
     <details class="debug-section" id="debugDetails">
-      <summary>診断情報</summary>
-      <div id="debugGrid" class="debug-grid"></div>
+     <summary>
+      診断情報
+     </summary>
+     <div class="debug-grid" id="debugGrid">
+     </div>
     </details>
-  </main>
-
-  <div id="customModal" class="modal-backdrop" hidden>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
-      <div class="modal-header">
-        <h2 id="customModalTitle">表示カスタム</h2>
-        <button id="customCloseButton" class="modal-close-button" type="button">×</button>
-      </div>
-
-      <div class="modal-body">
-        <section class="modal-section">
-          <div class="modal-section-title-row">
-            <div class="modal-section-title">地域ごとの表示設定</div>
-            <div class="modal-mini-actions">
-              <button id="selectAllPrefsButton" class="sub-action-button" type="button">全選択</button>
-              <button id="clearAllPrefsButton" class="sub-action-button" type="button">全解除</button>
-            </div>
-          </div>
-          <div class="modal-help-text">地域を開いて表示する都道府県を選択します。</div>
-          <div id="customRegionList" class="custom-region-list"></div>
-        </section>
-      </div>
-
-      <div class="modal-footer">
-        <button id="customCancelButton" class="modal-secondary-button" type="button">閉じる</button>
-        <button id="customSaveButton" class="modal-primary-button" type="button">保存</button>
-      </div>
+   </main>
+   <div class="modal-backdrop" hidden="" id="customModal">
+    <div aria-labelledby="customModalTitle" aria-modal="true" class="modal-card" role="dialog">
+     <div class="modal-header">
+      <h2 id="customModalTitle">
+       表示カスタム
+      </h2>
+      <button class="modal-close-button" id="customCloseButton" type="button">
+       ×
+      </button>
+     </div>
+     <div class="modal-body">
+      <section class="modal-section">
+       <div class="modal-section-title-row">
+        <div class="modal-section-title">
+         地域ごとの表示設定
+        </div>
+        <div class="modal-mini-actions">
+         <button class="sub-action-button" id="selectAllPrefsButton" type="button">
+          全選択
+         </button>
+         <button class="sub-action-button" id="clearAllPrefsButton" type="button">
+          全解除
+         </button>
+        </div>
+       </div>
+       <div class="modal-help-text">
+        地域を開いて表示する都道府県を選択します。
+       </div>
+       <div class="custom-region-list" id="customRegionList">
+       </div>
+      </section>
+     </div>
+     <div class="modal-footer">
+      <button class="modal-secondary-button" id="customCancelButton" type="button">
+       閉じる
+      </button>
+      <button class="modal-primary-button" id="customSaveButton" type="button">
+       保存
+      </button>
+     </div>
     </div>
+   </div>
   </div>
-  </div>
-
-  <script type="module" src="./js/bootstrap.js?v=20260717-3"></script>
-</body>
+  <script src="./js/bootstrap.js?v=20260717-4" type="module">
+  </script>
+ </body>
 </html>
