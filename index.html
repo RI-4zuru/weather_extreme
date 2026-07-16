@@ -9,7 +9,111 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="app-header">
+
+  <section id="desktopDashboard" class="desktop-dashboard" hidden aria-label="PC向け極値ダッシュボード">
+    <header class="dashboard-header">
+      <div class="dashboard-brand">
+        <div class="dashboard-brand-mark" aria-hidden="true">極</div>
+        <div>
+          <div class="dashboard-brand-title">極値ランキング LIVE</div>
+          <div class="dashboard-brand-subtitle">観測史上の極値と実況ランクインを、比較しながら確認</div>
+        </div>
+      </div>
+
+      <nav class="dashboard-mode-tabs" aria-label="表示モード">
+        <button class="dashboard-mode-button" type="button" data-dashboard-mode="single">
+          <span class="dashboard-mode-icon" aria-hidden="true">▣</span>
+          <span>単独表示</span>
+        </button>
+        <button class="dashboard-mode-button" type="button" data-dashboard-mode="compare">
+          <span class="dashboard-mode-icon" aria-hidden="true">▥</span>
+          <span>左右比較</span>
+        </button>
+        <button class="dashboard-mode-button" type="button" data-dashboard-mode="nation">
+          <span class="dashboard-mode-icon" aria-hidden="true">◎</span>
+          <span>全国ランクイン</span>
+        </button>
+      </nav>
+
+      <button id="dashboardThemeToggle" class="dashboard-icon-button" type="button" aria-label="配色を切り替える"></button>
+    </header>
+
+    <div class="dashboard-context-bar">
+      <div>
+        <div id="dashboardModeTitle" class="dashboard-context-title">左右比較</div>
+        <div id="dashboardModeDescription" class="dashboard-context-description">
+          2つの都道府県を独立して選び、順位表を横に並べて比較します。
+        </div>
+      </div>
+
+      <div id="comparisonActions" class="dashboard-actions">
+        <button id="syncComparisonButton" class="dashboard-action-button" type="button" title="左側の月・要素・表示条件を右側へ反映">
+          月・要素を揃える
+        </button>
+        <button id="swapComparisonButton" class="dashboard-action-button" type="button">
+          左右を入れ替え
+        </button>
+        <button id="linkedScrollButton" class="dashboard-action-button" type="button" aria-pressed="false">
+          スクロール連動：OFF
+        </button>
+      </div>
+    </div>
+
+    <main class="dashboard-stage">
+      <section class="dashboard-view dashboard-view-single" data-dashboard-view="single" hidden>
+        <article class="dashboard-frame-card">
+          <div class="dashboard-frame-heading">
+            <div>
+              <span class="dashboard-frame-kicker">SINGLE VIEW</span>
+              <strong class="dashboard-frame-title">都道府県・地域を1画面で表示</strong>
+            </div>
+            <span class="dashboard-frame-current" data-frame-current="single">読み込み中</span>
+          </div>
+          <iframe class="dashboard-frame" title="単独表示" data-dashboard-frame="single" data-frame-query="pane=single"></iframe>
+        </article>
+      </section>
+
+      <section class="dashboard-view dashboard-view-compare" data-dashboard-view="compare" hidden>
+        <article class="dashboard-frame-card dashboard-frame-card-left">
+          <div class="dashboard-frame-heading">
+            <div>
+              <span class="dashboard-frame-kicker">COMPARE A</span>
+              <strong class="dashboard-frame-title">左側</strong>
+            </div>
+            <span class="dashboard-frame-current" data-frame-current="left">読み込み中</span>
+          </div>
+          <iframe class="dashboard-frame" title="比較表示・左側" data-dashboard-frame="left" data-frame-query="pane=left"></iframe>
+        </article>
+
+        <article class="dashboard-frame-card dashboard-frame-card-right">
+          <div class="dashboard-frame-heading">
+            <div>
+              <span class="dashboard-frame-kicker">COMPARE B</span>
+              <strong class="dashboard-frame-title">右側</strong>
+            </div>
+            <span class="dashboard-frame-current" data-frame-current="right">読み込み中</span>
+          </div>
+          <iframe class="dashboard-frame" title="比較表示・右側" data-dashboard-frame="right" data-frame-query="pane=right"></iframe>
+        </article>
+      </section>
+
+      <section class="dashboard-view dashboard-view-nation" data-dashboard-view="nation" hidden>
+        <article class="dashboard-frame-card dashboard-frame-card-nation">
+          <div class="dashboard-frame-heading">
+            <div>
+              <span class="dashboard-frame-kicker">NATIONWIDE LIVE</span>
+              <strong class="dashboard-frame-title">全国の実況ランクインを都道府県別に確認</strong>
+            </div>
+            <span class="dashboard-frame-current" data-frame-current="nation">読み込み中</span>
+          </div>
+          <iframe class="dashboard-frame" title="全国ランクイン表示" data-dashboard-frame="nation" data-frame-query="pane=nation&amp;view=nation"></iframe>
+        </article>
+      </section>
+    </main>
+  </section>
+
+  <div id="legacyApp" class="legacy-app" hidden>
+<header class="app-header">
     <div class="title-row">
       <h1>極値ランキングLIVE</h1>
       <div class="header-meta">
@@ -193,7 +297,8 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/bootstrap.js"></script>
 </body>
 </html>
