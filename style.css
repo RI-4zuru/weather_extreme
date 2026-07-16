@@ -2580,3 +2580,357 @@ body.embedded-view {
 .legacy-app[hidden] {
   display: none !important;
 }
+
+/* =========================================================
+   SETTINGS REDESIGN 2026-07-17
+   都道府県・月・要素を独立させ、設定欄をまとめて開閉する。
+   ========================================================= */
+
+.dashboard-action-groups {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dashboard-actions-global {
+  padding-right: 10px;
+  border-right: 1px solid var(--dashboard-line);
+}
+
+.dashboard-settings-button[aria-pressed="false"] {
+  border-color: var(--dashboard-accent);
+  background: var(--dashboard-accent-soft);
+  color: var(--dashboard-accent-strong);
+}
+
+.settings-summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  max-width: 1720px;
+  min-height: 42px;
+  margin: 0 auto 8px;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+}
+
+.settings-summary-main,
+.settings-summary-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.settings-summary-main {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.settings-summary-caption {
+  flex: 0 0 auto;
+  color: var(--subtext);
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.selection-summary-chip,
+.settings-summary-button {
+  min-height: 29px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.15;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.selection-summary-chip {
+  max-width: 220px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selection-summary-chip-wide {
+  max-width: 360px;
+}
+
+.selection-summary-chip:hover,
+.settings-summary-button:hover {
+  border-color: var(--accent-2);
+  background: var(--hover-bg);
+  color: var(--accent);
+}
+
+.settings-summary-button {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.settings-collapsed .settings-summary-bar {
+  margin-bottom: 0;
+}
+
+.selection-panels[hidden] {
+  display: none !important;
+}
+
+.selection-panels {
+  grid-template-columns: minmax(0, 1.34fr) minmax(145px, 0.32fr) minmax(330px, 0.78fr);
+  align-items: start;
+}
+
+.control-panel,
+.month-panel-wrap,
+.element-panel-wrap {
+  max-width: none;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: none;
+}
+
+.month-panel-wrap {
+  padding: 8px;
+}
+
+.area-panel .control-panel-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.month-panel[hidden] {
+  display: none !important;
+}
+
+.month-panel {
+  display: grid;
+  gap: 7px;
+  padding-top: 7px;
+}
+
+.month-stepper {
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr) 31px;
+  align-items: end;
+  gap: 5px;
+}
+
+.month-select-item {
+  min-width: 0;
+  gap: 4px;
+}
+
+.month-select-item select {
+  width: 100%;
+  min-width: 0;
+}
+
+.month-step-button,
+.month-current-button {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 900;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.month-step-button {
+  min-width: 31px;
+  height: 38px;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.month-current-button {
+  min-height: 31px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.month-step-button:hover,
+.month-current-button:hover {
+  border-color: var(--accent-2);
+  background: var(--hover-bg);
+  color: var(--accent);
+}
+
+.embedded-view .settings-summary-bar {
+  min-height: 36px;
+  margin-bottom: 6px;
+  padding: 4px 6px;
+  border-radius: 9px;
+}
+
+.embedded-view .settings-summary-caption {
+  display: none;
+}
+
+.embedded-view .selection-summary-chip,
+.embedded-view .settings-summary-button {
+  min-height: 27px;
+  padding: 4px 8px;
+  font-size: 0.65rem;
+}
+
+.embedded-view .selection-summary-chip {
+  max-width: 148px;
+}
+
+.embedded-view .selection-summary-chip-wide {
+  max-width: 230px;
+}
+
+.embedded-view .selection-panels {
+  grid-template-columns: minmax(0, 1.25fr) minmax(125px, 0.3fr) minmax(220px, 0.62fr);
+  gap: 7px;
+}
+
+.embedded-view .control-panel,
+.embedded-view .month-panel-wrap,
+.embedded-view .element-panel-wrap {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 7px;
+  border-radius: 11px;
+  box-shadow: none;
+}
+
+.embedded-view .area-panel .control-panel-body {
+  grid-template-columns: minmax(0, 1fr);
+  max-height: 265px;
+}
+
+.embedded-view .month-panel {
+  gap: 5px;
+  padding-top: 6px;
+}
+
+.embedded-view .month-stepper {
+  grid-template-columns: 27px minmax(0, 1fr) 27px;
+  gap: 4px;
+}
+
+.embedded-view .month-step-button {
+  min-width: 27px;
+  height: 34px;
+  border-radius: 7px;
+  font-size: 1.05rem;
+}
+
+.embedded-view .month-current-button {
+  min-height: 29px;
+  padding: 4px 6px;
+  font-size: 0.67rem;
+}
+
+.embedded-nation .area-panel {
+  display: none !important;
+}
+
+.embedded-nation .selection-panels {
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+}
+
+.embedded-nation .month-panel-wrap {
+  display: block;
+}
+
+.embedded-nation .element-panel-wrap {
+  grid-column: auto;
+}
+
+@media (max-width: 1540px) {
+  .dashboard-action-groups {
+    gap: 7px;
+  }
+
+  .dashboard-actions-global {
+    padding-right: 7px;
+  }
+
+  .dashboard-action-button {
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .dashboard-context-description {
+    display: none;
+  }
+
+  .dashboard-context-bar {
+    gap: 10px;
+  }
+
+  .dashboard-action-groups {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 760px) {
+  body.embedded-view .selection-panels {
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 145px);
+  }
+
+  body.embedded-view .element-panel-wrap {
+    grid-column: 1 / -1;
+  }
+
+  body.embedded-nation .selection-panels {
+    grid-template-columns: minmax(140px, 175px) minmax(0, 1fr);
+  }
+
+  body.embedded-nation .element-panel-wrap {
+    grid-column: auto;
+  }
+
+  .embedded-view .selection-summary-chip-wide {
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 620px) {
+  .settings-summary-bar {
+    align-items: flex-start;
+  }
+
+  .settings-summary-main {
+    flex-wrap: wrap;
+  }
+
+  body.legacy-view .selection-panels,
+  body.embedded-view .selection-panels,
+  body.embedded-nation .selection-panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.embedded-view .element-panel-wrap,
+  body.embedded-nation .element-panel-wrap {
+    grid-column: auto;
+  }
+
+  .settings-summary-actions {
+    flex-direction: column;
+  }
+}
