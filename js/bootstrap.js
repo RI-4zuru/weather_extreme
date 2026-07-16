@@ -1,8 +1,10 @@
-const BUILD_VERSION = "20260717-1";
+const BUILD_VERSION = "20260717-2";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
 const DASHBOARD_LINKED_SCROLL_KEY = "weather_extreme:dashboard_linked_scroll";
+const DASHBOARD_SETTINGS_VISIBLE_KEY = "weather_extreme:dashboard_settings_visible";
+const MONTH_PANEL_COLLAPSED_KEY = "weather_extreme:month_panel_collapsed";
 const DESKTOP_MIN_WIDTH = 1181;
 
 const rawStorage = {
@@ -33,6 +35,7 @@ const params = new URLSearchParams(window.location.search);
 const paneName = params.get("pane") || "";
 const isEmbeddedPane = Boolean(paneName);
 const isDesktopDashboard = !isEmbeddedPane && window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches;
+let dashboardSettingsVisible = rawStorage.get(DASHBOARD_SETTINGS_VISIBLE_KEY) !== "false";
 
 
 async function retireLegacyServiceWorker() {
@@ -146,12 +149,196 @@ function bindThemeButton(button) {
   updateThemeButton(button, document.documentElement.dataset.theme);
 }
 
+function cleanControlText(value, fallback = "") {
+  const cleaned = String(value || "")
+    .replace(/[●•]+\s*$/u, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return cleaned || fallback;
+}
+
+function initializeEnhancedControls(scope = "legacy") {
+  const appHeader = document.querySelector(".app-header");
+  const settingsPanels = document.getElementById("settingsPanels");
+  if (!appHeader || !settingsPanels || appHeader.dataset.enhancedControlsReady === "true") return false;
+  appHeader.dataset.enhancedControlsReady = "true";
+
+  const settingsToggle = document.getElementById("settingsVisibilityToggle");
+  const scrollToTableButton = document.getElementById("scrollToTableButton");
+  const areaToggle = document.getElementById("controlPanelToggle");
+  const areaBody = document.getElementById("controlPanelBody");
+  const monthToggle = document.getElementById("monthPanelToggle");
+  const monthPanel = document.getElementById("monthPanel");
+  const elementToggle = document.getElementById("elementPanelToggle");
+  const elementPanel = document.getElementById("elementPanel");
+  const monthSelect = document.getElementById("monthSelect");
+
+  const updateAreaToggleLabel = () => {
+    if (!areaToggle) return;
+    const expanded = areaToggle.getAttribute("aria-expanded") !== "false" && !areaBody?.hidden;
+    const nextLabel = expanded ? "都道府県・地域選択を閉じる" : "都道府県・地域選択を開く";
+    if (areaToggle.textContent.trim() !== nextLabel) areaToggle.textContent = nextLabel;
+  };
+
+  const updateElementToggleLabel = () => {
+    if (!elementToggle) return;
+    const expanded = elementToggle.getAttribute("aria-expanded") === "true" && !elementPanel?.hidden;
+    const nextLabel = expanded ? "要素選択を閉じる" : "要素選択を開く";
+    if (elementToggle.textContent.trim() !== nextLabel) elementToggle.textContent = nextLabel;
+  };
+
+  const setMonthExpanded = (expanded, { persist = true } = {}) => {
+    const normalized = Boolean(expanded);
+    if (monthPanel) monthPanel.hidden = !normalized;
+    if (monthToggle) {
+      monthToggle.setAttribute("aria-expanded", String(normalized));
+      monthToggle.textContent = normalized ? "月選択を閉じる" : "月選択を開く";
+    }
+    if (persist) rawStorage.set(MONTH_PANEL_COLLAPSED_KEY, String(!normalized));
+  };
+
+  const notifyParentSettingsVisibility = (visible) => {
+    if (window.parent === window) return;
+    window.parent.postMessage({
+      source: "weather-extreme",
+      type: "settings-visibility",
+      visible: Boolean(visible),
+      scope,
+    }, "*");
+  };
+
+  const setSettingsVisible = (visible, { persist = true, notify = true } = {}) => {
+    const normalized = Boolean(visible);
+    settingsPanels.hidden = !normalized;
+    appHeader.classList.toggle("settings-collapsed", !normalized);
+    if (settingsToggle) {
+      settingsToggle.setAttribute("aria-pressed", String(normalized));
+      settingsToggle.textContent = normalized ? "設定を隠す" : "設定を表示";
+      settingsToggle.title = normalized ? "都道府県・月・要素の設定欄を隠す" : "都道府県・月・要素の設定欄を表示";
+    }
+    if (persist) rawStorage.set(DASHBOARD_SETTINGS_VISIBLE_KEY, String(normalized));
+    if (notify) notifyParentSettingsVisibility(normalized);
+  };
+
+  const scrollToTable = () => {
+    document.querySelector(".table-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const chooseMonth = (value) => {
+    if (!monthSelect) return;
+    const normalized = String(value);
+    if (![...monthSelect.options].some((option) => option.value === normalized)) return;
+    monthSelect.value = normalized;
+    monthSelect.dispatchEvent(new Event("change", { bubbles: true }));
+  };
+
+  const moveMonth = (amount) => {
+    const currentMonth = new Date().getMonth() + 1;
+    const selected = Number(monthSelect?.value);
+    const base = Number.isInteger(selected) && selected >= 1 && selected <= 12 ? selected : currentMonth;
+    chooseMonth(((base - 1 + amount + 12) % 12) + 1);
+  };
+
+  let summaryUpdateTimer = 0;
+  const updateSelectionSummary = () => {
+    const areaSummary = document.getElementById("areaSelectionSummary");
+    const monthSummary = document.getElementById("monthSelectionSummary");
+    const elementSummary = document.getElementById("elementSelectionSummary");
+
+    const activePref = document.querySelector("#prefButtons .pref-button.active, #prefButtons [aria-pressed='true']");
+    const activeRegion = document.querySelector("#regionTabs .region-tab.active, #regionTabs [aria-pressed='true']");
+    const nationSelected = scope === "nation" || document.body.classList.contains("embedded-nation");
+    const areaText = nationSelected
+      ? "全国"
+      : cleanControlText(activePref?.textContent, cleanControlText(activeRegion?.textContent, "地域・都道府県"));
+
+    const selectedMonth = monthSelect?.selectedOptions?.[0]?.textContent || "通年";
+    const activeElement = document.querySelector("#elementPanel .element-button.active, #elementPanel [aria-pressed='true'], #elementPanel .selected");
+    const tableTitle = document.getElementById("tableTitle")?.textContent?.trim();
+    const elementText = cleanControlText(activeElement?.textContent, tableTitle && tableTitle !== "読み込み待ち" ? tableTitle : "要素を選択");
+
+    if (areaSummary) areaSummary.textContent = areaText;
+    if (monthSummary) monthSummary.textContent = cleanControlText(selectedMonth, "通年");
+    if (elementSummary) elementSummary.textContent = elementText;
+  };
+
+  const scheduleSummaryUpdate = () => {
+    window.clearTimeout(summaryUpdateTimer);
+    summaryUpdateTimer = window.setTimeout(updateSelectionSummary, 40);
+  };
+
+  monthToggle?.addEventListener("click", () => {
+    setMonthExpanded(monthToggle.getAttribute("aria-expanded") !== "true");
+  });
+  document.getElementById("previousMonthButton")?.addEventListener("click", () => moveMonth(-1));
+  document.getElementById("nextMonthButton")?.addEventListener("click", () => moveMonth(1));
+  document.getElementById("currentMonthButton")?.addEventListener("click", () => chooseMonth(new Date().getMonth() + 1));
+  monthSelect?.addEventListener("change", scheduleSummaryUpdate);
+  settingsToggle?.addEventListener("click", () => setSettingsVisible(settingsPanels.hidden));
+  scrollToTableButton?.addEventListener("click", scrollToTable);
+
+  document.querySelectorAll("[data-open-setting]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.openSetting;
+      setSettingsVisible(true);
+      if (target === "area" && areaToggle?.getAttribute("aria-expanded") === "false") areaToggle.click();
+      if (target === "month") setMonthExpanded(true);
+      if (target === "element" && (elementToggle?.getAttribute("aria-expanded") !== "true" || elementPanel?.hidden)) elementToggle?.click();
+      const panel = target === "area"
+        ? document.querySelector(".area-panel")
+        : target === "month"
+          ? document.querySelector(".month-panel-wrap")
+          : document.querySelector(".element-panel-wrap");
+      panel?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+    });
+  });
+
+  if (areaToggle) {
+    new MutationObserver(() => {
+      updateAreaToggleLabel();
+      scheduleSummaryUpdate();
+    }).observe(areaToggle, { attributes: true, childList: true, subtree: true, attributeFilter: ["aria-expanded"] });
+  }
+  if (elementToggle) {
+    new MutationObserver(() => {
+      updateElementToggleLabel();
+      scheduleSummaryUpdate();
+    }).observe(elementToggle, { attributes: true, childList: true, subtree: true, attributeFilter: ["aria-expanded"] });
+  }
+
+  new MutationObserver(scheduleSummaryUpdate).observe(settingsPanels, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true,
+    attributeFilter: ["class", "aria-pressed", "selected"],
+  });
+
+  const tableTitle = document.getElementById("tableTitle");
+  if (tableTitle) new MutationObserver(scheduleSummaryUpdate).observe(tableTitle, { childList: true, subtree: true, characterData: true });
+
+  setMonthExpanded(rawStorage.get(MONTH_PANEL_COLLAPSED_KEY) !== "true", { persist: false });
+  setSettingsVisible(rawStorage.get(DASHBOARD_SETTINGS_VISIBLE_KEY) !== "false", { persist: false, notify: false });
+  updateAreaToggleLabel();
+  updateElementToggleLabel();
+  updateSelectionSummary();
+
+  window.weatherExtremePaneControls = {
+    setSettingsVisible: (visible) => setSettingsVisible(visible, { persist: true, notify: false }),
+    getSettingsVisible: () => !settingsPanels.hidden,
+    scrollToTable,
+    updateSelectionSummary,
+  };
+  return true;
+}
+
 async function initializeLegacyView() {
   document.body.classList.add("legacy-view");
   document.getElementById("desktopDashboard")?.setAttribute("hidden", "");
   const legacyApp = document.getElementById("legacyApp");
   if (legacyApp) legacyApp.hidden = false;
-  await loadApplicationModule();
+  const loaded = await loadApplicationModule();
+  if (loaded) initializeEnhancedControls("legacy");
 }
 
 async function initializeEmbeddedPane(scope) {
@@ -268,6 +455,7 @@ function prepareEmbeddedPane(scope) {
     if (!tableTitle || !summaryHeader || !liveSummaryBody) return false;
 
     document.body.classList.add("embedded-ready");
+    initializeEnhancedControls(scope);
 
     if (scope === "nation") {
       const nationButton = document.querySelector("[data-nation-tab], [data-nation-select]");
@@ -380,6 +568,78 @@ function escapeForHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function applySettingsVisibilityToFrame(frame, visible = dashboardSettingsVisible) {
+  try {
+    frame?.contentWindow?.weatherExtremePaneControls?.setSettingsVisible(Boolean(visible));
+  } catch {
+    // 同一オリジンでない場合や、フレーム準備前はload時に再試行する。
+  }
+}
+
+function updateDashboardSettingsButton() {
+  const button = document.getElementById("dashboardSettingsToggle");
+  if (!button) return;
+  button.setAttribute("aria-pressed", String(dashboardSettingsVisible));
+  button.classList.toggle("active", !dashboardSettingsVisible);
+  button.textContent = dashboardSettingsVisible ? "設定を隠す" : "設定を表示";
+  button.title = dashboardSettingsVisible ? "各画面の設定欄をまとめて隠す" : "各画面の設定欄をまとめて表示";
+}
+
+function setDashboardSettingsVisibility(visible, { applyFrames = true } = {}) {
+  dashboardSettingsVisible = Boolean(visible);
+  rawStorage.set(DASHBOARD_SETTINGS_VISIBLE_KEY, String(dashboardSettingsVisible));
+  updateDashboardSettingsButton();
+  if (applyFrames) {
+    document.querySelectorAll("[data-dashboard-frame]").forEach((frame) => {
+      applySettingsVisibilityToFrame(frame, dashboardSettingsVisible);
+    });
+  }
+}
+
+function getActiveDashboardFrames() {
+  const activeView = document.querySelector("[data-dashboard-view]:not([hidden])");
+  return activeView ? [...activeView.querySelectorAll("[data-dashboard-frame]")] : [];
+}
+
+function scrollActiveFramesToTable() {
+  getActiveDashboardFrames().forEach((frame) => {
+    try {
+      const controls = frame.contentWindow?.weatherExtremePaneControls;
+      if (controls?.scrollToTable) controls.scrollToTable();
+      else frame.contentDocument?.querySelector(".table-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch {
+      // no-op
+    }
+  });
+}
+
+function bindDashboardUtilityControls() {
+  const settingsButton = document.getElementById("dashboardSettingsToggle");
+  if (settingsButton && settingsButton.dataset.bound !== "true") {
+    settingsButton.dataset.bound = "true";
+    settingsButton.addEventListener("click", () => setDashboardSettingsVisibility(!dashboardSettingsVisible));
+  }
+
+  const jumpButton = document.getElementById("dashboardTableJumpButton");
+  if (jumpButton && jumpButton.dataset.bound !== "true") {
+    jumpButton.dataset.bound = "true";
+    jumpButton.addEventListener("click", scrollActiveFramesToTable);
+  }
+
+  if (window.__weatherExtremeSettingsMessageBound !== true) {
+    window.__weatherExtremeSettingsMessageBound = true;
+    window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin) return;
+      const data = event.data;
+      if (data?.source === "weather-extreme" && data.type === "settings-visibility") {
+        setDashboardSettingsVisibility(Boolean(data.visible));
+      }
+    });
+  }
+
+  updateDashboardSettingsButton();
+}
+
 function initializeDesktopDashboard() {
   document.body.classList.add("dashboard-view-active");
   const dashboard = document.getElementById("desktopDashboard");
@@ -388,6 +648,7 @@ function initializeDesktopDashboard() {
   if (dashboard) dashboard.hidden = false;
 
   bindThemeButton(document.getElementById("dashboardThemeToggle"));
+  bindDashboardUtilityControls();
 
   const modeButtons = [...document.querySelectorAll("[data-dashboard-mode]")];
   const savedMode = rawStorage.get(DASHBOARD_MODE_KEY);
@@ -510,6 +771,7 @@ function ensureFrameLoaded(name) {
   frame.addEventListener("load", () => {
     attachFrameStatusObserver(frame, name);
     syncThemeToFrame(frame, document.documentElement.dataset.theme);
+    window.setTimeout(() => applySettingsVisibilityToFrame(frame, dashboardSettingsVisible), 120);
   });
 }
 
@@ -521,18 +783,29 @@ function attachFrameStatusObserver(frame, name) {
   const update = () => {
     const tableTitle = doc.getElementById("tableTitle")?.textContent?.trim();
     const observedAt = doc.getElementById("observedLatestAt")?.textContent?.trim();
-    if (tableTitle && tableTitle !== "読み込み待ち") {
-      output.textContent = observedAt && observedAt !== "読み込み待ち"
-        ? `${tableTitle} ｜ ${observedAt}`
-        : tableTitle;
-      output.title = output.textContent;
+    const area = doc.getElementById("areaSelectionSummary")?.textContent?.trim();
+    const month = doc.getElementById("monthSelectionSummary")?.textContent?.trim();
+    const element = doc.getElementById("elementSelectionSummary")?.textContent?.trim();
+    const selection = [area, month, element]
+      .filter((value) => value && !value.includes("読み込み中") && value !== "要素を選択")
+      .join(" ｜ ");
+
+    if (selection || (tableTitle && tableTitle !== "読み込み待ち")) {
+      output.textContent = selection || tableTitle;
+      output.title = [tableTitle, observedAt && observedAt !== "読み込み待ち" ? observedAt : ""]
+        .filter(Boolean)
+        .join(" ｜ ");
     }
   };
 
-  const titleNode = doc.getElementById("tableTitle");
-  const observedNode = doc.getElementById("observedLatestAt");
-  if (titleNode) new MutationObserver(update).observe(titleNode, { childList: true, subtree: true, characterData: true });
-  if (observedNode) new MutationObserver(update).observe(observedNode, { childList: true, subtree: true, characterData: true });
+  const observedNodes = [
+    doc.getElementById("tableTitle"),
+    doc.getElementById("observedLatestAt"),
+    doc.getElementById("areaSelectionSummary"),
+    doc.getElementById("monthSelectionSummary"),
+    doc.getElementById("elementSelectionSummary"),
+  ].filter(Boolean);
+  observedNodes.forEach((node) => new MutationObserver(update).observe(node, { childList: true, subtree: true, characterData: true }));
   doc.addEventListener("click", () => window.setTimeout(update, 250));
   update();
 }
