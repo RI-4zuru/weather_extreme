@@ -1,4 +1,4 @@
-const BUILD_VERSION = "20260717-3";
+const BUILD_VERSION = "20260717-4";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -32,7 +32,8 @@ const rawStorage = {
 };
 
 const params = new URLSearchParams(window.location.search);
-const paneName = params.get("pane") || "";
+const requestedPaneName = params.get("pane") || "";
+const paneName = requestedPaneName === "nation" ? "single" : requestedPaneName;
 const isEmbeddedPane = Boolean(paneName);
 const isDesktopDashboard = !isEmbeddedPane && window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches;
 let dashboardSettingsVisible = rawStorage.get(DASHBOARD_SETTINGS_VISIBLE_KEY) !== "false";
@@ -355,8 +356,9 @@ function initializeEnhancedControls(scope = "legacy") {
   updateAreaToggleLabel();
   updateElementToggleLabel();
   updateSelectionSummary();
-  initializeLiveRankingPolicyGuide();
+  initializeReferenceObservationUI();
   initializeTableUtilities();
+  initializeScrollAssist();
 
   window.weatherExtremePaneControls = {
     setSettingsVisible: (visible) => setSettingsVisible(visible, { persist: true, notify: false }),
@@ -407,91 +409,40 @@ function getJstMonthFromDateLike(value) {
   return getCurrentJstMonthNumber();
 }
 
-function initializeLiveRankingPolicyGuide() {
-  const tableSection = document.querySelector(".table-section");
-  const tableHeading = tableSection?.querySelector(".table-heading-row");
-  const monthSelect = document.getElementById("monthSelect");
-  const observedAt = document.getElementById("observedLatestAt");
-  if (!tableSection || !tableHeading || !monthSelect || document.getElementById("liveRankingPolicy")) return;
+function initializeReferenceObservationUI() {
+  document.body.classList.add("reference-observation-mode");
 
-  const card = document.createElement("section");
-  card.id = "liveRankingPolicy";
-  card.className = "live-ranking-policy";
-  card.setAttribute("aria-live", "polite");
-  card.innerHTML = `
-    <div class="live-ranking-policy-icon" aria-hidden="true">LIVE</div>
-    <div class="live-ranking-policy-copy">
-      <div class="live-ranking-policy-title-row">
-        <strong class="live-ranking-policy-title">実況のランキング反映</strong>
-        <span class="live-ranking-policy-badge"></span>
-      </div>
-      <p class="live-ranking-policy-message"></p>
-    </div>
-    <div class="live-ranking-policy-actions">
-      <button type="button" data-live-policy-month>実況月へ</button>
-      <button type="button" data-live-policy-annual>通年へ</button>
-    </div>
-  `;
-  tableHeading.insertAdjacentElement("afterend", card);
+  const legendChip = document.querySelector(".legend .live-chip");
+  if (legendChip) {
+    legendChip.textContent = "実況値：参考表示（順位には反映しません）";
+    legendChip.classList.add("reference-only");
+    legendChip.title = "実況値は右端の参考列にのみ表示し、1位〜10位の記録は変更しません。";
+  }
 
-  const setMonth = (month) => {
-    const value = String(month);
-    if (![...monthSelect.options].some((option) => option.value === value)) return;
-    monthSelect.value = value;
-    monthSelect.dispatchEvent(new Event("change", { bubbles: true }));
-  };
+  const metaLabel = document.querySelector(".header-meta .meta-label");
+  if (metaLabel) metaLabel.textContent = "参考実況";
 
-  const update = () => {
-    const selected = monthSelect.value || "all";
-    const liveMonth = getJstMonthFromDateLike(observedAt?.textContent || "");
-    const eligible = selected === "all" || Number(selected) === liveMonth;
-    const badge = card.querySelector(".live-ranking-policy-badge");
-    const message = card.querySelector(".live-ranking-policy-message");
-    const liveMonthButton = card.querySelector("[data-live-policy-month]");
-    const liveLegend = tableSection.querySelector(".legend .live-chip");
-
-    card.classList.toggle("is-eligible", eligible);
-    card.classList.toggle("is-reference", !eligible);
-    if (badge) badge.textContent = eligible ? "順位に反映" : "参考表示のみ";
-    if (message) {
-      message.textContent = eligible
-        ? selected === "all"
-          ? `実況値は通年ランキングの順位判定に反映されます。実況の観測月は${liveMonth}月です。`
-          : `${liveMonth}月の実況値なので、この月のランキング順位に反映されます。`
-        : `実況値は表の「実況」列に表示しますが、${selected}月の1位〜10位には挿入しません。順位判定は通年または${liveMonth}月だけで行います。`;
-    }
-    if (liveMonthButton) {
-      liveMonthButton.textContent = `${liveMonth}月へ`;
-      liveMonthButton.dataset.month = String(liveMonth);
-      liveMonthButton.hidden = selected === String(liveMonth);
-    }
-    if (liveLegend) {
-      liveLegend.textContent = eligible
-        ? "赤系：実況で順位相当あり"
-        : "実況：参考表示（順位対象外）";
-      liveLegend.classList.toggle("reference-only", !eligible);
-    }
-  };
-
-  card.querySelector("[data-live-policy-month]")?.addEventListener("click", (event) => {
-    setMonth(event.currentTarget.dataset.month || getCurrentJstMonthNumber());
-  });
-  card.querySelector("[data-live-policy-annual]")?.addEventListener("click", () => setMonth("all"));
-  monthSelect.addEventListener("change", update);
-  if (observedAt) {
-    new MutationObserver(update).observe(observedAt, {
+  const liveToggle = document.getElementById("liveColumnToggle");
+  if (liveToggle) {
+    liveToggle.title = "実況値を参考列として表示します。ランキング順位には反映しません。";
+    const syncLabel = () => {
+      const visible = liveToggle.getAttribute("aria-pressed") === "true";
+      const next = visible ? "参考実況を隠す" : "参考実況を表示";
+      if (liveToggle.textContent.trim() !== next) liveToggle.textContent = next;
+    };
+    new MutationObserver(syncLabel).observe(liveToggle, {
+      attributes: true,
       childList: true,
       subtree: true,
-      characterData: true,
+      attributeFilter: ["aria-pressed"],
     });
+    syncLabel();
   }
-  update();
 }
 
 function initializeTableUtilities() {
   const tableSection = document.querySelector(".table-section");
   const tableBody = document.getElementById("rankTableBody");
-  const policyCard = document.getElementById("liveRankingPolicy");
   const legend = tableSection?.querySelector(".legend");
   if (!tableSection || !tableBody || document.getElementById("tableUtilityBar")) return;
 
@@ -505,27 +456,24 @@ function initializeTableUtilities() {
       <button type="button" class="table-search-clear" title="検索をクリア" aria-label="検索をクリア">×</button>
     </label>
     <div class="table-utility-actions">
-      <button type="button" class="table-ranked-only" aria-pressed="false">実況ランクインのみ</button>
+      <button type="button" class="table-legend-toggle" aria-pressed="false">凡例を隠す</button>
       <button type="button" class="table-density-toggle" aria-pressed="false">コンパクト表示</button>
       <span class="table-filter-count" aria-live="polite"></span>
     </div>
   `;
   if (legend) tableSection.insertBefore(bar, legend);
-  else (policyCard || tableSection.firstElementChild)?.insertAdjacentElement("afterend", bar);
+  else tableSection.firstElementChild?.insertAdjacentElement("afterend", bar);
 
   const input = bar.querySelector("input[type='search']");
   const clearButton = bar.querySelector(".table-search-clear");
-  const rankedOnlyButton = bar.querySelector(".table-ranked-only");
+  const legendButton = bar.querySelector(".table-legend-toggle");
   const densityButton = bar.querySelector(".table-density-toggle");
   const count = bar.querySelector(".table-filter-count");
   const densityKey = `${APP_PREFIX}table_density`;
-  let rankedOnly = false;
+  const legendKey = `${APP_PREFIX}table_legend_visible`;
 
   const normalize = (value) => String(value || "").normalize("NFKC").toLocaleLowerCase("ja").trim();
   const isDataRow = (row) => !row.querySelector(".message-cell");
-  const hasLiveRank = (row) => Boolean(row.querySelector(
-    ".rank-cell.live-target, .rank-cell.live-and-year, .live-col-cell.live-target, .live-col-cell.live-and-year"
-  ));
 
   const applyFilter = () => {
     const query = normalize(input?.value);
@@ -539,8 +487,7 @@ function initializeTableUtilities() {
       }
       total += 1;
       const matchesText = !query || normalize(row.textContent).includes(query);
-      const matchesRank = !rankedOnly || hasLiveRank(row);
-      row.hidden = !(matchesText && matchesRank);
+      row.hidden = !matchesText;
       if (!row.hidden) visible += 1;
     });
     if (count) count.textContent = total ? `${visible} / ${total} 行` : "";
@@ -555,17 +502,22 @@ function initializeTableUtilities() {
     if (persist) rawStorage.set(densityKey, normalized ? "compact" : "standard");
   };
 
+  const setLegendVisible = (visible, { persist = true } = {}) => {
+    const normalized = Boolean(visible);
+    if (legend) legend.hidden = !normalized;
+    legendButton?.setAttribute("aria-pressed", String(!normalized));
+    if (legendButton) legendButton.textContent = normalized ? "凡例を隠す" : "凡例を表示";
+    if (persist) rawStorage.set(legendKey, String(normalized));
+  };
+
   input?.addEventListener("input", applyFilter);
   clearButton?.addEventListener("click", () => {
     if (input) input.value = "";
     input?.focus();
     applyFilter();
   });
-  rankedOnlyButton?.addEventListener("click", () => {
-    rankedOnly = !rankedOnly;
-    rankedOnlyButton.setAttribute("aria-pressed", String(rankedOnly));
-    rankedOnlyButton.classList.toggle("active", rankedOnly);
-    applyFilter();
+  legendButton?.addEventListener("click", () => {
+    setLegendVisible(Boolean(legend?.hidden));
   });
   densityButton?.addEventListener("click", () => {
     setDensity(!document.body.classList.contains("table-density-compact"));
@@ -573,7 +525,28 @@ function initializeTableUtilities() {
 
   new MutationObserver(applyFilter).observe(tableBody, { childList: true, subtree: true });
   setDensity(rawStorage.get(densityKey) === "compact", { persist: false });
+  setLegendVisible(rawStorage.get(legendKey) !== "false", { persist: false });
   applyFilter();
+}
+
+function initializeScrollAssist() {
+  if (document.getElementById("scrollTopAssist")) return;
+  const button = document.createElement("button");
+  button.id = "scrollTopAssist";
+  button.className = "scroll-top-assist";
+  button.type = "button";
+  button.textContent = "↑";
+  button.title = "ページ上部へ戻る";
+  button.setAttribute("aria-label", "ページ上部へ戻る");
+  button.hidden = true;
+  document.body.append(button);
+
+  const update = () => {
+    button.hidden = window.scrollY < 520;
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  update();
 }
 
 async function initializeLegacyView() {
@@ -896,7 +869,7 @@ function initializeDesktopDashboard() {
 
   const modeButtons = [...document.querySelectorAll("[data-dashboard-mode]")];
   const savedMode = rawStorage.get(DASHBOARD_MODE_KEY);
-  const initialMode = ["single", "compare", "nation"].includes(savedMode) ? savedMode : "compare";
+  const initialMode = ["single", "compare"].includes(savedMode) ? savedMode : "compare";
   modeButtons.forEach((button) => {
     button.addEventListener("click", () => activateDashboardMode(button.dataset.dashboardMode || "compare"));
   });
@@ -960,11 +933,7 @@ const DASHBOARD_MODE_META = {
   },
   compare: {
     title: "左右比較",
-    description: "2つの都道府県を独立して選び、同じ画面内で順位表を見比べます。",
-  },
-  nation: {
-    title: "全国ランクイン",
-    description: "実況で極値10位以内に入った都道府県を一覧化し、該当行へすぐ移動できます。",
+    description: "2つの都道府県を独立して選び、同じ条件でも別条件でも順位表を見比べます。",
   },
 };
 
