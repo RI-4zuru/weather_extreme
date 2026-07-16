@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-16T20:22:45.835412+09:00",
-  "observedLatestAt": "2026-07-16T20:10:00+09:00",
+  "updatedAt": "2026-07-17T01:51:17.778295+09:00",
+  "observedLatestAt": "2026-07-17T01:40:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "dailyMaxTempHigh",
@@ -991,8 +991,8 @@
         {
           "rank": 10,
           "value": 37,
-          "date": "1998年8月6日（平成10年）",
-          "_date_raw": "1998/08/06"
+          "date": "2026年7月16日（令和8年）",
+          "_date_raw": "2026/07/16"
         }
       ]
     }
