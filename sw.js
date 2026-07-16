@@ -1,66 +1,25 @@
-const CACHE_NAME = "weather-extreme-shell-v2";
+/*
+ * 旧PWAキャッシュ停止用 Service Worker
+ *
+ * 以前の weather-extreme-shell-v2 は index.html / style.css / app.js を
+ * cache-first で返すため、UI更新後も古いJavaScriptが残ることがありました。
+ * 現行版ではオフラインキャッシュを使用せず、既存登録と専用キャッシュを破棄します。
+ */
 
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./js/app.js",
-  "./manifest.webmanifest",
-  "./config/prefectures.json",
-  "./config/elements.json"
-];
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
-  );
+self.addEventListener("install", () => {
   self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
-    )
-  );
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", (event) => {
-  const url = new URL(event.request.url);
-
-  if (url.pathname.includes("/data/")) {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
+  event.waitUntil((async () => {
+    const cacheNames = await caches.keys();
+    await Promise.all(
+      cacheNames
+        .filter((name) => name.startsWith("weather-extreme-"))
+        .map((name) => caches.delete(name))
     );
-    return;
-  }
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) {
-        fetch(event.request)
-          .then((response) => {
-            if (!response || response.status !== 200) return;
-            const cloned = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
-          })
-          .catch(() => {});
-        return cached;
-      }
-
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200) {
-          return response;
-        }
-        const cloned = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
-        return response;
-      });
-    })
-  );
+    await self.registration.unregister();
+    await self.clients.claim();
+  })());
 });
