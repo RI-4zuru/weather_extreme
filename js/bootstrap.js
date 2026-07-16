@@ -1,3 +1,4 @@
+const BUILD_VERSION = "20260716-3";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -33,6 +34,7 @@ const paneName = params.get("pane") || "";
 const isEmbeddedPane = Boolean(paneName);
 const isDesktopDashboard = !isEmbeddedPane && window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches;
 
+await retireLegacyServiceWorker();
 initializeTheme();
 
 if (isEmbeddedPane) {
@@ -41,6 +43,78 @@ if (isEmbeddedPane) {
   initializeDesktopDashboard();
 } else {
   await initializeLegacyView();
+}
+
+
+async function retireLegacyServiceWorker() {
+  // 以前のPWA用Service Workerは、古いindex.html / app.jsをキャッシュ優先で返す。
+  // 現行版ではPWAキャッシュを使わないため、残存登録と専用キャッシュを明示的に破棄する。
+  if ("serviceWorker" in navigator) {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(
+        registrations
+          .filter((registration) => {
+            try {
+              return new URL(registration.scope).pathname.includes("/weather_extreme/");
+            } catch {
+              return true;
+            }
+          })
+          .map((registration) => registration.unregister())
+      );
+    } catch (error) {
+      console.warn("旧Service Workerの解除に失敗しました:", error);
+    }
+  }
+
+  if ("caches" in window) {
+    try {
+      const cacheNames = await window.caches.keys();
+      await Promise.all(
+        cacheNames
+          .filter((name) => name.startsWith("weather-extreme-"))
+          .map((name) => window.caches.delete(name))
+      );
+    } catch (error) {
+      console.warn("旧キャッシュの削除に失敗しました:", error);
+    }
+  }
+}
+
+async function loadApplicationModule() {
+  try {
+    await import(`./app.js?v=${BUILD_VERSION}`);
+    return true;
+  } catch (error) {
+    console.error("アプリ本体の読み込みに失敗しました:", error);
+    renderApplicationLoadError(error);
+    return false;
+  }
+}
+
+function renderApplicationLoadError(error) {
+  const message = error?.message || String(error || "不明なエラー");
+  const safeMessage = escapeForHtml(message);
+  const tableTitle = document.getElementById("tableTitle");
+  const statusText = document.getElementById("statusText");
+  const rankTableBody = document.getElementById("rankTableBody");
+
+  if (tableTitle) tableTitle.textContent = "表の読み込みに失敗しました";
+  if (statusText) {
+    statusText.textContent = "ページを再読み込みしても直らない場合は、診断情報を確認してください。";
+  }
+  if (rankTableBody) {
+    rankTableBody.innerHTML = `
+      <tr>
+        <td class="message-cell" colspan="12">
+          アプリ本体を読み込めませんでした。<br>
+          <small>${safeMessage}</small>
+        </td>
+      </tr>
+    `;
+  }
+  document.body.classList.add("embedded-ready");
 }
 
 function initializeTheme() {
@@ -88,7 +162,7 @@ async function initializeLegacyView() {
   document.getElementById("desktopDashboard")?.setAttribute("hidden", "");
   const legacyApp = document.getElementById("legacyApp");
   if (legacyApp) legacyApp.hidden = false;
-  await import("./app.js");
+  await loadApplicationModule();
 }
 
 async function initializeEmbeddedPane(scope) {
@@ -101,7 +175,8 @@ async function initializeEmbeddedPane(scope) {
   seedPaneStorage(scope);
   installPaneStorageScope(scope);
 
-  await import("./app.js");
+  const loaded = await loadApplicationModule();
+  if (!loaded) return;
   applyTheme(rawStorage.get(DASHBOARD_THEME_KEY) || document.documentElement.dataset.theme);
   prepareEmbeddedPane(scope);
 }
