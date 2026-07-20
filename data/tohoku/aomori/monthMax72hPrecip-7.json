@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-20T01:20:51.317137+09:00",
-  "observedLatestAt": "2026-07-20T01:10:00+09:00",
+  "updatedAt": "2026-07-20T07:19:58.619743+09:00",
+  "observedLatestAt": "2026-07-20T07:10:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "monthMax72hPrecip",
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "市浦",
-      "startDate": "1991年7月23日（平成3年）",
+      "startDate": "1993年7月31日（平成5年）",
       "ranks": [
         {
           "rank": 1,
@@ -459,12 +459,6 @@
           "value": 80,
           "date": "1993年7月31日（平成5年）",
           "_date_raw": "1993/07/31"
-        },
-        {
-          "rank": 10,
-          "value": 79,
-          "date": "1991年7月23日（平成3年）",
-          "_date_raw": "1991/07/23"
         }
       ]
     },
