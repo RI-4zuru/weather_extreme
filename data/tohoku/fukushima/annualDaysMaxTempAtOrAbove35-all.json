@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-21T20:30:05.016873+09:00",
-  "observedLatestAt": "2026-07-21T20:20:00+09:00",
+  "updatedAt": "2026-07-22T01:52:45.678985+09:00",
+  "observedLatestAt": "2026-07-22T01:40:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -193,14 +193,14 @@
         {
           "rank": 9,
           "value": 1,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
           "value": 1,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         }
       ]
     },
