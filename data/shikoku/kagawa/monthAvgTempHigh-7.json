@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-26T20:05:23.485323+09:00",
-  "observedLatestAt": "2026-07-26T19:50:00+09:00",
+  "updatedAt": "2026-07-27T01:25:58.524516+09:00",
+  "observedLatestAt": "2026-07-27T01:10:00+09:00",
   "prefecture": "香川県",
   "region": "四国",
   "element": "monthAvgTempHigh",
@@ -96,7 +96,7 @@
         },
         {
           "rank": 4,
-          "value": 29.1,
+          "value": 29.3,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
@@ -174,7 +174,7 @@
         },
         {
           "rank": 6,
-          "value": 28.3,
+          "value": 28.4,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },

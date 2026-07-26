@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-26T20:05:23.485323+09:00",
-  "observedLatestAt": "2026-07-26T19:50:00+09:00",
+  "updatedAt": "2026-07-27T01:25:58.524516+09:00",
+  "observedLatestAt": "2026-07-27T01:10:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 9,
+          "value": 10,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
