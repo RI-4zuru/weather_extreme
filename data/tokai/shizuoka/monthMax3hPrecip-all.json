@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T22:25:15.803459+09:00",
-  "observedLatestAt": "2026-07-27T22:10:00+09:00",
+  "updatedAt": "2026-07-28T02:20:52.040596+09:00",
+  "observedLatestAt": "2026-07-28T02:10:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "monthMax3hPrecip",
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "春野",
-      "startDate": "2018年4月25日（平成30年）",
+      "startDate": "2026年7月27日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -528,9 +528,9 @@
         },
         {
           "rank": 10,
-          "value": 92,
-          "date": "2018年4月25日（平成30年）",
-          "_date_raw": "2018/04/25"
+          "value": 93,
+          "date": "2026年7月27日（令和8年）",
+          "_date_raw": "2026/07/27"
         }
       ]
     },

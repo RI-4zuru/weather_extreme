@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-27T22:25:15.803459+09:00",
-  "observedLatestAt": "2026-07-27T22:10:00+09:00",
+  "updatedAt": "2026-07-28T02:20:52.040596+09:00",
+  "observedLatestAt": "2026-07-28T02:10:00+09:00",
   "prefecture": "島根県",
   "region": "中国",
   "element": "monthAvgTempHigh",
@@ -18,7 +18,7 @@
         },
         {
           "rank": 2,
-          "value": 26.7,
+          "value": 26.8,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
@@ -348,7 +348,7 @@
         },
         {
           "rank": 2,
-          "value": 27.9,
+          "value": 28,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
