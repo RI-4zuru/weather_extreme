@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-28T20:40:25.146240+09:00",
-  "observedLatestAt": "2026-07-28T20:30:00+09:00",
+  "updatedAt": "2026-07-29T02:02:37.535501+09:00",
+  "observedLatestAt": "2026-07-29T01:50:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthMax24hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "飛島",
-      "startDate": "2013年7月18日（平成25年）",
+      "startDate": "1981年7月15日（昭和56年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 74,
           "date": "1981年7月15日（昭和56年）",
           "_date_raw": "1981/07/15"
-        },
-        {
-          "rank": 10,
-          "value": 73.5,
-          "date": "2013年7月18日（平成25年）",
-          "_date_raw": "2013/07/18"
         }
       ]
     },
