@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-29T20:45:58.615933+09:00",
-  "observedLatestAt": "2026-07-29T20:30:00+09:00",
+  "updatedAt": "2026-07-30T01:49:17.143863+09:00",
+  "observedLatestAt": "2026-07-30T01:40:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "monthSunshineHigh",
@@ -493,8 +493,8 @@
         {
           "rank": 10,
           "value": 254.8,
-          "date": "2025年7月（令和7年）",
-          "_date_raw": "2025/07/01"
+          "date": "2026年7月（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     },

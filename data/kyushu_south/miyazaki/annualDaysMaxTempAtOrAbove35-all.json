@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-29T20:45:58.615933+09:00",
-  "observedLatestAt": "2026-07-29T20:30:00+09:00",
+  "updatedAt": "2026-07-30T01:49:17.143863+09:00",
+  "observedLatestAt": "2026-07-30T01:40:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -163,14 +163,14 @@
         {
           "rank": 4,
           "value": 13,
-          "date": "2007年",
-          "_date_raw": "2007/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 5,
-          "value": 12,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 13,
+          "date": "2007年",
+          "_date_raw": "2007/01/01"
         },
         {
           "rank": 6,

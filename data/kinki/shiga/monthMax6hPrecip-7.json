@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-29T20:45:58.615933+09:00",
-  "observedLatestAt": "2026-07-29T20:30:00+09:00",
+  "updatedAt": "2026-07-30T01:49:17.143863+09:00",
+  "observedLatestAt": "2026-07-30T01:40:00+09:00",
   "prefecture": "滋賀県",
   "region": "近畿",
   "element": "monthMax6hPrecip",
@@ -126,6 +126,12 @@
         },
         {
           "rank": 9,
+          "value": 54,
+          "date": "2026年7月29日（令和8年）",
+          "_date_raw": "2026/07/29"
+        },
+        {
+          "rank": 10,
           "value": 54,
           "date": "1993年7月5日（平成5年）",
           "_date_raw": "1993/07/05"
