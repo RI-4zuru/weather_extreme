@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T21:00:26.162007+09:00",
-  "observedLatestAt": "2026-07-30T20:50:00+09:00",
+  "updatedAt": "2026-07-31T02:16:48.085972+09:00",
+  "observedLatestAt": "2026-07-31T02:10:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "monthAvgTempHigh",
@@ -1981,8 +1981,8 @@
         {
           "rank": 10,
           "value": 23.8,
-          "date": "1967年7月（昭和42年）",
-          "_date_raw": "1967/07/01"
+          "date": "2026年7月（令和8年）",
+          "_date_raw": "2026/07/01"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T21:00:26.162007+09:00",
-  "observedLatestAt": "2026-07-30T20:50:00+09:00",
+  "updatedAt": "2026-07-31T02:16:48.085972+09:00",
+  "observedLatestAt": "2026-07-31T02:10:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthAvgTempHigh",
@@ -90,7 +90,7 @@
         },
         {
           "rank": 3,
-          "value": 26.3,
+          "value": 26.4,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
@@ -498,7 +498,7 @@
         },
         {
           "rank": 5,
-          "value": 27.7,
+          "value": 27.8,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },

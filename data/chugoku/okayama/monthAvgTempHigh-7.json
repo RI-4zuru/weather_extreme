@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-30T21:00:26.162007+09:00",
-  "observedLatestAt": "2026-07-30T20:50:00+09:00",
+  "updatedAt": "2026-07-31T02:16:48.085972+09:00",
+  "observedLatestAt": "2026-07-31T02:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "monthAvgTempHigh",
@@ -354,7 +354,7 @@
         },
         {
           "rank": 3,
-          "value": 27.4,
+          "value": 27.5,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
@@ -690,7 +690,7 @@
         },
         {
           "rank": 4,
-          "value": 29,
+          "value": 29.1,
           "date": "2026年7月（令和8年）",
           "_date_raw": "2026/07/01"
         },
