@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T20:47:40.060615+09:00",
-  "observedLatestAt": "2026-07-31T20:40:00+09:00",
+  "updatedAt": "2026-08-01T02:41:01.317595+09:00",
+  "observedLatestAt": "2026-08-01T02:30:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "yearCumulativeSnowDepth",
@@ -444,27 +444,27 @@
         },
         {
           "rank": 7,
+          "value": 391,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
           "value": 379,
           "date": "2013年",
           "_date_raw": "2013/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 369,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 367,
           "date": "2019年",
           "_date_raw": "2019/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 353,
-          "date": "2011年",
-          "_date_raw": "2011/01/01"
         }
       ]
     },
@@ -558,12 +558,18 @@
         },
         {
           "rank": 4,
+          "value": 692,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 5,
           "value": 627,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 530,
           "date": "2021年",
           "_date_raw": "2021/01/01"

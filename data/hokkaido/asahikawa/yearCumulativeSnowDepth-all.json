@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T20:47:40.060615+09:00",
-  "observedLatestAt": "2026-07-31T20:40:00+09:00",
+  "updatedAt": "2026-08-01T02:41:01.317595+09:00",
+  "observedLatestAt": "2026-08-01T02:30:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "yearCumulativeSnowDepth",
@@ -576,27 +576,27 @@
         },
         {
           "rank": 7,
+          "value": 449,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
           "value": 445,
           "date": "2009年",
           "_date_raw": "2009/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 436,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 421,
           "date": "2024年",
           "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 410,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
         }
       ]
     },

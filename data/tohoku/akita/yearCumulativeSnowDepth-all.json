@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T20:47:40.060615+09:00",
-  "observedLatestAt": "2026-07-31T20:40:00+09:00",
+  "updatedAt": "2026-08-01T02:41:01.317595+09:00",
+  "observedLatestAt": "2026-08-01T02:30:00+09:00",
   "prefecture": "秋田県",
   "region": "東北",
   "element": "yearCumulativeSnowDepth",
@@ -421,29 +421,35 @@
         {
           "rank": 3,
           "value": 303,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 4,
+          "value": 303,
           "date": "2021年",
           "_date_raw": "2021/01/01"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "value": 298,
           "date": "2023年",
           "_date_raw": "2023/01/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 261,
           "date": "2019年",
           "_date_raw": "2019/01/01"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 218,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 179,
           "date": "2020年",
           "_date_raw": "2020/01/01"

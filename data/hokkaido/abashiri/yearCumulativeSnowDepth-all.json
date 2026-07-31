@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T20:47:40.060615+09:00",
-  "observedLatestAt": "2026-07-31T20:40:00+09:00",
+  "updatedAt": "2026-08-01T02:41:01.317595+09:00",
+  "observedLatestAt": "2026-08-01T02:30:00+09:00",
   "prefecture": "網走",
   "region": "北海道",
   "element": "yearCumulativeSnowDepth",
@@ -247,26 +247,26 @@
         {
           "rank": 7,
           "value": 440,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 440,
           "date": "2018年",
           "_date_raw": "2018/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 438,
           "date": "2014年",
           "_date_raw": "2014/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 421,
           "date": "2024年",
           "_date_raw": "2024/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 412,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
         }
       ]
     },
@@ -774,27 +774,27 @@
         },
         {
           "rank": 7,
+          "value": 330,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
           "value": 317,
           "date": "2025年",
           "_date_raw": "2025/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 314,
           "date": "2018年",
           "_date_raw": "2018/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 309,
           "date": "2022年",
           "_date_raw": "2022/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 308,
-          "date": "2012年",
-          "_date_raw": "2012/01/01"
         }
       ]
     },

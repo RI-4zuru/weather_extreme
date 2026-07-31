@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-31T20:47:40.060615+09:00",
-  "observedLatestAt": "2026-07-31T20:40:00+09:00",
+  "updatedAt": "2026-08-01T02:41:01.317595+09:00",
+  "observedLatestAt": "2026-08-01T02:30:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "yearCumulativeSnowDepth",
@@ -624,6 +624,12 @@
         },
         {
           "rank": 4,
+          "value": 53,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 5,
           "value": 48,
           "date": "2023年",
           "_date_raw": "2023/01/01"
