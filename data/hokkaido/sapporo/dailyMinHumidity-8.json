@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -69,6 +69,30 @@
           "value": 62,
           "date": "2025年8月1日（令和7年）",
           "_date_raw": "2025/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "厚田",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "新篠津",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -201,6 +225,18 @@
           "value": 49,
           "date": "2023年8月15日（令和5年）",
           "_date_raw": "2023/08/15"
+        }
+      ]
+    },
+    {
+      "stationName": "江別",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -535,6 +571,18 @@
       ]
     },
     {
+      "stationName": "深川",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 96,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "空知吉野",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -663,6 +711,42 @@
           "value": 48,
           "date": "2025年8月11日（令和7年）",
           "_date_raw": "2025/08/11"
+        }
+      ]
+    },
+    {
+      "stationName": "芦別",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "月形",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "美唄",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 91,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -1195,6 +1279,18 @@
       ]
     },
     {
+      "stationName": "蘭越",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "倶知安",
       "startDate": "1950年8月（昭和25年）",
       "ranks": [
@@ -1323,6 +1419,42 @@
           "value": 39,
           "date": "2004年8月26日（平成16年）",
           "_date_raw": "2004/08/26"
+        }
+      ]
+    },
+    {
+      "stationName": "真狩",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "喜茂別",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 89,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "黒松内",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     }

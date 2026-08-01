@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -49,14 +49,14 @@
         {
           "rank": 7,
           "value": 6,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 5,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 6,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
         },
         {
           "rank": 9,
@@ -228,7 +228,7 @@
         },
         {
           "rank": 4,
-          "value": 11,
+          "value": 12,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

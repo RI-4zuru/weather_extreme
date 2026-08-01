@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "室蘭",
   "region": "北海道",
   "element": "dailyMinHumidity",
   "month": "8",
   "rows": [
+    {
+      "stationName": "厚真",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 96,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
     {
       "stationName": "穂別",
       "startDate": "2024年8月（令和6年）",
@@ -337,6 +349,30 @@
       ]
     },
     {
+      "stationName": "白老",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "鵡川",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 92,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "伊達",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -399,6 +435,18 @@
           "value": 56,
           "date": "2025年8月12日（令和7年）",
           "_date_raw": "2025/08/12"
+        }
+      ]
+    },
+    {
+      "stationName": "登別",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 99,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -601,6 +649,18 @@
       ]
     },
     {
+      "stationName": "新和",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 91,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "静内",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -663,6 +723,18 @@
           "value": 60,
           "date": "2025年8月16日（令和7年）",
           "_date_raw": "2025/08/16"
+        }
+      ]
+    },
+    {
+      "stationName": "三石",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },

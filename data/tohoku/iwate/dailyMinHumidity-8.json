@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -139,6 +139,30 @@
       ]
     },
     {
+      "stationName": "二戸",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山形",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "久慈",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -267,6 +291,18 @@
           "value": 49,
           "date": "2025年8月15日（令和7年）",
           "_date_raw": "2025/08/15"
+        }
+      ]
+    },
+    {
+      "stationName": "奥中山",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 99,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -469,6 +505,18 @@
       ]
     },
     {
+      "stationName": "好摩",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "岩泉",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -663,6 +711,18 @@
           "value": 60,
           "date": "2024年8月20日（令和6年）",
           "_date_raw": "2024/08/20"
+        }
+      ]
+    },
+    {
+      "stationName": "雫石",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 97,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -931,6 +991,54 @@
       ]
     },
     {
+      "stationName": "紫波",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 97,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "川井",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "大迫",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 95,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "山田",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 99,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "湯田",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -1129,6 +1237,18 @@
       ]
     },
     {
+      "stationName": "釜石",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "若柳",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -1191,6 +1311,18 @@
           "value": 49,
           "date": "2025年8月28日（令和7年）",
           "_date_raw": "2025/08/28"
+        }
+      ]
+    },
+    {
+      "stationName": "江刺",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 96,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "稚内",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -271,6 +271,18 @@
       ]
     },
     {
+      "stationName": "沼川",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 90,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "沓形",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -469,6 +481,18 @@
       ]
     },
     {
+      "stationName": "中頓別",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 88,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "北見枝幸",
       "startDate": "1950年8月（昭和25年）",
       "ranks": [
@@ -531,6 +555,18 @@
           "value": 34,
           "date": "1989年8月26日（平成元年）",
           "_date_raw": "1989/08/26"
+        }
+      ]
+    },
+    {
+      "stationName": "歌登",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     }

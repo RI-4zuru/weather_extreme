@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "群馬県",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
@@ -135,6 +135,18 @@
           "value": 46,
           "date": "2022年8月19日（令和4年）",
           "_date_raw": "2022/08/19"
+        }
+      ]
+    },
+    {
+      "stationName": "草津",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 54,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -469,6 +481,30 @@
       ]
     },
     {
+      "stationName": "上里見",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 49,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "伊勢崎",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 43,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "西野牧",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -594,9 +630,21 @@
         },
         {
           "rank": 10,
-          "value": 38,
-          "date": "2025年8月2日（令和7年）",
-          "_date_raw": "2025/08/02"
+          "value": 37,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "神流",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 39,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     }

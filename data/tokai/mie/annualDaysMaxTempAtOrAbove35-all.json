@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 10,
+          "value": 11,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -181,26 +181,26 @@
         {
           "rank": 7,
           "value": 12,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 8,
+          "value": 12,
           "date": "2018年",
           "_date_raw": "2018/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 12,
           "date": "1998年",
           "_date_raw": "1998/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 12,
           "date": "1995年",
           "_date_raw": "1995/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 11,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         }
       ]
     },
@@ -241,32 +241,32 @@
         {
           "rank": 6,
           "value": 7,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 7,
           "date": "2011年",
           "_date_raw": "2011/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 7,
           "date": "2010年",
           "_date_raw": "2010/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 7,
           "date": "2005年",
           "_date_raw": "2005/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 7,
           "date": "2004年",
           "_date_raw": "2004/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 7,
-          "date": "2001年",
-          "_date_raw": "2001/01/01"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-01T20:00:57.093592+09:00",
-  "observedLatestAt": "2026-08-01T19:50:00+09:00",
+  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
+  "observedLatestAt": "2026-08-02T01:10:00+09:00",
   "prefecture": "長野県",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
@@ -73,6 +73,18 @@
       ]
     },
     {
+      "stationName": "信濃町",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 64,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "飯山",
       "startDate": "2022年8月（令和4年）",
       "ranks": [
@@ -135,6 +147,18 @@
           "value": 42,
           "date": "2025年8月1日（令和7年）",
           "_date_raw": "2025/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "白馬",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 58,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -271,6 +295,18 @@
       ]
     },
     {
+      "stationName": "信州新町",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 48,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "菅平",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -399,6 +435,18 @@
           "value": 33,
           "date": "2022年8月9日（令和4年）",
           "_date_raw": "2022/08/09"
+        }
+      ]
+    },
+    {
+      "stationName": "穂高",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 43,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -601,6 +649,30 @@
       ]
     },
     {
+      "stationName": "立科",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 45,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "佐久",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 39,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "奈川",
       "startDate": "2025年8月（令和7年）",
       "ranks": [
@@ -799,6 +871,54 @@
       ]
     },
     {
+      "stationName": "木祖薮原",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 46,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "辰野",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 44,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "原村",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 41,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
+      "stationName": "野辺山",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 67,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
+        }
+      ]
+    },
+    {
       "stationName": "木曽福島",
       "startDate": "2021年8月（令和3年）",
       "ranks": [
@@ -861,6 +981,18 @@
           "value": 34,
           "date": "2021年8月4日（令和3年）",
           "_date_raw": "2021/08/04"
+        }
+      ]
+    },
+    {
+      "stationName": "伊那",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 39,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     },
@@ -1125,6 +1257,18 @@
           "value": 44,
           "date": "2025年8月15日（令和7年）",
           "_date_raw": "2025/08/15"
+        }
+      ]
+    },
+    {
+      "stationName": "南信濃",
+      "startDate": "2026年8月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 37,
+          "date": "2026年8月1日（令和8年）",
+          "_date_raw": "2026/08/01"
         }
       ]
     }
