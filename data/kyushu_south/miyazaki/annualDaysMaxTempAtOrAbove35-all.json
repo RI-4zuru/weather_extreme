@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-02T20:02:41.772401+09:00",
-  "observedLatestAt": "2026-08-02T19:50:00+09:00",
+  "updatedAt": "2026-08-03T01:25:19.112999+09:00",
+  "observedLatestAt": "2026-08-03T01:10:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -49,14 +49,14 @@
         {
           "rank": 7,
           "value": 5,
-          "date": "1983年",
-          "_date_raw": "1983/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 4,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 5,
+          "date": "1983年",
+          "_date_raw": "1983/01/01"
         },
         {
           "rank": 9,
@@ -121,14 +121,14 @@
         {
           "rank": 8,
           "value": 13,
-          "date": "1971年",
-          "_date_raw": "1971/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 12,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 13,
+          "date": "1971年",
+          "_date_raw": "1971/01/01"
         },
         {
           "rank": 10,
@@ -156,7 +156,7 @@
         },
         {
           "rank": 3,
-          "value": 16,
+          "value": 17,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -223,20 +223,20 @@
         {
           "rank": 3,
           "value": 9,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 4,
           "value": 9,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 5,
-          "value": 8,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 9,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 6,

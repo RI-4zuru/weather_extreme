@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-02T20:02:41.772401+09:00",
-  "observedLatestAt": "2026-08-02T19:50:00+09:00",
+  "updatedAt": "2026-08-03T01:25:19.112999+09:00",
+  "observedLatestAt": "2026-08-03T01:10:00+09:00",
   "prefecture": "長野県",
   "region": "関東甲信",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -307,20 +307,20 @@
         {
           "rank": 6,
           "value": 13,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
           "value": 13,
-          "date": "2001年",
-          "_date_raw": "2001/01/01"
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 8,
-          "value": 12,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 13,
+          "date": "2001年",
+          "_date_raw": "2001/01/01"
         },
         {
           "rank": 9,
