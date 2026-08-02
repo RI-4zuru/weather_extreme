@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-02T01:25:39.730564+09:00",
-  "observedLatestAt": "2026-08-02T01:10:00+09:00",
+  "updatedAt": "2026-08-02T07:23:37.706960+09:00",
+  "observedLatestAt": "2026-08-02T07:10:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -144,7 +144,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 98,
+          "value": 83,
           "date": "2026年8月1日（令和8年）",
           "_date_raw": "2026/08/01"
         }
@@ -486,7 +486,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 93,
+          "value": 81,
           "date": "2026年8月1日（令和8年）",
           "_date_raw": "2026/08/01"
         }
