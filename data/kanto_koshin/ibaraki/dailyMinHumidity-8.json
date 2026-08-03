@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-03T01:25:19.112999+09:00",
-  "observedLatestAt": "2026-08-03T01:10:00+09:00",
+  "updatedAt": "2026-08-03T07:23:05.608936+09:00",
+  "observedLatestAt": "2026-08-03T07:10:00+09:00",
   "prefecture": "茨城県",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
@@ -150,7 +150,7 @@
         },
         {
           "rank": 2,
-          "value": 95,
+          "value": 70,
           "date": "2026年8月2日（令和8年）",
           "_date_raw": "2026/08/02"
         }
@@ -696,7 +696,7 @@
         },
         {
           "rank": 2,
-          "value": 85,
+          "value": 70,
           "date": "2026年8月2日（令和8年）",
           "_date_raw": "2026/08/02"
         }
