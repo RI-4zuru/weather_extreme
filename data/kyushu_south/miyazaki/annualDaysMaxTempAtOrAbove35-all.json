@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-03T21:47:58.688244+09:00",
-  "observedLatestAt": "2026-08-03T21:40:00+09:00",
+  "updatedAt": "2026-08-04T02:31:54.422047+09:00",
+  "observedLatestAt": "2026-08-04T02:20:00+09:00",
   "prefecture": "宮崎県",
   "region": "九州南部・奄美",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -37,20 +37,20 @@
         {
           "rank": 5,
           "value": 6,
-          "date": "1990年",
-          "_date_raw": "1990/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
           "value": 6,
-          "date": "1964年",
-          "_date_raw": "1964/01/01"
+          "date": "1990年",
+          "_date_raw": "1990/01/01"
         },
         {
           "rank": 7,
-          "value": 5,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 6,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
         },
         {
           "rank": 8,
@@ -103,26 +103,26 @@
         {
           "rank": 5,
           "value": 14,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 6,
+          "value": 14,
           "date": "2017年",
           "_date_raw": "2017/01/01"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 14,
           "date": "1995年",
           "_date_raw": "1995/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 14,
           "date": "1983年",
           "_date_raw": "1983/01/01"
-        },
-        {
-          "rank": 8,
-          "value": 13,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
@@ -151,14 +151,14 @@
         {
           "rank": 2,
           "value": 18,
-          "date": "2025年",
-          "_date_raw": "2025/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 3,
-          "value": 17,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 18,
+          "date": "2025年",
+          "_date_raw": "2025/01/01"
         },
         {
           "rank": 4,
