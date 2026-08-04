@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-04T20:46:58.920290+09:00",
-  "observedLatestAt": "2026-08-04T20:30:00+09:00",
+  "updatedAt": "2026-08-05T02:18:59.887509+09:00",
+  "observedLatestAt": "2026-08-05T02:10:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "dailyMinHumidity",
@@ -793,8 +793,8 @@
         {
           "rank": 10,
           "value": 51,
-          "date": "2025年8月22日（令和7年）",
-          "_date_raw": "2025/08/22"
+          "date": "2026年8月4日（令和8年）",
+          "_date_raw": "2026/08/04"
         }
       ]
     }
