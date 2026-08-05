@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-05T20:42:11.221976+09:00",
-  "observedLatestAt": "2026-08-05T20:30:00+09:00",
+  "updatedAt": "2026-08-06T02:06:17.349434+09:00",
+  "observedLatestAt": "2026-08-06T01:50:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -127,14 +127,14 @@
         {
           "rank": 9,
           "value": 24,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
           "value": 24,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         }
       ]
     },
@@ -181,20 +181,20 @@
         {
           "rank": 7,
           "value": 19,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
           "value": 19,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "date": "2020年",
+          "_date_raw": "2020/01/01"
         },
         {
           "rank": 9,
-          "value": 18,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 19,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 10,
