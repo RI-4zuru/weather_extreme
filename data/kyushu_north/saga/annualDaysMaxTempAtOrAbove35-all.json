@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-06T20:46:37.434255+09:00",
-  "observedLatestAt": "2026-08-06T20:30:00+09:00",
+  "updatedAt": "2026-08-07T10:16:27.760800+09:00",
+  "observedLatestAt": "2026-08-07T10:00:00+09:00",
   "prefecture": "佐賀県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -61,14 +61,14 @@
         {
           "rank": 9,
           "value": 23,
-          "date": "2006年",
-          "_date_raw": "2006/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 22,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 23,
+          "date": "2006年",
+          "_date_raw": "2006/01/01"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-06T20:46:37.434255+09:00",
-  "observedLatestAt": "2026-08-06T20:30:00+09:00",
+  "updatedAt": "2026-08-07T10:16:27.760800+09:00",
+  "observedLatestAt": "2026-08-07T10:00:00+09:00",
   "prefecture": "山口県",
   "region": "九州北部",
   "element": "monthMax48hPrecip",
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "篠生",
-      "startDate": "2022年8月18日（令和4年）",
+      "startDate": "2026年8月6日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -231,6 +231,12 @@
           "value": 71,
           "date": "2022年8月18日（令和4年）",
           "_date_raw": "2022/08/18"
+        },
+        {
+          "rank": 5,
+          "value": 60.5,
+          "date": "2026年8月6日（令和8年）",
+          "_date_raw": "2026/08/06"
         }
       ]
     },
