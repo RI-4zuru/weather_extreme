@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-07T19:24:04.833894+09:00",
-  "observedLatestAt": "2026-08-07T19:10:00+09:00",
+  "updatedAt": "2026-08-08T01:22:50.031509+09:00",
+  "observedLatestAt": "2026-08-08T01:10:00+09:00",
   "prefecture": "網走",
   "region": "北海道",
   "element": "dailyMaxTempHigh",
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 34,
-          "date": "2023年8月26日（令和5年）",
-          "_date_raw": "2023/08/26"
+          "date": "2026年8月7日（令和8年）",
+          "_date_raw": "2026/08/07"
         }
       ]
     },
