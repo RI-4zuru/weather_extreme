@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-09T01:00:14.834562+09:00",
-  "observedLatestAt": "2026-08-09T00:50:00+09:00",
+  "updatedAt": "2026-08-09T06:59:41.544605+09:00",
+  "observedLatestAt": "2026-08-09T06:50:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "monthMax12hPrecip",
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "泉ケ岳",
-      "startDate": "2021年8月9日（令和3年）",
+      "startDate": "2019年8月20日（令和元年）",
       "ranks": [
         {
           "rank": 1,
@@ -723,12 +723,6 @@
           "value": 52,
           "date": "2019年8月20日（令和元年）",
           "_date_raw": "2019/08/20"
-        },
-        {
-          "rank": 10,
-          "value": 51,
-          "date": "2021年8月9日（令和3年）",
-          "_date_raw": "2021/08/09"
         }
       ]
     },
