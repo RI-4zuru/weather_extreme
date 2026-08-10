@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-10T01:00:34.339126+09:00",
-  "observedLatestAt": "2026-08-10T00:50:00+09:00",
+  "updatedAt": "2026-08-10T07:01:48.372664+09:00",
+  "observedLatestAt": "2026-08-10T06:50:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "monthMax3hPrecip",
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "日光東町",
-      "startDate": "2026年8月8日（令和8年）",
+      "startDate": "2026年8月9日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -426,9 +426,9 @@
         },
         {
           "rank": 4,
-          "value": 14.5,
-          "date": "2026年8月8日（令和8年）",
-          "_date_raw": "2026/08/08"
+          "value": 22,
+          "date": "2026年8月9日（令和8年）",
+          "_date_raw": "2026/08/09"
         }
       ]
     },
