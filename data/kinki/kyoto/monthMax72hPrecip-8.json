@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-11T19:24:57.676885+09:00",
-  "observedLatestAt": "2026-08-11T19:10:00+09:00",
+  "updatedAt": "2026-08-12T01:24:25.860838+09:00",
+  "observedLatestAt": "2026-08-12T01:10:00+09:00",
   "prefecture": "京都府",
   "region": "近畿",
   "element": "monthMax72hPrecip",
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "綾部山家",
-      "startDate": "2024年8月27日（令和6年）",
+      "startDate": "2026年8月11日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -567,6 +567,12 @@
           "value": 65,
           "date": "2024年8月27日（令和6年）",
           "_date_raw": "2024/08/27"
+        },
+        {
+          "rank": 6,
+          "value": 11,
+          "date": "2026年8月11日（令和8年）",
+          "_date_raw": "2026/08/11"
         }
       ]
     },
