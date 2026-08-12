@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-12T19:31:12.545175+09:00",
-  "observedLatestAt": "2026-08-12T19:20:00+09:00",
+  "updatedAt": "2026-08-13T01:24:34.343305+09:00",
+  "observedLatestAt": "2026-08-13T01:10:00+09:00",
   "prefecture": "室蘭",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -163,44 +163,44 @@
         {
           "rank": 4,
           "value": 1,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 1,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 1,
           "date": "2020年",
           "_date_raw": "2020/01/01"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 1,
           "date": "2006年",
           "_date_raw": "2006/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 1,
           "date": "1989年",
           "_date_raw": "1989/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 1,
           "date": "1984年",
           "_date_raw": "1984/01/01"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 1,
           "date": "1943年",
           "_date_raw": "1943/01/01"
-        },
-        {
-          "rank": 10,
-          "value": 0,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         }
       ]
     }

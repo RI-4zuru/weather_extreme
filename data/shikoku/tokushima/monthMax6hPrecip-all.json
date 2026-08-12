@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-12T19:31:12.545175+09:00",
-  "observedLatestAt": "2026-08-12T19:20:00+09:00",
+  "updatedAt": "2026-08-13T01:24:34.343305+09:00",
+  "observedLatestAt": "2026-08-13T01:10:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthMax6hPrecip",
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "東祖谷",
-      "startDate": "2026年1月3日（令和8年）",
+      "startDate": "2026年8月12日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -330,9 +330,9 @@
         },
         {
           "rank": 10,
-          "value": 7.5,
-          "date": "2026年1月3日（令和8年）",
-          "_date_raw": "2026/01/03"
+          "value": 10,
+          "date": "2026年8月12日（令和8年）",
+          "_date_raw": "2026/08/12"
         }
       ]
     },
