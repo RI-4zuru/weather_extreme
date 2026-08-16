@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-16T18:57:07.639774+09:00",
-  "observedLatestAt": "2026-08-16T18:40:00+09:00",
+  "updatedAt": "2026-08-17T00:50:23.698187+09:00",
+  "observedLatestAt": "2026-08-17T00:40:00+09:00",
   "prefecture": "島根県",
   "region": "中国",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -36,7 +36,7 @@
         },
         {
           "rank": 5,
-          "value": 20,
+          "value": 21,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
