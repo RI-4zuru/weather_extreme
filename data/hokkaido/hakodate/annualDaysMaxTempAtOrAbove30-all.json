@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-16T00:49:49.004385+09:00",
-  "observedLatestAt": "2026-08-16T00:40:00+09:00",
+  "updatedAt": "2026-08-16T06:49:42.164958+09:00",
+  "observedLatestAt": "2026-08-16T06:40:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 6,
-          "date": "2006年",
-          "_date_raw": "2006/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     }
