@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-18T00:54:58.560207+09:00",
-  "observedLatestAt": "2026-08-18T00:40:00+09:00",
+  "updatedAt": "2026-08-18T06:55:46.018275+09:00",
+  "observedLatestAt": "2026-08-18T06:50:00+09:00",
   "prefecture": "網走",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -181,20 +181,20 @@
         {
           "rank": 7,
           "value": 11,
-          "date": "1944年",
-          "_date_raw": "1944/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
           "value": 11,
-          "date": "1925年",
-          "_date_raw": "1925/01/01"
+          "date": "1944年",
+          "_date_raw": "1944/01/01"
         },
         {
           "rank": 9,
-          "value": 10,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 11,
+          "date": "1925年",
+          "_date_raw": "1925/01/01"
         },
         {
           "rank": 10,
