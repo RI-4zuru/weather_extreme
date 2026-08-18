@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-18T19:02:44.291677+09:00",
-  "observedLatestAt": "2026-08-18T18:50:00+09:00",
+  "updatedAt": "2026-08-19T01:27:35.634114+09:00",
+  "observedLatestAt": "2026-08-19T01:10:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 14,
+          "value": 15,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -115,14 +115,14 @@
         {
           "rank": 7,
           "value": 29,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 28,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 29,
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         },
         {
           "rank": 9,
