@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-19T19:04:47.367365+09:00",
-  "observedLatestAt": "2026-08-19T18:50:00+09:00",
+  "updatedAt": "2026-08-20T01:18:33.681780+09:00",
+  "observedLatestAt": "2026-08-20T01:10:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "dailyMinHumidity",
@@ -595,8 +595,8 @@
         {
           "rank": 10,
           "value": 48,
-          "date": "2026年8月18日（令和8年）",
-          "_date_raw": "2026/08/18"
+          "date": "2026年8月19日（令和8年）",
+          "_date_raw": "2026/08/19"
         }
       ]
     }
