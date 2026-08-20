@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-20T19:05:42.511958+09:00",
-  "observedLatestAt": "2026-08-20T18:50:00+09:00",
+  "updatedAt": "2026-08-21T01:03:18.043450+09:00",
+  "observedLatestAt": "2026-08-21T00:50:00+09:00",
   "prefecture": "山口県",
   "region": "九州北部",
   "element": "monthMax1h10mPrecip",
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "徳佐",
-      "startDate": "1997年7月8日（平成9年）",
+      "startDate": "2026年8月20日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -330,9 +330,9 @@
         },
         {
           "rank": 10,
-          "value": 51,
-          "date": "1997年7月8日（平成9年）",
-          "_date_raw": "1997/07/08"
+          "value": 55,
+          "date": "2026年8月20日（令和8年）",
+          "_date_raw": "2026/08/20"
         }
       ]
     },
