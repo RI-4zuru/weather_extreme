@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-21T19:02:22.016463+09:00",
-  "observedLatestAt": "2026-08-21T18:50:00+09:00",
+  "updatedAt": "2026-08-22T01:02:04.761037+09:00",
+  "observedLatestAt": "2026-08-22T00:50:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 31,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },
@@ -115,14 +115,14 @@
         {
           "rank": 7,
           "value": 33,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 32,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 33,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 9,
@@ -397,8 +397,8 @@
         {
           "rank": 10,
           "value": 28,
-          "date": "2018年",
-          "_date_raw": "2018/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     }
