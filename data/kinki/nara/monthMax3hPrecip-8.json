@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-22T18:56:59.777052+09:00",
-  "observedLatestAt": "2026-08-22T18:40:00+09:00",
+  "updatedAt": "2026-08-23T00:46:15.367703+09:00",
+  "observedLatestAt": "2026-08-23T00:30:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "monthMax3hPrecip",
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "葛川",
-      "startDate": "2026年8月15日（令和8年）",
+      "startDate": "2026年8月22日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -834,9 +834,9 @@
         },
         {
           "rank": 6,
-          "value": 18,
-          "date": "2026年8月15日（令和8年）",
-          "_date_raw": "2026/08/15"
+          "value": 29.5,
+          "date": "2026年8月22日（令和8年）",
+          "_date_raw": "2026/08/22"
         }
       ]
     }
