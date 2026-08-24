@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-24T00:47:27.757814+09:00",
-  "observedLatestAt": "2026-08-24T00:40:00+09:00",
+  "updatedAt": "2026-08-24T06:49:41.523581+09:00",
+  "observedLatestAt": "2026-08-24T06:40:00+09:00",
   "prefecture": "稚内",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -61,14 +61,14 @@
         {
           "rank": 9,
           "value": 22,
-          "date": "1978年",
-          "_date_raw": "1978/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
           "value": 22,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "date": "1978年",
+          "_date_raw": "1978/01/01"
         }
       ]
     },
