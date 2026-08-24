@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-24T19:17:28.480933+09:00",
-  "observedLatestAt": "2026-08-24T19:00:00+09:00",
+  "updatedAt": "2026-08-25T01:17:48.975928+09:00",
+  "observedLatestAt": "2026-08-25T01:10:00+09:00",
   "prefecture": "山口県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -37,20 +37,20 @@
         {
           "rank": 5,
           "value": 11,
-          "date": "2018年",
-          "_date_raw": "2018/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
           "value": 11,
-          "date": "1964年",
-          "_date_raw": "1964/01/01"
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 7,
-          "value": 10,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 11,
+          "date": "1964年",
+          "_date_raw": "1964/01/01"
         },
         {
           "rank": 8,
@@ -96,7 +96,7 @@
         },
         {
           "rank": 4,
-          "value": 30,
+          "value": 31,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
