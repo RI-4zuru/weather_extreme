@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-25T19:06:07.918217+09:00",
-  "observedLatestAt": "2026-08-25T18:50:00+09:00",
+  "updatedAt": "2026-08-26T02:17:17.931203+09:00",
+  "observedLatestAt": "2026-08-26T02:10:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -109,26 +109,26 @@
         {
           "rank": 6,
           "value": 3,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 3,
           "date": "2024年",
           "_date_raw": "2024/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 3,
           "date": "1990年",
           "_date_raw": "1990/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 3,
           "date": "1929年",
           "_date_raw": "1929/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 2,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,

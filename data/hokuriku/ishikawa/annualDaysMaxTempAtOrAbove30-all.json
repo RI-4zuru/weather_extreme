@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-25T19:06:07.918217+09:00",
-  "observedLatestAt": "2026-08-25T18:50:00+09:00",
+  "updatedAt": "2026-08-26T02:17:17.931203+09:00",
+  "observedLatestAt": "2026-08-26T02:10:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 43,
-          "date": "1978年",
-          "_date_raw": "1978/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-25T19:06:07.918217+09:00",
-  "observedLatestAt": "2026-08-25T18:50:00+09:00",
+  "updatedAt": "2026-08-26T02:17:17.931203+09:00",
+  "observedLatestAt": "2026-08-26T02:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "monthMax3hPrecip",
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "千歳",
-      "startDate": "2021年9月12日（令和3年）",
+      "startDate": "2026年8月25日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -792,9 +792,9 @@
         },
         {
           "rank": 10,
-          "value": 49,
-          "date": "2021年9月12日（令和3年）",
-          "_date_raw": "2021/09/12"
+          "value": 50,
+          "date": "2026年8月25日（令和8年）",
+          "_date_raw": "2026/08/25"
         }
       ]
     },
