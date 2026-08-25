@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-25T01:17:48.975928+09:00",
-  "observedLatestAt": "2026-08-25T01:10:00+09:00",
+  "updatedAt": "2026-08-25T07:01:13.981791+09:00",
+  "observedLatestAt": "2026-08-25T06:50:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -97,14 +97,14 @@
         {
           "rank": 4,
           "value": 48,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 5,
-          "value": 47,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 48,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
         },
         {
           "rank": 6,
@@ -175,14 +175,14 @@
         {
           "rank": 6,
           "value": 45,
-          "date": "2024年",
-          "_date_raw": "2024/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
-          "value": 44,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 45,
+          "date": "2024年",
+          "_date_raw": "2024/01/01"
         },
         {
           "rank": 8,

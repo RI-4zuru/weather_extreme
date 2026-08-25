@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-25T01:17:48.975928+09:00",
-  "observedLatestAt": "2026-08-25T01:10:00+09:00",
+  "updatedAt": "2026-08-25T07:01:13.981791+09:00",
+  "observedLatestAt": "2026-08-25T06:50:00+09:00",
   "prefecture": "稚内",
   "region": "北海道",
   "element": "monthSunshineHigh",
@@ -396,7 +396,7 @@
         },
         {
           "rank": 6,
-          "value": 189.4,
+          "value": 190.4,
           "date": "2026年8月（令和8年）",
           "_date_raw": "2026/08/01"
         },
