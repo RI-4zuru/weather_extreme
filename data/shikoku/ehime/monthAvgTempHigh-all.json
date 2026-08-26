@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-26T19:12:24.530551+09:00",
-  "observedLatestAt": "2026-08-26T19:00:00+09:00",
+  "updatedAt": "2026-08-27T01:48:08.978290+09:00",
+  "observedLatestAt": "2026-08-27T01:40:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "monthAvgTempHigh",
@@ -360,7 +360,7 @@
         },
         {
           "rank": 4,
-          "value": 29.4,
+          "value": 29.5,
           "date": "2026年8月（令和8年）",
           "_date_raw": "2026/08/01"
         },

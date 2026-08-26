@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-26T19:12:24.530551+09:00",
-  "observedLatestAt": "2026-08-26T19:00:00+09:00",
+  "updatedAt": "2026-08-27T01:48:08.978290+09:00",
+  "observedLatestAt": "2026-08-27T01:40:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "monthMax3hPrecip",
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "西海",
-      "startDate": "2024年8月30日（令和6年）",
+      "startDate": "2026年8月26日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -435,6 +435,12 @@
           "value": 18.5,
           "date": "2024年8月30日（令和6年）",
           "_date_raw": "2024/08/30"
+        },
+        {
+          "rank": 6,
+          "value": 3,
+          "date": "2026年8月26日（令和8年）",
+          "_date_raw": "2026/08/26"
         }
       ]
     },

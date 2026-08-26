@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-26T19:12:24.530551+09:00",
-  "observedLatestAt": "2026-08-26T19:00:00+09:00",
+  "updatedAt": "2026-08-27T01:48:08.978290+09:00",
+  "observedLatestAt": "2026-08-27T01:40:00+09:00",
   "prefecture": "広島県",
   "region": "中国",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -42,7 +42,7 @@
         },
         {
           "rank": 6,
-          "value": 24,
+          "value": 25,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -84,7 +84,7 @@
         },
         {
           "rank": 2,
-          "value": 28,
+          "value": 29,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

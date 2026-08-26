@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-26T19:12:24.530551+09:00",
-  "observedLatestAt": "2026-08-26T19:00:00+09:00",
+  "updatedAt": "2026-08-27T01:48:08.978290+09:00",
+  "observedLatestAt": "2026-08-27T01:40:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthMax1h10mPrecip",
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "宝達志水",
-      "startDate": "2025年8月7日（令和7年）",
+      "startDate": "2005年6月30日（平成17年）",
       "ranks": [
         {
           "rank": 1,
@@ -591,12 +591,6 @@
           "value": 49,
           "date": "2005年6月30日（平成17年）",
           "_date_raw": "2005/06/30"
-        },
-        {
-          "rank": 10,
-          "value": 48,
-          "date": "2025年8月7日（令和7年）",
-          "_date_raw": "2025/08/07"
         }
       ]
     },
