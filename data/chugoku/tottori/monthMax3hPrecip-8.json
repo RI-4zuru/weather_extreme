@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-27T23:32:21.370921+09:00",
-  "observedLatestAt": "2026-08-27T23:20:00+09:00",
+  "updatedAt": "2026-08-28T09:38:10.045256+09:00",
+  "observedLatestAt": "2026-08-28T09:30:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "monthMax3hPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "塩津",
-      "startDate": "1997年8月13日（平成9年）",
+      "startDate": "2023年8月15日（令和5年）",
       "ranks": [
         {
           "rank": 1,
@@ -129,12 +129,6 @@
           "value": 44.5,
           "date": "2023年8月15日（令和5年）",
           "_date_raw": "2023/08/15"
-        },
-        {
-          "rank": 10,
-          "value": 42,
-          "date": "1997年8月13日（平成9年）",
-          "_date_raw": "1997/08/13"
         }
       ]
     },
