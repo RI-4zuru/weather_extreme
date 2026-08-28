@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-28T09:38:10.045256+09:00",
-  "observedLatestAt": "2026-08-28T09:30:00+09:00",
+  "updatedAt": "2026-08-29T00:39:03.734079+09:00",
+  "observedLatestAt": "2026-08-29T00:30:00+09:00",
   "prefecture": "広島県",
   "region": "中国",
   "element": "monthMax1h10mPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "高野",
-      "startDate": "1989年8月13日（平成元年）",
+      "startDate": "2004年8月6日（平成16年）",
       "ranks": [
         {
           "rank": 1,
@@ -55,20 +55,20 @@
         {
           "rank": 8,
           "value": 34,
+          "date": "2026年8月28日（令和8年）",
+          "_date_raw": "2026/08/28"
+        },
+        {
+          "rank": 9,
+          "value": 34,
           "date": "1997年8月5日（平成9年）",
           "_date_raw": "1997/08/05"
         },
         {
-          "rank": 9,
+          "rank": 10,
           "value": 33,
           "date": "2004年8月6日（平成16年）",
           "_date_raw": "2004/08/06"
-        },
-        {
-          "rank": 10,
-          "value": 33,
-          "date": "1989年8月13日（平成元年）",
-          "_date_raw": "1989/08/13"
         }
       ]
     },

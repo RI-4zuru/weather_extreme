@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-28T09:38:10.045256+09:00",
-  "observedLatestAt": "2026-08-28T09:30:00+09:00",
+  "updatedAt": "2026-08-29T00:39:03.734079+09:00",
+  "observedLatestAt": "2026-08-29T00:30:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "monthMax1h10mPrecip",
@@ -2502,6 +2502,12 @@
         },
         {
           "rank": 9,
+          "value": 28,
+          "date": "2026年8月28日（令和8年）",
+          "_date_raw": "2026/08/28"
+        },
+        {
+          "rank": 10,
           "value": 28,
           "date": "1994年8月14日（平成6年）",
           "_date_raw": "1994/08/14"

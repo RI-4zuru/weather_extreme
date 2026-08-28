@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-28T09:38:10.045256+09:00",
-  "observedLatestAt": "2026-08-28T09:30:00+09:00",
+  "updatedAt": "2026-08-29T00:39:03.734079+09:00",
+  "observedLatestAt": "2026-08-29T00:30:00+09:00",
   "prefecture": "島根県",
   "region": "中国",
   "element": "monthMax48hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "西郷",
-      "startDate": "1988年7月15日（昭和63年）",
+      "startDate": "2010年7月13日（平成22年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,12 +63,6 @@
           "value": 220.5,
           "date": "2010年7月13日（平成22年）",
           "_date_raw": "2010/07/13"
-        },
-        {
-          "rank": 10,
-          "value": 215,
-          "date": "1988年7月15日（昭和63年）",
-          "_date_raw": "1988/07/15"
         }
       ]
     },
