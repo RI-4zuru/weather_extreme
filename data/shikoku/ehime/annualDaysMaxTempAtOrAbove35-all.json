@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-29T19:18:36.053585+09:00",
-  "observedLatestAt": "2026-08-29T19:10:00+09:00",
+  "updatedAt": "2026-08-30T03:44:41.848490+09:00",
+  "observedLatestAt": "2026-08-30T03:30:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "annualDaysMaxTempAtOrAbove35",
@@ -24,7 +24,7 @@
         },
         {
           "rank": 3,
-          "value": 22,
+          "value": 23,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -103,20 +103,20 @@
         {
           "rank": 5,
           "value": 15,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
           "value": 15,
-          "date": "1967年",
-          "_date_raw": "1967/01/01"
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 7,
-          "value": 14,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 15,
+          "date": "1967年",
+          "_date_raw": "1967/01/01"
         },
         {
           "rank": 8,
