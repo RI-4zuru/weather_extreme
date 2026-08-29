@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-29T00:39:03.734079+09:00",
-  "observedLatestAt": "2026-08-29T00:30:00+09:00",
+  "updatedAt": "2026-08-29T12:25:08.489992+09:00",
+  "observedLatestAt": "2026-08-29T12:10:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "monthMax24hPrecip",
@@ -2112,7 +2112,7 @@
         },
         {
           "rank": 10,
-          "value": 22,
+          "value": 35,
           "date": "2026年8月28日（令和8年）",
           "_date_raw": "2026/08/28"
         }
