@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T18:28:47.325548+09:00",
-  "observedLatestAt": "2026-08-30T18:20:00+09:00",
+  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
+  "observedLatestAt": "2026-08-30T23:30:00+09:00",
   "prefecture": "熊本県",
   "region": "九州北部",
   "element": "monthAvgTempHigh",
@@ -936,7 +936,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 28.6,
+          "value": 28.7,
           "date": "2026年8月（令和8年）",
           "_date_raw": "2026/08/01"
         },

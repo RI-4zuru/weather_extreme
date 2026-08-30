@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T18:28:47.325548+09:00",
-  "observedLatestAt": "2026-08-30T18:20:00+09:00",
+  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
+  "observedLatestAt": "2026-08-30T23:30:00+09:00",
   "prefecture": "奈良県",
   "region": "近畿",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -24,7 +24,7 @@
         },
         {
           "rank": 3,
-          "value": 33,
+          "value": 34,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

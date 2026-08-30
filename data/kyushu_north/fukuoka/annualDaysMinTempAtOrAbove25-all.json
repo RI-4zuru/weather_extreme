@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T18:28:47.325548+09:00",
-  "observedLatestAt": "2026-08-30T18:20:00+09:00",
+  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
+  "observedLatestAt": "2026-08-30T23:30:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -18,7 +18,7 @@
         },
         {
           "rank": 2,
-          "value": 43,
+          "value": 44,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -121,14 +121,14 @@
         {
           "rank": 8,
           "value": 54,
-          "date": "2018年",
-          "_date_raw": "2018/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 53,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 54,
+          "date": "2018年",
+          "_date_raw": "2018/01/01"
         },
         {
           "rank": 10,
