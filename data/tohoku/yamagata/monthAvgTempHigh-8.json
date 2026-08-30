@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
-  "observedLatestAt": "2026-08-30T23:30:00+09:00",
+  "updatedAt": "2026-08-31T03:52:50.628651+09:00",
+  "observedLatestAt": "2026-08-31T03:40:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthAvgTempHigh",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 26.9,
-          "date": "2026年8月（令和8年）",
-          "_date_raw": "2026/08/01"
+          "date": "2000年8月（平成12年）",
+          "_date_raw": "2000/08/01"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
-  "observedLatestAt": "2026-08-30T23:30:00+09:00",
+  "updatedAt": "2026-08-31T03:52:50.628651+09:00",
+  "observedLatestAt": "2026-08-31T03:40:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "yearSunshineHigh",
@@ -660,15 +660,15 @@
         },
         {
           "rank": 7,
-          "value": 416.3,
-          "date": "2011年",
-          "_date_raw": "2011/01/01"
+          "value": 416.9,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 410.5,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 416.3,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
         },
         {
           "rank": 9,

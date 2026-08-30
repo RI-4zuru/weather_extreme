@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-30T23:39:22.170814+09:00",
-  "observedLatestAt": "2026-08-30T23:30:00+09:00",
+  "updatedAt": "2026-08-31T03:52:50.628651+09:00",
+  "observedLatestAt": "2026-08-31T03:40:00+09:00",
   "prefecture": "富山県",
   "region": "北陸",
   "element": "monthMax72hPrecip",
@@ -804,9 +804,9 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 196.5,
-          "date": "2026年8月29日（令和8年）",
-          "_date_raw": "2026/08/29"
+          "value": 228,
+          "date": "2026年8月30日（令和8年）",
+          "_date_raw": "2026/08/30"
         },
         {
           "rank": 2,
