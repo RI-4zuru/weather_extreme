@@ -1,11 +1,23 @@
 {
-  "updatedAt": "2026-09-01T18:00:26.621797+09:00",
-  "observedLatestAt": "2026-09-01T17:50:00+09:00",
+  "updatedAt": "2026-09-01T23:29:50.045240+09:00",
+  "observedLatestAt": "2026-09-01T23:20:00+09:00",
   "prefecture": "山梨県",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
   "month": "9",
   "rows": [
+    {
+      "stationName": "大泉",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 93,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
     {
       "stationName": "韮崎",
       "startDate": "2025年9月（令和7年）",
@@ -337,6 +349,18 @@
       ]
     },
     {
+      "stationName": "切石",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 78,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
+    {
       "stationName": "河口湖",
       "startDate": "1950年9月（昭和25年）",
       "ranks": [
@@ -399,6 +423,18 @@
           "value": 24,
           "date": "1996年9月12日（平成8年）",
           "_date_raw": "1996/09/12"
+        }
+      ]
+    },
+    {
+      "stationName": "山中",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
         }
       ]
     },

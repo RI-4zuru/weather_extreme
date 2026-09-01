@@ -1,11 +1,47 @@
 {
-  "updatedAt": "2026-09-01T18:00:26.621797+09:00",
-  "observedLatestAt": "2026-09-01T17:50:00+09:00",
+  "updatedAt": "2026-09-01T23:29:50.045240+09:00",
+  "observedLatestAt": "2026-09-01T23:20:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "dailyMinHumidity",
   "month": "9",
   "rows": [
+    {
+      "stationName": "茂庭",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 98,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
+    {
+      "stationName": "梁川",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 91,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
+    {
+      "stationName": "桧原",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
     {
       "stationName": "福島",
       "startDate": "1950年9月（昭和25年）",
@@ -271,6 +307,18 @@
       ]
     },
     {
+      "stationName": "飯舘",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 94,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
+    {
       "stationName": "西会津",
       "startDate": "2024年9月（令和6年）",
       "ranks": [
@@ -399,6 +447,18 @@
           "value": 46,
           "date": "2025年9月27日（令和7年）",
           "_date_raw": "2025/09/27"
+        }
+      ]
+    },
+    {
+      "stationName": "二本松",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 92,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
         }
       ]
     },
@@ -1129,6 +1189,18 @@
       ]
     },
     {
+      "stationName": "田島",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 90,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
+        }
+      ]
+    },
+    {
       "stationName": "白河",
       "startDate": "1950年9月（昭和25年）",
       "ranks": [
@@ -1191,6 +1263,18 @@
           "value": 29,
           "date": "1992年9月27日（平成4年）",
           "_date_raw": "1992/09/27"
+        }
+      ]
+    },
+    {
+      "stationName": "石川",
+      "startDate": "2026年9月（令和8年）",
+      "ranks": [
+        {
+          "rank": 1,
+          "value": 92,
+          "date": "2026年9月1日（令和8年）",
+          "_date_raw": "2026/09/01"
         }
       ]
     },
