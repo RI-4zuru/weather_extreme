@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-31T19:02:03.204595+09:00",
-  "observedLatestAt": "2026-08-31T18:50:00+09:00",
+  "updatedAt": "2026-09-01T06:05:32.489470+09:00",
+  "observedLatestAt": "2026-09-01T05:50:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -30,7 +30,7 @@
         },
         {
           "rank": 4,
-          "value": 40,
+          "value": 41,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -90,7 +90,7 @@
         },
         {
           "rank": 3,
-          "value": 41,
+          "value": 42,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -175,14 +175,14 @@
         {
           "rank": 6,
           "value": 53,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
-          "value": 52,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 53,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 8,
@@ -264,7 +264,7 @@
         },
         {
           "rank": 10,
-          "value": 50,
+          "value": 51,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         }
@@ -355,20 +355,20 @@
         {
           "rank": 3,
           "value": 38,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 4,
           "value": 38,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 5,
-          "value": 37,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 38,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 6,

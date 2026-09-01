@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-31T19:02:03.204595+09:00",
-  "observedLatestAt": "2026-08-31T18:50:00+09:00",
+  "updatedAt": "2026-09-01T06:05:32.489470+09:00",
+  "observedLatestAt": "2026-09-01T05:50:00+09:00",
   "prefecture": "愛知県",
   "region": "東海",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -43,14 +43,14 @@
         {
           "rank": 6,
           "value": 40,
-          "date": "2011年",
-          "_date_raw": "2011/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
-          "value": 39,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 40,
+          "date": "2011年",
+          "_date_raw": "2011/01/01"
         },
         {
           "rank": 8,
@@ -108,7 +108,7 @@
         },
         {
           "rank": 6,
-          "value": 37,
+          "value": 38,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
