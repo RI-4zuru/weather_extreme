@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-01T23:29:50.045240+09:00",
-  "observedLatestAt": "2026-09-01T23:20:00+09:00",
+  "updatedAt": "2026-09-02T08:33:56.598589+09:00",
+  "observedLatestAt": "2026-09-02T08:20:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "monthMax3hPrecip",
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "有東木",
-      "startDate": "2026年9月1日（令和8年）",
+      "startDate": "2023年9月21日（令和5年）",
       "ranks": [
         {
           "rank": 1,
@@ -177,12 +177,6 @@
           "value": 28,
           "date": "2023年9月21日（令和5年）",
           "_date_raw": "2023/09/21"
-        },
-        {
-          "rank": 7,
-          "value": 0,
-          "date": "2026年9月1日（令和8年）",
-          "_date_raw": "2026/09/01"
         }
       ]
     },
