@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T22:53:49.190468+09:00",
-  "observedLatestAt": "2026-09-03T22:40:00+09:00",
+  "updatedAt": "2026-09-04T03:55:26.001154+09:00",
+  "observedLatestAt": "2026-09-04T03:40:00+09:00",
   "prefecture": "大阪府",
   "region": "近畿",
   "element": "monthMax3hPrecip",
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "堺",
-      "startDate": "1979年9月30日（昭和54年）",
+      "startDate": "2026年9月3日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -462,9 +462,9 @@
         },
         {
           "rank": 10,
-          "value": 42,
-          "date": "1979年9月30日（昭和54年）",
-          "_date_raw": "1979/09/30"
+          "value": 46.5,
+          "date": "2026年9月3日（令和8年）",
+          "_date_raw": "2026/09/03"
         }
       ]
     },

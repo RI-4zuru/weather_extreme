@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T22:53:49.190468+09:00",
-  "observedLatestAt": "2026-09-03T22:40:00+09:00",
+  "updatedAt": "2026-09-04T03:55:26.001154+09:00",
+  "observedLatestAt": "2026-09-04T03:40:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -109,20 +109,20 @@
         {
           "rank": 6,
           "value": 66,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
           "value": 66,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 8,
-          "value": 65,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 66,
+          "date": "2010年",
+          "_date_raw": "2010/01/01"
         },
         {
           "rank": 9,

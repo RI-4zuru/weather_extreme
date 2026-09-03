@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T22:53:49.190468+09:00",
-  "observedLatestAt": "2026-09-03T22:40:00+09:00",
+  "updatedAt": "2026-09-04T03:55:26.001154+09:00",
+  "observedLatestAt": "2026-09-04T03:40:00+09:00",
   "prefecture": "和歌山県",
   "region": "近畿",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -127,14 +127,14 @@
         {
           "rank": 9,
           "value": 37,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 36,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 37,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         }
       ]
     }

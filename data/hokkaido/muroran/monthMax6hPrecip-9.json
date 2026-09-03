@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T22:53:49.190468+09:00",
-  "observedLatestAt": "2026-09-03T22:40:00+09:00",
+  "updatedAt": "2026-09-04T03:55:26.001154+09:00",
+  "observedLatestAt": "2026-09-04T03:40:00+09:00",
   "prefecture": "室蘭",
   "region": "北海道",
   "element": "monthMax6hPrecip",
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "三石",
-      "startDate": "1997年9月17日（平成9年）",
+      "startDate": "2023年9月9日（令和5年）",
       "ranks": [
         {
           "rank": 1,
@@ -1449,12 +1449,6 @@
           "value": 49,
           "date": "2023年9月9日（令和5年）",
           "_date_raw": "2023/09/09"
-        },
-        {
-          "rank": 10,
-          "value": 48,
-          "date": "1997年9月17日（平成9年）",
-          "_date_raw": "1997/09/17"
         }
       ]
     },

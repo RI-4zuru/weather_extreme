@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-03T22:53:49.190468+09:00",
-  "observedLatestAt": "2026-09-03T22:40:00+09:00",
+  "updatedAt": "2026-09-04T03:55:26.001154+09:00",
+  "observedLatestAt": "2026-09-04T03:40:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthMax48hPrecip",
@@ -966,6 +966,12 @@
         },
         {
           "rank": 6,
+          "value": 45.5,
+          "date": "2026年9月3日（令和8年）",
+          "_date_raw": "2026/09/03"
+        },
+        {
+          "rank": 7,
           "value": 19,
           "date": "2026年3月31日（令和8年）",
           "_date_raw": "2026/03/31"
