@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-04T17:13:28.282438+09:00",
-  "observedLatestAt": "2026-09-04T17:00:00+09:00",
+  "updatedAt": "2026-09-04T23:17:20.065852+09:00",
+  "observedLatestAt": "2026-09-04T23:10:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthMax1h10mPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "金沢",
-      "startDate": "1999年9月20日（平成11年）",
+      "startDate": "2026年9月4日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -657,6 +657,12 @@
           "value": 30,
           "date": "1999年9月20日（平成11年）",
           "_date_raw": "1999/09/20"
+        },
+        {
+          "rank": 10,
+          "value": 29,
+          "date": "2026年9月4日（令和8年）",
+          "_date_raw": "2026/09/04"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-04T17:13:28.282438+09:00",
-  "observedLatestAt": "2026-09-04T17:00:00+09:00",
+  "updatedAt": "2026-09-04T23:17:20.065852+09:00",
+  "observedLatestAt": "2026-09-04T23:10:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "monthMax12hPrecip",
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "新居浜",
-      "startDate": "2021年9月3日（令和3年）",
+      "startDate": "2026年9月4日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -327,6 +327,12 @@
           "value": 36,
           "date": "2021年9月3日（令和3年）",
           "_date_raw": "2021/09/03"
+        },
+        {
+          "rank": 10,
+          "value": 24.5,
+          "date": "2026年9月4日（令和8年）",
+          "_date_raw": "2026/09/04"
         }
       ]
     },
