@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-05T22:00:01.817507+09:00",
-  "observedLatestAt": "2026-09-05T21:50:00+09:00",
+  "updatedAt": "2026-09-06T02:38:22.054406+09:00",
+  "observedLatestAt": "2026-09-06T02:30:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "monthMax72hPrecip",
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "酒田大沢",
-      "startDate": "2019年9月12日（令和元年）",
+      "startDate": "2026年9月5日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -189,6 +189,12 @@
           "value": 44,
           "date": "2019年9月12日（令和元年）",
           "_date_raw": "2019/09/12"
+        },
+        {
+          "rank": 9,
+          "value": 32,
+          "date": "2026年9月5日（令和8年）",
+          "_date_raw": "2026/09/05"
         }
       ]
     },
