@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-08T00:31:38.161045+09:00",
-  "observedLatestAt": "2026-09-08T00:20:00+09:00",
+  "updatedAt": "2026-09-08T04:26:10.194159+09:00",
+  "observedLatestAt": "2026-09-08T04:10:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "monthMax12hPrecip",
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "女川",
-      "startDate": "2012年5月3日（平成24年）",
+      "startDate": "2026年9月7日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -990,9 +990,9 @@
         },
         {
           "rank": 10,
-          "value": 124.5,
-          "date": "2012年5月3日（平成24年）",
-          "_date_raw": "2012/05/03"
+          "value": 130,
+          "date": "2026年9月7日（令和8年）",
+          "_date_raw": "2026/09/07"
         }
       ]
     },
