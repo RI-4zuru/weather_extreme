@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-08T22:53:45.597319+09:00",
-  "observedLatestAt": "2026-09-08T22:40:00+09:00",
+  "updatedAt": "2026-09-09T03:56:40.516025+09:00",
+  "observedLatestAt": "2026-09-09T03:40:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 66,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },

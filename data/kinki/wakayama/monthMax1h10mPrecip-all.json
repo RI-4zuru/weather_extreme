@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-08T22:53:45.597319+09:00",
-  "observedLatestAt": "2026-09-08T22:40:00+09:00",
+  "updatedAt": "2026-09-09T03:56:40.516025+09:00",
+  "observedLatestAt": "2026-09-09T03:40:00+09:00",
   "prefecture": "和歌山県",
   "region": "近畿",
   "element": "monthMax1h10mPrecip",
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "南紀白浜",
-      "startDate": "2016年9月6日（平成28年）",
+      "startDate": "2026年9月8日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -924,9 +924,9 @@
         },
         {
           "rank": 10,
-          "value": 50.5,
-          "date": "2016年9月6日（平成28年）",
-          "_date_raw": "2016/09/06"
+          "value": 51,
+          "date": "2026年9月8日（令和8年）",
+          "_date_raw": "2026/09/08"
         }
       ]
     },

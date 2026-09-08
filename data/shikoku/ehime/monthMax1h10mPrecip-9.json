@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-08T22:53:45.597319+09:00",
-  "observedLatestAt": "2026-09-08T22:40:00+09:00",
+  "updatedAt": "2026-09-09T03:56:40.516025+09:00",
+  "observedLatestAt": "2026-09-09T03:40:00+09:00",
   "prefecture": "愛媛県",
   "region": "四国",
   "element": "monthMax1h10mPrecip",
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "上林",
-      "startDate": "1989年9月18日（平成元年）",
+      "startDate": "2026年9月8日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -660,9 +660,9 @@
         },
         {
           "rank": 10,
-          "value": 36,
-          "date": "1989年9月18日（平成元年）",
-          "_date_raw": "1989/09/18"
+          "value": 36.5,
+          "date": "2026年9月8日（令和8年）",
+          "_date_raw": "2026/09/08"
         }
       ]
     },
