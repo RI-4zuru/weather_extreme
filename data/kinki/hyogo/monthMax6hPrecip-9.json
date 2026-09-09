@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-09T22:59:10.748818+09:00",
-  "observedLatestAt": "2026-09-09T22:50:00+09:00",
+  "updatedAt": "2026-09-10T03:53:53.247597+09:00",
+  "observedLatestAt": "2026-09-10T03:40:00+09:00",
   "prefecture": "兵庫県",
   "region": "近畿",
   "element": "monthMax6hPrecip",
@@ -1652,7 +1652,7 @@
     },
     {
       "stationName": "南淡",
-      "startDate": "2007年9月14日（平成19年）",
+      "startDate": "2026年9月9日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1710,9 +1710,9 @@
         },
         {
           "rank": 10,
-          "value": 54,
-          "date": "2007年9月14日（平成19年）",
-          "_date_raw": "2007/09/14"
+          "value": 65,
+          "date": "2026年9月9日（令和8年）",
+          "_date_raw": "2026/09/09"
         }
       ]
     }
