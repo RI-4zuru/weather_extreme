@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-09T17:25:58.734625+09:00",
-  "observedLatestAt": "2026-09-09T17:10:00+09:00",
+  "updatedAt": "2026-09-09T22:59:10.748818+09:00",
+  "observedLatestAt": "2026-09-09T22:50:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "monthMax6hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "白糸",
-      "startDate": "2025年9月5日（令和7年）",
+      "startDate": "2026年9月9日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -63,6 +63,12 @@
           "value": 136.5,
           "date": "2025年9月5日（令和7年）",
           "_date_raw": "2025/09/05"
+        },
+        {
+          "rank": 10,
+          "value": 127,
+          "date": "2026年9月9日（令和8年）",
+          "_date_raw": "2026/09/09"
         }
       ]
     },
