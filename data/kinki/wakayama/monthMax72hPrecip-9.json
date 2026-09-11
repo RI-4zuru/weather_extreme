@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-11T22:51:40.875536+09:00",
-  "observedLatestAt": "2026-09-11T22:40:00+09:00",
+  "updatedAt": "2026-09-12T03:49:28.034528+09:00",
+  "observedLatestAt": "2026-09-12T03:40:00+09:00",
   "prefecture": "和歌山県",
   "region": "近畿",
   "element": "monthMax72hPrecip",
@@ -174,7 +174,7 @@
         },
         {
           "rank": 6,
-          "value": 176,
+          "value": 176.5,
           "date": "2026年9月11日（令和8年）",
           "_date_raw": "2026/09/11"
         },
