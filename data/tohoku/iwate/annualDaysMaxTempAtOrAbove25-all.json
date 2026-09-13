@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-13T23:07:15.061004+09:00",
-  "observedLatestAt": "2026-09-13T23:00:00+09:00",
+  "updatedAt": "2026-09-14T03:27:52.124869+09:00",
+  "observedLatestAt": "2026-09-14T03:20:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -67,8 +67,8 @@
         {
           "rank": 10,
           "value": 93,
-          "date": "2020年",
-          "_date_raw": "2020/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },
