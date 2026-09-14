@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-14T18:13:58.879785+09:00",
-  "observedLatestAt": "2026-09-14T18:00:00+09:00",
+  "updatedAt": "2026-09-15T02:06:18.791903+09:00",
+  "observedLatestAt": "2026-09-15T01:50:00+09:00",
   "prefecture": "釧路",
   "region": "北海道",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -187,14 +187,14 @@
         {
           "rank": 8,
           "value": 67,
-          "date": "1946年",
-          "_date_raw": "1946/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 66,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 67,
+          "date": "1946年",
+          "_date_raw": "1946/01/01"
         },
         {
           "rank": 10,
