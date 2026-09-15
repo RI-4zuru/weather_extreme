@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-15T23:42:03.295981+09:00",
-  "observedLatestAt": "2026-09-15T23:30:00+09:00",
+  "updatedAt": "2026-09-16T04:23:51.214748+09:00",
+  "observedLatestAt": "2026-09-16T04:10:00+09:00",
   "prefecture": "新潟県",
   "region": "北陸",
   "element": "dailyMinHumidity",
@@ -63,12 +63,6 @@
           "value": 66,
           "date": "2026年9月12日（令和8年）",
           "_date_raw": "2026/09/12"
-        },
-        {
-          "rank": 10,
-          "value": 72,
-          "date": "2026年9月11日（令和8年）",
-          "_date_raw": "2026/09/11"
         }
       ]
     },
