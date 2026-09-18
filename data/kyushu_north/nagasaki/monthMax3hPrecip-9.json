@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-18T22:53:07.012867+09:00",
-  "observedLatestAt": "2026-09-18T22:40:00+09:00",
+  "updatedAt": "2026-09-19T03:45:19.514206+09:00",
+  "observedLatestAt": "2026-09-19T03:30:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "monthMax3hPrecip",
@@ -974,7 +974,7 @@
     },
     {
       "stationName": "脇岬",
-      "startDate": "2026年9月4日（令和8年）",
+      "startDate": "2026年9月18日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1008,9 +1008,9 @@
         },
         {
           "rank": 6,
-          "value": 15,
-          "date": "2026年9月4日（令和8年）",
-          "_date_raw": "2026/09/04"
+          "value": 18,
+          "date": "2026年9月18日（令和8年）",
+          "_date_raw": "2026/09/18"
         }
       ]
     }

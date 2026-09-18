@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-18T22:53:07.012867+09:00",
-  "observedLatestAt": "2026-09-18T22:40:00+09:00",
+  "updatedAt": "2026-09-19T03:45:19.514206+09:00",
+  "observedLatestAt": "2026-09-19T03:30:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -61,14 +61,14 @@
         {
           "rank": 9,
           "value": 59,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 58,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 59,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         }
       ]
     },
