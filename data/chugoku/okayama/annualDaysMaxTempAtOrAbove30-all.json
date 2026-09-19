@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-19T22:34:10.399041+09:00",
-  "observedLatestAt": "2026-09-19T22:20:00+09:00",
+  "updatedAt": "2026-09-20T03:17:40.239092+09:00",
+  "observedLatestAt": "2026-09-20T03:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -61,14 +61,14 @@
         {
           "rank": 9,
           "value": 70,
-          "date": "2005年",
-          "_date_raw": "2005/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 69,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 70,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
         }
       ]
     },
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 80,
-          "date": "2002年",
-          "_date_raw": "2002/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     }

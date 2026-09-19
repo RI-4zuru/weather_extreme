@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-19T22:34:10.399041+09:00",
-  "observedLatestAt": "2026-09-19T22:20:00+09:00",
+  "updatedAt": "2026-09-20T03:17:40.239092+09:00",
+  "observedLatestAt": "2026-09-20T03:10:00+09:00",
   "prefecture": "熊本県",
   "region": "九州北部",
   "element": "monthMax72hPrecip",
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "宇土",
-      "startDate": "2026年9月6日（令和8年）",
+      "startDate": "2019年9月1日（令和元年）",
       "ranks": [
         {
           "rank": 1,
@@ -591,12 +591,6 @@
           "value": 83.5,
           "date": "2019年9月1日（令和元年）",
           "_date_raw": "2019/09/01"
-        },
-        {
-          "rank": 10,
-          "value": 81,
-          "date": "2026年9月6日（令和8年）",
-          "_date_raw": "2026/09/06"
         }
       ]
     },
