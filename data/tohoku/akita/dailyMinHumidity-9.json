@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-20T22:51:58.053342+09:00",
-  "observedLatestAt": "2026-09-20T22:40:00+09:00",
+  "updatedAt": "2026-09-21T03:29:16.376442+09:00",
+  "observedLatestAt": "2026-09-21T03:20:00+09:00",
   "prefecture": "秋田県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -264,9 +264,9 @@
         },
         {
           "rank": 10,
-          "value": 58,
-          "date": "2026年9月10日（令和8年）",
-          "_date_raw": "2026/09/10"
+          "value": 54,
+          "date": "2026年9月20日（令和8年）",
+          "_date_raw": "2026/09/20"
         }
       ]
     },
