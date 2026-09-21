@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-21T18:16:12.589571+09:00",
-  "observedLatestAt": "2026-09-21T18:00:00+09:00",
+  "updatedAt": "2026-09-22T01:15:04.857275+09:00",
+  "observedLatestAt": "2026-09-22T01:00:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 62,
+          "value": 63,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
