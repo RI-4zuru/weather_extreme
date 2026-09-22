@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-22T17:48:24.353249+09:00",
-  "observedLatestAt": "2026-09-22T17:40:00+09:00",
+  "updatedAt": "2026-09-22T23:20:57.477804+09:00",
+  "observedLatestAt": "2026-09-22T23:10:00+09:00",
   "prefecture": "熊本県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -126,7 +126,7 @@
         },
         {
           "rank": 9,
-          "value": 86,
+          "value": 87,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -169,14 +169,14 @@
         {
           "rank": 5,
           "value": 80,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
-          "value": 79,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 80,
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         },
         {
           "rank": 7,
