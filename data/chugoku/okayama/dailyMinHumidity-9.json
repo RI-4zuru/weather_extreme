@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-23T23:32:00.486618+09:00",
-  "observedLatestAt": "2026-09-23T23:20:00+09:00",
+  "updatedAt": "2026-09-24T04:22:37.128927+09:00",
+  "observedLatestAt": "2026-09-24T04:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "dailyMinHumidity",
@@ -132,9 +132,9 @@
         },
         {
           "rank": 10,
-          "value": 54,
-          "date": "2025年9月22日（令和7年）",
-          "_date_raw": "2025/09/22"
+          "value": 53,
+          "date": "2026年9月23日（令和8年）",
+          "_date_raw": "2026/09/23"
         }
       ]
     },
