@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-25T18:07:10.324070+09:00",
-  "observedLatestAt": "2026-09-25T18:00:00+09:00",
+  "updatedAt": "2026-09-25T23:54:56.596983+09:00",
+  "observedLatestAt": "2026-09-25T23:40:00+09:00",
   "prefecture": "高知県",
   "region": "四国",
   "element": "annualDaysMaxTempAtOrAbove30",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 80,
+          "value": 81,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -222,7 +222,7 @@
         },
         {
           "rank": 3,
-          "value": 60,
+          "value": 61,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
