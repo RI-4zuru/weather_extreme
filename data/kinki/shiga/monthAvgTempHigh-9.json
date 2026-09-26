@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-26T22:56:23.044428+09:00",
-  "observedLatestAt": "2026-09-26T22:40:00+09:00",
+  "updatedAt": "2026-09-27T03:54:48.755803+09:00",
+  "observedLatestAt": "2026-09-27T03:40:00+09:00",
   "prefecture": "滋賀県",
   "region": "近畿",
   "element": "monthAvgTempHigh",
@@ -330,9 +330,9 @@
         },
         {
           "rank": 10,
-          "value": 24.9,
-          "date": "2026年9月（令和8年）",
-          "_date_raw": "2026/09/01"
+          "value": 24.8,
+          "date": "2020年9月（令和2年）",
+          "_date_raw": "2020/09/01"
         }
       ]
     },

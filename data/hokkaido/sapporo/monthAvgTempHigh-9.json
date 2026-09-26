@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-26T22:56:23.044428+09:00",
-  "observedLatestAt": "2026-09-26T22:40:00+09:00",
+  "updatedAt": "2026-09-27T03:54:48.755803+09:00",
+  "observedLatestAt": "2026-09-27T03:40:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "monthAvgTempHigh",
@@ -1609,8 +1609,8 @@
         {
           "rank": 10,
           "value": 18.9,
-          "date": "2026年9月（令和8年）",
-          "_date_raw": "2026/09/01"
+          "date": "2022年9月（令和4年）",
+          "_date_raw": "2022/09/01"
         }
       ]
     },
