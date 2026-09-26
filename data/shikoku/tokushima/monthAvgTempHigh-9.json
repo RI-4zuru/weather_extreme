@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-26T17:51:52.920437+09:00",
-  "observedLatestAt": "2026-09-26T17:40:00+09:00",
+  "updatedAt": "2026-09-26T22:56:23.044428+09:00",
+  "observedLatestAt": "2026-09-26T22:40:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthAvgTempHigh",
@@ -192,7 +192,7 @@
         },
         {
           "rank": 9,
-          "value": 25.7,
+          "value": 25.6,
           "date": "2026年9月（令和8年）",
           "_date_raw": "2026/09/01"
         },
