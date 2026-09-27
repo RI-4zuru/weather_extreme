@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-27T18:33:37.305073+09:00",
-  "observedLatestAt": "2026-09-27T18:20:00+09:00",
+  "updatedAt": "2026-09-28T00:01:11.733040+09:00",
+  "observedLatestAt": "2026-09-27T23:50:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "monthAvgTempHigh",
@@ -133,8 +133,8 @@
         {
           "rank": 10,
           "value": 24.2,
-          "date": "2026年9月（令和8年）",
-          "_date_raw": "2026/09/01"
+          "date": "2012年9月（平成24年）",
+          "_date_raw": "2012/09/01"
         }
       ]
     },
