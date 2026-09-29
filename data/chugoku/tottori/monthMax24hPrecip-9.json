@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-29T19:11:22.367908+09:00",
-  "observedLatestAt": "2026-09-29T19:00:00+09:00",
+  "updatedAt": "2026-09-30T05:11:49.503130+09:00",
+  "observedLatestAt": "2026-09-30T05:00:00+09:00",
   "prefecture": "鳥取県",
   "region": "中国",
   "element": "monthMax24hPrecip",
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "若桜",
-      "startDate": "1993年9月4日（平成5年）",
+      "startDate": "2026年9月29日（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -855,6 +855,12 @@
           "value": 129,
           "date": "1993年9月4日（平成5年）",
           "_date_raw": "1993/09/04"
+        },
+        {
+          "rank": 10,
+          "value": 125,
+          "date": "2026年9月29日（令和8年）",
+          "_date_raw": "2026/09/29"
         }
       ]
     },
