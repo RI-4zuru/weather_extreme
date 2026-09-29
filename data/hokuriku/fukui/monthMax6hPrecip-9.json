@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-28T19:04:42.635220+09:00",
-  "observedLatestAt": "2026-09-28T18:50:00+09:00",
+  "updatedAt": "2026-09-29T06:32:54.596410+09:00",
+  "observedLatestAt": "2026-09-29T06:20:00+09:00",
   "prefecture": "福井県",
   "region": "北陸",
   "element": "monthMax6hPrecip",
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "武生",
-      "startDate": "2015年9月9日（平成27年）",
+      "startDate": "2022年9月20日（令和4年）",
       "ranks": [
         {
           "rank": 1,
@@ -393,12 +393,6 @@
           "value": 54.5,
           "date": "2022年9月20日（令和4年）",
           "_date_raw": "2022/09/20"
-        },
-        {
-          "rank": 10,
-          "value": 54,
-          "date": "2015年9月9日（平成27年）",
-          "_date_raw": "2015/09/09"
         }
       ]
     },
