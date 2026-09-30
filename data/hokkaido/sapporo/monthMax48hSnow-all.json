@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "monthMax48hSnow",
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "札幌",
-      "startDate": "2004年1月9日（平成16年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "岩見沢",
-      "startDate": "2021年12月19日（令和3年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "小樽",
-      "startDate": "2025年1月31日（令和7年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "共和",
-      "startDate": "1985年2月15日（昭和60年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "倶知安",
-      "startDate": "2014年12月26日（平成26年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "寿都",
-      "startDate": "2002年2月13日（平成14年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

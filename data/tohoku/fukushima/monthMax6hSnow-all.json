@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "福島県",
   "region": "東北",
   "element": "monthMax6hSnow",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "福島",
-      "startDate": "2012年3月5日（平成24年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "若松",
-      "startDate": "2013年12月13日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

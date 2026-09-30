@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "宮城県",
   "region": "東北",
   "element": "monthMax1h10mPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "気仙沼",
-      "startDate": "1989年8月2日（平成元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "鴬沢",
-      "startDate": "2014年8月8日（平成26年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "川渡",
-      "startDate": "2001年7月31日（平成13年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "築館",
-      "startDate": "2024年7月26日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "米山",
-      "startDate": "2005年10月23日（平成17年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "志津川",
-      "startDate": "2019年10月12日（令和元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "古川",
-      "startDate": "2026年8月12日（令和8年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "雄勝",
-      "startDate": "2016年8月17日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "大衡",
-      "startDate": "1985年7月1日（昭和60年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "鹿島台",
-      "startDate": "2019年10月12日（令和元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "石巻",
-      "startDate": "1988年8月29日（昭和63年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "女川",
-      "startDate": "2016年8月17日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "新川",
-      "startDate": "2008年7月18日（平成20年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "塩釜",
-      "startDate": "2019年10月13日（令和元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "仙台",
-      "startDate": "2010年12月22日（平成22年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "白石",
-      "startDate": "2014年8月7日（平成26年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "亘理",
-      "startDate": "1994年9月22日（平成6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

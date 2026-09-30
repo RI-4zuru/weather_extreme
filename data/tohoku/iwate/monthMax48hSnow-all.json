@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "岩手県",
   "region": "東北",
   "element": "monthMax48hSnow",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "二戸",
-      "startDate": "2005年1月17日（平成17年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "葛巻",
-      "startDate": "1991年2月17日（平成3年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "雫石",
-      "startDate": "2018年2月15日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "宮古",
-      "startDate": "2000年3月18日（平成12年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "遠野",
-      "startDate": "1984年12月29日（昭和59年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "北上",
-      "startDate": "2022年1月13日（令和4年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "祭畤",
-      "startDate": "2002年1月1日（平成14年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "大船渡",
-      "startDate": "2010年3月11日（平成22年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

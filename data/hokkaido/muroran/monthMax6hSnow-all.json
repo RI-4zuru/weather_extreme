@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "室蘭",
   "region": "北海道",
   "element": "monthMax6hSnow",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "安平",
-      "startDate": "2008年2月23日（平成20年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "穂別",
-      "startDate": "2015年3月10日（平成27年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "大滝",
-      "startDate": "1989年2月5日（平成元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "大岸",
-      "startDate": "1987年2月27日（昭和62年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "白老",
-      "startDate": "2023年2月20日（令和5年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "室蘭",
-      "startDate": "2023年2月20日（令和5年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "日高",
-      "startDate": "1997年1月2日（平成9年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "中杵臼",
-      "startDate": "2017年1月16日（平成29年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "浦河",
-      "startDate": "2007年2月11日（平成19年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "目黒",
-      "startDate": "1996年2月6日（平成8年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "珠洲",
-      "startDate": "1997年7月1日（平成9年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "輪島",
-      "startDate": "2018年8月31日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "門前",
-      "startDate": "1981年6月30日（昭和56年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "三井",
-      "startDate": "2006年7月3日（平成18年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "志賀",
-      "startDate": "2013年9月3日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "七尾",
-      "startDate": "1976年9月11日（昭和51年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "羽咋",
-      "startDate": "2018年8月31日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "かほく",
-      "startDate": "2017年7月3日（平成29年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "宝達志水",
-      "startDate": "2013年8月26日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "医王山",
-      "startDate": "2013年9月18日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "白山河内",
-      "startDate": "2014年8月18日（平成26年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "加賀中津原",
-      "startDate": "2017年8月10日（平成29年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "白山白峰",
-      "startDate": "1983年7月23日（昭和58年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "舳倉島",
-      "startDate": "2020年7月29日（令和2年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

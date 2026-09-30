@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "熊本県",
   "region": "九州北部",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "鹿北",
-      "startDate": "1987年7月20日（昭和62年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "南小国",
-      "startDate": "1999年6月27日（平成11年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "岱明",
-      "startDate": "2006年6月27日（平成18年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "菊池",
-      "startDate": "2025年8月12日（令和7年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "阿蘇乙姫",
-      "startDate": "1979年6月29日（昭和54年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "熊本",
-      "startDate": "2006年7月22日（平成18年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "南阿蘇",
-      "startDate": "2019年6月30日（令和元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "高森",
-      "startDate": "1997年7月12日（平成9年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "宇土",
-      "startDate": "2008年6月22日（平成20年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "山都",
-      "startDate": "2012年6月24日（平成24年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "三角",
-      "startDate": "2020年7月12日（令和2年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "甲佐",
-      "startDate": "1979年6月30日（昭和54年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "松島",
-      "startDate": "1985年6月29日（昭和60年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "本渡",
-      "startDate": "2000年8月20日（平成12年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "八代",
-      "startDate": "2007年7月9日（平成19年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "田浦",
-      "startDate": "1987年7月20日（昭和62年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "五木",
-      "startDate": "2024年3月26日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "水俣",
-      "startDate": "2000年8月20日（平成12年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "一勝地",
-      "startDate": "2018年7月8日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "人吉",
-      "startDate": "1982年7月26日（昭和57年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "上",
-      "startDate": "1983年7月18日（昭和58年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1460,7 +1460,7 @@
     },
     {
       "stationName": "多良木",
-      "startDate": "2020年5月18日（令和2年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1526,7 +1526,7 @@
     },
     {
       "stationName": "湯前横谷",
-      "startDate": "2024年8月30日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1592,7 +1592,7 @@
     },
     {
       "stationName": "牛深",
-      "startDate": "2016年6月22日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

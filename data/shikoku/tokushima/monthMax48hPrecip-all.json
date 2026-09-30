@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthMax48hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "池田",
-      "startDate": "2005年9月7日（平成17年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "穴吹",
-      "startDate": "2013年9月17日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "徳島",
-      "startDate": "2016年9月20日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "東祖谷",
-      "startDate": "2026年3月31日（令和8年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -327,18 +327,12 @@
           "value": 39.5,
           "date": "2026年5月5日（令和8年）",
           "_date_raw": "2026/05/05"
-        },
-        {
-          "rank": 10,
-          "value": 23.5,
-          "date": "2026年3月31日（令和8年）",
-          "_date_raw": "2026/03/31"
         }
       ]
     },
     {
       "stationName": "福原旭",
-      "startDate": "1997年9月17日（平成9年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +398,7 @@
     },
     {
       "stationName": "蒲生田",
-      "startDate": "2001年9月7日（平成13年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +464,7 @@
     },
     {
       "stationName": "木頭",
-      "startDate": "1993年8月10日（平成5年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +530,7 @@
     },
     {
       "stationName": "日和佐",
-      "startDate": "2017年10月23日（平成29年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +596,7 @@
     },
     {
       "stationName": "海陽",
-      "startDate": "2012年7月23日（平成24年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

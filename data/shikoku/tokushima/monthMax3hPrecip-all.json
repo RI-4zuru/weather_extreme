@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "徳島県",
   "region": "四国",
   "element": "monthMax3hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "池田",
-      "startDate": "2010年6月26日（平成22年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "穴吹",
-      "startDate": "2016年9月20日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "徳島",
-      "startDate": "1983年9月7日（昭和58年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "東祖谷",
-      "startDate": "2026年8月12日（令和8年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "福原旭",
-      "startDate": "1998年10月17日（平成10年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "蒲生田",
-      "startDate": "2001年10月28日（平成13年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "木頭",
-      "startDate": "1997年9月16日（平成9年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "日和佐",
-      "startDate": "1976年10月18日（昭和51年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "海陽",
-      "startDate": "2012年6月16日（平成24年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "岐阜県",
   "region": "東海",
   "element": "monthMax12hPrecip",
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "栃尾",
-      "startDate": "1976年9月9日（昭和51年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "御母衣",
-      "startDate": "2018年9月9日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "高山",
-      "startDate": "1999年6月30日（平成11年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "萩原",
-      "startDate": "2024年5月28日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "関市板取",
-      "startDate": "2024年5月28日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "八幡",
-      "startDate": "1982年8月16日（昭和57年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "宮地",
-      "startDate": "2025年9月5日（令和7年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "樽見",
-      "startDate": "2004年10月20日（平成16年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "金山",
-      "startDate": "1989年9月3日（平成元年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "付知",
-      "startDate": "2024年5月28日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "美濃",
-      "startDate": "1994年9月30日（平成6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "伽藍",
-      "startDate": "1985年7月11日（昭和60年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1460,7 +1460,7 @@
     },
     {
       "stationName": "黒川",
-      "startDate": "2023年6月2日（令和5年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1592,7 +1592,7 @@
     },
     {
       "stationName": "美濃加茂",
-      "startDate": "1994年9月30日（平成6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1658,7 +1658,7 @@
     },
     {
       "stationName": "恵那",
-      "startDate": "1994年7月19日（平成6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1724,7 +1724,7 @@
     },
     {
       "stationName": "中津川",
-      "startDate": "2013年9月16日（平成25年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1790,7 +1790,7 @@
     },
     {
       "stationName": "関ケ原",
-      "startDate": "2011年7月19日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1856,7 +1856,7 @@
     },
     {
       "stationName": "大垣",
-      "startDate": "2002年7月10日（平成14年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1922,7 +1922,7 @@
     },
     {
       "stationName": "岐阜",
-      "startDate": "1990年9月20日（平成2年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1988,7 +1988,7 @@
     },
     {
       "stationName": "多治見",
-      "startDate": "1983年9月28日（昭和58年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -2054,7 +2054,7 @@
     },
     {
       "stationName": "上石津",
-      "startDate": "2022年7月19日（令和4年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

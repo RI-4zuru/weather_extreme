@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "monthMax72hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "那須高原",
-      "startDate": "2015年9月10日（平成27年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "五十里",
-      "startDate": "1998年9月1日（平成10年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "黒磯",
-      "startDate": "1998年9月1日（平成10年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "大田原",
-      "startDate": "1982年9月13日（昭和57年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "奥日光",
-      "startDate": "2015年9月10日（平成27年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "足尾",
-      "startDate": "2001年8月24日（平成13年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "高根沢",
-      "startDate": "1998年8月30日（平成10年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "那須烏山",
-      "startDate": "2022年7月29日（令和4年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "鹿沼",
-      "startDate": "1986年8月7日（昭和61年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "宇都宮",
-      "startDate": "1982年9月13日（昭和57年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "葛生",
-      "startDate": "2011年7月22日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "真岡",
-      "startDate": "2004年9月27日（平成16年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "足利",
-      "startDate": "1991年10月12日（平成3年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "佐野",
-      "startDate": "2011年7月22日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "栃木",
-      "startDate": "2011年7月22日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "小山",
-      "startDate": "2002年7月12日（平成14年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,

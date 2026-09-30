@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-30T19:02:35.634390+09:00",
-  "observedLatestAt": "2026-09-30T18:50:00+09:00",
+  "updatedAt": "2026-10-01T05:21:28.263622+09:00",
+  "observedLatestAt": "2026-10-01T05:10:00+09:00",
   "prefecture": "岡山県",
   "region": "中国",
   "element": "monthMax6hPrecip",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "恩原",
-      "startDate": "2004年10月20日（平成16年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "富",
-      "startDate": "2008年6月22日（平成20年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "奈義",
-      "startDate": "2006年7月19日（平成18年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "今岡",
-      "startDate": "1999年9月15日（平成11年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "久世",
-      "startDate": "2010年6月27日（平成22年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "津山",
-      "startDate": "1978年9月16日（昭和53年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "下呰部",
-      "startDate": "1995年7月3日（平成7年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "旭西",
-      "startDate": "2024年8月25日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -734,7 +734,7 @@
     },
     {
       "stationName": "赤磐",
-      "startDate": "2018年7月6日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "陣山",
-      "startDate": "1990年8月17日（平成2年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "吉備中央",
-      "startDate": "2017年7月4日（平成29年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "福渡",
-      "startDate": "2016年8月29日（平成28年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "和気",
-      "startDate": "2011年9月21日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "高梁",
-      "startDate": "2011年9月3日（平成23年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "佐屋",
-      "startDate": "2024年7月11日（令和6年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "矢掛",
-      "startDate": "1979年9月30日（昭和54年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "岡山",
-      "startDate": "1987年10月17日（昭和62年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "虫明",
-      "startDate": "2009年8月9日（平成21年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "倉敷",
-      "startDate": "2004年9月29日（平成16年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1460,7 +1460,7 @@
     },
     {
       "stationName": "笠岡",
-      "startDate": "2008年7月5日（平成20年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1526,7 +1526,7 @@
     },
     {
       "stationName": "玉野",
-      "startDate": "2018年7月7日（平成30年）",
+      "startDate": "2026年10月（令和8年）",
       "ranks": [
         {
           "rank": 1,
