@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-01T19:21:28.099258+09:00",
-  "observedLatestAt": "2026-10-01T19:10:00+09:00",
+  "updatedAt": "2026-10-02T05:43:40.684055+09:00",
+  "observedLatestAt": "2026-10-02T05:30:00+09:00",
   "prefecture": "札幌",
   "region": "北海道",
   "element": "monthMax12hPrecip",
@@ -888,6 +888,12 @@
         },
         {
           "rank": 4,
+          "value": 5.5,
+          "date": "2026年10月1日（令和8年）",
+          "_date_raw": "2026/10/01"
+        },
+        {
+          "rank": 5,
           "value": 0,
           "date": "2022年10月31日（令和4年）",
           "_date_raw": "2022/10/31"
