@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-03T18:27:53.908201+09:00",
-  "observedLatestAt": "2026-10-03T18:20:00+09:00",
+  "updatedAt": "2026-10-03T23:35:06.987862+09:00",
+  "observedLatestAt": "2026-10-03T23:20:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -379,14 +379,14 @@
         {
           "rank": 7,
           "value": 133,
-          "date": "2002年",
-          "_date_raw": "2002/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
-          "value": 132,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 133,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
         },
         {
           "rank": 9,
