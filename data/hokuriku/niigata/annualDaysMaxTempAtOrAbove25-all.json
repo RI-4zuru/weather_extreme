@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-05T19:47:32.622954+09:00",
-  "observedLatestAt": "2026-10-05T19:40:00+09:00",
+  "updatedAt": "2026-10-06T07:14:18.859113+09:00",
+  "observedLatestAt": "2026-10-06T07:00:00+09:00",
   "prefecture": "新潟県",
   "region": "北陸",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -31,20 +31,20 @@
         {
           "rank": 4,
           "value": 105,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 5,
           "value": 105,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         },
         {
           "rank": 6,
-          "value": 104,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 105,
+          "date": "2022年",
+          "_date_raw": "2022/01/01"
         },
         {
           "rank": 7,
@@ -102,7 +102,7 @@
         },
         {
           "rank": 5,
-          "value": 116,
+          "value": 117,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
