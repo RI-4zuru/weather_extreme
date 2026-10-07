@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-06T19:36:29.120958+09:00",
-  "observedLatestAt": "2026-10-06T19:20:00+09:00",
+  "updatedAt": "2026-10-07T05:49:47.102244+09:00",
+  "observedLatestAt": "2026-10-07T05:40:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthPrecipHigh",
@@ -390,7 +390,7 @@
         },
         {
           "rank": 9,
-          "value": 323.5,
+          "value": 323,
           "date": "2026年9月（令和8年）",
           "_date_raw": "2026/09/01"
         },
