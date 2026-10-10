@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-10T19:10:04.371003+09:00",
-  "observedLatestAt": "2026-10-10T19:00:00+09:00",
+  "updatedAt": "2026-10-11T04:35:53.785379+09:00",
+  "observedLatestAt": "2026-10-11T04:20:00+09:00",
   "prefecture": "富山県",
   "region": "北陸",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -127,14 +127,14 @@
         {
           "rank": 9,
           "value": 125,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
           "value": 125,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         }
       ]
     }

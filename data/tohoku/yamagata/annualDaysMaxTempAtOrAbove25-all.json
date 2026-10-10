@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-10T19:10:04.371003+09:00",
-  "observedLatestAt": "2026-10-10T19:00:00+09:00",
+  "updatedAt": "2026-10-11T04:35:53.785379+09:00",
+  "observedLatestAt": "2026-10-11T04:20:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -55,14 +55,14 @@
         {
           "rank": 8,
           "value": 102,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 101,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 102,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 10,
@@ -187,14 +187,14 @@
         {
           "rank": 8,
           "value": 115,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 114,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 115,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 10,
