@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-11T19:17:37.486181+09:00",
-  "observedLatestAt": "2026-10-11T19:10:00+09:00",
+  "updatedAt": "2026-10-12T04:55:23.111933+09:00",
+  "observedLatestAt": "2026-10-12T04:40:00+09:00",
   "prefecture": "長崎県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -31,26 +31,26 @@
         {
           "rank": 4,
           "value": 123,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 5,
+          "value": 123,
           "date": "2017年",
           "_date_raw": "2017/01/01"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "value": 123,
           "date": "1922年",
           "_date_raw": "1922/01/01"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "value": 123,
           "date": "1894年",
           "_date_raw": "1894/01/01"
-        },
-        {
-          "rank": 7,
-          "value": 122,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
@@ -85,14 +85,14 @@
         {
           "rank": 2,
           "value": 123,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 3,
-          "value": 122,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 123,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 4,
@@ -259,14 +259,14 @@
         {
           "rank": 9,
           "value": 145,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
-          "value": 144,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 145,
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         }
       ]
     },
@@ -349,14 +349,14 @@
         {
           "rank": 2,
           "value": 138,
-          "date": "2005年",
-          "_date_raw": "2005/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 3,
-          "value": 137,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 138,
+          "date": "2005年",
+          "_date_raw": "2005/01/01"
         },
         {
           "rank": 4,

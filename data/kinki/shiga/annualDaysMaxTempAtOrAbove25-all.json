@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-11T19:17:37.486181+09:00",
-  "observedLatestAt": "2026-10-11T19:10:00+09:00",
+  "updatedAt": "2026-10-12T04:55:23.111933+09:00",
+  "observedLatestAt": "2026-10-12T04:40:00+09:00",
   "prefecture": "滋賀県",
   "region": "近畿",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -49,20 +49,20 @@
         {
           "rank": 7,
           "value": 129,
-          "date": "2023年",
-          "_date_raw": "2023/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
           "value": 129,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2023年",
+          "_date_raw": "2023/01/01"
         },
         {
           "rank": 9,
-          "value": 128,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 129,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 10,
