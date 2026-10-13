@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-12T20:08:52.993735+09:00",
-  "observedLatestAt": "2026-10-12T20:00:00+09:00",
+  "updatedAt": "2026-10-13T07:49:52.705896+09:00",
+  "observedLatestAt": "2026-10-13T07:40:00+09:00",
   "prefecture": "福井県",
   "region": "北陸",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -37,20 +37,20 @@
         {
           "rank": 5,
           "value": 139,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
           "value": 139,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 7,
-          "value": 138,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 139,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 8,
@@ -96,7 +96,7 @@
         },
         {
           "rank": 4,
-          "value": 131,
+          "value": 132,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
