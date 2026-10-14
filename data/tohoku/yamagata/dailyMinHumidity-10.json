@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-14T23:54:05.467522+09:00",
-  "observedLatestAt": "2026-10-14T23:40:00+09:00",
+  "updatedAt": "2026-10-15T04:46:02.547261+09:00",
+  "observedLatestAt": "2026-10-15T04:30:00+09:00",
   "prefecture": "山形県",
   "region": "東北",
   "element": "dailyMinHumidity",
@@ -63,12 +63,6 @@
           "value": 41,
           "date": "2025年10月11日（令和7年）",
           "_date_raw": "2025/10/11"
-        },
-        {
-          "rank": 10,
-          "value": 41,
-          "date": "2025年10月9日（令和7年）",
-          "_date_raw": "2025/10/09"
         }
       ]
     },
