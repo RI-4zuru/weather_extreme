@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-13T19:56:05.782650+09:00",
-  "observedLatestAt": "2026-10-13T19:40:00+09:00",
+  "updatedAt": "2026-10-14T06:00:53.971590+09:00",
+  "observedLatestAt": "2026-10-14T05:50:00+09:00",
   "prefecture": "鹿児島県",
   "region": "九州南部・奄美",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -31,14 +31,14 @@
         {
           "rank": 4,
           "value": 145,
-          "date": "2002年",
-          "_date_raw": "2002/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 5,
-          "value": 144,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 145,
+          "date": "2002年",
+          "_date_raw": "2002/01/01"
         },
         {
           "rank": 6,
@@ -175,14 +175,14 @@
         {
           "rank": 6,
           "value": 156,
-          "date": "1977年",
-          "_date_raw": "1977/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
-          "value": 155,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 156,
+          "date": "1977年",
+          "_date_raw": "1977/01/01"
         },
         {
           "rank": 8,
