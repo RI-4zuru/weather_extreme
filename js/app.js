@@ -36,6 +36,7 @@ import {
   renderTable,
 } from "./renderers.js";
 import { state } from "./state.js";
+import { scheduleBreakingNews } from "./breaking-news.js";
 import { unique } from "./utils.js";
 
 const STORAGE_KEYS = {
@@ -1146,7 +1147,7 @@ function renderPrefButtons() {
     return;
   }
 
-  const regionButton = regionAreaEnabled
+  const regionButton = currentRegion
     ? `
       <button
         type="button"
@@ -1654,6 +1655,17 @@ async function buildNationDisplayRows(elementMeta, month) {
 }
 
 async function refresh() {
+  // Run the all-element/all-period bulletin scan independently of the table.
+  // Never block the visible ranking on background alert loading.
+  const scope = currentSelectionType === 'nation'
+    ? { type:'nation', label:'全国' }
+    : currentSelectionType === 'region'
+    ? { type:'region', region:currentRegion, label:currentRegion + '地方' }
+    : { type:'prefecture', region:currentRegion, prefKey:currentPrefKey, label:getCurrentPrefMeta()?.name || '' };
+  const bulletinPrefs = currentSelectionType === 'nation' ? getAllPrefMetasForNation()
+    : currentSelectionType === 'region' ? getPrefsByRegion(currentRegion)
+    : [getCurrentPrefMeta()].filter(Boolean);
+  scheduleBreakingNews(scope, bulletinPrefs);
   const elementMeta = getCurrentElementMeta();
   const canShowLiveColumn = isCurrentSelectionLiveSupported() && showLiveColumn;
 
@@ -1922,44 +1934,13 @@ async function refresh() {
 
       const displayRows = insertLiveIntoRankRows(baseDisplayRows);
 
-      const allSummary = await buildAllLiveSummaryForPref({
-        prefMeta,
-        stationIndex: index,
-        latestObservationTime,
-      });
-
-      const annualSummary = allSummary.annualItems;
-      const monthlySummary = allSummary.monthlyItems;
-
-      state.debug.summaryItemCount = annualSummary.length + monthlySummary.length;
-
-      renderTable(rankTableBody, displayRows, {
-        showLiveColumn: canShowLiveColumn,
-      });
-
-      renderLiveSummary(liveSummaryBody, annualSummary, monthlySummary);
-
-      const totalSummaryCount = annualSummary.length + monthlySummary.length;
-      const hasTop1Summary =
-        annualSummary.some((item) => item.rank === 1) ||
-        monthlySummary.some((item) => item.rank === 1) ||
-        prefectureAggregateRow?.liveCandidate?.rank === 1;
-
-      const hasAnyPrefRankIn =
-        Number.isFinite(prefectureAggregateRow?.liveCandidate?.rank) &&
-        prefectureAggregateRow.liveCandidate.rank >= 1 &&
-        prefectureAggregateRow.liveCandidate.rank <= 10;
-
-      if (totalSummaryCount === 0 && !hasAnyPrefRankIn) {
-        rankInBadge.hidden = true;
-        topRankAlert.hidden = true;
-      } else if (hasTop1Summary) {
-        rankInBadge.hidden = true;
-        topRankAlert.hidden = false;
-      } else {
-        rankInBadge.hidden = false;
-        topRankAlert.hidden = true;
-      }
+      // Bulletins are calculated asynchronously by breaking-news.js; the old
+      // invisible summary must not duplicate hundreds of observation requests.
+      state.debug.summaryItemCount = 0;
+      renderTable(rankTableBody, displayRows, { showLiveColumn: canShowLiveColumn });
+      renderLiveSummary(liveSummaryBody, [], []);
+      rankInBadge.hidden = true;
+      topRankAlert.hidden = true;
     } else {
       renderLiveOnlyTable(stations || [], liveValuesByCode, prefMeta);
       renderLiveSummary(liveSummaryBody, [], []);

@@ -3,7 +3,7 @@
   'use strict';
   if (window.__wxExtremeV2) return;
   window.__wxExtremeV2 = true;
-  const VERSION = '3';
+  const VERSION = '4';
   const AUTO_KEY = 'weather_extreme:v2:auto_refresh_minutes';
   const ALLOWED_AUTO = [0, 2, 5, 10, 15];
   const GROUPS = [
@@ -20,7 +20,7 @@
     ['沖縄', ['沖縄県']]
   ];
   const state = { popup: null, popupSignature: '', lastRefresh: Date.now(), lastCheck: Date.now(), attached: false,
-    quick: null, quickSignature: '', quickTimer: 0, observer: null, toastTimer: 0 };
+    quick: null, quickSignature: '', quickTimer: 0, observer: null, toastTimer: 0, newsTicker: null, newsPopup: null, newsByFrame: new Map(), newsStep: 0, localNews: null };
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   const clean = (s) => String(s ?? '').replace(/\s+/g, '').replace(/[▼▾▽←→]/g, '').trim();
@@ -100,7 +100,7 @@
     const prefs = $$('#prefButtons .pref-button', doc);
     const groups = $$('.region-tabs button, .region-tabs [role=tab]', doc);
     const elements = $$('#elementPanel .element-button', doc);
-    const f = family(pref);
+    const f = family(pref) || GROUPS.find(g => clean(g[0]) === clean(pref)) || null;
     const frameList = getPaneFrames();
     const paneCount = frameList.length || 1;
     return {
@@ -109,7 +109,7 @@
         return heading || (idx === 0 ? '左側' : '右側');
       }),
       selection: { pref, month: monthValue, monthText: month?.selectedOptions?.[0]?.textContent?.trim() || '', element },
-      group: f?.[0] || '', groupPrefs: f?.[1] || [],
+      group: f?.[0] || '', groupPrefs: f ? [f[0], ...f[1]] : [],
       regions: groups.map((b, i) => ({ name: btnText(b), i, active: active(b) })),
       prefectures: prefs.map((b, i) => ({ name: btnText(b), i, active: active(b) })),
       months: readSelectOptions(month),
@@ -283,13 +283,14 @@
     // Prefer the original page's region list; do not show unavailable nested Hokkaido areas.
     const available = snap.prefectures.map(p => p.name);
     if (!peers?.length) peers = available;
-    if (peers.length > 9 && available.length && available.length <= 9) peers = available;
+    if (peers.length > 10 && available.length && available.length <= 9) peers = [snap.group, ...available.filter(x => x !== snap.group)];
     if (!peers.length) peers = selectedPref ? [selectedPref] : [];
+    if (snap.group && !peers.some(name => clean(name) === clean(snap.group))) peers = [snap.group, ...peers];
     const strip = $('.wx-prefstrip', quick);
     const existing = strip?.scrollLeft || 0;
     if (strip) {
       strip.replaceChildren(...peers.map(name => makeButton(
-        (name === '北海道' ? name : name.replace(/[都道府県]$/, '')) || name, 'wx-pref-btn', () => applyCommand({ action: 'pref', value: name }), clean(name) === clean(selectedPref)
+        (name === snap.group ? (name === '北海道' ? name : `${name}地方`) : name.replace(/[都道府県]$/, '')) || name, name === snap.group ? 'wx-pref-btn wx-region-btn' : 'wx-pref-btn', () => applyCommand({ action: 'pref', value: name }), clean(name) === clean(selectedPref)
       )));
       strip.scrollLeft = existing;
     }
@@ -319,6 +320,116 @@
     if (status) { status.textContent = navigator.onLine === false ? 'オフライン' : '確認 ' + formatTime(new Date());
       status.classList.toggle('wx-offline', navigator.onLine === false); }
   }
+  function getNewsReports() {
+    const visible = [...document.querySelectorAll('#desktopDashboard [data-dashboard-frame]')].filter(shown);
+    const reports = visible.length
+      ? visible.map(f => state.newsByFrame.get(f.dataset.dashboardFrame)).filter(Boolean)
+      : state.localNews ? [state.localNews] : [];
+    // The same observation can be visible in both comparison panes. It is one
+    // meteorological event, so list it only once in the ticker and popup.
+    const seen = new Set();
+    return reports.map(report => ({...report, items:(report.items || []).filter(item => {
+      const key = [item.prefKey,item.stationName,item.elementKey,item.month,item.observedAt?.slice(0,10)].join('|');
+      if (seen.has(key)) return false;
+      seen.add(key); return true;
+    })}));
+  }
+  function formatNewsSummary() {
+    const reports = getNewsReports();
+    const items = reports.flatMap(report => (report.items || []).map(item => ({...item, source:report.source})));
+    items.sort((a,b) => Number(b.top1)-Number(a.top1) || a.rank-b.rank);
+    const top = items.filter(item => item.top1).length;
+    const pending = reports.some(r => r.status === 'loading');
+    const errored = reports.some(r => r.status === 'error' || r.status === 'partial');
+    const summary = pending ? '速報を確認中…' : errored ? '速報の確認が一部未完了です' : '現在の速報はありません';
+    return {reports,items,top,pending,errored,summary};
+  }
+  function sendNewsPopup() {
+    if (!state.newsPopup || state.newsPopup.closed) return;
+    try { state.newsPopup.postMessage({wxNewsWindow:true,kind:'reports',reports:getNewsReports()},targetOrigin()); } catch(_){}
+  }
+  function openNewsWindow(){
+    const url = new URL('./news-window.html', location.href);
+    const popup = window.open(url.href,'weather_extreme_news','popup=yes,width=940,height=780,resizable=yes,scrollbars=yes');
+    if (!popup) return toast('速報ウインドウが開けませんでした。ポップアップを許可してください。');
+    state.newsPopup = popup;popup.focus();
+    window.setTimeout(sendNewsPopup,180);
+  }
+  function updateNewsTicker(){
+    const ticker = state.newsTicker;
+    if (!ticker?.isConnected) return;
+    const {items,top,pending,errored,summary} = formatNewsSummary();
+    const label = ticker.querySelector('.wx-news-label');
+    const count = ticker.querySelector('.wx-news-count');
+    const message = ticker.querySelector('.wx-news-headline');
+    ticker.classList.toggle('wx-news-urgent', top > 0);
+    label.textContent = top ? '極値速報' : '実況速報';
+    count.textContent = items.length ? `1位更新 ${top}件 / ランクイン ${items.length-top}件` : '';
+    const item = items.length ? items[state.newsStep % items.length] : null;
+    message.textContent = item ? `${item.top1?'【1位更新】':`【${item.rank}位】`}${item.prefName} ${item.stationName} / ${item.elementLabel}（${item.monthLabel}）${item.value}${item.unit||''}` : summary;
+    ticker.title = pending ? '速報の確認中です。クリックすると詳細を表示します。' : 'クリックして全ての速報を見る';
+    ticker.setAttribute('aria-label', `${label.textContent}。${count.textContent}。${message.textContent}。一覧を開く`);
+    sendNewsPopup();
+  }
+  function installNewsTicker(){
+    if (state.newsTicker?.isConnected) return;
+    const dashboard = $('#desktopDashboard');
+    const inDesktopRoot = !!dashboard && window === window.top && window.matchMedia('(min-width: 1181px)').matches;
+    const inStandalone = window === window.top && !inDesktopRoot;
+    if (!inDesktopRoot && !inStandalone) return;
+    const target = inDesktopRoot ? $('#desktopDashboard .dashboard-header') : $('.app-header');
+    if (!target) return;
+    const button = document.createElement('button'); button.type='button';
+    button.className = 'wx-news-ticker';button.setAttribute('aria-label','実況速報を確認する');
+    const label = document.createElement('span');label.className='wx-news-label';label.textContent='実況速報';
+    const count = document.createElement('span');count.className='wx-news-count';
+    const headline = document.createElement('span');headline.className='wx-news-headline';headline.textContent='速報を確認中…';
+    const more = document.createElement('span');more.className='wx-news-more';more.textContent='一覧 ↗';
+    button.append(label,count,headline,more);button.addEventListener('click',openNewsWindow);
+    if (inDesktopRoot) target.insertBefore(button, $('#dashboardThemeToggle')); else target.append(button);
+    state.newsTicker = button; updateNewsTicker();
+  }
+  function executeNewsJump(item){
+    if (!item?.prefName || !item?.elementKey || !item?.month) return;
+    const frames = [...document.querySelectorAll('#desktopDashboard [data-dashboard-frame]')].filter(shown);
+    const frame = frames.find(f => f.dataset.dashboardFrame === item.source) || frames[0];
+    const pane = frame ? frames.indexOf(frame) : 0;
+    const ctx = fromPane(pane);
+    if (!ctx) return toast('対象の画面がありません。');
+    choosePrefecture(ctx.doc,item.prefName,pane);
+    let attempts = 0;
+    const continueWhenSelected = () => {
+      const selected = $('#prefButtons .pref-button.active', ctx.doc);
+      if (clean(btnText(selected)) !== clean(item.prefName)) {
+        if (++attempts < 18) return window.setTimeout(continueWhenSelected, 100);
+        return toast('速報の地点に切り替えられませんでした。');
+      }
+      applyCommand({action:'month',value:String(item.month)},pane);
+      window.setTimeout(() => {
+        const choices = $$('#elementPanel .element-button',ctx.doc);
+        const match = choices.find(b => b.dataset.elementKey === item.elementKey);
+        if (match) applyCommand({action:'element',value:btnText(match),index:choices.indexOf(match)},pane);
+      },100);
+    };
+    window.setTimeout(continueWhenSelected, 110);
+  }
+  function bindNewsEvents(){
+    window.addEventListener('wx-breaking-news',(e)=>{state.localNews=e.detail;updateNewsTicker();});
+    window.addEventListener('message',(e)=>{
+      if (location.origin !== 'null' && e.origin !== location.origin) return;
+      if (e.data?.wxBreakingNews && e.data.kind === 'report') {
+        const frame = [...document.querySelectorAll('#desktopDashboard [data-dashboard-frame]')].find(f=>f.contentWindow===e.source);
+        if (!frame) return;
+        const source = frame.dataset.dashboardFrame;
+        state.newsByFrame.set(source,{...e.data.report,source});
+        updateNewsTicker();
+      }
+      if (!e.data?.wxNewsWindow || e.source !== state.newsPopup) return;
+      if (e.data.kind === 'ready') sendNewsPopup();
+      if (e.data.kind === 'jump') executeNewsJump(e.data.item);
+    });
+    window.setInterval(()=>{state.newsStep++;updateNewsTicker();},6500);
+  }
   function installQuickBar() {
     if (state.quick?.isConnected) return true;
     const legacy = ownContext();
@@ -341,6 +452,7 @@
     quick.append(strip, month, element, settings, refresh, status);
     header.append(quick);
     state.quick = quick;
+    installNewsTicker();
     rebuildQuickBar();
     const watch = ['#areaSelectionSummary', '#monthSelectionSummary', '#elementSelectionSummary', '#prefButtons', '#elementPanel', '#settingsPanels'];
     const roots = watch.map(s => $(s, legacy)).filter(Boolean);
@@ -379,6 +491,7 @@
     if (!header) return;
     document.body.classList.add('wx-v2');
     renameComparison();
+    installNewsTicker();
     const actions = $('#desktopDashboard .dashboard-action-groups');
     const theme = $('#dashboardThemeToggle');
     if (actions && actions.parentElement !== header) header.insertBefore(actions, theme || null);
@@ -395,6 +508,7 @@
   }
   function init() {
     bindMessages();
+    bindNewsEvents();
     if ($('#desktopDashboard')) installDashboard();
     if (!installQuickBar()) {
       const pending = new MutationObserver(() => { if (installQuickBar()) pending.disconnect(); });

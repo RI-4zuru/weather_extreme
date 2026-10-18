@@ -16,6 +16,21 @@ import {
   toJmaMapTimestamp,
 } from "./utils.js";
 
+// Collapse simultaneous requests for the same JMA resource, and bound concurrent
+// point downloads. The bulletin checks many elements with the same source data.
+let latestTimePending = null;
+let latestMapPending = null;
+const chunkPending = new Map();
+const dayPending = new Map();
+let activePointRequests = 0;
+const pointQueue = [];
+async function withPointSlot(task) {
+  if (activePointRequests >= 8) await new Promise(resolve => pointQueue.push(resolve));
+  activePointRequests++;
+  try { return await task(); }
+  finally { activePointRequests--; pointQueue.shift()?.(); }
+}
+
 export function isLiveSupported(elementKey, month) {
   if (LIVE_SUPPORTED_ANNUAL_KEYS.has(elementKey)) {
     return true;
@@ -37,13 +52,15 @@ export async function fetchLatestObservationTime() {
     return state.latestTimeCache.iso;
   }
 
-  const text = await fetchText(JMA_ENDPOINTS.latestTime);
-  const iso = text.trim();
-  state.latestTimeCache = {
-    iso,
-    fetchedAt: now,
-  };
-  return iso;
+  if (latestTimePending) return latestTimePending;
+  latestTimePending = (async () => {
+    const text = await fetchText(JMA_ENDPOINTS.latestTime);
+    const iso = text.trim();
+    state.latestTimeCache = { iso, fetchedAt: Date.now() };
+    return iso;
+  })();
+  try { return await latestTimePending; }
+  finally { latestTimePending = null; }
 }
 
 export async function fetchLatestMap(latestIso) {
@@ -54,14 +71,16 @@ export async function fetchLatestMap(latestIso) {
     return state.latestMapCache.data;
   }
 
-  const timestamp = toJmaMapTimestamp(latestIso);
-  const data = await fetchJson(JMA_ENDPOINTS.map(timestamp));
-  state.latestMapCache = {
-    iso: latestIso,
-    data,
-    fetchedAt: Date.now(),
-  };
-  return data;
+  if (latestMapPending?.iso === latestIso) return latestMapPending.promise;
+  const promise = (async () => {
+    const timestamp = toJmaMapTimestamp(latestIso);
+    const data = await fetchJson(JMA_ENDPOINTS.map(timestamp));
+    state.latestMapCache = { iso:latestIso, data, fetchedAt:Date.now() };
+    return data;
+  })();
+  latestMapPending = { iso:latestIso, promise };
+  try { return await promise; }
+  finally { if (latestMapPending?.promise === promise) latestMapPending = null; }
 }
 
 async function fetchPointChunk(stationCode, slot) {
@@ -70,10 +89,16 @@ async function fetchPointChunk(stationCode, slot) {
     return state.pointChunkCache.get(cacheKey);
   }
 
-  state.debug.pointFetchCount += 1;
-  const data = await fetchJson(JMA_ENDPOINTS.point(stationCode, slot));
-  state.pointChunkCache.set(cacheKey, data);
-  return data;
+  if (chunkPending.has(cacheKey)) return chunkPending.get(cacheKey);
+  const pending = withPointSlot(async () => {
+    state.debug.pointFetchCount += 1;
+    const data = await fetchJson(JMA_ENDPOINTS.point(stationCode, slot));
+    state.pointChunkCache.set(cacheKey, data);
+    return data;
+  });
+  chunkPending.set(cacheKey, pending);
+  try { return await pending; }
+  finally { chunkPending.delete(cacheKey); }
 }
 
 async function fetchTodayPointRecords(stationCode, latestIso) {
@@ -82,27 +107,25 @@ async function fetchTodayPointRecords(stationCode, latestIso) {
     return state.pointDailyCache.get(cacheKey);
   }
 
-  const slots = getTodayPointSlots(latestIso);
-  const chunks = await Promise.all(
-    slots.map((slot) =>
-      fetchPointChunk(stationCode, slot).catch(() => null)
-    )
-  );
-
-  const rows = [];
-  for (const chunk of chunks) {
-    if (!chunk || typeof chunk !== "object") continue;
-    for (const [timeKey, item] of Object.entries(chunk)) {
-      rows.push({
-        timeKey,
-        data: item || {},
-      });
+  if (dayPending.has(cacheKey)) return dayPending.get(cacheKey);
+  const pending = (async () => {
+    const slots = getTodayPointSlots(latestIso);
+    const chunks = await Promise.all(slots.map(slot => fetchPointChunk(stationCode, slot).catch(() => null)));
+    const rows = [];
+    if (!chunks.some(chunk => chunk && typeof chunk === 'object')) {
+      throw new Error(`地点 ${stationCode} の観測データを取得できませんでした`);
     }
-  }
-
-  rows.sort((a, b) => String(a.timeKey).localeCompare(String(b.timeKey), "ja"));
-  state.pointDailyCache.set(cacheKey, rows);
-  return rows;
+    for (const chunk of chunks) {
+      if (!chunk || typeof chunk !== "object") continue;
+      for (const [timeKey, item] of Object.entries(chunk)) rows.push({timeKey,data:item||{}});
+    }
+    rows.sort((a,b) => String(a.timeKey).localeCompare(String(b.timeKey),'ja'));
+    state.pointDailyCache.set(cacheKey,rows);
+    return rows;
+  })();
+  dayPending.set(cacheKey,pending);
+  try {return await pending;}
+  finally {dayPending.delete(cacheKey); }
 }
 
 function extractSeries(records, fieldNames) {
@@ -123,7 +146,7 @@ function calcDailyMetrics(records) {
   const gust = extractSeries(records, ["gust", "maxWind"]);
 
   return {
-    dailyPrecip: sum(precip10m),
+    dailyPrecip: records.length ? sum(precip10m) : null,
     max10mPrecip: max(precip10m),
     max1hPrecip: rollingMax(
       precip10m.map((v) => (Number.isFinite(v) ? v : 0)),

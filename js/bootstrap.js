@@ -1,4 +1,4 @@
-const BUILD_VERSION = "3";
+const BUILD_VERSION = "4";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -106,7 +106,10 @@ function rewriteApplicationModuleImports(source) {
     if (clean === "./ranking.js") {
       return new URL(`./ranking-live-policy.js?v=${BUILD_VERSION}`, import.meta.url).href;
     }
-    return new URL(specifier, import.meta.url).href;
+    // All loaders and observation modules import the *unversioned* shared
+    // state singleton. Adding ?v to app.js's state import would fork it.
+    if (clean === "./state.js") return new URL('./state.js', import.meta.url).href;
+    return new URL(`${clean}?v=${BUILD_VERSION}`, import.meta.url).href;
   };
 
   return String(source)

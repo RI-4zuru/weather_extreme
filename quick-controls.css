@@ -93,3 +93,22 @@ body.wx-v2 .rank-table th {padding:4px 2px}
 @media(max-width:620px){body.wx-v2 .rank-table {min-width:660px!important}}
 /* The mobile/non-dashboard layout also benefits from the compact bar. */
 @media(max-width:1180px){body.wx-v2 .table-section{padding:4px!important}}
+/* One-click region overview persists to the left of its constituent prefectures. */
+.wx-region-btn{background:#dcebf8;color:#174f7f;border-color:#b7d1ea;font-weight:800;flex-grow:0}
+.wx-region-btn[aria-pressed=true]{background:#164b86;color:white}
+.wx-prefstrip{scrollbar-width:thin}
+/* Single compact breaking-news ticker in the spare dashboard header space. */
+.wx-news-ticker{display:flex;align-items:center;flex:1 1 180px;min-width:100px;max-width:100%;min-height:29px;margin:0 4px;padding:3px 7px;gap:7px;overflow:hidden;text-align:left;cursor:pointer;border:1px solid #b7d4ed;border-radius:7px;background:#edf5fd;color:#1c4569;font:inherit;font-size:11px;line-height:1.3}
+.wx-news-ticker:hover{background:#e0effe;border-color:#6999c6}
+.wx-news-label{flex:0 0 auto;border-radius:4px;background:#2565a5;color:#fff;padding:2px 5px;font-weight:800;white-space:nowrap}
+.wx-news-count{font-weight:750;flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.wx-news-headline{flex:1 1 auto;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:600}
+.wx-news-more{flex:0 0 auto;white-space:nowrap;font-size:10px;color:#376895}
+.wx-news-urgent{background:#fff0ef;border-color:#e8a0a2;color:#961f2b}
+.wx-news-urgent:hover{background:#ffe4e3;border-color:#c65b63}
+.wx-news-urgent .wx-news-label{background:#bd2836;color:white}
+.wx-news-urgent .wx-news-more{color:#961f2b}
+@media(min-width:1181px){body.wx-v2 .dashboard-header>.wx-news-ticker{order:4;min-width:120px;flex:1 1 300px}body.wx-v2 .dashboard-header>.dashboard-icon-button{order:5}body.wx-v2 .dashboard-action-groups{flex:0 1 auto}}
+@media(min-width:1181px) and (max-width:1430px){.wx-news-count{display:none}.wx-news-more{display:none}}
+@media(max-width:1180px){body.wx-v2 .app-header>.wx-news-ticker{width:100%;margin:3px 0 0}}
+@media(prefers-reduced-motion:reduce){.wx-news-ticker{transition:none}}

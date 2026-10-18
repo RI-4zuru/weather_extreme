@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>極値・ランクイン速報一覧</title>
+<style>
+:root{color-scheme:light;--ink:#233c53;--line:#d6e2ed;--red:#ba2533}
+*{box-sizing:border-box}body{margin:0;background:#f2f6fa;color:var(--ink);font:13px/1.55 system-ui,-apple-system,'Yu Gothic',Meiryo,sans-serif}
+header{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:12px 18px}
+h1{font-size:17px;margin:0 0 2px}#summary{margin:0;color:#59728a;font-size:12px}nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+nav button{font:inherit;color:#204663;background:#f1f6fb;border:1px solid #b8cde1;padding:5px 13px;border-radius:6px;cursor:pointer}
+nav button[aria-pressed=true]{color:white;background:#1c5a98;border-color:#1c5a98}
+main{padding:12px 16px}#stats{margin:0 0 10px;font-size:12px;color:#536b80}.item{background:#fff;border:1px solid var(--line);border-radius:7px;margin:6px 0;padding:10px 11px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.item.top{border-left:5px solid var(--red);background:#fff5f5}.item.rank{border-left:4px solid #2f73b8}.item-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{font-weight:700;border-radius:4px;padding:1px 6px;font-size:11px;color:#fff;background:#2864a1}.top .pill{background:var(--red)}
+.item-body{min-width:0}.item-desc{font-weight:650}.sub{font-size:11px;color:#657b8e;margin-top:2px}.value{font-weight:750;font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.jump{flex:0 0 auto;border:1px solid var(--line);border-radius:5px;background:white;color:#205b8c;padding:5px 9px;cursor:pointer}
+.empty{border:1px dashed #bdcedc;border-radius:7px;padding:36px;text-align:center;background:white;color:#60758a}
+footer{color:#6a8195;font-size:11px;padding:9px 17px 20px}
+@media(max-width:620px){.item{flex-wrap:wrap}.jump{margin-left:auto}header{padding:9px 12px}main{padding:9px}}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--ink:#dce8f2;--line:#42566a}body{background:#172333}header,.item,.empty{background:#223247}.item.top{background:#3c2a31}nav button,.jump{background:#273b50;color:#cbe1f7}nav button[aria-pressed=true]{background:#2762a1}.sub,#summary,#stats,footer{color:#b4c5d3}}
+</style>
+</head>
+<body>
+<header><h1>気象極値・ランキング速報</h1><p id="summary">速報を取得しています…</p>
+<nav aria-label="表示する速報"><button type="button" data-filter="all" aria-pressed="true">すべて</button><button type="button" data-filter="top">1位更新</button><button type="button" data-filter="rank">ランクイン</button></nav></header>
+<main><p id="stats"></p><div id="list" class="empty">元の画面から速報を読み込み中…</div></main>
+<footer>実況値に基づく参考判定です。正式な気象庁の記録確定とは異なります。現在の観測月と通年のランキングを判定しています。</footer>
+<script>
+(() => {
+  'use strict';
+  let reports = [], filter = 'all';
+  const $ = s => document.querySelector(s);
+  const dateText = iso => {
+    const d = new Date(iso); if (!Number.isFinite(d.getTime())) return '観測時刻不明';
+    return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(d) + '時点';
+  };
+  function render(){
+    const items = reports.flatMap(report => (report.items||[]).map(item => ({...item, source:report.source, scope:report.scope})));
+    const top = items.filter(i=>i.top1).length;
+    const pending = reports.filter(r=>r.status==='loading').length;
+    const errors = reports.filter(r=>r.status==='error'||r.status==='partial').length;
+    const places = reports.map(r=>r.scope?.label).filter(Boolean).join('・');
+    $('#summary').textContent = `${places||'表示中の地域'}：1位更新 ${top}件 / その他ランクイン ${items.length-top}件${pending?'（確認中）':''}${errors?'（取得失敗あり）':''}`;
+    const show = items.filter(i=>filter==='all'||(filter==='top'?i.top1:!i.top1));
+    $('#stats').textContent = `表示 ${show.length}件 ／ 観測更新：${reports.map(r=>r.scannedAt?dateText(r.scannedAt):'').filter(Boolean).join(' ・ ')||'確認中'}`;
+    const list = $('#list'); list.className=''; list.replaceChildren();
+    if(!show.length){list.className='empty';list.textContent=pending?'確認中です…':errors?'実況データの確認に失敗しました。更新をお試しください。':items.length?'この条件の速報はありません。':'ランクインは確認されていません。';return;}
+    for(const item of show){
+      const article = document.createElement('article'); article.className='item '+(item.top1?'top':'rank');
+      const body=document.createElement('div'); body.className='item-body';
+      const head=document.createElement('div');head.className='item-head';
+      const pill=document.createElement('span');pill.className='pill';pill.textContent=item.top1?'1位更新':`${item.rank}位ランクイン`;
+      const text=document.createElement('span');text.className='item-desc'; text.textContent=`${item.prefName} ${item.stationName}／${item.elementLabel}（${item.monthLabel}）`;
+      head.append(pill,text);
+      const sub=document.createElement('div');sub.className='sub';sub.textContent=`${dateText(item.observedAt)}${item.tiedFirst?' ・ 従来の1位と同値':''} ・ 速報判定`;
+      body.append(head,sub);
+      const value=document.createElement('strong');value.className='value';value.textContent=`${item.value}${item.unit||''}`;
+      const jump=document.createElement('button');jump.type='button';jump.className='jump';jump.textContent='この表を見る';jump.title='元の画面で該当する府県・期間・要素を開く';
+      jump.addEventListener('click',()=>{try{window.opener?.postMessage({wxNewsWindow:true,kind:'jump',item}, location.origin==='null'?'*':location.origin);window.opener?.focus()}catch(_){}});
+      article.append(body,value,jump);list.append(article);
+    }
+  }
+  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{
+    filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();
+  }));
+  window.addEventListener('message',e=>{
+    if(!e.data?.wxNewsWindow||e.data.kind!=='reports')return;
+    if(e.source!==window.opener)return;
+    if(location.origin!=='null'&&e.origin!==location.origin)return;
+    reports=Array.isArray(e.data.reports)?e.data.reports:[];
+    render();
+  });
+  function ready(){try{window.opener?.postMessage({wxNewsWindow:true,kind:'ready'},location.origin==='null'?'*':location.origin)}catch(_){}}
+  ready();window.addEventListener('focus',ready);
+})();
+</script>
+</body>
+</html>
