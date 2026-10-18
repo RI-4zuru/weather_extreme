@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-18T22:39:34.458133+09:00",
-  "observedLatestAt": "2026-10-18T22:30:00+09:00",
+  "updatedAt": "2026-10-19T04:11:14.683086+09:00",
+  "observedLatestAt": "2026-10-19T04:00:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -42,7 +42,7 @@
         },
         {
           "rank": 6,
-          "value": 134,
+          "value": 135,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -253,14 +253,14 @@
         {
           "rank": 8,
           "value": 133,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 132,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 133,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
         },
         {
           "rank": 10,
