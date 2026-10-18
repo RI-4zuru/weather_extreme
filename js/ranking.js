@@ -160,6 +160,7 @@ export function decorateRowsWithLive(rows, stationIndex, liveValuesByCode, eleme
     return {
       ...row,
       stationCode: code,
+      elementKey,
       liveCandidate: {
         supportMode,
         supported: supportMode !== "unsupported" && supportMode !== "error",
@@ -196,9 +197,10 @@ export function buildPrefectureAggregateRow(rows, prefName, elementKey) {
     return null;
   }
 
-  historicalEntries.sort((a, b) => compareEntries(a, b, elementKey));
+  const cleanHistory = dedupeAggregateHistory(historicalEntries, elementKey);
+  cleanHistory.sort((a, b) => compareEntries(a, b, elementKey));
 
-  const aggregateRanks = historicalEntries.slice(0, 10).map((item) => ({
+  const aggregateRanks = cleanHistory.slice(0, 10).map((item) => ({
     value: item.rawValue,
     date: item.date,
     stationName: item.stationName,
@@ -253,6 +255,7 @@ export function buildPrefectureAggregateRow(rows, prefName, elementKey) {
 
   return {
     stationName: prefName,
+    elementKey,
     startDate: "県内総合",
     stationCode: "",
     isPrefectureAggregate: true,
@@ -291,9 +294,10 @@ export function buildAreaAggregateRow(rows, areaName, areaLabel, elementKey) {
     return null;
   }
 
-  historicalEntries.sort((a, b) => compareEntries(a, b, elementKey));
+  const cleanHistory = dedupeAggregateHistory(historicalEntries, elementKey);
+  cleanHistory.sort((a, b) => compareEntries(a, b, elementKey));
 
-  const aggregateRanks = historicalEntries.slice(0, 10).map((item) => ({
+  const aggregateRanks = cleanHistory.slice(0, 10).map((item) => ({
     value: item.rawValue,
     date: item.date,
     stationName: item.stationName,
@@ -357,6 +361,7 @@ export function buildAreaAggregateRow(rows, areaName, areaLabel, elementKey) {
 
   return {
     stationName: areaName,
+    elementKey,
     startDate: areaLabel,
     stationCode: "",
     isAreaAggregate: true,
@@ -409,37 +414,93 @@ export function hasAnyTop1(rows) {
   return (rows || []).some((row) => row?.liveCandidate?.rank === 1);
 }
 
+// Use JST calendar dates to compare live ISO timestamps with dated historical records.
+// One station can appear only once on a given observation day in the same ranking.
+function recordDayJst(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  if (/^\d{4}-\d{2}-\d{2}T/.test(text)) {
+    const timestamp = new Date(text);
+    if (!Number.isNaN(timestamp.getTime())) {
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit",
+      }).formatToParts(timestamp);
+      const part = (type) => parts.find((item) => item.type === type)?.value || "";
+      return `${part("year")}-${part("month")}-${part("day")}`;
+    }
+  }
+  const match = text.match(/(\d{4})[\/\-.年](\d{1,2})[\/\-.月](\d{1,2})/);
+  return match ? `${match[1]}-${match[2].padStart(2, "0")}-${match[3].padStart(2, "0")}` : "";
+}
+
+function sameStation(nameA, nameB) {
+  return String(nameA || "").replace(/[\s（）]/g, "").replace(/\(/g, "").replace(/\)/g, "") ===
+    String(nameB || "").replace(/[\s（）]/g, "").replace(/\(/g, "").replace(/\)/g, "");
+}
+
+// Suppress repeated records in aggregate source rows, keeping the strongest value.
+function dedupeAggregateHistory(entries, elementKey) {
+  const seen = new Map();
+  const better = isLowBetter(elementKey)
+    ? (a, b) => a.numericValue < b.numericValue
+    : (a, b) => a.numericValue > b.numericValue;
+  for (const entry of entries) {
+    const day = recordDayJst(entry.date);
+    const identity = entry.stationCodeNumber >= 0 ? `#${entry.stationCodeNumber}` : entry.stationName;
+    const key = day ? `${identity}::${day}` : null;
+    if (!key) { seen.set(Symbol(), entry); continue; }
+    const previous = seen.get(key);
+    if (!previous || better(entry, previous)) seen.set(key, entry);
+  }
+  return [...seen.values()];
+}
+
 export function insertLiveIntoRankRows(rows) {
   return (rows || []).map((row) => {
     const live = row.liveCandidate;
+    if (!live || !Number.isFinite(live.value) || !Number.isFinite(live.rank) ||
+        live.rank < 1 || live.rank > 10) return row;
 
-    if (
-      !live ||
-      !Number.isFinite(live.value) ||
-      !Number.isFinite(live.rank) ||
-      live.rank < 1 ||
-      live.rank > 10
-    ) {
-      return row;
+    const stationName = row.isAreaAggregate || row.isPrefectureAggregate
+      ? (live.stationName || "") : (row.stationName || "");
+    const liveDay = recordDayJst(live.observedAt);
+    // The same aggregate can be passed through this function twice (area -> nation).
+    // Remove inserted live items before inserting one canonical entry.
+    const candidates = (row.ranks || []).filter((item) => !item.isLiveRank);
+    const onSameDay = (item) => liveDay && recordDayJst(item.date) === liveDay &&
+      sameStation(item.stationName || row.stationName, stationName);
+    const previouslyRanked = candidates.filter(onSameDay);
+    const remaining = candidates.filter((item) => !onSameDay(item));
+    const bestPrevious = previouslyRanked.reduce((best, item) => {
+      const value = parseValue(item.value);
+      if (!Number.isFinite(value)) return best;
+      if (!best || (isLowBetter(row.elementKey || "") ? value < best.value : value > best.value))
+        return { item, value };
+      return best;
+    }, null);
+    // Historic ranking may already contain a stronger value for the same station/day.
+    // Retain that one rather than overwrite it with a potentially stale live reading.
+    if (bestPrevious && (isLowBetter(row.elementKey || "")
+      ? bestPrevious.value < live.value : bestPrevious.value > live.value)) {
+      const index = judgeLiveRank(bestPrevious.value, { ranks: remaining }, row.elementKey || "");
+      const restored = [...remaining];
+      restored.splice(Math.max(0, (index || live.rank) - 1), 0, bestPrevious.item);
+      return { ...row, ranks: restored.slice(0, 10) };
     }
 
+    // Recompute after deleting duplicates, otherwise a tied preexisting record
+    // incorrectly advances the insertion rank or produces two identical cells.
+    const position = judgeLiveRank(live.value, { ranks: remaining }, row.elementKey || "");
+    const insertAt = (position || Math.min(live.rank, remaining.length + 1)) - 1;
     const liveRankItem = {
       value: live.value,
       date: live.observedAt || "",
-      stationName:
-        row.isAreaAggregate || row.isPrefectureAggregate
-          ? live.stationName || ""
-          : "",
+      stationName: row.isAreaAggregate || row.isPrefectureAggregate ? stationName : "",
       highlightWithinYear: false,
       isLiveRank: true,
     };
-
-    const nextRanks = [...(row.ranks || [])];
-    nextRanks.splice(live.rank - 1, 0, liveRankItem);
-
-    return {
-      ...row,
-      ranks: nextRanks.slice(0, 10),
-    };
+    const nextRanks = [...remaining];
+    nextRanks.splice(insertAt, 0, liveRankItem);
+    return { ...row, ranks: nextRanks.slice(0, 10) };
   });
 }

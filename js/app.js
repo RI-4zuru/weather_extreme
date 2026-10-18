@@ -1590,6 +1590,7 @@ async function buildAreaDisplayRows({
     rows: insertLiveIntoRankRows(
       [areaAggregateRow, ...prefAggregateRows].filter(Boolean)
     ),
+    stationRows: highlightedAllRows,
     latestObservationTime:
       prefResults
         .map((result) => result.latestObservationTime || "")
@@ -1626,22 +1627,9 @@ async function buildNationDisplayRows(elementMeta, month) {
 
     allPrefRows.push(...(regionResult.rows || []).slice(1));
 
-    const prefStationRows = await Promise.all(
-      prefMetas.map((prefMeta) =>
-        buildDecoratedRowsForPref(prefMeta, elementMeta, month).catch(() => ({
-          prefMeta,
-          rows: [],
-          latestObservationTime: "",
-        }))
-      )
-    );
-
-    for (const result of prefStationRows) {
-      allStationRows.push(...(result.rows || []));
-      if (result.latestObservationTime) {
-        latestList.push(result.latestObservationTime);
-      }
-    }
+    // Reuse the rows already fetched to construct the region ranking.
+    // Avoid fetching and decorating every prefecture a second time.
+    allStationRows.push(...(regionResult.stationRows || []));
   }
 
   const highlightedAllStationRows = applyHighlightModeToRows(

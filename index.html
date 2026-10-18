@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ja">
  <head>
   <meta charset="utf-8"/>
@@ -9,8 +8,8 @@
   </title>
   <meta content="気象庁公開データをもとに、都道府県・地域・全国の観測史上の極値ランキングを比較表示" name="description"/>
   <link href="./manifest.webmanifest" rel="manifest"/>
-  <link href="./style.css?v=20260717-4" rel="stylesheet"/>
-  <link rel="stylesheet" href="./extreme-ui.css?v=20261018-2">
+  <link href="./style.css?v=3" rel="stylesheet"/>
+  <link rel="stylesheet" href="./quick-controls.css?v=3">
  </head>
  <body>
   <section aria-label="PC向け極値ダッシュボード" class="desktop-dashboard" hidden="" id="desktopDashboard">
@@ -24,7 +23,7 @@
        極値ランキング
       </div>
       <div class="dashboard-brand-subtitle">
-       観測史上の記録を、単独表示と左右比較で見やすく確認
+       観測史上の記録を、単独表示と２府県比較で見やすく確認
       </div>
      </div>
     </div>
@@ -42,7 +41,7 @@
        ▥
       </span>
       <span>
-       左右比較
+       ２府県比較
       </span>
      </button>
     </nav>
@@ -52,21 +51,13 @@
    <div class="dashboard-context-bar">
     <div>
      <div class="dashboard-context-title" id="dashboardModeTitle">
-      左右比較
+      ２府県比較
      </div>
      <div class="dashboard-context-description" id="dashboardModeDescription">
       2つの都道府県を独立して選び、同じ条件でも別条件でも順位表を見比べます。
      </div>
     </div>
     <div class="dashboard-action-groups">
-     <div class="dashboard-actions dashboard-actions-global">
-      <button aria-pressed="true" class="dashboard-action-button dashboard-settings-button" id="dashboardSettingsToggle" type="button">
-       設定を隠す
-      </button>
-      <button class="dashboard-action-button" id="dashboardTableJumpButton" type="button">
-       表へ移動
-      </button>
-     </div>
      <div class="dashboard-actions" id="comparisonActions">
       <button class="dashboard-action-button" id="syncComparisonButton" title="左側の月・要素・表示条件を右側へ反映" type="button">
        月・要素を揃える
@@ -170,14 +161,7 @@
        要素を読み込み中
       </button>
      </div>
-     <div class="settings-summary-actions">
-      <button aria-pressed="true" class="settings-summary-button" id="settingsVisibilityToggle" type="button">
-       設定を隠す
-      </button>
-      <button class="settings-summary-button" id="scrollToTableButton" type="button">
-       表へ
-      </button>
-     </div>
+
     </div>
     <div class="selection-panels" id="settingsPanels">
      <section class="control-panel area-panel">
@@ -343,13 +327,13 @@
       </div>
      </div>
      <div class="legend">
-      <span class="legend-chip live-chip reference-only" title="実況値は右端の参考列にのみ表示し、1位〜10位の記録は変えません。">
-       実況値：参考表示（順位には反映しません）
+      <span class="legend-chip live-chip" title="実況値が対象期間のランキングに入った場合は、同日の既存記録と重複させずに赤系で表示します。">
+       赤系：実況ランクイン
       </span>
       <span class="legend-chip within-chip" id="withinChip" title="クリックで 1年以内 → 今年 → 当月 に切り替え">
        黄系：1年以内の記録
       </span>
-      <button aria-pressed="false" class="legend-toggle-button" id="liveColumnToggle" title="実況値を参考列として表示します。ランキング順位には反映しません。" type="button">
+      <button aria-pressed="false" class="legend-toggle-button" id="liveColumnToggle" title="右端に実況の値を表示します。ランキングに入る実況は順位欄にも表示されます。" type="button">
        参考実況を表示
       </button>
      </div>
@@ -418,9 +402,9 @@
     </div>
    </div>
   </div>
-  <script src="./js/extreme-ui.js?v=20261018-2">
+  <script src="./js/quick-controls.js?v=3">
   </script>
-  <script src="./js/bootstrap.js?v=20260717-4" type="module">
+  <script src="./js/bootstrap.js?v=3" type="module">
   </script>
  </body>
 </html>

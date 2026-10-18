@@ -1,4 +1,4 @@
-const BUILD_VERSION = "20260717-4";
+const BUILD_VERSION = "3";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -501,11 +501,6 @@ function initializeTableUtilities() {
   bar.id = "tableUtilityBar";
   bar.className = "table-utility-bar";
   bar.innerHTML = `
-    <label class="table-search-box">
-      <span aria-hidden="true">⌕</span>
-      <input type="search" inputmode="search" autocomplete="off" placeholder="地点・都道府県を絞り込み" aria-label="表の地点・都道府県を検索">
-      <button type="button" class="table-search-clear" title="検索をクリア" aria-label="検索をクリア">×</button>
-    </label>
     <div class="table-utility-actions">
       <button type="button" class="table-ranked-only" aria-pressed="false">実況ランクインのみ</button>
       <button type="button" class="table-density-toggle" aria-pressed="false">コンパクト表示</button>
@@ -515,22 +510,18 @@ function initializeTableUtilities() {
   if (legend) tableSection.insertBefore(bar, legend);
   else (policyCard || tableSection.firstElementChild)?.insertAdjacentElement("afterend", bar);
 
-  const input = bar.querySelector("input[type='search']");
-  const clearButton = bar.querySelector(".table-search-clear");
   const rankedOnlyButton = bar.querySelector(".table-ranked-only");
   const densityButton = bar.querySelector(".table-density-toggle");
   const count = bar.querySelector(".table-filter-count");
   const densityKey = `${APP_PREFIX}table_density`;
   let rankedOnly = false;
 
-  const normalize = (value) => String(value || "").normalize("NFKC").toLocaleLowerCase("ja").trim();
   const isDataRow = (row) => !row.querySelector(".message-cell");
   const hasLiveRank = (row) => Boolean(row.querySelector(
     ".rank-cell.live-target, .rank-cell.live-and-year, .live-col-cell.live-target, .live-col-cell.live-and-year"
   ));
 
   const applyFilter = () => {
-    const query = normalize(input?.value);
     const rows = [...tableBody.querySelectorAll(":scope > tr")];
     let total = 0;
     let visible = 0;
@@ -540,13 +531,11 @@ function initializeTableUtilities() {
         return;
       }
       total += 1;
-      const matchesText = !query || normalize(row.textContent).includes(query);
       const matchesRank = !rankedOnly || hasLiveRank(row);
-      row.hidden = !(matchesText && matchesRank);
+      row.hidden = !matchesRank;
       if (!row.hidden) visible += 1;
     });
     if (count) count.textContent = total ? `${visible} / ${total} 行` : "";
-    if (clearButton) clearButton.hidden = !input?.value;
   };
 
   const setDensity = (compact, { persist = true } = {}) => {
@@ -557,12 +546,6 @@ function initializeTableUtilities() {
     if (persist) rawStorage.set(densityKey, normalized ? "compact" : "standard");
   };
 
-  input?.addEventListener("input", applyFilter);
-  clearButton?.addEventListener("click", () => {
-    if (input) input.value = "";
-    input?.focus();
-    applyFilter();
-  });
   rankedOnlyButton?.addEventListener("click", () => {
     rankedOnly = !rankedOnly;
     rankedOnlyButton.setAttribute("aria-pressed", String(rankedOnly));
@@ -961,7 +944,7 @@ const DASHBOARD_MODE_META = {
     description: "都道府県・地域・全国の極値表を、横幅いっぱいに表示します。",
   },
   compare: {
-    title: "左右比較",
+    title: "２府県比較",
     description: "2つの都道府県を独立して選び、同じ画面内で順位表を見比べます。",
   },
   nation: {
