@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>極値ランキング | 設定</title>
+<style>
+:root{font-family:"Yu Gothic UI","Meiryo",system-ui,sans-serif;color:#18334a;background:#f5f8fb}*{box-sizing:border-box}body{margin:0}.top{position:sticky;top:0;z-index:2;background:#1d4870;color:white;padding:11px 16px;display:flex;align-items:center;gap:12px}.top h1{font-size:17px;margin:0;flex:1}.top small{font-size:11px;opacity:.83}main{padding:12px;display:grid;gap:10px}.panel{background:white;border:1px solid #d6e2ec;border-radius:9px;padding:10px 12px}.panel h2{margin:0 0 8px;font-size:13px}.flex{display:flex;flex-wrap:wrap;gap:5px}.choose{min-height:31px;background:#f4f8fc;color:#24415b;border:1px solid #d5e1ec;border-radius:6px;padding:5px 9px;cursor:pointer;font-size:12px}.choose.active{background:#2563a5;border-color:#2563a5;color:white}.choose:disabled{opacity:.5}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:5px}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.row label{font-size:12px}.row select{border:1px solid #adbdcc;border-radius:6px;background:white;padding:7px;font-size:13px}.row select.wide{min-width:170px;flex:1}footer{color:#4f6173;font-size:11px;padding:2px 14px 18px}.info{border-radius:6px;background:#e9f4ff;padding:9px 10px;font-size:12px;line-height:1.5}.error{background:#fee7e6;color:#912018}.right{margin-left:auto}#status{font-size:11px;min-height:15px}#regionButtons{margin-bottom:8px}
+</style></head><body>
+<header class="top"><h1>⚙ 極値ランキング設定</h1><small>変更は本画面に即時反映</small></header>
+<main>
+<div id="message" class="info">元のページと接続しています。</div>
+<section class="panel" id="panePanel" hidden><h2>変更する画面</h2><div id="paneButtons" class="flex"></div></section>
+<section class="panel"><h2>地域・府県</h2><div class="flex" id="regionButtons"></div><div class="grid" id="prefButtons"></div></section>
+<section class="panel"><h2>期間・要素</h2><div class="row"><label for="periodSelect">対象期間</label><select id="periodSelect"></select><label for="elementSelect">要素</label><select class="wide" id="elementSelect"></select></div><p style="font-size:11px;color:#667;margin:8px 0 0">ここでは実況のない要素も含め、元ページで選択できる要素をすべて表示します。</p></section>
+<section class="panel"><h2>自動更新</h2><div class="row"><label for="refreshSelect">間隔</label><select id="refreshSelect"><option value="0">自動更新なし</option><option value="2">2分</option><option value="5">5分</option><option value="10">10分</option><option value="15">15分</option></select><button class="choose" id="manualRefresh" type="button">今すぐ更新</button></div><p style="font-size:11px;color:#667;margin:8px 0 0">画面が表示中のときだけ更新します。更新後の状態は、元サイトの選択保存機能に依存します。</p></section>
+<div class="row"><span id="status" aria-live="polite"></span><button class="choose right" id="closeWindow">閉じる</button></div>
+</main><footer>表示対象は気象庁の観測値と元サイトの取得状況に依存します。ページの再読込とデータの更新時刻は同一とは限りません。</footer>
+<script src="./js/extreme-settings.js?v=20261018-2" defer></script>
+</body></html>
