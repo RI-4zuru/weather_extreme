@@ -1,4 +1,4 @@
-const BUILD_VERSION = "4";
+const BUILD_VERSION = "5";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";
@@ -587,6 +587,30 @@ async function initializeEmbeddedPane(scope) {
   if (!loaded) return;
   applyTheme(rawStorage.get(DASHBOARD_THEME_KEY) || document.documentElement.dataset.theme);
   prepareEmbeddedPane(scope);
+  if (scope === "news-jump") focusBulletinStation(params.get("news_station"));
+}
+
+function focusBulletinStation(stationName) {
+  const target = String(stationName || "").replace(/\s+/g, "");
+  if (!target) return;
+  const table = document.getElementById("rankTableBody");
+  if (!table) return;
+  let finished = false;
+  const find = () => {
+    if (finished) return;
+    const row = [...table.querySelectorAll("tr")].find(tr =>
+      (tr.querySelector(".station-name")?.textContent || "").replace(/\s+/g, "") === target);
+    if (!row) return;
+    finished = true;
+    observer.disconnect();
+    clearTimeout(expire);
+    row.classList.add("wx-news-target-row");
+    row.scrollIntoView({behavior:"auto",block:"center"});
+  };
+  const observer = new MutationObserver(find);
+  observer.observe(table,{childList:true,subtree:true});
+  const expire = window.setTimeout(()=>observer.disconnect(),25000);
+  find();
 }
 
 function sanitizeClassName(value) {
@@ -625,6 +649,34 @@ function seedPaneStorage(scope) {
     rawStorage.set(paneStorageKey(scope, `${APP_PREFIX}enabled_areas`), JSON.stringify(["nation:all"]));
     rawStorage.set(paneStorageKey(scope, `${APP_PREFIX}control_panel_collapsed`), "false");
     setIfMissing(`${APP_PREFIX}last_month`, "all");
+    return;
+  }
+
+  // A bulletin link opens its own isolated pane with the exact table selected.
+  // Scoped storage avoids changing the original dashboard or comparison panes.
+  if (scope === "news-jump") {
+    const q = new URLSearchParams(location.search);
+    const pref = q.get("news_pref") || "";
+    const region = q.get("news_region") || "";
+    const month = q.get("news_month") || "";
+    const element = q.get("news_element") || "";
+    if (/^[a-z][a-z0-9_-]{1,40}$/.test(pref) && region.length > 0 && region.length < 48 &&
+        (month === "all" || /^(?:[1-9]|1[0-2])$/.test(month)) && /^[a-zA-Z][a-zA-Z0-9]{1,60}$/.test(element)) {
+      const put = (suffix, value) => rawStorage.set(paneStorageKey(scope, `${APP_PREFIX}${suffix}`), value);
+      put("last_pref", pref);
+      put("last_region", region);
+      put("area_selection", "prefecture");
+      put("last_month", month);
+      put("last_element", element);
+      // A region's hidden prefecture must still be accessible from a news link.
+      const enabledRaw = rawStorage.get(paneStorageKey(scope, `${APP_PREFIX}enabled_prefs`));
+      try {
+        const prefs = JSON.parse(enabledRaw || "null");
+        if (Array.isArray(prefs) && prefs.length && !prefs.includes(pref)) {
+          prefs.push(pref); put("enabled_prefs", JSON.stringify(prefs));
+        }
+      } catch (_) { /* default app will enable all if invalid */ }
+    }
     return;
   }
 

@@ -112,3 +112,7 @@ body.wx-v2 .rank-table th {padding:4px 2px}
 @media(min-width:1181px) and (max-width:1430px){.wx-news-count{display:none}.wx-news-more{display:none}}
 @media(max-width:1180px){body.wx-v2 .app-header>.wx-news-ticker{width:100%;margin:3px 0 0}}
 @media(prefers-reduced-motion:reduce){.wx-news-ticker{transition:none}}
+
+/* Clearly locate the station reached from the bulletin (no data modification). */
+.wx-news-target-row{outline:3px solid #e39a27;outline-offset:-3px;background:#fff2c6!important;scroll-margin-top:100px}
+[data-theme=dark] .wx-news-target-row{background:#57451f!important;outline-color:#e2a84c}

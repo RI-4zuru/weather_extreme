@@ -4,74 +4,117 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>極値・ランクイン速報一覧</title>
 <style>
-:root{color-scheme:light;--ink:#233c53;--line:#d6e2ed;--red:#ba2533}
-*{box-sizing:border-box}body{margin:0;background:#f2f6fa;color:var(--ink);font:13px/1.55 system-ui,-apple-system,'Yu Gothic',Meiryo,sans-serif}
-header{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line);padding:12px 18px}
-h1{font-size:17px;margin:0 0 2px}#summary{margin:0;color:#59728a;font-size:12px}nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
-nav button{font:inherit;color:#204663;background:#f1f6fb;border:1px solid #b8cde1;padding:5px 13px;border-radius:6px;cursor:pointer}
-nav button[aria-pressed=true]{color:white;background:#1c5a98;border-color:#1c5a98}
-main{padding:12px 16px}#stats{margin:0 0 10px;font-size:12px;color:#536b80}.item{background:#fff;border:1px solid var(--line);border-radius:7px;margin:6px 0;padding:10px 11px;display:flex;justify-content:space-between;gap:14px;align-items:center}
-.item.top{border-left:5px solid var(--red);background:#fff5f5}.item.rank{border-left:4px solid #2f73b8}.item-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{font-weight:700;border-radius:4px;padding:1px 6px;font-size:11px;color:#fff;background:#2864a1}.top .pill{background:var(--red)}
-.item-body{min-width:0}.item-desc{font-weight:650}.sub{font-size:11px;color:#657b8e;margin-top:2px}.value{font-weight:750;font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
-.jump{flex:0 0 auto;border:1px solid var(--line);border-radius:5px;background:white;color:#205b8c;padding:5px 9px;cursor:pointer}
-.empty{border:1px dashed #bdcedc;border-radius:7px;padding:36px;text-align:center;background:white;color:#60758a}
-footer{color:#6a8195;font-size:11px;padding:9px 17px 20px}
-@media(max-width:620px){.item{flex-wrap:wrap}.jump{margin-left:auto}header{padding:9px 12px}main{padding:9px}}
-@media(prefers-color-scheme:dark){:root{color-scheme:dark;--ink:#dce8f2;--line:#42566a}body{background:#172333}header,.item,.empty{background:#223247}.item.top{background:#3c2a31}nav button,.jump{background:#273b50;color:#cbe1f7}nav button[aria-pressed=true]{background:#2762a1}.sub,#summary,#stats,footer{color:#b4c5d3}}
+:root{color-scheme:light;--bg:#f1f5fa;--panel:#fff;--ink:#213850;--muted:#627991;--line:#cbd9e8;--blue:#2766a7;--red:#b72633}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.5 system-ui,-apple-system,"Yu Gothic",Meiryo,sans-serif}
+header{position:sticky;top:0;z-index:4;background:var(--panel);border-bottom:1px solid var(--line);padding:9px 15px}
+.header-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+h1{font-size:17px;margin:0}#summary{margin:2px 0 0;color:var(--muted);font-size:12px}
+nav{display:flex;gap:5px}nav button{border:1px solid #a9c5df;background:#f3f7fc;padding:5px 11px;border-radius:6px;color:var(--ink);font:inherit;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+main{padding:10px 12px 14px}#stats{font-size:11px;color:var(--muted);margin:0 0 8px}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}
+.period{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.period-heading{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:8px 11px;background:#e9f2fb;border-bottom:1px solid var(--line)}
+.period-heading h2{font-size:14px;margin:0}.period-count{font-size:11px;color:var(--muted);white-space:nowrap}
+.table-wrap{width:100%;overflow:auto}table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+col.element{width:29%}col.station{width:24%}col.value{width:18%}col.rank{width:15%}col.open{width:14%}
+th{text-align:left;color:#4c627a;background:#f7faff;font-size:11px;font-weight:700;padding:6px 7px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.value,td.value{text-align:right}th.rank,td.rank,td.open{text-align:center}
+td{padding:7px 6px;border-bottom:1px solid #e6edf4;vertical-align:middle;overflow-wrap:anywhere}
+tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f2f7fc}
+tbody tr.top{background:#fff2f1}tbody tr.top:hover{background:#ffe7e6}
+.element-label{display:block;font-weight:650}.station-name{display:block;font-weight:650}
+.station-pref{display:block;font-size:10px;color:var(--muted)}.observed{font-size:10px;color:var(--muted);display:block;white-space:nowrap}
+td.value{font-weight:800;font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:0}
+.unit{font-size:11px;font-weight:500;padding-left:1px}
+.pill{display:inline-block;background:#e8f1fb;border:1px solid #bbd2ea;border-radius:5px;color:#225c99;white-space:nowrap;font-size:10px;font-weight:700;padding:2px 4px}
+.top .pill{background:#bd2736;color:#fff;border-color:#bd2736}
+.jump{display:inline-block;border:1px solid #a2bdd9;border-radius:5px;color:#145b9c;background:#fff;padding:3px 5px;text-decoration:none;white-space:nowrap;font-size:10px;font-weight:700}
+.jump:hover,.jump:focus-visible{background:#e2effe;outline:1px solid #286eae}
+.empty{padding:28px 12px;text-align:center;color:var(--muted);font-size:12px}
+footer{padding:6px 15px 12px;color:var(--muted);font-size:11px}
+@media(max-width:875px){.columns{grid-template-columns:1fr}.period-heading{padding:8px 10px}th,td{padding:6px 8px}}
+@media(max-width:450px){header{padding:8px 9px}main{padding:8px}th,td{padding:5px 4px}.observed{white-space:normal}}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#172335;--panel:#223448;--ink:#e2edf7;--muted:#b1c4d6;--line:#415770;--blue:#2766a7}header,.period{background:var(--panel)}.period-heading,th{background:#2a3d53}td{border-bottom-color:#344960}tbody tr:hover{background:#344c63}tbody tr.top{background:#452d37}tbody tr.top:hover{background:#57303d}.pill{background:#2a4664;color:#c3dfff;border-color:#456c93}.jump{background:#223d59;color:#c7e2ff;border-color:#587e9f}.jump:hover{background:#385777}nav button{background:#263e57;color:#e1efff}}
 </style>
 </head>
 <body>
-<header><h1>気象極値・ランキング速報</h1><p id="summary">速報を取得しています…</p>
-<nav aria-label="表示する速報"><button type="button" data-filter="all" aria-pressed="true">すべて</button><button type="button" data-filter="top">1位更新</button><button type="button" data-filter="rank">ランクイン</button></nav></header>
-<main><p id="stats"></p><div id="list" class="empty">元の画面から速報を読み込み中…</div></main>
-<footer>実況値に基づく参考判定です。正式な気象庁の記録確定とは異なります。現在の観測月と通年のランキングを判定しています。</footer>
+<header>
+<div class="header-row"><h1>気象極値・ランキング速報</h1>
+<nav aria-label="表示条件"><button type="button" data-filter="all" aria-pressed="true">全速報</button><button type="button" data-filter="top" aria-pressed="false">1位更新のみ</button></nav></div>
+<p id="summary">速報を取得しています…</p>
+</header>
+<main><p id="stats" role="status"></p>
+<div class="columns" id="columns">
+<section class="period" aria-labelledby="annualTitle"><div class="period-heading"><h2 id="annualTitle">通年ランキング</h2><span class="period-count" id="annualCount">確認中</span></div><div class="table-wrap" id="annualList"><div class="empty">読み込み中…</div></div></section>
+<section class="period" aria-labelledby="monthlyTitle"><div class="period-heading"><h2 id="monthlyTitle">今月のランキング</h2><span class="period-count" id="monthlyCount">確認中</span></div><div class="table-wrap" id="monthlyList"><div class="empty">読み込み中…</div></div></section>
+</div></main>
+<footer>実況値による暫定の速報です。正式な気象庁の極値確定とは異なります。各「表を見る」は該当するランキング表を新しいタブで開きます。</footer>
 <script>
 (() => {
-  'use strict';
-  let reports = [], filter = 'all';
-  const $ = s => document.querySelector(s);
-  const dateText = iso => {
-    const d = new Date(iso); if (!Number.isFinite(d.getTime())) return '観測時刻不明';
-    return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(d) + '時点';
-  };
-  function render(){
-    const items = reports.flatMap(report => (report.items||[]).map(item => ({...item, source:report.source, scope:report.scope})));
-    const top = items.filter(i=>i.top1).length;
-    const pending = reports.filter(r=>r.status==='loading').length;
-    const errors = reports.filter(r=>r.status==='error'||r.status==='partial').length;
-    const places = reports.map(r=>r.scope?.label).filter(Boolean).join('・');
-    $('#summary').textContent = `${places||'表示中の地域'}：1位更新 ${top}件 / その他ランクイン ${items.length-top}件${pending?'（確認中）':''}${errors?'（取得失敗あり）':''}`;
-    const show = items.filter(i=>filter==='all'||(filter==='top'?i.top1:!i.top1));
-    $('#stats').textContent = `表示 ${show.length}件 ／ 観測更新：${reports.map(r=>r.scannedAt?dateText(r.scannedAt):'').filter(Boolean).join(' ・ ')||'確認中'}`;
-    const list = $('#list'); list.className=''; list.replaceChildren();
-    if(!show.length){list.className='empty';list.textContent=pending?'確認中です…':errors?'実況データの確認に失敗しました。更新をお試しください。':items.length?'この条件の速報はありません。':'ランクインは確認されていません。';return;}
-    for(const item of show){
-      const article = document.createElement('article'); article.className='item '+(item.top1?'top':'rank');
-      const body=document.createElement('div'); body.className='item-body';
-      const head=document.createElement('div');head.className='item-head';
-      const pill=document.createElement('span');pill.className='pill';pill.textContent=item.top1?'1位更新':`${item.rank}位ランクイン`;
-      const text=document.createElement('span');text.className='item-desc'; text.textContent=`${item.prefName} ${item.stationName}／${item.elementLabel}（${item.monthLabel}）`;
-      head.append(pill,text);
-      const sub=document.createElement('div');sub.className='sub';sub.textContent=`${dateText(item.observedAt)}${item.tiedFirst?' ・ 従来の1位と同値':''} ・ 速報判定`;
-      body.append(head,sub);
-      const value=document.createElement('strong');value.className='value';value.textContent=`${item.value}${item.unit||''}`;
-      const jump=document.createElement('button');jump.type='button';jump.className='jump';jump.textContent='この表を見る';jump.title='元の画面で該当する府県・期間・要素を開く';
-      jump.addEventListener('click',()=>{try{window.opener?.postMessage({wxNewsWindow:true,kind:'jump',item}, location.origin==='null'?'*':location.origin);window.opener?.focus()}catch(_){}});
-      article.append(body,value,jump);list.append(article);
-    }
-  }
-  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{
-    filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();
-  }));
-  window.addEventListener('message',e=>{
-    if(!e.data?.wxNewsWindow||e.data.kind!=='reports')return;
-    if(e.source!==window.opener)return;
-    if(location.origin!=='null'&&e.origin!==location.origin)return;
-    reports=Array.isArray(e.data.reports)?e.data.reports:[];
-    render();
-  });
-  function ready(){try{window.opener?.postMessage({wxNewsWindow:true,kind:'ready'},location.origin==='null'?'*':location.origin)}catch(_){}}
-  ready();window.addEventListener('focus',ready);
+ 'use strict';
+ let reports=[], filter='all';
+ const $=s=>document.querySelector(s);
+ const collator=new Intl.Collator('ja',{numeric:true,sensitivity:'base'});
+ // Keep the same element order as the site's selection menu, independent of rank.
+ const FALLBACK_ORDER=['dailyPrecip','max10mPrecip','max1hPrecip','dailyMaxTempHigh','dailyMaxTempLow','dailyMinTempHigh','dailyMinTempLow','dailyMinHumidity','dailyMaxWind','dailyMaxGust'];
+ const dateText=iso=>{const d=new Date(iso);if(!Number.isFinite(d.getTime()))return '観測時刻不明';return new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(d)};
+ const elementPosition=x=>Number.isInteger(x.elementOrder)?x.elementOrder:(FALLBACK_ORDER.indexOf(x.elementKey)>=0?FALLBACK_ORDER.indexOf(x.elementKey):999);
+ const sortRows=(a,b)=> elementPosition(a)-elementPosition(b)|| collator.compare(a.elementLabel||'',b.elementLabel||'')|| collator.compare(a.stationName||'',b.stationName||'')||collator.compare(a.prefName||'',b.prefName||'')||a.rank-b.rank;
+ const allItems=()=>{const seen=new Set();return reports.flatMap(r=>(r.items||[]).map(i=>({...i,source:r.source,scope:r.scope}))).filter(i=>{
+  const id=[i.prefKey,i.stationName,i.elementKey,i.month,i.observedAt?.slice(0,10)].join('|');if(seen.has(id))return false;seen.add(id);return true;
+ })};
+ function tableUrl(item){
+   const url=new URL('./index.html',location.href);
+   url.search='';
+   url.searchParams.set('pane','news-jump');
+   url.searchParams.set('news_pref',String(item.prefKey||''));
+   url.searchParams.set('news_region',String(item.region||''));
+   url.searchParams.set('news_month',String(item.month||'all'));
+   url.searchParams.set('news_element',String(item.elementKey||''));
+   url.searchParams.set('news_station',String(item.stationName||''));
+   return url.href;
+ }
+ function renderTable(id,countId,items,period,status){
+   const target=$(id);target.replaceChildren();$(countId).textContent=`${items.length}件`;
+   if(!items.length){const msg=document.createElement('div');msg.className='empty';msg.textContent=status==='loading'?'実況を確認中…':status==='error'?'データを取得できませんでした':'該当する速報はありません';target.append(msg);return}
+   const table=document.createElement('table');table.setAttribute('aria-label',period+'のランキング速報');
+   const cols=document.createElement('colgroup');for(const cls of ['element','station','value','rank','open']){const col=document.createElement('col');col.className=cls;cols.append(col)}table.append(cols);
+   const thead=document.createElement('thead'),hdr=document.createElement('tr');
+   for(const [i,label] of ['要素','地点','実況値','順位','順位表'].entries()){const th=document.createElement('th');th.textContent=label;if(i===2)th.className='value';else if(i===3)th.className='rank';hdr.append(th)}thead.append(hdr);table.append(thead);
+   const tbody=document.createElement('tbody');
+   for(const i of items){const tr=document.createElement('tr');tr.className=i.top1?'top':'rank';
+     const element=document.createElement('td');const el=document.createElement('span');el.className='element-label';el.textContent=i.elementLabel||i.elementKey;element.append(el);
+     const place=document.createElement('td');const station=document.createElement('span');station.className='station-name';station.textContent=i.stationName||'-';const pref=document.createElement('span');pref.className='station-pref';pref.textContent=i.prefName||'';place.append(station,pref);
+     const value=document.createElement('td');value.className='value';const number=document.createElement('span');number.textContent=String(i.value??'–');const unit=document.createElement('span');unit.className='unit';unit.textContent=i.unit||'';value.append(number,unit);
+     const rank=document.createElement('td');rank.className='rank';const pill=document.createElement('span');pill.className='pill';pill.textContent=i.top1?'1位更新':`${i.rank}位`;pill.title=i.tiedFirst?'過去の1位と同値':'';rank.append(pill);
+     const action=document.createElement('td');action.className='open';const anchor=document.createElement('a');anchor.className='jump';anchor.textContent='表を見る ↗';anchor.href=tableUrl(i);anchor.target='_blank';anchor.rel='noopener noreferrer';anchor.title=`${i.prefName||''}・${period}・${i.elementLabel||''}の順位表を新しいタブで開く`;action.append(anchor);
+     tr.append(element,place,value,rank,action);tr.title=`${dateText(i.observedAt)} 観測`;tbody.append(tr);
+   }
+   table.append(tbody);target.append(table);
+ }
+ function render(){
+   const items=allItems(),top=items.filter(x=>x.top1).length;
+   const pending=reports.some(r=>r.status==='loading'),errors=reports.some(r=>r.status==='error'||r.status==='partial');
+   const places=[...new Set(reports.map(r=>r.scope?.label).filter(Boolean))].join('・');
+   $('#summary').textContent=`${places||'表示中の地域'}：1位更新 ${top}件 / その他ランクイン ${items.length-top}件${pending?'（確認中）':''}${errors?'（一部取得失敗）':''}`;
+   const visible=(filter==='top'?items.filter(x=>x.top1):items);
+   const annual=visible.filter(x=>x.month==='all').sort(sortRows);
+   const monthly=visible.filter(x=>x.month!=='all').sort(sortRows);
+   const month=monthly[0]?.month || reports.flatMap(r=>r.items||[]).find(x=>x.month!=='all')?.month;
+   $('#monthlyTitle').textContent=month?`${month}月のランキング速報`:'今月のランキング速報';
+   $('#stats').textContent=`表示 ${visible.length}件 / 観測更新：${[...new Set(reports.map(r=>r.scannedAt?dateText(r.scannedAt):'').filter(Boolean))].join(' ・ ')||'確認中'}`;
+   renderTable('#annualList','#annualCount',annual,'通年',pending?'loading':errors?'error':'ready');
+   renderTable('#monthlyList','#monthlyCount',monthly,'月別',pending?'loading':errors?'error':'ready');
+ }
+ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()}));
+ window.addEventListener('message',e=>{
+  if(!e.data?.wxNewsWindow||e.data.kind!=='reports'||e.source!==window.opener)return;
+  if(location.origin!=='null'&&e.origin!==location.origin)return;
+  reports=Array.isArray(e.data.reports)?e.data.reports:[];render();
+ });
+ function ready(){try{window.opener?.postMessage({wxNewsWindow:true,kind:'ready'},location.origin==='null'?'*':location.origin)}catch(_){}}
+ ready();window.addEventListener('focus',ready);
 })();
 </script>
 </body>

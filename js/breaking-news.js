@@ -1,8 +1,8 @@
 // Provisional observation bulletins across all live-supported elements and
 // both meaningful ranking periods (annual and the observation's JST month).
 // This scanner is independent of the element/month currently displayed.
-import { getElementListByMonth, loadStations, loadTable, findStationByRowName } from './data-loader.js?v=4';
-import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=4';
+import { getElementListByMonth, loadStations, loadTable, findStationByRowName } from './data-loader.js?v=5';
+import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=5';
 import { isLowBetter } from './ranking.js';
 import { state } from './state.js';
 import { parseRankValue, unique } from './utils.js';
@@ -47,10 +47,11 @@ function candidateTargets(iso) {
   const seen = new Set();
   const targets = [];
   for (const m of ['all', month]) {
-    for (const element of getElementListByMonth(m, state.elements)) {
+    const elements = getElementListByMonth(m, state.elements);
+    for (const [elementOrder, element] of elements.entries()) {
       if (!isLiveSupported(element.key, m)) continue;
       const key = `${m}|${element.key}`;
-      if (!seen.has(key)) { seen.add(key); targets.push({ element, month: m }); }
+      if (!seen.has(key)) { seen.add(key); targets.push({ element, month: m, elementOrder }); }
     }
   }
   return targets;
@@ -82,7 +83,7 @@ async function scanPref(pref, targets, iso, day, isCurrent) {
           // Do not use a stale fallback cache: provisional alerts require direct measurements.
           const finding = assessProvisionalRank(measured?.value,row.ranks,target.element.key,day);
           if (!finding) continue;
-          events.push({ ...finding, prefName:pref.name, prefKey:pref.key, stationName:row.stationName,
+          events.push({ ...finding, prefName:pref.name, prefKey:pref.key, region:pref.region, stationName:row.stationName, elementOrder:target.elementOrder,
             elementKey:target.element.key,elementLabel:target.element.label||target.element.shortLabel||target.element.key,
             month:target.month,monthLabel:target.month==='all'?'通年':`${target.month}月`,
             unit:target.element.unit || '',value:measured.value,observedAt:measured.observedAt || iso });
