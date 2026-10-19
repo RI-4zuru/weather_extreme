@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-19T18:12:52.923024+09:00",
-  "observedLatestAt": "2026-10-19T18:00:00+09:00",
+  "updatedAt": "2026-10-20T01:50:05.785478+09:00",
+  "observedLatestAt": "2026-10-20T01:40:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -1050,6 +1050,12 @@
         },
         {
           "rank": 9,
+          "value": 45,
+          "date": "2026年10月19日（令和8年）",
+          "_date_raw": "2026/10/19"
+        },
+        {
+          "rank": 10,
           "value": 47,
           "date": "2025年10月30日（令和7年）",
           "_date_raw": "2025/10/30"

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-19T18:12:52.923024+09:00",
-  "observedLatestAt": "2026-10-19T18:00:00+09:00",
+  "updatedAt": "2026-10-20T01:50:05.785478+09:00",
+  "observedLatestAt": "2026-10-20T01:40:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "annualDaysMinTempAtOrAbove25",
@@ -300,7 +300,7 @@
         },
         {
           "rank": 5,
-          "value": 120,
+          "value": 121,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

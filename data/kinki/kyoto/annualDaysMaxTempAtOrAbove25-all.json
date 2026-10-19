@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-19T18:12:52.923024+09:00",
-  "observedLatestAt": "2026-10-19T18:00:00+09:00",
+  "updatedAt": "2026-10-20T01:50:05.785478+09:00",
+  "observedLatestAt": "2026-10-20T01:40:00+09:00",
   "prefecture": "京都府",
   "region": "近畿",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -49,20 +49,20 @@
         {
           "rank": 7,
           "value": 133,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
           "value": 133,
-          "date": "1961年",
-          "_date_raw": "1961/01/01"
+          "date": "2021年",
+          "_date_raw": "2021/01/01"
         },
         {
           "rank": 9,
-          "value": 132,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 133,
+          "date": "1961年",
+          "_date_raw": "1961/01/01"
         },
         {
           "rank": 10,
@@ -90,7 +90,7 @@
         },
         {
           "rank": 3,
-          "value": 156,
+          "value": 157,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
