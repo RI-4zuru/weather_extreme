@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-20T23:40:29.135976+09:00",
-  "observedLatestAt": "2026-10-20T23:30:00+09:00",
+  "updatedAt": "2026-10-21T04:39:27.406900+09:00",
+  "observedLatestAt": "2026-10-21T04:30:00+09:00",
   "prefecture": "千葉県",
   "region": "関東甲信",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -115,20 +115,20 @@
         {
           "rank": 7,
           "value": 126,
-          "date": "2015年",
-          "_date_raw": "2015/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 8,
           "value": 126,
-          "date": "2013年",
-          "_date_raw": "2013/01/01"
+          "date": "2015年",
+          "_date_raw": "2015/01/01"
         },
         {
           "rank": 9,
-          "value": 125,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 126,
+          "date": "2013年",
+          "_date_raw": "2013/01/01"
         },
         {
           "rank": 10,
@@ -175,26 +175,26 @@
         {
           "rank": 6,
           "value": 107,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 107,
           "date": "2018年",
           "_date_raw": "2018/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 107,
           "date": "1994年",
           "_date_raw": "1994/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 107,
           "date": "1916年",
           "_date_raw": "1916/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 106,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
@@ -223,14 +223,14 @@
         {
           "rank": 3,
           "value": 132,
-          "date": "2004年",
-          "_date_raw": "2004/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 4,
-          "value": 131,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 132,
+          "date": "2004年",
+          "_date_raw": "2004/01/01"
         },
         {
           "rank": 5,
