@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-21T17:53:29.271254+09:00",
-  "observedLatestAt": "2026-10-21T17:40:00+09:00",
+  "updatedAt": "2026-10-22T18:09:37.194030+09:00",
+  "observedLatestAt": "2026-10-22T18:00:00+09:00",
   "prefecture": "千葉県",
   "region": "関東甲信",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -109,14 +109,14 @@
         {
           "rank": 6,
           "value": 127,
-          "date": "1994年",
-          "_date_raw": "1994/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 7,
-          "value": 126,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 127,
+          "date": "1994年",
+          "_date_raw": "1994/01/01"
         },
         {
           "rank": 8,
@@ -169,14 +169,14 @@
         {
           "rank": 5,
           "value": 108,
-          "date": "2016年",
-          "_date_raw": "2016/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 6,
-          "value": 107,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 108,
+          "date": "2016年",
+          "_date_raw": "2016/01/01"
         },
         {
           "rank": 7,
@@ -222,7 +222,7 @@
         },
         {
           "rank": 3,
-          "value": 132,
+          "value": 133,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

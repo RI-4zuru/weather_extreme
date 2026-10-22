@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-21T17:53:29.271254+09:00",
-  "observedLatestAt": "2026-10-21T17:40:00+09:00",
+  "updatedAt": "2026-10-22T18:09:37.194030+09:00",
+  "observedLatestAt": "2026-10-22T18:00:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -127,14 +127,14 @@
         {
           "rank": 9,
           "value": 123,
-          "date": "2019年",
-          "_date_raw": "2019/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
           "value": 123,
-          "date": "2010年",
-          "_date_raw": "2010/01/01"
+          "date": "2019年",
+          "_date_raw": "2019/01/01"
         }
       ]
     }
