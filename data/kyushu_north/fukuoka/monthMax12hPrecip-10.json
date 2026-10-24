@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-24T23:18:46.607040+09:00",
-  "observedLatestAt": "2026-10-24T23:10:00+09:00",
+  "updatedAt": "2026-10-25T03:22:29.997131+09:00",
+  "observedLatestAt": "2026-10-25T03:10:00+09:00",
   "prefecture": "福岡県",
   "region": "九州北部",
   "element": "monthMax12hPrecip",
@@ -48,7 +48,7 @@
         },
         {
           "rank": 7,
-          "value": 31,
+          "value": 32,
           "date": "2026年10月24日（令和8年）",
           "_date_raw": "2026/10/24"
         },
