@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T18:20:20.408529+09:00",
-  "observedLatestAt": "2026-10-26T18:10:00+09:00",
+  "updatedAt": "2026-10-27T01:27:06.752465+09:00",
+  "observedLatestAt": "2026-10-27T01:10:00+09:00",
   "prefecture": "神奈川県",
   "region": "関東甲信",
   "element": "yearPrecipHigh",
@@ -396,9 +396,9 @@
         },
         {
           "rank": 10,
-          "value": 2056.5,
-          "date": "2021年",
-          "_date_raw": "2021/01/01"
+          "value": 2065,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },

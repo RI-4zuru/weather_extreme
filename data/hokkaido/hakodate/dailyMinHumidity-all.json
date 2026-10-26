@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T18:20:20.408529+09:00",
-  "observedLatestAt": "2026-10-26T18:10:00+09:00",
+  "updatedAt": "2026-10-27T01:27:06.752465+09:00",
+  "observedLatestAt": "2026-10-27T01:10:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "dailyMinHumidity",
@@ -588,6 +588,12 @@
         },
         {
           "rank": 9,
+          "value": 33,
+          "date": "2026年10月26日（令和8年）",
+          "_date_raw": "2026/10/26"
+        },
+        {
+          "rank": 10,
           "value": 34,
           "date": "2026年2月24日（令和8年）",
           "_date_raw": "2026/02/24"

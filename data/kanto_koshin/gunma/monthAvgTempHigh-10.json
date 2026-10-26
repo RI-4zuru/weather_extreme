@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-26T18:20:20.408529+09:00",
-  "observedLatestAt": "2026-10-26T18:10:00+09:00",
+  "updatedAt": "2026-10-27T01:27:06.752465+09:00",
+  "observedLatestAt": "2026-10-27T01:10:00+09:00",
   "prefecture": "群馬県",
   "region": "関東甲信",
   "element": "monthAvgTempHigh",
@@ -414,7 +414,7 @@
         },
         {
           "rank": 2,
-          "value": 19.7,
+          "value": 19.6,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },
