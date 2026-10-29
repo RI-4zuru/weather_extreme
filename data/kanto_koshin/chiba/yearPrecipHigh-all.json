@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-29T10:17:32.057333+09:00",
-  "observedLatestAt": "2026-10-29T10:10:00+09:00",
+  "updatedAt": "2026-10-29T19:19:22.635363+09:00",
+  "observedLatestAt": "2026-10-29T19:10:00+09:00",
   "prefecture": "千葉県",
   "region": "関東甲信",
   "element": "yearPrecipHigh",
@@ -474,7 +474,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 2166,
+          "value": 2165.5,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
