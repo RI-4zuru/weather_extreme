@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-29T19:19:22.635363+09:00",
-  "observedLatestAt": "2026-10-29T19:10:00+09:00",
+  "updatedAt": "2026-10-30T05:31:11.910917+09:00",
+  "observedLatestAt": "2026-10-30T05:20:00+09:00",
   "prefecture": "沖縄県",
   "region": "沖縄",
   "element": "annualDaysMeanTempAtOrAbove25",
@@ -120,7 +120,7 @@
         },
         {
           "rank": 8,
-          "value": 160,
+          "value": 161,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -175,26 +175,26 @@
         {
           "rank": 6,
           "value": 163,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 7,
+          "value": 163,
           "date": "2020年",
           "_date_raw": "2020/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 163,
           "date": "2019年",
           "_date_raw": "2019/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 163,
           "date": "2008年",
           "_date_raw": "2008/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 162,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
