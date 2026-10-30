@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T19:22:05.133922+09:00",
-  "observedLatestAt": "2026-10-30T19:10:00+09:00",
+  "updatedAt": "2026-10-31T05:17:14.187035+09:00",
+  "observedLatestAt": "2026-10-31T05:00:00+09:00",
   "prefecture": "埼玉県",
   "region": "関東甲信",
   "element": "monthSunshineHigh",
@@ -180,7 +180,7 @@
         },
         {
           "rank": 6,
-          "value": 172.2,
+          "value": 172.3,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T19:22:05.133922+09:00",
-  "observedLatestAt": "2026-10-30T19:10:00+09:00",
+  "updatedAt": "2026-10-31T05:17:14.187035+09:00",
+  "observedLatestAt": "2026-10-31T05:00:00+09:00",
   "prefecture": "旭川",
   "region": "北海道",
   "element": "monthAvgTempHigh",
@@ -750,7 +750,7 @@
         },
         {
           "rank": 3,
-          "value": 10.6,
+          "value": 10.7,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },
@@ -1794,7 +1794,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 12.7,
+          "value": 12.6,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },
