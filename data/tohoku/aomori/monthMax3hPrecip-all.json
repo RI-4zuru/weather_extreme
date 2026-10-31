@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-31T18:56:43.680187+09:00",
-  "observedLatestAt": "2026-10-31T18:50:00+09:00",
+  "updatedAt": "2026-11-01T04:40:01.927566+09:00",
+  "observedLatestAt": "2026-11-01T04:30:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "monthMax3hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "大間",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "むつ",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "今別",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "蟹田",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "青森",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "大和山",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "六ケ所",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "鰺ケ沢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "青森大谷",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "七戸",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "深浦",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "岳",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "弘前",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "黒石",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1328,7 +1328,7 @@
     },
     {
       "stationName": "酸ケ湯",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "三沢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1526,7 +1526,7 @@
     },
     {
       "stationName": "温川",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1592,7 +1592,7 @@
     },
     {
       "stationName": "十和田",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1658,7 +1658,7 @@
     },
     {
       "stationName": "八戸",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1724,7 +1724,7 @@
     },
     {
       "stationName": "碇ヶ関",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1856,7 +1856,7 @@
     },
     {
       "stationName": "戸来",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1922,7 +1922,7 @@
     },
     {
       "stationName": "三戸",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,

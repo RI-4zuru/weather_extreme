@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-31T18:56:43.680187+09:00",
-  "observedLatestAt": "2026-10-31T18:50:00+09:00",
+  "updatedAt": "2026-11-01T04:40:01.927566+09:00",
+  "observedLatestAt": "2026-11-01T04:30:00+09:00",
   "prefecture": "三重県",
   "region": "東海",
   "element": "monthMax12hPrecip",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "北勢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "桑名",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -140,7 +140,7 @@
     },
     {
       "stationName": "四日市",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "亀山",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "上野",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "笠取山",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -404,7 +404,7 @@
     },
     {
       "stationName": "津",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "名張",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -536,7 +536,7 @@
     },
     {
       "stationName": "白山",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "小俣",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -668,7 +668,7 @@
     },
     {
       "stationName": "粥見",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "藤坂峠",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "南伊勢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "阿児",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "宮川",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "紀伊長島",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1130,7 +1130,7 @@
     },
     {
       "stationName": "尾鷲",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "御浜",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,

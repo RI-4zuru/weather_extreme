@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-31T18:56:43.680187+09:00",
-  "observedLatestAt": "2026-10-31T18:50:00+09:00",
+  "updatedAt": "2026-11-01T04:40:01.927566+09:00",
+  "observedLatestAt": "2026-11-01T04:30:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "monthMax3hSnow",
@@ -8,7 +8,7 @@
   "rows": [
     {
       "stationName": "大間",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "むつ",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "脇野沢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -338,7 +338,7 @@
     },
     {
       "stationName": "青森",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -470,7 +470,7 @@
     },
     {
       "stationName": "鰺ケ沢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -800,7 +800,7 @@
     },
     {
       "stationName": "十和田",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -866,7 +866,7 @@
     },
     {
       "stationName": "八戸",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -998,7 +998,7 @@
     },
     {
       "stationName": "三戸",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,

@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-31T18:56:43.680187+09:00",
-  "observedLatestAt": "2026-10-31T18:50:00+09:00",
+  "updatedAt": "2026-11-01T04:40:01.927566+09:00",
+  "observedLatestAt": "2026-11-01T04:30:00+09:00",
   "prefecture": "釧路",
   "region": "北海道",
   "element": "monthMax12hSnow",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "中標津",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -272,7 +272,7 @@
     },
     {
       "stationName": "根室",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -602,7 +602,7 @@
     },
     {
       "stationName": "鶴居",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -932,7 +932,7 @@
     },
     {
       "stationName": "釧路",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1064,7 +1064,7 @@
     },
     {
       "stationName": "ぬかびら源泉郷",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1196,7 +1196,7 @@
     },
     {
       "stationName": "本別",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1262,7 +1262,7 @@
     },
     {
       "stationName": "新得",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1394,7 +1394,7 @@
     },
     {
       "stationName": "帯広",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1460,7 +1460,7 @@
     },
     {
       "stationName": "浦幌",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1592,7 +1592,7 @@
     },
     {
       "stationName": "上札内",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1658,7 +1658,7 @@
     },
     {
       "stationName": "大樹",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -1724,7 +1724,7 @@
     },
     {
       "stationName": "広尾",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,

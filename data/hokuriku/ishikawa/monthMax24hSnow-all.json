@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-31T18:56:43.680187+09:00",
-  "observedLatestAt": "2026-10-31T18:50:00+09:00",
+  "updatedAt": "2026-11-01T04:40:01.927566+09:00",
+  "observedLatestAt": "2026-11-01T04:30:00+09:00",
   "prefecture": "石川県",
   "region": "北陸",
   "element": "monthMax24hSnow",
@@ -74,7 +74,7 @@
     },
     {
       "stationName": "輪島",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
@@ -206,7 +206,7 @@
     },
     {
       "stationName": "金沢",
-      "startDate": "2026年10月（令和8年）",
+      "startDate": "2026年11月（令和8年）",
       "ranks": [
         {
           "rank": 1,
