@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-01T19:49:52.941165+09:00",
-  "observedLatestAt": "2026-11-01T19:40:00+09:00",
+  "updatedAt": "2026-11-02T05:01:32.683564+09:00",
+  "observedLatestAt": "2026-11-02T04:50:00+09:00",
   "prefecture": "大分県",
   "region": "九州北部",
   "element": "annualDaysMaxTempAtOrAbove25",
@@ -42,7 +42,7 @@
         },
         {
           "rank": 6,
-          "value": 164,
+          "value": 165,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
