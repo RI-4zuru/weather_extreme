@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-02T20:24:53.125415+09:00",
-  "observedLatestAt": "2026-11-02T20:10:00+09:00",
+  "updatedAt": "2026-11-03T08:30:11.096844+09:00",
+  "observedLatestAt": "2026-11-03T08:20:00+09:00",
   "prefecture": "愛知県",
   "region": "東海",
   "element": "monthPrecipHigh",
@@ -642,7 +642,7 @@
         },
         {
           "rank": 7,
-          "value": 124,
+          "value": 123.5,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },
