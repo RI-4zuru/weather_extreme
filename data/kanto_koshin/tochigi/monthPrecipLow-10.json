@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-06T20:12:02.239771+09:00",
-  "observedLatestAt": "2026-11-06T20:00:00+09:00",
+  "updatedAt": "2026-11-07T06:08:35.206866+09:00",
+  "observedLatestAt": "2026-11-07T06:00:00+09:00",
   "prefecture": "栃木県",
   "region": "関東甲信",
   "element": "monthPrecipLow",
@@ -408,7 +408,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 61.5,
+          "value": 61,
           "date": "2026年10月（令和8年）",
           "_date_raw": "2026/10/01"
         },
