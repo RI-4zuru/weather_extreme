@@ -88,9 +88,14 @@ footer{padding:6px 15px 12px;color:var(--muted);font-size:11px}
      const place=document.createElement('td');const station=document.createElement('span');station.className='station-name';station.textContent=i.stationName||'-';const pref=document.createElement('span');pref.className='station-pref';pref.textContent=i.prefName||'';place.append(station,pref);
      const value=document.createElement('td');value.className='value';const number=document.createElement('span');number.textContent=String(i.value??'–');const unit=document.createElement('span');unit.className='unit';unit.textContent=i.unit||'';value.append(number,unit);
      const obs=document.createElement('span');obs.className='observed';obs.textContent=dateText(i.observedAt);
-     const tag=document.createElement('span');tag.className='obs-tag'+(i.sourceResolution==='minute'?'':' obs-tag-ten');
-     tag.textContent=i.sourceResolution==='minute'?'公表・分':'10分';
-     tag.title=i.sourceResolution==='minute'?'気象庁公表の極値の起時':'10分値による参考実況';
+     const meta={
+       minute:['公表・分','気象庁公表の分単位の極値起時',true],
+       'ten-minute-official':['公表・10分','気象庁公表の10分間隔の極値起時',true],
+       'official-asof':['公表・時点','気象庁公表の日降水量の集計時点',true],
+       'ten-minute':['10分','10分値による参考実況',false]
+     }[i.sourceResolution]||['参考','参考実況',false];
+     const tag=document.createElement('span');tag.className='obs-tag'+(meta[2]?'':' obs-tag-ten');
+     tag.textContent=meta[0];tag.title=meta[1];
      obs.append(tag);value.append(obs);
      const rank=document.createElement('td');rank.className='rank';const pill=document.createElement('span');pill.className='pill';pill.textContent=i.top1?'1位更新':`${i.rank}位`;pill.title=i.tiedFirst?'過去の1位と同値':'';rank.append(pill);
      const action=document.createElement('td');action.className='open';const anchor=document.createElement('a');anchor.className='jump';anchor.textContent='表を見る ↗';anchor.href=tableUrl(i);anchor.target='_blank';anchor.rel='noopener noreferrer';anchor.title=`${i.prefName||''}・${period}・${i.elementLabel||''}の順位表を新しいタブで開く`;action.append(anchor);

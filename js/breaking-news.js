@@ -2,7 +2,7 @@
 // both meaningful ranking periods (annual and the observation's JST month).
 // This scanner is independent of the element/month currently displayed.
 import { getElementListByMonth, loadStations, loadTable, findStationByRowName } from './data-loader.js?v=5';
-import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=6';
+import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=7';
 import { isLowBetter } from './ranking.js';
 import { state } from './state.js';
 import { parseRankValue, unique } from './utils.js';

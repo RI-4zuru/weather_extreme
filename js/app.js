@@ -36,7 +36,7 @@ import {
   renderTable,
 } from "./renderers.js";
 import { state } from "./state.js";
-import { scheduleBreakingNews } from "./breaking-news.js?v=6";
+import { scheduleBreakingNews } from "./breaking-news.js?v=7";
 import { unique } from "./utils.js";
 
 const STORAGE_KEYS = {

@@ -30,7 +30,7 @@ function formatLiveRankDate(observedAt, sourceResolution = "") {
   }
 
   const datePart = matched[1].trim();
-  const timePart = sourceResolution === 'minute'
+  const timePart = (sourceResolution === 'minute' || sourceResolution === 'ten-minute-official')
     ? matched[2].trim().replace('時点','起時') : matched[2].trim();
 
   return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
@@ -39,6 +39,12 @@ function formatLiveRankDate(observedAt, sourceResolution = "") {
 function renderTimeSourceMarker(resolution) {
   if (resolution === 'minute') {
     return '<span class="wx-time-marker wx-time-minute" title="気象庁公表値・極値の起時（分単位）">公表・分</span>';
+  }
+  if (resolution === 'ten-minute-official') {
+    return '<span class="wx-time-marker wx-time-minute" title="気象庁公表の10分間隔の極値起時">公表・10分</span>';
+  }
+  if (resolution === 'official-asof') {
+    return '<span class="wx-time-marker wx-time-minute" title="気象庁公表の日降水量・集計時点">公表・時点</span>';
   }
   if (resolution === 'ten-minute') {
     return '<span class="wx-time-marker wx-time-ten" title="10分間隔の観測データから推定した参考値">10分</span>';

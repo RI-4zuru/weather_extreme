@@ -62,12 +62,13 @@ export function formatDateTimeJst(isoText) {
   if (!isoText) return "-";
   const d = new Date(isoText);
   if (Number.isNaN(d.getTime())) return String(isoText);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  const hh = String(d.getHours()).padStart(2, "0");
-  const mm = String(d.getMinutes()).padStart(2, "0");
-  return `${y}年${m}月${day}日 ${hh}:${mm}`;
+  // Explicit JST so browser/OS timezone cannot display the wrong occurrence.
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',
+    hour:'2-digit',minute:'2-digit',hourCycle:'h23'
+  }).formatToParts(d);
+  const v = key => parts.find(p => p.type === key)?.value || '00';
+  return `${v('year')}年${v('month')}月${v('day')}日 ${v('hour')}:${v('minute')}`;
 }
 
 export function formatObservationLabel(isoText) {

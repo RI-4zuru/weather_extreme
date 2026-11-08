@@ -4,7 +4,7 @@ import {
   LIVE_SUPPORTED_MONTHLY_KEYS,
 } from "./constants.js";
 import { state } from "./state.js";
-import { choosePublishedExtremum, loadOfficialExtrema } from "./official-extrema.js";
+import { choosePublishedExtremum, loadOfficialExtrema, jstDay } from "./official-extrema.js";
 import {
   asNumber,
   fetchJson,
@@ -157,13 +157,18 @@ function calcDailyMetrics(records) {
   const wind = extractSeries(records, ["wind"]);
   const gust = extractSeries(records, ["gust", "maxWind"]);
 
+  // A missing precipitation sample must not be silently counted as 0.
+  // Missing daily samples can undercount a record, so suppress that fallback.
+  const completePrecip = precip10m.length > 0 && precip10m.every(Number.isFinite);
+  const oneHourCandidates = [];
+  for (let i = 5; i < precip10m.length; i++) {
+    const window = precip10m.slice(i - 5, i + 1);
+    if (window.every(Number.isFinite)) oneHourCandidates.push(sum(window));
+  }
   return {
-    dailyPrecip: records.length ? sum(precip10m) : null,
+    dailyPrecip: completePrecip ? sum(precip10m) : null,
     max10mPrecip: max(precip10m),
-    max1hPrecip: rollingMax(
-      precip10m.map((v) => (Number.isFinite(v) ? v : 0)),
-      6
-    ),
+    max1hPrecip: max(oneHourCandidates),
     dailyMaxTemp: max(temp),
     dailyMinTemp: min(temp),
     dailyMinHumidity: min(humidity),
@@ -213,7 +218,30 @@ export async function buildLiveValuesForStations({
     };
   }
 
-  // ===== ここが重要：elementKeyで分岐 =====
+  // JMA daily maximum 3-72-hour precipitation is NOT the instantaneous
+  // 3/6/..-hour total in the AMeDAS map. Do not substitute the current map
+  // snapshot or a truncated today's 10-minute series for a daily maximum.
+  // Values are available independently of the visible table/period.
+  const officialOnly = new Set([
+    'max24hPrecip', 'monthMax3hPrecip', 'monthMax6hPrecip',
+    'monthMax12hPrecip', 'monthMax24hPrecip',
+    'monthMax48hPrecip', 'monthMax72hPrecip',
+  ]);
+  if (officialOnly.has(elementKey)) {
+    const officialSnapshot = await loadOfficialExtrema();
+    for (const stationCode of stationCodes) {
+      result[stationCode] = choosePublishedExtremum({
+        snapshot:officialSnapshot, stationCode, elementKey, latestIso,
+        fallback:{value:null,observedAt:latestIso,sourceResolution:'',sourceLabel:''},
+      });
+    }
+    return {
+      latestIso, valuesByCode:result, support: 'supported',
+      message: officialSnapshot?.observedDate === jstDay(latestIso)
+        ? '気象庁公表の当日日最大降水量（10分間隔集計）を使用。'
+        : '公表降水量の取得待ち（直近積算値で代用しません）。',
+    };
+  }
 
   const isAnnual = LIVE_SUPPORTED_ANNUAL_KEYS.has(elementKey);
   const isMonthly = LIVE_SUPPORTED_MONTHLY_KEYS.has(elementKey);
@@ -264,7 +292,7 @@ export async function buildLiveValuesForStations({
   // ------------------------
   // ■ 月系（長時間雨・雪）
   // ------------------------
-  if (isMonthly && month !== "all") {
+  if (isMonthly && !isAnnual && month !== "all") {
     const mapData = await fetchLatestMap(latestIso);
     await Promise.all(
       stationCodes.map(async (stationCode) => {
@@ -353,6 +381,16 @@ function timeOfPointExtreme(records, elementKey, latestIso) {
     dailyMinHumidity: ['humidity'], dailyMaxWind: ['wind'],
     dailyMaxGust: ['gust', 'maxWind'], max10mPrecip: ['precipitation10m'],
   }[elementKey];
+  if (elementKey === 'max1hPrecip' && records?.length) {
+    let best = null, bestTime = '';
+    for (let i = 5; i < records.length; i++) {
+      const values = records.slice(i - 5, i + 1).map(r => asNumber(r.data?.precipitation10m));
+      if (!values.every(Number.isFinite)) continue;
+      const total = sum(values);
+      if (best === null || total > best) { best = total; bestTime = records[i].timeKey; }
+    }
+    if (/^\d{14}$/.test(bestTime)) return `${bestTime.slice(0,4)}-${bestTime.slice(4,6)}-${bestTime.slice(6,8)}T${bestTime.slice(8,10)}:${bestTime.slice(10,12)}:00+09:00`;
+  }
   if (!fields || !records?.length) return latestIso;
   const low = ['dailyMinHumidity', 'dailyMinTempHigh', 'dailyMinTempLow'].includes(elementKey);
   let chosen = null;
