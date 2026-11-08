@@ -3,9 +3,9 @@ name: Update JMA official daily extrema
 on:
   workflow_dispatch:
   schedule:
-    # JMA temp/wind tables generally update near :50 each hour.
-    # JMA precipitation tables have their own, more frequent updates.
-    - cron: "12,42 * * * *"
+    # Temperatures/wind update around :50; precipitation updates every 10min.
+    # GitHub cron is best-effort and may run later than scheduled.
+    - cron: "7,17,27,37,47,57 * * * *"
 
 permissions:
   contents: write
