@@ -36,7 +36,7 @@ import {
   renderTable,
 } from "./renderers.js";
 import { state } from "./state.js";
-import { scheduleBreakingNews } from "./breaking-news.js?v=5";
+import { scheduleBreakingNews } from "./breaking-news.js?v=6";
 import { unique } from "./utils.js";
 
 const STORAGE_KEYS = {
@@ -321,6 +321,9 @@ function updateLiveValueCache(valuesByCode, elementKey, month) {
     liveValueCache[makeLiveCacheKey(elementKey, month, stationCode)] = {
       value: value.value,
       observedAt: value.observedAt,
+      sourceResolution: value.sourceResolution || "",
+      sourceLabel: value.sourceLabel || "",
+      publishedAt: value.publishedAt || "",
       cachedAt: now,
     };
   }
@@ -340,11 +343,18 @@ function mergeLiveValuesWithCache(stationCodes, liveValuesByCode, elementKey, mo
     const cached = liveValueCache[makeLiveCacheKey(elementKey, month, stationCode)];
     if (!cached) continue;
     if (now - cached.cachedAt > LIVE_CACHE_MAX_AGE_MS) continue;
+    // Never reuse yesterday's extreme on today's ranking (JST).
+    const today = new Date().toLocaleDateString('sv-SE', {timeZone:'Asia/Tokyo'});
+    const cachedDay = new Date(cached.observedAt).toLocaleDateString('sv-SE', {timeZone:'Asia/Tokyo'});
+    if (cachedDay !== today) continue;
 
     merged[stationCode] = {
       ...(current || {}),
       value: cached.value,
       observedAt: cached.observedAt,
+      sourceResolution: cached.sourceResolution || "",
+      sourceLabel: cached.sourceLabel || "",
+      publishedAt: cached.publishedAt || "",
       fromCache: true,
     };
   }

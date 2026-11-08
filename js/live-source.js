@@ -4,6 +4,7 @@ import {
   LIVE_SUPPORTED_MONTHLY_KEYS,
 } from "./constants.js";
 import { state } from "./state.js";
+import { choosePublishedExtremum, loadOfficialExtrema } from "./official-extrema.js";
 import {
   asNumber,
   fetchJson,
@@ -83,8 +84,9 @@ export async function fetchLatestMap(latestIso) {
   finally { if (latestMapPending?.promise === promise) latestMapPending = null; }
 }
 
-async function fetchPointChunk(stationCode, slot) {
-  const cacheKey = `${stationCode}|${slot}`;
+async function fetchPointChunk(stationCode, slot, latestIso) {
+  // Completed 3-hour slots are immutable; the current 3-hour chunk is not.
+  const cacheKey = `${stationCode}|${slot}|${latestIso ? latestIso : "closed"}`;
   if (state.pointChunkCache.has(cacheKey)) {
     return state.pointChunkCache.get(cacheKey);
   }
@@ -93,6 +95,11 @@ async function fetchPointChunk(stationCode, slot) {
   const pending = withPointSlot(async () => {
     state.debug.pointFetchCount += 1;
     const data = await fetchJson(JMA_ENDPOINTS.point(stationCode, slot));
+    if (latestIso) {
+      for (const key of state.pointChunkCache.keys()) {
+        if (key.startsWith(`${stationCode}|${slot}|`) && key !== cacheKey) state.pointChunkCache.delete(key);
+      }
+    }
     state.pointChunkCache.set(cacheKey, data);
     return data;
   });
@@ -102,7 +109,7 @@ async function fetchPointChunk(stationCode, slot) {
 }
 
 async function fetchTodayPointRecords(stationCode, latestIso) {
-  const cacheKey = `${stationCode}|today|${latestIso.slice(0, 10)}`;
+  const cacheKey = `${stationCode}|today|${latestIso}`;
   if (state.pointDailyCache.has(cacheKey)) {
     return state.pointDailyCache.get(cacheKey);
   }
@@ -110,7 +117,8 @@ async function fetchTodayPointRecords(stationCode, latestIso) {
   if (dayPending.has(cacheKey)) return dayPending.get(cacheKey);
   const pending = (async () => {
     const slots = getTodayPointSlots(latestIso);
-    const chunks = await Promise.all(slots.map(slot => fetchPointChunk(stationCode, slot).catch(() => null)));
+    const latestSlot = slots.at(-1);
+    const chunks = await Promise.all(slots.map(slot => fetchPointChunk(stationCode, slot, slot === latestSlot ? latestIso : null).catch(() => null)));
     const rows = [];
     if (!chunks.some(chunk => chunk && typeof chunk === 'object')) {
       throw new Error(`地点 ${stationCode} の観測データを取得できませんでした`);
@@ -120,6 +128,10 @@ async function fetchTodayPointRecords(stationCode, latestIso) {
       for (const [timeKey, item] of Object.entries(chunk)) rows.push({timeKey,data:item||{}});
     }
     rows.sort((a,b) => String(a.timeKey).localeCompare(String(b.timeKey),'ja'));
+    // Retain one version per station to avoid unbounded memory on auto-refresh.
+    for (const key of state.pointDailyCache.keys()) {
+      if (key.startsWith(`${stationCode}|today|`) && key !== cacheKey) state.pointDailyCache.delete(key);
+    }
     state.pointDailyCache.set(cacheKey,rows);
     return rows;
   })();
@@ -190,7 +202,6 @@ export async function buildLiveValuesForStations({
   month,
 }) {
   const latestIso = await fetchLatestObservationTime();
-  const mapData = await fetchLatestMap(latestIso);
   const result = {};
 
   if (!isLiveSupported(elementKey, month)) {
@@ -212,22 +223,30 @@ export async function buildLiveValuesForStations({
   // → 月選択でもここに入る
   // ------------------------
   if (isAnnual) {
+    const officialSnapshot = await loadOfficialExtrema();
     await Promise.all(
       stationCodes.map(async (stationCode) => {
         try {
           const records = await fetchTodayPointRecords(stationCode, latestIso);
           const metrics = calcDailyMetrics(records);
-
           const value = pickAnnualMetric(metrics, elementKey);
-
-          result[stationCode] = {
+          const reference = {
             value,
-            observedAt: latestIso,
+            observedAt: timeOfPointExtreme(records, elementKey, latestIso),
+            sourceResolution: 'ten-minute',
+            sourceLabel: '10分値から算出',
           };
+          result[stationCode] = choosePublishedExtremum({
+            snapshot: officialSnapshot, stationCode, elementKey, latestIso,
+            fallback: reference,
+          });
         } catch (error) {
+          const published = choosePublishedExtremum({
+            snapshot: officialSnapshot, stationCode, elementKey, latestIso,
+            fallback: {value:null, observedAt:latestIso, sourceResolution:'ten-minute'},
+          });
           result[stationCode] = {
-            value: null,
-            observedAt: latestIso,
+            ...published,
             error: error.message || String(error),
           };
         }
@@ -238,7 +257,7 @@ export async function buildLiveValuesForStations({
       latestIso,
       valuesByCode: result,
       support: "supported",
-      message: "当日0時以降の point JSON から実況判定しています。",
+      message: officialSnapshot?.observedDate ? "気象庁公表の日極値を優先、未更新分は10分値で参考判定。" : "10分値による参考判定（公表極値の未取得時）。",
     };
   }
 
@@ -246,6 +265,7 @@ export async function buildLiveValuesForStations({
   // ■ 月系（長時間雨・雪）
   // ------------------------
   if (isMonthly && month !== "all") {
+    const mapData = await fetchLatestMap(latestIso);
     await Promise.all(
       stationCodes.map(async (stationCode) => {
         try {
@@ -270,6 +290,8 @@ export async function buildLiveValuesForStations({
           result[stationCode] = {
             value,
             observedAt: latestIso,
+            sourceResolution: 'ten-minute',
+            sourceLabel: '10分値・直近積算',
           };
         } catch (error) {
           result[stationCode] = {
@@ -320,4 +342,29 @@ function pickAnnualMetric(metrics, elementKey) {
     default:
       return null;
   }
+}
+
+// Infer the actual ten-minute observation time, rather than marking every
+// daily extreme with the latest page-update time.
+function timeOfPointExtreme(records, elementKey, latestIso) {
+  const fields = {
+    dailyMaxTempHigh: ['temp'], dailyMaxTempLow: ['temp'],
+    dailyMinTempHigh: ['temp'], dailyMinTempLow: ['temp'],
+    dailyMinHumidity: ['humidity'], dailyMaxWind: ['wind'],
+    dailyMaxGust: ['gust', 'maxWind'], max10mPrecip: ['precipitation10m'],
+  }[elementKey];
+  if (!fields || !records?.length) return latestIso;
+  const low = ['dailyMinHumidity', 'dailyMinTempHigh', 'dailyMinTempLow'].includes(elementKey);
+  let chosen = null;
+  let best = null;
+  for (const record of records) {
+    const value = fields.map(f => asNumber(record.data?.[f])).find(Number.isFinite);
+    if (value == null) continue;
+    if (best === null || (low ? value < best : value > best)) {
+      chosen = record.timeKey; best = value;
+    }
+  }
+  const stamp = String(chosen || '');
+  if (!/^\d{14}$/.test(stamp)) return latestIso;
+  return `${stamp.slice(0,4)}-${stamp.slice(4,6)}-${stamp.slice(6,8)}T${stamp.slice(8,10)}:${stamp.slice(10,12)}:00+09:00`;
 }

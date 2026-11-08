@@ -349,7 +349,7 @@
     try { state.newsPopup.postMessage({wxNewsWindow:true,kind:'reports',reports:getNewsReports()},targetOrigin()); } catch(_){}
   }
   function openNewsWindow(){
-    const url = new URL('./news-window.html?v=5', location.href);
+    const url = new URL('./news-window.html?v=6', location.href);
     const popup = window.open(url.href,'weather_extreme_news','popup=yes,width=1400,height=840,resizable=yes,scrollbars=yes');
     if (!popup) return toast('速報ウインドウが開けませんでした。ポップアップを許可してください。');
     state.newsPopup = popup;popup.focus();

@@ -18,7 +18,7 @@ function formatLiveColumnLabel(observedAt) {
   return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
 }
 
-function formatLiveRankDate(observedAt) {
+function formatLiveRankDate(observedAt, sourceResolution = "") {
   const base = formatObservationLabel(observedAt || "");
   if (!base || base === "-") return "-";
 
@@ -30,9 +30,20 @@ function formatLiveRankDate(observedAt) {
   }
 
   const datePart = matched[1].trim();
-  const timePart = matched[2].trim();
+  const timePart = sourceResolution === 'minute'
+    ? matched[2].trim().replace('時点','起時') : matched[2].trim();
 
   return `${escapeHtml(datePart)}<br>${escapeHtml(timePart)}`;
+}
+
+function renderTimeSourceMarker(resolution) {
+  if (resolution === 'minute') {
+    return '<span class="wx-time-marker wx-time-minute" title="気象庁公表値・極値の起時（分単位）">公表・分</span>';
+  }
+  if (resolution === 'ten-minute') {
+    return '<span class="wx-time-marker wx-time-ten" title="10分間隔の観測データから推定した参考値">10分</span>';
+  }
+  return '';
 }
 
 export function makeTableHead(tableHead, showLiveColumn = false) {
@@ -153,7 +164,7 @@ export function renderTable(tableBody, rows, options = {}) {
           ${stationLine}
           <span class="rank-date">
           ${rankItem.isLiveRank
-            ? formatLiveColumnLabel(rankItem.date || "")
+            ? `${formatLiveRankDate(rankItem.date || "", rankItem.sourceResolution)} ${renderTimeSourceMarker(rankItem.sourceResolution)}`
             : renderDualLine(rankItem.date || "-")}
         </span>
         </td>
@@ -176,7 +187,7 @@ export function renderTable(tableBody, rows, options = {}) {
           <td class="live-col-cell">
             <span class="rank-value">${escapeHtml(String(live.value))}</span>
             ${liveStation}
-            <span class="rank-date">${formatLiveColumnLabel(live.observedAt)}</span>
+            <span class="rank-date">${formatLiveRankDate(live.observedAt, live.sourceResolution)} ${renderTimeSourceMarker(live.sourceResolution)}</span>
           </td>
         `;
       } else {

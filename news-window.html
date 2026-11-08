@@ -24,7 +24,7 @@ td{padding:7px 6px;border-bottom:1px solid #e6edf4;vertical-align:middle;overflo
 tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f2f7fc}
 tbody tr.top{background:#fff2f1}tbody tr.top:hover{background:#ffe7e6}
 .element-label{display:block;font-weight:650}.station-name{display:block;font-weight:650}
-.station-pref{display:block;font-size:10px;color:var(--muted)}.observed{font-size:10px;color:var(--muted);display:block;white-space:nowrap}
+.station-pref{display:block;font-size:10px;color:var(--muted)}.observed{font-size:10px;color:var(--muted);display:block;white-space:nowrap;font-weight:400}.obs-tag{display:inline-block;border:1px solid #8dbce3;background:#e6f2ff;color:#1b5b8c;font-size:9px;line-height:1.2;padding:0 3px;border-radius:3px;margin-left:3px;font-weight:700}.obs-tag-ten{background:#f1f3f6;color:#667788;border-color:#ccd7e2}
 td.value{font-weight:800;font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:0}
 .unit{font-size:11px;font-weight:500;padding-left:1px}
 .pill{display:inline-block;background:#e8f1fb;border:1px solid #bbd2ea;border-radius:5px;color:#225c99;white-space:nowrap;font-size:10px;font-weight:700;padding:2px 4px}
@@ -87,6 +87,11 @@ footer{padding:6px 15px 12px;color:var(--muted);font-size:11px}
      const element=document.createElement('td');const el=document.createElement('span');el.className='element-label';el.textContent=i.elementLabel||i.elementKey;element.append(el);
      const place=document.createElement('td');const station=document.createElement('span');station.className='station-name';station.textContent=i.stationName||'-';const pref=document.createElement('span');pref.className='station-pref';pref.textContent=i.prefName||'';place.append(station,pref);
      const value=document.createElement('td');value.className='value';const number=document.createElement('span');number.textContent=String(i.value??'–');const unit=document.createElement('span');unit.className='unit';unit.textContent=i.unit||'';value.append(number,unit);
+     const obs=document.createElement('span');obs.className='observed';obs.textContent=dateText(i.observedAt);
+     const tag=document.createElement('span');tag.className='obs-tag'+(i.sourceResolution==='minute'?'':' obs-tag-ten');
+     tag.textContent=i.sourceResolution==='minute'?'公表・分':'10分';
+     tag.title=i.sourceResolution==='minute'?'気象庁公表の極値の起時':'10分値による参考実況';
+     obs.append(tag);value.append(obs);
      const rank=document.createElement('td');rank.className='rank';const pill=document.createElement('span');pill.className='pill';pill.textContent=i.top1?'1位更新':`${i.rank}位`;pill.title=i.tiedFirst?'過去の1位と同値':'';rank.append(pill);
      const action=document.createElement('td');action.className='open';const anchor=document.createElement('a');anchor.className='jump';anchor.textContent='表を見る ↗';anchor.href=tableUrl(i);anchor.target='_blank';anchor.rel='noopener noreferrer';anchor.title=`${i.prefName||''}・${period}・${i.elementLabel||''}の順位表を新しいタブで開く`;action.append(anchor);
      tr.append(element,place,value,rank,action);tr.title=`${dateText(i.observedAt)} 観測`;tbody.append(tr);

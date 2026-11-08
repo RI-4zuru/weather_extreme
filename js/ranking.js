@@ -167,6 +167,8 @@ export function decorateRowsWithLive(rows, stationIndex, liveValuesByCode, eleme
         value: liveValue,
         rank: insertionRank,
         observedAt: live?.observedAt || "",
+        sourceResolution: live?.sourceResolution || "",
+        sourceLabel: live?.sourceLabel || "",
         error: live?.error || "",
       },
     };
@@ -498,6 +500,8 @@ export function insertLiveIntoRankRows(rows) {
       stationName: row.isAreaAggregate || row.isPrefectureAggregate ? stationName : "",
       highlightWithinYear: false,
       isLiveRank: true,
+      sourceResolution: live.sourceResolution || "",
+      sourceLabel: live.sourceLabel || "",
     };
     const nextRanks = [...remaining];
     nextRanks.splice(insertAt, 0, liveRankItem);

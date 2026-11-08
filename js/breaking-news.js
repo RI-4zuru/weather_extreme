@@ -2,7 +2,7 @@
 // both meaningful ranking periods (annual and the observation's JST month).
 // This scanner is independent of the element/month currently displayed.
 import { getElementListByMonth, loadStations, loadTable, findStationByRowName } from './data-loader.js?v=5';
-import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=5';
+import { buildLiveValuesForStations, fetchLatestObservationTime, isLiveSupported } from './live-source.js?v=6';
 import { isLowBetter } from './ranking.js';
 import { state } from './state.js';
 import { parseRankValue, unique } from './utils.js';
@@ -86,7 +86,7 @@ async function scanPref(pref, targets, iso, day, isCurrent) {
           events.push({ ...finding, prefName:pref.name, prefKey:pref.key, region:pref.region, stationName:row.stationName, elementOrder:target.elementOrder,
             elementKey:target.element.key,elementLabel:target.element.label||target.element.shortLabel||target.element.key,
             month:target.month,monthLabel:target.month==='all'?'通年':`${target.month}月`,
-            unit:target.element.unit || '',value:measured.value,observedAt:measured.observedAt || iso });
+            unit:target.element.unit || '',value:measured.value,observedAt:measured.observedAt || iso,sourceResolution:measured.sourceResolution || '' });
         }
       } catch (error) { failed++; console.warn('速報の個別要素の確認失敗:',pref.name,target.element.key,target.month,error); }
     }

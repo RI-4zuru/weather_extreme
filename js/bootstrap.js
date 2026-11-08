@@ -1,4 +1,4 @@
-const BUILD_VERSION = "5";
+const BUILD_VERSION = "6";
 const APP_PREFIX = "weather_extreme:";
 const DASHBOARD_THEME_KEY = "weather_extreme:dashboard_theme";
 const DASHBOARD_MODE_KEY = "weather_extreme:dashboard_mode";

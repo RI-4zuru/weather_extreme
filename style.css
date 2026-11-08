@@ -3328,3 +3328,10 @@ body.embedded-view .table-section {
   background: linear-gradient(135deg, rgba(69, 10, 10, 0.58), rgba(15, 23, 42, 0.96));
   border-color: rgba(248, 113, 113, 0.34);
 }
+
+/* Separate minute-precision JMA published extrema from ten-minute estimates. */
+.wx-time-marker { display:inline-block; vertical-align:baseline; white-space:nowrap;
+  font-size:9px; font-weight:700; line-height:1.15; padding:1px 3px;
+  border-radius:3px; margin-left:3px; border:1px solid transparent; }
+.wx-time-minute { color:#104b85; background:#dceeff; border-color:#88b9e6; }
+.wx-time-ten { color:#606a75; background:#eff1f4; border-color:#ced6de; }
