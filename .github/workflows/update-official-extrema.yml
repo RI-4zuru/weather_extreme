@@ -1,0 +1,44 @@
+name: Update JMA official daily extrema
+
+on:
+  workflow_dispatch:
+  schedule:
+    # JMA temp/wind tables generally update near :50 each hour.
+    # JMA precipitation tables have their own, more frequent updates.
+    - cron: "12,42 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-official-extrema
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Fetch JMA CSV, validate and publish JSON
+        run: python scripts/fetch_official_extrema.py
+      - name: Commit snapshot if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live/official_extrema.json
+          if git diff --cached --quiet; then
+            echo 'No change'
+            exit 0
+          fi
+          git commit -m "Update official JMA daily extrema"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep 5
+          done
+          exit 1
