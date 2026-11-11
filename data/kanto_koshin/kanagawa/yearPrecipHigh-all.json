@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-10T20:33:40.793700+09:00",
-  "observedLatestAt": "2026-11-10T20:20:00+09:00",
+  "updatedAt": "2026-11-11T06:41:25.588031+09:00",
+  "observedLatestAt": "2026-11-11T06:30:00+09:00",
   "prefecture": "神奈川県",
   "region": "関東甲信",
   "element": "yearPrecipHigh",
@@ -384,15 +384,15 @@
         },
         {
           "rank": 8,
-          "value": 2140.7,
-          "date": "1903年",
-          "_date_raw": "1903/01/01"
+          "value": 2148,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         },
         {
           "rank": 9,
-          "value": 2138.5,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
+          "value": 2140.7,
+          "date": "1903年",
+          "_date_raw": "1903/01/01"
         },
         {
           "rank": 10,
