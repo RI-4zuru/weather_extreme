@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-17T21:20:05.328373+09:00",
-  "observedLatestAt": "2026-11-17T21:10:00+09:00",
+  "updatedAt": "2026-11-18T08:13:38.006890+09:00",
+  "observedLatestAt": "2026-11-18T08:00:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "dailyMinHumidity",
@@ -456,6 +456,12 @@
         },
         {
           "rank": 9,
+          "value": 51,
+          "date": "2026年11月17日（令和8年）",
+          "_date_raw": "2026/11/17"
+        },
+        {
+          "rank": 10,
           "value": 54,
           "date": "2026年11月13日（令和8年）",
           "_date_raw": "2026/11/13"
