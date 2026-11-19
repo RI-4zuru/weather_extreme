@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-18T21:00:45.307932+09:00",
-  "observedLatestAt": "2026-11-18T20:50:00+09:00",
+  "updatedAt": "2026-11-19T07:51:00.058380+09:00",
+  "observedLatestAt": "2026-11-19T07:40:00+09:00",
   "prefecture": "青森県",
   "region": "東北",
   "element": "yearSunshineHigh",
@@ -559,8 +559,8 @@
         {
           "rank": 10,
           "value": 1604,
-          "date": "2022年",
-          "_date_raw": "2022/01/01"
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
         }
       ]
     },
