@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-20T08:00:06.418573+09:00",
-  "observedLatestAt": "2026-11-20T07:50:00+09:00",
+  "updatedAt": "2026-11-20T20:59:19.125539+09:00",
+  "observedLatestAt": "2026-11-20T20:50:00+09:00",
   "prefecture": "東京都",
   "region": "関東甲信",
   "element": "monthPrecipHigh",
@@ -1032,7 +1032,7 @@
         },
         {
           "rank": 6,
-          "value": 443,
+          "value": 442.5,
           "date": "2026年11月（令和8年）",
           "_date_raw": "2026/11/01"
         },
