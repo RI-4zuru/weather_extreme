@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-23T21:55:55.017638+09:00",
-  "observedLatestAt": "2026-11-23T21:40:00+09:00",
+  "updatedAt": "2026-11-24T11:44:35.566412+09:00",
+  "observedLatestAt": "2026-11-24T11:30:00+09:00",
   "prefecture": "函館",
   "region": "北海道",
   "element": "yearSunshineHigh",
@@ -510,7 +510,7 @@
         },
         {
           "rank": 7,
-          "value": 1631.3,
+          "value": 1634.2,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
