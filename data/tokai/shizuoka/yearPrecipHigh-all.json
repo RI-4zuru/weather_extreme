@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-24T23:01:22.939984+09:00",
-  "observedLatestAt": "2026-11-24T22:50:00+09:00",
+  "updatedAt": "2026-11-25T09:14:27.622397+09:00",
+  "observedLatestAt": "2026-11-25T09:00:00+09:00",
   "prefecture": "静岡県",
   "region": "東海",
   "element": "yearPrecipHigh",
@@ -348,27 +348,27 @@
         },
         {
           "rank": 6,
+          "value": 2376,
+          "date": "2026年",
+          "_date_raw": "2026/01/01"
+        },
+        {
+          "rank": 7,
           "value": 2372.5,
           "date": "2004年",
           "_date_raw": "2004/01/01"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "value": 2363,
           "date": "2010年",
           "_date_raw": "2010/01/01"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "value": 2351,
           "date": "1991年",
           "_date_raw": "1991/01/01"
-        },
-        {
-          "rank": 9,
-          "value": 2340.5,
-          "date": "2026年",
-          "_date_raw": "2026/01/01"
         },
         {
           "rank": 10,
@@ -738,7 +738,7 @@
         },
         {
           "rank": 5,
-          "value": 2675,
+          "value": 2685.5,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

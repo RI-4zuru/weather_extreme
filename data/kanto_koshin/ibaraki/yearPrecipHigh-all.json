@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-24T23:01:22.939984+09:00",
-  "observedLatestAt": "2026-11-24T22:50:00+09:00",
+  "updatedAt": "2026-11-25T09:14:27.622397+09:00",
+  "observedLatestAt": "2026-11-25T09:00:00+09:00",
   "prefecture": "茨城県",
   "region": "関東甲信",
   "element": "yearPrecipHigh",
@@ -696,7 +696,7 @@
         },
         {
           "rank": 5,
-          "value": 1730,
+          "value": 1733,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -1236,7 +1236,7 @@
         },
         {
           "rank": 7,
-          "value": 1629,
+          "value": 1631,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },

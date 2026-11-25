@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-24T23:01:22.939984+09:00",
-  "observedLatestAt": "2026-11-24T22:50:00+09:00",
+  "updatedAt": "2026-11-25T09:14:27.622397+09:00",
+  "observedLatestAt": "2026-11-25T09:00:00+09:00",
   "prefecture": "千葉県",
   "region": "関東甲信",
   "element": "yearPrecipHigh",
@@ -342,7 +342,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 2388.5,
+          "value": 2398,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -474,7 +474,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 2303,
+          "value": 2314,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -1002,7 +1002,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 2953,
+          "value": 2967,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
@@ -1068,7 +1068,7 @@
       "ranks": [
         {
           "rank": 1,
-          "value": 2940.5,
+          "value": 2963.5,
           "date": "2026年",
           "_date_raw": "2026/01/01"
         },
